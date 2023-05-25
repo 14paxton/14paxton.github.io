@@ -97,17 +97,14 @@ diskutil erasevolume HFS+ 'RAM Disk' `hdiutil attach -nomount ram://8388608`
  fi``  
   
 # JAVA  
-2.1 On Mac OS X 10.5 or later, we can use /usr/libexec/java_home to return the location of the default JDK.  
-  
-Terminal  
-% `/usr/libexec/java_home`  
+- On Mac OS X 10.5 or later, we can use  
+`/usr/libexec/java_home`  
+to return the location of the default JDK  
   
          /Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home    
   
-2.2 Also, find all installed JDKs.  
-  
-Terminal  
-% `/usr/libexec/java_home -V`  
+- Also, find all installed JDKs.  
+ `/usr/libexec/java_home -V`  
   
    Matching Java Virtual Machines (4):  
     16 (x86_64) "Oracle Corporation" - "OpenJDK 16-ea" /Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home  
@@ -116,47 +113,40 @@ Terminal
     1.8.0_275 (x86_64) "UNDEFINED" - "OpenJDK 8" /usr/local/Cellar/openjdk@8/1.8.0+275/libexec/openjdk.jdk/Contents/Home  
     /Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home    
   
-2.3 Also, run a specified JDK command.  
-  
-Terminal  
-% `/usr/libexec/java_home -v1.8`  
+- Also, run a specified JDK command.  
+`/usr/libexec/java_home -v1.8`  
   
   /usr/local/Cellar/openjdk@8/1.8.0+275/libexec/openjdk.jdk/Contents/Home    
     
-# On macOS 10.15 Catalina and later, the zsh is the default Terminal shell, and we can set the $JAVA_HOME environment variable in either ~/.zshenv or ~/.zshrc.  
+- On macOS 10.15 Catalina and later, the zsh is the default Terminal shell, and we can set the $JAVA_HOME environment variable in either `~/.zshenv` or `~/.zshrc`  
   
-Open Terminal  
-Confirm you have JDK by typing “which java”. It should show something like /usr/bin/java.  
-Check you have the needed version of Java, by typing “java -version”.  
-JAVA_HOME is essentially the full path of the directory that contains a sub-directory named bin which in turn contains the java.  
-For Mac OSX – it is /Library/Java/Home  
-Set JAVA_HOME using this command in Terminal: export JAVA_HOME=/Library/Java/Home  
-echo $JAVA_HOME on Terminal to confirm the path  
+1) Open Terminal  
+	Confirm you have JDK by typing “which java”. It should show something like /usr/bin/java.  
+	  
+2) Check you have the needed version of Java, by typing `java -version`.  
+	JAVA_HOME is essentially the full path of the directory that contains a sub-directory named bin which in turn contains the java.  
+	- For Mac OSX – it is /Library/Java/Home  
+3) Set JAVA_HOME using this command in Terminal:   
+	`export JAVA_HOME=/Library/Java/Home`  
+4) `echo $JAVA_HOME` on Terminal to confirm the path  
+  
 You should now be able to run your application  
-Note that this sets JAVA_HOME only for this session. If you want it to persist, you will have to add the command to your ~/.profile file.  Below are instructions on how to accomplish this instead:  
+Note that this sets JAVA_HOME only for this session. If you want it to persist, you will have to add the command to your `~/.profile file`.  Below are instructions on how to accomplish this instead:  
   
-Open up Terminal.app (Applications >> Utilities >> Terminal)  
-Type: emacs .profile  
-add this to the end of the .profile file:  
-JAVA_HOME=/Library/Java/Home  
-export JAVA_HOME;  
+1) Open up Terminal.app (Applications >> Utilities >> Terminal)  
+	 `emacs .profile`  
+2) add this to the end of the .profile file:  
+	`JAVA_HOME=/Library/Java/Home`  
+	`export JAVA_HOME;`  
   
-3.1 Open the ~/.zshenv  
+3) Open the ~/.zshenv  
+	`nano ~/.zshenv`  
   
-Terminal  
+4) Add the following content  
+	`export JAVA_HOME=$(/usr/libexec/java_home)`  
   
-% `nano ~/.zshenv`  
+5) Source the file and print the $JAVA_HOME, done.  
+	 `source ~/.zshenv`  
+	`echo $JAVA_HOME`  
   
-3.2 Add the following content  
-  
-export JAVA_HOME=$(/usr/libexec/java_home)  
-  
-3.3 Source the file and print the $JAVA_HOME, done.  
-  
-Terminal  
-  
-% `source ~/.zshenv`  
-  
-% `echo $JAVA_HOME`  
-  
-    /Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home   
+    /Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home `  
