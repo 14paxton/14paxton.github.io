@@ -1,5 +1,10 @@
 ---  
 share: true  
+repo:  
+  owner: 14paxton  
+  repo: my-notes  
+  branch: master  
+  autoclean: false  
 ---  
   
 # [CLI Gist Resource](https://gist.github.com/bzerangue/dca8fc2d63309ba2bd9f)  
