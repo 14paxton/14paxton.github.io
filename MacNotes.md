@@ -2,11 +2,11 @@
 share: true  
 repo:  
   owner: 14paxton  
-  repo: MacNotes  
+  repo: 14paxton.github.io  
   branch: master  
   autoclean: false  
 ---  
-test  
+  
 # [CLI Gist Resource](https://gist.github.com/bzerangue/dca8fc2d63309ba2bd9f)  
 # diskutil  
 ## Format harddrive  
