@@ -1,7 +1,7 @@
 theme: jekyll-theme-minimal
 title: Paxton's Notes
 plugins:
-  - jekyll-relative-links
+  jekyll-relative-links
 relative_links:
   enabled: true
   collections: true
