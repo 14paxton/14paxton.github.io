@@ -8,4 +8,5 @@ repo:
   autoclean: false  
 ---  
   
-[[MacNotes]]
+[[MacNotes]]  
+[MAC](./MacNotes/Pages/MacNotes.md)
