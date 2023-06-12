@@ -6,7 +6,7 @@ repo:
   branch: master  
   title: MacNotes  
   category: MacNotes/MacNotes  
-  autoclean: true  
+  autoclean: false  
 ---  
   
 # [CLI Gist Resource](https://gist.github.com/bzerangue/dca8fc2d63309ba2bd9f)  
