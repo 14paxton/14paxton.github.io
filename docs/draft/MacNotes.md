@@ -1,11 +1,11 @@
 ---  
 share: true  
+title: MacNotes  
+category: MacNotes  
 repo:  
   owner: 14paxton  
   repo: 14paxton.github.io  
   branch: master  
-  title: MacNotes  
-  category: MacNotes  
   autoclean: true  
 ---  
   
