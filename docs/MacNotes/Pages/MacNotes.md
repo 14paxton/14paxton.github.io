@@ -9,9 +9,22 @@ repo:
   autoclean: false  
 ---  
   
-**Contents**  
-* TOC  
- {:toc}  
+- [[CLI Gist Resource](https://gist.github.com/bzerangue/dca8fc2d63309ba2bd9f)](#cli-gist-resourcehttpsgistgithubcombzeranguedca8fc2d63309ba2bd9f)  
+- [diskutil](#diskutil)  
+	- [Format harddrive](#format-harddrive)  
+- [Copy terminal output directly to clip board](#copy-terminal-output-directly-to-clip-board)  
+- [Get User List](#get-user-list)  
+- [Add user to group](#add-user-to-group)  
+- [add user to SUDO](#add-user-to-sudo)  
+- [Change Password](#change-password)  
+- [How do I apply all recommended updates?](#how-do-i-apply-all-recommended-updates)  
+- [Updating Mac using the Terminal app](#updating-mac-using-the-terminal-app)  
+- [Install all but make sure you ignore ‘JavaForOSX’ updates:](#install-all-but-make-sure-you-ignore-javaforosx-updates)  
+- [To clear the list ignored updates, enter:](#to-clear-the-list-ignored-updates-enter)  
+- [Slow Java app](#slow-java-app)  
+- [Create Ram Disk For Intellij](#create-ram-disk-for-intellij)  
+- [JAVA](#java)  
+  
 # [CLI Gist Resource](https://gist.github.com/bzerangue/dca8fc2d63309ba2bd9f)  
 # diskutil  
 ## Format harddrive  
