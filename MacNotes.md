@@ -5,7 +5,6 @@ repo:
   repo: 14paxton.github.io  
   branch: master  
   title: MacNotes  
-  category: MacNotes  
   autoclean: true  
 ---  
   
