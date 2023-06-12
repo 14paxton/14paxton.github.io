@@ -1,11 +1,11 @@
 ---  
 share: true  
+title: Obsidian  
+category: GithubPages/Obsidian  
 repo:  
   owner: 14paxton  
   repo: 14paxton.github.io  
   branch: master  
-  title: Obsidian  
-  category: GithubPages/Obsidian  
   autoclean: true  
 ---  
   
