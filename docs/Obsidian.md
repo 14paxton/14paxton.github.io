@@ -1,12 +1,12 @@
 ---  
 share: true  
-title: Obsidian  
-category: GithubPages/Obsidian  
 repo:  
   owner: 14paxton  
   repo: 14paxton.github.io  
   branch: master  
-  autoclean: true  
+  title: Obsidian  
+  category: GithubPages/Obsidian  
+  autoclean: false  
 ---  
   
 # [Github Publish](https://obsidian-publisher.netlify.app/plugin/)  
