@@ -9,6 +9,8 @@ repo:
   autoclean: false  
 ---  
   
+* TOC {:toc}  
+  
 # [CLI Gist Resource](https://gist.github.com/bzerangue/dca8fc2d63309ba2bd9f)  
 # diskutil  
 ## Format harddrive  
