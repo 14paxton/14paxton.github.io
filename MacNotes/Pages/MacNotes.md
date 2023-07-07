@@ -14,6 +14,21 @@ repo:
 - [Making OS installer ](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment)
 - [Mac Official Doc , Make bootable insaller ](https://support.apple.com/en-us/HT201372) 
 
+# QUICK SCRIPTS
+## restart
+```bash
+	sudo shutdown now
+
+	#specific time
+	sudo shutdown hhmm
+```
+
+## check permissions
+```bash
+	ls -lO /System
+```
+
+---
 # diskutil  
 ## Format harddrive
 | File System 		    |	Abbreviation  
@@ -104,6 +119,13 @@ mkdir -p ~/macOS-installer && cd ~/macOS-installer && curl https://raw.githubuse
 ```bash
 sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
 ```
+
+---
+
+#RECOVERY
+## [csrutil](https://ss64.com/osx/csrutil.html)
+
+---
 
 # Slow Java app  
        
