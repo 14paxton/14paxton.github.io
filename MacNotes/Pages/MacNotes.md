@@ -81,14 +81,15 @@ sudo dscl . -passwd /Users/username password
 
 # Command Line Software Update Utility
 ## How do I apply all recommended updates?  
-     > All updates that are recommended for your system:  
+>  All updates that are recommended for your system:  
      
 ```bash
 	sudo softwareupdate -r  
 ```
 
 ## Updating Mac using the Terminal app  
-    > To install all updates that are applicable to your system, enter:  
+>  To install all updates that are applicable to your system, enter:  
+
 ```bash
 	sudo softwareupdate -i -a  
 ```
@@ -110,7 +111,7 @@ softwareupdate --list-full-installers;echo;echo "Please enter version number you
 ```
 
 #### Munki's InstallInstallMacOS utility
-> Once finished, you'll find in your ~/macOS-Installer/
+>  Once finished, you'll find in your ~/macOS-Installer/
 
 ```bash
 mkdir -p ~/macOS-installer && cd ~/macOS-installer && curl https://raw.githubusercontent.com/munki/macadmin-scripts/main/installinstallmacos.py > installinstallmacos.py && sudo python installinstallmacos.py
