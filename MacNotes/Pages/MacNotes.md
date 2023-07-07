@@ -8,31 +8,19 @@ repo:
   branch: master  
   autoclean: false  
 ---  
-  
-- [[CLI Gist Resource](https://gist.github.com/bzerangue/dca8fc2d63309ba2bd9f)](#cli-gist-resourcehttpsgistgithubcombzeranguedca8fc2d63309ba2bd9f)  
-- [diskutil](#diskutil)  
-	- [Format harddrive](#format-harddrive)  
-- [Copy terminal output directly to clip board](#copy-terminal-output-directly-to-clip-board)  
-- [Get User List](#get-user-list)  
-- [Add user to group](#add-user-to-group)  
-- [add user to SUDO](#add-user-to-sudo)  
-- [Change Password](#change-password)  
-- [How do I apply all recommended updates?](#how-do-i-apply-all-recommended-updates)  
-- [Updating Mac using the Terminal app](#updating-mac-using-the-terminal-app)  
-- [Install all but make sure you ignore ‘JavaForOSX’ updates:](#install-all-but-make-sure-you-ignore-javaforosx-updates)  
-- [To clear the list ignored updates, enter:](#to-clear-the-list-ignored-updates-enter)  
-- [Slow Java app](#slow-java-app)  
-- [Create Ram Disk For Intellij](#create-ram-disk-for-intellij)  
-- [JAVA](#java)  
-  
-# [CLI Gist Resource](https://gist.github.com/bzerangue/dca8fc2d63309ba2bd9f)  
+
+# Resources
+- [CLI Gist Resource](https://gist.github.com/bzerangue/dca8fc2d63309ba2bd9f)
+- [Making OS installer ](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment)
+- [Mac Official Doc , Make bootable insaller ](https://support.apple.com/en-us/HT201372) 
+
 # diskutil  
-## Format harddrive  
-File System	Abbreviation  
-Mac OS Extended (Journaled)	JHFS+  
-Mac OS Extended	HFS+  
-MS-DOS fat32	FAT32  
-ExFAT	ExFAT  
+## Format harddrive
+| File System 		    |	Abbreviation  
+Mac OS Extended (Journaled) |	JHFS+  
+Mac OS Extended		    |	HFS+  
+MS-DOS fat32		    |   FAT32  
+ExFAT 			    |	ExFAT  
   
 ```bash  
 diskutil eraseDisk JHFS+ CleanDrive /dev/disk1  
@@ -42,45 +30,81 @@ diskutil eraseDisk JHFS+ CleanDrive /dev/disk1
 ```bash  
 pbcopy < ~/.ssh/id_rsa.pub  
 ```  
-  
-# Get User List  
+
+# Users  
+## Get User List  
 ```bash  
 dscl . list /Users | grep -v “^_”  
 ```  
   
-# Add user to group  
+## Add user to group  
+```bash
  sudo dseditgroup -o edit -a john -t user admin  
  sudo dseditgroup -o edit -a john -t user wheel  
+```
+
+## add user to SUDO  
+ ```bash
+ su AdminUser
+ authentication, and then:  
+ ```
+    
+   > Now, as Adminuser, use the visudo command to edit the sudoers file:  
   
-# add user to SUDO  
-  su AdminUser  
-  authentication, and then:  
-     
-   Now, as Adminuser, use the visudo command to edit the sudoers file:  
-  
+```bash
       Adminuser % sudo visudo  
-      Add the following line to the sudoers file:  
+      # Add the following line to the sudoers file:  
       StandardJoeUser ALL = (ALL) ALL  
+```
   
-# Change Password  
- sudo dscl . -passwd /Users/username password  
-  
-  
-# How do I apply all recommended updates?  
-     All updates that are recommended for your system:  
-     sudo softwareupdate -r  
-  
-# Updating Mac using the Terminal app  
-    To install all updates that are applicable to your system, enter:  
-    sudo softwareupdate -i -a  
-  
-# Install all but make sure you ignore ‘JavaForOSX’ updates:  
-     sudo softwareupdate --ignore JavaForOSX  
-  
-# To clear the list ignored updates, enter:  
+## Change Password  
+```bash
+sudo dscl . -passwd /Users/username password  
+```  
+
+# Command Line Software Update Utility
+## How do I apply all recommended updates?  
+     > All updates that are recommended for your system:  
+     
+```bash
+	sudo softwareupdate -r  
+```
+
+## Updating Mac using the Terminal app  
+    > To install all updates that are applicable to your system, enter:  
+```bash
+	sudo softwareupdate -i -a  
+```
+
+## Install all but make sure you ignore ‘JavaForOSX’ updates:  
+```bash
+	 sudo softwareupdate --ignore JavaForOSX  
+```
+
+## To clear the list ignored updates, enter:  
+```bash
      sudo softwareupdate --reset-ignored  
-       
-  
+```       
+
+## Update/Install OS
+### This gives you a list of available releases you can choose from. Once downloaded it will be saved in your Applications folder
+```bash
+softwareupdate --list-full-installers;echo;echo "Please enter version number you wish to download:";read;$(if [ -n "$REPLY" ]; then; echo "softwareupdate --fetch-full-installer --full-installer-version "$REPLY; fi);
+```
+
+#### Munki's InstallInstallMacOS utility
+> Once finished, you'll find in your ~/macOS-Installer/
+
+```bash
+mkdir -p ~/macOS-installer && cd ~/macOS-installer && curl https://raw.githubusercontent.com/munki/macadmin-scripts/main/installinstallmacos.py > installinstallmacos.py && sudo python installinstallmacos.py
+```
+
+### create installer
+#### run ```createinstallmedia``` command provided by Apple (opens new window). Note that the command is made for USB's formatted with the name MyVolume:
+```bash
+sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
+```
+
 # Slow Java app  
        
 First you need to find the hostname of your Mac. You do this from System Preferences. Click the Sharing icon in System Preferences.  
