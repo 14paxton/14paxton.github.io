@@ -15,6 +15,11 @@ repo:
 - [Mac Official Doc , Make bootable insaller ](https://support.apple.com/en-us/HT201372) 
 
 # QUICK SCRIPTS
+## Copy terminal output directly to clip board  
+```bash  
+pbcopy < ~/.ssh/id_rsa.pub  
+```  
+
 ## restart
 ```bash
 	sudo shutdown now
@@ -39,12 +44,9 @@ ExFAT 			    |	ExFAT
   
 ```bash  
 diskutil eraseDisk JHFS+ CleanDrive /dev/disk1  
-```  
-  
- # Copy terminal output directly to clip board  
-```bash  
-pbcopy < ~/.ssh/id_rsa.pub  
-```  
+```
+
+---
 
 # Users  
 ## Get User List  
