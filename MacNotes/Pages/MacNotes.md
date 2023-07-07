@@ -123,6 +123,20 @@ mkdir -p ~/macOS-installer && cd ~/macOS-installer && curl https://raw.githubuse
 sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
 ```
 
+> Note for users on Apple Silicon installing macOS older than Big Sur
+> If the `createinstallmedia` fails with `zsh: killed ` or `Killed: 9` then it's most likely an issue with the installer's code signature. To fix this, you can run the following command:
+
+```bash
+cd /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/
+codesign -s - -f --deep /Applications/Install\ macOS\ Big\ Sur.app
+```
+
+> You will need the command line tools for Xcode installed:
+
+```bash
+xcode-select --install
+```
+
 ---
 
 # RECOVERY
