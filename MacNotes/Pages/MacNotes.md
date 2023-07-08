@@ -35,16 +35,22 @@ pbcopy < ~/.ssh/id_rsa.pub
 
 ---
 # diskutil  
-## Format harddrive
-| File System 		    |	Abbreviation  
-Mac OS Extended (Journaled) |	JHFS+  
-Mac OS Extended		    |	HFS+  
-MS-DOS fat32		    |   FAT32  
-ExFAT 			    |	ExFAT  
-  
+
+## Format drive/Volume
+
 ```bash  
 diskutil eraseDisk JHFS+ CleanDrive /dev/disk1  
 ```
+
+> Formats
+	| File System 		    |	Abbreviation  |
+	| --- | ----------- |
+	| Mac OS Extended (Journaled) |	JHFS+  |
+	| Mac OS Extended		    |	HFS+ |  
+	| MS-DOS fat32		    |   FAT32  |
+	| ExFAT 			    |	ExFAT | 
+  
+
 
 ---
 
