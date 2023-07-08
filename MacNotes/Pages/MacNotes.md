@@ -52,18 +52,18 @@ diskutil unmountDisk /force /dev/disk#
 ```
 
 ## Format drive/Volume
-	```
-		diskutil eraseDisk
-		Usage: diskutil eraseDisk format name [APM[Format]|MBR[Format]|GPT[Format]]
-		MountPoint|DiskIdentifier|DeviceNode
-		Completely erase an existing whole disk. All volumes on this disk will be
-		destroyed. Ownership of the affected disk is required.
-		Format is the specific file system name you want to erase it as (HFS+, etc.).
-		Name is the (new) volume name (subject to file system naming restrictions),
-		or can be specified as %noformat% to skip initialization (newfs).
-		You cannot erase the boot disk.
-		Example: diskutil eraseDisk JHFS+ UntitledUFS disk3
-	```
+
+	diskutil eraseDisk
+	Usage: diskutil eraseDisk format name [APM[Format]|MBR[Format]|GPT[Format]]
+	MountPoint|DiskIdentifier|DeviceNode
+	Completely erase an existing whole disk. All volumes on this disk will be
+	destroyed. Ownership of the affected disk is required.
+	Format is the specific file system name you want to erase it as (HFS+, etc.).
+	Name is the (new) volume name (subject to file system naming restrictions),
+	or can be specified as %noformat% to skip initialization (newfs).
+	You cannot erase the boot disk.
+	Example: diskutil eraseDisk JHFS+ UntitledUFS disk3
+	
 
 ```bash  
 diskutil eraseDisk JHFS+ CleanDrive /dev/disk1  
