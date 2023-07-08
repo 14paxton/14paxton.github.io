@@ -43,6 +43,7 @@ diskutil eraseDisk JHFS+ CleanDrive /dev/disk1
 ```
 
 > Formats
+
 	| File System 		    |	Abbreviation  |
 	| --- | ----------- |
 	| Mac OS Extended (Journaled) |	JHFS+  |
