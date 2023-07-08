@@ -34,15 +34,54 @@ pbcopy < ~/.ssh/id_rsa.pub
 ```
 
 ---
-# diskutil  
+# [DISKUTIL  ](https://ss64.com/osx/diskutil.html)
+
+## find disk
+```bash
+diskutil list
+```
+
+## unmount
+```bash
+diskutil unmountDisk /dev/disk#
+```
+
+## force unmount
+```bash
+diskutil unmountDisk /force /dev/disk#
+```
 
 ## Format drive/Volume
+	```
+		diskutil eraseDisk
+		Usage: diskutil eraseDisk format name [APM[Format]|MBR[Format]|GPT[Format]]
+		MountPoint|DiskIdentifier|DeviceNode
+		Completely erase an existing whole disk. All volumes on this disk will be
+		destroyed. Ownership of the affected disk is required.
+		Format is the specific file system name you want to erase it as (HFS+, etc.).
+		Name is the (new) volume name (subject to file system naming restrictions),
+		or can be specified as %noformat% to skip initialization (newfs).
+		You cannot erase the boot disk.
+		Example: diskutil eraseDisk JHFS+ UntitledUFS disk3
+	```
 
 ```bash  
 diskutil eraseDisk JHFS+ CleanDrive /dev/disk1  
 ```
 
 > Formats
+
+```
+APFS allocates disk space within a container (partition) on demand. When a single APFS container has multiple volumes, the container’s free space is shared and is automatically allocated to any of the individual volumes as needed. If desired, you can specify reserve and quota sizes for each volume. Each volume uses only part of the overall container, so the available space is the total size of the container, minus the size of all the volumes in the container.
+
+APFS: Uses the APFS format. Choose this option if you don’t need an encrypted or case-sensitive format.
+
+APFS (Encrypted): Uses the APFS format and encrypts the volume.
+
+APFS (Case-sensitive): Uses the APFS format and is case-sensitive to file and folder names. For example, folders named “Homework” and “HOMEWORK” are two different folders.
+
+APFS (Case-sensitive, Encrypted): Uses the APFS format, is case-sensitive to file and folder names, and encrypts the volume. For example, folders named “Homework” and “HOMEWORK” are two different folders.
+```
 
 | File System 		    |	Abbreviation  |
 | --- | ----------- |
@@ -51,7 +90,18 @@ diskutil eraseDisk JHFS+ CleanDrive /dev/disk1
 | MS-DOS fat32		    |   FAT32  |
 | ExFAT 			    |	ExFAT | 
   
+## diskutil secureErase.  Now we need to select the level of secure erase we want.  There are 5 levels of secure erasing you can use labeled from 0-4. 
+```
+Level 0 just erases the drive by writing the number zero across every sector of the drive. 
+Level 1 does the same but with random data, thus taking longer.
+Level 2 erases the drive 7 times with 1’s and 0’s except the last pass where it uses random data.
+Level 3 is a special algorithm that erases the drives with random data as well as data compiled from a special collection of 1’s and 0’s.
+Level 4 is a little different and erases it 3 times, with random data on the first 2 passes and 1 set of zeroes on the last pass.
+```
 
+```bash
+diskutil secureErase 4 /dev/disk2
+```
 
 ---
 
@@ -238,4 +288,9 @@ Note that this sets JAVA_HOME only for this session. If you want it to persist, 
 	 `source ~/.zshenv`  
 	`echo $JAVA_HOME`  
   
-    /Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home `  
+    /Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home `
+
+# DEBUGGING - OBSCURE ISSUES
+
+## * [How to fix Mac OSX stuck/hanging on progress bar after login](https://smyl.es/how-to-fix-mac-osx-stuckhanging-on-progress-bar-will-not-boot/)
+
