@@ -1,6 +1,6 @@
 ---  
 title: MarkDown  
-category: GithubPages/Pages/MarkDown  
+category: GitHubPages/Pages/MarkDown  
 share: true  
 repo:  
   owner: 14paxton  
