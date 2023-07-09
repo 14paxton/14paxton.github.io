@@ -1,3 +1,14 @@
+---
+title: GithubPages  
+category: GithubPages/Pages  
+share: true  
+repo:  
+  owner: 14paxton  
+  repo: 14paxton.github.io  
+  branch: master  
+  autoclean: false  
+---  
+
 # [QUICKSTART](https://docs.github.com/en/pages/quickstart)
 
 ___

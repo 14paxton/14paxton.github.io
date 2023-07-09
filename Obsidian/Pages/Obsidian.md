@@ -1,6 +1,6 @@
 ---  
 title: Obsidian  
-category: GithubPages/Pages  
+category: Obsidian/Pages  
 share: true  
 repo:  
   owner: 14paxton  
