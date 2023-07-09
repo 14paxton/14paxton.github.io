@@ -10,6 +10,6 @@ repo:
 - [GitHubPages](./GithubPages/Pages/GitHubPages.md)  
 	- [Jekyl](./GithubPages/Pages/Jekyll.md)  
 	- [MarkDown](./GithubPages/Pages/MarkDown.md)  
-	- [Obsidian](./GithubPages/Pages/Obsidian.md)  
+	- [Obsidian](Obsidian.md)  
   
 - [MAC](./MacNotes/Pages/MacNotes.md)

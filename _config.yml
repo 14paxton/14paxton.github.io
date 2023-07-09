@@ -10,9 +10,9 @@ kramdown:
   syntax_highlighter: rouge
 markdown: kramdown
 title: Paxton's Notes
-remote_theme: pages-themes/time-machine@v0.2.0
+remote_theme: pages-themes/leap-day@v0.2.0
 plugins:
-- jekyll-remote-theme 
+- jekyll-remote-theme
 relative_links:
   enabled: true
   collections: true

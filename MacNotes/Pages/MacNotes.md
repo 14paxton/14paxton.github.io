@@ -294,3 +294,4 @@ In the end this is what my `/etc/hosts `file looked like:
 # DEBUGGING - OBSCURE ISSUES
 
 ##  *[How to fix Mac OSX stuck/hanging on progress bar after login](https://smyl.es/how-to-fix-mac-osx-stuckhanging-on-progress-bar-will-not-boot/)*
+

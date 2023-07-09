@@ -8,19 +8,42 @@ repo:
   branch: master  
   autoclean: false  
 ---  
+
+# Quick Scripts
+
+## Multiple Cursors
+
+Obsidian lets you edit text in multiple places at the same time using multiple cursors. You can add additional cursors by holding `Alt` (or `Option` on macOS) and selecting another position in the note.
+
+## Templates
+
+### [GitHubPages](https://github.com/ObsidianPublisher/template-gh-pages/blob/main/mkdocs.yml)
+
+
+---
+
+# [Editing And Formatting](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax)
+
+---
+
+# [METADATA](https://help.obsidian.md/Editing+and+formatting/Metadata#:~:text=YAML%20is%20a%20widely%20used,key%20and%20a%20corresponding%20value.&text=While%20the%20order%20of%20each,more%20than%20one%20tag%20key.)  
+
+
+---
+
+# [Plugins](https://help.obsidian.md/Plugins/Core+plugins)
+
+## [Github Publish](https://obsidian-publisher.netlify.app/plugin/)  
   
-# [Github Publish](https://obsidian-publisher.netlify.app/plugin/)  
+### [upload setting](https://obsidian-publisher.netlify.app/plugin/settings/upload/)  
+
+### [FileSettings](https://obsidian-publisher.netlify.app/plugin/settings/per%20files%20settings/)
+
+### [Folder Config](https://obsidian-publisher.netlify.app/plugin/example/filepath_example/)  
   
-## [upload setting](https://obsidian-publisher.netlify.app/plugin/settings/upload/)  
+### [Frontmatter Keys](https://obsidian-publisher.netlify.app/plugin/settings/per%20files%20settings/#frontmatter-keys-explanation)  
   
-## [metadata](https://help.obsidian.md/Editing+and+formatting/Metadata#:~:text=YAML%20is%20a%20widely%20used,key%20and%20a%20corresponding%20value.&text=While%20the%20order%20of%20each,more%20than%20one%20tag%20key.)  
-  
-## [Folder Config](https://obsidian-publisher.netlify.app/plugin/example/filepath_example/)  
-  
-## [Frontmatter Keys](https://obsidian-publisher.netlify.app/plugin/settings/per%20files%20settings/#frontmatter-keys-explanation)  
-  
-  
-## [Commands](https://obsidian-publisher.netlify.app/plugin/commands/)  
+### [Commands](https://obsidian-publisher.netlify.app/plugin/commands/)  
   
 The plugin adds seven commands, with one also applied on the right-click menu.  
   
