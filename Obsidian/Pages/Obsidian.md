@@ -1,4 +1,4 @@
----  
+---
 title: Obsidian  
 category: Obsidian/Pages  
 share: true  
@@ -7,7 +7,7 @@ repo:
   repo: 14paxton.github.io  
   branch: master  
   autoclean: false  
----  
+---
 
 # Quick Scripts
 

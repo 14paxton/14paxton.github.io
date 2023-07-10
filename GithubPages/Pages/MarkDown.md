@@ -1,4 +1,4 @@
----  
+---
 title: MarkDown  
 category: GitHubPages/Pages
 share: true  
@@ -7,7 +7,7 @@ repo:
   repo: 14paxton.github.io  
   branch: master  
   autoclean: false  
----  
+---
   
 # Pandoc  
 ## Add Table of Contents to mark down doc with pandoc  

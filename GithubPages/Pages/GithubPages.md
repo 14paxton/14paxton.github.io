@@ -1,4 +1,4 @@
---- 
+---
 title: GitHubPages  
 category: GitHubPages/Pages  
 share: true  
@@ -7,7 +7,7 @@ repo:
   repo: 14paxton.github.io  
   branch: master  
   autoclean: false  
----   
+---
 
 # [QUICKSTART](https://docs.github.com/en/pages/quickstart)
 
