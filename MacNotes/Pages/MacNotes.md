@@ -1,4 +1,4 @@
----
+--- 
 title: MacNotes  
 category: MacNotes/Pages  
 share: true  
@@ -7,7 +7,7 @@ repo:
   repo: 14paxton.github.io  
   branch: master  
   autoclean: false  
----
+--- 
 
 # Resources
 - [CLI Gist Resource](https://gist.github.com/bzerangue/dca8fc2d63309ba2bd9f)
