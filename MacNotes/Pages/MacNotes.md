@@ -49,7 +49,7 @@ pmset -g sched
 ```bash
 sudo pmset repeat cancel
 ```
----
+***
 
 # [DISKUTIL  ](https://ss64.com/osx/diskutil.html)
 
