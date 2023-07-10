@@ -7,9 +7,9 @@ repo:
   branch: master  
   autoclean: false  
 ---  
-- [GHP](GHP.md)  
-	- [Jekyll](Jekyll.md)
-	- [MarkDown](MarkDown.md)  
+
+- [Jekyll](./GithubPages/Pages/Jekyll.md)
+- [MarkDown](./GithubPages/Pages/MarkDown.md)  
   
 - [MAC](./MacNotes/Pages/MacNotes.md)
 - [Obsidian](./Obsidian/Pages/Obsidian.md)
