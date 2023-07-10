@@ -8,7 +8,7 @@ repo:
   autoclean: false    
 ---    
   
-- [GitHubPages](./GithubPages/Pages/GHP.md))  
+- [GitHubPages](./GithubPages/Pages/GHP.md)  
 	- [Jekyll](./GithubPages/Pages/Jekyll.md)  
 	- [MarkDown](./GithubPages/Pages/MarkDown.md)    
     
