@@ -6,7 +6,7 @@ repo:
   owner: 14paxton  
   repo: 14paxton.github.io  
   branch: master  
-  autoclean: false  
+  autoclean: true  
 ---
 
 # Quick Scripts

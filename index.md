@@ -9,6 +9,7 @@ repo:
 ---  
 
 - GitHubPages]([[GHP]])
+- test
 - [Jekyll](./GithubPages/Pages/Jekyll.md)
 - [MarkDown](./GithubPages/Pages/MarkDown.md)  
   
