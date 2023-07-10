@@ -1,5 +1,5 @@
 ---
-title: GitHubPages  
+title: GHP  
 category: GitHubPages/Pages  
 share: true  
 repo:  

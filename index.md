@@ -7,7 +7,7 @@ repo:
   branch: master  
   autoclean: false  
 ---  
-- [GitHubPages](./GitHubPages/Pages/GitHubPages.md)  
+- [GHP](GHP.md)  
 	- [Jekyll](./GitHubPages/Pages/Jekyll.md)
 	- [MarkDown](./GitHubPages/Pages/MarkDown.md)  
   
