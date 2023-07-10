@@ -1,17 +1,16 @@
 ---  
-title: index  
-share: true  
-repo:  
-  owner: 14paxton  
-  repo: 14paxton.github.io  
-  branch: master  
-  autoclean: false  
----  
-
-- GitHubPages]([[GHP]])
-- test
-- [Jekyll](./GithubPages/Pages/Jekyll.md)
-- [MarkDown](./GithubPages/Pages/MarkDown.md)  
+title: index    
+share: true    
+repo:    
+  owner: 14paxton    
+  repo: 14paxton.github.io    
+  branch: master    
+  autoclean: false    
+---    
   
-- [MAC](./MacNotes/Pages/MacNotes.md)
+- [GitHubPages](./GithubPages/Pages/GHP.md))  
+	- [Jekyll](./GithubPages/Pages/Jekyll.md)  
+	- [MarkDown](./GithubPages/Pages/MarkDown.md)    
+    
+- [MAC](./MacNotes/Pages/MacNotes.md)  
 - [Obsidian](./Obsidian/Pages/Obsidian.md)
