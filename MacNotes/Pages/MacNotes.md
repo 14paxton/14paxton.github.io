@@ -33,7 +33,25 @@ pbcopy < ~/.ssh/id_rsa.pub
 	ls -lO /System
 ```
 
----
+## schedule Mac to power on or wake, M refers to Monday
+```bash
+sudo pmset repeat wake M 8:00:00
+```
+## schedule Mac to shutdown: 
+```bash
+sudo pmset repeat shutdown F 20:00:00
+```
+## see your current schedules: 
+```bash
+pmset -g sched
+```
+## cancel your schedules: 
+```bash
+sudo pmset repeat cancel
+```
+
+___
+
 # [DISKUTIL  ](https://ss64.com/osx/diskutil.html)
 
 ## find disk
