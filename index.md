@@ -8,8 +8,8 @@ repo:
   autoclean: false  
 ---  
 - [GitHubPages](./GitHubPages/Pages/GitHubPages.md)  
-	- [Jekyl](Jekyll.md)  
-	- [MarkDown](MarkDown.md)  
+	- [Jekyl](./GitHubPages/Pages/Jekyll.md)
+	- [MarkDown](./GitHubPages/Pages/MarkDown.md)  
   
 - [MAC](./MacNotes/Pages/MacNotes.md)
 - [Obsidian](./Obsidian/Pages/Obsidian.md)

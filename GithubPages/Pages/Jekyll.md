@@ -1,6 +1,6 @@
 --- 
 title: Jekyll  
-category: GGitHubPages/Pages  
+category: GitHubPages/Pages  
 share: true  
 repo:  
   owner: 14paxton  
