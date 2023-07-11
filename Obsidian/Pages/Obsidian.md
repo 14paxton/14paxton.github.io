@@ -7,7 +7,7 @@ shortRepo: ghpages
 # Quick Scripts    
     
 ## Multiple Cursors    
-  1  
+    
 Obsidian lets you edit text in multiple places at the same time using multiple cursors. You can add additional cursors by holding `Alt` (or `Option` on macOS) and selecting another position in the note.  
     
 ## Templates    
