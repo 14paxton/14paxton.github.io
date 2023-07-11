@@ -8,7 +8,7 @@ repo:
   branch: master    
   autoclean: false    
 ---   
-  
+r  
 # Resources  
 - [CLI Gist Resource](https://gist.github.com/bzerangue/dca8fc2d63309ba2bd9f)  
 - [Making OS installer ](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment)  
