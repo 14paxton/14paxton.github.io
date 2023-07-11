@@ -4,6 +4,7 @@ category: Obsidian/Pages
 share: true    
 shortRepo: ghpages   
 ---  
+hh  
 # Quick Scripts  
   
 ## Multiple Cursors  
