@@ -7,7 +7,7 @@ shortRepo: ghpages
 # Quick Scripts    
     
 ## Multiple Cursors    
-  w  
+    
 Obsidian lets you edit text in multiple places at the same time using multiple cursors. You can add additional cursors by holding `Alt` (or `Option` on macOS) and selecting another position in the note.  
     
 ## Templates    
@@ -41,8 +41,11 @@ repo:
 ---    
     
 # [Plugins](https://help.obsidian.md/Plugins/Core+plugins)    
+  
+## [Material for MKDocs](https://squidfunk.github.io/mkdocs-material/creating-your-site/#advanced-configuration)  
     
 ## [Github Publish](https://obsidian-publisher.netlify.app/plugin/)      
+	- [REPO ReadMe](https://github.com/ObsidianPublisher/obsidian-github-publisher/blob/master/README.md)  
       
 ### [upload setting](https://obsidian-publisher.netlify.app/plugin/settings/upload/)      
     
@@ -113,4 +116,139 @@ This commands is also run along the verification of the repository value, and ch
       
 ### Copy path      
       
-You can choose to add a command to copy the path (from the blog) of the current note. This command is only available if you have enabled the copy link feature in [[Plugin]].
+You can choose to add a command to copy the path (from the blog) of the current note. This command is only available if you have enabled the copy link feature in [[Plugin]].  
+  
+###  mkdoc.yml  
+  
+```yml  
+site_name: Obsidian Mkdocs Publisher  
+site_description: The documentation for Obsidian Mkdocs Publisher  
+site_url: https://obsidian-publisher.netlify.app  
+  
+theme:  
+    name: 'material'  
+    highlightjs: true  
+    hljs_languages:  
+        - yaml  
+        - rust  
+    logo: assets/meta/SEO.png  
+    favicon: assets/meta/SEO.png  
+    custom_dir: overrides  
+    font:  
+        text: Ubuntu  
+        code: Ubuntu Mono  
+    language: en  
+    palette:  
+  
+    # Light mode  
+    - media: "(prefers-color-scheme: light)"  
+      scheme: default  
+      primary: teal  
+      accent: light blue  
+      toggle:  
+        icon: material/toggle-switch-off-outline  
+        name: Switch to dark mode  
+  
+    # Dark mode  
+    - media: "(prefers-color-scheme: dark)"  
+      scheme: slate  
+      primary: blue  
+      accent: indigo  
+      toggle:  
+        icon: material/toggle-switch  
+        name: Switch to light mode  
+    features:  
+        - navigation.indexes  
+        - navigation.top  
+        - navigation.sections  
+        - navigation.tabs  
+        - navigation.tabs.sticky  
+        - navigation.expand  
+        - search.suggest  
+        - search.highlight  
+# Extensions  
+markdown_extensions:  
+  - footnotes  
+  - nl2br  
+  - attr_list  
+  - sane_lists  
+  - meta  
+  - smarty  
+  - tables  
+  - mdx_breakless_lists  
+  - pymdownx.arithmatex:  
+      generic: true  
+  - pymdownx.details  
+  - pymdownx.magiclink  
+  - pymdownx.critic  
+  - pymdownx.caret  
+  - pymdownx.keys  
+  - pymdownx.mark  
+  - pymdownx.tilde  
+  - pymdownx.highlight:  
+      use_pygments: true  
+      anchor_linenums: true  
+  - pymdownx.tasklist:  
+       custom_checkbox: true  
+  - pymdownx.emoji:  
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg  
+  - admonition  
+  - md_in_html  
+  - toc:  
+      permalink: true  
+  - pymdownx.inlinehilite  
+  - pymdownx.snippets  
+  - pymdownx.superfences:  
+      custom_fences:  
+        - name: mermaid  
+          class: mermaid  
+          format: !!python/name:pymdownx.superfences.fence_code_format  
+plugins:  
+  - search  
+  - glightbox  
+  - ezlinks:  
+        wikilinks: true  
+  - awesome-pages:  
+      collapse_single_pages: true  
+  - embed_file:  
+      callouts: true  
+      custom-attributes: 'assets/css/custom_attributes.css'  
+      language_message: 'ERROR 404 : NOT FOUND'  
+  - callouts  
+  - custom-attributes:  
+      file: 'assets/css/custom_attributes.css'  
+  - meta-descriptions  
+  - exclude:  
+      glob:   
+        - "*obsidian*"  
+  - tags:  
+      tags_file: tags.md  
+hooks:  
+  - overrides/hooks/on_page_markdown.py  
+  - overrides/hooks/on_env.py  
+  - overrides/hooks/on_files.py  
+extra_javascript:  
+  - https://cdn.jsdelivr.net/gh/ObsidianPublisher/assets@main/dist/javascript.js  
+  - https://polyfill.io/v3/polyfill.min.js?features=es6  
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js  
+extra_css:  
+    - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css  
+    - https://cdn.jsdelivr.net/gh/ObsidianPublisher/assets@main/dist/styles.css  
+    - assets/css/admonition.css  
+    - assets/css/custom_attributes.css  
+    - assets/css/customization.css  
+extra:  
+  comments: false  
+  generate_graph: false  
+  SEO: 'assets/meta/SEO.png'  
+  attachments: 'assets/img'  
+  no-auto-h1: true  
+  blog_list:  
+    pagination: false  
+    pagination_message: false  
+    pagination_translation: ''  
+    no_page_found: ''  
+  hooks:  
+    strip_comments: true  
+    fix_heading: false  
+```
