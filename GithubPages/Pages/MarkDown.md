@@ -11,11 +11,15 @@ repo:
 
 # GitHub Styling Querks
 
+## visible in github md page
+
 > **Note**<br>
 > This is a note
 
 > **Warning**<br>
     This is a warning
+
+## visible online
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">
 I am a success message
