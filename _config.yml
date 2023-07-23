@@ -10,9 +10,15 @@ kramdown:
   syntax_highlighter: rouge
 markdown: kramdown
 title: Paxton's Notes
-remote_theme: pages-themes/leap-day@v0.2.0
-plugins:
-- jekyll-remote-theme
+description: Coding Notes
+theme: just-the-docs
+url: https://14paxton.github.io
+aux_links:
+  Template Repository: https://14paxton.github.io
+# remote_theme: pages-themes/leap-day@v0.2.0
+# plugins:
+# - jekyll-remote-theme
 relative_links:
   enabled: true
   collections: true
+
