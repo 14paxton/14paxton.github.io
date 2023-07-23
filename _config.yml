@@ -19,5 +19,6 @@ callouts:
 plugins:
   - jekyll-default-layout
   - jekyll-github-metadata
+  - jekyll-plugin-boilerplate
 
 

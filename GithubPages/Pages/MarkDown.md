@@ -1,7 +1,8 @@
 ---
 title: MarkDown
 permalink: GithubPages/Pages
-category: GitHubPages/Pages
+category: GithubPages/Pages
+parent: GHP
 nav_order: 2
 share: true
 repo:
