@@ -1,12 +1,16 @@
----  
-title: Jekyll  
-category: GithubPages/Pages  
-share: true  
-repo:  
-owner: 14paxton  
-repo: 14paxton.github.io  
-branch: master  
-autoclean: false
+---
+title: Jekyll
+permalink: GithubPages/Pages
+category: GithubPages/Pages
+parent: GHP
+nav_order: 1
+has_children: false
+share: true
+repo:
+  owner: 14paxton
+  repo: 14paxton.github.io
+  branch: master
+  autoclean: false
 ---
 
 # [Setup](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll)

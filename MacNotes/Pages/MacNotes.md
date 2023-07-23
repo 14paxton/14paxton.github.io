@@ -1,7 +1,8 @@
 ---
 title: MacNotes
 layout: default
-nav_order: 2
+parent: index
+nav_order: 1
 has_children: false
 permalink: MacNotes/Pages
 category: MacNotes/Pages
