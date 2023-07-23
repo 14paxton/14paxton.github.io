@@ -6,4 +6,5 @@ gem "jekyll-default-layout"
 gem "jekyll-github-metadata"
 # gem 'coderay', '~> 1.1', '>= 1.1.3'
 
-gem 'just-the-docs', '~> 0.5.4'
+gem "just-the-docs", "0.5.4" # pinned to the current release
+# gem "just-the-docs"        # always download the latest release
