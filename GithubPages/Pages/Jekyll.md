@@ -11,9 +11,15 @@ autoclean: false
 
 # [Setup](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll)
 
+# [GitHubActions](https://jekyllrb.com/docs/continuous-integration/github-actions/)
+
+# [Jekyll Docker Image](https://github.com/envygeeks/jekyll-docker/blob/master/README.md)
+
+#[FrontMatter Defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/)
+
 ---
 
-# [YML Config]()
+# [YML Config](https://jekyllrb.com/docs/configuration/default/)
 
 ## Where things are
 
