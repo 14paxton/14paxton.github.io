@@ -12,9 +12,13 @@ markdown: kramdown
 title: Paxton's Notes
 description: Coding Notes
 theme: just-the-docs
-url: https://14paxton.github.io
+url: https://just-the-docs.github.io
+
 aux_links:
-  Template Repository: https://14paxton.github.io
+  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+# url: https://14paxton.github.io
+# aux_links:
+#   Template Repository: https://14paxton.github.io
 # remote_theme: pages-themes/leap-day@v0.2.0
 # plugins:
 # - jekyll-remote-theme

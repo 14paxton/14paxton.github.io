@@ -1,4 +1,4 @@
----  
+---
 title: index    
 share: true    
 repo:    
@@ -6,7 +6,7 @@ repo:
     repo: 14paxton.github.io    
     branch: master    
     autoclean: false
----    
+---
 
 - [GitHubPages](./GithubPages/Pages/GHP.md)
     - [Jekyll](./GithubPages/Pages/Jekyll.md)
