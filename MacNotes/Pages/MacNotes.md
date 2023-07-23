@@ -1,6 +1,9 @@
----  
-
-title: MacNotes  
+---
+title: MacNotes
+layout: default
+nav_order: 2
+has_children: false
+permalink: MacNotes/Pages 
 category: MacNotes/Pages  
 share: true  
 repo:  
