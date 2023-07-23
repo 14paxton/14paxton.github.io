@@ -2,7 +2,7 @@
 title: Note Nav
 layout: default
 nav_order: 1
-has_children: true
+has_children: false
 share: true    
 repo:    
     owner: 14paxton    
