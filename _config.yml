@@ -44,7 +44,6 @@ callouts:
 
 plugins:
   - jekyll-default-layout
-  - rouge
 #  - jekyll-github-metadata
 #  - kramdown-syntax-coderay
 
