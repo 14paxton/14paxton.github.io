@@ -1,10 +1,10 @@
 title: Paxton's Notes
 description: Coding Notes
 theme: just-the-docs
-source: .
-incremental: false
-gist:
-  noscript: false
+#source: .
+#incremental: false
+#gist:
+#  noscript: false
 
 url: https://paxtonb.com
 #url: https://14paxton.github.io
@@ -21,12 +21,12 @@ kramdown:
   syntax_highlighter: coderay
 #  syntax_highlighter_opts:
 #    line_numbers: table
-  bold_every: 5
-  auto_ids          : true
-  entity_output     : as_char
-  toc_levels        : [1, 2, 3, 4, 5, 6]
+#  bold_every: 5
+#  auto_ids          : true
+#  entity_output     : as_char
+#  toc_levels        : [1, 2, 3, 4, 5, 6]
   smart_quotes      : lsquo,rsquo,ldquo,rdquo
-  hard_wrap         : false
+  hard_wrap         : true
   footnote_nr       : 1
   show_warnings     : true
 
@@ -44,8 +44,8 @@ plugins:
   - jekyll-github-metadata
   - kramdown-syntax-coderay
 
-relative_links:
-  enabled: true
-  collections: true
+#relative_links:
+#  enabled: true
+#  collections: true
 
 
