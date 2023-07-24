@@ -8,6 +8,24 @@ aux_links:
   Template Repository: https://github.com/14paxton/14paxton.github.io
 aux_links_new_tab: true
 
+# Conversion
+markdown            : kramdown
+lsi                 : false
+excerpt_separator   : "\n\n"
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: coderay
+  syntax_highlighter_opts:
+    line_numbers: table
+  bold_every: 5
+  auto_ids          : true
+  entity_output     : as_char
+  toc_levels        : [1, 2, 3, 4, 5, 6]
+  smart_quotes      : lsquo,rsquo,ldquo,rdquo
+  hard_wrap         : false
+  footnote_nr       : 1
+  show_warnings     : true
+
 # Color scheme supports "light" (default) and "dark"
 color_scheme: dark
 
@@ -19,7 +37,8 @@ callouts:
 
 plugins:
   - jekyll-default-layout
-#  - jekyll-github-metadata
-#  - jekyll-plugin-boilerplate
+  - jekyll-github-metadata
+  - jekyll-plugin-boilerplate
+  - kramdown-syntax-coderay
 
 
