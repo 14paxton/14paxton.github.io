@@ -99,6 +99,8 @@ strict_variables: false
 
 ## Markdown Processors
 
+> [Options](https://kramdown.gettalong.org/options.html)
+
 ```yaml
 kramdown:
 auto_ids: true
