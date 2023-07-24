@@ -19,4 +19,4 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 3 # Increment this number if you need to re-download cached gems
       - name: Build with Jekyll
-        run: bundler install && bundle exec jekyll build
+        run: gem update --system && bundle install && bundle exec jekyll build

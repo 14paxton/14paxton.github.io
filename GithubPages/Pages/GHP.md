@@ -4,12 +4,12 @@ permalink: GithubPages/Pages
 category: GithubPages/Pages
 nav_order: 2
 has_children: true
-share: true    
-repo:    
-    owner: 14paxton    
-    repo: 14paxton.github.io    
-    branch: master    
-    autoclean: false
+share: true
+repo:
+  owner: 14paxton
+  repo: 14paxton.github.io
+  branch: master
+  autoclean: false
 ---
 
 # [QUICKSTART](https://docs.github.com/en/pages/quickstart)
@@ -82,7 +82,10 @@ relative_links:
         2606:50c0:8003::153  
         ```  
 
-    **Warning:** We strongly recommend that you do not use wildcard DNS records, such as `*.example.com`. These records put you at an immediate risk of domain takeovers, even if you verify the domain. For example, if you verify `example.com` this prevents someone from using `a.example.com` but they could still take over `b.a.example.com` (which is covered by the wildcard DNS record). For more information, see "[Verifying your custom domain for GitHub Pages](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages)."  
+   **Warning:**We strongly recommend that you do not use wildcard DNS records, such as`*.example.com`. These records put you at an immediate risk of domain takeovers, even if you verify the domain.
+   For example, if you verify`example.com`this prevents someone from using`a.example.com`but they could still take over`b.a.example.com`(which is covered by the wildcard DNS record). For more
+   information,
+   see "[Verifying your custom domain for GitHub Pages](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages)."
 
 6. Open Terminal.
 
@@ -138,7 +141,13 @@ _documentation_](https://help.github.com/articles/setting-up-a-www-subdomain/)_.
 >
 > NOTE #1: Even though it’s very obvious, you should replace`_YOUR-GITHUB-USERNAME_`and`your-domain.com`with your personal github username and domain name you are trying to use respectively.
 
-  
+---
+
+# Template
+
+## [just-the-docs (current)](https://github.com/just-the-docs/just-the-docs)
+
+> [template readme](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo)
 ---  
 
 # [Themes](https://pages.github.com/themes/)
