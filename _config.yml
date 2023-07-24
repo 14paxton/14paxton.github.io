@@ -17,10 +17,10 @@ markdown            : kramdown
 lsi                 : false
 excerpt_separator   : "\n\n"
 kramdown:
-  math_engine: mathjax
-  enable_coderay         : true
-  syntax_highlighter     : coderay
-  syntax_highlighter_opts: {}
+  syntax_highlighter: coderay
+  syntax_highlighter_opts:
+    line_numbers: table
+    bold_every: 5
   #  bold_every: 5
 #  auto_ids          : true
 #  entity_output     : as_char
