@@ -6,19 +6,19 @@ url: https://paxtonb.com
 #url: https://14paxton.github.io
 aux_links:
   Template Repository: https://github.com/14paxton/14paxton.github.io
-#aux_links_new_tab: true
+aux_links_new_tab: true
 
 # Color scheme supports "light" (default) and "dark"
-#color_scheme: dark
-#
-#callouts:
-#  warning:
-#    title: Warning
-#    color: red
+color_scheme: dark
+
+callouts:
+  warning:
+    title: Warning
+    color: red
 
 
-#plugins:
-#  - jekyll-default-layout
+plugins:
+  - jekyll-default-layout
 #  - jekyll-github-metadata
 #  - jekyll-plugin-boilerplate
 
