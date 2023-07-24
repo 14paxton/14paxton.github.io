@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'json', '~> 2.6', '>= 2.6.3'
 gem 'jekyll', '~> 4.3', '>= 4.3.2'
-# gem 'webrick', '~> 1.8', '>= 1.8.1'
+gem 'webrick', '~> 1.8', '>= 1.8.1'
 gem 'jekyll-default-layout', '~> 0.1.5'
 # gem 'jekyll-plugin-boilerplate', '~> 0.0.2'
 # gem 'jekyll-github-metadata', '~> 2.16'
