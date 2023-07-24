@@ -41,7 +41,7 @@ callouts:
 
 plugins:
   - jekyll-default-layout
-  - jekyll-github-metadata
+#  - jekyll-github-metadata
   - kramdown-syntax-coderay
 
 #relative_links:
