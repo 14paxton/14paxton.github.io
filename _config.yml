@@ -19,10 +19,11 @@ lsi                 : false
 excerpt_separator   : "\n\n"
 incremental         : false
 kramdown:
-  syntax_highlighter: coderay
-  syntax_highlighter_opts:
-    line_numbers: table
-    bold_every: 5
+  syntax_highlighter: rouge
+#  syntax_highlighter: coderay
+#  syntax_highlighter_opts:
+#    line_numbers: table
+#    bold_every: 5
   #  bold_every: 5
 #  auto_ids          : true
 #  entity_output     : as_char
@@ -43,8 +44,9 @@ callouts:
 
 plugins:
   - jekyll-default-layout
+  - rouge
 #  - jekyll-github-metadata
-  - kramdown-syntax-coderay
+#  - kramdown-syntax-coderay
 
 #relative_links:
 #  enabled: true
