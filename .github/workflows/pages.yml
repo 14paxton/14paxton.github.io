@@ -9,7 +9,7 @@ name: Deploy Jekyll site to Pages
 on:
   push:
     branches:
-      - "github-pages"
+      - "gh-pages"
     paths:
       - "./**"
 
