@@ -1,6 +1,6 @@
 ---
 title: Jekyll
-permalink: GithubPages/Pages
+permalink: GithubPages/Pages/Jekyll
 category: GithubPages/Pages
 parent: GHP
 nav_order: 2

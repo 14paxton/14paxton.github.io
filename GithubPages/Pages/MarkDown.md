@@ -1,6 +1,6 @@
 ---
 title: MarkDown
-permalink: GithubPages/Pages
+permalink: GithubPages/Pages/MarkDown
 category: GithubPages/Pages
 parent: GHP
 nav_order: 2
