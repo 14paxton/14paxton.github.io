@@ -13,26 +13,35 @@ aux_links_new_tab: true
 
 # Conversion
 markdown            : kramdown
-highlighter         : rouge
+#highlighter         : rouge
+highlighter         : coderay
 lsi                 : false
 excerpt_separator   : "\n\n"
 incremental         : false
 kramdown:
-  syntax_highlighter: rouge
-#  syntax_highlighter: coderay
+#  syntax_highlighter: rouge
 #  syntax_highlighter_opts:
-#    line_numbers: table
-#    bold_every: 5
-  #  bold_every: 5
-#  auto_ids          : true
-#  entity_output     : as_char
-#  toc_levels        : [1, 2, 3, 4, 5, 6]
-#  smart_quotes      : lsquo,rsquo,ldquo,rdquo
-#  hard_wrap         : true
-#  footnote_nr       : 1
-#  show_warnings     : true
+#    block:
+#      line_numbers: true
+  syntax_highlighter: coderay
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+    line_numbers: table
+    bold_every: 5
+  auto_ids          : true
+  entity_output     : as_char
+  toc_levels        : [1, 2, 3, 4, 5, 6]
+  smart_quotes      : lsquo,rsquo,ldquo,rdquo
+  hard_wrap         : true
+  footnote_nr       : 1
+  show_warnings     : true
 
+# just-the-docs template config
 # Color scheme supports "light" (default) and "dark"
+compress_html:
+  ignore:
+    envs: all
 color_scheme: dark
 
 callouts:
@@ -43,8 +52,8 @@ callouts:
 
 plugins:
   - jekyll-default-layout
-#  - jekyll-github-metadata
-#  - kramdown-syntax-coderay
+  - jekyll-github-metadata
+  - kramdown-syntax-coderay
 
 relative_links:
   enabled: true
