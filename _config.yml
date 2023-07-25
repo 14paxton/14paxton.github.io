@@ -12,13 +12,16 @@ aux_links:
 aux_links_new_tab: true
 
 # Conversion
-markdown: kramdown
-highlighter: rouge
+#markdown: kramdown
+#highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 kramdown:
-  syntax_highlighter: rouge
+  syntax_highlighter: coderay
+  syntax_highlighter_opts:
+    line_numbers: table
+    bold_every: 5
 
 #  syntax_highlighter: coderay
 #  syntax_highlighter_opts:
@@ -37,7 +40,7 @@ kramdown:
 plugins:
   - jekyll-default-layout
 #  - jekyll-github-metadata
-#  - kramdown-syntax-coderay
+  - kramdown-syntax-coderay
 
 relative_links:
   enabled: true
