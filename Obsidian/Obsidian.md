@@ -5,6 +5,8 @@ permalink: Obsidian
 category: Obsidian  
 share: true    
 shortRepo: ghpages       
+repo:        
+    autoclean: true  
 ---  
   
 # Quick Scripts    
