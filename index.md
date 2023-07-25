@@ -5,4 +5,4 @@ share: true
 shortRepo: ghpages  
 ---
 
-![](FrontEnd_CSS.pdf)
+<img height="50" src="FrontEnd_CSS.pdf" width="50"/>
