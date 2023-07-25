@@ -9,9 +9,9 @@ share: true
 shortRepo: ghpages      
 ---  
   
-# GitHub Styling Querks  
+# GitHub Styling Quirks  
   
-## visible in github md page  
+## visible in GitHub md page  
   
 > **Note**<br>  
 > This is a note  
