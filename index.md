@@ -2,13 +2,13 @@
 title: NoteNav  
 layout: default  
 nav_order: 1  
-has_children: true  
+has_children: false  
 share: true      
 repo:      
     owner: 14paxton      
     repo: 14paxton.github.io      
     branch: master      
-    autoclean: false  
+    autoclean: true  
 ---  
   
   
