@@ -144,6 +144,7 @@ _documentation_](https://help.github.com/articles/setting-up-a-www-subdomain/)_.
 ---
 
 # [DEPLOY](https://github.com/actions/deploy-pages)
+
 > [Ex.](https://github.com/JamesIves/github-pages-deploy-action)
 
 ```yaml
