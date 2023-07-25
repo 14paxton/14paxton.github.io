@@ -1,6 +1,7 @@
 ---  
 title: Algorithms    
 layout: default  
+parent: Java  
 permalink: JavaNotes/Algorithms  
 category: JavaNotes  
 share: true    
