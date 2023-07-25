@@ -8,7 +8,6 @@ shortRepo:
 - java  
 ---  
   
-testing full fuck fuck fuck  
 # Algos  
   
 ## binary search  
