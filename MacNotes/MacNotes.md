@@ -8,9 +8,6 @@ shortRepo: ghpages
 ---
 
 
-1. TOC
-   {:toc}
-
 <details open markdown="block">
   <summary>
     Table of contents
