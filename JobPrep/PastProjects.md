@@ -4,7 +4,6 @@ permalink: JobPrep/PastProjects
 category: JobPrep  
 parent: index  
 layout: default  
-nav_order: 2  
 has_children: false  
 share: true  
 shortRepo:   
