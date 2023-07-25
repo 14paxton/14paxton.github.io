@@ -13,7 +13,7 @@ shortRepo: ghpages
 ___    
   
 # `_config.yml`  
-  
+f  
 - my config for githubpages  
   
 ```yml    
@@ -179,6 +179,8 @@ jobs:
 ## [just-the-docs (current)](https://github.com/just-the-docs/just-the-docs)  
   
 > [template readme](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo)  
+  
+> [YAML Example](https://github.com/just-the-docs/just-the-docs/blob/f246498a8fab71a8716194aaca8ef690bbdc1b94/_config.yml)  
 ---    
   
 # [Themes](https://pages.github.com/themes/)  
