@@ -4,7 +4,6 @@ layout: default
 permalink: GithubPages/MarkDown  
 parent: GHP  
 has_children: false  
-nav_order: 3  
 share: true    
 shortRepo: ghpages      
 ---  
