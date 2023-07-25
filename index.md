@@ -1,10 +1,11 @@
----  
-layout: default    
-permalink: Learning  
-has_children: true    
-share: true    
-shortRepo: ghpages
----  
+---
+title:        index
+layout:       default
+permalink:    ./index
+has_children: true
+share:        true
+shortRepo:    ghpages
+---
 
 
 <details markdown="block">    
