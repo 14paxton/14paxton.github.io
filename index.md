@@ -2,10 +2,18 @@
 layout: default   
 has_children: true  
 share: true    
-delete: false  
 shortRepo: ghpages  
+autoclean: true  
 ---  
   
-```pdf  
-  
-```
+<embed src="./FrontEnd_CSS.pdf" width="500" height="375" type="application/pdf">    
+    
+---    
+***    
+    
+<embed src="/docs/images/FrontEnd_CSS.pdf" width="500" height="375" type="application/pdf">    
+    
+---    
+***    
+    
+<embed src="./docs/images/FrontEnd_CSS.pdf" width="500" height="375" type="application/pdf">
