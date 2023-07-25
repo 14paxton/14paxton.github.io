@@ -1,7 +1,6 @@
 ---
 layout:       default
 title:        PersonalDocsAndStuff
-permalink:    index
 nav_order:    1
 has_children: true
 share:        true
