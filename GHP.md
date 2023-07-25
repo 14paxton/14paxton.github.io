@@ -2,6 +2,7 @@
 title: GHP  
 layout: default  
 permalink: GithubPages  
+nav_order: 3  
 has_children: true  
 share: true    
 shortRepo: ghpages       
