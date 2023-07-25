@@ -1,5 +1,7 @@
 ---  
 title: Algorithms    
+layout: default  
+permalink: JavaNotes/Algorithms  
 category: JavaNotes  
 share: true    
 share: true    
