@@ -8,8 +8,6 @@ share: true
 shortRepo:   
 - default    
 - java    
-repo:    
-  autoclean: true    
 ---  
   
 # Optionals  
