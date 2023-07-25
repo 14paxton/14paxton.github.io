@@ -2,7 +2,7 @@
 title: MarkDown
 permalink: GithubPages/MarkDown
 parent: GHP
-nav_order: 2
+has_children: false
 share: true
 shortRepo: ghpages   
 ---

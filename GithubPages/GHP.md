@@ -1,7 +1,6 @@
 ---
 title: GHP
 permalink: GithubPages
-nav_order: 2
 has_children: true
 share: true
 shortRepo: ghpages   

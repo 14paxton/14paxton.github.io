@@ -1,11 +1,19 @@
 ---
 title: MacNotes
 layout: default
-nav_order: 2
+has_children: false
 permalink: MacNotes/MacNotes
 share: true
 shortRepo: ghpages
 ---
+# Navigation Structure
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+   {:toc}
 
 # QUICK SCRIPTS
 
@@ -83,7 +91,7 @@ parallel can cause all kinds of trouble.
 
 If you need to have ruby first in your PATH, run:
 
-```ruby
+```shell
 echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.zshrc  
 ```
 

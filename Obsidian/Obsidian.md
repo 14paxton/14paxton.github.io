@@ -1,6 +1,7 @@
 ---
 title: Obsidian
 layout: default
+has_children: false
 permalink: Obsidian/Obsidian
 share: true
 shortRepo: ghpages
