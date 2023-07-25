@@ -3,7 +3,6 @@ title: Jekyll
 layout: default  
 permalink: GithubPages/Jekyll  
 parent: GHP  
-nav_order: 2  
 has_children: false  
 share: true    
 shortRepo: ghpages     
