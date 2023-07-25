@@ -46,9 +46,9 @@ relative_links:
 # just-the-docs template config
 # Color scheme supports "light" (default) and "dark"
 
-#  compress_html:
-#    ignore:
-#      envs: all
+compress_html:
+  ignore:
+    envs: all
 
 color_scheme: dark
 
