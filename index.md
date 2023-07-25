@@ -1,9 +1,11 @@
----
-layout: default
-has_children: true
-share: true
+---  
+layout: default   
+has_children: true  
+share: true    
+delete: false  
 shortRepo: ghpages  
----
-
-![[FrontEnd_CSS.pdf]]
-
+---  
+  
+```pdf  
+  
+```
