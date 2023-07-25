@@ -15,9 +15,11 @@ shortRepo:    ghpages
 1. TOC
 {:toc}
 </details>
+
 <br/>
 
-***[]()
+***
+
 <br/>
 
 # Multiple Cursors
