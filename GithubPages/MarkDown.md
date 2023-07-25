@@ -1,15 +1,10 @@
 ---
 title: MarkDown
-permalink: GithubPages/Pages/MarkDown
-category: GithubPages/Pages
+permalink: GithubPages/MarkDown
 parent: GHP
 nav_order: 2
 share: true
-repo:
-  owner: 14paxton
-  repo: 14paxton.github.io
-  branch: master
-  autoclean: false  
+shortRepo: ghpages   
 ---
 
 # GitHub Styling Querks

@@ -1,8 +1,7 @@
 ---
 title: Jekyll
 layout: default
-permalink: GithubPages/Jekyll
-category: GithubPages
+permalink: GithubPages/GHP
 parent: GHP
 nav_order: 2
 has_children: false

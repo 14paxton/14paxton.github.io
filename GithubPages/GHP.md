@@ -1,15 +1,10 @@
 ---
 title: GHP
-permalink: GithubPages/Pages
-category: GithubPages/Pages
+permalink: GithubPages
 nav_order: 2
 has_children: true
 share: true
-repo:
-  owner: 14paxton
-  repo: 14paxton.github.io
-  branch: master
-  autoclean: false
+shortRepo: ghpages   
 ---
 
 # [QUICKSTART](https://docs.github.com/en/pages/quickstart)
