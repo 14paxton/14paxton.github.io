@@ -8,4 +8,4 @@ shortRepo: ghpages
 ---  
   
   
-![](./PersonalMusings/JobPrep/learning/JAVA.pdf)
+![](./PersonalMusings/JobPrep/learning/HTTP_Verbs.pdf)
