@@ -22,6 +22,9 @@ excerpt_separator:       "\n\n"
 incremental:             false
 kramdown:
   syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
 
   #  syntax_highlighter: coderay
   #  syntax_highlighter_opts:
