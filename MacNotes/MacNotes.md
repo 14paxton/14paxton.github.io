@@ -6,9 +6,7 @@ has_children: false
 permalink: MacNotes/  
 category: MacNotes  
 share: true    
-shortRepo: ghpages       
-repo:        
-    autoclean: true  
+shortRepo: ghpages      
 ---  
   
 # QUICK SCRIPTS  
