@@ -104,3 +104,10 @@ pandoc -s example30.docx --wrap=none --reference-links -t markdown -o example35.
         pandoc -f docx -t markdown "$line" -o $the_filename.md    
         done    
       ```  
+  
+> Example Used  
+  
+```bash  
+ #!/bin/bash  
+pandoc -t markdown_strict -s BrandonPaxton.docx --wrap=none --reference-links -t markdown -o BPResume.md;  
+```  
