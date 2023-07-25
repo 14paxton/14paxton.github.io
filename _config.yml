@@ -1,24 +1,30 @@
-title: Paxton's Notes
-description: Coding Notes
-theme: just-the-docs
-source: .
+title:                   Paxton's Notes
+description:             Coding Notes
+theme:                   just-the-docs
+source:                  .
+baseurl:                 "" # the subpath of your site, e.g. /blog
+url:                     https://paxtonb.com # the base hostname & protocol for your site, e.g. http://example.com
+repository:              14paxton.github.io/14paxton.github.io  # for github-metadata
 gist:
   noscript: false
 
-url: https://paxtonb.com
-#url: https://14paxton.github.io
+permalink:               pretty
+
 aux_links:
   Template Repository: https://github.com/14paxton/14paxton.github.io
-aux_links_new_tab: true
+aux_links_new_tab:       true
 
 # Conversion
-markdown: kramdown
-highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
+markdown:                kramdown
+highlighter:             rouge
+lsi:                     false
+excerpt_separator:       "\n\n"
+incremental:             false
 kramdown:
   syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
 
 #  syntax_highlighter: coderay
 #  syntax_highlighter_opts:
@@ -36,30 +42,60 @@ kramdown:
 
 plugins:
   - jekyll-default-layout
-#  - jekyll-github-metadata
+  - jekyll-github-metadata
 #  - kramdown-syntax-coderay
 
 #relative_links:
 #  enabled: true
 #  collections: true
 
+################################
 # just-the-docs template config
+
+# Back to top link
+back_to_top:             true
+back_to_top_text:        "Back to top"
+
+# Enable or disable heading anchors
+heading_anchors:         true
+# For copy button on code
+enable_copy_code_button: true
+
 # Color scheme supports "light" (default) and "dark"
+color_scheme:            dark
 
-#compress_html:
-#  ignore:
-#    envs: all
+#To avoid non-conforming HTML and unsatisfactory layout, HTML compression can be turned off by
+#using the following configuration option:
+compress_html:
+  clippings:  all
+  comments:   all
+  endings:    all
+  startings: [ ]
+  blanklines: false
+  profile:    false
+  # ignore:
+  #   envs: all
 
-color_scheme: dark
-
+callouts_level:          quiet # or loud
 callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
   warning:
     title: Warning
     color: red
 
 # Enable or disable the site search
 # Supports true (default) or false
-search_enabled: true
+search_enabled:          true
 
 search: # Split pages into sections that can be searched individually
   # Supports 1 - 6, default: 2
@@ -83,5 +119,5 @@ search: # Split pages into sections that can be searched individually
   # Enable or disable the search button that appears in the bottom right corner of every page
   # Supports true or false (default)
   button: true
-
+#############################
 
