@@ -7,4 +7,6 @@ share: true
 shortRepo: ghpages  
 ---  
   
-  
+
+![[./PersonalMusings/JobPrep/learning/100SQLConcepts.pdf|100SQLConcepts.pdf]]
+
