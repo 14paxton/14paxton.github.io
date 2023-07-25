@@ -23,9 +23,11 @@ kramdown:
     line_numbers: ~
     block:
       css: class
-      default_lang: ruby
       wrap: span
-      line_numbers: null
+      line_numbers: false
+    coderay_wrap: span
+    coderay_line_numbers: ~
+    coderay_css: class
 
 #  syntax_highlighter: coderay
 #  syntax_highlighter_opts:
