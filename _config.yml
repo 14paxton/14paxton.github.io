@@ -37,25 +37,26 @@ kramdown:
 
 plugins:
   - jekyll-default-layout
-  - jekyll-github-metadata
-  - kramdown-syntax-coderay
+#  - jekyll-github-metadata
+#  - kramdown-syntax-coderay
 
 relative_links:
   enabled: true
   collections: true
 
-  # just-the-docs template config
-  # Color scheme supports "light" (default) and "dark"
+# just-the-docs template config
+# Color scheme supports "light" (default) and "dark"
+
 #  compress_html:
 #    ignore:
 #      envs: all
 
-  color_scheme: dark
+color_scheme: dark
 
-  callouts:
-    warning:
-      title: Warning
-      color: red
+callouts:
+  warning:
+    title: Warning
+    color: red
 
   # Enable or disable the site search
   # Supports true (default) or false
