@@ -1,7 +1,7 @@
 ---  
 title: GHP  
 layout: default  
-permalink: GithubPages  
+permalink: GithubPages/GHP  
 category: GithubPages  
 has_children: true  
 share: true    
