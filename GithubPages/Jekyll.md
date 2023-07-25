@@ -7,9 +7,7 @@ parent: GHP
 nav_order: 2  
 has_children: false  
 share: true    
-shortRepo: ghpages       
-repo:        
-    autoclean: true  
+shortRepo: ghpages     
 ---  
   
 # [YML Config](https://jekyllrb.com/docs/configuration/default/)  
