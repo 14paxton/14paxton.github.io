@@ -21,6 +21,7 @@ lsi:                     false
 excerpt_separator:       "\n\n"
 incremental:             false
 kramdown:
+  gfm_quirks: [ paragraph_end ]
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     block:
@@ -36,13 +37,14 @@ kramdown:
   entity_output:      as_char
   toc_levels: [ 1, 2, 3, 4, 5, 6 ]
   smart_quotes:       lsquo,rsquo,ldquo,rdquo
-  hard_wrap:          true
+  hard_wrap: false
   footnote_nr:        1
   show_warnings:      true
 
 plugins:
   - jekyll-default-layout
   - jekyll-github-metadata
+  - kramdown-parser-gfm
 #  - kramdown-syntax-coderay
 
 #relative_links:
