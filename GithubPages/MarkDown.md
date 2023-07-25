@@ -9,6 +9,22 @@ share: true
 shortRepo: ghpages      
 ---  
   
+    
+<details markdown="block">    
+<summary>    
+Table of contents    
+</summary>    
+{: .text-delta }    
+1. TOC    
+{:toc}    
+</details>    
+    
+<br/>    
+    
+***    
+    
+<br/>    
+  
 # GitHub Styling Quirks  
   
 ## visible in GitHub md page  
