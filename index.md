@@ -5,4 +5,5 @@ share: true
 shortRepo: ghpages  
 ---
 
-<img src="./docs/images/FrontEnd_CSS.pdf"/>
+![](./docs/images/FrontEnd_CSS.pdf)
+[FrontEnd_CSS.pdf](docs%2Fimages%2FFrontEnd_CSS.pdf)
