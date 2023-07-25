@@ -111,8 +111,6 @@ autoclean: true
     
 ---    
     
-
 # SQL_Concepts    
     
 <embed src="/assets/images/SQL_Concepts.pdf" width="80%" height="600" type="application/pdf">" width="80%" height="600" type="application/pdf">
-
