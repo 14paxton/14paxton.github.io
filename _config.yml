@@ -19,9 +19,7 @@ excerpt_separator: "\n\n"
 incremental: false
 kramdown:
   syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    block:
-      line_numbers: true
+
 #  syntax_highlighter: coderay
 #  syntax_highlighter_opts:
 #    line_numbers: table
