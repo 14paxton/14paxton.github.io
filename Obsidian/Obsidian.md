@@ -7,6 +7,19 @@ share: true
 shortRepo: ghpages
 ---
 
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+<br/>
+
+***
+<br/>
+
 # Multiple Cursors
 
 Obsidian lets you edit text in multiple places at the same time using multiple cursors. You can add additional cursors by holding`Alt`(or`Option`on macOS) and selecting another position in the note.

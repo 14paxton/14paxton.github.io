@@ -7,7 +7,6 @@ share: true
 shortRepo: ghpages
 ---
 
-
 <details open markdown="block">
   <summary>
     Table of contents
@@ -16,6 +15,11 @@ shortRepo: ghpages
 1. TOC
 {:toc}
 </details>
+<br/>
+
+***
+
+<br/>
 
 # QUICK SCRIPTS
 
