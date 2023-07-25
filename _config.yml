@@ -21,13 +21,8 @@ kramdown:
   syntax_highlighter: coderay
   syntax_highlighter_opts:
     line_numbers: ~
-    block:
-      css: class
-      wrap: span
-      line_numbers: false
-    coderay_wrap: span
-    coderay_line_numbers: ~
-    coderay_css: class
+    wrap: span
+    css: class
 
 #  syntax_highlighter: coderay
 #  syntax_highlighter_opts:
