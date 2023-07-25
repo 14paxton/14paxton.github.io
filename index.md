@@ -4,7 +4,6 @@ permalink: Learning
 has_children: true    
 share: true    
 shortRepo: ghpages    
-autoclean: true    
 ---  
   
     
