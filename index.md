@@ -1,6 +1,5 @@
 ---  
-layout: default    
-nav_order: 1    
+layout: default   
 has_children: true  
 share: true    
 shortRepo: ghpages  
