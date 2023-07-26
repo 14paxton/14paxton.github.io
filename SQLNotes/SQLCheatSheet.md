@@ -1,4 +1,5 @@
 ---
+title:        SQLCheatSheet
 permalink:    SQLNotes/
 category:     SQLNotes
 parent:       SQLNotes

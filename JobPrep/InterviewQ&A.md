@@ -1,3 +1,16 @@
+---
+title:        InterviewQ&A
+permalink:    JobPrep/PastProjects
+category:     JobPrep
+parent:       PersonalDocsAndStuff
+layout:       default
+has_children: false
+share:        true
+shortRepo:
+  - default
+  - jobprep    
+---
+
 <details markdown="block">    
 <summary>    
 Table of contents    

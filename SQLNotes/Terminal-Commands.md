@@ -1,4 +1,5 @@
 ---
+title:        Terminal-Commands
 permalink:    SQLNotes/
 category:     SQLNotes
 parent:       SQLNotes

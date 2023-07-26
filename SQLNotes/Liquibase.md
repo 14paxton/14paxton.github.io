@@ -1,4 +1,5 @@
 ---
+title:        Liquibase
 permalink:    SQLNotes/
 category:     SQLNotes
 parent:       SQLNotes

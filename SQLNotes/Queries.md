@@ -1,4 +1,5 @@
 ---
+title:        Queries
 permalink:    SQLNotes/
 category:     SQLNotes
 parent:       SQLNotes
