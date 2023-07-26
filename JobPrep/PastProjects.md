@@ -1,4 +1,4 @@
----  
+---
 title:        PastProjects  
 permalink:    JobPrep/PastProjects  
 category:     JobPrep  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - default  
   - jobprep    
----  
+---
   
   
 <details markdown="block">      
@@ -66,10 +66,12 @@ b. Difficulties
            clicked again will select new records shown)    
   
 ### 3. - [Dynamic Ellipsis Component -- ellipsismodifier.js](https://github.com/14paxton/DynamicEllipsis)  
-  
-a. Adds an ellipsis by text count or if text count is not set will    
+
+a.
+Adds an ellipsis by text count or if text count is not set will    
 create ellipsis when text overfills div, will dynamically add    
-ellipsis if page is resized  
+ellipsis if page is resized
+
   
 ### 4. [Date Range Picker -- presetdaterangepicker.js](https://github.com/14paxton/DateRangePicker)  
   
@@ -115,27 +117,30 @@ b. Difficulties
                read message it downloads and saves file to temp    
                directory, then encodes file as base64 to attach to    
                email    
-  
-### 2. - [Find way to test gorm where/ detached criteria and hibernate queries](https://github.com/14paxton/PersonalGrailsNotes/blob/main/Testing.md#mocking-hibernate-used-to-test-methods-using-where-queriers--detached-criteria--criteria-builder)  
-  
--- catalogdetailservicespec.groovy  
-  
-a. Dug through documentation for hibernate and how it works and    
+
+### 2. - [Find way to test gorm where/ detached criteria and hibernate queries](https://github.com/14paxton/PersonalGrailsNotes/blob/main/Testing.md#mocking-hibernate-used-to-test-methods-using-where-queriers--detached-criteria--criteria-builder)
+
+-- catalogdetailservicespec.groovy
+
+a.
+Dug through documentation for hibernate and how it works and    
 came up with a way to mock and set hibernateDataStore and    
-PlatformTransactionManager  
-  
-### 3. - [Found and configured plugin to create multiple fully qualified domain objects at once](https://github.com/14paxton/PersonalGrailsNotes/blob/main/Testing.md#using-test-data-from-buildtest-plugin)  
-  
-### 4. Integration with office 365 having scheduled assessments update both  
-  
-interviewer and interviewees outlook calendar  
-  
-### 5. - [created async service for processessing role changes for batch user updates](https://gist.github.com/14paxton/ef4f6e91fa7fa44015c41f26a1caf3ae)  
-  
-- [comparing role groups](https://gist.github.com/14paxton/b7ff93091f4db71beffb0a37140fa0f2)  
-  
-### 6. - [optimized search functionality by limiting db calls](https://gist.github.com/14paxton/b5a8d600dc4066010b4067bd8968f613)  
-  
+PlatformTransactionManager
+
+### 3. - [Found and configured plugin
+
+to create multiple fully qualified domain objects at once](https://github.com/14paxton/PersonalGrailsNotes/blob/main/Testing.md#using-test-data-from-buildtest-plugin)
+
+### 4. Integration with office 365 having scheduled assessments update both
+
+interviewer and interviewees outlook calendar
+
+### 5. - [created async service for processessing role changes for batch user updates](https://gist.github.com/14paxton/ef4f6e91fa7fa44015c41f26a1caf3ae)
+
+- [comparing role groups](https://gist.github.com/14paxton/b7ff93091f4db71beffb0a37140fa0f2)
+
+### 6. - [optimized search functionality by limiting db calls](https://gist.github.com/14paxton/b5a8d600dc4066010b4067bd8968f613)
+
 - [searching numerous columns](https://gist.github.com/14paxton/e72c14086f5d9a6a0c58dc8463b93561)  
   
 ### 7. - [Using elastic search created fuzzy search capability](https://github.com/14paxton/PersonalGrailsNotes/blob/main/ElasticSearch.md)  

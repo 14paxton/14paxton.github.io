@@ -1,4 +1,4 @@
----  
+---
 title:        Functions  
 permalink:    SQLNotes/Functions  
 category:     SQLNotes  

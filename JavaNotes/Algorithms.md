@@ -1,4 +1,4 @@
----  
+---
 title:     Algorithms  
 layout:    default  
 parent:    Java  
@@ -8,7 +8,7 @@ share:     true
 shortRepo:  
   - default  
   - java  
----  
+---
   
   
 <details markdown="block">      
