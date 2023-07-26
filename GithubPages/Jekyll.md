@@ -126,7 +126,7 @@ show_warnings: false
 ```    
 
     
----  
+---
 
 # [Metadata](https://jekyll.github.io/github-metadata/site.github/)
 
@@ -212,7 +212,7 @@ show_warnings: false
 ```    
 
     
----  
+---
 
 # Resources
 
