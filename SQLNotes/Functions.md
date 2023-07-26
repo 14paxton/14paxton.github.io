@@ -1,4 +1,4 @@
----  
+---
 title:        Functions  
 permalink:    SQLNotes/Functions  
 category:     SQLNotes  
@@ -11,7 +11,7 @@ shortRepo:
   - sqlnotes    
 repo:  
   autoclean: true  
----  
+---
   
 # MySQL  
   

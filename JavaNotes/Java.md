@@ -1,4 +1,4 @@
----  
+---
 title: Java  
 layout: default  
 permalink: JavaNotes/Java  
@@ -9,8 +9,7 @@ shortRepo:
 
 - default
 - java
-
----  
+---
 
 # Optionals
 
