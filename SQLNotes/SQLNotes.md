@@ -1,11 +1,9 @@
 ---  
 title:        SQLNotes  
+layout:       default  
 permalink:    SQLNotes/SQLNotes  
 category:     SQLNotes    
 has_children: true    
-children:     true  
-layout:       default  
-has_children: false  
 share:        true  
 shortRepo:  
   - default  
