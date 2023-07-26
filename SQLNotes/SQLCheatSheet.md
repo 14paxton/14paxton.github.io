@@ -30,4 +30,4 @@ shortRepo:
 
 ***
 
-![](CheatSheet.jpeg)
+![CheatSheet.jpeg](assets%2FCheatSheet.jpeg)
