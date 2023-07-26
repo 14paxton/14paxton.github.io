@@ -1,7 +1,6 @@
 
 ---
 title:        InterviewQ&A
-permalink:    JobPrep/InterviewQ&A
 category:     JobPrep
 parent:       index
 layout:       default
