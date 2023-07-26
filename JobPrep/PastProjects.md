@@ -1,8 +1,8 @@
 ---
 title:        PastProjects
 permalink:    JobPrep/PastProjects
-category:     JobPrep/
-parent:       index
+category:     JobPrep
+parent:       PersonalDocsAndStuff
 layout:       default
 has_children: false
 share:        true

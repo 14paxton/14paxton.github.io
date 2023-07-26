@@ -1,8 +1,8 @@
 ---
 title:        InterviewQ&A
 permalink:    JobPrep/InterviewQ&A
-category:     JobPrep/
-parent:       index
+category:     JobPrep
+parent:       PersonalDocsAndStuff
 layout:       default
 has_children: false
 share:        true
