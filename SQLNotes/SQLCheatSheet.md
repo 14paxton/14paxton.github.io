@@ -11,5 +11,6 @@ shortRepo:
   - sqlnotes
 ---
 
-![](/assets/images/CheatSheet.jpeg)
-![CheatSheet.jpeg](assets%2Fimages%2FCheatSheet.jpeg)
+![CheatSheet.jpeg](./assets/SQLCheatSheet-1690397485963.png)
+![CheatSheet.jpeg](/assets/images/SQLCheatSheet-1690397485963.png)
+![CheatSheet.jpeg](..%2Fassets%2Fimages%2FCheatSheet.jpeg)
