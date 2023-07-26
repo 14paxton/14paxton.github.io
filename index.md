@@ -2,7 +2,7 @@
 title:        PersonalDocsAndStuff
 layout:       default
 permalink:    SQLNotes/HQL
-category:     HQL
+category:     SQLNotes
 nav_order:    1
 has_children: true
 share:        true
