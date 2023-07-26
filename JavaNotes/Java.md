@@ -1,18 +1,17 @@
----
-title:     Algorithms  
-layout:    default  
-parent:    Java  
-permalink: JavaNotes/Algorithms  
-category:  JavaNotes  
-share:     true  
-shortRepo:
-  - javanotes
-  - default  
----
+---  
+title:        Java    
+layout:       default    
+permalink:    JavaNotes/Java    
+category:     JavaNotes    
+has_children: true    
+share:        true    
+shortRepo:  
+  - javanotes  
+  - default    
+---  
   
 <br/>  
 ___  
 ## [Repo](https://github.com/14paxton/JavaNotes)  
   
 ***
-

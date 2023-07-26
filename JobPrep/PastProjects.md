@@ -1,19 +1,17 @@
----
-title:        PastProjects
-permalink:    JobPrep/PastProjects
-category:     JobPrep
-parent:       PersonalDocsAndStuff
-layout:       default
-has_children: false
-share:        true
-shortRepo:
-  - jobprep
-  - default
----
-
-<br/>
----
-
+---  
+title:        PastProjects  
+permalink:    JobPrep/PastProjects  
+category:     JobPrep  
+parent:       PersonalDocsAndStuff  
+layout:       default  
+has_children: false  
+share:        true  
+shortRepo:  
+  - jobprep  
+  - default  
+---  
+  
+  
 <details markdown="block">        
 <summary>        
 Table of contents        
