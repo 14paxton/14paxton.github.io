@@ -9,10 +9,9 @@ share:        true
 shortRepo:  
   - default  
   - sqlnotes    
-repo:  
-  autoclean: true  
+autoclean: true  
 ---
-  
+
 # MySQL  
   
 ## extract JSON  
