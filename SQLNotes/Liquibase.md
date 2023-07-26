@@ -7,15 +7,13 @@ layout:       default
 has_children: false  
 share:        true  
 shortRepo:  
-  - default
-  - sqlnotes
+ - sqlnotes  
+ - default  
 ---  
   
+<br/>  
   
----  
-  
-***  
-<br/>    
+___  
   
 <details  markdown="block">    
   <summary>    
