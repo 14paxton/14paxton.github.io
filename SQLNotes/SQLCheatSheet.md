@@ -11,6 +11,8 @@ shortRepo:
   - sqlnotes
 ---
 
+<br/>  
+
 ***
 
 <details  markdown="block">  
@@ -24,10 +26,7 @@ shortRepo:
 
 <br/>  
 
-***  
-
-<br/>  
-
+***
 ***
 
-![CheatSheet.jpeg](assets%2FCheatSheet.jpeg)
+![CheatSheet.jpeg](/assets/images/CheatSheet.jpeg)
