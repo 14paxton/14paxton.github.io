@@ -1,6 +1,6 @@
 ---
 title:        InterviewQ&A
-permalink:    JobPrep/PastProjects
+permalink:    JobPrep/InterviewQ&A
 category:     JobPrep
 parent:       PersonalDocsAndStuff
 layout:       default
