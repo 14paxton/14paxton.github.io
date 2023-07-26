@@ -1,17 +1,21 @@
 ---
 title:        Liquibase
 permalink:    SQLNotes/Liquibase
-category:     SQLNotes/
+category:     SQLNotes
 parent:       SQLNotes
 layout:       default
 has_children: false
 share:        true
 shortRepo:
   - default
-  - sqlnotes
+  - sqlnotes  
+---
+
+
 ---
 
 ***
+<br/>  
 
 <details  markdown="block">  
   <summary>  
@@ -22,14 +26,10 @@ shortRepo:
 {:toc}  
 </details>  
 
-<br/>  
 
 ***  
-
-<br/>  
-
 ***
-
+uncle fucker 
 # Available DataTypes
 
 ## Code used to get Types

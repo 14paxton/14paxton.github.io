@@ -26,6 +26,7 @@ Table of contents
 
 <br/>      
 
+
 # Algos
 
 ## binary search

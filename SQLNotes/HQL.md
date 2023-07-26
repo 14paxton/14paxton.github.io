@@ -1,14 +1,14 @@
 ---
 title:        HQL
 permalink:    SQLNotes/HQL
-category:     SQLNotes/
+category:     SQLNotes
 parent:       SQLNotes
 layout:       default
 has_children: false
 share:        true
 shortRepo:
   - default
-  - sqlnotes
+  - sqlnotes  
 ---
 
 ***
