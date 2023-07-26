@@ -12,3 +12,4 @@ shortRepo:
 ---
 
 ![](/assets/images/CheatSheet.jpeg)
+![CheatSheet.jpeg](assets%2Fimages%2FCheatSheet.jpeg)
