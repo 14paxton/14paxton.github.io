@@ -1,18 +1,17 @@
 ---  
-title:        Java  
-layout:       default  
-permalink:    JavaNotes/Java  
-category:     JavaNotes  
-has_children: true  
-share:        true  
+title:        Java    
+layout:       default    
+permalink:    JavaNotes/Java    
+category:     JavaNotes    
+has_children: true    
+share:        true    
 shortRepo:  
-  
-  - default  
-  - java  
+  - javanotes  
+  - default    
 ---  
   
-# Optionals  
+<br/>  
+___  
+## [Repo](https://github.com/14paxton/JavaNotes)  
   
-```java    
-Optional<Map<String, String>>aorMap=Optional.ofNullable(this.customAORMap);    
-```  
+***
