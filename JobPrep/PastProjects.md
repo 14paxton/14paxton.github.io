@@ -1,15 +1,4 @@
----
-title:        PastProjects
-permalink:    JobPrep/PastProjects
-category:     JobPrep
-parent:       index
-layout:       default
-has_children: false
-share:        true
-shortRepo:
-  - jobprep
-  - default
----
+
 
 
 <details markdown="block">        
