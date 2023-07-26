@@ -11,11 +11,9 @@ shortRepo:
  - default
 ---
 
+<br/>
 
----
-
-***
-<br/>  
+___
 
 <details  markdown="block">  
   <summary>  
@@ -29,7 +27,8 @@ shortRepo:
 
 ***  
 ***
-uncle fucker 
+<br/>
+
 # Available DataTypes
 
 ## Code used to get Types
