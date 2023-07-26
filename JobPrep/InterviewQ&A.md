@@ -2,7 +2,7 @@
 title:        InterviewQ&A
 permalink:    JobPrep/InterviewQ&A
 category:     JobPrep
-parent:       PersonalDocsAndStuff
+parent:       index
 layout:       default
 has_children: false
 share:        true
