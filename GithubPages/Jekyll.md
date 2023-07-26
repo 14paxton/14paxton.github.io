@@ -1,4 +1,4 @@
----  
+---
 title: Jekyll  
 layout: default  
 permalink: GithubPages/Jekyll  
@@ -7,7 +7,7 @@ parent: GHP
 has_children: false  
 share: true    
 shortRepo: ghpages
----  
+---
 
 
 <details markdown="block">    
@@ -126,7 +126,7 @@ show_warnings: false
 ```  
 
   
----  
+---
 
 # [Metadata](https://jekyll.github.io/github-metadata/site.github/)
 
@@ -212,7 +212,7 @@ show_warnings: false
 ```  
 
   
----  
+---
 
 # Resources
 
@@ -227,4 +227,4 @@ show_warnings: false
 ## [Markdown Processor](https://jekyllrb.com/docs/configuration/markdown/)
 
   
----  
+---

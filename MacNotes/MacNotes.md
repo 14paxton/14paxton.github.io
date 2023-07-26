@@ -84,7 +84,7 @@ sudo pmset repeat cancel
 ```  
 
   
----  
+---
 
 # HomeBrew
 
@@ -195,7 +195,7 @@ diskutil secureErase 4 /dev/disk2
 ```  
 
   
----  
+---
 
 # Users
 
@@ -343,14 +343,14 @@ xcode-select --install
 ```  
 
   
----  
+---
 
 # RECOVERY
 
 ## [csrutil](https://ss64.com/osx/csrutil.html)
 
   
----  
+---
 
 # Create Ram Disk For Intellij
 
@@ -465,7 +465,7 @@ In the end this is what my `/etc/hosts `file looked like:
 ```  
 
   
----  
+---
 
 # Launching Apps From Terminal
 
@@ -561,7 +561,7 @@ Save .profile, and you’re on your way!
 You can use the alias command in conjunction  
 with open for virtually anything, just be sure to pick an alias to a command that doesn’t already exist.
   
----  
+---
 
 # DEBUGGING - OBSCURE ISSUES
 

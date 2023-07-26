@@ -1,13 +1,12 @@
----  
-title: GHP    
-layout: default    
-permalink: GithubPages/GHP    
-category: GithubPages    
-has_children: true    
-share: true      
-shortRepo: ghpages
----   
-
+---
+title:        GHP
+layout:       default
+permalink:    GithubPages/GHP
+category:     GithubPages
+has_children: true
+share:        true
+shortRepo:    ghpages
+---
 
 <details markdown="block">      
 <summary>      
