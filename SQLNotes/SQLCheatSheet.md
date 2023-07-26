@@ -1,6 +1,6 @@
 ---
 title:        SQLCheatSheet
-permalink:    SQLNotes/
+permalink:    SQLNotes/SQLCheatSheet
 category:     SQLNotes
 parent:       SQLNotes
 layout:       default

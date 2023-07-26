@@ -1,6 +1,6 @@
 ---
 title:        Queries
-permalink:    SQLNotes/
+permalink:    SQLNotes/Queries
 category:     SQLNotes
 parent:       SQLNotes
 layout:       default

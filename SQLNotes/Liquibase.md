@@ -1,6 +1,6 @@
 ---
 title:        Liquibase
-permalink:    SQLNotes/
+permalink:    SQLNotes/Liquibase
 category:     SQLNotes
 parent:       SQLNotes
 layout:       default

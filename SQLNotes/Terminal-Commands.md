@@ -1,6 +1,6 @@
 ---
 title:        Terminal-Commands
-permalink:    SQLNotes/
+permalink:    SQLNotes/Terminal-Commands
 category:     SQLNotes
 parent:       SQLNotes
 layout:       default
