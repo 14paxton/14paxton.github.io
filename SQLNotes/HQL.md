@@ -8,7 +8,7 @@ has_children: false
 share:        true
 shortRepo:
   - default
-  - sqlnotes    
+  - sqlnotes  
 ---
 
 
@@ -22,7 +22,7 @@ Table of contents
 </details>      
 
 <br/>      
-  
+
 ***      
 
 <br/>      

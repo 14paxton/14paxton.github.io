@@ -7,7 +7,7 @@ has_children: true
 share:        true
 shortRepo:
   - default
-  - sqlnotes    
+  - sqlnotes  
 ---
 
 # SQLNotes 
