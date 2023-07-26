@@ -1,16 +1,16 @@
----  
-title:        Functions  
-permalink:    SQLNotes/Functions  
-category:     SQLNotes  
-parent:       SQLNotes  
-layout:       default  
-has_children: false  
-share:        true  
-shortRepo:  
-- sqlnotes  
-- default  
----  
-fuck me uncle fucky  
+---
+title:        Functions
+permalink:    SQLNotes/Functions
+category:     SQLNotes
+parent:       SQLNotes
+layout:       default
+has_children: false
+share:        true
+shortRepo:
+- sqlnotes
+- default
+---
+
 <details markdown="block">        
 <summary>        
 Table of contents        
