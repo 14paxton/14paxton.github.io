@@ -6,8 +6,8 @@ category:     JavaNotes
 has_children: true    
 share:        true    
 shortRepo:  
-  - javanotes  
-  - default    
+- javanotes  
+- default    
 ---  
   
 <br/>  
