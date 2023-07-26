@@ -1,7 +1,7 @@
 ---
 title:        PastProjects
 permalink:    JobPrep/PastProjects
-category:     JobPrep
+category:     JobPrep/
 parent:       index
 layout:       default
 has_children: false

@@ -1,7 +1,7 @@
 ---
 title:        InterviewQ&A
 permalink:    JobPrep/InterviewQ&A
-category:     JobPrep
+category:     JobPrep/
 parent:       index
 layout:       default
 has_children: false
