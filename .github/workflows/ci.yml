@@ -16,6 +16,6 @@ jobs: # Build job
         with:
           ruby-version:  '3.2.2' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 4 # Increment this number if you need to re-download cached gems
+          cache-version: 5 # Increment this number if you need to re-download cached gems
       - name: Build with Jekyll
         run:  bundle exec jekyll build
