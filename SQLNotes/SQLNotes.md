@@ -6,8 +6,8 @@ category:     SQLNotes
 has_children: true
 share:        true
 shortRepo:
-  - default
-  - sqlnotes  
+ - sqlnotes
+ - default
 ---
 
 <br/>

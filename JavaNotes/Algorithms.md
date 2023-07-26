@@ -6,8 +6,8 @@ permalink: JavaNotes/Algorithms
 category:  JavaNotes
 share:     true
 shortRepo:
+  - java
   - default
-  - java  
 ---
 
 

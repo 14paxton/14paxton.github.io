@@ -7,10 +7,10 @@ layout:       default
 has_children: false
 share:        true
 shortRepo:
-  - default
-  - sqlnotes  
+- sqlnotes
+- default
 ---
-
+fuck me uncle fucky
 <details markdown="block">      
 <summary>      
 Table of contents      
