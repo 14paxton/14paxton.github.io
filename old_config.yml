@@ -1,45 +1,44 @@
 ---
-safe: true
-source: .
-incremental: false
-highlighter: rouge
+safe:              true
+source:            .
+incremental:       false
+highlighter:       rouge
 gist:
   noscript: false
 
 # Conversion
-markdown            : kramdown
-lsi                 : false
-excerpt_separator   : "\n\n"
+markdown:          kramdown
+lsi:               false
+excerpt_separator: "\n\n"
 kramdown:
-    math_engine: mathjax
-    syntax_highlighter: coderay
-    syntax_highlighter_opts:
-        line_numbers: table
-    bold_every: 5
-    auto_ids          : true
-    entity_output     : as_char
-    toc_levels        : [1, 2, 3, 4, 5, 6]
-    smart_quotes      : lsquo,rsquo,ldquo,rdquo
-#     input: Kramdown
-    hard_wrap         : false
-    footnote_nr       : 1
-    show_warnings     : false
+  math_engine:        mathjax
+  syntax_highlighter: coderay
+  syntax_highlighter_opts:
+    line_numbers: table
+  bold_every:         5
+  auto_ids:           true
+  entity_output:      as_char
+  toc_levels: [ 1, 2, 3, 4, 5, 6 ]
+  smart_quotes:       lsquo,rsquo,ldquo,rdquo
+  #     input: Kramdown
+  hard_wrap:          false
+  footnote_nr:        1
+  show_warnings:      false
 
-title: Paxton's Notes
-description: Coding Notes
-theme: just-the-docs
+title:             Paxton's Notes
+description:       Coding Notes
+theme:             just-the-docs
 # url: https://just-the-docs.github.io
 #
 # aux_links:
 #   Template Repository: https://github.com/just-the-docs/just-the-docs-template
-url: https://14paxton.github.io
+url:               https://14paxton.github.io
 aux_links:
   Template Repository: https://14paxton.github.io
 # remote_theme: pages-themes/leap-day@v0.2.0
 plugins:
-- kramdown-syntax-coderay
+  - kramdown-syntax-coderay
 # - jekyll-remote-theme
 relative_links:
-  enabled: true
+  enabled:     true
   collections: true
-

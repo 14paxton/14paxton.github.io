@@ -1,15 +1,15 @@
----  
-title:        PersonalDocsAndStuff  
-layout:       default  
-permalink:    SQLNotes/HQL  
-category:     HQL  
-nav_order:    1  
-has_children: true  
-share:        true  
+---
+title:        PersonalDocsAndStuff
+layout:       default
+permalink:    SQLNotes/HQL
+category:     HQL
+nav_order:    1
+has_children: true
+share:        true
 shortRepo:    ghpages  
----  
-  
-  
+---
+
+
 <details markdown="block">      
 <summary>      
 Table of contents      
@@ -18,117 +18,117 @@ Table of contents
 1. TOC      
 {:toc}      
 </details>      
-  
+
 <br/>      
   
 ***      
-  
+
 <br/>      
-  
-# Code To Know  
-  
-## FrontEnd_CSS  
-  
+
+# Code To Know
+
+## FrontEnd_CSS
+
 <embed src="/assets/images/FrontEnd_CSS.pdf" width="80%" height="600" type="application/pdf">      
       
----      
-  
-## Git  
-  
+---
+
+## Git
+
 <embed src="/assets/images/Git.pdf" width="80%" height="600" type="application/pdf">      
       
----      
-  
-## HTTP_Verbs  
-  
+---
+
+## HTTP_Verbs
+
 <embed src="/assets/images/HTTP_Verbs.pdf" width="80%" height="600" type="application/pdf">      
       
----      
-  
-## JAVA  
-  
+---
+
+## JAVA
+
 <embed src="/assets/images/JAVA.pdf" width="80%" height="600" type="application/pdf">      
       
----      
-  
-## JS_20InterviewQuestions  
-  
+---
+
+## JS_20InterviewQuestions
+
 <embed src="/assets/images/JS_20InterviewQuestions.pdf" width="80%" height="600" type="application/pdf">      
       
----      
-  
-## JS_Cheatsheet  
-  
+---
+
+## JS_Cheatsheet
+
 <embed src="/assets/images/JS_Cheatsheet.pdf" width="80%" height="600" type="application/pdf">      
       
 ---      
-  
-## JS_InterviewQuestions  
-  
+
+## JS_InterviewQuestions
+
 <embed src="/assets/images/JS_InterviewQuestions.pdf" width="80%" height="600" type="application/pdf">      
       
 ---      
-  
-## Java_200InterviewQuestions  
-  
+
+## Java_200InterviewQuestions
+
 <embed src="/assets/images/Java_200InterviewQuestions.pdf" width="80%" height="600" type="application/pdf">      
       
 ---      
-  
-## Java_CoreAndA  
-  
+
+## Java_CoreAndA
+
 <embed src="/assets/images/Java_CoreAndA.pdf" width="80%" height="600" type="application/pdf">      
       
 ---      
-  
-## Java_CoreConcepts  
-  
+
+## Java_CoreConcepts
+
 <embed src="/assets/images/Java_CoreConcepts.pdf" width="80%" height="600" type="application/pdf">      
       
 ---      
-  
-## Java_Hibernate  
-  
+
+## Java_Hibernate
+
 <embed src="/assets/images/Java_Hibernate.pdf" width="80%" height="600" type="application/pdf">      
       
 ---      
-  
-## Java_Interview_QnA  
-  
+
+## Java_Interview_QnA
+
 <embed src="/assets/images/Java_Interview_QnA.pdf" width="80%" height="600" type="application/pdf">      
       
 ---      
-  
-## Java_SpringBoot_InterviewQuestions  
-  
+
+## Java_SpringBoot_InterviewQuestions
+
 <embed src="/assets/images/Java_SpringBoot_InterviewQuestions.pdf" width="80%" height="600" type="application/pdf">      
       
 ---      
-  
-## Java_SpringBoot_Questions  
-  
+
+## Java_SpringBoot_Questions
+
 <embed src="/assets/images/Java_SpringBoot_Questions.pdf" width="80%" height="600" type="application/pdf">      
       
 ---      
-  
-## Management_Agile_Methods  
-  
+
+## Management_Agile_Methods
+
 <embed src="/assets/images/Management_Agile_Methods.pdf" width="80%" height="600" type="application/pdf">      
       
 ---      
-  
-## MicroSerevice_Database_Patterns  
-  
+
+## MicroSerevice_Database_Patterns
+
 <embed src="/assets/images/MicroSerevice_Database_Patterns.pdf" width="80%" height="600" type="application/pdf">      
       
 ---      
-  
-## SQL_Cheatsheet  
-  
+
+## SQL_Cheatsheet
+
 <embed src="/assets/images/SQL_Cheatsheet.pdf" width="80%" height="600" type="application/pdf">      
       
 ---      
-  
-## SQL_Concepts  
-  
+
+## SQL_Concepts
+
 <embed src="/assets/images/SQL_Concepts.pdf" width="80%" height="600" type="application/pdf">  

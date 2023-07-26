@@ -1,14 +1,14 @@
 ---
-title: Java  
-layout: default  
-permalink: JavaNotes/Java  
-category: JavaNotes  
-has_children: true  
-share: true    
+title:        Java
+layout:       default
+permalink:    JavaNotes/Java
+category:     JavaNotes
+has_children: true
+share:        true
 shortRepo:
 
-- default
-- java
+  - default
+  - java
 ---
 
 # Optionals

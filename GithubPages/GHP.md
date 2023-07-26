@@ -5,10 +5,10 @@ permalink: GithubPages/GHP
 category: GithubPages    
 has_children: true    
 share: true      
-shortRepo: ghpages         
+shortRepo: ghpages
 ---   
-    
-      
+
+
 <details markdown="block">      
 <summary>      
 Table of contents      
@@ -17,54 +17,56 @@ Table of contents
 1. TOC      
 {:toc}      
 </details>      
-      
+
 <br/>      
-      
+
 ***      
-      
+
 <br/>      
-    
-# [QUICKSTART](https://docs.github.com/en/pages/quickstart)    
-    
+
+# [QUICKSTART](https://docs.github.com/en/pages/quickstart)
+
 ___      
-    
-# `_config.yml`    
-f    
-- my config for githubpages    
-    
+
+# `_config.yml`
+
+f
+
+- my config for githubpages
+
 ```yml      
-lsi: false    
-safe: true    
-source: docs    
-incremental: false    
-highlighter: rouge    
-gist:    
-  noscript: false    
-kramdown:    
-  math_engine: mathjax    
-  syntax_highlighter: rouge    
-markdown: kramdown    
-title: Paxton's Notes    
-remote_theme: pages-themes/time-machine@v0.2.0    
-plugins:    
-  - jekyll-remote-theme    
-relative_links:    
-  enabled: true    
-  collections: true    
-    
+lsi:          false
+safe:         true
+source:       docs
+incremental:  false
+highlighter:  rouge
+gist:
+   noscript: false
+kramdown:
+   math_engine:        mathjax
+   syntax_highlighter: rouge
+markdown:     kramdown
+title:        Paxton's Notes
+remote_theme: pages-themes/time-machine@v0.2.0
+plugins:
+   - jekyll-remote-theme
+relative_links:
+   enabled:     true
+   collections: true
+
 ```      
-    
+
       
 ---      
-    
-# [Custom Domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)    
-    
-1. On GitHub, navigate to your site's repository.    
-    
-2. Under your repository name, click**Settings**. If you cannot see the "Settings" tab, select the dropdown menu, then click**Settings**.    
-    
-   ![Screenshot of a repository header showing the tabs. The "Settings" tab is highlighted by a dark orange outline.](https://docs.github.com/assets/cb-28266/images/help/repository/repo-actions-settings.png)    
-    
+
+# [Custom Domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
+
+1. On GitHub, navigate to your site's repository.
+
+2. Under your repository name, click**Settings**. If you cannot see the "Settings" tab, select the dropdown menu, then click**Settings**.
+
+   ![Screenshot of a repository header showing the tabs. The "Settings" tab is highlighted by a dark orange outline.](https://docs.github.com/assets/cb-28266/images/help/repository/repo-actions-settings.png)
+
 3. In the "Code and automation" section of the sidebar, click**Pages**.
 
 4. Under "Custom domain", type your custom domain, then click**Save**.
@@ -110,40 +112,40 @@ relative_links:
 
 6. Open Terminal.
 
-7. To confirm that your DNS record configured correctly, use the`dig`command, replacing_EXAMPLE.COM_with your apex domain. Confirm that the results match the IP addresses for GitHub Pages above.    
-    
-    - For`A`records:    
-    
-        ```shell      
-        $ dig EXAMPLE.COM +noall +answer -t A      
-        > EXAMPLE.COM    3600    IN A     185.199.108.153      
-        > EXAMPLE.COM    3600    IN A     185.199.109.153      
-        > EXAMPLE.COM    3600    IN A     185.199.110.153      
-        > EXAMPLE.COM    3600    IN A     185.199.111.153      
-        ```      
-    
-    - For`AAAA`records:    
-    
-        ```shell      
-        $ dig EXAMPLE.COM +noall +answer -t AAAA      
-        > EXAMPLE.COM     3600    IN AAAA     2606:50c0:8000::153      
-        > EXAMPLE.COM     3600    IN AAAA     2606:50c0:8001::153      
-        > EXAMPLE.COM     3600    IN AAAA     2606:50c0:8002::153      
-        > EXAMPLE.COM     3600    IN AAAA     2606:50c0:8003::153      
-        ```      
-    
-## Personal Steps    
-    
-## ⚙️Step 1 — Set domain in GitHub project    
-    
-Go to your GitHub Pages site’s repository settings. Under “Custom domain”, add or remove your custom domain and click “Save”.    
-    
-Setting “custom domain” creates a file named`**CNAME**`in the same repository. Don’t delete it.    
-    
-## ⚙️Step 2 — Set custom resource record for domain    
-    
-This step is specific to your domain name register (like GoDaddy, Domain.com, Google Domains, etc). All you need to do is set`**A**`&`**CNAME**`records for the selected domain.    
-    
+7. To confirm that your DNS record configured correctly, use the`dig`command, replacing_EXAMPLE.COM_with your apex domain. Confirm that the results match the IP addresses for GitHub Pages above.
+
+   - For`A`records:
+
+       ```shell      
+       $ dig EXAMPLE.COM +noall +answer -t A      
+       > EXAMPLE.COM    3600    IN A     185.199.108.153      
+       > EXAMPLE.COM    3600    IN A     185.199.109.153      
+       > EXAMPLE.COM    3600    IN A     185.199.110.153      
+       > EXAMPLE.COM    3600    IN A     185.199.111.153      
+       ```      
+
+   - For`AAAA`records:
+
+       ```shell      
+       $ dig EXAMPLE.COM +noall +answer -t AAAA      
+       > EXAMPLE.COM     3600    IN AAAA     2606:50c0:8000::153      
+       > EXAMPLE.COM     3600    IN AAAA     2606:50c0:8001::153      
+       > EXAMPLE.COM     3600    IN AAAA     2606:50c0:8002::153      
+       > EXAMPLE.COM     3600    IN AAAA     2606:50c0:8003::153      
+       ```      
+
+## Personal Steps
+
+## ⚙️Step 1 — Set domain in GitHub project
+
+Go to your GitHub Pages site’s repository settings. Under “Custom domain”, add or remove your custom domain and click “Save”.
+
+Setting “custom domain” creates a file named`**CNAME**`in the same repository. Don’t delete it.
+
+## ⚙️Step 2 — Set custom resource record for domain
+
+This step is specific to your domain name register (like GoDaddy, Domain.com, Google Domains, etc). All you need to do is set`**A**`&`**CNAME**`records for the selected domain.
+
 ![](https://miro.medium.com/v2/resize:fit:2000/1*lT1CCfb9jX74vGrsF5AoLA.png)
 
 ==mine==
@@ -158,61 +160,60 @@ _documentation_](https://help.github.com/articles/setting-up-a-www-subdomain/)_.
 
 
 
-> UPDATE #1: The IP addresses for DNS`A`record is updated. The new IP addresses are required to use the free HTTPS support for GitHub pages.    
->    
-> UPDATE #2: Some people said this change is not working, it is actually because the DNS update can**take upto****24 hours**to propagate. So, I guess try hitting your domain next day 🤓    
->    
-> NOTE #1: Even though it’s very obvious, you should replace`_YOUR-GITHUB-USERNAME_`and`your-domain.com`with your personal github username and domain name you are trying to use respectively.    
+> UPDATE #1: The IP addresses for DNS`A`record is updated. The new IP addresses are required to use the free HTTPS support for GitHub pages.
+>
+> UPDATE #2: Some people said this change is not working, it is actually because the DNS update can**take upto****24 hours**to propagate. So, I guess try hitting your domain next day 🤓
+>
+> NOTE #1: Even though it’s very obvious, you should replace`_YOUR-GITHUB-USERNAME_`and`your-domain.com`with your personal github username and domain name you are trying to use respectively.
     
 ---    
-    
-# [DEPLOY](https://github.com/actions/deploy-pages)    
-> [Ex.](https://github.com/JamesIves/github-pages-deploy-action)    
-    
+
+# [DEPLOY](https://github.com/actions/deploy-pages)
+
+> [Ex.](https://github.com/JamesIves/github-pages-deploy-action)
+
 ```yaml    
-jobs:    
-  # Build job    
-  build:    
-  # <Not provided for brevity>    
-  # At a minimum this job should upload artifacts using actions/upload-pages-artifact    
-    
-  # Deploy job    
-  deploy:    
-    # Add a dependency to the build job    
-    needs: build    
-    
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment    
-    permissions:    
-      pages: write      # to deploy to Pages    
-      id-token: write   # to verify the deployment originates from an appropriate source    
-    
-    # Deploy to the github-pages environment    
-    environment:    
-      name: github-pages    
-      url: ${{ steps.deployment.outputs.page_url }}    
-    
-    # Specify runner + deployment step    
-    runs-on: ubuntu-latest    
-    steps:    
-      - name: Deploy to GitHub Pages    
-        id: deployment    
-        uses: actions/deploy-pages@v2 # or the latest "vX.X.X" version tag for this action    
+jobs: # Build job    
+   build:
+   # <Not provided for brevity>    
+   # At a minimum this job should upload artifacts using actions/upload-pages-artifact    
+
+   # Deploy job    
+   deploy: # Add a dependency to the build job    
+      needs:   build
+
+      # Grant GITHUB_TOKEN the permissions required to make a Pages deployment    
+      permissions:
+         pages:    write      # to deploy to Pages    
+         id-token: write   # to verify the deployment originates from an appropriate source    
+
+      # Deploy to the github-pages environment    
+      environment:
+         name: github-pages
+         url:  ${{ steps.deployment.outputs.page_url }}
+
+      # Specify runner + deployment step    
+      runs-on: ubuntu-latest
+      steps:
+         - name: Deploy to GitHub Pages
+           id:   deployment
+           uses: actions/deploy-pages@v2 # or the latest "vX.X.X" version tag for this action    
 ```    
+
     
 ---    
-    
-# Template    
-    
-## [just-the-docs (current)](https://github.com/just-the-docs/just-the-docs)    
-    
-> [template readme](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo)    
-    
-> [YAML Example](https://github.com/just-the-docs/just-the-docs/blob/f246498a8fab71a8716194aaca8ef690bbdc1b94/_config.yml)    
+
+# Template
+
+## [just-the-docs (current)](https://github.com/just-the-docs/just-the-docs)
+
+> [template readme](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo)
+
+> [YAML Example](https://github.com/just-the-docs/just-the-docs/blob/f246498a8fab71a8716194aaca8ef690bbdc1b94/_config.yml)
 ---      
-    
-# [Themes](https://pages.github.com/themes/)    
-    
-- [REPO](https://github.com/pages-themes)    
-    
+
+# [Themes](https://pages.github.com/themes/)
+
+- [REPO](https://github.com/pages-themes)
+
 ## [Add Theme](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll)      
-      

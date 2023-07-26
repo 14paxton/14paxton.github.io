@@ -1,10 +1,10 @@
 ---
-title:        Obsidian  
-layout:       default  
-has_children: false  
-permalink:    Obsidian/Obsidian  
-category:     Obsidian  
-share:        true  
+title:        Obsidian
+layout:       default
+has_children: false
+permalink:    Obsidian/Obsidian
+category:     Obsidian
+share:        true
 shortRepo:    ghpages
 ---
 
@@ -44,15 +44,15 @@ Obsidian lets you edit text in multiple places at the same time using multiple c
 ### FRONTMATTER
 
 ```yml        
----  
-title:    GHP  
-category: GithubPages/Pages  
-share:    true  
-repo:  
-  owner:     14paxton  
-  repo:      14paxton.github.io  
-  branch:    master  
-  autoclean: false  
+---
+title:    GHP
+category: GithubPages/Pages
+share:    true
+repo:
+  owner:     14paxton
+  repo:      14paxton.github.io
+  branch:    master
+  autoclean: false
 ---         
 ```        
 
@@ -74,18 +74,18 @@ repo:
 #### YAML
 
 ```yaml      
-links:  
+links:
   mdlinks: boolean #convert to markdownlinks       
   convert: boolean #transform to simple string with keeping alt text or file name/ title (it removes the [](.md#) or []())      
-embed:  
+embed:
   send:   boolean #prevent sending embed      
   remove: boolean #remove embed citation completely (replace to empty string the ![](.md#) or ![]())      
-attachment:  
+attachment:
   send:   boolean #prevent sending attachment      
   folder: string #change default folder for attachment      
 dataview:  boolean #force/prevent dataview queries conversion      
 hardbreak: boolean #same but for hardbreak      
-repo:  
+repo:
   branch:    string #change default branch       
   repo:      string #change default repository      
   owner:     string #change default owner (it's your github Username)      
@@ -94,26 +94,26 @@ baselink:  string #change base link for copylink settings
 ```      
 
 ```yml      
-links:  
+links:
   mdlinks: boolean #convert to markdownlinks       
   convert: boolean #transform to simple string with keeping alt text or file name/ title (it removes the [](.md#) or []())      
-embed:  
+embed:
   send:   boolean #prevent sending embed      
   remove: boolean #remove embed citation completely (replace to empty string the ![](.md#) or ![]())      
-attachment:  
+attachment:
   send:   boolean #prevent sending attachment      
   folder: string #change default folder for attachment      
 dataview:  boolean #force/prevent dataview queries conversion      
 hardbreak: boolean #same but for hardbreak      
 baselink:  string #change base link for copylink settings      
-multipleRepo:  
-  
-  - repo:  
+multipleRepo:
+
+  - repo:
       branch:    string #change default branch       
       repo:      string #change default repository      
       owner:     string #change default owner (it's your github Username)      
       autoclean: boolean #enable auto cleaning      
-  - repo:  
+  - repo:
       branch:    string #change default branch       
       repo:      string #change default repository      
       owner:     string #change default owner (it's your github Username)      
@@ -194,134 +194,134 @@ You can choose to add a command to copy the path (from the blog) of the current 
 ### mkdoc.yml
 
 ```yml      
-site_name:        Obsidian Mkdocs Publisher  
-site_description: The documentation for Obsidian Mkdocs Publisher  
-site_url:         https://obsidian-publisher.netlify.app  
-  
-theme:  
-  name:        'material'  
-  highlightjs: true  
-  hljs_languages:  
-    - yaml  
-    - rust  
-  logo:        assets/meta/SEO.png  
-  favicon:     assets/meta/SEO.png  
-  custom_dir:  overrides  
-  font:  
-    text: Ubuntu  
-    code: Ubuntu Mono  
-  language:    en  
-  palette:  
-  
+site_name:        Obsidian Mkdocs Publisher
+site_description: The documentation for Obsidian Mkdocs Publisher
+site_url:         https://obsidian-publisher.netlify.app
+
+theme:
+  name:        'material'
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - rust
+  logo:        assets/meta/SEO.png
+  favicon:     assets/meta/SEO.png
+  custom_dir:  overrides
+  font:
+    text: Ubuntu
+    code: Ubuntu Mono
+  language:    en
+  palette:
+
     # Light mode      
-    - media:   "(prefers-color-scheme: light)"  
-      scheme:  default  
-      primary: teal  
-      accent:  light blue  
-      toggle:  
-        icon: material/toggle-switch-off-outline  
-        name: Switch to dark mode  
-  
+    - media:   "(prefers-color-scheme: light)"
+      scheme:  default
+      primary: teal
+      accent:  light blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+
     # Dark mode      
-    - media:   "(prefers-color-scheme: dark)"  
-      scheme:  slate  
-      primary: blue  
-      accent:  indigo  
-      toggle:  
-        icon: material/toggle-switch  
-        name: Switch to light mode  
-  features:  
-    - navigation.indexes  
-    - navigation.top  
-    - navigation.sections  
-    - navigation.tabs  
-    - navigation.tabs.sticky  
-    - navigation.expand  
-    - search.suggest  
-    - search.highlight  
+    - media:   "(prefers-color-scheme: dark)"
+      scheme:  slate
+      primary: blue
+      accent:  indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  features:
+    - navigation.indexes
+    - navigation.top
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
+    - search.suggest
+    - search.highlight
 # Extensions      
-markdown_extensions:  
-  - footnotes  
-  - nl2br  
-  - attr_list  
-  - sane_lists  
-  - meta  
-  - smarty  
-  - tables  
-  - mdx_breakless_lists  
-  - pymdownx.arithmatex:  
-      generic: true  
-  - pymdownx.details  
-  - pymdownx.magiclink  
-  - pymdownx.critic  
-  - pymdownx.caret  
-  - pymdownx.keys  
-  - pymdownx.mark  
-  - pymdownx.tilde  
-  - pymdownx.highlight:  
-      use_pygments:    true  
-      anchor_linenums: true  
-  - pymdownx.tasklist:  
-      custom_checkbox: true  
-  - pymdownx.emoji:  
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg  
-  - admonition  
-  - md_in_html  
-  - toc:  
-      permalink: true  
-  - pymdownx.inlinehilite  
-  - pymdownx.snippets  
-  - pymdownx.superfences:  
-      custom_fences:  
-        - name:  mermaid  
-          class: mermaid  
-          format: !!python/name:pymdownx.superfences.fence_code_format  
-plugins:  
-  - search  
-  - glightbox  
-  - ezlinks:  
-      wikilinks: true  
-  - awesome-pages:  
-      collapse_single_pages: true  
-  - embed_file:  
-      callouts:          true  
-      custom-attributes: 'assets/css/custom_attributes.css'  
-      language_message:  'ERROR 404 : NOT FOUND'  
-  - callouts  
-  - custom-attributes:  
-      file: 'assets/css/custom_attributes.css'  
-  - meta-descriptions  
-  - exclude:  
-      glob:  
-        - "*obsidian*"  
-  - tags:  
-      tags_file: tags.md  
-hooks:  
-  - overrides/hooks/on_page_markdown.py  
-  - overrides/hooks/on_env.py  
-  - overrides/hooks/on_files.py  
-extra_javascript:  
-  - https://cdn.jsdelivr.net/gh/ObsidianPublisher/assets@main/dist/javascript.js  
-  - https://polyfill.io/v3/polyfill.min.js?features=es6  
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js  
-extra_css:  
-  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css  
-  - https://cdn.jsdelivr.net/gh/ObsidianPublisher/assets@main/dist/styles.css  
-  - assets/css/admonition.css  
-  - assets/css/custom_attributes.css  
-  - assets/css/customization.css  
-extra:  
-  comments:       false  
-  generate_graph: false  
-  SEO:            'assets/meta/SEO.png'  
-  attachments:    'assets/img'  
-  no-auto-h1:     true  
-  blog_list:  
-    pagination:             false  
-    pagination_message:     false  
-    pagination_translation: ''  
-    no_page_found:          ''  
-  hooks:  
-    strip_comments: true  
+markdown_extensions:
+  - footnotes
+  - nl2br
+  - attr_list
+  - sane_lists
+  - meta
+  - smarty
+  - tables
+  - mdx_breakless_lists
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.magiclink
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.highlight:
+      use_pygments:    true
+      anchor_linenums: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - admonition
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name:  mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+plugins:
+  - search
+  - glightbox
+  - ezlinks:
+      wikilinks: true
+  - awesome-pages:
+      collapse_single_pages: true
+  - embed_file:
+      callouts:          true
+      custom-attributes: 'assets/css/custom_attributes.css'
+      language_message:  'ERROR 404 : NOT FOUND'
+  - callouts
+  - custom-attributes:
+      file: 'assets/css/custom_attributes.css'
+  - meta-descriptions
+  - exclude:
+      glob:
+        - "*obsidian*"
+  - tags:
+      tags_file: tags.md
+hooks:
+  - overrides/hooks/on_page_markdown.py
+  - overrides/hooks/on_env.py
+  - overrides/hooks/on_files.py
+extra_javascript:
+  - https://cdn.jsdelivr.net/gh/ObsidianPublisher/assets@main/dist/javascript.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
+  - https://cdn.jsdelivr.net/gh/ObsidianPublisher/assets@main/dist/styles.css
+  - assets/css/admonition.css
+  - assets/css/custom_attributes.css
+  - assets/css/customization.css
+extra:
+  comments:       false
+  generate_graph: false
+  SEO:            'assets/meta/SEO.png'
+  attachments:    'assets/img'
+  no-auto-h1:     true
+  blog_list:
+    pagination:             false
+    pagination_message:     false
+    pagination_translation: ''
+    no_page_found:          ''
+  hooks:
+    strip_comments: true
     fix_heading:    false      
 ```      

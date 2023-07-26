@@ -2,11 +2,10 @@ name: CI
 
 on:
   push:
-    branches: ["master"]
+    branches: [ "master" ]
   pull_request:
 
-jobs:
-  # Build job
+jobs: # Build job
   build:
     runs-on: ubuntu-latest
     steps:
@@ -15,8 +14,8 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2.2' # Not needed with a .ruby-version file
+          ruby-version:  '3.2.2' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 4 # Increment this number if you need to re-download cached gems
       - name: Build with Jekyll
-        run: bundle exec jekyll build
+        run:  bundle exec jekyll build
