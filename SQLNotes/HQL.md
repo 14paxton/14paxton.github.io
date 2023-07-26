@@ -9,9 +9,9 @@ share:        true
 shortRepo:
   - default
   - sqlnotes
-autoclean:    true  
 ---
 
+***
 
 <details markdown="block">      
 <summary>      

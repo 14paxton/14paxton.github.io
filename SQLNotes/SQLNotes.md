@@ -9,5 +9,3 @@ shortRepo:
   - default
   - sqlnotes  
 ---
-
-# SQLNotes 

@@ -8,6 +8,7 @@ share:        true
 shortRepo:    ghpages
 ---
 
+***
 <details  markdown="block">  
   <summary>  
     Table of contents  
@@ -22,6 +23,8 @@ shortRepo:    ghpages
 ***  
 
 <br/>  
+
+***
 
 # Multiple Cursors
 
@@ -52,7 +55,6 @@ repo:
   owner:     14paxton
   repo:      14paxton.github.io
   branch:    master
-  autoclean: false
 ---         
 ```        
 
