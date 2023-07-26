@@ -9,6 +9,7 @@ share:        true
 shortRepo:  
   - default  
   - sqlnotes    
+autoclean: true  
 ---  
   
 # MySQL  
