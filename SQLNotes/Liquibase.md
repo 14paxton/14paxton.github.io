@@ -1,7 +1,7 @@
 ---
 title:        Liquibase
 permalink:    SQLNotes/Liquibase
-category:     SQLNotes
+category:     SQLNotes/
 parent:       SQLNotes
 layout:       default
 has_children: false

@@ -1,7 +1,7 @@
 ---
 title:        Queries
 permalink:    SQLNotes/Queries
-category:     SQLNotes
+category:     SQLNotes/
 parent:       SQLNotes
 layout:       default
 has_children: false

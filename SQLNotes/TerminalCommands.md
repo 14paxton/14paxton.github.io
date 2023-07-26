@@ -1,7 +1,7 @@
 ---
 title:        Terminal-Commands
-permalink:    SQLNotes/Terminal-Commands
-category:     SQLNotes
+permalink:    SQLNotes/TerminalCommands
+category:     SQLNotes/
 parent:       SQLNotes
 layout:       default
 has_children: false

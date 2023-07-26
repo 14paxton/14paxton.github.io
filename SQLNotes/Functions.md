@@ -1,7 +1,7 @@
 ---
 title:        Functions
 permalink:    SQLNotes/Functions
-category:     SQLNotes
+category:     SQLNotes/
 parent:       SQLNotes
 layout:       default
 has_children: false
