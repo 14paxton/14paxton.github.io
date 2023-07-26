@@ -1,6 +1,6 @@
 ---
 title:        PastProjects
-permalink:    JobPrep/index
+permalink:    JobPrep/PastProjects
 category:     JobPrep
 parent:       index
 layout:       default
