@@ -8,7 +8,8 @@ has_children: false
 share:        true
 shortRepo:
   - default
-  - sqlnotes  
+  - sqlnotes
+autoclean:    true  
 ---
 
 
