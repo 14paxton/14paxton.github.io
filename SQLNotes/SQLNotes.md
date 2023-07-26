@@ -1,7 +1,7 @@
 ---
 title:        SQLNotes
 layout:       default
-permalink:    SQLNotes/SQLNotes
+permalink:    SQLNotes/
 category:     SQLNotes
 has_children: true
 share:        true
