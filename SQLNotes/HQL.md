@@ -7,8 +7,8 @@ layout:       default
 has_children: false  
 share:        true  
 shortRepo:  
-  - sqlnotes  
-  - default      
+ - sqlnotes  
+ - default      
 ---  
   
 <br/>      
@@ -32,7 +32,7 @@ Table of contents
   
 # [Database Overview](http://www.h2database.com/html/features.html#database_url)  
   
-![H2_DB_Overview.png](..//assets/images/H2_DB_Overview.png#)  
+![H2_DB_Overview.png](/assets/images/H2_DB_Overview.png)  
 ___  
   
 # [H2 Database Engine Cheat Sheet](http://www.h2database.com/html/cheatSheet.html)  
