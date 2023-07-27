@@ -1,11 +1,11 @@
----
-title:        MyPersonalDocsAndStuff
-permalink:    index
-layout:       default
-nav_order:    1
-has_children: true
-share:        true
-shortRepo:    ghpages
----
-
+---  
+title:        index  
+permalink:    MyPersonalDocsAndStuff  
+layout:       default  
+nav_order:    1  
+has_children: true  
+share:        true  
+shortRepo:    ghpages  
+---  
+  
 # My Personal Documents
