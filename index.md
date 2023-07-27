@@ -1,6 +1,6 @@
 ---  
 title:        MyPersonalDocsAndStuff  
-filename: index  
+name: index.md  
 permalink:    index  
 layout:       default  
 nav_order:    1  
