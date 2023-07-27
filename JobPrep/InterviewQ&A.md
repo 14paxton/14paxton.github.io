@@ -1,8 +1,8 @@
 ---
 title:        InterviewQ&A  
 permalink:    GithubPages/InterviewQ&A  
-category:     JobPrep  
-parent:       index  
+category:     JobPrep
+parent: MyPersonalDocsAndStuff
 layout:       default  
 has_children: false  
 share:        true  

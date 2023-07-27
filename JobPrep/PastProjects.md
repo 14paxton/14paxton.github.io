@@ -1,8 +1,8 @@
 ---
 title:        PastProjects  
 permalink:    GithubPages/PastProjects  
-category:     JobPrep  
-parent:       index  
+category:     JobPrep
+parent: MyPersonalDocsAndStuff
 layout:       default  
 has_children: false  
 share:        true  
