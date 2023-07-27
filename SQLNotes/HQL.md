@@ -148,7 +148,19 @@ server.stop();
   
 > H2 db in embedded mode will be faster but the downside of it is that _no other process can access the Database_. In the above connection string, the Data will be saved into the ‘test’ folder, under the user’s home directory.  
   
-3. Mixed mode:  
+> 			To connect to an H2 embedded database, you need to use one of the following JDBC URLs:  
+```  
+				  
+				_jdbc:h2:~/test_the ‘test’ database in the user home directory  
+				  
+				_jdbc:h2:./test_ the ‘test’ database in the current directory  
+				  
+				_jdbc:h2:/data/test_ the ‘test’ database in the /data directory (Unix)  
+				  
+				_jdbc:h2:D:/data/test_ the ‘test’ database in the D:/data directory (Windows)  
+```  
+  
+1. Mixed mode:  
 	  `jdbc:h2:/data/test;AUTO_SERVER=TRUE`  
   
 > When using automatic mixed mode, you can share the JDBC URL for all applications using the DB. By default the server uses any free TCP port. The port can be set manually using AUTO_SERVER_PORT=9090.  
