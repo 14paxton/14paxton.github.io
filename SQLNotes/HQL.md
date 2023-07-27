@@ -1,20 +1,20 @@
 ---  
-title:        HQL      
-permalink:    SQLNotes/HQL      
-category:     SQLNotes      
-parent:       SQLNotes      
-layout:       default      
-has_children: false      
-share:        true      
-shortRepo:      
-  - sqlnotes      
+title:        HQL  
+permalink:    SQLNotes/HQL  
+category:     SQLNotes  
+parent:       SQLNotes  
+layout:       default  
+has_children: false  
+share:        true  
+shortRepo:  
+  - sqlnotes  
   - default      
 ---  
-      
+  
 <br/>      
-      
+  
 ***      
-      
+  
 <details markdown="block">            
 <summary>            
 Table of contents            
@@ -23,15 +23,21 @@ Table of contents
 1. TOC            
 {:toc}            
 </details>            
-      
+  
 <br/>            
-      
+  
 ***            
-      
+  
 <br/>            
-      
-# Intersect      
-      
+  
+# [Database Overview](http://www.h2database.com/html/features.html#database_url)  
+  
+![Pasted image 20230727005235](..//assets/images/Pasted%20image%2020230727005235.png#)  
+  
+  
+# Queries  
+## Intersect  
+  
 ```hql        
 SELECT *        
 FROM LAB_TEST_SERVICES_POJO lts        
@@ -46,9 +52,9 @@ WHERE EXISTS
      WHERE ltl.status = 1        
        AND lts.inttestid = ltl.inttestid)        
 ```        
-      
-## join same object to query against 2 lists      
-      
+  
+### join same object to query against 2 lists  
+  
 ```hql        
 select o        
 from Object as o        
@@ -56,15 +62,15 @@ from Object as o
 where otherObject in :allowedotherobjects        
   and otherObject not in :excludedotherobjects        
 ```        
-      
-## determine length diff of a group concat      
-      
+  
+### determine length diff of a group concat  
+  
 ```hql        
 (CHAR_LENGTH (GROUP_CONCAT(CONCAT(user.id, manager.id))) - CHAR_LENGTH (REPLACE(GROUP_CONCAT(CONCAT(user.id, manager.id)), ',', '' )))        
 ```        
-      
-# EXAMPLE large query with teary / multi join/ and JSON extractor      
-      
+  
+## EXAMPLE large query with teary / multi join/ and JSON extractor  
+  
 ```hql        
 SELECT USER.FIRSTNAME,        
        USER.LASTNAME,        
@@ -103,13 +109,13 @@ WHERE USER.clientSetupId = ${clientSetupId}
         
         
 ```        
-      
-> calling method      
-      
+  
+> calling method  
+  
 ```groovy        
 findAllByFirstNameOrLastNameOrEmail(searchStrings.firstName.toString())*.getId().join('        
 ```        
-      
+  
 ```hql        
 SELECT DISTINCT        
        NEW COM.TALENTBANK.CORE.USERMAP(USER.ID, USER.USERNAME, USER.CLIENTSETUPID, USER.EMAIL, USER.FIRSTNAME, USER.LASTNAME, USER.USERMETADATA, USER.LASTLOGIN, USER.PICTUREURL,        
@@ -128,9 +134,9 @@ WITH im.sourceId = ao.catalogDetail.interviewModelId
 ON sm.id = (CASE WHEN im.source = 'TBFIVE' THEN (SELECT s FROM ScoringModel s WHERE s.interviewModelId = im.id) ELSE (SELECT s FROM ScoringModel s WHERE s.sourceId = ao.catalogDetail.interviewModelId) END)        
 WHERE USER.clientSetupId = $clientSetupId        
 ```        
-      
-# EXAMPLE calling method in HQL statement      
-      
+  
+## EXAMPLE calling method in HQL statement  
+  
 ```hql        
 SELECT DISTINCT new COM.TALENTBANK.CORE.DTO.USERTEAM.TEAMSEARCHDTOMAP(USER.ID, USER.USERNAME, USER.CLIENTSETUPID, USER.EMAIL, USER.FIRSTNAME, USER.LASTNAME, USER.USERMETADATA, USER.LASTLOGIN, USER.PICTUREURL,        
 MANAGER.ID, MANAGER.EMAIL, MANAGER.FIRSTNAME, MANAGER.LASTNAME, MANAGER.USERMETADATA, MANAGER.LASTLOGIN, MANAGER.PICTUREURL,        
@@ -143,9 +149,9 @@ ON manager.id = ur.manager.id
 WHERE USER.clientSetupId = 2000        
   AND USER.id IN (${ findAllByFirstNameOrLastNameOrEmail(searchStrings.firstName)*.getId().join(' , ')}))        
 ```        
-      
-# EXAMPLE case in where statement      
-      
+  
+## EXAMPLE case in where statement  
+  
 ```hql        
 SELECT DISTINCT new Map( USER.ID AS USER, MANAGER.ID AS manager )        
 FROM USER USER        
@@ -162,9 +168,9 @@ WHERE USER.clientSetupId IN (55
    OR        
     manager.lastName LIKE CASE WHEN ${searchManagerName} = TRUE THEN ('%'||'${testSearch}'||'%') ELSE '' END )        
 ```        
-      
-# return all if null or empty      
-      
+  
+## return all if null or empty  
+  
 ```hql        
 SELECT DISTINCT new Map( USER.ID AS USER, MANAGER.ID AS manager )        
 FROM USER USER        
@@ -180,9 +186,9 @@ WHERE USER.clientSetupId IN (${clientSetUpIdList.join(' , ') ?: ClientSetup.all.
    OR        
     manager.lastName LIKE ${testSearch.manager} )        
 ```        
-      
-# subquery      
-      
+  
+## subquery  
+  
 ```hql        
 SELECT u        
 FROM USER u        
@@ -193,9 +199,9 @@ WHERE exists (SELECT 1
     WHERE user = u        
         AND USER.CLIENTSETUPID = 2000)        
 ```        
-      
-# create tuple      
-      
+  
+## create tuple  
+  
 ```hql        
 SELECT CONCAT('[', USER.ID, ':', IFNULL(MANAGER.ID, 'null'), ']')        
 FROM USER USER        
@@ -205,11 +211,11 @@ WITH ur.user.id = USER.id OR ur.manager.id = USER.id
 WITH manager.id = ur.manager.id        
 WHERE USER.clientSetupId = 2000        
 ```        
-      
-# creative count      
-      
-## add/concat chars get length      
-      
+  
+## creative count  
+  
+### add/concat chars get length  
+  
 ```hql        
 SELECT LENGTH(CONCAT(FUNCTION('GROUP_CONCAT', ',')))        
 From User user        
@@ -220,9 +226,9 @@ with manager.id = ur.manager.id
 where user.clientSetupId = 2000        
 group by user.id, manager.id        
 ```        
-      
-## get groupings where there may be nulls      
-      
+  
+### get groupings where there may be nulls  
+  
 ```hql        
 SELECT NEW Map( MAX(USER.ID) AS userId , (SELECT CONCAT('{', GROUP_CONCAT(CONCAT(COALESCE(UR1.ID, 'noRelationship'), ':[{' ,        
                          USER.ID, ':' , COALESCE(MANAGER1.ID, 'null'), '}]' )) , '}')        
@@ -237,9 +243,9 @@ WITH manager.id = ur.manager.id
 WHERE USER.clientSetupId = 2000        
 GROUP BY USER.id, manager.id        
 ```        
-      
-## get list of digits      
-      
+  
+### get list of digits  
+  
 ```hql        
 SELECT Max(USER.ID),        
        (SELECT DISTINCT CONCAT(GROUP_CONCAT(1))        
@@ -259,11 +265,11 @@ WITH manager.id = ur.manager.id
 WHERE USER.clientSetupId = 2000        
 GROUP BY USER, manager        
 ```        
-      
-## get correct char but need to count column      
-      
-### Not working need to show one number, find way to count column      
-      
+  
+### get correct char but need to count column  
+  
+#### Not working need to show one number, find way to count column  
+  
 ```hql        
 SELECT (SELECT COUNT(u.id)        
         FROM USER u        
@@ -294,7 +300,7 @@ WITH manager.id = ur.manager.id
 WHERE USER.clientSetupId = 2000        
 GROUP BY 'all'        
 ```        
-      
+  
 ```hql        
 SELECT COUNT(*),        
        (SELECT LENGTH(CONCAT(GROUP_CONCAT('')))        
@@ -317,9 +323,9 @@ WITH manager.id = ur.manager.id
 WHERE USER.clientSetupId = 2000        
 GROUP BY USER, manager        
 ```        
-      
-# SELECT DISTINCT mag FROM Magazine mag      
-      
+  
+## SELECT DISTINCT mag FROM Magazine mag  
+  
 ```hql        
 JOIN mag.articles art        
         
@@ -327,19 +333,19 @@ JOIN art.author auth
         
 WHERE auth.lastName = 'Grisham'        
 ```        
-      
-## may equivalently be expressed as follows, using the IN operator:      
-      
+  
+### may equivalently be expressed as follows, using the IN operator:  
+  
 ```hql        
 SELECT DISTINCT mag FROM Magazine mag,        
 IN(mag.articles) art        
 WHERE art.author.lastName = 'Grisham'        
 ```        
-      
-#Using HQL(hibernate query language) in findall      
-      
-##USING HQL for execute query      
-      
+  
+## Using HQL(hibernate query language) in findall  
+  
+### USING HQL for execute query  
+  
 ```groovy        
  query = """        
         SELECT NEW Map(ug.id AS id, ug.NAME AS NAME, ug.interviewModelId AS interviewModelId,        
@@ -350,16 +356,16 @@ WHERE art.author.lastName = 'Grisham'
           AND ug.type = :type        
         GROUP BY ug.id        
         ORDER BY ug.NAME        
-       """      
+       """  
 def groups = UserGroup.executeQuery(query, [userId: principalUser?.id, type: UserGroupType.RESULTGROUP])        
 ```        
-      
-# -HQL created using session-      
-      
-## -Full Example - [Full dynamic HQL, with QueryImpl object ](https://gist.github.com/14paxton/0ed8e82644cd661dc8c9fc0d4b8c2009)      
-      
+  
+## -HQL created using session-  
+  
+### -Full Example - [Full dynamic HQL, with QueryImpl object ](https://gist.github.com/14paxton/0ed8e82644cd661dc8c9fc0d4b8c2009)  
+  
 ```groovy        
-               User.withSession { uSession ->      
+               User.withSession { uSession ->  
     def q = uSession.createQuery($/SELECT DISTINCT        
                                                    new COM.TALENTBANK.CORE.USERMAP(USER.ID,         
                                                            USER.USERNAME, USER.CLIENTSETUPID,         
@@ -378,23 +384,23 @@ def groups = UserGroup.executeQuery(query, [userId: principalUser?.id, type: Use
                                                     OR USER.email LIKE CONCAT('%', $searchString, '%')        
                                                     OR manager.firstName LIKE CONCAT('%', $searchString, '%')        
                                                     OR manager.lastName LIKE CONCAT('%', $searchString, '%')           
-                                                /$)      
-      
-    q.maxResults = 8      
-    q.firstResult = 2      
-    q.list()      
+                                                /$)  
+  
+    q.maxResults = 8  
+    q.firstResult = 2  
+    q.list()  
 }        
 ```        
       
-# using Groovy SQL      
-      
+## using Groovy SQL  
+  
 ```groovy        
-       List fetchUsersByNameOrManagerName(String searchString, params) {      
-    if (!params) return null      
-    def (firstNameSearch, lastNameSearch, rest) = searchString?.tokenize()      
+       List fetchUsersByNameOrManagerName(String searchString, params) {  
+    if (!params) return null  
+    def (firstNameSearch, lastNameSearch, rest) = searchString?.tokenize()  
     //        DataSource dataSource = Holders.grailsApplication.mainContext.getBean('dataSource')        
     //        Sql groovySql = new Sql(dataSource)        
-      
+  
     String query = """SELECT DISTINCT user.id, user.username, user.client_setup_id, user.email, user.first_name, user.last_name,         
        user.user_metadata,         
        user.last_login, user.picture_url,        
@@ -415,18 +421,17 @@ def groups = UserGroup.executeQuery(query, [userId: principalUser?.id, type: Use
                                LEFT JOIN user manager on userRelationship.manager_id = manager.id        
                                WHERE ((manager.first_name LIKE '%${searchString}%' || manager.last_name LIKE '%${searchString}%') ||        
                               (manager.first_name LIKE '%${firstNameSearch}%' && manager.last_name LIKE '%${lastNameSearch}%'))         
-                            """      
-      
-    groovySql.rows(query, 0, 15)      
+                            """  
+  
+    groovySql.rows(query, 0, 15)  
 }        
 ```        
-      
-# pagination server side with PagedListHolder Object      
-      
-```hql        
-        def queryResults = userDataService.searchForUsersWhereNameOrEmailLike(searchString)        
-        def pages = new PagedListHolder(queryResults)        
-        pages.setPage(params.off) //set current page number        
-        pages.setPageSize(params.max) // set the size of page        
-        ```        
-```  
+  
+## pagination server side with PagedListHolder Object  
+  
+```hql  
+    def queryResults = userDataService.searchForUsersWhereNameOrEmailLike(searchString)        
+    def pages = new PagedListHolder(queryResults)        
+    pages.setPage(params.off) //set current page number        
+    pages.setPageSize(params.max) // set the size of page        
+```
