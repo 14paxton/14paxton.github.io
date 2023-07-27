@@ -34,6 +34,7 @@ Table of contents
 # [Database Overview](http://www.h2database.com/html/features.html#database_url)  
   
 ![H2_DB_Overview.png](..//14paxton.github.io/assets/images/H2_DB_Overview.png)  
+![H2_DB_Overview.png](..%2Fassets%2Fimages%2FH2_DB_Overview.png)  
   
 ___  
   
@@ -127,7 +128,7 @@ Datasource class:`org.h2.jdbcx.JdbcDataSource`
 java -jar h2-.jar -webAllowOthers -tcpAllowOthers  
 ```  
   
->		start progamically  
+>		start programmatically  
   
 ```java  
 import org.h2.tools.Server;  
