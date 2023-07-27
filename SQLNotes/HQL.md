@@ -111,6 +111,96 @@ Datasource class:`org.h2.jdbcx.JdbcDataSource`
 `oracle.toplink.essentials.platform.`    
 `database.H2Platform`  
   
+---  
+  
+##  Run **H2 Database** in three different modes:  
+  
+1. Server Mode  
+	   `jdbc:h2:tcp://localhost/~/test`  
+  
+> When using H2 db in **server mode** (also known as client/server mode) all data is transferred over TCP/IP. Before application can use H2 Database in server mode, you need to start the H2 DB within the same or another machine.  
+  
+					To run H2 Database in **Server Mode** you need the JAR file containing the DB Classes. You can download it from [http://www.h2database.com/html/download.html](http://www.h2database.com/html/download.html)  
+  
+		You can then Start the DB in Server mode by executing the **H2 DB Runnable JAR** file:  
+```shell  
+java -jar h2-.jar -webAllowOthers -tcpAllowOthers  
+```  
+  
+>		start progamically  
+  
+```java  
+import org.h2.tools.Server;  
+  
+  
+// start the H2 DB TCP Server  
+  
+Server server = Server.createTcpServer("-tcpPort", "9092", "-tcpAllowOthers").start();  
+  
+  
+// stop the H2 DB TCP Server  
+  
+server.stop();  
+```  
+  
+2. Embedded mode:  
+	  `jdbc:h2:~/test`  
+  
+> H2 db in embedded mode will be faster but the downside of it is that _no other process can access the Database_. In the above connection string, the Data will be saved into the ‘test’ folder, under the user’s home directory.  
+  
+3. Mixed mode:  
+	  `jdbc:h2:/data/test;AUTO_SERVER=TRUE`  
+  
+> When using automatic mixed mode, you can share the JDBC URL for all applications using the DB. By default the server uses any free TCP port. The port can be set manually using AUTO_SERVER_PORT=9090.  
+  
+  
+### execute sql scripts  
+  
+```shell  
+jdbc:h2:tcp://localhost/mem:elytron_jdbc_test;DB_CLOSE_DELAY=-1;DB_CLOSE_DELAY=-1;INIT=RUNSCRIPT FROM 'classpath:import.sql  
+```  
+  
+> shutdown  
+```shell  
+jdbc:h2:~/test;DB_CLOSE_ON_EXIT=FALSE  
+```  
+  
+### start and stop from maven  
+  
+```xml  
+<plugin>  
+  <groupId>org.codehaus.mojo</groupId>  
+  <artifactId>exec-maven-plugin</artifactId>  
+  <version>3.1.0</version>  
+  <executions>  
+    <execution>  
+      <!-- start H2 DB before integration tests -->  
+      <id>start</id>  
+      <phase>pre-integration-test</phase>  
+      <goals>  
+        <goal>java</goal>  
+      </goals>  
+      <configuration>  
+        <mainClass>com.mastertheboss.StartServer</mainClass>  
+      </configuration>  
+     </execution>  
+     <execution>  
+      <!-- stop H2 DB after integration tests -->  
+      <id>stop</id>  
+      <phase>post-integration-test</phase>  
+      <goals>  
+        <goal>java</goal>  
+      </goals>  
+      <configuration>  
+        <mainClass>com.mastertheboss.StopServer</mainClass>  
+      </configuration>  
+     </execution>  
+   </executions>  
+ </plugin>  
+```  
+  
+  
+---  
 # Queries  
   
 ## Intersect  
