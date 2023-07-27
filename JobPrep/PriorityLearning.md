@@ -7,7 +7,7 @@ layout:       default
 has_children: false  
 share:        true  
 shortRepo:    
-  - javanotes    
+  - jobprep    
   - default      
 ---  
   
