@@ -36,6 +36,14 @@ Table of contents
 ![H2_DB_Overview.png](..//14paxton.github.io/assets/images/H2_DB_Overview.png)  
 ![H2_DB_Overview.png](..%2Fassets%2Fimages%2FH2_DB_Overview.png)  
   
+  
+## run in postgres mode  
+  
+```shell  
+jdbc:h2:mem:test;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE  
+```  
+  
+  
 ___  
   
 # [H2 Database Engine Cheat Sheet](http://www.h2database.com/html/cheatSheet.html)  

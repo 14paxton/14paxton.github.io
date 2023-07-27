@@ -11,6 +11,59 @@ shortRepo:
 - default        
 ---  
   
+        
+        
+<br/>        
+        
+<details markdown="block">              
+<summary>              
+Table of contents              
+</summary>              
+{: .text-delta }              
+1. TOC              
+{:toc}              
+</details>              
+        
+<br/>              
+        
+***              
+        
+<br/>       
+  
+# Postgres  
+  
+```shell  
+docker pull postgres:9.6.14  
+```  
+  
+> You can change the Postgres password by changing the `_POSTGRESS_PASSWORD_` value from `_hydrogen_` to any preferred secured password  
+  
+		docker run --name <CONTAINER_NAME || postgres-9.6.14> -e POSTGRES_PASSWORD=hydrogen -p 5432:5432 -d -v $HOME/docker/volumes/postgres:/var/lib/postgresql postgres:9.6.14  
+  
+## PSQL Terminal  
+  
+Use the following command to hop into the PSQL terminal session.  
+  
+		docker exec -ti <CONTAINER_NAME || postgres-9.6.14> psql -h localhost -U postgres  
+  
+data-source in `respository/conf/identity/identity.xml` with the Postgres JNDI configuration name.  
+  
+```xml  
+<!-- identity.xml -->    
+<JDBCPersistenceManager>    
+  <DataSource>    
+    <!-- Include a data source name (jndiConfigName) from the set of datasources defined in master-datasources.xml -->    
+    <!-- <Name>jdbc/WSO2CarbonDB</Name> -->    
+        
+    <Name>jdbc/WSO2CarbonPostgresDB</Name>    
+  </DataSource>    
+    
+```  
+  
+  
+  
+---  
+  
 # MySQL  
   
 ```shell  
