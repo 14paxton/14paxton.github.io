@@ -2,7 +2,7 @@
 title:        PastProjects  
 permalink:    GithubPages/PastProjects  
 category:     JobPrep  
-parent:       MyPersonalDocsAndStuff  
+parent:       index  
 layout:       default  
 has_children: false  
 share:        true  

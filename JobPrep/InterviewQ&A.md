@@ -2,7 +2,7 @@
 title:        InterviewQ&A  
 permalink:    GithubPages/InterviewQ&A  
 category:     JobPrep  
-parent:       MyPersonalDocsAndStuff  
+parent:       index  
 layout:       default  
 has_children: false  
 share:        true  
