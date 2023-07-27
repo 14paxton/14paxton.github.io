@@ -277,18 +277,12 @@ jdbc:h2:~/test;DB_CLOSE_ON_EXIT=FALSE
 ## Intersect
 
 ```hql        
-SELECT *        
-FROM LAB_TEST_SERVICES_POJO lts        
-WHERE EXISTS        
-    (SELECT lsm.inttestid        
-     FROM LAB_SPECIMEN_MAPPING lsm        
-     WHERE lsm.status = 1        
-       AND lts.inttestid = lsm.inttestid)        
-  AND EXISTS        
-    (SELECT ltl.inttestid        
-     FROM LAB_TEST_LOCATION ltl        
-     WHERE ltl.status = 1        
-       AND lts.inttestid = ltl.inttestid)        
+select *
+from LAB_TEST_SERVICES_POJO lts
+where exists
+    ( select lsm.inttestid from LAB_SPECIMEN_MAPPING lsm where lsm.status = 1 and lts.inttestid = lsm.inttestid )
+  and exists
+    ( select ltl.inttestid from LAB_TEST_LOCATION ltl where ltl.status = 1 and lts.inttestid = ltl.inttestid )        
 ```        
 
 ### join same object to query against 2 lists
@@ -310,42 +304,32 @@ where otherObject in :allowedotherobjects
 ## EXAMPLE large query with teary / multi join/ and JSON extractor
 
 ```hql        
-SELECT USER.FIRSTNAME,        
-       USER.LASTNAME,        
-       USER.USERMETADATA,        
-       USER.LASTLOGIN,        
-       USER.PICTUREURL,        
-       MANAGER.ID,        
-       MANAGER.EMAIL,        
-       MANAGER.FIRSTNAME,        
-       MANAGER.LASTNAME,        
-       MANAGER.USERMETADATA,        
-       MANAGER.LASTLOGIN,        
-       MANAGER.PICTUREURL,        
-       MANAGER.EXTERNALEMPLOYEECODE,        
-       AO.ID,        
-       AO.COMPANYINTERVIEWNAME,        
-       AO.COMPLETEDDATE,        
-       AO.CATALOGDETAIL.ID,        
-       SM.ALIAS)        
-FROM ${User user}        
-    LEFT OUTER JOIN ${UserRelationship ur}        
-WITH ur.user.id = USER.id OR ur.manager.id = USER.id        
-    LEFT OUTER JOIN ${ur.manager} manager        
-    INNER JOIN ${AssessmentOrder ao}        
-WITH ao.id = CAST ((CONCAT(FUNCTION ('JSON_EXTRACT', USER.userMetadata, ' $.defaultAssessmentOrderId '))) AS java.lang.Long)        
-    LEFT OUTER JOIN ${InterviewModel im}        
-WITH im.sourceId = ao.catalogDetail.interviewModelId        
-    AND im.source = (CASE WHEN ao.catalogDetail.type = ' AO6 ' THEN ' TBSIX ' WHEN ao.catalogDetail.type = ' A05 ' THEN ' TBFIVE '        
-    WHEN ao.catalogDetail.type = ' P2P ' THEN ' TBFIVE ' END)        
-    LEFT OUTER JOIN ${ScoringModel sm}        
-ON sm.id = (CASE WHEN im.source = ' TBFIVE ' THEN (SELECT s FROM ScoringModel s WHERE        
-    s.interviewModelId = im.id) ELSE (SELECT s FROM ScoringModel s WHERE s.sourceId = ao.catalogDetail.interviewModelId) END)        
-WHERE USER.clientSetupId = ${clientSetupId}        
-  AND USER.id IN (${searchStrings?.lastName ? findAllIdsByFirstNameAndLastName(searchStrings.firstName.toString()        
+select USER.FIRSTNAME,
+       USER.LASTNAME,
+       USER.USERMETADATA,
+       USER.LASTLOGIN,
+       USER.PICTUREURL,
+       MANAGER.ID,
+       MANAGER.EMAIL,
+       MANAGER.FIRSTNAME,
+       MANAGER.LASTNAME,
+       MANAGER.USERMETADATA,
+       MANAGER.LASTLOGIN,
+       MANAGER.PICTUREURL,
+       MANAGER.EXTERNALEMPLOYEECODE,
+       AO.ID,
+       AO.COMPANYINTERVIEWNAME,
+       AO.COMPLETEDDATE,
+       AO.CATALOGDETAIL.ID,
+       SM.ALIAS)
+from ${User user} left outer join ${UserRelationship ur}
+with ur.user.id = user.id or ur.manager.id = user.id left outer join ${ur.manager} manager inner join ${AssessmentOrder ao}
+with ao.id = CAST ((CONCAT(FUNCTION ('JSON_EXTRACT', user.userMetadata, ' $.defaultAssessmentOrderId '))) as java.lang.Long) left outer join ${InterviewModel im}
+with im.sourceId = ao.catalogDetail.interviewModelId and im.source = (case when ao.catalogDetail.type = ' AO6 ' then ' TBSIX ' when ao.catalogDetail.type = ' A05 ' then ' TBFIVE ' when ao.catalogDetail.type = ' P2P ' then ' TBFIVE ' end) left outer join ${ScoringModel sm}
+on sm.id = (case when im.source = ' TBFIVE ' then (select s from ScoringModel s where s.interviewModelId = im.id) else (select s from ScoringModel s where s.sourceId = ao.catalogDetail.interviewModelId) end)
+where user.clientSetupId = ${clientSetupId}
+  and user.id in (${searchStrings?.lastName ? findAllIdsByFirstNameAndLastName(searchStrings.firstName.toString()
     , searchStrings.lastName.toString())*.getId().join(', ')        
-        
-        
 ```        
 
 > calling method
@@ -355,74 +339,62 @@ findAllByFirstNameOrLastNameOrEmail(searchStrings.firstName.toString())*.getId()
 ```        
 
 ```hql        
-SELECT DISTINCT        
-       NEW COM.TALENTBANK.CORE.USERMAP(USER.ID, USER.USERNAME, USER.CLIENTSETUPID, USER.EMAIL, USER.FIRSTNAME, USER.LASTNAME, USER.USERMETADATA, USER.LASTLOGIN, USER.PICTUREURL,        
-        MANAGER.ID, MANAGER.EMAIL, MANAGER.FIRSTNAME, MANAGER.LASTNAME, MANAGER.USERMETADATA, MANAGER.LASTLOGIN, MANAGER.PICTUREURL, COALESCE(MANAGER.EXTERNALEMPLOYEECODE, 0),        
-        COALESCE(AO.ID, 1), COALESCE(AO.COMPANYINTERVIEWNAME, 'p'), COALESCE(AO.COMPLETEDDATE, '00/00/00'), COALESCE(AO.CATALOGDETAIL.ID, 1), COALESCE(SM.ALIAS,  'p'))        
-FROM ${USER USER}        
-         LEFT OUTER JOIN ${USERRELATIONSHIP UR}        
-WITH ur.user.id = USER.id OR ur.manager.id = USER.id        
-    LEFT OUTER JOIN ur.manager manager        
-    LEFT OUTER JOIN ${AssessmentOrder ao}        
-WITH ao.id = CAST ((CONCAT( '', FUNCTION ('JSON_EXTRACT', USER.userMetadata, '$.defaultAssessmentOrderId'), '')) AS java.lang.Long)        
-    LEFT OUTER JOIN ${InterviewModel im}        
-WITH im.sourceId = ao.catalogDetail.interviewModelId        
-    AND im.source = (CASE WHEN ao.catalogDetail.type = 'AO6' THEN 'TBSIX' WHEN ao.catalogDetail.type = 'A05' THEN 'TBFIVE' WHEN ao.catalogDetail.type = 'P2P' THEN 'TBFIVE' END)        
-    LEFT OUTER JOIN ${ScoringModel sm}        
-ON sm.id = (CASE WHEN im.source = 'TBFIVE' THEN (SELECT s FROM ScoringModel s WHERE s.interviewModelId = im.id) ELSE (SELECT s FROM ScoringModel s WHERE s.sourceId = ao.catalogDetail.interviewModelId) END)        
-WHERE USER.clientSetupId = $clientSetupId        
+select distinct NEW COM.TALENTBANK.CORE.USERMAP(USER.ID, USER.USERNAME, USER.CLIENTSETUPID, USER.EMAIL, USER.FIRSTNAME, USER.LASTNAME, USER.USERMETADATA, USER.LASTLOGIN, USER.PICTUREURL,        
+        MANAGER.ID, MANAGER.EMAIL, MANAGER.FIRSTNAME, MANAGER.LASTNAME, MANAGER.USERMETADATA, MANAGER.LASTLOGIN, MANAGER.PICTUREURL, coalesce(MANAGER.EXTERNALEMPLOYEECODE, 0),        
+        coalesce(AO.ID, 1), coalesce(AO.COMPANYINTERVIEWNAME, 'p'), coalesce(AO.COMPLETEDDATE, '00/00/00'), coalesce(AO.CATALOGDETAIL.ID, 1), coalesce(SM.ALIAS,  'p'))
+from ${USER USER}
+         left outer join ${USERRELATIONSHIP UR} WITH ur.user.id = user.id or ur.manager.id = user.id        
+    left outer join ur.manager manager        
+    left outer join ${AssessmentOrder ao}
+with ao.id = CAST ((CONCAT( '', FUNCTION ('JSON_EXTRACT', user.userMetadata, '$.defaultAssessmentOrderId'), '')) as java.lang.Long) left outer join ${InterviewModel im}
+with im.sourceId = ao.catalogDetail.interviewModelId and im.source = (case when ao.catalogDetail.type = 'AO6' then 'TBSIX' when ao.catalogDetail.type = 'A05' then 'TBFIVE' when ao.catalogDetail.type = 'P2P' then 'TBFIVE' end) left outer join ${ScoringModel sm}
+on sm.id = (case when im.source = 'TBFIVE' then (select s from ScoringModel s where s.interviewModelId = im.id) else (select s from ScoringModel s where s.sourceId = ao.catalogDetail.interviewModelId) end)
+where user.clientSetupId = $clientSetupId
 ```        
 
 ## EXAMPLE calling method in HQL statement
 
 ```hql        
-SELECT DISTINCT new COM.TALENTBANK.CORE.DTO.USERTEAM.TEAMSEARCHDTOMAP(USER.ID, USER.USERNAME, USER.CLIENTSETUPID, USER.EMAIL, USER.FIRSTNAME, USER.LASTNAME, USER.USERMETADATA, USER.LASTLOGIN, USER.PICTUREURL,        
+select distinct new COM.TALENTBANK.CORE.DTO.USERTEAM.TEAMSEARCHDTOMAP(USER.ID, USER.USERNAME, USER.CLIENTSETUPID, USER.EMAIL, USER.FIRSTNAME, USER.LASTNAME, USER.USERMETADATA, USER.LASTLOGIN, USER.PICTUREURL,        
 MANAGER.ID, MANAGER.EMAIL, MANAGER.FIRSTNAME, MANAGER.LASTNAME, MANAGER.USERMETADATA, MANAGER.LASTLOGIN, MANAGER.PICTUREURL,        
-MANAGER.EXTERNALEMPLOYEECODE)        
-FROM USER USER        
-LEFT OUTER JOIN UserRelationship ur        
-WITH ur.user.id = USER.id OR ur.manager.id = USER.id        
-    LEFT OUTER JOIN USER manager        
-ON manager.id = ur.manager.id        
-WHERE USER.clientSetupId = 2000        
-  AND USER.id IN (${ findAllByFirstNameOrLastNameOrEmail(searchStrings.firstName)*.getId().join(' , ')}))        
+MANAGER.EXTERNALEMPLOYEECODE)
+from USER USER
+         left outer join UserRelationship ur
+with ur.user.id = user.id or ur.manager.id = user.id left outer join user manager
+on manager.id = ur.manager.id
+where user.clientSetupId = 2000
+  and user.id in (${ findAllByFirstNameOrLastNameOrEmail(searchStrings.firstName)*.getId().join(' , ')}))        
 ```        
 
 ## EXAMPLE case in where statement
 
 ```hql        
-SELECT DISTINCT new Map( USER.ID AS USER, MANAGER.ID AS manager )        
-FROM USER USER        
-  LEFT OUTER JOIN UserRelationship ur        
-WITH ur.user.id = USER.id OR ur.manager.id = USER.id        
-    LEFT OUTER JOIN USER manager        
-ON manager.id = ur.manager.id        
-WHERE USER.clientSetupId IN (55        
-    , 2000)        
-  AND (USER.firstName LIKE '%'||'${testSearch}'||'%'        
-   OR USER.lastName LIKE '%'||'${testSearch}'||'%'        
-   OR        
-    manager.firstName LIKE CASE WHEN ${searchManagerName} = TRUE THEN ('%'||'${testSearch}'||'%') ELSE '' END        
-   OR        
-    manager.lastName LIKE CASE WHEN ${searchManagerName} = TRUE THEN ('%'||'${testSearch}'||'%') ELSE '' END )        
+select distinct new Map( USER.ID as user, MANAGER.ID as manager )
+from USER USER
+         left outer join UserRelationship ur
+with ur.user.id = user.id or ur.manager.id = user.id left outer join user manager
+on manager.id = ur.manager.id
+where user.clientSetupId in (55
+    , 2000)
+  and (user.firstName like '%'||'${testSearch}'||'%'
+   or user.lastName like '%'||'${testSearch}'||'%'
+   or manager.firstName like case when ${searchManagerName} = true then ('%'||'${testSearch}'||'%') else '' end
+   or manager.lastName like case when ${searchManagerName} = true then ('%'||'${testSearch}'||'%') else '' end )        
 ```        
 
 ## return all if null or empty
 
 ```hql        
-SELECT DISTINCT new Map( USER.ID AS USER, MANAGER.ID AS manager )        
-FROM USER USER        
-  LEFT OUTER JOIN UserRelationship ur        
-WITH ur.user.id = USER.id OR ur.manager.id = USER.id        
-    LEFT OUTER JOIN USER manager        
-ON manager.id = ur.manager.id        
-WHERE USER.clientSetupId IN (${clientSetUpIdList.join(' , ') ?: ClientSetup.all.id.join(' , ') })        
-  AND (USER.firstName LIKE ${testSearch.user}        
-   OR USER.lastName LIKE ${testSearch.user}        
-   OR        
-    manager.firstName LIKE ${testSearch.manager}        
-   OR        
-    manager.lastName LIKE ${testSearch.manager} )        
+select distinct new Map( USER.ID as user, MANAGER.ID as manager )
+from USER USER
+         left outer join UserRelationship ur
+with ur.user.id = user.id or ur.manager.id = user.id left outer join user manager
+on manager.id = ur.manager.id
+where user.clientSetupId in (${clientSetUpIdList.join(' , ') ?: ClientSetup.all.id.join(' , ') })
+  and (user.firstName like ${testSearch.user}
+   or user.lastName like ${testSearch.user}
+   or manager.firstName like ${testSearch.manager}
+   or manager.lastName like ${testSearch.manager} )        
 ```        
 
 ## subquery
@@ -468,40 +440,35 @@ group by user.id, manager.id
 ### get groupings where there may be nulls
 
 ```hql        
-SELECT NEW Map( MAX(USER.ID) AS userId , (SELECT CONCAT('{', GROUP_CONCAT(CONCAT(COALESCE(UR1.ID, 'noRelationship'), ':[{' ,        
-                         USER.ID, ':' , COALESCE(MANAGER1.ID, 'null'), '}]' )) , '}')        
-                         FROM USER USER        
-                         JOIN UserRelationship ur1 WITH ur1.user.id = USER.id OR ur1.manager.id = USER.id        
-                         JOIN USER manager1 WITH manager1.id = ur1.manager.id) AS TUPLES )        
-FROM USER USER        
-    LEFT OUTER JOIN UserRelationship ur        
-WITH ur.user.id = USER.id OR ur.manager.id = USER.id        
-    LEFT OUTER JOIN USER manager        
-WITH manager.id = ur.manager.id        
-WHERE USER.clientSetupId = 2000        
-GROUP BY USER.id, manager.id        
+select NEW Map( max(USER.ID) as userId , (select concat('{', group_concat(concat(coalesce(UR1.ID, 'noRelationship'), ':[{' ,        
+                         USER.ID, ':' , coalesce(MANAGER1.ID, 'null'), '}]' )) , '}')        
+                         from USER USER        
+                         join UserRelationship ur1 with ur1.user.id = user.id or ur1.manager.id = user.id        
+                         join user manager1 with manager1.id = ur1.manager.id) as TUPLES )
+from USER USER
+         left outer join UserRelationship ur
+with ur.user.id = user.id or ur.manager.id = user.id left outer join user manager
+with manager.id = ur.manager.id
+where user.clientSetupId = 2000
+group by user.id, manager.id        
 ```        
 
 ### get list of digits
 
 ```hql        
-SELECT Max(USER.ID),        
-       (SELECT DISTINCT CONCAT(GROUP_CONCAT(1))        
-        FROM USER u        
-                 LEFT OUTER JOIN USERRELATIONSHIP ur        
-WITH ur.user.id = u.id OR ur.manager.id = u.id        
-    LEFT OUTER JOIN USER M        
-WITH M.id = ur.manager.id        
-WHERE u.clientSetupId = 2000        
-  AND manager.id = m.id        
-    )        
-FROM USER USER        
-    LEFT OUTER JOIN UserRelationship ur        
-WITH ur.user.id = USER.id OR ur.manager.id = USER.id        
-    LEFT OUTER JOIN USER manager        
-WITH manager.id = ur.manager.id        
-WHERE USER.clientSetupId = 2000        
-GROUP BY USER, manager        
+select max(USER.ID),
+       (select distinct concat(group_concat(1))
+        from USER u
+                 left outer join USERRELATIONSHIP ur with ur.user.id = u.id or ur.manager.id = u.id        
+    left outer join user m
+        with m.id = ur.manager.id
+        where u.clientSetupId = 2000 and manager.id = m.id)
+from USER USER
+         left outer join UserRelationship ur
+with ur.user.id = user.id or ur.manager.id = user.id left outer join user manager
+with manager.id = ur.manager.id
+where user.clientSetupId = 2000
+group by user, manager        
 ```        
 
 ### get correct char but need to count column
@@ -509,57 +476,40 @@ GROUP BY USER, manager
 #### Not working need to show one number, find way to count column
 
 ```hql        
-SELECT (SELECT COUNT(u.id)        
-        FROM USER u        
-                 LEFT OUTER JOIN USERRELATIONSHIP ur        
-WITH ur.user.id = u.id OR ur.manager.id = u.id        
-    LEFT OUTER JOIN USER M        
-WITH M.id = ur.manager.id        
-WHERE u.id IN (        
-    SELECT DISTINCT CONCAT(''        
-    , GROUP_CONCAT(USER.id        
-    , manager.id)        
-    , '')        
-    FROM u subu        
-    LEFT OUTER JOIN UserRelationship subur WITH subur.user.id = subu.id        
-   OR subur.manager.id = subu.id        
-    LEFT OUTER JOIN USER subm WITH subm.id = subur.manager.id        
-    WHERE USER.clientSetupId = 2000        
-    GROUP BY CONCAT( USER.id        
-    , IFNULL(manager.id        
-    , 666))        
-    )        
-    )        
-FROM USER USER        
-    LEFT OUTER JOIN UserRelationship ur        
-WITH ur.user.id = USER.id OR ur.manager.id = USER.id        
-    LEFT OUTER JOIN USER manager        
-WITH manager.id = ur.manager.id        
-WHERE USER.clientSetupId = 2000        
-GROUP BY 'all'        
+select (select count(u.id)
+        from USER u
+                 left outer join USERRELATIONSHIP ur with ur.user.id = u.id or ur.manager.id = u.id        
+    left outer join user m
+        with m.id = ur.manager.id
+        where u.id in ( select distinct CONCAT(''
+            , GROUP_CONCAT(user.id
+            , manager.id)
+            , '') from u subu left outer join UserRelationship subur with subur.user.id = subu.id
+           or subur.manager.id = subu.id left outer join user subm with subm.id = subur.manager.id where user.clientSetupId = 2000 group by CONCAT( user.id
+            , IFNULL(manager.id
+            , 666)) ))
+from USER USER
+         left outer join UserRelationship ur
+with ur.user.id = user.id or ur.manager.id = user.id left outer join user manager
+with manager.id = ur.manager.id
+where user.clientSetupId = 2000
+group by 'all'        
 ```        
 
 ```hql        
-SELECT COUNT(*),        
-       (SELECT LENGTH(CONCAT(GROUP_CONCAT('')))        
-        FROM USER u        
-                 LEFT OUTER JOIN USERRELATIONSHIP rel        
-WITH rel.user.id = u.id OR rel.manager.id = u.id        
-    LEFT OUTER JOIN USER M        
-WITH M.id = rel.manager.id        
-WHERE u.clientSetupId = 2000        
-  AND u.id = USER.id        
-  AND (m.id = manager.id        
-   OR (u.id IS NOT NULL        
-  AND m.id IS NULL))        
-    )        
-FROM USER USER        
-    LEFT OUTER JOIN UserRelationship ur        
-WITH ur.user.id = USER.id OR ur.manager.id = USER.id        
-    LEFT OUTER JOIN USER manager        
-WITH manager.id = ur.manager.id        
-WHERE USER.clientSetupId = 2000        
-GROUP BY USER, manager        
+select count(*),
+       (select length(concat(group_concat('')))
+        from USER u
+                 left outer join USERRELATIONSHIP rel with rel.user.id = u.id or rel.manager.id = u.id        
+    left outer join user m
+        with m.id = rel.manager.id
+        where u.clientSetupId = 2000 and u.id = user.id and (m.id = manager.id or (u.id is not null and m.id is null)))
+from USER USER
+         left outer join UserRelationship ur
+with ur.user.id = user.id or ur.manager.id = user.id left outer join user manager
+with manager.id = ur.manager.id
+where user.clientSetupId = 2000
+group by user, manager        
 ```        
 
 ## SELECT DISTINCT mag FROM Magazine mag
@@ -586,14 +536,14 @@ WHERE art.author.lastName = 'Grisham'
 
 ```groovy        
  query = """        
-        SELECT NEW Map(ug.id AS id, ug.NAME AS NAME, ug.interviewModelId AS interviewModelId,        
-        ug.visibility AS visibility, ug.lastUpdated AS lastUpdated, COUNT(ugao.id) AS assessmentCount )        
-        FROM USERGROUP ug        
-                 LEFT JOIN USERGROUPASSESSMENTORDER ugao ON ug.id = ugao.userGroupId        
-        WHERE ug.userId = :userId        
-          AND ug.type = :type        
-        GROUP BY ug.id        
-        ORDER BY ug.NAME        
+       select NEW Map(ug.id as id, ug.NAME as NAME, ug.interviewModelId as interviewModelId,        
+        ug.visibility as visibility, ug.lastUpdated as lastUpdated, count(ugao.id) as assessmentCount )
+from USERGROUP ug
+         left join USERGROUPASSESSMENTORDER ugao on ug.id = ugao.userGroupId
+where ug.userId = :userId
+  and ug.type = :type
+group by ug.id
+order by ug.NAME      
        """
 def groups = UserGroup.executeQuery(query, [userId: principalUser?.id, type: UserGroupType.RESULTGROUP])        
 ```        
@@ -604,24 +554,30 @@ def groups = UserGroup.executeQuery(query, [userId: principalUser?.id, type: Use
 
 ```groovy        
                User.withSession { uSession ->
-    def q = uSession.createQuery($/SELECT DISTINCT        
-                                                   new COM.TALENTBANK.CORE.USERMAP(USER.ID,         
+    def q = uSession.createQuery($/select distinct new COM.TALENTBANK.CORE.USERMAP(USER.ID,         
                                                            USER.USERNAME, USER.CLIENTSETUPID,         
                                                                           USER.EMAIL, USER.FIRSTNAME, USER.LASTNAME, USER.USERMETADATA, USER.LASTLOGIN,         
                                                           USER.PICTUREURL,MANAGER.ID, MANAGER.EMAIL ,         
                                                                           MANAGER.FIRSTNAME ,MANAGER.LASTNAME ,MANAGER.USERMETADATA, MANAGER.LASTLOGIN         
                                                                          ,MANAGER.PICTUREURL         
-                                                                          ,MANAGER.EXTERNALEMPLOYEECODE)        
-                                                FROM $ USER USER        
-                                                    LEFT JOIN        
-                                                FETCH $UserRelationship ur ON ur.user.id = USER.id OR ur.manager.id =        
-                                                    USER.idleft        
-                                                    JOIN ur.manager manager        
-                                                    WHERE USER.firstName LIKE CONCAT('%', $searchString, '%')        
-                                                    OR USER.lastName LIKE CONCAT('%', $searchString, '%')        
-                                                    OR USER.email LIKE CONCAT('%', $searchString, '%')        
-                                                    OR manager.firstName LIKE CONCAT('%', $searchString, '%')        
-                                                    OR manager.lastName LIKE CONCAT('%', $searchString, '%')           
+                                                                          ,MANAGER.EXTERNALEMPLOYEECODE)
+from $ user user left join fetch $UserRelationship ur
+on ur.user.id = user.id or ur.manager.id = user.idleft join ur.manager manager
+where user.firstName like CONCAT('%'
+    , $searchString
+    , '%')
+   or user.lastName like CONCAT('%'
+    , $searchString
+    , '%')
+   or user.email like CONCAT('%'
+    , $searchString
+    , '%')
+   or manager.firstName like CONCAT('%'
+    , $searchString
+    , '%')
+   or manager.lastName like CONCAT('%'
+    , $searchString
+    , '%')               
                                                 /$)
 
     q.maxResults = 8
@@ -639,26 +595,40 @@ def groups = UserGroup.executeQuery(query, [userId: principalUser?.id, type: Use
     //        DataSource dataSource = Holders.grailsApplication.mainContext.getBean('dataSource')        
     //        Sql groovySql = new Sql(dataSource)        
 
-    String query = """SELECT DISTINCT user.id, user.username, user.client_setup_id, user.email, user.first_name, user.last_name,         
-       user.user_metadata,         
-       user.last_login, user.picture_url,        
-                                   manager.first_name AS mgr_first_name, manager.last_name AS mgr_last_name        
-                          FROM user        
-                                LEFT JOIN user_relationship as userRelationship on userRelationship.user_id = user.id        
-                                LEFT JOIN user manager on userRelationship.manager_id = manager.id        
-                              WHERE ((user.first_name LIKE '%${searchString}%' || user.last_name LIKE '%${searchString}%' || user.email LIKE         
-                          '%${searchString}%') ||        
-                                      (user.first_name LIKE '%${firstNameSearch}%' && user.last_name LIKE '%${lastNameSearch}%'))         
-                         UNION        
-                         SELECT DISTINCT user.id, user.username, user.client_setup_id, user.email, user.first_name, user.last_name,         
-                         user.user_metadata,         
-                         user.last_login, user.picture_url,        
-                               manager.first_name AS mgr_first_name, manager.last_name AS mgr_last_name        
-                         FROM user        
-                               LEFT JOIN user_relationship as userRelationship on userRelationship.user_id = user.id        
-                               LEFT JOIN user manager on userRelationship.manager_id = manager.id        
-                               WHERE ((manager.first_name LIKE '%${searchString}%' || manager.last_name LIKE '%${searchString}%') ||        
-                              (manager.first_name LIKE '%${firstNameSearch}%' && manager.last_name LIKE '%${lastNameSearch}%'))         
+    String query = """select distinct user.id,
+                user.username,
+                user.client_setup_id,
+                user.email,
+                user.first_name,
+                user.last_name,
+                user.user_metadata,
+                user.last_login,
+                user.picture_url,
+                manager.first_name as mgr_first_name,
+                manager.last_name  as mgr_last_name
+from user
+         left join user_relationship as userRelationship on userRelationship.user_id = user.id
+         left join user manager on userRelationship.manager_id = manager.id
+where ((user.first_name like '%${searchString}%' || user.last_name like '%${searchString}%' || user.email like
+        '%${searchString}%') ||
+       (user.first_name like '%${firstNameSearch}%' && user.last_name like '%${lastNameSearch}%'))
+union
+select distinct user.id,
+                user.username,
+                user.client_setup_id,
+                user.email,
+                user.first_name,
+                user.last_name,
+                user.user_metadata,
+                user.last_login,
+                user.picture_url,
+                manager.first_name as mgr_first_name,
+                manager.last_name  as mgr_last_name
+from user
+         left join user_relationship as userRelationship on userRelationship.user_id = user.id
+         left join user manager on userRelationship.manager_id = manager.id
+where ((manager.first_name like '%${searchString}%' || manager.last_name like '%${searchString}%') ||
+       (manager.first_name like '%${firstNameSearch}%' && manager.last_name like '%${lastNameSearch}%'))         
                             """
 
     groovySql.rows(query, 0, 15)
