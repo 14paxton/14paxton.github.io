@@ -1,4 +1,4 @@
----  
+---
 title:        Docker        
 permalink:    SQLNotes/Docker        
 category:     SQLNotes        
@@ -9,7 +9,7 @@ share:        true
 shortRepo:        
 - sqlnotes        
 - default        
----  
+---
   
         
         
@@ -62,7 +62,7 @@ data-source in `respository/conf/identity/identity.xml` with the Postgres JNDI
   
   
   
----  
+---
   
 # MySQL  
   

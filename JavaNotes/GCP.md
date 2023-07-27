@@ -1,4 +1,4 @@
----  
+---
 title:     GCP        
 layout:    default        
 parent:    Java        
@@ -8,7 +8,7 @@ share:     true
 shortRepo:      
   - javanotes      
   - default        
----  
+---
       
       
 <br/>      
@@ -30,7 +30,7 @@ Table of contents
       
 # [App Engine](https://cloud.google.com/appengine/docs/standard/java-gen2/runtime)      
       
----  
+---
       
 # Resources      
       

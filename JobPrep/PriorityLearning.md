@@ -1,4 +1,4 @@
----  
+---
 title:        PriorityLearning  
 permalink:    GithubPages/PriorityLearning  
 category:     JobPrep  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - jobprep  
   - default      
----  
+---
   
 1. [Adv postgres 2023](https://www.linkedin.com/learning/advanced-postgresql/advanced-features-in-postgresql?contextUrn=urn%3Ali%3AlearningCollection%3A7085095211655163904&u=103729738)  
 2. [Adv postgres. 2021](https://www.linkedin.com/learning/postgresql-advanced-queries/gain-additional-insights-from-your-postgresql-data?contextUrn=urn%3Ali%3AlearningCollection%3A7085095211655163904&u=103729738)  
