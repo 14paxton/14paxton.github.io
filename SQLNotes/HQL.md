@@ -144,6 +144,27 @@ Server server = Server.createTcpServer("-tcpPort", "9092", "-tcpAllowOthers").st
 server.stop();  
 ```  
   
+> In server mode, you need to use one of the following JDBC URLs:  
+  
+```  
+_jdbc:h2:tcp://localhost/~/test_ connect to the ‘test’ database in the user home directory on the server (local computer).  
+  
+_jdbc:h2:tcp://192.168.1.3:9092 //data/test_ connect to the ‘test’ database in the /data directory on the remote server.  
+```  
+> **Run H2 server in command line:**  
+  
+In command prompt or terminal window, type the following command to run H2 server:  
+  
+```  
+java -cp h2-version.jar org.h2.tools.Server -tcp  
+```  
+  
+This will start H2 server program, listening for TCP connections. To know more options, type the following command:  
+  
+```  
+java -cp h2-version.jar org.h2.tools.Server -help  
+```  
+  
 2. Embedded mode:  
 	  `jdbc:h2:~/test`  
   
@@ -151,7 +172,6 @@ server.stop();
   
 > 			To connect to an H2 embedded database, you need to use one of the following JDBC URLs:  
 ```  
-				  
 				_jdbc:h2:~/test_the ‘test’ database in the user home directory  
 				  
 				_jdbc:h2:./test_ the ‘test’ database in the current directory  
@@ -161,7 +181,7 @@ server.stop();
 				_jdbc:h2:D:/data/test_ the ‘test’ database in the D:/data directory (Windows)  
 ```  
   
-1. Mixed mode:  
+3. Mixed mode:  
 	  `jdbc:h2:/data/test;AUTO_SERVER=TRUE`  
   
 > When using automatic mixed mode, you can share the JDBC URL for all applications using the DB. By default the server uses any free TCP port. The port can be set manually using AUTO_SERVER_PORT=9090.  
