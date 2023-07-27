@@ -12,6 +12,6 @@ shortRepo:
 
 <br/>
 ___
-[Repo](https://github.com/14paxton/SQLNotes)
+## [Repo](https://github.com/14paxton/SQLNotes)
 
 ***

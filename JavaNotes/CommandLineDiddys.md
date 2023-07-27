@@ -6,9 +6,27 @@ permalink: JavaNotes/CommandLineDiddys
 category:  JavaNotes  
 share:     true  
 shortRepo:
-  - java
+  - javanotes
   - default  
 ---
+
+
+<br/>
+
+<details markdown="block">      
+<summary>      
+Table of contents      
+</summary>      
+{: .text-delta }      
+1. TOC      
+{:toc}      
+</details>      
+
+<br/>      
+
+***      
+
+<br/>      
 
 JPS - https://docs.oracle.com/en/java/javase/17/docs/specs/man/jps.html
 

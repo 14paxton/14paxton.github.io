@@ -6,9 +6,27 @@ permalink: JavaNotes/GCP
 category:  JavaNotes  
 share:     true  
 shortRepo:
-  - java
+  - javanotes
   - default  
 ---
+
+
+<br/>
+
+<details markdown="block">      
+<summary>      
+Table of contents      
+</summary>      
+{: .text-delta }      
+1. TOC      
+{:toc}      
+</details>      
+
+<br/>      
+
+***      
+
+<br/>      
 
 # [App Engine](https://cloud.google.com/appengine/docs/standard/java-gen2/runtime)
 

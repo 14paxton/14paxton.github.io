@@ -6,6 +6,12 @@ category:     JavaNotes
 has_children: true  
 share:        true  
 shortRepo:
-  - java
+  - javanotes
   - default  
 ---
+
+<br/>
+___
+## [Repo](https://github.com/14paxton/JavaNotes)
+
+***
