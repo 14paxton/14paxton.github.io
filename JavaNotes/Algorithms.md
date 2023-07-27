@@ -9,8 +9,6 @@ shortRepo:
   - javanotes    
   - default      
 ---  
-      
-    break fucker  
     
 <br/>    
     
