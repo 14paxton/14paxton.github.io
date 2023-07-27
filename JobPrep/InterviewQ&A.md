@@ -1,5 +1,6 @@
 ---  
 title:        InterviewQ&A  
+permalink:    JobPrep/InterviewQ&A  
 category:     JobPrep  
 parent:       MyPersonalDocsAndStuff  
 layout:       default  
