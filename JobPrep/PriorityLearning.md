@@ -18,5 +18,5 @@ shortRepo:
 - [ ] Jupiter    
 - [ ] Saturn    
 - [ ] Uranus    
-- [ ] Neptune    
-- [ ] Comet Haley
+- [ ] Neptune
+- [ ] Comet Haleyx
