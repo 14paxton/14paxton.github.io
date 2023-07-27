@@ -1,77 +1,77 @@
----
-title:     Email    
-layout:    default    
-parent:    Java    
-permalink: JavaNotes/Email    
-category:  JavaNotes    
-share:     true    
-shortRepo:  
-  - javanotes  
-  - default    
----
-  
-  
-<br/>  
-  
-<details markdown="block">        
-<summary>        
-Table of contents        
-</summary>        
-{: .text-delta }        
-1. TOC        
-{:toc}        
-</details>        
-  
-<br/>        
-  
-***        
-  
-<br/>        
-  
-# JavaMail API  
-  
-```java  
-import javax.mail.*;  
-import javax.mail.internet.*;  
-  
-public class SendEmail {  
-  
-    public static void main(String[] args) throws Exception {  
-  
-        // Create a new MimeMessage object  
-        MimeMessage message = new MimeMessage(Session.getDefaultInstance(System.getProperties()));  
-  
-        // Set the sender's email address  
-        message.setFrom(new InternetAddress("from@example.com"));  
-  
-        // Set the recipient's email address  
-        message.setRecipient(Message.RecipientType.TO, new InternetAddress("to@example.com"));  
-  
-        // Set the subject of the email  
-        message.setSubject("This is a test email");  
-  
-        // Set the body of the email  
-        message.setText("This is the body of the email.");  
-  
-        // Send the email  
-        Transport.send(message);  
-  
-    }  
-  
-}  
-```  
-  
-> where:  
-  
-`from@example.com` is the sender's email address  
-  
-`to@example.com` is the recipient's email address  
-  
-This is a test email is the subject of the email  
-  
-This is the body of the email. is the body of the email  
-  
----
+---  
+title:     Email      
+layout:    default      
+parent:    Java      
+permalink: JavaNotes/Email      
+category:  JavaNotes      
+share:     true      
+shortRepo:    
+  - javanotes    
+  - default      
+---  
+    
+    
+<br/>    
+    
+<details markdown="block">          
+<summary>          
+Table of contents          
+</summary>          
+{: .text-delta }          
+1. TOC          
+{:toc}          
+</details>          
+    
+<br/>          
+    
+***          
+    
+<br/>          
+    
+# JavaMail API    
+    
+```java    
+import javax.mail.*;    
+import javax.mail.internet.*;    
+    
+public class SendEmail {    
+    
+    public static void main(String[] args) throws Exception {    
+    
+        // Create a new MimeMessage object    
+        MimeMessage message = new MimeMessage(Session.getDefaultInstance(System.getProperties()));    
+    
+        // Set the sender's email address    
+        message.setFrom(new InternetAddress("from@example.com"));    
+    
+        // Set the recipient's email address    
+        message.setRecipient(Message.RecipientType.TO, new InternetAddress("to@example.com"));    
+    
+        // Set the subject of the email    
+        message.setSubject("This is a test email");    
+    
+        // Set the body of the email    
+        message.setText("This is the body of the email.");    
+    
+        // Send the email    
+        Transport.send(message);    
+    
+    }    
+    
+}    
+```    
+    
+> where:    
+    
+`from@example.com` is the sender's email address    
+    
+`to@example.com` is the recipient's email address    
+    
+This is a test email is the subject of the email    
+    
+This is the body of the email. is the body of the email    
+    
+---  
   
 # Spring  
   
@@ -190,7 +190,7 @@ String msgStyled="This is my <b style='color:red;'>bold-red email</b> using Java
   
 This_String_will hold our styled text to be sent in the email body.  
   
----
+---  
   
 # Google Cloud Function  
   
@@ -227,7 +227,7 @@ public class SendEmailFunction implements HttpFunction {
 }  
 ```  
   
----
+---  
   
 # [Using GCP App Enging](https://cloud.google.com/appengine/docs/legacy/standard/java/mail/sending-mail-with-mail-api)  
   
@@ -275,7 +275,7 @@ EmailSender sender = new EmailSender();
 sender.sendMessage("to@example.com", "Subject", "Body");  
 ```  
   
----
+---  
   
 # [Through Gmail Server](https://developers.google.com/gmail/api/guides/sending)  
   
@@ -333,7 +333,7 @@ class Mailer {
 }  
 ```  
   
----
+---  
   
 # With GCP and SendGrid API  
   
