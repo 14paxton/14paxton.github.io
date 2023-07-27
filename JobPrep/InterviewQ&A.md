@@ -1,7 +1,8 @@
 ---
 title:        InterviewQ&A
+permalink:    GithubPages/InterviewQ&A
 category:     JobPrep
-parent:       index
+parent:       MyPersonalDocsAndStuff
 layout:       default
 has_children: false
 share:        true

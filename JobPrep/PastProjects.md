@@ -1,8 +1,8 @@
 ---
 title:        PastProjects
-permalink:    JobPrep/PastProjects
+permalink:    GithubPages/PastProjects
 category:     JobPrep
-parent:       index
+parent:       MyPersonalDocsAndStuff
 layout:       default
 has_children: false
 share:        true
