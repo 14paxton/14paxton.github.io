@@ -1,4 +1,4 @@
----  
+--- 
 title:        HQL  
 permalink:    SQLNotes/HQL  
 category:     SQLNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - sqlnotes  
   - default  
----  
+--- 
   
 <br/>  
   

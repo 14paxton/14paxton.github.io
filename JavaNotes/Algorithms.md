@@ -1,4 +1,4 @@
----  
+---
 title:     Algorithms    
 layout:    default    
 parent:    Java    
@@ -8,7 +8,7 @@ share:     true
 shortRepo:  
   - javanotes  
   - default    
----  
+---
     
     
   
@@ -43,7 +43,7 @@ Table of contents
 ***          
     
 <br/>          
-fuck    
+
 # Algos    
     
 ## binary search    

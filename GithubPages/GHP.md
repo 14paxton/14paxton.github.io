@@ -56,7 +56,7 @@ relative_links:
 ```        
 
         
----        
+---       
 
 # [Custom Domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
 
@@ -165,7 +165,7 @@ _documentation_](https://help.github.com/articles/setting-up-a-www-subdomain/)_.
 >
 > NOTE #1: Even though it’s very obvious, you should replace`_YOUR-GITHUB-USERNAME_`and`your-domain.com`with your personal github username and domain name you are trying to use respectively.
       
----      
+---     
 
 # [DEPLOY](https://github.com/actions/deploy-pages)
 
@@ -200,7 +200,7 @@ jobs: # Build job
 ```      
 
       
----      
+---     
 
 # Template
 
@@ -209,7 +209,7 @@ jobs: # Build job
 > [template readme](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo)
 
 > [YAML Example](https://github.com/just-the-docs/just-the-docs/blob/f246498a8fab71a8716194aaca8ef690bbdc1b94/_config.yml)
----        
+---       
 
 # [Themes](https://pages.github.com/themes/)
 

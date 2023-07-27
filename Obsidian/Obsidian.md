@@ -1,4 +1,4 @@
----  
+--- 
 title:        Obsidian  
 layout:       default  
 has_children: false  
@@ -6,7 +6,7 @@ permalink:    Obsidian/Obsidian
 category:     Obsidian  
 share:        true  
 shortRepo:    ghpages  
----  
+--- 
   
 ***  
 <details  markdown="block">    
@@ -35,19 +35,19 @@ Obsidian lets you edit text in multiple places at the same time using multiple c
 ## [GitHubPages](https://github.com/ObsidianPublisher/template-gh-pages/blob/main/mkdocs.yml)  
   
           
----          
+---         
   
 # [Editing And Formatting](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax)  
   
           
----          
+---         
   
 # [METADATA](https://help.obsidian.md/Editing+and+formatting/Metadata#:~:text=YAML%20is%20a%20widely%20used,key%20and%20a%20corresponding%20value.&text=While%20the%20order%20of%20each,more%20than%20one%20tag%20key.)  
   
 ### FRONTMATTER  
   
 ```yml          
----  
+--- 
 title:    GHP  
 category: GithubPages/Pages  
 share:    true  
@@ -55,11 +55,11 @@ repo:
   owner:     14paxton  
   repo:      14paxton.github.io  
   branch:    master  
----           
+---          
 ```          
   
           
----          
+---         
   
 # [Plugins](https://help.obsidian.md/Plugins/Core+plugins)  
   
