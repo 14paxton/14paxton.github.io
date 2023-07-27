@@ -2,7 +2,7 @@
 title:        PastProjects
 permalink:    GithubPages/PastProjects
 category:     JobPrep
-parent:       MyPersonalDocsAndStuff
+parent:       index
 layout:       default
 has_children: false
 share:        true
@@ -151,7 +151,7 @@ interviewer and interviewees outlook calendar
 ### -Things I enjoy-
 
       
----     
+---    
 
 # What I enjoy about what I do!
 
@@ -188,7 +188,7 @@ FitStatement.getEnumConstants().find{(it.value==member.result)}?.match?:member.r
 ```      
 
       
----     
+---    
 
 # Dev Questions
 
