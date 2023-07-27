@@ -34,8 +34,84 @@ Table of contents
   
 ![Pasted image 20230727005235](..//assets/images/Pasted%20image%2020230727005235.png#)  
   
+___  
+  
+# [H2 Database Engine Cheat Sheet](http://www.h2database.com/html/cheatSheet.html)  
+  
+## Using H2  
+  
+- [H2](https://h2database.com/)is[open source](https://github.com/h2database/h2database),[free to use and distribute](http://www.h2database.com/html/license.html).  
+- [Download](https://h2database.com/html/download.html):[jar](https://repo1.maven.org/maven2/com/h2database/h2/2.2.220/h2-2.2.220.jar),[installer (Windows)](https://github.com/h2database/h2database/releases/download/version-2.2.220/h2-setup-2023-07-04.exe),[zip](https://github.com/h2database/h2database/releases/download/version-2.2.220/h2-2023-07-04.zip).  
+- To start the[H2 Console tool](http://www.h2database.com/html/quickstart.html#h2_console), double click the jar file, or run`java -jar h2*.jar`,`h2.bat`, or`h2.sh`.  
+- [A new database is automatically created](http://www.h2database.com/html/tutorial.html#creating_new_databases)[by default  
+  if an embedded URL is used](http://www.h2database.com/html/features.html#database_only_if_exists).  
+- [Closing the last connection closes the database](http://www.h2database.com/html/features.html#closing_a_database).  
+  
+## Documentation  
+  
+Reference:[SQL grammar](http://www.h2database.com/html/grammar.html),[functions](http://www.h2database.com/html/functions.html),[data types](http://www.h2database.com/html/datatypes.html),[tools](http://www.h2database.com/html/tutorial.html#command_line_tools),[API](http://www.h2database.com/javadoc/index.html)    
+[Features](http://www.h2database.com/html/features.html):[fulltext search](http://www.h2database.com/html/tutorial.html#fulltext),[encryption](http://www.h2database.com/html/features.html#file_encryption),[read-only](http://www.h2database.com/html/features.html#read_only)[(zip/jar)](http://www.h2database.com/html/features.html#database_in_zip),[CSV](http://www.h2database.com/html/tutorial.html#csv),[auto-reconnect](http://www.h2database.com/html/features.html#auto_reconnect),[triggers](http://www.h2database.com/html/features.html#triggers),[user functions](http://www.h2database.com/html/features.html#user_defined_functions)  
+  
+## [Database URLs](http://www.h2database.com/html/features.html#database_url)  
+  
+**[Embedded](http://www.h2database.com/html/features.html#connection_modes)**    
+`jdbc:h2:~/test`'test' in the user home directory    
+`jdbc:h2:/data/test`'test' in the directory /data    
+`jdbc:h2:./test`in the current(!) working directory  
+  
+**[In-Memory](http://www.h2database.com/html/features.html#in_memory_databases)**    
+`jdbc:h2:mem:test`multiple connections in one process, database is removed when all connections are closed    
+`jdbc:h2:mem:test;DB_CLOSE_DELAY=-1`multiple connections in one process, database in not removed when all connections are  
+closed ([may create a memory leak](http://www.h2database.com/html/features.html#in_memory_databases))    
+`jdbc:h2:mem:`unnamed private; one connection  
+  
+**[Server Mode](http://www.h2database.com/html/tutorial.html#using_server)**    
+`jdbc:h2:tcp://localhost/~/test`user home dir    
+`jdbc:h2:tcp://localhost//data/test`or`jdbc:h2:tcp://localhost/D:/data/test`absolute dir    
+[Server start](http://www.h2database.com/html/tutorial.html#using_server):`java -cp *.jar org.h2.tools.Server`  
+  
+**[Settings](http://www.h2database.com/html/features.html#database_url)**    
+`jdbc:h2:..;MODE=MySQL;DATABASE_TO_LOWER=TRUE`[compatibility (or HSQLDB,...)](http://www.h2database.com/html/features.html#compatibility)    
+`jdbc:h2:..;TRACE_LEVEL_FILE=3`[log to *.trace.db](http://www.h2database.com/html/features.html#trace_options)  
+  
+## [Using the JDBC API](http://www.h2database.com/html/tutorial.html#connecting_using_jdbc)  
+  
+Connection conn = DriverManager.  
+getConnection("jdbc:h2:~/test");  
+conn.close();  
+  
+## [Connection Pool](http://www.h2database.com/html/tutorial.html#connection_pool)  
+  
+import org.h2.jdbcx.JdbcConnectionPool;  
+JdbcConnectionPool cp = JdbcConnectionPool.  
+create("jdbc:h2:~/test", "sa", "sa");  
+Connection conn = cp.getConnection();  
+conn.close(); cp.dispose();  
+  
+## [Maven 2](http://www.h2database.com/html/build.html#maven2)  
+  
+<dependency>  
+    <groupId>com.h2database</groupId>  
+    <artifactId>h2</artifactId>  
+    <version>2.2.220</version>  
+</dependency>  
+  
+## [Hibernate](http://www.h2database.com/html/tutorial.html#using_hibernate)  
+  
+hibernate.cfg.xml (or use the HSQLDialect):  
+  
+<property name="dialect">  
+    org.hibernate.dialect.H2Dialect  
+</property>  
+  
+## [TopLink and Glassfish](http://www.h2database.com/html/tutorial.html#using_toplink)  
+  
+Datasource class:`org.h2.jdbcx.JdbcDataSource`    
+`oracle.toplink.essentials.platform.`    
+`database.H2Platform`  
   
 # Queries  
+  
 ## Intersect  
   
 ```hql        
@@ -391,7 +467,7 @@ def groups = UserGroup.executeQuery(query, [userId: principalUser?.id, type: Use
     q.list()  
 }        
 ```        
-      
+  
 ## using Groovy SQL  
   
 ```groovy        
