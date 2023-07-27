@@ -153,6 +153,24 @@ server.stop();
   
 > When using automatic mixed mode, you can share the JDBC URL for all applications using the DB. By default the server uses any free TCP port. The port can be set manually using AUTO_SERVER_PORT=9090.  
   
+4. Java Connect to H2 Database in In-Memory Mode  
+  
+> You can use H2 database in in-memory mode, which means the database is created in memory when the first connection is established, and is removed when all connections are closed. The database engine runs in the same process of the application.  
+  
+> Using H2 in-memory database is preferred for quick testing in which data is not need to be stored permanently on disk.  
+  
+> To connect to a H2 in-memory database, you need to use JDBC URLs look like follows:  
+  
+- multiple connections in one process  
+```  
+jdbc:h2:mem:test  
+```  
+  
+  
+- unnamed private; one connection.  
+```  
+jdbc:h2:mem:  
+```  
   
 ### execute sql scripts  
   
