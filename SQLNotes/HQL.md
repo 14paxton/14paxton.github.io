@@ -32,7 +32,7 @@ Table of contents
   
 # [Database Overview](http://www.h2database.com/html/features.html#database_url)  
   
-![Pasted image 20230727005235](..//assets/images/Pasted%20image%2020230727005235.png#)  
+![H2_DB_Overview.png](%2Fassets%2Fimages%2FH2_DB_Overview.png)  
   
 ___  
   
