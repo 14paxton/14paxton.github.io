@@ -6,11 +6,9 @@ parent:       MyPersonalDocsAndStuff
 layout:       default  
 has_children: false  
 share:        true  
-shortRepo:  
-  
- - jobprep  
- - default  
-  
+shortRepo:    
+  - javanotes    
+  - default      
 ---  
   
 - [x] Mercury   
