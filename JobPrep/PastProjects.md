@@ -10,14 +10,6 @@ shortRepo:
   - jobprep
   - default
 ---
-parent:       MyPersonalDocsAndStuff
-layout:       default
-has_children: false
-share:        true
-shortRepo:
-  - jobprep
-  - default
----
 
 <details markdown="block">        
 <summary>        
