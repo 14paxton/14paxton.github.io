@@ -1,4 +1,4 @@
----  
+---
 title:        PriorityLearning    
 permalink:    GithubPages/PriorityLearning    
 category:     JobPrep  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - jobprep    
   - default    
----  
+---
     
 - [x] Mercury    
 - [x] Venus    

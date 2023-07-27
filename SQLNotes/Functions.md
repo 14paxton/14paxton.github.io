@@ -1,4 +1,4 @@
----  
+---
 title:        Functions    
 permalink:    SQLNotes/Functions    
 category:     SQLNotes    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
 - sqlnotes    
 - default    
----  
+---
     
     
 <br/>    
