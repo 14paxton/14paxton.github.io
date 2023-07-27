@@ -33,7 +33,7 @@ Table of contents
   
 # [Database Overview](http://www.h2database.com/html/features.html#database_url)  
   
-![](..//14paxton.github.io/assets/images/H2_DB_Overview.png)  
+![H2_DB_Overview.png](..//14paxton.github.io/assets/images/H2_DB_Overview.png)  
   
 ___  
   
