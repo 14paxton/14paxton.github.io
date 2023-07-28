@@ -1,7 +1,7 @@
 ---
 title: String
 permalink: ReactNotes/String
-category: String
+category: ReactNotes
 parent: ReactNotes
 layout: default
 has_children: false

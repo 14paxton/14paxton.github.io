@@ -1,7 +1,7 @@
 ---
 title: Mat-Table
 permalink: ReactNotes/Mat-Table
-category: Mat-Table
+category: ReactNotes
 parent:   ReactNotes
 layout: default
 has_children: false

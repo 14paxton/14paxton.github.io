@@ -1,7 +1,7 @@
 ---
 title: Configuring
 permalink: ReactNotes/Configuring
-category: Configuring
+category: ReactNotes
 parent: ReactNotes
 layout: default
 has_children: false

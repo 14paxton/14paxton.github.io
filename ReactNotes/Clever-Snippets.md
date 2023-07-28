@@ -1,7 +1,7 @@
 ---
 title:        Clever-Snippets
 permalink: ReactNotes/Clever-Snippets
-category:     Clever-Snippets          
+category:     ReactNotes          
 parent:       ReactNotes      
 layout:       default          
 has_children: false          

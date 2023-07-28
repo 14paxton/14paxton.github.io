@@ -1,7 +1,7 @@
 ---
 title: Testing
 permalink: ReactNotes/Testing
-category: Testing
+category: ReactNotes
 parent: ReactNotes
 layout: default
 has_children: false
