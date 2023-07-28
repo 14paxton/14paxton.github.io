@@ -11,6 +11,7 @@ shortRepo:
   - default          
 ---
 
+{% raw %}
 <br/>          
 
 <details markdown="block">                
@@ -147,3 +148,5 @@ ${userOptions[option].lastName}`}
     </TextField>)}
 />
 ```
+
+{% endraw %}
