@@ -1,6 +1,6 @@
 ---
 title: 1Remember
-permalink: ReactNotes/1Remember.md
+permalink: ReactNotes/1Remember
 category: 1Remember
 parent: 1Remember
 layout: default

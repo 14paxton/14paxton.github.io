@@ -1,6 +1,6 @@
 ---
 title: String
-permalink: ReactNotes/String.md
+permalink: ReactNotes/String
 category: String
 parent: String
 layout: default

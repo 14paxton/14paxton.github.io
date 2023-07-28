@@ -1,6 +1,6 @@
 ---
 title: Mat-Table
-permalink: ReactNotes/Mat-Table.md
+permalink: ReactNotes/Mat-Table
 category: Mat-Table
 parent: Mat-Table
 layout: default

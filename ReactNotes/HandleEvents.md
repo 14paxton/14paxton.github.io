@@ -1,6 +1,6 @@
 ---
 title: HandleEvents
-permalink: ReactNotes/HandleEvents.md
+permalink: ReactNotes/HandleEvents
 category: HandleEvents
 parent: HandleEvents
 layout: default

@@ -1,6 +1,6 @@
 ---
 title: Testing
-permalink: ReactNotes/Testing.md
+permalink: ReactNotes/Testing
 category: Testing
 parent: Testing
 layout: default

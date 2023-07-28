@@ -1,6 +1,6 @@
 ---
 title: WebWorker
-permalink: ReactNotes/WebWorker.md
+permalink: ReactNotes/WebWorker
 category: WebWorker
 parent: WebWorker
 layout: default

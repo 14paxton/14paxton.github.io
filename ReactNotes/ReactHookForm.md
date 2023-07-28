@@ -1,6 +1,6 @@
 ---
 title: ReactHookForm
-permalink: ReactNotes/ReactHookForm.md
+permalink: ReactNotes/ReactHookForm
 category: ReactHookForm
 parent: ReactHookForm
 layout: default

@@ -1,6 +1,6 @@
 ---
-title:        Clever-Snippets         
-permalink:    ReactNotes/Clever-Snippets.md         
+title:        Clever-Snippets
+permalink: ReactNotes/Clever-Snippets
 category:     Clever-Snippets          
 parent:       Clever-Snippets         
 layout:       default          
