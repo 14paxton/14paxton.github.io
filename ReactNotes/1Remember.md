@@ -2,7 +2,7 @@
 title: 1Remember
 permalink: ReactNotes/1Remember
 category: 1Remember
-parent: 1Remember
+parent:   ReactNotes
 layout: default
 has_children: false
 share: true

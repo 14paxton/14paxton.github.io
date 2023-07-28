@@ -2,7 +2,7 @@
 title: WebWorker
 permalink: ReactNotes/WebWorker
 category: WebWorker
-parent: WebWorker
+parent: ReactNotes
 layout: default
 has_children: false
 share: true

@@ -2,7 +2,7 @@
 title: Testing
 permalink: ReactNotes/Testing
 category: Testing
-parent: Testing
+parent: ReactNotes
 layout: default
 has_children: false
 share: true

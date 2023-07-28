@@ -2,7 +2,7 @@
 title: String
 permalink: ReactNotes/String
 category: String
-parent: String
+parent: ReactNotes
 layout: default
 has_children: false
 share: true

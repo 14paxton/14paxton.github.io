@@ -2,7 +2,7 @@
 title:        MUI
 permalink:    ReactNotes/MUI
 category:     MUI
-parent:       MUI
+parent:       ReactNotes
 layout:       default
 has_children: false
 share:        true

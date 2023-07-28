@@ -2,7 +2,7 @@
 title: Configuring
 permalink: ReactNotes/Configuring
 category: Configuring
-parent: Configuring
+parent: ReactNotes
 layout: default
 has_children: false
 share: true

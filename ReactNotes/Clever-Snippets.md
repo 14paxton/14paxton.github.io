@@ -2,7 +2,7 @@
 title:        Clever-Snippets
 permalink: ReactNotes/Clever-Snippets
 category:     Clever-Snippets          
-parent:       Clever-Snippets         
+parent:       ReactNotes      
 layout:       default          
 has_children: false          
 share:        true          

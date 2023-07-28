@@ -2,7 +2,7 @@
 title: HandleEvents
 permalink: ReactNotes/HandleEvents
 category: HandleEvents
-parent: HandleEvents
+parent:   ReactNotes
 layout: default
 has_children: false
 share: true
