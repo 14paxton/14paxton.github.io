@@ -1,11 +1,11 @@
 ---
-title: MUI
-permalink: ReactNotes/MUI.md
-category: MUI
-parent: MUI
-layout: default
+title:        MUI
+permalink:    ReactNotes/MUI.md
+category:     MUI
+parent:       MUI
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - mui
   - default          
@@ -53,24 +53,16 @@ We can inherit the styling of a styled component by simply passing it to
 the styled function.
 
 ```javascript
-```
 
-mport styled from "styled-components"
 
-```
-onst Div = styled.div`
-```
+import styled from "styled-components"
 
+const Div = styled.div`
 adding: 10px;
-
-```
-olor: palevioletred;
-```
-
-component.const
-InheritedDiv = styled(Div)`
-border: 1px solid palevioletred;
+color: palevioletred;
 `
+component.const
+InheritedDiv = styled(Div)`border: 1px solid palevioletred;`
 
 ```
 
@@ -210,9 +202,12 @@ components. The styled-components framework also enables you to create
 global styles to be applied to all styled components.
 
 First, import createGlobalStyle.
-import { createGlobalStyle } from "styled-components/macro"
+
+```javascript
+import {createGlobalStyle} from "styled-components/macro"
 
 ```
+
 Create a globalStyles.js file.
 
 ```javascript
