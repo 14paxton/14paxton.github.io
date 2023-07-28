@@ -41,7 +41,11 @@ Table of contents
 
 ```shell  
 jdbc:h2:mem:test;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE  
-```  
+```
+
+```shell
+jdbc:h2:~/siris;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
+```
 
 ___  
 
