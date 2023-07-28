@@ -1,4 +1,4 @@
----  
+---
 title:        Docker          
 permalink:    SQLNotes/Docker          
 category:     SQLNotes          
@@ -9,10 +9,8 @@ share:        true
 shortRepo:          
 - sqlnotes          
 - default          
----  
-    
-          
-          
+---
+
 <br/>          
           
 <details markdown="block">                
