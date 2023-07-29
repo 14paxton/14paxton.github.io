@@ -1,18 +1,18 @@
 ---
-title: ReactHookForm
-permalink: ReactNotes/ReactHookForm
-category:  ReactNotes
-parent: ReactNotes
-layout: default
+title:        ReactHookForm
+permalink:    ReactNotes/ReactHookForm
+category:     ReactNotes
+parent:       ReactNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - reacthookform
   - default          
 ---
 
 {% raw %}
-<br/>          
+<br/>
 
 <details markdown="block">                
 <summary>                
@@ -28,6 +28,10 @@ Table of contents
 ***                
 
 <br/>
+
+# [React Hook Forms Components](https://github.com/14paxton/ReactHookFormDynamicComponents)
+
+---
 
 # testing context
 
@@ -85,42 +89,35 @@ const submitMyForm = (data) => {
 # using controller component with select and autocomplete
 
 ```javascript
-
 <Controller
-    name={'users'}
+    name={"users"}
     control={control}
     rules={{
         required: "One user is required",
-        validate: (value) => (value.length < 11
-                              ? true
-                              : 'Max of 10 results
-        may       be
-        shared    at
-        a         time.
-        ')
+        validate: value => value.length < 11
+                           ? true
+                           : "Max of 10 results may be shared at a time. "
     }}
     render={({onChange, value, ref, ...props}) => (<Autocomplete
         multiple
-        id='tags-standard'
+        id="tags-standard"
         options={userIds}
         onChange={(e, data) => onChange(data)}
-        getOptionLabel={(option) => `${userOptions[option].firstName}
-${userOptions[option].lastName}`}
+        getOptionLabel={option => `${userOptions[option].firstName} ${userOptions[option].lastName}`}
         filterSelectedOptions
         renderTags={(value, getTagProps) => value.map((option, index) => (<Chip
             color="primary"
-            label={`${userOptions[option].firstName}
-${userOptions[option].lastName}`}
+            label={`${userOptions[option].firstName} ${userOptions[option].lastName}`}
             {...getTagProps({index})}
         />))}
-        renderInput={(params) => (<TextField
+        renderInput={params => (<TextField
             {...params}
-            variant='outlined'
-            label='Search Users'
-            placeholder='Enter first name and/or last name'
+            variant="outlined"
+            label="Search Users"
+            placeholder="Enter first name and/or last name"
             InputLabelProps={{
-                shrink: true, 'data-qa': 'score-sheet-result-statement-label', style: {
-                    fontSize: '20px', color: 'black', display: 'block', fontFamily: 'Open Sans, sans-serif', fontWeight: 700
+                shrink: true, "data-qa": "score-sheet-result-statement-label", style: {
+                    fontSize: "20px", color: "black", display: "block", fontFamily: "Open Sans, sans-serif", fontWeight: 700
                 }
             }}
             error={!!errors?.users}
@@ -129,20 +126,22 @@ ${userOptions[option].lastName}`}
         {...props}
     />)}
 />
+```
 
+```javascript
 <Controller
-    name={'testSelect'}
+    name={"testSelect"}
     control={control}
     defaultValue={currency}
     render={({onChange, ...props}) => (<TextField
-        id='standard-select-currency'
+        id="standard-select-currency"
         select
-        label='Select'
+        label="Select"
         onChange={(e, data) => onChange(data.props.value)}
-        helperText='Please select your currency'
+        helperText="Please select your currency"
         {...props}
     >
-        {currencies.map((option) => (<MenuItem key={option.value} value={option.value}>
+        {currencies.map(option => (<MenuItem key={option.value} value={option.value}>
             {option.label}
         </MenuItem>))}
     </TextField>)}
