@@ -7,7 +7,7 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - 1-remember
+  - reactnotes
   - default          
 ---
 
