@@ -1,6 +1,6 @@
 ---
 title:        Elements
-permalink: JavaScript/Elements.md
+permalink: JavaScript/Elements
 category:  JavaScript
 parent:   JavaScript
 layout:       default

@@ -1,6 +1,6 @@
 ---
 title: Configuring
-permalink: ReactNotes/Configuring.md
+permalink: ReactNotes/Configuring
 category: ReactNotes
 parent: ReactNotes
 layout: default

@@ -1,6 +1,6 @@
 ---
 title:        CDN-&-Events
-permalink:    JavaScript/CDN-&-Events.md
+permalink:    JavaScript/CDN-&-Events
 category:     JavaScript
 parent:       JavaScript
 layout:       default

@@ -1,6 +1,6 @@
 ---
 title:        WorkingWithFiles
-permalink: JavaScript/WorkingWithFiles.md
+permalink:    JavaScript/WorkingWithFiles
 category:  JavaScript
 parent:   JavaScript
 layout:       default

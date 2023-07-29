@@ -1,6 +1,6 @@
 ---
 title:        DateAndTime
-permalink: JavaScript/DateAndTime.md
+permalink:    JavaScript/DateAndTime
 category:  JavaScript
 parent:   JavaScript
 layout:       default

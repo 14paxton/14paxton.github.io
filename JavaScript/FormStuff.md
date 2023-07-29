@@ -1,6 +1,6 @@
 ---
 title:        FormStuff
-permalink: JavaScript/FormStuff.md
+permalink:    JavaScript/FormStuff
 category:  JavaScript
 parent:   JavaScript
 layout:       default

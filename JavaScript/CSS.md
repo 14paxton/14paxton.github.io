@@ -1,6 +1,6 @@
 ---
 title:        CSS
-permalink: JavaScript/CSS.md
+permalink:    JavaScript/CSS
 category:  JavaScript
 parent:   JavaScript
 layout:       default

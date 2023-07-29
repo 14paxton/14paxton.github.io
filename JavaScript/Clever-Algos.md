@@ -1,6 +1,6 @@
 ---
 title:        Clever-Algos
-permalink: JavaScript/Clever-Algos.md
+permalink:    JavaScript/Clever-Algos
 category:  JavaScript
 parent:   JavaScript
 layout:       default

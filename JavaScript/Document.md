@@ -1,6 +1,6 @@
 ---
 title:        Document
-permalink: JavaScript/Document.md
+permalink:    JavaScript/Document
 category:  JavaScript
 parent:   JavaScript
 layout:       default

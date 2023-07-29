@@ -1,6 +1,6 @@
 ---
 title:        RegEx
-permalink: JavaScript/RegEx.md
+permalink:    JavaScript/RegEx
 category:  JavaScript
 parent:   JavaScript
 layout:       default
