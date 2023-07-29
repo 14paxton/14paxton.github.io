@@ -11,6 +11,22 @@ shortRepo:
   - default          
 ---
 
+<br/>          
+
+<details markdown="block">                
+<summary>                
+Table of contents                
+</summary>                
+{: .text-delta }                
+1. TOC                
+{:toc}                
+</details>                
+
+<br/>                
+
+***                
+
+<br/>
 # Adding to actual DOM
 
 [ReactDOM](https://reactjs.org/blog/2015/10/01/react-render-and-top-level-api.html)

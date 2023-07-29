@@ -1,6 +1,6 @@
 ---
 title: Configuring
-permalink: ReactNotes/Configuring
+permalink: ReactNotes/Configuring.md
 category: ReactNotes
 parent: ReactNotes
 layout: default
@@ -23,12 +23,28 @@ Table of contents
 </details>                
 
 <br/>                
+
+***                
+
+<br/>
+<br/>          
+
+<details markdown="block">                
+<summary>                
+Table of contents                
+</summary>                
+{: .text-delta }                
+1. TOC                
+{:toc}                
+</details>                
+
+<br/>                
           
 ***                
 
 <br/>
 
-# [Change ip or port when running]{.underline}
+# Change ip or port when running
 
 <https://dev.to/kevinmel2000/nodejs-reactjs-change-host-and-port-number-70b>
 

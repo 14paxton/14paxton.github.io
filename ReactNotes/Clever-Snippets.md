@@ -11,6 +11,22 @@ shortRepo:
 - default          
 ---
 
+<br/>          
+
+<details markdown="block">                
+<summary>                
+Table of contents                
+</summary>                
+{: .text-delta }                
+1. TOC                
+{:toc}                
+</details>                
+
+<br/>                
+
+***                
+
+<br/>
 # Print separate page from current page
 
 <a href="https://gist.github.com/14paxton/8bf4b0df10a7c4add52c9d4d2da88879"> print pre-defined page </a>
