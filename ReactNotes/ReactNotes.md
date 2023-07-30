@@ -1,18 +1,18 @@
----
-title: ReactNotes  
-layout: default
-permalink: ReactNotes/
-category: ReactNotes  
-has_children: true  
-share: true  
-shortRepo:  
+---  
+title: ReactNotes    
+layout: default  
+permalink: ReactNotes/  
+category: ReactNotes    
+has_children: true    
+share: true    
+shortRepo:    
+    
+  - reactnotes    
+  - default           
+---  
   
-  - reactnotes  
-  - default         
----
-
-<br/>        
-___          
-## [Repo](https://github.com/14paxton/ReactNotes)  
-  
+<br/>          
+___            
+## [Repo](https://github.com/14paxton/ReactNotes)    
+    
 ***
