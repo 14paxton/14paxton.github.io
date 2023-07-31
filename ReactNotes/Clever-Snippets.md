@@ -46,22 +46,25 @@ const forceUpdate = React.useCallback(() => updateState({}), []);
 
 ```javascript  
 const RecursiveWrapper = props => {
+
     const wrappedChildren = React.Children.map(props.children, child => {
         if (child.props && child.props.children) {
-            return (<RecursiveWrapper>
+            return <RecursiveWrapper>
                 {child.props.children}
-            </RecursiveWrapper>)
+            </RecursiveWrapper>
         }
-        return (<div>
+
+        return <div>
             {'children: 0'}
-        </div>)
+        </div>
     })
-    return (<React.Fragment>
+
+    return <React.Fragment>
         {`children: ${wrappedChildren.length}`}
         <div>
             {wrappedChildren}
         </div>
-    </React.Fragment>)
+    </React.Fragment>
 }
 ```  
 
@@ -69,12 +72,12 @@ const RecursiveWrapper = props => {
 
 ```javascript  
 const WebApp = (props) => {
-    return (<div>
+    return <div>
         {config.map((componentName) => {
             componentMapping[componentName]
             return <Component/>;
         })}
-    </div>)
+    </div>
 };  
 ```  
 
