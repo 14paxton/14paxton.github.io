@@ -63,7 +63,6 @@ const RecursiveWrapper = props => {
         </div>
     </React.Fragment>)
 }
-
 ```  
 
 # dynamic component
@@ -71,9 +70,11 @@ const RecursiveWrapper = props => {
 ```javascript  
 const WebApp = (props) => {
     return (<div>
-        {config.map((componentName) => componentMapping[componentName];
-            return <Component />;})}
-    </div>);
+        {config.map((componentName) => {
+            componentMapping[componentName]
+            return <Component/>;
+        })}
+    </div>)
 };  
 ```  
 
@@ -124,7 +125,7 @@ export default function App() {
             </span>
         </h2>
     </div>);
-}  
+}
 ```  
 
 # hyperlink
@@ -138,27 +139,52 @@ export default function App() {
 # Creating tags
 
 ```javascript  
-    Ul > (li[className = 'test')
-2  
+    Ul > (li[className = 'test'])
 ```  
 
 # Access the Dom
 
+> [React Docs](https://react.dev/learn/manipulating-the-dom-with-refshttps://react.dev/learn/manipulating-the-dom-with-refs)
+
 ```javascript  
-    Const
-username = React.createRef() [create
-reference
-]
-;
-
-<input ref={this.username} id="username"
-       type="text" className="form-control"/> [set
-reference
-]
-
+// create ref
+Const
+username = React.createRef()
+           // [setreference]
+           < input
+ref = {this.username}
+id = "username"
+type = "text"
+className = "form-control" / >
+// use ref
 const username = this.username.current.value;
-[use ref]  
 ```  
+
+- alt
+
+```javascript
+const element = <div ref={ref}/>;
+
+// ...
+
+ref.current; // DOM element
+
+```
+
+- alt
+
+```javascript
+export default function Component(props) {
+    const nodeRef = useRef();
+
+    useEffect(() => {
+        console.log(nodeRef.current);
+    }, []);
+
+    // Root Node
+    return <input ref={nodeRef}/>;
+}
+```
 
 # Conditional Rendering
 
@@ -167,7 +193,7 @@ const username = this.username.current.value;
     error && <div className="alert  
       alert-danger">{error}</div>
 }  
-```  
+```
 
 # Axios
 
@@ -176,25 +202,21 @@ const username = this.username.current.value;
 >       Used to update 1 or more properties  
 
 ```javascript  
-        Axios.patch(apiEndpoint + '/' + post.id, {
-    title: post.title
-});  
+ Axios.patch(apiEndpoint + '/' + post.id, {title: post.title});  
 ```  
 
 ## Put()
 
->        Update all properties  
+> Update all properties
 
 ```javascript  
   axios.put(apiEndpoint + '/' + post.id, post)
-
 ```  
 
 ## Interceptors
 
 ```javascript  
-        axios.interceptors.response.use(success, error)
-
+axios.interceptors.response.use(success, error)
 this.props.history.push('/');  
 ```  
 
@@ -228,32 +250,24 @@ localStorage.setItem('token', response.headers['x-auth-token']);
 
 ```javascript  
 React.useEffect(() => {
-
 // Will be invoked on the initial render  
-
 // and all subsequent re-renders.  
 
->
 })  
 ```  
 
 ```javascript  
 React.useEffect(() => {
-
 // Will be invoked on the initial render  
-
 // and when "id" or "authed" changes.  
 
->
 }, [id, authed])  
 ```  
 
 ```javascript  
 React.useEffect(() => {
-
 // Will only be invoked on the initial render  
 
->
 }, [])  
 ```  
 
@@ -270,5 +284,38 @@ React.useEffect(() => {
 
 // from the DOM  
 
-    }  
+    }
+})
+```
+
+## check for unmounting
+
+```javascript
+useEffect(() => {
+    return () => console.log('unmounting...');
+})
+```
+
+## clean on unmount
+
+```javascript
+useEffect(() => {
+    let isMounted = true;
+    register('interviewModelId');
+
+    fetchInterviewModels().then((data) => {
+        if (isMounted) setAssessmentChoiceList(data);
+        setSelectedInterviewModel(data);
+    });
+
+    if (!groupDetails) {
+        register({name: 'assessmentOrderIds'}, {
+            required: errorMessages.assIdsRequired, validate: (value) => value.length <= maxGroupMembers || errorMessages.maxGroupMembers
+        });
+    }
+    return () => {
+        isMounted = false;
+    };
+}, [errorMessages.assIdsRequired, errorMessages.maxGroupMembers, groupDetails, maxGroupMembers, register, setSelectedInterviewModel]);
+
 ```
