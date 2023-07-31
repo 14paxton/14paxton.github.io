@@ -1,8 +1,8 @@
 ---
-title:     LooseNotes
+title:     String
 layout:    default
 parent:    Java
-permalink: JavaNotes/LooseNotes
+permalink: JavaNotes/String
 category:  JavaNotes
 share:     true
 shortRepo:
