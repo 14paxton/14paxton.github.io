@@ -30,7 +30,7 @@ Table of contents
   
 # Add event listener to check if table loads  
   
-##add in component you are checking  
+1. add in component you are checking  
   
  ```javascript  
 useEffect(() => {  
@@ -38,7 +38,7 @@ useEffect(() => {
 }, []);  
 ```  
   
-## and in other componenet  
+2. and in other componenet  
   
 ```javascript  
      useEffect(() => {  
@@ -50,7 +50,7 @@ useEffect(() => {
 }, []);  
 ```  
   
-## Listening for a resizing event  
+3. Listening for a resizing event  
   
 ```javascript  
 useEffect(() => {  
