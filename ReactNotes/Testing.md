@@ -1,4 +1,4 @@
----  
+---
 title: Testing  
 permalink: ReactNotes/Testing  
 category: ReactNotes  
@@ -9,7 +9,7 @@ share: true
 shortRepo:  
   - reactnotes  
   - default            
----  
+---
   
 <br/>            
   
@@ -98,7 +98,7 @@ it('containts stuff', () => {
 })  
 ```  
   
----  
+---
   
 # Enzyme  
   
@@ -170,7 +170,7 @@ it('test with enzyme', () => {
   
 ```  
   
----  
+---
   
 # REACT TESTING LIB  
   

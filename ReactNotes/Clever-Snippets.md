@@ -1,4 +1,4 @@
----  
+---
 title:        Clever-Snippets  
 permalink: ReactNotes/Clever-Snippets  
 category:     ReactNotes            
@@ -9,7 +9,7 @@ share:        true
 shortRepo:            
 - clever-snippets           
 - default            
----  
+---
   
 <br/>            
   

@@ -1,6 +1,6 @@
----  
+---
 title:        QuerySelector-Examples  
-permalink: JavaScript/QuerySelector-Examples.md  
+permalink: JavaScript/QuerySelector-Examples  
 category:  JavaScript  
 parent:   JavaScript  
 layout:       default  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - javascript  
   - default            
----  
+---
   
   
 <br/>            

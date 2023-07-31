@@ -1,6 +1,6 @@
----  
+---
 title:        FunctionObject  
-permalink: JavaScript/FunctionObject.md  
+permalink: JavaScript/FunctionObject  
 category:  JavaScript  
 parent:   JavaScript  
 layout:       default  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - javascript  
   - default            
----  
+---
   
   
 <br/>            

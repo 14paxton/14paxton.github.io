@@ -1,4 +1,4 @@
----  
+---
 title: JavaScript  
 layout: default  
 permalink: JavaScript/  
@@ -9,6 +9,6 @@ shortRepo:
   
   - javascript  
   - default  
----  
+---
   
 # [REPO](https://github.com/14paxton/javascript)

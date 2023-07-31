@@ -1,4 +1,4 @@
----  
+---
 title: Configuring  
 permalink: ReactNotes/Configuring.md  
 category: ReactNotes  
@@ -9,7 +9,7 @@ share: true
 shortRepo:  
   - reactnotes  
   - default            
----  
+---
   
 <br/>            
   

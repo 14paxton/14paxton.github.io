@@ -1,4 +1,4 @@
----  
+---
 title:        PastProjects  
 permalink:    GithubPages/PastProjects  
 category:     JobPrep  
@@ -10,7 +10,7 @@ shortRepo:
   
   - jobprep  
   - default  
----  
+---
   
 <details markdown="block">                
 <summary>                
@@ -152,7 +152,7 @@ interviewer and interviewees outlook calendar
 ### -Things I enjoy-  
   
               
----        
+---      
   
 # What I enjoy about what I do!  
   
@@ -189,7 +189,7 @@ FitStatement.getEnumConstants().find{(it.value==member.result)}?.match?:member.r
 ```              
   
               
----        
+---      
   
 # Dev Questions  
   

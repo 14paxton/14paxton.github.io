@@ -1,4 +1,4 @@
----  
+---
 title:        Java          
 layout:       default          
 permalink:    JavaNotes/Java          
@@ -8,7 +8,7 @@ share:        true
 shortRepo:        
   - javanotes        
   - default          
----  
+---
         
 <br/>        
 ___        

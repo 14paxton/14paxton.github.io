@@ -1,4 +1,4 @@
----  
+---
 title:        HQL  
 permalink:    SQLNotes/HQL  
 category:     SQLNotes  
@@ -10,7 +10,7 @@ shortRepo:
   
   - sqlnotes  
   - default      
----  
+---
   
 <br/>        
   
@@ -123,7 +123,7 @@ Datasource class:`org.h2.jdbcx.JdbcDataSource`
 `oracle.toplink.essentials.platform.`      
 `database.H2Platform`  
     
----  
+---
   
 ## Run **H2 Database** in three different modes:  
   
@@ -274,7 +274,7 @@ jdbc:h2:~/test;DB_CLOSE_ON_EXIT=FALSE
 ```    
   
     
----  
+---
   
 # Queries  
   

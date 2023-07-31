@@ -1,4 +1,4 @@
----  
+---
 title: ReactNotes    
 layout: default  
 permalink: ReactNotes/  
@@ -9,7 +9,7 @@ shortRepo:
     
   - reactnotes    
   - default           
----  
+---
   
 <br/>          
 ___            

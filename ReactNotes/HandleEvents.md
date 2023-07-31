@@ -1,4 +1,4 @@
----  
+---
 title: HandleEvents  
 permalink: ReactNotes/HandleEvents  
 category: ReactNotes  
@@ -9,7 +9,7 @@ share: true
 shortRepo:  
   - reactnotes  
   - default            
----  
+---
   
 <br/>            
   

@@ -1,6 +1,6 @@
----  
+---
 title:        Window  
-permalink: JavaScript/Window.md  
+permalink: JavaScript/Window  
 category:  JavaScript  
 parent:   JavaScript  
 layout:       default  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - javascript  
   - default            
----  
+---
   
   
 <br/>            

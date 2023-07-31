@@ -1,4 +1,4 @@
----  
+---
 title:        SQLNotes          
 layout:       default          
 permalink:    SQLNotes/          
@@ -9,7 +9,7 @@ shortRepo:
         
 - sqlnotes  
 - default         
----  
+---
         
 <br/>          
 ___          
