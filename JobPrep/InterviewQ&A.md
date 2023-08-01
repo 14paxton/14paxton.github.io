@@ -28,9 +28,15 @@ Table of contents
       
 # Code To Know      
       
+## Docker_Handbook 
+      
+<embed src="/assets/images/docker_handbook.pdf" width="80%" height="600" type="application/pdf">    
+
+---
+      
 ## FrontEnd_CSS      
       
-<embed src="/assets/images/FrontEnd_CSS.pdf" width="80%" height="600" type="application/pdf">          
+<embed src="/assets/images/FrontEnd_CSS.pdf" width="80%" height="600" type="application/pdf">    
           
 ---  
       
@@ -120,7 +126,13 @@ Table of contents
       
 ## MicroSerevice_Database_Patterns      
       
-<embed src="/assets/images/MicroSerevice_Database_Patterns.pdf" width="80%" height="600" type="application/pdf">          
+<embed src="/assets/images/MicroSerevice_Database_Patterns.pdf" width="80%" height="600" type="application/pdf">   
+
+---  
+      
+## React‐Questions   
+      
+<embed src="/assets/images/react‐questions.pdf" width="80%" height="600" type="application/pdf">       
           
 ---  
       
