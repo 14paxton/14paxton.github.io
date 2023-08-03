@@ -36,7 +36,7 @@ Table of contents
 let listItems = document.querySelectorAll('ul.nav > li');  
 ```  
 
-# siblings example all <a> that follow p immediatly or not
+# siblings example all `<a>` that follow `<p>` immediatly or not
 
 ```javascript  
 let links = document.querySelectorAll('p ~ a');  
