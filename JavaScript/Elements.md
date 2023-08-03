@@ -28,7 +28,88 @@ Table of contents
 ***                  
 
 <br/>  
-# create clone  
+
+# Check Element type
+
+```javascript
+if (element.tagName === 'OL') {}
+```
+
+```javascript
+    if (elementsObject && elementsObject?.body?.nodeName === 'TABLE') {}
+```
+
+```javascript
+const tagName = el.tagName || el.nodeName
+```
+
+> [nodetype](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType)
+
+```javascript
+if (node?.nodeType) {}
+```
+
+```
+Node.ELEMENT_NODE (1)
+An Element node like <p> or <div>.
+
+Node.ATTRIBUTE_NODE (2)
+An Attribute of an Element.
+
+Node.TEXT_NODE (3)
+The actual Text inside an Element or Attr.
+
+Node.CDATA_SECTION_NODE(4)
+A CDATASection, such as <!CDATA[[ … ]]>
+
+Node.PROCESSING_INSTRUCTION_NODE (7)
+A ProcessingInstruction of an XML document, such as <?xml-stylesheet … ?>.
+
+Node.COMMENT_NODE (8)
+A Comment node, such as <!-- … -->.
+
+Node.DOCUMENT_NODE (9)
+A Document node.
+
+Node.DOCUMENT_TYPE_NODE (10)
+A DocumentType node, such as <!DOCTYPE html>.
+
+Node.DOCUMENT_FRAGMENT_NODE (11)
+A DocumentFragment node.
+```
+
+- HTML:
+
+```html
+
+<div class="a">a</div>
+```
+
+- Js:
+
+```javascript
+node = e
+node.nodeType === 1
+node.nodeName === 'DIV'
+node.tagName === 'DIV'
+
+node = e.getAttributeNode('class')
+node.nodeType === 2
+node.nodeName === 'class'
+node.tagName === undefined
+
+node = e.childNodes[0]
+node.nodeType === 3
+node.nodeName === '#text'
+node.tagName === undefined
+```
+
+So:
+> only use nodeType to get the node type: nodeName breaks for nodeType === 1
+
+> only use tagName for nodeType === 1
+
+# create clone
 
 ```javascript  
 function createClone(element, setCSS, width, height) {
