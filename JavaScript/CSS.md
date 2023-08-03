@@ -28,9 +28,7 @@ Table of contents
 ***                  
   
 <br/>  
-# RGB to HEX  
-  
-https://css-tricks.com/converting-color-spaces-in-javascript/  
+# [RGB to HEX](https://css-tricks.com/converting-color-spaces-in-javascript/  )
   
 ```javascript  
 function RGBToHex(rgb) {  
