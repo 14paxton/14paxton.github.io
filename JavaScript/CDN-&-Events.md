@@ -76,27 +76,35 @@ Table of contents
 </script>  
 ```  
 
-# Monitor Events-https://stackoverflow.com/questions/10213703/how-do-i-view-events-fired-on-an-element-in-chrome-devtools
+# [Monitor Events](https://stackoverflow.com/questions/10213703/how-do-i-view-events-fired-on-an-element-in-chrome-devtools)
 
-o You can use monitorEvents function.
+> Just inspect your element (right mouse click → Inspect on visible element or go to Elements tab in Chrome Developer Tools and select wanted element) then go to Console tab and write:
 
-o Just inspect your element (right mouse click → Inspect on visible element or go to Elements tab in Chrome Developer Tools and select wanted element) then go to Console tab and write:  
-` monitorEvents($0)`
+```shell
+ monitorEvents($0)
+```
 
-o Now when you move mouse over this element, focus or click it, the name of the fired event will be displayed with its data.
+> Now when you move mouse over this element, focus or click it, the name of the fired event will be displayed with its data.
 
-o To stop getting this data just write this to console:  
-` unmonitorEvents($0)`  
-o $0 is just the last DOM element selected by Chrome Developer Tools.  
-You can pass any other DOM object there (for example result of getElementById or querySelector).
+> To stop getting this data just write this to console:  
+```shell
+ unmonitorEvents($0)
+```
+ 
+> `$0` is just the last DOM element selected by Chrome Developer Tools.  
+>> You can pass any other DOM object there (for example result of getElementById or querySelector).
 
-o You can also specify event "type" as second parameter to narrow monitored events to some predefined set. For example:  
-` monitorEvents(document.body, 'mouse')`
+> You can also specify event "type" as second parameter to narrow monitored events to some predefined set. For example:  
+```shell
+ monitorEvents(document.body, 'mouse')
+```
 
 # Appending HTML to an element
 
-          ` $.each(arr, function() {appendString += "<div>" + this + "</div>" });  
-            $('#parent').append('<div>' + appendString + '</div>');  `  
+ ```shell
+             $.each(arr, function() {appendString += "<div>" + this + "</div>" });  
+            $('#parent').append('<div>' + appendString + '</div>');
+```  
 
 # Document Ready
 
