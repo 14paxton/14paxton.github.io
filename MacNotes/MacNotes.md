@@ -24,7 +24,27 @@ Table of contents
         
 <br/>            
         
-# QUICK SCRIPTS        
+# QUICK SCRIPTS 
+
+## get local ip
+```bash
+osascript -e "IPv4 address of (system info)"
+```
+```bash
+ifconfig | grep "inet " 
+```
+## convert file/image to base64
+```bash
+base64 -i ./post_u_north_gate.jpg | pbcopy 
+```
+
+```bash
+cat ./post_u_north_gate.jpg | openssl base64 | tr -d '\n' | pbcopy
+```
+
+```bash
+./post_u_north_gate.jpg | openssl base64 | tr -d '\n' | pbcopy    
+```
         
 ## ENABLE ROOT        
         
