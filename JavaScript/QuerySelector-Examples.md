@@ -28,9 +28,7 @@ Table of contents
 ***                  
 
 <br/>  
-# query selector specs  
-
-https://www.w3.org/TR/selectors-4/#attribute-selectors
+# [query selector specs](https://www.w3.org/TR/selectors-4/#attribute-selectors)
 
 # get child
 
