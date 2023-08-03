@@ -132,16 +132,22 @@ Connect multiple events
 
 `$(trafficLight).trigger(“green”);`
 
-· Custom Bindings
 
-# declare event to run when div is visible
+# Custom Bindings
+
+## declare event to run when div is visible
 
 `function isVisible(){ alert("works")}`
 
-# hookup the event
+## hookup the event
 
 `$('#results-table').bind('isVisible', isVisible);`
 
-# show div and trigger custom event in callback when div is visible $('#results-table').show('slow', function(){
+# show div and trigger custom event in callback when div is visible
 
-     `$(this).trigger('isVisible'); });`
+```shell
+$('#results-table').show('slow', function(){
+    $(this).trigger('isVisible');
+    }
+);
+```
