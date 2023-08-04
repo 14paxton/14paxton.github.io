@@ -1,11 +1,11 @@
 ---
-title: Quick-TidBits
-permalink: DockerNotes/Quick-TidBits
-category:  DockerNotes
-parent:   DockerNotes
-layout: default
+title:        Quick-TidBits
+permalink:    DockerNotes/Quick-TidBits
+category:     DockerNotes
+parent:       DockerNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - dockernotes
   - default          
@@ -28,7 +28,9 @@ Table of contents
 ***                
 
 <br/>
+
 # Restart Docker
+
 1) sudo su
    systemctl start docker
    systemctl enable docker
@@ -37,7 +39,7 @@ Table of contents
 3) snap stop docker
    snap start docker
 4) sudo systemctl unmask docker
-   sudo systemctl start docker   
+   sudo systemctl start docker
 
 # To keep your Docker images small, don't install unnecessary editors. You can edit the files over SSH from the Docker host to the container:
 

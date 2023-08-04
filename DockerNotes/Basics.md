@@ -1,11 +1,11 @@
 ---
-title: Basics
-permalink: DockerNotes/Basics
-category:  DockerNotes
-parent:   DockerNotes
-layout: default
+title:        Basics
+permalink:    DockerNotes/Basics
+category:     DockerNotes
+parent:       DockerNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - dockernotes
   - default          
@@ -28,8 +28,10 @@ Table of contents
 ***                
 
 <br/>
-# Where ubuntu for windows resides 
-```C:\\Users\\bpaxton\\AppData\\Local\\Packages\\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\\LocalState\\rootfs```
+
+# Where ubuntu for windows resides
+
+> C:\\Users\\bpaxton\\AppData\\Local\\Packages\\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\\LocalState\\rootfs```
 
 # Basic Docker Concepts and Terms
 

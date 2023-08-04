@@ -28,11 +28,15 @@ Table of contents
 ***                
 
 <br/>
+
 # cli build
+
 ```shell
 docker build --platform linux/arm64  .
 ```
+
 # cli run
+
 ```shell
 docker run --platform linux/arm/v8 dbmigration:1.1
 ```

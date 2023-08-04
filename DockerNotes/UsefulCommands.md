@@ -28,7 +28,9 @@ Table of contents
 ***                
 
 <br/>
+
 # stop all containers:
+
 ```bash 
 docker kill $(docker ps -q)
 ```
