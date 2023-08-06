@@ -1,11 +1,11 @@
 ---
-title: Conditionals
-permalink: Linux/Conditionals
-category:  Linux
-parent:   Linux
-layout: default
+title:        Conditionals
+permalink:    Linux/Conditionals
+category:     Linux
+parent:       Linux
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - linux
   - default
@@ -37,8 +37,6 @@ if [[ "$act" == *"$GH_TOKEN"* ]]
 then do things
 fi
 ```
-
-https://linuxize.com/post/bash-check-if-file-exists/
 
 # Check if File does Not Exist
 
@@ -186,3 +184,9 @@ The test command includes the following FILE operators that allow you to test fo
 ```shell 
 -x FILE
 ```
+
+***
+
+# Resources
+
+- [File Conditionals](https://linuxize.com/post/bash-check-if-file-exists/)

@@ -193,9 +193,10 @@ jobs:
 EOL
 
 # make folder for wiki to update from and move markdown files to new folder
+[[ -d ./wiki/ ]] && mv wiki "$DIRNAME"
 [[ ! -d ./"$DIRNAME" ]] && mkdir -p "$DIRNAME"
 
-mv *.md ./"$DIRNAME"
+[[ -f *.md ]] && mv *.md ./"$DIRNAME"/
 cd "$DIRNAME"
 
 # create frontmatter index file for side nav to key on
@@ -260,10 +261,7 @@ Table of contents
 .
 xit
 eof
-
-
 fi
-
 done;
 ```
 
