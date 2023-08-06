@@ -196,7 +196,10 @@ EOL
 [[ -d ./wiki/ ]] && mv wiki "$DIRNAME"
 [[ ! -d ./"$DIRNAME" ]] && mkdir -p "$DIRNAME"
 
-[[ -f *.md ]] && mv *.md ./"$DIRNAME"/
+if [[ -n *.md(#qN) ]]; then
+  mv *.md ./"$DIRNAME"/
+fi
+
 cd "$DIRNAME"
 
 # create frontmatter index file for side nav to key on
