@@ -10,5 +10,5 @@ shortRepo:
 - sqlnotes        
 - default        
 ---
-        
+
 ![CheatSheet.jpeg](..%2Fassets%2Fimages%2FCheatSheet.jpeg)

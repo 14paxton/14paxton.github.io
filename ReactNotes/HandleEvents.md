@@ -10,9 +10,9 @@ shortRepo:
   - reactnotes  
   - default            
 ---
-  
+
 <br/>            
-  
+
 <details markdown="block">                  
 <summary>                  
 Table of contents                  
@@ -21,25 +21,25 @@ Table of contents
 1. TOC                  
 {:toc}                  
 </details>                  
-  
+
 <br/>                  
-  
+
 ***                  
-  
+
 <br/>  
-  
-# Add event listener to check if table loads  
-  
-1. add in component you are checking  
-  
+
+# Add event listener to check if table loads
+
+1. add in component you are checking
+
  ```javascript  
 useEffect(() => {  
     window.parent.postMessage({action: 'tGrid-loaded'});  
 }, []);  
 ```  
-  
-2. and in other componenet  
-  
+
+2. and in other componenet
+
 ```javascript  
      useEffect(() => {  
     window.addEventListener('message', handleMessage);  
@@ -49,9 +49,9 @@ useEffect(() => {
     };  
 }, []);  
 ```  
-  
-3. Listening for a resizing event  
-  
+
+3. Listening for a resizing event
+
 ```javascript  
 useEffect(() => {  
     if (tableRef?.current) {  

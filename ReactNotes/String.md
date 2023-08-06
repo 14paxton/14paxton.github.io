@@ -10,9 +10,9 @@ shortRepo:
   - reactnotes  
   - default            
 ---
-  
+
 <br/>            
-  
+
 <details markdown="block">                  
 <summary>                  
 Table of contents                  
@@ -21,17 +21,17 @@ Table of contents
 1. TOC                  
 {:toc}                  
 </details>                  
-  
+
 <br/>                  
-  
+
 ***                  
-  
+
 <br/>  
-  
-# Text Manipulation  
-  
-## keep white space  
-  
+
+# Text Manipulation
+
+## keep white space
+
 ```javascript  
         <FieldDescription style={{whiteSpace: 'pre-wrap'}}>  
     {`    -Choose one or more of these options  
@@ -41,9 +41,9 @@ Table of contents
     <br/>  
 </FieldDescription>   
 ```  
-  
-## add formatting to component  
-  
+
+## add formatting to component
+
 ```javascript  
       const createThemeToolTip = (themeSummary, significance) => {  
     return significance  
@@ -55,13 +55,13 @@ Table of contents
            : themeSummary;  
 };  
 ```  
-  
-## dynamic internationalized component  
-  
-- [Internationalized text component](https://gist.github.com/14paxton/bd94c13e40f4faa41d65442d015b2a1f)  
-  
-## Dynamic tooltip  
-  
-- [Complex UseCase](https://gist.github.com/14paxton/9c745874ec384add89c1908c73832594)  
-  
+
+## dynamic internationalized component
+
+- [Internationalized text component](https://gist.github.com/14paxton/bd94c13e40f4faa41d65442d015b2a1f)
+
+## Dynamic tooltip
+
+- [Complex UseCase](https://gist.github.com/14paxton/9c745874ec384add89c1908c73832594)
+
 - [Simple UseCase](https://github.com/14paxton/ToolTipTextComponent)

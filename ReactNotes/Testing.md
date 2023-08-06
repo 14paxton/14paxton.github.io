@@ -10,9 +10,9 @@ shortRepo:
   - reactnotes  
   - default            
 ---
-  
+
 <br/>            
-  
+
 <details markdown="block">                  
 <summary>                  
 Table of contents                  
@@ -21,19 +21,19 @@ Table of contents
 1. TOC                  
 {:toc}                  
 </details>                  
-  
+
 <br/>                  
-  
+
 ***                  
-  
+
 <br/>  
-  
-# Jest  
-  
-## config in package.json  
-  
-> this is transformIgnorePatterns for jest, defaultPhrases used for dateRangePicker needed to be ignored for jest and adding a workaround for using a webworker  
-  
+
+# Jest
+
+## config in package.json
+
+> this is transformIgnorePatterns for jest, defaultPhrases used for dateRangePicker needed to be ignored for jest and adding a workaround for using a webworker
+
 ```json  
 {  
   "jest": {  
@@ -46,16 +46,16 @@ Table of contents
   }  
 }  
 ```  
-  
-## Modify existing object in test  
-  
+
+## Modify existing object in test
+
 ```javascript  
   
 const modifiedProps = JSON.parse(JSON.stringify(defaultProps))  
 ```  
-  
-## fire button example  
-  
+
+## fire button example
+
 ```javascript  
 import React from 'react'  
   
@@ -78,13 +78,13 @@ test('counter increments the count', () => {
 })  
   
 ```  
-  
-## use mount to fully render,  
-  
-> can only set props on root, use dive to access child components  
-  
-> To test a component (with Jest) that contains<Route>and withRouter you need to import Router in you test  
-  
+
+## use mount to fully render,
+
+> can only set props on root, use dive to access child components
+
+> To test a component (with Jest) that contains<Route>and withRouter you need to import Router in you test
+
 ```javascript  
     import {BrowserRouter as Router} from 'react-router-dom';  
   
@@ -97,15 +97,16 @@ it('containts stuff', () => {
     expect(wrapper.find('a[href="https://talentmine.talentplus.com/s/contactsupport"]').text()).toBe('Contact    Support    ')  
 })  
 ```  
+
   
 ---
-  
-# Enzyme  
-  
-<https://enzymejs.github.io/enzyme/docs/api/selector.html>  
-  
-<https://enzymejs.github.io/enzyme/docs/api/ReactWrapper/find.html>  
-  
+
+# Enzyme
+
+<https://enzymejs.github.io/enzyme/docs/api/selector.html>
+
+<https://enzymejs.github.io/enzyme/docs/api/ReactWrapper/find.html>
+
 ```javascript  
   
 expect(wrapper.find('.App-intro').exists()).toBe(true)  
@@ -121,17 +122,17 @@ expect(wrapper.find('[href="tyler"]').text()).toBe('WelcometoReact')
 expect(wrapper.find('[href="tyler ~.clark"]').text()).toBe('Welcome to React')  
 expect(wrapper.find('[text="Sometitle"]').text()).toBe('Welcome to React')  
 ```  
-  
-# Use the object property selector to find nodes  
-  
-> by passing in an object that matches the property of a node as a selectoin  
-  
+
+# Use the object property selector to find nodes
+
+> by passing in an object that matches the property of a node as a selectoin
+
 ```javascript  
     expect(wrapper.find({alt: 'logo'}).text()).toBe('Welcome to React')  
 ```  
-  
-<https://enzymejs.github.io/enzyme/docs/api/ShallowWrapper/setProps.html>  
-  
+
+<https://enzymejs.github.io/enzyme/docs/api/ShallowWrapper/setProps.html>
+
 ```javascript  
   
 it('test with enzyme', () => {  
@@ -169,13 +170,14 @@ it('test with enzyme', () => {
 });  
   
 ```  
+
   
 ---
-  
-# REACT TESTING LIB  
-  
-## MUTATION  OBSERVER  
-  
+
+# REACT TESTING LIB
+
+## MUTATION  OBSERVER
+
 ```javascript  
 global.MutationObserver = class {  
     constructor(callback) {}  
@@ -185,9 +187,9 @@ global.MutationObserver = class {
     observe(element, initObject) {}  
 };  
 ```  
-  
-or  
-  
+
+or
+
 ```javascript  
 global.MutationObserver = MutationObserver;  
   
@@ -195,9 +197,9 @@ HTMLCanvasElement
   
 HTMLCanvasElement.prototype.getContext = jest.fn();  
 ```  
-  
-## use test-id in material-ui textfield  
-  
+
+## use test-id in material-ui textfield
+
 ```javascript  
 import "@testing-library/jest-dom";  
 import React from "react";  
@@ -272,9 +274,9 @@ describe("<EditProfileForm/>", () => {
 });  
   
 ```  
-  
-> And then passing data - testid as an input prop on text field like this  
-  
+
+> And then passing data - testid as an input prop on text field like this
+
 ```javascript  
 <TextField  
     id="outlined-name"  
@@ -294,9 +296,9 @@ describe("<EditProfileForm/>", () => {
     variant="outlined"  
 />  
 ```  
-  
-## Use queryBy to test if something should be null  
-  
+
+## Use queryBy to test if something should be null
+
 ```javascript  
   
 it('ellipsis should not appear for shared result viewer role', async () => {  
@@ -311,9 +313,9 @@ it('ellipsis should not appear for shared result viewer role', async () => {
 });  
   
 ```  
-  
-### Firing events  
-  
+
+### Firing events
+
   ```javascript  
 import userEvent from '@testing-library/user-event'  
   
@@ -325,24 +327,24 @@ fireEvent.change(input, {
   
 userEvent.type(input, 'GroupA')  
 ```  
-  
-### Getting component  
-  
+
+### Getting component
+
 ```javascript  
     const {getByTestId, queryByTestId} = render(<CreateGroupForm  
     groups={groupNames}/>)  
 ```  
-  
-### Testing component  
-  
+
+### Testing component
+
 ```javascript  
     expect(input).toHaveValue('GROUP')  
   
 ```  
-  
+
 > needed due to tooltip calling document.createRange  
-> otherwise will get error: ```Uncaught [TypeError: document.createRange is not a function]```  
-  
+> otherwise will get error: ```Uncaught [TypeError: document.createRange is not a function]```
+
 ```javascript  
 global.document.createRange = () => ({  
     setStart: () => {}, setEnd: () => {}, commonAncestorContainer: {  

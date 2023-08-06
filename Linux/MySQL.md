@@ -86,7 +86,7 @@ sudo apt-get install mysql-server mysql-client (or maria if still having trouble
   # You can copy this to one of:
   # - "/etc/mysql/my.cnf" to set global options,
   # - "~/.my.cnf" to set user-specific options.
-  #   
+  #     
   # One can use all long options that the program supports.
   # Run program with --help to get a list of available options and with
   # --print-defaults to see which it would actually understand and use.

@@ -9,9 +9,9 @@ shortRepo:
   - javanotes        
   - default          
 ---
-        
+
 <br/>        
-        
+
 <details markdown="block">              
 <summary>              
 Table of contents              
@@ -20,23 +20,23 @@ Table of contents
 1. TOC              
 {:toc}              
 </details>              
-        
+
 <br/>              
-        
+
 ***              
-        
+
 <br/>              
-        
-# Optionals        
-        
+
+# Optionals
+
 ```java        
 Optional<Map<String, String>>aorMap=Optional.ofNullable(this.customAORMap);        
 ```        
-        
-# Streams        
-        
-## Map and Collect        
-        
+
+# Streams
+
+## Map and Collect
+
 ```java        
         
 clientEntityMap.entrySet()        
@@ -54,18 +54,18 @@ clientEntityMap.entrySet()
         .collect(Collectors.toList())        
         ));        
 ```        
-        
-## ConcurrentHashMap and LinkedList        
-        
+
+## ConcurrentHashMap and LinkedList
+
 ```java        
 return this.clientEntityMap.entrySet()        
         .stream()        
         .map(entry->Map.entry(entry.getKey(),entry.getValue().stream().map(ClientEntityDetails::toMap).collect(Collectors.toCollection(LinkedList::new))))        
         .collect(Collectors.toConcurrentMap(Map.Entry::getKey,Map.Entry::getValue,(a,b)->b,ConcurrentHashMap::new));        
 ```        
-        
-## Map to String        
-        
+
+## Map to String
+
 ```java        
 map.keySet().stream()        
         .map(key->key+"="+map.get(key))        

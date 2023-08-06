@@ -8,8 +8,8 @@ has_children: false
 share:        true      
 shortRepo:    ghpages      
 ---
-      
-      
+
+
 <details markdown="block">            
 <summary>            
 Table of contents            
@@ -18,17 +18,17 @@ Table of contents
 1. TOC            
 {:toc}            
 </details>            
-      
+
 <br/>            
-      
+
 ***            
-      
+
 <br/>            
-      
-# [YML Config](https://jekyllrb.com/docs/configuration/default/)      
-      
-## Where things are      
-      
+
+# [YML Config](https://jekyllrb.com/docs/configuration/default/)
+
+## Where things are
+
 ```yaml          
 source:          .      
 destination:     ./_site      
@@ -43,9 +43,9 @@ collections:
 posts:      
 output:          true          
 ```          
-      
-## Handling Reading      
-      
+
+## Handling Reading
+
 ```yaml          
 safe:                false      
 include: [ ".htaccess" ]      
@@ -55,25 +55,25 @@ encoding:            "utf-8"
 markdown_ext:        "markdown,mkdown,mkdn,mkd,md"      
 strict_front_matter: false          
 ```          
-      
-## Filtering Content      
-      
+
+## Filtering Content
+
 ```yaml          
 show_drafts: null      
 limit_posts: 0      
 future:      false      
 unpublished: false          
 ```          
-      
-## Plugins      
-      
+
+## Plugins
+
 ```yaml          
 whitelist: [ ]      
 plugins: [ ]          
 ```          
-      
-## Conversion      
-      
+
+## Conversion
+
 ```yaml          
 markdown:          kramdown      
 highlighter:       rouge      
@@ -81,9 +81,9 @@ lsi:               false
 excerpt_separator: "\n\n"      
 incremental:       false          
 ```          
-      
-## Serving      
-      
+
+## Serving
+
 ```yaml          
 detach:           false      
 port:             4000      
@@ -91,9 +91,9 @@ host:             127.0.0.1
 baseurl:          "" # does not include hostname          
 show_dir_listing: false          
 ```          
-      
-## Outputting      
-      
+
+## Outputting
+
 ```yaml          
 permalink:        date      
 paginate_path:    /page:num      
@@ -108,11 +108,11 @@ error_mode:       warn
 strict_filters:   false      
 strict_variables: false          
 ```          
-      
-## Markdown Processors      
-      
-> [Options](https://kramdown.gettalong.org/options.html)      
-      
+
+## Markdown Processors
+
+> [Options](https://kramdown.gettalong.org/options.html)
+
 ```yaml          
 kramdown:      
 auto_ids:      true      
@@ -124,12 +124,12 @@ hard_wrap:     false
 footnote_nr:   1      
 show_warnings: false          
 ```          
-      
+
           
 --- 
-      
-# [Metadata](https://jekyll.github.io/github-metadata/site.github/)      
-      
+
+# [Metadata](https://jekyll.github.io/github-metadata/site.github/)
+
 ```json          
 {      
   "versions": {      
@@ -210,21 +210,21 @@ show_warnings: false
   }      
 }          
 ```          
-      
+
           
 --- 
-      
-# Resources      
-      
-## [Setup](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll)      
-      
-## [GitHubActions](https://jekyllrb.com/docs/continuous-integration/github-actions/)      
-      
-## [Jekyll Docker Image](https://github.com/envygeeks/jekyll-docker/blob/master/README.md)      
-      
-## [FrontMatter Defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/)      
-      
-## [Markdown Processor](https://jekyllrb.com/docs/configuration/markdown/)      
-      
+
+# Resources
+
+## [Setup](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll)
+
+## [GitHubActions](https://jekyllrb.com/docs/continuous-integration/github-actions/)
+
+## [Jekyll Docker Image](https://github.com/envygeeks/jekyll-docker/blob/master/README.md)
+
+## [FrontMatter Defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/)
+
+## [Markdown Processor](https://jekyllrb.com/docs/configuration/markdown/)
+
           
 ---

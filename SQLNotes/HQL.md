@@ -11,11 +11,11 @@ shortRepo:
   - sqlnotes  
   - default      
 ---
-  
+
 <br/>        
-  
+
 ***        
-  
+
 <details markdown="block">              
 <summary>              
 Table of contents              
@@ -24,126 +24,126 @@ Table of contents
 1. TOC              
 {:toc}              
 </details>              
-  
+
 <br/>              
-  
+
 ***              
-  
+
 <br/>              
-  
-# [Database Overview](http://www.h2database.com/html/features.html#database_url)  
-  
-![H2_DB_Overview.png](..%2Fassets%2Fimages%2FH2_DB_Overview.png)  
-  
+
+# [Database Overview](http://www.h2database.com/html/features.html#database_url)
+
+![H2_DB_Overview.png](..%2Fassets%2Fimages%2FH2_DB_Overview.png)
+
 ***    
-  
-## run in postgres mode  
-  
+
+## run in postgres mode
+
 ```shell    
 jdbc:h2:mem:test;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE    
 ```  
-  
+
 ```shell  
 jdbc:h2:~/siris;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH  
 ```  
-  
+
 ___    
-  
-# [H2 Database Engine Cheat Sheet](http://www.h2database.com/html/cheatSheet.html)  
-  
-## Using H2  
-  
-- [H2](https://h2database.com/)is[open source](https://github.com/h2database/h2database),[free to use and distribute](http://www.h2database.com/html/license.html).  
-- [Download](https://h2database.com/html/download.html):[jar](https://repo1.maven.org/maven2/com/h2database/h2/2.2.220/h2-2.2.220.jar),[installer (Windows)](https://github.com/h2database/h2database/releases/download/version-2.2.220/h2-setup-2023-07-04.exe),[zip](https://github.com/h2database/h2database/releases/download/version-2.2.220/h2-2023-07-04.zip).  
-- To start the[H2 Console tool](http://www.h2database.com/html/quickstart.html#h2_console), double click the jar file, or run`java -jar h2*.jar`,`h2.bat`, or`h2.sh`.  
+
+# [H2 Database Engine Cheat Sheet](http://www.h2database.com/html/cheatSheet.html)
+
+## Using H2
+
+- [H2](https://h2database.com/)is[open source](https://github.com/h2database/h2database),[free to use and distribute](http://www.h2database.com/html/license.html).
+- [Download](https://h2database.com/html/download.html):[jar](https://repo1.maven.org/maven2/com/h2database/h2/2.2.220/h2-2.2.220.jar),[installer (Windows)](https://github.com/h2database/h2database/releases/download/version-2.2.220/h2-setup-2023-07-04.exe),[zip](https://github.com/h2database/h2database/releases/download/version-2.2.220/h2-2023-07-04.zip).
+- To start the[H2 Console tool](http://www.h2database.com/html/quickstart.html#h2_console), double click the jar file, or run`java -jar h2*.jar`,`h2.bat`, or`h2.sh`.
 - [A new database is automatically created](http://www.h2database.com/html/tutorial.html#creating_new_databases)[by default    
-  if an embedded URL is used](http://www.h2database.com/html/features.html#database_only_if_exists).  
-- [Closing the last connection closes the database](http://www.h2database.com/html/features.html#closing_a_database).  
-  
-## Documentation  
-  
+  if an embedded URL is used](http://www.h2database.com/html/features.html#database_only_if_exists).
+- [Closing the last connection closes the database](http://www.h2database.com/html/features.html#closing_a_database).
+
+## Documentation
+
 Reference:[SQL grammar](http://www.h2database.com/html/grammar.html),[functions](http://www.h2database.com/html/functions.html),[data types](http://www.h2database.com/html/datatypes.html),[tools](http://www.h2database.com/html/tutorial.html#command_line_tools),[API](http://www.h2database.com/javadoc/index.html)      
-[Features](http://www.h2database.com/html/features.html):[fulltext search](http://www.h2database.com/html/tutorial.html#fulltext),[encryption](http://www.h2database.com/html/features.html#file_encryption),[read-only](http://www.h2database.com/html/features.html#read_only)[(zip/jar)](http://www.h2database.com/html/features.html#database_in_zip),[CSV](http://www.h2database.com/html/tutorial.html#csv),[auto-reconnect](http://www.h2database.com/html/features.html#auto_reconnect),[triggers](http://www.h2database.com/html/features.html#triggers),[user functions](http://www.h2database.com/html/features.html#user_defined_functions)  
-  
-## [Database URLs](http://www.h2database.com/html/features.html#database_url)  
-  
+[Features](http://www.h2database.com/html/features.html):[fulltext search](http://www.h2database.com/html/tutorial.html#fulltext),[encryption](http://www.h2database.com/html/features.html#file_encryption),[read-only](http://www.h2database.com/html/features.html#read_only)[(zip/jar)](http://www.h2database.com/html/features.html#database_in_zip),[CSV](http://www.h2database.com/html/tutorial.html#csv),[auto-reconnect](http://www.h2database.com/html/features.html#auto_reconnect),[triggers](http://www.h2database.com/html/features.html#triggers),[user functions](http://www.h2database.com/html/features.html#user_defined_functions)
+
+## [Database URLs](http://www.h2database.com/html/features.html#database_url)
+
 **[Embedded](http://www.h2database.com/html/features.html#connection_modes)**      
 `jdbc:h2:~/test`'test' in the user home directory      
 `jdbc:h2:/data/test`'test' in the directory /data      
-`jdbc:h2:./test`in the current(!) working directory  
-  
+`jdbc:h2:./test`in the current(!) working directory
+
 **[In-Memory](http://www.h2database.com/html/features.html#in_memory_databases)**      
 `jdbc:h2:mem:test`multiple connections in one process, database is removed when all connections are closed      
 `jdbc:h2:mem:test;DB_CLOSE_DELAY=-1`multiple connections in one process, database in not removed when all connections are    
 closed ([may create a memory leak](http://www.h2database.com/html/features.html#in_memory_databases))      
-`jdbc:h2:mem:`unnamed private; one connection  
-  
+`jdbc:h2:mem:`unnamed private; one connection
+
 **[Server Mode](http://www.h2database.com/html/tutorial.html#using_server)**      
 `jdbc:h2:tcp://localhost/~/test`user home dir      
 `jdbc:h2:tcp://localhost//data/test`or`jdbc:h2:tcp://localhost/D:/data/test`absolute dir      
-[Server start](http://www.h2database.com/html/tutorial.html#using_server):`java -cp *.jar org.h2.tools.Server`  
-  
+[Server start](http://www.h2database.com/html/tutorial.html#using_server):`java -cp *.jar org.h2.tools.Server`
+
 **[Settings](http://www.h2database.com/html/features.html#database_url)**      
 `jdbc:h2:..;MODE=MySQL;DATABASE_TO_LOWER=TRUE`[compatibility (or HSQLDB,...)](http://www.h2database.com/html/features.html#compatibility)      
-`jdbc:h2:..;TRACE_LEVEL_FILE=3`[log to *.trace.db](http://www.h2database.com/html/features.html#trace_options)  
-  
-## [Using the JDBC API](http://www.h2database.com/html/tutorial.html#connecting_using_jdbc)  
-  
+`jdbc:h2:..;TRACE_LEVEL_FILE=3`[log to *.trace.db](http://www.h2database.com/html/features.html#trace_options)
+
+## [Using the JDBC API](http://www.h2database.com/html/tutorial.html#connecting_using_jdbc)
+
 Connection conn = DriverManager.    
 getConnection("jdbc:h2:~/test");    
-conn.close();  
-  
-## [Connection Pool](http://www.h2database.com/html/tutorial.html#connection_pool)  
-  
+conn.close();
+
+## [Connection Pool](http://www.h2database.com/html/tutorial.html#connection_pool)
+
 import org.h2.jdbcx.JdbcConnectionPool;    
 JdbcConnectionPool cp = JdbcConnectionPool.    
 create("jdbc:h2:~/test", "sa", "sa");    
 Connection conn = cp.getConnection();    
-conn.close(); cp.dispose();  
-  
-## [Maven 2](http://www.h2database.com/html/build.html#maven2)  
-  
+conn.close(); cp.dispose();
+
+## [Maven 2](http://www.h2database.com/html/build.html#maven2)
+
 <dependency>    
     <groupId>com.h2database</groupId>    
     <artifactId>h2</artifactId>    
     <version>2.2.220</version>    
 </dependency>    
-  
-## [Hibernate](http://www.h2database.com/html/tutorial.html#using_hibernate)  
-  
-hibernate.cfg.xml (or use the HSQLDialect):  
-  
+
+## [Hibernate](http://www.h2database.com/html/tutorial.html#using_hibernate)
+
+hibernate.cfg.xml (or use the HSQLDialect):
+
 <property name="dialect">    
     org.hibernate.dialect.H2Dialect    
 </property>    
-  
-## [TopLink and Glassfish](http://www.h2database.com/html/tutorial.html#using_toplink)  
-  
+
+## [TopLink and Glassfish](http://www.h2database.com/html/tutorial.html#using_toplink)
+
 Datasource class:`org.h2.jdbcx.JdbcDataSource`      
 `oracle.toplink.essentials.platform.`      
-`database.H2Platform`  
+`database.H2Platform`
     
 ---
-  
-## Run **H2 Database** in three different modes:  
-  
+
+## Run **H2 Database** in three different modes:
+
 1. Server Mode    
-   `jdbc:h2:tcp://localhost/~/test`  
-  
+   `jdbc:h2:tcp://localhost/~/test`
+
 > When using H2 db in**server mode**(also known as client/server mode) all data is transferred over TCP/IP.  
 > Before application can use H2 Database in server mode, you need to start the H2 DB within  
-> the same or another machine.  
-  
+> the same or another machine.
+
 					To run H2 Database in **Server Mode** you need the JAR file containing the DB Classes. You can download it from [http://www.h2database.com/html/download.html](http://www.h2database.com/html/download.html)    
     
 		You can then Start the DB in Server mode by executing the **H2 DB Runnable JAR** file:    
-  
+
 ```shell    
 java -jar h2-.jar -webAllowOthers -tcpAllowOthers    
 ```    
-  
+
 > 	start programmatically    
-  
+
 ```java    
 import org.h2.tools.Server;  
   
@@ -157,38 +157,38 @@ Server server=Server.createTcpServer("-tcpPort","9092","-tcpAllowOthers").start(
   
         server.stop();    
 ```    
-  
-> In server mode, you need to use one of the following JDBC URLs:  
-  
+
+> In server mode, you need to use one of the following JDBC URLs:
+
 ```    
 _jdbc:h2:tcp://localhost/~/test_ connect to the ‘test’ database in the user home directory on the server (local computer).    
     
 _jdbc:h2:tcp://192.168.1.3:9092 //data/test_ connect to the ‘test’ database in the /data directory on the remote server.    
 ```    
-  
-> **Run H2 server in command line:**  
-  
-In command prompt or terminal window, type the following command to run H2 server:  
-  
+
+> **Run H2 server in command line:**
+
+In command prompt or terminal window, type the following command to run H2 server:
+
 ```    
 java -cp h2-version.jar org.h2.tools.Server -tcp    
 ```    
-  
-This will start H2 server program, listening for TCP connections. To know more options, type the following command:  
-  
+
+This will start H2 server program, listening for TCP connections. To know more options, type the following command:
+
 ```    
 java -cp h2-version.jar org.h2.tools.Server -help    
 ```    
-  
+
 2. Embedded mode:    
-   `jdbc:h2:~/test`  
-  
+   `jdbc:h2:~/test`
+
 > H2 db in embedded mode will be faster but the downside of it is that_no other process can access the Database_.  
 > In the above connection string, the Data will be saved into the ‘test’ folder, under  
-> the user’s home directory.  
-  
+> the user’s home directory.
+
 > 			To connect to an H2 embedded database, you need to use one of the following JDBC URLs:    
-  
+
 ```    
 				_jdbc:h2:~/test_the ‘test’ database in the user home directory    
 				    
@@ -198,48 +198,48 @@ java -cp h2-version.jar org.h2.tools.Server -help
 				    
 				_jdbc:h2:D:/data/test_ the ‘test’ database in the D:/data directory (Windows)    
 ```    
-  
+
 3. Mixed mode:    
-   `jdbc:h2:/data/test;AUTO_SERVER=TRUE`  
-  
-> When using automatic mixed mode, you can share the JDBC URL for all applications using the DB. By default the server uses any free TCP port. The port can be set manually using AUTO_SERVER_PORT=9090.  
-  
-4. Java Connect to H2 Database in In-Memory Mode  
-  
+   `jdbc:h2:/data/test;AUTO_SERVER=TRUE`
+
+> When using automatic mixed mode, you can share the JDBC URL for all applications using the DB. By default the server uses any free TCP port. The port can be set manually using AUTO_SERVER_PORT=9090.
+
+4. Java Connect to H2 Database in In-Memory Mode
+
 > You can use H2 database in in-memory mode, which means the database is created in memory when the first connection is established, and is removed when all connections are closed.  
 > The database engine  
-> runs in the same process of the application.  
-  
-> Using H2 in-memory database is preferred for quick testing in which data is not need to be stored permanently on disk.  
-  
-> To connect to a H2 in-memory database, you need to use JDBC URLs look like follows:  
-  
-- multiple connections in one process  
-  
+> runs in the same process of the application.
+
+> Using H2 in-memory database is preferred for quick testing in which data is not need to be stored permanently on disk.
+
+> To connect to a H2 in-memory database, you need to use JDBC URLs look like follows:
+
+- multiple connections in one process
+
 ```    
 jdbc:h2:mem:test    
 ```    
-  
-- unnamed private; one connection.  
-  
+
+- unnamed private; one connection.
+
 ```    
 jdbc:h2:mem:    
 ```    
-  
-### execute sql scripts  
-  
+
+### execute sql scripts
+
 ```shell    
 jdbc:h2:tcp://localhost/mem:elytron_jdbc_test;DB_CLOSE_DELAY=-1;DB_CLOSE_DELAY=-1;INIT=RUNSCRIPT FROM 'classpath:import.sql    
 ```    
-  
-> shutdown  
-  
+
+> shutdown
+
 ```shell    
 jdbc:h2:~/test;DB_CLOSE_ON_EXIT=FALSE    
 ```    
-  
-### start and stop from maven  
-  
+
+### start and stop from maven
+
 ```xml    
   
 <plugin>  
@@ -272,14 +272,14 @@ jdbc:h2:~/test;DB_CLOSE_ON_EXIT=FALSE
     </executions>  
 </plugin>    
 ```    
-  
+
     
 ---
-  
-# Queries  
-  
-## Intersect  
-  
+
+# Queries
+
+## Intersect
+
 ```hql          
 select *  
 from LAB_TEST_SERVICES_POJO lts  
@@ -288,9 +288,9 @@ where exists
   and exists  
     ( select ltl.inttestid from LAB_TEST_LOCATION ltl where ltl.status = 1 and lts.inttestid = ltl.inttestid )          
 ```          
-  
-### join same object to query against 2 lists  
-  
+
+### join same object to query against 2 lists
+
 ```hql          
 select o          
 from Object as o          
@@ -298,15 +298,15 @@ from Object as o
 where otherObject in :allowedotherobjects          
   and otherObject not in :excludedotherobjects          
 ```          
-  
-### determine length diff of a group concat  
-  
+
+### determine length diff of a group concat
+
 ```hql          
 (CHAR_LENGTH (GROUP_CONCAT(CONCAT(user.id, manager.id))) - CHAR_LENGTH (REPLACE(GROUP_CONCAT(CONCAT(user.id, manager.id)), ',', '' )))          
 ```          
-  
-## EXAMPLE large query with teary / multi join/ and JSON extractor  
-  
+
+## EXAMPLE large query with teary / multi join/ and JSON extractor
+
 ```hql          
 select USER.FIRSTNAME,  
        USER.LASTNAME,  
@@ -335,13 +335,13 @@ where user.clientSetupId = ${clientSetupId}
   and user.id in (${searchStrings?.lastName ? findAllIdsByFirstNameAndLastName(searchStrings.firstName.toString()  
     , searchStrings.lastName.toString())*.getId().join(', ')          
 ```          
-  
-> calling method  
-  
+
+> calling method
+
 ```groovy          
 findAllByFirstNameOrLastNameOrEmail(searchStrings.firstName.toString())*.getId().join('          
 ```          
-  
+
 ```hql          
 select distinct NEW COM.TALENTBANK.CORE.USERMAP(USER.ID, USER.USERNAME, USER.CLIENTSETUPID, USER.EMAIL, USER.FIRSTNAME, USER.LASTNAME, USER.USERMETADATA, USER.LASTLOGIN, USER.PICTUREURL,          
         MANAGER.ID, MANAGER.EMAIL, MANAGER.FIRSTNAME, MANAGER.LASTNAME, MANAGER.USERMETADATA, MANAGER.LASTLOGIN, MANAGER.PICTUREURL, coalesce(MANAGER.EXTERNALEMPLOYEECODE, 0),          
@@ -355,9 +355,9 @@ with im.sourceId = ao.catalogDetail.interviewModelId and im.source = (case when 
 on sm.id = (case when im.source = 'TBFIVE' then (select s from ScoringModel s where s.interviewModelId = im.id) else (select s from ScoringModel s where s.sourceId = ao.catalogDetail.interviewModelId) end)  
 where user.clientSetupId = $clientSetupId  
 ```          
-  
-## EXAMPLE calling method in HQL statement  
-  
+
+## EXAMPLE calling method in HQL statement
+
 ```hql          
 select distinct new COM.TALENTBANK.CORE.DTO.USERTEAM.TEAMSEARCHDTOMAP(USER.ID, USER.USERNAME, USER.CLIENTSETUPID, USER.EMAIL, USER.FIRSTNAME, USER.LASTNAME, USER.USERMETADATA, USER.LASTLOGIN, USER.PICTUREURL,          
 MANAGER.ID, MANAGER.EMAIL, MANAGER.FIRSTNAME, MANAGER.LASTNAME, MANAGER.USERMETADATA, MANAGER.LASTLOGIN, MANAGER.PICTUREURL,          
@@ -369,9 +369,9 @@ on manager.id = ur.manager.id
 where user.clientSetupId = 2000  
   and user.id in (${ findAllByFirstNameOrLastNameOrEmail(searchStrings.firstName)*.getId().join(' , ')}))          
 ```          
-  
-## EXAMPLE case in where statement  
-  
+
+## EXAMPLE case in where statement
+
 ```hql          
 select distinct new Map( USER.ID as user, MANAGER.ID as manager )  
 from USER USER  
@@ -385,9 +385,9 @@ where user.clientSetupId in (55
    or manager.firstName like case when ${searchManagerName} = true then ('%'||'${testSearch}'||'%') else '' end  
    or manager.lastName like case when ${searchManagerName} = true then ('%'||'${testSearch}'||'%') else '' end )          
 ```          
-  
-## return all if null or empty  
-  
+
+## return all if null or empty
+
 ```hql          
 select distinct new Map( USER.ID as user, MANAGER.ID as manager )  
 from USER USER  
@@ -400,9 +400,9 @@ where user.clientSetupId in (${clientSetUpIdList.join(' , ') ?: ClientSetup.all.
    or manager.firstName like ${testSearch.manager}  
    or manager.lastName like ${testSearch.manager} )          
 ```          
-  
-## subquery  
-  
+
+## subquery
+
 ```hql          
 SELECT u          
 FROM USER u          
@@ -413,9 +413,9 @@ WHERE exists (SELECT 1
     WHERE user = u          
         AND USER.CLIENTSETUPID = 2000)          
 ```          
-  
-## create tuple  
-  
+
+## create tuple
+
 ```hql          
 SELECT CONCAT('[', USER.ID, ':', IFNULL(MANAGER.ID, 'null'), ']')          
 FROM USER USER          
@@ -425,11 +425,11 @@ WITH ur.user.id = USER.id OR ur.manager.id = USER.id
 WITH manager.id = ur.manager.id          
 WHERE USER.clientSetupId = 2000          
 ```          
-  
-## creative count  
-  
-### add/concat chars get length  
-  
+
+## creative count
+
+### add/concat chars get length
+
 ```hql          
 SELECT LENGTH(CONCAT(FUNCTION('GROUP_CONCAT', ',')))          
 From User user          
@@ -440,9 +440,9 @@ with manager.id = ur.manager.id
 where user.clientSetupId = 2000          
 group by user.id, manager.id          
 ```          
-  
-### get groupings where there may be nulls  
-  
+
+### get groupings where there may be nulls
+
 ```hql          
 select NEW Map( max(USER.ID) as userId , (select concat('{', group_concat(concat(coalesce(UR1.ID, 'noRelationship'), ':[{' ,          
                          USER.ID, ':' , coalesce(MANAGER1.ID, 'null'), '}]' )) , '}')          
@@ -456,9 +456,9 @@ with manager.id = ur.manager.id
 where user.clientSetupId = 2000  
 group by user.id, manager.id          
 ```          
-  
-### get list of digits  
-  
+
+### get list of digits
+
 ```hql          
 select max(USER.ID),  
        (select distinct concat(group_concat(1))  
@@ -474,11 +474,11 @@ with manager.id = ur.manager.id
 where user.clientSetupId = 2000  
 group by user, manager          
 ```          
-  
-### get correct char but need to count column  
-  
-#### Not working need to show one number, find way to count column  
-  
+
+### get correct char but need to count column
+
+#### Not working need to show one number, find way to count column
+
 ```hql          
 select (select count(u.id)  
         from USER u  
@@ -499,7 +499,7 @@ with manager.id = ur.manager.id
 where user.clientSetupId = 2000  
 group by 'all'          
 ```          
-  
+
 ```hql          
 select count(*),  
        (select length(concat(group_concat('')))  
@@ -515,9 +515,9 @@ with manager.id = ur.manager.id
 where user.clientSetupId = 2000  
 group by user, manager          
 ```          
-  
-## SELECT DISTINCT mag FROM Magazine mag  
-  
+
+## SELECT DISTINCT mag FROM Magazine mag
+
 ```hql          
 JOIN mag.articles art          
           
@@ -525,19 +525,19 @@ JOIN art.author auth
           
 WHERE auth.lastName = 'Grisham'          
 ```          
-  
-### may equivalently be expressed as follows, using the IN operator:  
-  
+
+### may equivalently be expressed as follows, using the IN operator:
+
 ```hql          
 SELECT DISTINCT mag FROM Magazine mag,          
 IN(mag.articles) art          
 WHERE art.author.lastName = 'Grisham'          
 ```          
-  
-## Using HQL(hibernate query language) in findall  
-  
-### USING HQL for execute query  
-  
+
+## Using HQL(hibernate query language) in findall
+
+### USING HQL for execute query
+
 ```groovy          
  query = """          
        select NEW Map(ug.id as id, ug.NAME as NAME, ug.interviewModelId as interviewModelId,          
@@ -551,11 +551,11 @@ order by ug.NAME
        """  
 def groups = UserGroup.executeQuery(query, [userId: principalUser?.id, type: UserGroupType.RESULTGROUP])          
 ```          
-  
-## -HQL created using session-  
-  
-### -Full Example - [Full dynamic HQL, with QueryImpl object ](https://gist.github.com/14paxton/0ed8e82644cd661dc8c9fc0d4b8c2009)  
-  
+
+## -HQL created using session-
+
+### -Full Example - [Full dynamic HQL, with QueryImpl object ](https://gist.github.com/14paxton/0ed8e82644cd661dc8c9fc0d4b8c2009)
+
 ```groovy          
                User.withSession { uSession ->  
     def q = uSession.createQuery($/select distinct new COM.TALENTBANK.CORE.USERMAP(USER.ID,           
@@ -589,9 +589,9 @@ where user.firstName like CONCAT('%'
     q.list()  
 }          
 ```          
-  
-## using Groovy SQL  
-  
+
+## using Groovy SQL
+
 ```groovy          
        List fetchUsersByNameOrManagerName(String searchString, params) {  
     if (!params) return null  
@@ -638,9 +638,9 @@ where ((manager.first_name like '%${searchString}%' || manager.last_name like '%
     groovySql.rows(query, 0, 15)  
 }          
 ```          
-  
-## pagination server side with PagedListHolder Object  
-  
+
+## pagination server side with PagedListHolder Object
+
 ```hql    
     def queryResults = userDataService.searchForUsersWhereNameOrEmailLike(searchString)          
     def pages = new PagedListHolder(queryResults)          

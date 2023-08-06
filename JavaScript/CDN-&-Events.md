@@ -10,7 +10,7 @@ shortRepo:
   - javascript
   - default            
 ---
-  
+
 
 <br/>            
 
@@ -86,15 +86,17 @@ Table of contents
 
 > Now when you move mouse over this element, focus or click it, the name of the fired event will be displayed with its data.
 
-> To stop getting this data just write this to console:  
+> To stop getting this data just write this to console:
+
 ```shell
  unmonitorEvents($0)
 ```
- 
-> `$0` is just the last DOM element selected by Chrome Developer Tools.  
+
+> `$0` is just the last DOM element selected by Chrome Developer Tools.
 >> You can pass any other DOM object there (for example result of getElementById or querySelector).
 
-> You can also specify event "type" as second parameter to narrow monitored events to some predefined set. For example:  
+> You can also specify event "type" as second parameter to narrow monitored events to some predefined set. For example:
+
 ```shell
  monitorEvents(document.body, 'mouse')
 ```
@@ -131,7 +133,6 @@ Connect multiple events
 `$(trafficLight).on(“green”, car.lightTurnedGreen);`
 
 `$(trafficLight).trigger(“green”);`
-
 
 # Custom Bindings
 

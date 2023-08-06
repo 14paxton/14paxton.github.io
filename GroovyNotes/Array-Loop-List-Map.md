@@ -1,11 +1,11 @@
 ---
-title: Array-Loop-List-Map
-permalink: GroovyNotes/Array-Loop-List-Map
-category:  GroovyNotes
-parent:   GroovyNotes
-layout: default
+title:        Array-Loop-List-Map
+permalink:    GroovyNotes/Array-Loop-List-Map
+category:     GroovyNotes
+parent:       GroovyNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - groovynotes
   - default

@@ -9,13 +9,13 @@ shortRepo:
   - javanotes        
   - default          
 ---
-      
+
 <br/>        
-        
+
 ***              
-        
+
 <br/>              
-        
+
 <details markdown="block">                
 <summary>                
 Table of contents                
@@ -24,17 +24,17 @@ Table of contents
 1. TOC                
 {:toc}                
 </details>                
-          
+
 <br/>                
-          
+
 ***                
-          
+
 <br/>                
-      
-# Algos          
-          
-## binary search          
-          
+
+# Algos
+
+## binary search
+
 ```java              
 public class BinarySearch {          
           
@@ -58,9 +58,9 @@ public class BinarySearch {
     }          
 }              
 ```              
-          
-## Selection Sort          
-          
+
+## Selection Sort
+
 ```java              
 public void sort(int[]values){          
         // 1. Iteration over the input data               
@@ -72,9 +72,9 @@ public void sort(int[]values){
         }          
         }              
 ```              
-          
-## filter string          
-          
+
+## filter string
+
 ```java              
 public static Boolean QuestionsMarks(String str){          
         AtomicBoolean returnVal=new AtomicBoolean(Boolean.FALSE);          

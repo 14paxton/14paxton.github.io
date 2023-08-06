@@ -98,7 +98,7 @@ Table of contents
 
 ## Testing
 
-###    
+###      
 
 ``` bash
 ./grailsw test-app 'com.talentbank.core.UserServiceAPISearchSpec.manager_query*' -unit

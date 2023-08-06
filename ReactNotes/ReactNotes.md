@@ -10,9 +10,9 @@ shortRepo:
   - reactnotes    
   - default           
 ---
-  
+
 <br/>          
 ___            
 ## [Repo](https://github.com/14paxton/ReactNotes)    
-    
+
 ***

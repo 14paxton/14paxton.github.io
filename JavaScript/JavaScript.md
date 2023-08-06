@@ -10,5 +10,5 @@ shortRepo:
   - javascript  
   - default  
 ---
-  
+
 # [REPO](https://github.com/14paxton/javascript)

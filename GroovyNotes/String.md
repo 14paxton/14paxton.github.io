@@ -1,11 +1,11 @@
 ---
-title: String
-permalink: GroovyNotes/String
-category:  GroovyNotes
-parent:   GroovyNotes
-layout: default
+title:        String
+permalink:    GroovyNotes/String
+category:     GroovyNotes
+parent:       GroovyNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - groovynotes
   - default

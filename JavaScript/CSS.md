@@ -10,10 +10,10 @@ shortRepo:
   - javascript  
   - default            
 ---
-  
-  
+
+
 <br/>            
-  
+
 <details markdown="block">                  
 <summary>                  
 Table of contents                  
@@ -22,14 +22,14 @@ Table of contents
 1. TOC                  
 {:toc}                  
 </details>                  
-  
+
 <br/>                  
-  
+
 ***                  
-  
+
 <br/>  
 # [RGB to HEX](https://css-tricks.com/converting-color-spaces-in-javascript/  )
-  
+
 ```javascript  
 function RGBToHex(rgb) {  
     let sep = rgb.indexOf(",") > -1  
@@ -47,9 +47,9 @@ function RGBToHex(rgb) {
          */  
     }  
 ```  
-  
-# Create Style element insert into document head  
-  
+
+# Create Style element insert into document head
+
 ```javascript  
 generateRulesAll(tableRef.current).then((css) => {  
     const styleElement = document.createElement('style');  

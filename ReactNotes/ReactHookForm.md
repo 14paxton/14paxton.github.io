@@ -10,10 +10,10 @@ shortRepo:
   - reactnotes  
   - default            
 ---
-  
+
 {% raw %}  
-<br/>  
-  
+<br/>
+
 <details markdown="block">                  
 <summary>                  
 Table of contents                  
@@ -22,21 +22,22 @@ Table of contents
 1. TOC                  
 {:toc}                  
 </details>                  
-  
+
 <br/>                  
-  
+
 ***                  
-  
+
 <br/>  
-  
-# [React Hook Forms Components](https://github.com/14paxton/ReactHookFormDynamicComponents)  
+
+# [React Hook Forms Components](https://github.com/14paxton/ReactHookFormDynamicComponents)
+
   
 ---
-  
-# testing context  
-  
-<https://medium.com/javascript-in-plain-english/using-react-hook-form-in-component-tests-497180abf3c0>  
-  
+
+# testing context
+
+<https://medium.com/javascript-in-plain-english/using-react-hook-form-in-component-tests-497180abf3c0>
+
 ```javascript  
   
 function renderWithReactHookForm(ui, {defaultValues = {}} = {}) {  
@@ -85,9 +86,9 @@ const submitMyForm = (data) => {
 }  
   
 ```  
-  
-# using controller component with select and autocomplete  
-  
+
+# using controller component with select and autocomplete
+
 ```javascript  
 <Controller  
     name={"users"}  
@@ -127,7 +128,7 @@ const submitMyForm = (data) => {
     />)}  
 />  
 ```  
-  
+
 ```javascript  
 <Controller  
     name={"testSelect"}  
@@ -147,5 +148,5 @@ const submitMyForm = (data) => {
     </TextField>)}  
 />  
 ```  
-  
+
 {% endraw %}

@@ -10,10 +10,10 @@ shortRepo:
 - sqlnotes          
 - default          
 ---
-          
-          
+
+
 <br/>          
-          
+
 <details markdown="block">                
 <summary>                
 Table of contents                
@@ -22,17 +22,17 @@ Table of contents
 1. TOC                
 {:toc}                
 </details>                
-          
+
 <br/>                
-          
+
 ***                
-          
+
 <br/>                
-          
-# MySQL          
-          
-## extract JSON          
-          
+
+# MySQL
+
+## extract JSON
+
 ```sql            
 select JSON_EXTRACT(app_metadata, '$.tb5', '$.tb6.roleGroups') as "all",          
        JSON_EXTRACT(app_metadata, '$.tb5."roleGroups"')        as "tb5"          

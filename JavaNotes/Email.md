@@ -9,10 +9,10 @@ shortRepo:
   - javanotes        
   - default          
 ---
-        
-        
+
+
 <br/>        
-        
+
 <details markdown="block">              
 <summary>              
 Table of contents              
@@ -21,15 +21,15 @@ Table of contents
 1. TOC              
 {:toc}              
 </details>              
-        
+
 <br/>              
-        
+
 ***              
-        
+
 <br/>              
-        
-# JavaMail API        
-        
+
+# JavaMail API
+
 ```java        
 import javax.mail.*;        
 import javax.mail.internet.*;        
@@ -60,26 +60,26 @@ public class SendEmail {
         
 }        
 ```        
-        
-> where:        
-        
-`from@example.com` is the sender's email address        
-        
-`to@example.com` is the recipient's email address        
-        
-This is a test email is the subject of the email        
-        
-This is the body of the email. is the body of the email        
+
+> where:
+
+`from@example.com` is the sender's email address
+
+`to@example.com` is the recipient's email address
+
+This is a test email is the subject of the email
+
+This is the body of the email. is the body of the email
         
 ---
-        
-# Spring        
-        
-## **2. Project Setup and Dependency**[](https://www.baeldung.com/java-email#project-setup-and-dependency)        
-        
+
+# Spring
+
+## **2. Project Setup and Dependency**[](https://www.baeldung.com/java-email#project-setup-and-dependency)
+
 For this article, we'll be using a simple Maven-based project with a dependency on[Angus Mail](https://eclipse-ee4j.github.io/angus-mail/). This is the Eclipse implementation of        
-the[Jakarta Mail API](https://github.com/jakartaee/mail-api)specification:        
-        
+the[Jakarta Mail API](https://github.com/jakartaee/mail-api)specification:
+
 ```xml        
         
 <dependency>        
@@ -88,15 +88,15 @@ the[Jakarta Mail API](https://github.com/jakartaee/mail-api)specification:
     <version>2.0.1</version>        
 </dependency>        
 ```        
-        
-The latest version can be found[here](https://mvnrepository.com/artifact/org.eclipse.angus/angus-mail).        
-        
-## **3. Sending a Plain Text and an HTML Email**[](https://www.baeldung.com/java-email#sending-a-plain-text-and-an-html-email)        
-        
-First, we need to configure the library with our email service provider's credentials. Then we'll create a_Session_that'll be used in constructing our message for sending.        
-        
-The configuration is via a Java_Properties_object:        
-        
+
+The latest version can be found[here](https://mvnrepository.com/artifact/org.eclipse.angus/angus-mail).
+
+## **3. Sending a Plain Text and an HTML Email**[](https://www.baeldung.com/java-email#sending-a-plain-text-and-an-html-email)
+
+First, we need to configure the library with our email service provider's credentials. Then we'll create a_Session_that'll be used in constructing our message for sending.
+
+The configuration is via a Java_Properties_object:
+
 ```java        
 Properties prop=new Properties();        
         prop.put("mail.smtp.auth",true);        
@@ -105,11 +105,11 @@ Properties prop=new Properties();
         prop.put("mail.smtp.port","25");        
         prop.put("mail.smtp.ssl.trust","smtp.mailtrap.io");        
 ```        
-        
-In the properties configuration above, we configured the email host as Mailtrap and used the port provided by the service as well.        
-        
-Now let's create a session with our username and password:        
-        
+
+In the properties configuration above, we configured the email host as Mailtrap and used the port provided by the service as well.
+
+Now let's create a session with our username and password:
+
 ```java        
 Session session=Session.getInstance(prop,new Authenticator(){        
 @Override        
@@ -118,11 +118,11 @@ protected PasswordAuthentication getPasswordAuthentication(){
         }        
         });        
 ```        
-        
-The username and password are given by the mail service provider alongside the host and port parameters.        
-        
-Now that we have a mail_Session_object, let's create a_Mime__Message_for sending:        
-        
+
+The username and password are given by the mail service provider alongside the host and port parameters.
+
+Now that we have a mail_Session_object, let's create a_Mime__Message_for sending:
+
 ```java        
 Message message=new MimeMessage(session);        
         message.setFrom(new InternetAddress("from@gmail.com"));        
@@ -142,58 +142,58 @@ Message message=new MimeMessage(session);
         
         Transport.send(message);        
 ```        
-        
+
 In the snippet above, we first created a_message_instance with the necessary properties — to, from and subject. This is followed by a_mimeBodyPart_that has an encoding of_text/html_since our message        
-is styled in HTML.        
-        
-Next, we created an instance of_MimeMultipart_object that we can use to wrap the_mimeBodyPart_we created.        
-        
-Finally, we set the_multipart_object as the content of our_message_and used the_send()_of_Transport_object to do the mail sending.        
-        
-**So, we can say that the_mimeBodyPart_is contained in the_multipart_that is contained in the_message_. This way, a_multipart_can contain more than one_mimeBodyPart_.**        
-        
-This is going to be the focus of the next section.        
-        
-## **4. Sending Email With an Attachment**[](https://www.baeldung.com/java-email#sending-email-with-an-attachment)        
-        
-Next, to send an attachment, we only need to create another_MimeBodyPart_and attach the file(s) to it:        
-        
+is styled in HTML.
+
+Next, we created an instance of_MimeMultipart_object that we can use to wrap the_mimeBodyPart_we created.
+
+Finally, we set the_multipart_object as the content of our_message_and used the_send()_of_Transport_object to do the mail sending.
+
+**So, we can say that the_mimeBodyPart_is contained in the_multipart_that is contained in the_message_. This way, a_multipart_can contain more than one_mimeBodyPart_.**
+
+This is going to be the focus of the next section.
+
+## **4. Sending Email With an Attachment**[](https://www.baeldung.com/java-email#sending-email-with-an-attachment)
+
+Next, to send an attachment, we only need to create another_MimeBodyPart_and attach the file(s) to it:
+
 ```java        
 MimeBodyPart attachmentBodyPart=new MimeBodyPart();        
         attachmentBodyPart.attachFile(new File("path/to/file"));        
 ```        
-        
-We can then add the new body part to the_MimeMultipart_object we created earlier:        
-        
+
+We can then add the new body part to the_MimeMultipart_object we created earlier:
+
 ```java        
 multipart.addBodyPart(attachmentBodyPart);        
 ```        
-        
-**That's all we need to do.**        
-        
-**Once again, we set the_multipart_instance as the content of the_message_object, and finally we'll use the_send()_to do the mail sending.**        
-        
-## **5. Formatting Email Text**[](https://www.baeldung.com/java-email#formatting-email-text)        
-        
-To format and style our email text, we can use HTML and CSS tags.        
-        
+
+**That's all we need to do.**
+
+**Once again, we set the_multipart_instance as the content of the_message_object, and finally we'll use the_send()_to do the mail sending.**
+
+## **5. Formatting Email Text**[](https://www.baeldung.com/java-email#formatting-email-text)
+
+To format and style our email text, we can use HTML and CSS tags.
+
 For example, if we want our text to be bold, we will implement the_<b>_tag. For coloring the text, we can use the_style_tag.**We can also combine HTML tags with CSS tags if we want to have additional        
-properties, such as bold.**        
-        
-Let's create a_String_containing bold-red text:        
-        
+properties, such as bold.**
+
+Let's create a_String_containing bold-red text:
+
 ```java        
         
 String msgStyled="This is my <b style='color:red;'>bold-red email</b> using JavaMailer";        
         
 ```        
-        
-This_String_will hold our styled text to be sent in the email body.        
+
+This_String_will hold our styled text to be sent in the email body.
         
 ---
-        
-# Google Cloud Function        
-        
+
+# Google Cloud Function
+
 ```java        
 import com.google.cloud.functions.Context;        
 import com.google.cloud.functions.HttpFunction;        
@@ -226,19 +226,20 @@ public class SendEmailFunction implements HttpFunction {
     }        
 }        
 ```        
+
         
 ---
-        
-# [Using GCP App Enging](https://cloud.google.com/appengine/docs/legacy/standard/java/mail/sending-mail-with-mail-api)        
-        
-`To send an email using Java and Google Cloud Platform, you can use the following steps:`        
-        
+
+# [Using GCP App Enging](https://cloud.google.com/appengine/docs/legacy/standard/java/mail/sending-mail-with-mail-api)
+
+`To send an email using Java and Google Cloud Platform, you can use the following steps:`
+
 ```        
 Create a Google Cloud Platform project and enable the Cloud Messaging API.        
 Create a service account and download its JSON key file.        
 Create a Java project and add the following dependencies to your pom.xml file:        
 ```        
-        
+
 ```xml        
         
 <dependency>        
@@ -247,11 +248,11 @@ Create a Java project and add the following dependencies to your pom.xml file:
     <version>1.2.0</version>        
 </dependency>        
 ```        
-        
+
 ```        
 Create a Java class that implements the GoogleCloudMessaging.MessageSender interface. The following is an example of a class that sends an email message:        
 ```        
-        
+
 ```java        
 public class EmailSender implements GoogleCloudMessaging.MessageSender {        
         
@@ -268,19 +269,20 @@ public class EmailSender implements GoogleCloudMessaging.MessageSender {
     }        
 }        
 ```        
-        
+
 ```        
 In your main method, create an instance of the EmailSender class and call the sendMessage() method to send the email message.        
 EmailSender sender = new EmailSender();        
 sender.sendMessage("to@example.com", "Subject", "Body");        
 ```        
+
         
 ---
-        
-# [Through Gmail Server](https://developers.google.com/gmail/api/guides/sending)        
-        
-## To send an email using Google App Script, you can use the following code:        
-        
+
+# [Through Gmail Server](https://developers.google.com/gmail/api/guides/sending)
+
+## To send an email using Google App Script, you can use the following code:
+
 ```java        
 function sendEmail(to,subject,body){        
         var mail=GmailApp.createEmail();        
@@ -290,7 +292,7 @@ function sendEmail(to,subject,body){
         mail.send();        
         }        
 ```        
-        
+
 ```java        
 package org.Test19;        
         
@@ -332,11 +334,12 @@ class Mailer {
     }        
 }        
 ```        
+
         
 ---
-        
-# With GCP and SendGrid API        
-        
+
+# With GCP and SendGrid API
+
 ```java        
 package com.manju.gcp.mail;        
         

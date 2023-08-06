@@ -10,9 +10,9 @@ shortRepo:
   - reactnotes  
   - default            
 ---
-  
+
 <br/>            
-  
+
 <details markdown="block">                  
 <summary>                  
 Table of contents                  
@@ -21,24 +21,24 @@ Table of contents
 1. TOC                  
 {:toc}                  
 </details>                  
-  
+
 <br/>                  
-  
+
 ***                  
-  
+
 <br/>  
-  
-# Abstracted WebWorker  
-  
-> set content security policy if needed in index.html  
-  
+
+# Abstracted WebWorker
+
+> set content security policy if needed in index.html
+
 ```html  
   
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; worker-src 'self' blob:;/>  
 ```  
-  
-## worker builder file  
-  
+
+## worker builder file
+
 ```javascript  
 //worker-builder.js  
 export default class WorkerBuilder extends Worker {  
@@ -50,9 +50,9 @@ export default class WorkerBuilder extends Worker {
     }  
 }  
 ```  
-  
-## handle worker messaging file  
-  
+
+## handle worker messaging file
+
 ```javascript  
 //ppt.worker.js  
 // eslint-disable-next-line import/no-anonymous-default-export  
@@ -63,9 +63,9 @@ export default () => {
     };  
 };  
 ```  
-  
-## using working in compoenent  
-  
+
+## using working in compoenent
+
 ```javascript  
 //use relative path from document baseURL  
 // can be set in jsconfig.js  
@@ -99,9 +99,9 @@ export const MyWorkerComponent = () => {
   
 }  
 ```  
-  
-# Self Contained WebWorker  
-  
+
+# Self Contained WebWorker
+
 ```javascript  
 // worker.js  
 // import api from "./testModule";  
@@ -128,9 +128,9 @@ const worker_script = URL.createObjectURL(blob);
 module.exports = worker_script;  
   
 ```  
-  
-## used in a context  
-  
+
+## used in a context
+
 ```javascript  
 export function TalentGridPPTXProvider({value, children}) {  
     const {setLoadingExportData, isCached, setIsCached} = value  
@@ -159,13 +159,13 @@ export function TalentGridPPTXProvider({value, children}) {
     }, []);  
 ...  
 ```  
-  
-# resources  
-  
-## react web workers walkthrough  
-  
-> https://javascript.plainenglish.io/web-worker-in-react-9b2efafe309c  
-  
-## web worker with sockec  
-  
+
+# resources
+
+## react web workers walkthrough
+
+> https://javascript.plainenglish.io/web-worker-in-react-9b2efafe309c
+
+## web worker with sockec
+
 > https://www.freecodecamp.org/news/how-webworkers-work-in-javascript-with-example/
