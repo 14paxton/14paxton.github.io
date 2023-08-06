@@ -31,8 +31,8 @@ Table of contents
 
 # Example Using GPARS
 
-https://gist.github.com/14paxton/b7ff93091f4db71beffb0a37140fa0f2
-https://gist.github.com/14paxton/ef4f6e91fa7fa44015c41f26a1caf3ae
+- [Compare Groups](https://gist.github.com/14paxton/b7ff93091f4db71beffb0a37140fa0f2)
+- [Load Requested Group](https://gist.github.com/14paxton/ef4f6e91fa7fa44015c41f26a1caf3ae)
 
 # ASYNC
 
