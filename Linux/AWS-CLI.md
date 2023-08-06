@@ -1,6 +1,6 @@
 ---
 title: AWS-CLI.md
-permalink: Linux/AWS-CLI.md
+permalink: Linux/AWS-CLI
 category:  Linux
 parent:   Linux
 layout: default
