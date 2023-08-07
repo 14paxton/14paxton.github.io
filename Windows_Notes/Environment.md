@@ -1,6 +1,6 @@
 ---
-title:        Home
-permalink:    Windows_Notes/Home
+title:     Environment
+permalink: Windows_Notes/Environment
 category:     Windows_Notes
 parent:       Windows_Notes
 layout:       default
@@ -30,10 +30,6 @@ Table of contents
 <br/>
 
 # Env Variables
-
-<html>
-<body>
-<!--StartFragment--><h2 style="box-sizing: border-box; border: 0px; font-family: Barlow, sans-serif; font-size: 1.76rem; font-style: normal; font-weight: 700; margin: 0.6rem 0px 1.1rem; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.2; display: block; color: rgb(0, 0, 0); letter-spacing: -0.01em; position: relative; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Windows 10 default environment variables</h2>
 
 | VARIABLE                    | WINDOWS 10                                                                            |
 |-----------------------------|---------------------------------------------------------------------------------------|
@@ -80,10 +76,6 @@ Table of contents
 | %NUMBER_OF_PROCESSORS%      | Outputs the number of physical and virtual cores.                                     |
 | %RANDOM%                    | Outputs random number from 0 through 32767.                                           |
 | %OS%                        | Windows_NT                                                                            |
-
-<!--EndFragment-->
-</body>
-</html>
 
 ## Server 2019
 
