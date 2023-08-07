@@ -47,8 +47,4 @@ html {
 
 # Tricks
 
-[css.html](css.html)
-
-<embed  src="css.html" height="900" width="900" type="text/html"/>
-
 <object data="css.html" width="1000" height="10000" type="text/html"></object>
