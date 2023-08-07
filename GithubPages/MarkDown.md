@@ -1,11 +1,11 @@
 ---
-title:        MarkDown        
-layout:       default        
-permalink:    GithubPages/MarkDown        
-category:     GithubPages        
-parent:       GHP        
-has_children: false        
-share:        true        
+title:        MarkDown
+layout:       default
+permalink:    GithubPages/MarkDown
+category:     GithubPages
+parent:       GHP
+has_children: false
+share:        true
 shortRepo:    ghpages                
 ---
 
@@ -29,30 +29,68 @@ Table of contents
 
 ## visible in GitHub md page
 
-> **Note**<br>            
+```markdown
+> **Note**<br>
+> This is a note
+```
+
+> **Note**<br> 
 > This is a note
 
-> **Warning**<br>            
+```markdown
+> **Warning**<br> 
+> This is a warning
+```
+
+> **Warning**<br> 
 > This is a warning
 
 ## visible online
+
+```html
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">
+    I am a success message
+</div> 
+```
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">            
 I am a success message            
 </div>            
 
+```html
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;">
+    I am an error message
+</div>  
+```
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;">            
 I am an error message            
 </div>            
+
+```html
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+    I am a info message
+</div>   
+```
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">            
 I am a info message            
 </div>            
 
+```html
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">
+    I am a warning message
+</div>     
+```
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
 I am a warning message            
 </div>            
-            
+
 ---    
 
 # Pandoc
@@ -61,32 +99,32 @@ I am a warning message
 
 1) set file name
 
-```bash              
+```shell              
 fileMD=CLI_Grailsw.md;              
 ```              
 
 2) run
 
-```bash              
+```shell              
 pandoc -s --toc $fileMD -o output.md; rm -f $fileMD; mv output.md ./$fileMD;              
 ```              
 
 ## docx to markdown
 
-```bash              
+```shell              
 pandoc -s example30.docx --wrap=none --reference-links -t markdown -o example35.md              
 ```              
 
 > or
 
-  ```bash              
+  ```shell              
   pandoc -t markdown_strict \              
   --extract-media='./BrandonPaxton' myfilename.docx -o myfilename.md              
   ```              
 
 - scripts
     - convert docx
-      ```              
+      ```shell              
         #!/bin/bash              
                 
          # save input from command line              
@@ -100,7 +138,7 @@ pandoc -s example30.docx --wrap=none --reference-links -t markdown -o example35.
        ```              
 
     - files
-      ```              
+      ```shell              
         #!/bin/bash              
                
         # save current working directory to variable              
@@ -123,7 +161,7 @@ pandoc -s example30.docx --wrap=none --reference-links -t markdown -o example35.
 
 > Example Used
 
-```bash            
+```shell            
  #!/bin/bash            
 pandoc -t markdown_strict -s BrandonPaxton.docx --wrap=none --reference-links -t markdown -o BPResume.md;            
 ```    

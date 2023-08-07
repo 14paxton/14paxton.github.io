@@ -1,11 +1,11 @@
 ---
-title: Spock
-permalink: TestingFrameworks/Spock
-category:  TestingFrameworks
-parent:   TestingFrameworks
-layout: default
+title:        Spock
+permalink:    TestingFrameworks/Spock
+category:     TestingFrameworks
+parent:       TestingFrameworks
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - testingframeworks
   - default
@@ -31,10 +31,10 @@ Table of contents
 
 ## Use db in memory to run tests
 
-``` groovy
+```groovy
 
-     @shared Sql sql = Sql.newInstance(“jdbc:h2:mem:” , “org.h2.Driver”)
-    
+@shared Sql sql = Sql.newInstance(“ jdbc: h2 : mem: ”, “ org.h2.Driver ”)
+
 ```
 
 ## Maven
@@ -43,65 +43,105 @@ Table of contents
 
 #### Run all the unit test classes.
 
+```shell
 mvn test
+```
 
 #### Run a single test class.
 
+```shell
 mvn -Dtest=TestApp1 test
+```
 
 #### Run multiple test classes.
 
+```shell
 mvn -Dtest=TestApp1,TestApp2 test
+```
 
 #### Run a single test method from a test class.
 
+```shell
 mvn -Dtest=TestApp1#methodname test
+```
 
 #### Run all test methods that match pattern 'testHello*' from a test class.
 
+```shell
 mvn -Dtest=TestApp1#testHello* test
+```
 
 #### Run all test methods match pattern 'testHello*' and 'testMagic*' from a test class.
 
+```shell
 mvn -Dtest=TestApp1#testHello*+testMagic* test
+```
 
 ---
 
-Don’t run tests:
+- Don’t run tests:
 
+> Note: the test classes in the project will be compiled!
+
+```shell
 mvn clean package -DskipTests
-Note: the test classes in the project will be compiled!
+```
 
-Don’t compile and don’t run the tests:
+- Don’t compile and don’t run the tests:
 
+> maven.test.skip is honored by the Surefire, Failsafe and the Compiler Plugin
+
+```shell
 maven clean package -Dmaven.test.skip=true
-maven.test.skipis honored by the Surefire, Failsafe and the Compiler Plugin
+```
 
-Run a single test:
+#### Run a single test:
 
-Sometimes you would like to execute a single test instead of all your tests.
+> Sometimes you would like to execute a single test instead of all your tests.
 
+```shell
 mvn test -Dtest="NameOfYourTest"
 Run build offline
+```
 
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">            
+           Both -o and --offline are equivalent. Your local Maven repository will is used to resolve dependencies. No connection to the internet is made to download dependencies. Your build will fail in case dependencies are not found in your local repository!
+</div>
+```shell
 mvn clean package -o
-Both -o and --offline are equivalent. Your local Maven repository will is used to resolve dependencies. No connection to the internet is made to download dependencies. Your build will fail in case dependencies are not found in your local repository!
+```
 
-Dependencies
-Search for dependencies in your project
-List all the dependencies
+### Dependencies
 
+#### Search for dependencies in your project
+
+> List all the dependencies
+
+```shell
 mvn dependency:list
-Check whether or not you have specific dependencies in your project
+```
 
+#### Check whether or not you have specific dependencies in your project
+
+```shell
 mvn dependency:list | grep log4j
-Get a single dependency
+```
+
+#### Get a single dependency
+
+```shell
 mvn dependency:get -Dartifact=org.springframework:spring-core:5.3.15
-Local repository
-The default location of your local repo is ~/.m2
+```
 
-Install a (3rd party) jar file into your local Maven repository since it doesn’t exist in any public repository like [Maven Central](http://search.maven.org/).
+### Local repository
 
+The default location of your local repo is `~/.m2`
+
+#### Install a (3rd party) jar file into your local Maven repository
+
+> since it doesn’t exist in any public repository like [Maven Central](http://search.maven.org/).
+
+```shell
 mvn install:install-file
 -Dfile=<path-to-file>
 -DgroupId=<group-id>
@@ -109,15 +149,23 @@ mvn install:install-file
 -Dversion=<version>
 -Dpackaging=<packaging>
 -DgeneratePom=true
-Where:
+```
 
-<path-to-file> the path to the file to load
-<group-id> the group that the file should be registered under
-<artifact-id> the artifact name for the file
-<version> the version of the file
-<packaging> the packaging of the file, e.g., jar
-Example:
+##### Where:
 
+```<path-to-file> ``` : the path to the file to load
+
+```<group-id> ``` : the group that the file should be registered under
+
+```<artifact-id> ``` : the artifact name for the file
+
+```<version> ``` : the version of the file
+
+```<packaging>``` :  the packaging of the file, e.g., jar
+
+> Example:
+
+```shell
 mvn install:install-file -Dfile=lang-groovy-5.2.2.jar \
 -DgroupId=org.elasticsearch.module \
 -DartifactId=lang-groovy \
@@ -125,11 +173,13 @@ mvn install:install-file -Dfile=lang-groovy-5.2.2.jar \
 -Dpackaging=jar \
 -DgeneratePom=true
 
+```
+
 ---
 
 ### Pom for running both spock and junit
 
-> [Code For Reference ](https://github.com/SanderSmee/spock-jupiter/blob/master/pom.xml)
+- [Code For Reference ](https://github.com/SanderSmee/spock-jupiter/blob/master/pom.xml)
 
 ```xml
 
@@ -301,7 +351,7 @@ mvn install:install-file -Dfile=lang-groovy-5.2.2.jar \
 
         <!-- add dependencies to enable JUnit 4 style tests -->
         <!-- add dependencies to enable JUnit 4 style tests -->
-</dependencies>
+    </dependencies>
 ```
 
 ---
@@ -459,9 +509,9 @@ class StudentControllerAllowedMethodsSpec extends Specification implements Contr
 
 - build.gradle
 
-```gradle
+```groovy
 dependencies {
-...
+    ...
     testImplementation "io.micronaut:micronaut-http-client"
 }
 ```
@@ -713,40 +763,42 @@ class AnnouncementControllerSpec extends GebSpec {
 
 ## Mocking service and then method call, setting dummy data for the return(put in test method)
 
-``` groovy
+```groovy
    controller.openweathermapService = Mock(OpenweathermapService)
 
-  controller.openweathermapService.currentWeatherByGeoID(_) >> currentWeather
+controller.openweathermapService.currentWeatherByGeoID(_) >> currentWeather
 ```
 
 ## Mocking Service used in a service you are testing(put at beginning of the test class)
 
-``` groovy
+```groovy
 
-Closure doWithSpring() {{ ->
-              assessmentOrderService AssessmentOrderService
-   }}
-   
+Closure doWithSpring() {
+    { ->
+        assessmentOrderService AssessmentOrderService
+    }
+}
+
 AssessmentOrderService assessmentOrderService
 ```
 
 ## Mocking Method in service you are testing
 
-``` groovy
+```groovy
  @Shared
-    GroupCompareJoinUserGroupService groupCompareJoinUserGroupService
+GroupCompareJoinUserGroupService groupCompareJoinUserGroupService
 
-setupSpec(){
-        mockDomain GroupCompareJoinUserGroup
+setupSpec() {
+    mockDomain GroupCompareJoinUserGroup
 
 }
 
- def "some test"(){
+def "some test"() {
     service.groupCompareJoinUserGroupService = Mock(GroupCompareJoinUserGroupService)
-        service.groupCompareJoinUserGroupService.fetchAssociatedAssessments(_ as GroupCompare, true) >> {groupCompare, removeRelationships -> groupCompareJoinUserGroupService.fetchAssociatedAssessments(groupCompare , true)}
+    service.groupCompareJoinUserGroupService.fetchAssociatedAssessments(_ as GroupCompare, true) >> { groupCompare, removeRelationships -> groupCompareJoinUserGroupService.fetchAssociatedAssessments(groupCompare, true) }
 
-    }
-  
+}
+
 ```
 
 ## Testing a webpage with spock and geb
@@ -815,15 +867,18 @@ class RegisterControllerSpec extends GebSpec {
 
 ## Mocking method in domain
 
-``` groovy
+```groovy
 
-   [service/controller/domain].metaclass.’static’.[method] = {[arguments] -> [what to return]}
-   
+[service / controller / domain].metaclass.’ static ’.[method] = {
+    [arguments] -> [what to
+    return ]
+}
+
 ```
 
 ## Checking validity of constraints
 
-``` groovy
+```groovy
 !newScheduledInterview2.validate(['scheduledBy', 'scheduledDate'])
 !newScheduledInterview2.save(flush: true)
 newScheduledInterview2.errors['scheduledDate']?.code == 'unique'
@@ -831,7 +886,7 @@ newScheduledInterview2.errors['scheduledDate']?.code == 'unique'
 
 ## check if method was called for another service
 
-``` groovy
+```groovy
 def called = false
 service.notifierService = Mock(NotifierService)
 service.notifierService.sendPostMarkEmail(_ as PostMarkEmail, _) >> { it -> called = true }
@@ -839,100 +894,100 @@ service.notifierService.sendPostMarkEmail(_ as PostMarkEmail, _) >> { it -> call
 
 ## check if method was called for same service
 
-``` groovy
-service.metaClass.sendReminderEmail = { assessmentOrderId, templateId, sender, newTemplateBody, jobId-> calls++ }
+```groovy
+service.metaClass.sendReminderEmail = { assessmentOrderId, templateId, sender, newTemplateBody, jobId -> calls++ }
 ```
 
 ## create an exception
 
-``` groovy
+```groovy
 //create expando
 def testDelete = new Expando()
 
 // add exception to method call
-def exception = {new Exception("TEST")}
-testDelete.delete = {throw exception}
+def exception = { new Exception("TEST") }
+testDelete.delete = { throw exception }
 
 // add class as return for a method
-service.metaClass.[method_to_throw_exception] = {testDelete}
+service.metaClass.[method_to_throw_exception] = { testDelete }
 
 //example in CalenderServiceSpec.groovy / “test delete exception”
 //or
-service.metaClass.[yourMethod] >> {throw exception}
+service.metaClass.[yourMethod] >> { throw exception }
 ```
 
 ## catch exception
 
-``` groovy
+```groovy
 def response = thrown(GraphServiceException)
 ```
 
 ## modify config during/for test
 
-``` groovy
+```groovy
    Holders.grailsApplication.config.outlook.clientId = "GUUNAR5"
 ```
 
 ## create a custom manager for a test
 
-``` groovy
+```groovy
 
- def managerMap=[:]
- RoleGroup.findAll().each {
- def myUser=User.build(clientSetupId: 1, email:
- "${it.name}@mailinator.com", username: "${it.name}@mailinator.com")
- UserRoleGroup.build(user: myUser, roleGroup: it)
- def tokenAuthentication = new TokenAuthentication(decodedJwt(myUser), myUser)
- tokenAuthentication.details = myUser
- authMap[(it.name)] = tokenAuthentication
- managerMap[(myUser.id)] = it.name ==~ /testManager.*/ ? [1,2,3] : []
- }
- service.userService = Mock(UserService)
- service.userService.fetchDirectReportIds(_) >> {it ->
- managerMap.get(it[0])
- }
+def managerMap = [:]
+RoleGroup.findAll().each {
+    def myUser = User.build(clientSetupId: 1, email:
+            "${it.name}@mailinator.com", username: "${it.name}@mailinator.com")
+    UserRoleGroup.build(user: myUser, roleGroup: it)
+    def tokenAuthentication = new TokenAuthentication(decodedJwt(myUser), myUser)
+    tokenAuthentication.details = myUser
+    authMap[(it.name)] = tokenAuthentication
+    managerMap[(myUser.id)] = it.name ==~ /testManager.*/ ? [1, 2, 3] : []
+}
+service.userService = Mock(UserService)
+service.userService.fetchDirectReportIds(_) >> { it ->
+    managerMap.get(it[0])
+}
 ```
 
 ## Mocking hibernate used to test methods using where queriers / detached criteria / criteria builder
 
-``` groovy
+```groovy
  @Shared
- InterviewModelService interviewModelService
+InterviewModelService interviewModelService
 
- @Shared
- HibernateDatastore hibernateDatastore
+@Shared
+HibernateDatastore hibernateDatastore
 
- @Shared
- PlatformTransactionManager transactionManager
+@Shared
+PlatformTransactionManager transactionManager
 
- Map configuration = [
- 'hibernate.hbm2ddl.auto' : 'create-drop',
- 'dataSource.url' : 'jdbc:h2:mem:myDB',
- 'hibernate.cache.region.factory_class': 'org.hibernate.cache.ehcache.EhCacheRegionFactory'
- ]
- hibernateDatastore = new HibernateDatastore(configuration, CatalogDetail)
- transactionManager = hibernateDatastore.getTransactionManager()
- catalogDetailService = hibernateDatastore.getService(CatalogDetailService)
+Map configuration = [
+        'hibernate.hbm2ddl.auto'              : 'create-drop',
+        'dataSource.url'                      : 'jdbc:h2:mem:myDB',
+        'hibernate.cache.region.factory_class': 'org.hibernate.cache.ehcache.EhCacheRegionFactory'
+]
+hibernateDatastore = new HibernateDatastore(configuration, CatalogDetail)
+transactionManager = hibernateDatastore.getTransactionManager()
+catalogDetailService = hibernateDatastore.getService(CatalogDetailService)
 
 
- //Set tests to rollback
+//Set tests to rollback
 
- @Rollback
- void "test criteria builder for getting interview models should return all"() {
- //test
- }
+@Rollback
+void "test criteria builder for getting interview models should return all"() {
+    //test
+}
 ```
 
 ## Mock return value for service method used in the service you are testing
 
-``` groovy
-service.springSecurityService = [authentication: [details: currentUser] ]
+```groovy
+service.springSecurityService = [authentication: [details: currentUser]]
 ```
 
 ## Mock a static method call from a domain
 
-``` groovy
-ClientSetup.metaClass.static.fetchSecurityGroupLabelsByClientSetupId = {Long id, String en -> [secGroupNameLabel : 'secGroupNameLabel', secGroupCodeLabel : 'secGroupCodeLabel']}
+```groovy
+ClientSetup.metaClass.static.fetchSecurityGroupLabelsByClientSetupId = { Long id, String en -> [secGroupNameLabel: 'secGroupNameLabel', secGroupCodeLabel: 'secGroupCodeLabel'] }
 ```
 
 ### Grails3
@@ -990,23 +1045,30 @@ class CarFunctionalSpec extends Specification {
 ## Snippet from spock test
 
 > Pluggin for using test data builder
-> [BuildTestData](http://plugins.grails.org/plugin/longwa/build-test-data)
 
-> import grails.buildtestdata.mixin.Build
+- [BuildTestData](http://plugins.grails.org/plugin/longwa/build-test-data)
 
-> use- implements BuildDomanTest\< \> instead of DomainUnitTest \< \>
+```groovy
 
-``` groovy
+import grails.buildtestdata.mixin.Build
+```
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">            
+            use- implements BuildDomanTest\< \> instead of DomainUnitTest \< \>
+</div>            
+
+```groovy
 
 @Build([Job, Tag, Type, Publisher])
-class StatisticsServiceSpec extends Specification implements AutowiredTest, DataTest, BuildDataTest, ServiceUnitTest<StatisticsService>, GrailsWebUnitTest{
+class StatisticsServiceSpec extends Specification implements AutowiredTest, DataTest, BuildDataTest, ServiceUnitTest<StatisticsService>, GrailsWebUnitTest {
 
-    def setupSpec(){
+    def setupSpec() {
         mockDomain Job
         mockDomain Tag
         mockDomain Type
         mockDomain Publisher
     }
+
     def setup() {
     }
 
@@ -1014,13 +1076,13 @@ class StatisticsServiceSpec extends Specification implements AutowiredTest, Data
     }
 
     void "get top publishers when we don't have nothing in our system"() {
-         given: "when we don't have any job published"
+        given: "when we don't have any job published"
 
-         when: "we get top publishers"
-         def publishers = service.getTopPublishers()
-         then:"we will see 0 publishers"
-         publishers.size() == 0
-         }
+        when: "we get top publishers"
+        def publishers = service.getTopPublishers()
+        then: "we will see 0 publishers"
+        publishers.size() == 0
+    }
 
     void "get top publishers when we have multiple jobs published by the same publisher"() {
         given: "when we have one 2 jobs published by the same publisher"
@@ -1032,13 +1094,14 @@ class StatisticsServiceSpec extends Specification implements AutowiredTest, Data
 
         when: "we get top publishers"
         def publishers = service.getTopPublishers()
-        def pair = publishers.find { key, value -> key.name.equals(http://publisher.name ) }
-        then:"we will see 2 publishers"
-        publishers.size() == 1
-        pair?.value == 2
-    }
+        def pair = publishers.find { key, value ->
+            key.name.equals(http://publisher.name ) }
+                    then : "we will see 2 publishers"
+                    publishers.size() == 1
+                    pair?.value == 2
+        }
 
-}
+    }
 ```
 
 - config file test/resources/TestDataConfig
@@ -1072,15 +1135,13 @@ testDataConfig{
         }
         }
         }
-
 ```
 
 ## Different ways to build
 
-``` groovy
+```groovy
 
- def intviewModel = TestData.build(InterviewModel)
- def y = InterviewModel.build(source: Source.TBSIX)
- def z = build(InterviewModel, source: Source.TBSIX)
- 
+def intviewModel = TestData.build(InterviewModel)
+def y = InterviewModel.build(source: Source.TBSIX)
+def z = build(InterviewModel, source: Source.TBSIX)
 ```
