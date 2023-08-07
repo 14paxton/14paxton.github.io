@@ -29,7 +29,7 @@ Table of contents
 
 ## Basic Calls
 
-```http
+```HTTP
 ### create GROUP_COMPARE
 POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
 
