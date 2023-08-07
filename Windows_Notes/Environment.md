@@ -35,51 +35,51 @@ Table of contents
 <body>
 <!--StartFragment--><h2 style="box-sizing: border-box; border: 0px; font-family: Barlow, sans-serif; font-size: 1.76rem; font-style: normal; font-weight: 700; margin: 0.6rem 0px 1.1rem; outline: 0px; padding: 0px; vertical-align: baseline; clear: both; line-height: 1.2; display: block; color: rgb(0, 0, 0); letter-spacing: -0.01em; position: relative; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Windows 10 default environment variables</h2>
 
- VARIABLE                    | WINDOWS 10                                                                            
------------------------------|---------------------------------------------------------------------------------------
- %ALLUSERSPROFILE%           | C:\ProgramData                                                                        
- %APPDATA%                   | C:\Users\{username}\AppData\Roaming                                                   
- %COMMONPROGRAMFILES%        | C:\Program Files\Common Files                                                         
- %COMMONPROGRAMFILES(x86)%   | C:\Program Files (x86)\Common Files                                                   
- %CommonProgramW6432%        | C:\Program Files\Common Files                                                         
- %COMSPEC%                   | C:\Windows\System32\cmd.exe                                                           
- %HOMEDRIVE%                 | C:\                                                                                   
- %HOMEPATH%                  | C:\Users\{username}                                                                   
- %LOCALAPPDATA%              | C:\Users\{username}\AppData\Local                                                     
- %LOGONSERVER%               | \\{domain_logon_server}                                                               
- %PATH%                      | C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem                               
- %PathExt%                   | .com;.exe;.bat;.cmd;.vbs;.vbe;.js;.jse;.wsf;.wsh;.msc                                 
- %PROGRAMDATA%               | C:\ProgramData                                                                        
- %PROGRAMFILES%              | C:\Program Files                                                                      
- %ProgramW6432%              | C:\Program Files                                                                      
- %PROGRAMFILES(X86)%         | C:\Program Files (x86)                                                                
- %PROMPT%                    | $P$G                                                                                  
- %SystemDrive%               | C:                                                                                    
- %SystemRoot%                | C:\Windows                                                                            
- %TEMP%                      | C:\Users\{username}\AppData\Local\Temp                                                
- %TMP%                       | C:\Users\{username}\AppData\Local\Temp                                                
- %USERDOMAIN%                | Userdomain associated with current user.                                              
- %USERDOMAIN_ROAMINGPROFILE% | Userdomain associated with roaming profile.                                           
- %USERNAME%                  | {username}                                                                            
- %USERPROFILE%               | C:\Users\{username}                                                                   
- %WINDIR%                    | C:\Windows                                                                            
- %PUBLIC%                    | C:\Users\Public                                                                       
- %PSModulePath%              | %SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\                                 
- %OneDrive%                  | C:\Users\{username}\OneDrive                                                          
- %DriverData%                | C:\Windows\System32\Drivers\DriverData                                                
- %CD%                        | Outputs current directory path. (Command Prompt.)                                     
- %CMDCMDLINE%                | Outputs command line used to launch current Command Prompt session. (Command Prompt.) 
- %CMDEXTVERSION%             | Outputs the number of current command processor extensions. (Command Prompt.)         
- %COMPUTERNAME%              | Outputs the system name.                                                              
- %DATE%                      | Outputs current date. (Command Prompt.)                                               
- %TIME%                      | Outputs time. (Command Prompt.)                                                       
- %ERRORLEVEL%                | Outputs the number of defining exit status of previous command. (Command Prompt.)     
- %PROCESSOR_IDENTIFIER%      | Outputs processor identifier.                                                         
- %PROCESSOR_LEVEL%           | Outputs processor level.                                                              
- %PROCESSOR_REVISION%        | Outputs processor revision.                                                           
- %NUMBER_OF_PROCESSORS%      | Outputs the number of physical and virtual cores.                                     
- %RANDOM%                    | Outputs random number from 0 through 32767.                                           
- %OS%                        | Windows_NT                                                                            
+| VARIABLE                    | WINDOWS 10                                                                            |
+|-----------------------------|---------------------------------------------------------------------------------------|
+| %ALLUSERSPROFILE%           | C:\ProgramData                                                                        |
+| %APPDATA%                   | C:\Users\{username}\AppData\Roaming                                                   |
+| %COMMONPROGRAMFILES%        | C:\Program Files\Common Files                                                         |
+| %COMMONPROGRAMFILES(x86)%   | C:\Program Files (x86)\Common Files                                                   |
+| %CommonProgramW6432%        | C:\Program Files\Common Files                                                         |
+| %COMSPEC%                   | C:\Windows\System32\cmd.exe                                                           |
+| %HOMEDRIVE%                 | C:\                                                                                   |
+| %HOMEPATH%                  | C:\Users\{username}                                                                   |
+| %LOCALAPPDATA%              | C:\Users\{username}\AppData\Local                                                     |
+| %LOGONSERVER%               | \\{domain_logon_server}                                                               |
+| %PATH%                      | C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem                               |
+| %PathExt%                   | .com;.exe;.bat;.cmd;.vbs;.vbe;.js;.jse;.wsf;.wsh;.msc                                 |
+| %PROGRAMDATA%               | C:\ProgramData                                                                        |
+| %PROGRAMFILES%              | C:\Program Files                                                                      |
+| %ProgramW6432%              | C:\Program Files                                                                      |
+| %PROGRAMFILES(X86)%         | C:\Program Files (x86)                                                                |
+| %PROMPT%                    | $P$G                                                                                  |
+| %SystemDrive%               | C:                                                                                    |
+| %SystemRoot%                | C:\Windows                                                                            |
+| %TEMP%                      | C:\Users\{username}\AppData\Local\Temp                                                |
+| %TMP%                       | C:\Users\{username}\AppData\Local\Temp                                                |
+| %USERDOMAIN%                | Userdomain associated with current user.                                              |
+| %USERDOMAIN_ROAMINGPROFILE% | Userdomain associated with roaming profile.                                           |
+| %USERNAME%                  | {username}                                                                            |
+| %USERPROFILE%               | C:\Users\{username}                                                                   |
+| %WINDIR%                    | C:\Windows                                                                            |
+| %PUBLIC%                    | C:\Users\Public                                                                       |
+| %PSModulePath%              | %SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\                                 |
+| %OneDrive%                  | C:\Users\{username}\OneDrive                                                          |
+| %DriverData%                | C:\Windows\System32\Drivers\DriverData                                                |
+| %CD%                        | Outputs current directory path. (Command Prompt.)                                     |
+| %CMDCMDLINE%                | Outputs command line used to launch current Command Prompt session. (Command Prompt.) |
+| %CMDEXTVERSION%             | Outputs the number of current command processor extensions. (Command Prompt.)         |
+| %COMPUTERNAME%              | Outputs the system name.                                                              |
+| %DATE%                      | Outputs current date. (Command Prompt.)                                               |
+| %TIME%                      | Outputs time. (Command Prompt.)                                                       |
+| %ERRORLEVEL%                | Outputs the number of defining exit status of previous command. (Command Prompt.)     |
+| %PROCESSOR_IDENTIFIER%      | Outputs processor identifier.                                                         |
+| %PROCESSOR_LEVEL%           | Outputs processor level.                                                              |
+| %PROCESSOR_REVISION%        | Outputs processor revision.                                                           |
+| %NUMBER_OF_PROCESSORS%      | Outputs the number of physical and virtual cores.                                     |
+| %RANDOM%                    | Outputs random number from 0 through 32767.                                           |
+| %OS%                        | Windows_NT                                                                            |
 
 <!--EndFragment-->
 </body>
