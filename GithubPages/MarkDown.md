@@ -25,6 +25,12 @@ Table of contents
 
 <br/>              
 
+# [GitHub Linguist](https://github.com/github-linguist/linguist/blob/master/lib/linguist/languages.yml)
+
+> Code block Syntax yml
+
+---
+
 # GitHub Styling Quirks
 
 ## visible in GitHub md page
@@ -34,15 +40,15 @@ Table of contents
 > This is a note
 ```
 
-> **Note**<br> 
+> **Note**<br>
 > This is a note
 
 ```markdown
-> **Warning**<br> 
+> **Warning**<br>
 > This is a warning
 ```
 
-> **Warning**<br> 
+> **Warning**<br>
 > This is a warning
 
 ## visible online
