@@ -35,6 +35,7 @@ Groups HTTP Request Scripts
 
 ### create GROUP_COMPARE
 
+```http request
 POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
 
 {
@@ -45,8 +46,11 @@ POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
 "assessmentOrderIds": null
 }
 
+```
+
 ### update GROUP_COMPARE
 
+```http request
 POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
 
 {
@@ -57,16 +61,22 @@ POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
 "assessmentOrderIds": []
 }
 
+```
+
 ### SHARE
 
+```http request
 POST http://192.168.12.26:8080/am/userGroups/v1/599/shareContent-Type: application/json
 
 {
 "userIds" : [124554, 124555, 124556]
 }
 
+```
+
 ### DELETE
 
+```http request
 DELETE http://192.168.12.26:8080/am/userGroups/v1/599###create RESULT_SHARE
 POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: application/json
 
@@ -79,8 +89,11 @@ POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: appli
 
 <> 2021-11-10T090930.500.json
 
+```
+
 ### update RESULT_SHARE
 
+```http request
 POST http://192.168.12.26:8080/am/userGroups/v1/groupContent-Type: application/json
 
 {
@@ -94,3 +107,4 @@ POST http://192.168.12.26:8080/am/userGroups/v1/groupContent-Type: application/j
 71476,
 71456]
 }
+```
