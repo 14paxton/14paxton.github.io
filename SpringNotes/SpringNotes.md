@@ -14,6 +14,6 @@ shortRepo:
 # [REPO](https://github.com/14paxton/SpringNotes)
 ---
 
-# Annotation CheatSheet
+- Annotation CheatSheet
 
-<embed  src="/assets/images/SpringBootAnnotations.pdf" width="100%" height="900" type="application/pdf">    
+<embed  src="/assets/images/SpringBootAnnotations.pdf" type="application/pdf">    
