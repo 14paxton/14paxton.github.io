@@ -27,8 +27,8 @@ Table of contents
 
 # Selectors
 
-![img.png](../assets/images/cssSelectors.png)
-
+![cssSelectors.png](../assets/images/cssSelectors.png)
+![cssSelectors.png](..%2Fassets%2FcssSelectors.png)
 # Use SVG in CSS
 
 ```css
