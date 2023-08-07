@@ -16,4 +16,5 @@ shortRepo:
 
 # Annotation CheatSheet
 
-<embed  src="..%2Fassets%2Fimages%2FSpringBootAnnotations.pdf/assets/images/docker_handbook.pdf" width="100%" height="auto" type="application/pdf">    
+<embed  src="/assets/images/SpringBootAnnotations.pdf" width="100%" height="auto" type="application/pdf">    
+<embed  src="..%2Fassets%2Fimages%2FSpringBootAnnotations.pdf" width="100%" height="auto" type="application/pdf">    [SpringBootAnnotations.pdf](..%2Fassets%2Fimages%2FSpringBootAnnotations.pdf)
