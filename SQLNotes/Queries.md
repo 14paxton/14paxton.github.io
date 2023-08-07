@@ -45,15 +45,15 @@ shortRepo:
 
 ***Disable***
 
-~~~mysql        
+```mysql        
 SET FOREIGN_KEY_CHECKS = 0;        
-~~~        
+```        
 
 ***Enable***
 
-~~~mysql        
+```mysql        
 SET FOREIGN_KEY_CHECKS = 1;        
-~~~        
+```        
 
 <br/>        
 
@@ -71,7 +71,7 @@ ALTER TABLE table_name
     ENABLE KEYS;        
 ````        
 
-> **Warning**<br>        
+> **Warning**<br>
 > Note that DISABLE KEYS does not work on InnoDB tables as it works properly for MyISAM.
 
 Use
@@ -81,7 +81,7 @@ ON
 DELETE SET NULL        
 ```        
 
-> **Warning**<br>        
+> **Warning**<br>
 > If you don’t want to turn key checking on and off, you can permanently modify it to `ON DELETE SET NULL`
 
 Delete the current foreign key first:
