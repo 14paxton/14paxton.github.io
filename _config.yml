@@ -21,6 +21,7 @@ lsi:                     false
 excerpt_separator:       "\n\n"
 incremental:             false
 kramdown:
+  input: GFM
   gfm_quirks: [ paragraph_end ]
   syntax_highlighter: rouge
   syntax_highlighter_opts:

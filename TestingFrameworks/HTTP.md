@@ -32,8 +32,7 @@ Table of contents
 
 ### create GROUP_COMPARE
 
-```http
-POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
+```http  POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
 
 {
   "id"  :null ,
@@ -46,7 +45,7 @@ POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
 
 ### update GROUP_COMPARE
 
-```http
+```http POST
 POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
 
 {
@@ -60,7 +59,7 @@ POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
 
 ### SHARE
 
-```http
+```HTTP
 POST http://192.168.12.26:8080/am/userGroups/v1/599/shareContent-Type: application/json
 
 {
@@ -71,7 +70,7 @@ POST http://192.168.12.26:8080/am/userGroups/v1/599/shareContent-Type: applicati
 
 ### DELETE
 
-```http
+```HTTP
 DELETE http://192.168.12.26:8080/am/userGroups/v1/599###create RESULT_SHARE
 
 {
@@ -83,9 +82,9 @@ DELETE http://192.168.12.26:8080/am/userGroups/v1/599###create RESULT_SHARE
 
 ```
 
-
-```http
 ### update RESULT_SHARE
+
+```HTTP
 POST http://192.168.12.26:8080/am/userGroups/v1/groupContent-Type: application/json
 
 {
