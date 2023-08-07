@@ -27,7 +27,7 @@ Table of contents
 
 # Selectors
 
-![img.png](img.png)
+![img.png](cssSelectors.png)
 
 # Use SVG in CSS
 
