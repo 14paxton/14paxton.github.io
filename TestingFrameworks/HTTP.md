@@ -23,6 +23,7 @@ Table of contents
 <br/>
 ***
 <br/>
+
 # IntelliJ
 
 ## [Logging In Examples](https://gist.github.com/14paxton/decd67f8b59069f9505ba9ba0210d0ee)
