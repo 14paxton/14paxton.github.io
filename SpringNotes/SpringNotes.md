@@ -16,4 +16,4 @@ shortRepo:
 
 # Annotation CheatSheet
 
-<embed  src="/assets/images/SpringBootAnnotations.pdf" width="100%" height="50%" type="application/pdf">    
+<embed  src="/assets/images/SpringBootAnnotations.pdf" width="100%" height="1500px" type="application/pdf">    
