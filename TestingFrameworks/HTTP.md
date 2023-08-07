@@ -71,7 +71,13 @@ POST http://192.168.12.26:8080/am/userGroups/v1/599/shareContent-Type: applicati
 ### DELETE
 
 ```http
-DELETE http://192.168.12.26:8080/am/userGroups/v1/599###create RESULT_SHARE
+DELETE http://192.168.12.26:8080/am/userGroups/v1/599
+```
+
+### create RESULT_SHARE
+
+```http
+POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: application/json
 
 {
   "name": "IRONTOM",
@@ -79,7 +85,6 @@ DELETE http://192.168.12.26:8080/am/userGroups/v1/599###create RESULT_SHARE
   "groupIds": [519],
   "assessmentOrderIds": [35075, 45481]
 }
-
 ```
 
 ### update RESULT_SHARE
