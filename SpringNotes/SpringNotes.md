@@ -15,7 +15,5 @@ shortRepo:
 ---
 
 # Annotation CheatSheet
-
-[SpringBootAnnotations.pdf](assets%2Fimages%2FSpringBootAnnotations.pdf)
-
-<img height="200" src="assets/images/SpringBootAnnotations.pdf" width="200" alt=""/>
+![SpringBootAnnotations.pdf](..%2Fassets%2Fimages%2FSpringBootAnnotations.pdf)
+[SpringBootAnnotations.pdf](..%2Fassets%2Fimages%2FSpringBootAnnotations.pdf)
