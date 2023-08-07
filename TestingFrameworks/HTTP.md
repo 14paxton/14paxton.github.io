@@ -29,8 +29,9 @@ Table of contents
 
 ## Basic Calls
 
-```HTTP
 ### create GROUP_COMPARE
+
+```HTTP
 POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
 
 {
@@ -40,8 +41,11 @@ POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
   "groupIds": [520, 518],
   "assessmentOrderIds": null
 }
+```
 
 ### update GROUP_COMPARE
+
+```HTTP
 POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
 
 {
@@ -51,15 +55,22 @@ POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
   "groupIds": [520, 372, 518],
   "assessmentOrderIds": []
 }
+```
 
 ### SHARE
+
+```HTTP
 POST http://192.168.12.26:8080/am/userGroups/v1/599/shareContent-Type: application/json
 
 {
   "userIds" : [124554, 124555, 124556]
 }
 
+```
+
 ### DELETE
+
+```HTTP
 DELETE http://192.168.12.26:8080/am/userGroups/v1/599###create RESULT_SHARE
 POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: application/json
 
@@ -70,8 +81,11 @@ POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: appli
   "assessmentOrderIds": [35075, 45481]
 }
 
+```
 
 ### update RESULT_SHARE
+
+```HTTP
 POST http://192.168.12.26:8080/am/userGroups/v1/groupContent-Type: application/json
 
 {
