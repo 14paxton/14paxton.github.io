@@ -31,7 +31,7 @@ Table of contents
 
 # create GROUP_COMPARE
 
-```http request
+```shell
 POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
 
 {
@@ -46,7 +46,7 @@ POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
 
 # update GROUP_COMPARE
 
-```http request
+```shell
 POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
 
 {
@@ -61,7 +61,7 @@ POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
 
 # SHARE
 
-```http request
+```shell
 POST http://192.168.12.26:8080/am/userGroups/v1/599/shareContent-Type: application/json
 
 {
@@ -72,7 +72,7 @@ POST http://192.168.12.26:8080/am/userGroups/v1/599/shareContent-Type: applicati
 
 # DELETE
 
-```http request
+```shell
 DELETE http://192.168.12.26:8080/am/userGroups/v1/599###create RESULT_SHARE
 POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: application/json
 
@@ -89,7 +89,7 @@ POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: appli
 
 # update RESULT_SHARE
 
-```http request
+```shell
 POST http://192.168.12.26:8080/am/userGroups/v1/groupContent-Type: application/json
 
 {
