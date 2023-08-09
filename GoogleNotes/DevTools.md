@@ -49,8 +49,8 @@ function enableContextMenu(aggressive = true) {
 }
 
 function removeContextMenuOnAll(tagName) {
-    var elements = document.getElementsByTagName(tagName);
-    for (var i = 0; i < elements.length; i++) {
+    let elements = document.getElementsByTagName(tagName);
+    for (let i = 0; i < elements.length; i++) {
         enableRightClick(elements[i]);
     }
 }
@@ -111,8 +111,8 @@ javascript:function enableContextMenu(aggressive = true) {
 }
 
 function removeContextMenuOnAll(tagName) {
-    var elements = document.getElementsByTagName(tagName);
-    for (var i = 0; i < elements.length; i++) {
+    let elements = document.getElementsByTagName(tagName);
+    for (let i = 0; i < elements.length; i++) {
         enableRightClick(elements[i]);
         enablePointerEvents(elements[i]);
     }
