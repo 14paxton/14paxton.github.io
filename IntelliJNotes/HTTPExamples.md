@@ -89,7 +89,7 @@ POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: appli
 
 # update RESULT_SHARE
 
-```shell
+```http POST
 POST http://192.168.12.26:8080/am/userGroups/v1/groupContent-Type: application/json
 
 {
