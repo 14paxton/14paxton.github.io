@@ -73,7 +73,12 @@ POST http://192.168.12.26:8080/am/userGroups/v1/599/shareContent-Type: applicati
 # DELETE
 
 ```shell
-DELETE http://192.168.12.26:8080/am/userGroups/v1/599###create RESULT_SHARE
+DELETE http://192.168.12.26:8080/am/userGroups/v1/599
+```
+
+# create RESULT_SHARE
+
+```shell
 POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: application/json
 
 {
@@ -83,13 +88,11 @@ POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: appli
 "assessmentOrderIds": [35075, 45481]
 }
 
-<> 2021-11-10T090930.500.json
-
 ```
 
 # update RESULT_SHARE
 
-```http POST
+```shell
 POST http://192.168.12.26:8080/am/userGroups/v1/groupContent-Type: application/json
 
 {
