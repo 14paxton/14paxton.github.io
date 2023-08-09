@@ -1,10 +1,10 @@
 ---
-title:        MacNotes        
-layout:       default        
-has_children: false        
-permalink:    MacNotes/        
-category:     MacNotes        
-share:        true        
+title:        MacNotes
+layout:       default
+has_children: false
+permalink:    MacNotes/
+category:     MacNotes
+share:        true
 shortRepo:    ghpages              
 ---
 
@@ -28,25 +28,25 @@ Table of contents
 
 ## get local ip
 
-```bash
+```shell
 osascript -e "IPv4 address of (system info)"
 ```
 
-```bash
+```shell
 ifconfig | grep "inet " 
 ```
 
 ## convert file/image to base64
 
-```bash
+```shell
 base64 -i ./post_u_north_gate.jpg | pbcopy 
 ```
 
-```bash
+```shell
 cat ./post_u_north_gate.jpg | openssl base64 | tr -d '\n' | pbcopy
 ```
 
-```bash
+```shell
 ./post_u_north_gate.jpg | openssl base64 | tr -d '\n' | pbcopy    
 ```
 
@@ -64,13 +64,13 @@ dsenableroot -d
 
 ## Copy terminal output directly to clip board
 
-```bash          
+```shell          
 pbcopy < ~/.ssh/id_rsa.pub          
 ```          
 
 ## restart
 
-```bash          
+```shell          
 sudo shutdown now          
           
 #specific time            
@@ -79,31 +79,31 @@ sudo shutdown hhmm
 
 ## check permissions
 
-```bash          
+```shell          
 ls -lO /System          
 ```          
 
 ## schedule Mac to power on or wake, M refers to Monday
 
-```bash          
+```shell          
 sudo pmset repeat wake M 8:00:00          
 ```          
 
 ## schedule Mac to shut down:
 
-```bash          
+```shell          
 sudo pmset repeat shutdown F 20:00:00          
 ```          
 
 ## see your current schedules:
 
-```bash          
+```shell          
 pmset -g sched          
 ```          
 
 ## cancel your schedules:
 
-```bash          
+```shell          
 sudo pmset repeat cancel          
 ```          
 
@@ -140,19 +140,19 @@ export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 
 ## find disk
 
-```bash          
+```shell          
 diskutil list          
 ```          
 
 ## unmount
 
-```bash          
+```shell          
 diskutil unmountDisk /dev/disk#          
 ```          
 
 ## force unmount
 
-```bash          
+```shell          
 diskutil unmountDisk /force /dev/disk#          
 ```          
 
@@ -175,7 +175,7 @@ diskutil eraseDisk
 
 ``Example: diskutil eraseDisk JHFS+ UntitledUFS disk3``
 
-```bash          
+```shell          
 diskutil eraseDisk JHFS+ CleanDrive /dev/disk1          
 ```          
 
@@ -214,7 +214,7 @@ Level 3 is a special algorithm that erases the drives with random data as well a
 Level 4 is a little different and erases it 3 times, with random data on the first 2 passes and 1 set of zeroes on the last pass.          
 ```          
 
-```bash          
+```shell          
 diskutil secureErase 4 /dev/disk2          
 ```          
 
@@ -225,13 +225,13 @@ diskutil secureErase 4 /dev/disk2
 
 ## Get User List
 
-```bash          
+```shell          
 dscl . list /Users | grep -v “^_”          
 ```          
 
 ## Add user to group
 
-```bash          
+```shell          
 sudo dseditgroup -o edit -a john -t user admin          
 sudo dseditgroup -o edit -a john -t user wheel          
 ```          
@@ -272,14 +272,14 @@ sudo dscl . -append /Groups/admin GroupMembership username
 
 ## add user to SUDO
 
-```bash          
+```shell          
 su AdminUser          
 authentication, and then:          
 ```          
 
 > Now, as Adminuser, use the visudo command to edit the sudoers file:
 
-```bash          
+```shell          
 sudo visudo          
 # Add the following line to the sudoers file:            
 username ALL = (ALL) ALL          
@@ -293,7 +293,7 @@ username        ALL = (ALL) NOPASSWD:ALL
 
 ## Change Password
 
-```bash          
+```shell          
 sudo dscl . -passwd /Users/username password          
 ```          
 
@@ -303,7 +303,7 @@ sudo dscl . -passwd /Users/username password
 
 > All updates that are recommended for your system:
 
-```bash          
+```shell          
 sudo softwareupdate -r          
 ```          
 
@@ -311,19 +311,19 @@ sudo softwareupdate -r
 
 > To install all updates that are applicable to your system, enter:
 
-```bash          
+```shell          
 sudo softwareupdate -i -a          
 ```          
 
 ## Install all but make sure you ignore ‘JavaForOSX’ updates:
 
-```bash          
+```shell          
 sudo softwareupdate --ignore JavaForOSX          
 ```          
 
 ## To clear the list, ignored updates, enter:
 
-```bash          
+```shell          
 sudo softwareupdate --reset-ignored          
 ```          
 
@@ -331,7 +331,7 @@ sudo softwareupdate --reset-ignored
 
 ### This gives you a list of available releases you can choose from. Once downloaded it will be saved in your Applications folder
 
-```bash          
+```shell          
 softwareupdate --list-full-installers;echo;echo "Please enter version number you wish to download:";read;$(if [ -n "$REPLY" ]; then; echo "softwareupdate --fetch-full-installer --full-installer-version "$REPLY; fi);          
 ```          
 
@@ -339,7 +339,7 @@ softwareupdate --list-full-installers;echo;echo "Please enter version number you
 
 > Once finished, you'll find in your ~/macOS-Installer/
 
-```bash          
+```shell          
 mkdir -p ~/macOS-installer && cd ~/macOS-installer && curl https://raw.githubusercontent.com/munki/macadmin-scripts/main/installinstallmacos.py > installinstallmacos.py && sudo python installinstallmacos.py          
 ```          
 
@@ -347,7 +347,7 @@ mkdir -p ~/macOS-installer && cd ~/macOS-installer && curl https://raw.githubuse
 
 #### run ``createinstallmedia`` command provided by Apple (opens a new window). Note that the command is made for USB's formatted with the name MyVolume:
 
-```bash          
+```shell          
 sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume          
 ```          
 
@@ -355,14 +355,14 @@ sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstall
 > If the `createinstallmedia` fails with `zsh: killed ` or `Killed: 9` then it's most likely an issue with the installer's code signature.          
 > To fix this, you can run the following command:
 
-```bash          
+```shell          
 cd /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/          
 codesign -s - -f --deep /Applications/Install\ macOS\ Big\ Sur.app          
 ```          
 
 > You will need the command line tools for Xcode installed:
 
-```bash          
+```shell          
 xcode-select --install          
 ```          
 
@@ -378,23 +378,27 @@ xcode-select --install
 
 # Create Ram Disk For Intellij
 
-```bash          
+```shell          
 diskutil erasevolume HFS+ 'RAM Disk' `hdiutil attach -nomount ram://XXXXX`          
-```          
+```
 
-==Replace the X characters with a number that represents the block size for the total capacity of your RAM Disk.==          
-Calculate this number by multiplying your desired size of disk in megabytes by 2048.          
-In our example, we’ll create a 4 GB RAM Disk, which requires a number of 8388608 (4096 * 2048).          
-Input this number          
-in place of the X characters in the command above:
+> Replace the `X` characters with a number that represents the block size for the total capacity of your RAM Disk.
 
-```bash          
+<div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border: 1px solid #bce8f1;">            
+           Calculate this number by multiplying your desired size of disk in megabytes by 2048. 
+
+In our example, we’ll create a 4 GB RAM Disk, which requires a number of 8388608 (4096 * 2048).
+
+Input this number in place of the X characters in the command above:
+</div>            
+
+```shell          
 diskutil erasevolume HFS+ 'RAM Disk' `hdiutil attach -nomount ram://8388608          
 ```          
 
 ## script to create ramdisk
 
-```bash          
+```shell          
 if [ ! -d /Volumes/JetBrainsKeys/tbcore/intellij ]; then diskutil erasevolume HFS+ JetBrainsKeys `hdiutil attach -nomount ram://6291456`;          
 mkdir -p /Volumes/JetBrainsKeys/intellij;          
 chmod -R 777 /Volumes/JetBrainsKeys;          
@@ -419,74 +423,71 @@ fi
 /usr/libexec/java_home -V          
 ```          
 
-```          
-==Matching Java Virtual Machines (4):          
+```shell          
+Matching Java Virtual Machines (4):          
 16 (x86_64) "Oracle Corporation" - "OpenJDK 16-ea" /Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home          
 15.0.1 (x86_64) "UNDEFINED" - "OpenJDK 15.0.1" /usr/local/Cellar/openjdk/15.0.1/libexec/openjdk.jdk/Contents/Home          
 14.0.2 (x86_64) "AdoptOpenJDK" - "AdoptOpenJDK 14" /Library/Java/JavaVirtualMachines/adoptopenjdk-14.jdk/Contents/Home          
 1.8.0_275 (x86_64) "UNDEFINED" - "OpenJDK 8" /usr/local/Cellar/openjdk@8/1.8.0+275/libexec/openjdk.jdk/Contents/Home          
-/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home==          
+/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home         
 ```          
 
 ## run a specified JDK command.
 
-`/usr/libexec/java_home -v1.8`          
-==/usr/local/Cellar/openjdk@8/1.8.0+275/libexec/openjdk.jdk/Contents/Home==
+```/usr/libexec/java_home -v1.8```          
+```/usr/local/Cellar/openjdk@8/1.8.0+275/libexec/openjdk.jdk/Contents/Home```
 
 ## set the JAVA_HOME environment variable
 
-> On macOS 10.15 Catalina and later, the zsh is the default Terminal shell, and we can in either `~/.zshenv` or  `~/.zshrc`
+> On macOS 10.15 Catalina and later, the zsh is the default Terminal shell, and we can in either ```~/.zshenv``` or  ```~/.zshrc```
 
-1) Confirm you have JDK by typing          
-   `which java`
+   1) Confirm you have JDK by typing          
+        ```which java```
+          output ->  ```/usr/bin/java```
+   2) Check you have the needed version of Java, by typing          
+      `java -version`          
+      ==`JAVA_HOME` is essentially the full path of the directory that contains a sub-directory named `bin` which in turn contains the java.          
+      For Mac OSX it is `/Library/Java/Home`==
+   3) Set JAVA_HOME          
+      `export JAVA_HOME=/Library/Java/Home`
+   4) `echo $JAVA_HOME` on Terminal to confirm the path
 
-output ->  ==/usr/bin/java==
+> Note that this sets JAVA_HOME only for this session. If you want it to persist, you will have to add the command to your `~/.profile file`==
 
-2) Check you have the needed version of Java, by typing          
-   `java -version`          
-   ==`JAVA_HOME` is essentially the full path of the directory that contains a sub-directory named `bin` which in turn contains the java.          
-   For Mac OSX it is `/Library/Java/Home`==
-3) Set JAVA_HOME          
-   `export JAVA_HOME=/Library/Java/Home`
-4) `echo $JAVA_HOME` on Terminal to confirm the path
-
-==Note that this sets JAVA_HOME only for this session. If you want it to persist, you will have to add the command to your `~/.profile file`==
-
-1) `vim .profile`
-2) add this to the end of the .profile file:          
-   `JAVA_HOME=/Library/Java/Home`          
-   `export JAVA_HOME;`
-3) `nano ~/.zshenv`
-4) Add the following content          
-   `export JAVA_HOME=$(/usr/libexec/java_home)`
-5) Source the file and print the $JAVA_HOME          
-   `source ~/.zshenv`          
-   `echo $JAVA_HOME`          
-   output -> ==`/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home`==
+   1) ```vim .profile```
+   2) add this to the end of the .profile file:          
+      ```JAVA_HOME=/Library/Java/Home```         
+      ```export JAVA_HOME;```
+   3) ```nano ~/.zshenv```
+   4) Add the following content          
+      ```export JAVA_HOME=$(/usr/libexec/java_home)```
+   5) Source the file and print the $JAVA_HOME          
+      ```source ~/.zshenv```         
+      ```echo $JAVA_HOME```         
+        output -> ```/Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home```
 
 ## Slow Java app
+  1. you need to find the hostname of your Mac.        
+        You do this from System Preferences.        
+        Click the Sharing icon in System Preferences.          
 
-First you need to find the hostname of your Mac.        
-You do this from System Preferences.        
-Click the Sharing icon in System Preferences.          
-javahosts_1.png
+  2. You will see a box that shows the Computer Name, under that will be the hostname ending in ```.local```.        
+      That's what you will need, so take note of it.        
+       In my case it was ```Enzyme.local```.          
 
-You will see a box that shows the Computer Name, under that will be the hostname ending in .local.        
-That's what you will need, so take note of it.        
-In my case it was Enzyme.local.          
-javahosts_2.png
+  3. The next step is to update your `/etc/hosts` file. This must be done as root, so at the Terminal, type in 
+      ```shell
+        sudo vi /etc/hosts
+     ```
+     This will ask for your password...
+     Add the hostname you noted from earlier at the end of lines that start with "127.0.0.1" and "::1".
 
-The next step is to update your `/etc/hosts` file. This must be done as root, so at the Terminal, type in `sudo vi /etc/hosts`. This will ask for your password...
-
-Add the hostname you noted from earlier at the end of lines that start with "127.0.0.1" and "::1".
-
-In the end this is what my `/etc/hosts `file looked like:
-
-```          
-127.0.0.1       TPLNK-BPAXTON3.local          
-255.255.255.255 broadcasthost          
-::1             TPLNK-BPAXTON3.local`          
-```          
+     In the end this is what my `/etc/hosts `file looked like:
+        ```          
+          127.0.0.1       TPLNK-BPAXTON3.local          
+          255.255.255.255 broadcasthost          
+          ::1             TPLNK-BPAXTON3.local`          
+        ```          
 
           
 ---
@@ -495,96 +496,98 @@ In the end this is what my `/etc/hosts `file looked like:
 
 Terminal command to launch MacOS gui apps is appropriately called ‘open’ and here is how it works at it’s most simple:
 
+```shell
 open -a ApplicationName
+
+```
 
 That will open the defined app named “ApplicationName”.
 
 But open is much more powerful than that.        
-If you just type ‘open’ at the command prompt, you’ll return the basic help file with details on how to properly use the command with a variety of flags and          
+If you just type ```open``` at the command prompt, you’ll return the basic help file with details on how to properly use the command with a variety of flags and          
 syntax.
 
 While the open command exists in all versions of Mac OS X, the abilities vary somewhat depending on what version of MacOS / Mac OS X the Mac is running.        
 Nonetheless, in modern releases this is what          
 you’ll see:
 
-$ open          
-Usage: open [-e] [-t] [-f] [-W] [-R] [-n] [-g] [-h] [-b ] [-a ] [filenames] [--args arguments]          
-Help: Open opens files from a shell.          
-By default, opens each file using the default application for that file.          
-If the file is in the form of a URL, the file will be opened as a URL.          
-Options:          
--a Opens with the specified application.          
--b Opens with the specified application bundle identifier.          
--e Opens with TextEdit.          
--t Opens with default text editor.          
--f Reads input from standard input and opens with TextEdit.          
--F --fresh Launches the app fresh, that is, without restoring windows.        
-Saved persistent state is lost, excluding Untitled documents.          
--R, --reveal Selects in the Finder instead of opening.          
--W, --wait-apps Blocks until the used applications are closed (even if they were already running).          
---args All remaining arguments are passed in argv to the application's main() function instead of opened.          
--n, --new Open a new instance of the application even if one is already running.          
--j, --hide Launches the app hidden.          
--g, --background Does not bring the application to the foreground.          
--h, --header Searches header file locations for headers matching the given filenames, and opens them.
+         
+- Usage: 
+    open [-e] [-t] [-f] [-W] [-R] [-n] [-g] [-h] [-b ] [-a ] [filenames] [--args arguments]       
+
+- Help: 
+    Open opens files from a shell.          
+    By default, opens each file using the default application for that file.          
+    If the file is in the form of a URL, the file will be opened as a URL.         
+
+- Options:          
+    -a Opens with the specified application.          
+    -b Opens with the specified application bundle identifier.          
+    -e Opens with TextEdit.          
+    -t Opens with default text editor.          
+    -f Reads input from standard input and opens with TextEdit.          
+    -F --fresh Launches the app fresh, that is, without restoring windows.        
+    Saved persistent state is lost, excluding Untitled documents.          
+    -R, --reveal Selects in the Finder instead of opening.          
+    -W, --wait-apps Blocks until the used applications are closed (even if they were already running).          
+    --args All remaining arguments are passed in argv to the application's main() function instead of opened.          
+    -n, --new Open a new instance of the application even if one is already running.          
+    -j, --hide Launches the app hidden.          
+    -g, --background Does not bring the application to the foreground.          
+    -h, --header Searches header file locations for headers matching the given filenames, and opens them.
 
 In other words, example simple command syntax could look like the following, opening “ApplicationName” with the file located at the path ‘/file/to/open’:
 
+```shell
 open -a ApplicationName /file/to/open
 
+```
 You’ll note you don’t need the full path to the application name, but you would need the full path to a file name.
 
 The usage is likely self explanatory to those who have experience in the command line environment, but for those who are new to the Terminal, don’t be too confused, it is easy to use and we’ll          
 explain.        
 For example, if you want to edit /etc/motd with TextWrangler to change your Message of the Day, but you hate the command line editors nano and vi, here is what you’d type:
 
-$ open -a TextWrangler /etc/motd
+```shell
+open -a TextWrangler /etc/motd
+```
+ <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+     Also worth noting is that if you are launching an application with spaces in its name, you’ll want to add a backslash after each word, opening Adobe Photoshop CS would look like this:
 
-Now you can edit these files in the familiar GUI.        
-open is smart enough to know that when you apply the -a flag, you are launching an application so you don’t need to type in its full path.        
-Obviously,          
-it’ll still need the full path to the file you’re editing though.
+ </div> 
 
-There are many other usages for the open command rather than just editing text files, so use your imagination and get creative.        
-open could be particularly useful to system administrators who utilize          
-it in a shell script, perhaps to launch a specific GUI application at a scheduled time.
+```shell
+open -a Adobe\ Photoshop\ CS
+```
 
-Also worth noting is that if you are launching an application with spaces in its name, you’ll want to add a backslash after each word, opening Adobe Photoshop CS would look like this:
+> Launching GUI Apps as root from the Command Line          
 
-$ open -a Adobe\ Photoshop\ CS
-
-Launching GUI Apps as root from the Command Line          
-You can even open files with sudo by using the open command if you need to edit a file as root, for example:
-
-sudo open -a TextEdit /tmp/magicfile
-
-This will launch the target file into the desired application as root user, giving full root privileges to edit and modify the file, which is quite helpful for editing many system files.        
-Of course,          
-don’t modify any system file if you don’t know what you’re doing.
+   ```shell
+   sudo open -a TextEdit /tmp/magicfile
+   
+   ```
 
 Creating Shell Aliases for Frequently Launched GUI Apps          
-So it’s kind of a pain in the butt to type a full command repeatedly, or to type out all that out over and over again, right?        
-Well let’s make it easier by assigning an alias to an application that          
-gets frequently launched.        
-We’ll take the aforementioned Adobe Photoshop app as an example since the file name is lengthy, so here’s how we’ll do this with the Mac OS X default Bash shell:
 
-First launch the profile or .bash_profile into a text editor:
+1. First launch the profile or .bash_profile into a text editor:
+    ```shell
+    nano .profile
+    ```
+    
+    or
+    
+    ```shell
+    open -e .profile
+    ```
 
-$ nano .profile
+2. add the following to a new line:
 
-or
-
-$ open -e .profile
-
-Ignoring whatever else may be in this file (it could be empty also), add the following to a new line:
-
-alias photoshop="open -a Adobe\ Photoshop\ CS"
-
-This creates an alias, so that the “open -a Adobe\ Photoshop CS” command is now shortened to simply ‘photoshop’.        
-Save .profile, and you’re on your way!        
-You can use the alias command in conjunction          
-with open for virtually anything, just be sure to pick an alias to a command that doesn’t already exist.
-          
+    ```text
+    alias photoshop="open -a Adobe\ Photoshop\ CS"
+    ```
+    
+    This creates an alias, so that the ```open -a Adobe\ Photoshop CS``` command is now shortened to simply ```photoshop```.        
+        
 ---
 
 # DEBUGGING - OBSCURE ISSUES
