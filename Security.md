@@ -1,13 +1,13 @@
 ---
 title:        Security
-permalink:    SpringNotes/Security
-category:     SpringNotes
-parent:       SpringNotes
+permalink:    PersonalGrailsNotes/Security
+category:     PersonalGrailsNotes
+parent:       PersonalGrailsNotes
 layout:       default
 has_children: false
 share:        true
 shortRepo:
-  - springnotes
+  - personalgrailsnotes
   - default
 ---
 
@@ -29,17 +29,15 @@ Table of contents
 
 <br/>
 
-# Grails
+# Security Roles
 
-## Security Roles
-
-### Properties
+## Properties
 
 ```properties
  application.groovy=[pattern: '/adminDashboard/**', access: ['ROLE_ADMIN']]
  ```
 
-### controller above methods
+## controller above methods
 
 ```groovy 
 @Secured(['ROLE_USER', 'ROLE_ADMIN']) 
@@ -65,7 +63,7 @@ Table of contents
     @Secured(value = ['IS_AUTHENTICATED_ANONYMOUSLY'], httpMethod = 'POST')
 ```
 
-### controller body
+## controller body
 
 ```groovy
 SpringSecurityUtils.ifAllGranted('ROLE_ADMIN')
@@ -75,7 +73,7 @@ SpringSecurityUtils.ifNotGranted()
 SpringSecurityUtils.ifAnyGranted() 
 ```
 
-### views/gsp
+## views/gsp
 
 ```html
 
@@ -83,7 +81,7 @@ SpringSecurityUtils.ifAnyGranted()
     <sec:ifNotLoggedIn> 
 ```
 
-### Check user security roles
+## Check user security roles
 
 ```groovy
 def user = springSecurityService?.authentication?.details
