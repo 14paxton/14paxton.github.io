@@ -9,7 +9,4 @@ share:        true
 shortRepo:    ghpages        
 ---  
   
-# My Personal Documents and Other Stuff  
-  
-  
-Test mofo
+# My Personal Documents and Other Stuff
