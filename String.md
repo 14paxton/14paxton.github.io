@@ -1,67 +1,54 @@
 ---
-title: String  
-permalink: ReactNotes/String  
-category: ReactNotes  
-parent: ReactNotes  
-layout: default  
-has_children: false  
-share: true  
-shortRepo:  
-  - reactnotes  
-  - default            
+title:     String
+layout:    default
+parent:    Java
+permalink: JavaNotes/String
+category:  JavaNotes
+share:     true
+shortRepo:
+  - javanotes
+  - default          
 ---
 
-<br/>            
+<br/>        
 
-<details markdown="block">                  
-<summary>                  
-Table of contents                  
-</summary>                  
-{: .text-delta }                  
-1. TOC                  
-{:toc}                  
-</details>                  
+<details markdown="block">              
+<summary>              
+Table of contents              
+</summary>              
+{: .text-delta }              
+1. TOC              
+{:toc}              
+</details>              
 
-<br/>                  
+<br/>              
 
-***                  
+***              
 
-<br/>  
+<br/>              
 
-# Text Manipulation
+# Formatting
 
-## keep white space
+> add white space
 
-```javascript  
-        <FieldDescription style={{whiteSpace: 'pre-wrap'}}>  
-    {`    -Choose one or more of these options  
-              CLIENT_ADMIN / RESULT_VIEWER / INTERVIEWER / REQUESTOR /  
-              SCHEDULER / CLIENT_ADMIN / RESEARCH / COACH / ORDER_MANAGER /  
-              TADMIN `}  
-    <br/>  
-</FieldDescription>   
-```  
+```java
+System.out.printf("%-15s",str);
+```
 
-## add formatting to component
+> Use the StringUtils class, it also includes null check
 
-```javascript  
-      const createThemeToolTip = (themeSummary, significance) => {  
-    return significance  
-           ? <> {themeSummary}.  
-            <i>  
-                <FormattedMessage id="theme.significance.tooltip.label"/>  
-            </i>  
-           </>  
-           : themeSummary;  
-};  
-```  
+```java
+StringUtils.leftPad(String str,int size)
+        StringUtils.rightPad(String str,int size)
+```
 
-## dynamic internationalized component
+## [Format Codes](https://docs.oracle.com/javase/6/docs/api/java/util/Formatter.html#detail)
 
-- [Internationalized text component](https://gist.github.com/14paxton/bd94c13e40f4faa41d65442d015b2a1f)
+> if you want to pad a string to a certain length with spaces, use something like this:
 
-## Dynamic tooltip
+```java
+String padded=String.format("%-20s",str);
 
-- [Complex UseCase](https://gist.github.com/14paxton/9c745874ec384add89c1908c73832594)
+```
 
-- [Simple UseCase](https://github.com/14paxton/ToolTipTextComponent)
+> In a formatter, % introduces a format sequence. The - means that the string will be left-justified (spaces will be added at the end of the string). The 20 means the resulting string will be 20 characters long. The s is the character string format code, and ends the format sequence.
