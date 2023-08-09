@@ -1,17 +1,19 @@
 ---
 title:        HTTP
-permalink:    TestingFrameworks/HTTP
-category:     TestingFrameworks
-parent:       TestingFrameworks
+permalink:    DotNetNotes/HTTP
+category:     DotNetNotes
+parent:       DotNetNotes
 layout:       default
 has_children: false
 share:        true
 shortRepo:
-  - testingframeworks
+  - dotnetnotes
   - default
 ---
 
+
 <br/>
+
 <details markdown="block">
 <summary>
 Table of contents
@@ -20,87 +22,66 @@ Table of contents
 1. TOC
 {:toc}
 </details>
+
 <br/>
+
 ***
+
 <br/>
 
-# IntelliJ
+# [HTTPClient](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-8.0)
 
-## [Logging In Examples](https://gist.github.com/14paxton/decd67f8b59069f9505ba9ba0210d0ee)
-
-## Basic Calls
-
-### create GROUP_COMPARE
-
-~~~http
-POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
-{
-  "id"  :null ,
-  "name": "GETGUD",
-  "type": "GROUP_COMPARE",
-  "groupIds": [520, 518],
-  "assessmentOrderIds": null
-}
-~~~
-
-### update GROUP_COMPARE
-
-```http
-POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
-
-{
-  "id" : 599,
-  "name": "GETBETTER",
-  "type": "GROUP_COMPARE",
-  "groupIds": [520, 372, 518],
-  "assessmentOrderIds": []
-}
+```csharp
+var client = new HttpClient();
+var request = new HttpRequestMessage(HttpMethod.Get, "localhost:8080");
+request.Headers.Add("Authorization", "Basic YnJhbmRvbmpwQHZlcmlkaWFuY3Uub3JnOmU4N2EyOGJlZjM4MTRkNjBhMDljNDNkYjgwNTQ1MzMy");
+var content = new StringContent("{\r\n    \"detectIntentResponseId\": \"3e510315-157d-4453-85c0-45c07173d226\",\r\n    \"pageInfo\": {\r\n        \"currentPage\": \"projects/vcu-virtual-assistant-bot/locations/global/agents/8ec51540-2933-43d6-aad5-355545059bfe/flows/00000000-0000-0000-0000-000000000000/pages/START_PAGE\",\r\n        \"displayName\": \"Start Page\"\r\n    },\r\n    \"sessionInfo\": {\r\n        \"session\": \"projects/vcu-virtual-assistant-bot/locations/global/agents/8ec51540-2933-43d6-aad5-355545059bfe/sessions/629d48-27e-702-88f-fb482bc14\",\r\n        \"parameters\": {\r\n            \"name\": \"maynard\"\r\n        }\r\n    },\r\n    \"fulfillmentInfo\": {\r\n        \"tag\": \"customfields\"\r\n    },\r\n    \"messages\": [\r\n        {\r\n            \"text\": {\r\n                \"text\": [\r\n                    \"-- debug --\\nvisitor \\u003d $session.params.visitor\"\r\n                ],\r\n                \"allowPlaybackInterruption\": true,\r\n                \"redactedText\": [\r\n                    \"-- debug --\\nvisitor \\u003d $session.params.visitor\"\r\n                ]\r\n            },\r\n            \"responseType\": \"HANDLER_PROMPT\",\r\n            \"source\": \"VIRTUAL_AGENT\"\r\n        }\r\n    ],\r\n    \"triggerEvent\": \"initiate-bot-event\",\r\n    \"languageCode\": \"en\"\r\n}", null, "application/json");
+request.Content = content;
+var response = await client.SendAsync(request);
+response.EnsureSuccessStatusCode();
+Console.WriteLine(await response.Content.ReadAsStringAsync());
 ```
 
-### SHARE
+## create basic auth
 
-```http
-POST http://192.168.12.26:8080/am/userGroups/v1/599/shareContent-Type: application/json
-
-{
-  "userIds" : [124554, 124555, 124556]
-}
-
+```csharp
+  var mergedCredentials = string.Format("{0}:{1}", _comm100ApiUsername, _comm100ApiKey);
+  var encodedCredentials = Convert.ToBase64String(byteCredentials);
+  var byteCredentials = Encoding.UTF8.GetBytes(mergedCredentials);
+  client.DefaultRequestHeaders.Add("Authorization", "Basic " + encodedCredentials);
 ```
 
-### DELETE
+# [RestSharp](https://restsharp.dev/intro.html#introduction)
 
-```http
-DELETE http://192.168.12.26:8080/am/userGroups/v1/599
+```csharp
+var options = new RestClientOptions("null")
+{
+  MaxTimeout = -1,
+};
+var client = new RestClient(options);
+var request = new RestRequest("localhost:8080", Method.Get);
+request.AddHeader("Content-Type", "application/json");
+request.AddHeader("Authorization", "Basic YnJhbmRvbmpwQHZlcmlkaWFuY3Uub3JnOmU4N2EyOGJlZjM4MTRkNjBhMDljNDNkYjgwNTQ1MzMy");
+var body = "json";
+request.AddStringBody(body, DataFormat.Json);
+RestResponse response = await client.ExecuteAsync(request);
+Console.WriteLine(response.Content);
 ```
 
-### create RESULT_SHARE
+> or
 
-```http
-POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: application/json
+```csharp
+RestClientOptions options = new RestClientOptions(_stringUrl)
+     {
+      Authenticator = new HttpBasicAuthenticator(username, apiKey),
+      MaxTimeout = -1
+     };
 
-{
-  "name": "IRONTOM",
-  "type": "RESULT_COMPARE",
-  "groupIds": [519],
-  "assessmentOrderIds": [35075, 45481]
-}
-```
+     RestClient client = new RestClient(options);
+     RestRequest restRequest = new RestRequest(/the/endpoint);
+     restRequest.AddParameter("siteId", paramValue);
+     RestResponse response = await client.ExecuteAsync(restRequest);
 
-### update RESULT_SHARE
-
-```http
-POST http://192.168.12.26:8080/am/userGroups/v1/groupContent-Type: application/json
-
-{
-  "id" : 564,
-  "name": "KIDMIDNIGHT",
-  "type": "RESULT_COMPARE",
-  "groupIds": null,
-  "assessmentOrderIds": [71539,
-    71516,
-    71496,
-    71476,
-    71456]
-}
+     List<JsonElement> visitorList = JsonSerializer.Deserialize<List<JsonElement>>(response.Content ?? string.Empty);
+     List<JsonElement> filteredList = visitorList.FindAll(match: visitor => visitor.GetProperty("name").GetString() == nameParameterValue.StringValue);
 ```
