@@ -1,354 +1,416 @@
 ---
-title: Testing  
-permalink: ReactNotes/Testing  
-category: ReactNotes  
-parent: ReactNotes  
-layout: default  
-has_children: false  
-share: true  
-shortRepo:  
-  - reactnotes  
-  - default            
+title:        Testing
+permalink:    PersonalGrailsNotes/Testing
+category:     PersonalGrailsNotes
+parent:       PersonalGrailsNotes
+layout:       default
+has_children: false
+share:        true
+shortRepo:
+  - personalgrailsnotes
+  - default
 ---
 
-<br/>            
 
-<details markdown="block">                  
-<summary>                  
-Table of contents                  
-</summary>                  
-{: .text-delta }                  
-1. TOC                  
-{:toc}                  
-</details>                  
+<br/>
 
-<br/>                  
+<details markdown="block">
+<summary>
+Table of contents
+</summary>
+{: .text-delta }
+1. TOC
+{:toc}
+</details>
 
-***                  
+<br/>
 
-<br/>  
+***
 
-# Jest
+<br/>
 
-## config in package.json
+- [Config in test](#config-in-test)
+    - [Modify config](#modify-config)
+    - [Get at
+      application](#get-at-application)
+    - [Use db in memory to run
+      tests](#use-db-in-memory-to-run-tests)
+    - [Mocking service and then method call, setting dummy data for
+      the return(put in test
+      method)](#mocking-service-and-then-method-call-setting-dummy-data-for-the-returnput-in-test-method)
+    - [Mocking Service used in a service you are testing(put at
+      beginning of the test
+      class)](#mocking-service-used-in-a-service-you-are-testingput-at-beginning-of-the-test-class)
+    - [Mocking Method in service you are
+      testing](#mocking-method-in-service-you-are-testing)
+    - [Mocking method in
+      domain](#mocking-method-in-domain)
+    - [Using Test Data from BuildTest
+      plugin](#using-test-data-from-buildtest-plugin)
+        - [Snippet from spock
+          test](#snippet-from-spock-test)
+- [Configurations](#configurations)
+    - [Checking validity of
+      constraints](#checking-validity-of-constraints)
+    - [check if method was called for another
+      service](#check-if-method-was-called-for-another-service)
+    - [check if method was called for same
+      service](#check-if-method-was-called-for-same-service)
+    - [create an
+      exception](#create-an-exception)
+    - [catch exception](#catch-exception)
+    - [modify config during/for
+      test](#modify-config-duringfor-test)
+    - [create a custom manager for a
+      test](#create-a-custom-manager-for-a-test)
+    - [Mocking hibernate used to test methods using where queriers /
+      detached criteria / criteria
+      builder](#mocking-hibernate-used-to-test-methods-using-where-queriers-detached-criteria-criteria-builder)
+    - [Mock return value for service method used in the service you
+      are
+      testing](#mock-return-value-for-service-method-used-in-the-service-you-are-testing)
+    - [Mock a static method call from a
+      domain](#mock-a-static-method-call-from-a-domain)
+- [Test Snippets](#test-snippets)
+    - [Test Rest](#test-rest)
+        - [Grails3](#grails3)
 
-> this is transformIgnorePatterns for jest, defaultPhrases used for dateRangePicker needed to be ignored for jest and adding a workaround for using a webworker
+# Config in test
 
-```json  
-{  
-  "jest": {  
-    "transformIgnorePatterns": [  
-      "<rootDir>/node_modules/defaultPhrases.js"  
-    ],  
-    "transform": {  
-      "^.+\\.worker.[t|j]sx?$": "workerloader-jest-transformer"  
-    }  
-  }  
-}  
-```  
+## Modify config
 
-## Modify existing object in test
+``` groovy
 
-```javascript  
-  
-const modifiedProps = JSON.parse(JSON.stringify(defaultProps))  
-```  
+ Holders.grailsApplication.config.outlook.clientId = "GUUNAR5" 
+ 
+```
 
-## fire button example
+## Get at application
 
-```javascript  
-import React from 'react'  
-  
-import {render, fireEvent} from 'react-testing-library'  
-  
-import Counter from '../lessons/02-testing-hooks'  
-  
-test('counter increments the count', () => {  
-  
-    const {container} = render(<Counter/>)  
-  
-    const button = container.firstChild  
-  
-    expect(button.textContent).toBe('0')  
-  
-    fireEvent.click(button)  
-  
-    expect(button.textContent).toBe('1')  
-  
-})  
-  
-```  
+``` groovy
 
-## use mount to fully render,
+ grails.util.Holders.grailsApplication.domainClasses.find{it.shortName == 'User'}
+ 
+```
 
-> can only set props on root, use dive to access child components
+## Use db in memory to run tests
 
-> To test a component (with Jest) that contains<Route>and withRouter you need to import Router in you test
+``` groovy
 
-```javascript  
-    import {BrowserRouter as Router} from 'react-router-dom';  
-  
-it('containts stuff', () => {  
-    const wrapper = mount(<Router>  
-        <Footer/>  
-    </Router>)  
-    console.log(wrapper.find('FooterContainer').html())  
-  
-    expect(wrapper.find('a[href="https://talentmine.talentplus.com/s/contactsupport"]').text()).toBe('Contact    Support    ')  
-})  
-```  
+     @shared Sql sql = Sql.newInstance(“jdbc:h2:mem:” , “org.h2.Driver”)
+     
+```
 
-  
----
+## Mocking service and then method call, setting dummy data for the return(put in test method)
 
-# Enzyme
+``` groovy
+   controller.openweathermapService = Mock(OpenweathermapService)
 
-<https://enzymejs.github.io/enzyme/docs/api/selector.html>
+  controller.openweathermapService.currentWeatherByGeoID(_) >> currentWeather
+```
 
-<https://enzymejs.github.io/enzyme/docs/api/ReactWrapper/find.html>
+## Mocking Service used in a service you are testing(put at beginning of the test class)
 
-```javascript  
-  
-expect(wrapper.find('.App-intro').exists()).toBe(true)  
-  
-expect(wrapper.find('ul').children().length).toBe(3)  
-  
-expect(wrapper.find('ul').hasClass('tyler')).toBe(true)  
-  
-expect(wrapper.find('h1').text()).toBe('Welcome to React')  
-  
-expect(wrapper.find('[href="tyler"]').text()).toBe('WelcometoReact')  
-  
-expect(wrapper.find('[href="tyler ~.clark"]').text()).toBe('Welcome to React')  
-expect(wrapper.find('[text="Sometitle"]').text()).toBe('Welcome to React')  
-```  
+``` groovy
 
-# Use the object property selector to find nodes
+Closure doWithSpring() {{ ->
+              assessmentOrderService AssessmentOrderService
+   }}
+   
+AssessmentOrderService assessmentOrderService
+```
 
-> by passing in an object that matches the property of a node as a selectoin
+## Mocking Method in service you are testing
 
-```javascript  
-    expect(wrapper.find({alt: 'logo'}).text()).toBe('Welcome to React')  
-```  
+``` groovy
+ @Shared
+    GroupCompareJoinUserGroupService groupCompareJoinUserGroupService
 
-<https://enzymejs.github.io/enzyme/docs/api/ShallowWrapper/setProps.html>
+setupSpec(){
+        mockDomain GroupCompareJoinUserGroup
 
-```javascript  
-  
-it('test with enzyme', () => {  
-  
-    const container = shallow(<GoalCreationForm  
-        {...defaultProps}  
-        currentStep={GOAL_CREATION_WIZARD.LANDING}  
-    />);  
-  
-    container.setProps({  
-        owner: {  
-            id: 123, accountInfo: {clientSetupId: 1}, userInfo: {  
-                firstName: "John", lastName: 'Wayne', preferredName: "TheDuke"  
-            }  
-        }  
-    })  
-  
-    console.log(container.find({  
-        'data-qa': 'goals-creation-title-name'  
-    }).at(0).html());  
-    console.log(container.find({  
-        'data-qa': 'goals-creation-title-name'  
-    }).html());  
-    console.log(container.find({  
-        'data-qa': 'goals-creation-title-name'  
-    }).text());  
-    console.log(container.debug());  
-    console.log(container.find("[variant='h5']").html());  
-    expect(container.find({  
-        'data-qa': 'goals-creation-title-name'  
-    }).exists()).toBe(true);  
-    expect(container.find({  
-        'data-qa': 'goals-creation-title-name'  
-    }).text()).toBe('Creating Goal for    TheDuke    Wayne    ');  
-});  
-  
-```  
+}
 
-  
----
+ def "some test"(){
+    service.groupCompareJoinUserGroupService = Mock(GroupCompareJoinUserGroupService)
+        service.groupCompareJoinUserGroupService.fetchAssociatedAssessments(_ as GroupCompare, true) >> {groupCompare, removeRelationships -> groupCompareJoinUserGroupService.fetchAssociatedAssessments(groupCompare , true)}
 
-# REACT TESTING LIB
+    }
+  
+```
 
-## MUTATION  OBSERVER
+## Mocking method in domain
 
-```javascript  
-global.MutationObserver = class {  
-    constructor(callback) {}  
-  
-    disconnect() {}  
-  
-    observe(element, initObject) {}  
-};  
-```  
+``` groovy
 
-or
+   [service/controller/domain].metaclass.’static’.[method] = {[arguments] -> [what to return]}
+   
+```
 
-```javascript  
-global.MutationObserver = MutationObserver;  
-  
-HTMLCanvasElement  
-  
-HTMLCanvasElement.prototype.getContext = jest.fn();  
-```  
+## Using Test Data from BuildTest plugin
 
-## use test-id in material-ui textfield
+### Snippet from spock test
 
-```javascript  
-import "@testing-library/jest-dom";  
-import React from "react";  
-import {createMount} from "@material-ui/core/test-utils";  
-import Button from "@material-ui/core/Button";  
-import Typography from "@material-ui/core/Typography";  
-import EditProfileForm from "./editForm";  
-import {render as testRender, fireEvent, screen, getByText} from "@testing-library/react";  
-  
-const props = {  
-    handleChange: jest.fn(), onSubmit: jest.fn(), bio: "test", gravatar: "https://i.pravatar.cc/150?img=3", handleBio: jest.fn(), handleGravatar: jest.fn(),  
-};  
-describe("<EditProfileForm/>", () => {  
-    let wrapper;  
-    let mount;  
-    beforeEach(() => {  
-        mount = createMount();  
-        wrapper = mount(<EditProfileForm {...props} />);  
-    });  
-    // must be called first  
-    it("calls handleBio on bio TextField change", () => {  
-        const input = screen.getByTestId("bio");  
-  
-        fireEvent.change(input, {target: {value: "new value"}});  
-  
-        expect(props.handleBio).toHaveBeenCalledTimes(1);  
-    });  
-  
-    it("should render <EditProfileForm/>", () => {  
-        expect(wrapper).toHaveLength(1);  
-    });  
-  
-    it("should check header title ", () => {  
-        expect(wrapper.find(Typography).at(0)).toHaveLength(1);  
-        expect(wrapper  
-            .find(Typography)  
-            .at(0)  
-            .text(),).toContain("Edit Profile");  
-    });  
-  
-    it("should test bio prop", () => {  
-        expect(wrapper.props().bio).toContain("test");  
-    });  
-  
-    it("should test gravtar prop", () => {  
-        const link = "https://i.pravatar.cc/150?img=3";  
-        expect(wrapper.props().gravatar).toContain(link);  
-    });  
-  
-    it("should test handleChange props", () => {  
-        const title = "Test";  
-        expect(wrapper.props().handleChange({  
-            target: {  
-                value: title,  
-            },  
-        }),);  
-        expect(props.handleChange).toHaveBeenCalled();  
-    });  
-  
-    it("should test onSubmit prop", () => {  
-        // console.log(wrapper.find(TextField).debug());  
-        const submit = jest.fn();  
-        wrapper.simulate("submit", {submit});  
-        expect(props.onSubmit).toBeCalled();  
-    });  
-  
-    it("should test button click", () => {  
-        const button = wrapper.find(Button);  
-        button.simulate("click");  
-        expect(props.onSubmit).toBeCalled();  
-    });  
-});  
-  
-```  
+> Pluggin for using test data builder
+> [BuildTestData](http://plugins.grails.org/plugin/longwa/build-test-data)
 
-> And then passing data - testid as an input prop on text field like this
+> import grails.buildtestdata.mixin.Build
 
-```javascript  
-<TextField  
-    id="outlined-name"  
-    className="bio-test"  
-    style={{  
-        width: "100%",  
-    }}  
-    name="bio"  
-    inputProps={{  
-        "data-testid": "bio",  
-    }}  
-    multiline={true}  
-    rows="3"  
-    defaultValue={props.bio}  
-    onChange={props.handleBio}  
-    margin="normal"  
-    variant="outlined"  
-/>  
-```  
+> use- implements BuildDomanTest\< \> instead of DomainUnitTest \< \>
 
-## Use queryBy to test if something should be null
+``` groovy
 
-```javascript  
-  
-it('ellipsis should not appear for shared result viewer role', async () => {  
-    render(<LanguageProvider>  
-        <CurrentUserContext.Provider value={{user: sharedResultViewer}}>  
-            <Members data={members}/>  
-        </CurrentUserContext.Provider>  
-    </LanguageProvider>);  
-  
-    const ellipsisColumn = await waitFor(() => screen.queryByTestId('ellipses-action-buttons-members-table'))  
-    expect(ellipsisColumn).toBeNull()  
-});  
-  
-```  
+@Build([Job, Tag, Type, Publisher])
+class StatisticsServiceSpec extends Specification implements AutowiredTest, DataTest, BuildDataTest, ServiceUnitTest<StatisticsService>, GrailsWebUnitTest{
 
-### Firing events
+    def setupSpec(){
+        mockDomain Job
+        mockDomain Tag
+        mockDomain Type
+        mockDomain Publisher
+    }
+    def setup() {
+    }
 
-  ```javascript  
-import userEvent from '@testing-library/user-event'  
-  
-fireEvent.change(input, {  
-    target: {  
-        value: 'GroupA'  
-    }  
-})  
-  
-userEvent.type(input, 'GroupA')  
-```  
+    def cleanup() {
+    }
 
-### Getting component
+    void "get top publishers when we don't have nothing in our system"() {
+         given: "when we don't have any job published"
 
-```javascript  
-    const {getByTestId, queryByTestId} = render(<CreateGroupForm  
-    groups={groupNames}/>)  
-```  
+         when: "we get top publishers"
+         def publishers = service.getTopPublishers()
+         then:"we will see 0 publishers"
+         publishers.size() == 0
+         }
 
-### Testing component
+    void "get top publishers when we have multiple jobs published by the same publisher"() {
+        given: "when we have one 2 jobs published by the same publisher"
+        def tag = Tag.build()
+        def type = Type.build()
+        def publisher = Publisher.build()
+        Job.build(publisher: publisher, type: type, tags: [tag])
+        Job.build(publisher: publisher, type: type, tags: [tag])
 
-```javascript  
-    expect(input).toHaveValue('GROUP')  
-  
-```  
+        when: "we get top publishers"
+        def publishers = service.getTopPublishers()
+        def pair = publishers.find { key, value -> key.name.equals(http://publisher.name ) }
+        then:"we will see 2 publishers"
+        publishers.size() == 1
+        pair?.value == 2
+    }
 
-> needed due to tooltip calling document.createRange  
-> otherwise will get error: ```Uncaught [TypeError: document.createRange is not a function]```
+}
+```
 
-```javascript  
-global.document.createRange = () => ({  
-    setStart: () => {}, setEnd: () => {}, commonAncestorContainer: {  
-        nodeName: 'BODY', ownerDocument: document  
-    }  
-});  
+- config file test/resources/TestDataConfig
+
+```java
+import com.talentbank.core.ClientSetup
+
+import java.util.concurrent.ThreadLocalRandom
+
+//config file for test data plugin
+testDataConfig{
+        sampleData{
+        unitAdditionalBuild=['com.talentbank.core.assessmentOrder.AssessmentOrder':[com.talentbank.core.ClientSetup]]
+
+        'com.talentbank.core.ClientSetup'{
+        //work around for unique constraints
+        def i=55
+        clientId={->ThreadLocalRandom.current().nextLong(100000)}
+        companyCode={->"company${i}"}
+        clientName={->"clientName${i++}"}
+        }
+
+        'com.talentbank.core.User'{
+        def i=55
+        username={->"email${i++}@mailinator.com"}
+        email={->"email${i}@mailinator.com"}
+        }
+
+        'com.talentbank.core.assessmentOrder.AssessmentOrder'{
+        clientSetup={->ClientSetup.build()}
+        }
+        }
+        }
+
+```
+
+#### Different ways to build
+
+``` groovy
+
+ def intviewModel = TestData.build(InterviewModel)
+ def y = InterviewModel.build(source: Source.TBSIX)
+ def z = build(InterviewModel, source: Source.TBSIX)
+ 
+```
+
+# Configurations
+
+## Checking validity of constraints
+
+``` groovy
+!newScheduledInterview2.validate(['scheduledBy', 'scheduledDate'])
+!newScheduledInterview2.save(flush: true)
+newScheduledInterview2.errors['scheduledDate']?.code == 'unique'
+```
+
+## check if method was called for another service
+
+``` groovy
+def called = false
+service.notifierService = Mock(NotifierService)
+service.notifierService.sendPostMarkEmail(_ as PostMarkEmail, _) >> { it -> called = true }
+```
+
+## check if method was called for same service
+
+``` groovy
+service.metaClass.sendReminderEmail = { assessmentOrderId, templateId, sender, newTemplateBody, jobId-> calls++ }
+```
+
+## create an exception
+
+``` groovy
+//create expando
+def testDelete = new Expando()
+
+// add exception to method call
+def exception = {new Exception("TEST")}
+testDelete.delete = {throw exception}
+
+// add class as return for a method
+service.metaClass.[method_to_throw_exception] = {testDelete}
+
+//example in CalenderServiceSpec.groovy / “test delete exception”
+//or
+service.metaClass.[yourMethod] >> {throw exception}
+```
+
+## catch exception
+
+``` groovy
+def response = thrown(GraphServiceException)
+```
+
+## modify config during/for test
+
+``` groovy
+   Holders.grailsApplication.config.outlook.clientId = "GUUNAR5"
+```
+
+## create a custom manager for a test
+
+``` groovy
+
+ def managerMap=[:]
+ RoleGroup.findAll().each {
+ def myUser=User.build(clientSetupId: 1, email:
+ "${it.name}@mailinator.com", username: "${it.name}@mailinator.com")
+ UserRoleGroup.build(user: myUser, roleGroup: it)
+ def tokenAuthentication = new TokenAuthentication(decodedJwt(myUser), myUser)
+ tokenAuthentication.details = myUser
+ authMap[(it.name)] = tokenAuthentication
+ managerMap[(myUser.id)] = it.name ==~ /testManager.*/ ? [1,2,3] : []
+ }
+ service.userService = Mock(UserService)
+ service.userService.fetchDirectReportIds(_) >> {it ->
+ managerMap.get(it[0])
+ }
+```
+
+## Mocking hibernate used to test methods using where queriers / detached criteria / criteria builder
+
+``` groovy
+ @Shared
+ InterviewModelService interviewModelService
+
+ @Shared
+ HibernateDatastore hibernateDatastore
+
+ @Shared
+ PlatformTransactionManager transactionManager
+
+ Map configuration = [
+ 'hibernate.hbm2ddl.auto' : 'create-drop',
+ 'dataSource.url' : 'jdbc:h2:mem:myDB',
+ 'hibernate.cache.region.factory_class': 'org.hibernate.cache.ehcache.EhCacheRegionFactory'
+ ]
+ hibernateDatastore = new HibernateDatastore(configuration, CatalogDetail)
+ transactionManager = hibernateDatastore.getTransactionManager()
+ catalogDetailService = hibernateDatastore.getService(CatalogDetailService)
+
+
+ //Set tests to rollback
+
+ @Rollback
+ void "test criteria builder for getting interview models should return all"() {
+ //test
+ }
+```
+
+## Mock return value for service method used in the service you are testing
+
+``` groovy
+service.springSecurityService = [authentication: [details: currentUser] ]
+```
+
+## Mock a static method call from a domain
+
+``` groovy
+ClientSetup.metaClass.static.fetchSecurityGroupLabelsByClientSetupId = {Long id, String en -> [secGroupNameLabel : 'secGroupNameLabel', secGroupCodeLabel : 'secGroupCodeLabel']}
+```
+
+# Test Snippets
+
+## Test Rest
+
+### Grails3
+
+[Controller](https://gist.github.com/14paxton/0d64ab846b4691d8d6f1ccd5ccc63b58)
+
+### Grails4
+
+#### Ex. Integrations test for controller
+
+```groovy
+package musicandcars
+
+import grails.testing.mixin.integration.Integration
+import grails.testing.spock.OnceBefore
+import io.micronaut.core.type.Argument
+import io.micronaut.http.HttpRequest
+import io.micronaut.http.HttpResponse
+import io.micronaut.http.HttpStatus
+import io.micronaut.http.MediaType
+import io.micronaut.http.client.HttpClient
+import spock.lang.Shared
+import spock.lang.Specification
+import spock.lang.Stepwise
+
+@Integration
+@Stepwise
+class CarFunctionalSpec extends Specification {
+
+    @Shared
+    HttpClient client
+
+    @OnceBefore
+    void init() {
+        String baseUrl = "http://localhost:$serverPort"
+        this.client = HttpClient.create(baseUrl.toURL())
+    }
+
+    void "test that no cars exist"() {
+        when:
+        HttpResponse<List<Map>> resp = client.toBlocking().exchange(HttpRequest.GET("/automobiles"), Argument.of(List, Map))
+
+        then:
+        resp.status == HttpStatus.OK
+        resp.body().size() == 0
+        resp.contentType.get().extension == MediaType.EXTENSION_JSON
+    }
+}
 ```
