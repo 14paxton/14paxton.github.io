@@ -1,40 +1,55 @@
 ---
-title:        RegEx
-permalink:    JavaScript/RegEx
-category:     JavaScript
-parent:       JavaScript
-layout:       default
+title: RegEx
+permalink: GroovyNotes/RegEx
+category:  GroovyNotes
+parent:   GroovyNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
-  - javascript
-  - default            
+  - groovynotes
+  - default
 ---
 
 
-<br/>            
+<br/>
 
-<details markdown="block">                  
-<summary>                  
-Table of contents                  
-</summary>                  
-{: .text-delta }                  
-1. TOC                  
-{:toc}                  
-</details>                  
+<details markdown="block">
+<summary>
+Table of contents
+</summary>
+{: .text-delta }
+1. TOC
+{:toc}
+</details>
 
-<br/>                  
+<br/>
 
-***                  
+***
 
-<br/>  
-# Leave only Alpha Chars and remove space  
+<br/>
 
-```javascript  
- const removeSpecialChar = /[^a-zA-Z\d ]/g
-const replaceSpace = /\s/g
-const onlyAlpha = (fileName
-                   ? fileName
-                   : title).replaceAll(removeSpecialChar, '')
-const strippedFName = onlyAlpha.replaceAll(replaceSpace, '_')  
+# RegEX
+
+=~ will look for partial match ==~   look for an exact match
+
+## Use with replace and findall
+
+"LBlsBF4wUp".replaceAll(/[\d\sa-zA-Z.!?\\-\\']/)
+
+## Create String and compare
+
+![](https://github.com/14paxton/GroovyNotes/blob/main/Where.png)
+
+## -closure for where-
+
+![](https://github.com/14paxton/GroovyNotes/blob/main/%40Where.png)
+
+## Use groups
+
+```groovy
+def replacedTxt = txt.replaceAll(/.*(\d{2}-\d{2}-\d{4}).*(Gr.*)./) { all, date, lang ->
+    def dateObj = Date.parse('dd-MM-yyyy', date)
+    "The text '$all' was created with $lang on a ${dateObj.format('EEEE')}."
+}
 ```
