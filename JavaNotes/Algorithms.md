@@ -31,9 +31,8 @@ Table of contents
   
 <br/>                  
   
-# Algos  
   
-## binary search  
+# binary search  
   
 ```java                
 public class BinarySearch {            
@@ -59,7 +58,7 @@ public class BinarySearch {
 }                
 ```                
   
-## Selection Sort  
+# Selection Sort  
   
 ```java                
 public void sort(int[]values){            
@@ -73,7 +72,7 @@ public void sort(int[]values){
         }                
 ```                
   
-## filter string  
+# filter string  
   
 ```java                
 public static Boolean QuestionsMarks(String str){            
