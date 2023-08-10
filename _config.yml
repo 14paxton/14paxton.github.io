@@ -36,9 +36,10 @@ kramdown:
   #      line_numbers: true
   auto_ids:           true
   entity_output:      as_char
-  toc_levels: [ 1, 2, 3, 4, 5, 6 ]
-  smart_quotes:       lsquo,rsquo,ldquo,rdquo
-  hard_wrap: false
+  #toc_levels: [ 1, 2, 3, 4, 5, 6 ]
+  #smart_quotes:       lsquo,rsquo,ldquo,rdquo
+  hard_wrap: true
+  line_width: 180
   #footnote_nr:        1
   #show_warnings:      true
 
