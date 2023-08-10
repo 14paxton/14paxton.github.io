@@ -29,17 +29,28 @@ Table of contents
   
 <br/>  
   
-# GITHub  
-  
-## main to master  
-  
+# GITHub
+
+## Scripts
+
+### main to master
+
 ```shell  
 git branch -m main master  
 git fetch origin  
 git branch -u origin/master master  
 git remote set-head origin -a  
 ```  
-  
+
+### get users gists
+
+```shell
+curl -L \
+  -H "Accept: application/vnd.github+json" \
+  -H "Authorization: Bearer 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" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  https://api.github.com/users/14paxton/gists
+```
 ***  
   
 ## gh cli  
