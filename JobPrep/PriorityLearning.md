@@ -19,7 +19,8 @@ shortRepo:
 6. [Install configure kubernetes](https://app.pluralsight.com/library/courses/kubernetes-installation-configuration-fundamentals/table-of-contents)  
 7. [Micronaut fundamentals](https://app.pluralsight.com/library/courses/micronaut-fundamentals/table-of-contents)  
 8. [MicroStream Lecture](https://www.youtube.com/watch?v=5W6oVj0h6rQ&t=602s) : [MicroStream Tutorial App](https://guides.micronaut.io/latest/micronaut-microstream-persistence-gradle-java.html)  
-9. [GraalVM](https://www.graal.cloud/gcn/gcn-modules/database/micronaut-data-jdbc-repository/?buildTool=gradle&lang=java)  
+9. [GraalVM](https://www.graal.cloud/gcn/gcn-modules/database/micronaut-data-jdbc-repository/?buildTool=gradle&lang=java)
+10. [Java Concurrency](https://www.linkedin.com/learning/java-advanced-concepts-for-high-performance-development/introduction-to-concurrency-in-java?contextUrn=urn%3Ali%3AlearningCollection%3A7085095211655163904&resume=false&u=103729738)
   
 ***  
   
