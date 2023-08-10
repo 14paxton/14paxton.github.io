@@ -1,19 +1,21 @@
----  
-title:        CLI_Grailsw  
-permalink:    PersonalGrailsNotes/CLI_Grailsw  
-category:     PersonalGrailsNotes  
-parent:       PersonalGrailsNotes  
-layout:       default  
-has_children: false  
-share:        true  
-shortRepo:  
-  - personalgrailsnotes  
-  - default  
----  
-  
-  
+---
+title:        CLI_Grailsw
+permalink:    PersonalGrailsNotes/CLI_Grailsw
+category:     PersonalGrailsNotes
+parent:       PersonalGrailsNotes
+layout:       default
+has_children: false
+share:        true
+shortRepo:
+
+  - personalgrailsnotes
+  - default
+
+---
+
+
 <br/>  
-  
+
 <details markdown="block">  
 <summary>  
 Table of contents  
@@ -22,15 +24,15 @@ Table of contents
 1. TOC  
 {:toc}  
 </details>  
-  
+
 <br/>  
-  
+
 ***  
-  
+
 <br/>  
- 
-# Grails Command Line  
-  
+
+# Grails Command Line
+
 <table class="tableblock frame-all grid-all stretch">  
 <colgroup>  
 <col style="width: 50%;">  
@@ -77,42 +79,42 @@ Table of contents
 </tr>  
 </tbody>  
 </table>  
-  
-## Set System Props  
-  
+
+## Set System Props
+
 ``` bash  
     ./grailsw run-app -Dsample.message=cool  
 ```  
-  
-## Testing  
-  
-###        
-  
+
+## Testing
+
+###           
+
 ``` bash  
 ./grailsw test-app 'com.talentbank.core.UserServiceAPISearchSpec.manager_query*' -unit  
 ```  
-  
-# Liquibase  
-  
+
+# Liquibase
+
 > [Liquibase grails  
-> plugin](//grails-plugins.github.io/grails-database-migration/3.0.x/index.html)  
-  
-## clear liquibase checksums  
-  
+> plugin](//grails-plugins.github.io/grails-database-migration/3.0.x/index.html)
+
+## clear liquibase checksums
+
 ``` bash  
 ./grailsw dbm-clear-checksum  
 ```  
-  
-## clear liquibase locks  
-  
+
+## clear liquibase locks
+
 ``` bash  
  grails dbm-release-locks  
 ```  
-  
-## ignore checksums in liquibase  
-  
-> add to xml or groovy  
->  
+
+## ignore checksums in liquibase
+
+> add to xml or groovy
+>
 > ``` groovy  
 > validCheckSum 'any'  
 > ```
