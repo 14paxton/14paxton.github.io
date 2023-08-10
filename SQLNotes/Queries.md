@@ -118,8 +118,6 @@ ALTER TABLE tablename2
 ## metadata
 
 ~~~sql         
-use
-    tbcore;
 SELECT user_metadata
 FROM user
 WHERE email IN ('apavlik@talentplus.com');
@@ -207,21 +205,6 @@ SET client_setup_id = 55,
 shareResultConfig":null,"defaultClientSetupId":55}}'
 WHERE id = 820;          
 ~~~          
-
-# RoleGroups
-
-1) is super admin = tbcore-rg-admin-super
-2) talent plus admin = tbcore-rg-admin-tp
-3) talent bank client admin = tbcore-rg-admin-client
-4) Result Viewer = tbcore-rg-manager
-5) Interviewer = tbcore-rg-interviewer
-6) requester = tbcore-rg-requestor
-7) TB6 client admin = tb6-clientadmin
-8) Research = tb6-research
-9) coach = tbcore-rg-coach
-10) order manager = tbcore-rg-order-manager
-11) taalentmin admin = talentmine-rg-admin
-12) shared result viewr = coreclient-rg-shared-result
 
 ## update by email
 
