@@ -1,16 +1,18 @@
----  
+---
 title:        HTTP  
 permalink:    TestingFrameworks/HTTP  
 category:     TestingFrameworks  
 parent:       TestingFrameworks  
 layout:       default  
 has_children: false  
-share:        true  
-shortRepo:  
-  - testingframeworks  
-  - default  
----  
-  
+share:        true
+shortRepo:
+
+  - testingframeworks
+  - default
+
+---
+
 <br/>  
 <details markdown="block">  
 <summary>  
@@ -23,15 +25,15 @@ Table of contents
 <br/>  
 ***  
 <br/>  
-  
-# IntelliJ  
-  
-## [Logging In Examples](https://gist.github.com/14paxton/decd67f8b59069f9505ba9ba0210d0ee)  
-  
-## Basic Calls  
-  
-### create GROUP_COMPARE  
-  
+
+# [IntelliJ HTTP Client](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html)
+
+## [Logging In Examples](https://gist.github.com/14paxton/decd67f8b59069f9505ba9ba0210d0ee)
+
+## Basic Calls
+
+### create GROUP_COMPARE
+
 ~~~http  
 POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json  
 {  
@@ -42,10 +44,10 @@ POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
   "assessmentOrderIds": null  
 }  
 ~~~  
-  
-### update GROUP_COMPARE  
-  
-```http  
+
+### update GROUP_COMPARE
+
+~~~http  
 POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json  
   
 {  
@@ -55,28 +57,28 @@ POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
   "groupIds": [520, 372, 518],  
   "assessmentOrderIds": []  
 }  
-```  
-  
-### SHARE  
-  
-```http  
+~~~  
+
+### SHARE
+
+~~~http  
 POST http://192.168.12.26:8080/am/userGroups/v1/599/shareContent-Type: application/json  
   
 {  
   "userIds" : [124554, 124555, 124556]  
 }  
   
-```  
-  
-### DELETE  
-  
-```http  
+~~~  
+
+### DELETE
+
+~~~http  
 DELETE http://192.168.12.26:8080/am/userGroups/v1/599  
-```  
-  
-### create RESULT_SHARE  
-  
-```http  
+~~~  
+
+### create RESULT_SHARE
+
+~~~http  
 POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: application/json  
   
 {  
@@ -85,11 +87,11 @@ POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: appli
   "groupIds": [519],  
   "assessmentOrderIds": [35075, 45481]  
 }  
-```  
-  
-### update RESULT_SHARE  
-  
-```http  
+~~~  
+
+### update RESULT_SHARE
+
+~~~http request
 POST http://192.168.12.26:8080/am/userGroups/v1/groupContent-Type: application/json  
   
 {  
@@ -103,4 +105,4 @@ POST http://192.168.12.26:8080/am/userGroups/v1/groupContent-Type: application/j
     71476,  
     71456]  
 }  
-```
+~~~

@@ -47,17 +47,17 @@ shortRepo:
 
 ***Disable***
 
-```SQL         
+~~~SQL         
 SET
     FOREIGN_KEY_CHECKS = 0;          
-```          
+~~~          
 
 ***Enable***
 
-```SQL         
+~~~SQL         
 SET
     FOREIGN_KEY_CHECKS = 1;          
-```          
+~~~          
 
 <br/>          
 
@@ -65,59 +65,59 @@ SET
 Or you can use DISABLE KEYS:          
 </div>          
 
-```SQL         
+~~~SQL         
 ALTER TABLE table_name
-    DISABLE KEYS;          
-`````          
+    DISABLE KEYS;
+~~~``          
 
-```SQL         
+~~~SQL
 ALTER TABLE table_name
-    ENABLE KEYS;          
-````          
+    ENABLE KEYS;
+~~~`          
 
 > **Warning**<br>  
 > Note that DISABLE KEYS does not work ON InnoDB tables as it works properly for MyISAM.
 
 Use
 
-```SQL         
+~~~SQL         
 ON
 DELETE
     SET NULL          
-```          
+~~~          
 
 > **Warning**<br>  
 > If you don’t want to turn key checking ON and off, you can permanently modify it to `ON DELETE SET NULL`
 
 Delete the current foreign key first:
 
-```SQL         
+~~~SQL         
 ALTER TABLE table_name1
     DROP
         FOREIGN KEY fk_name1;           
-```          
+~~~          
 
 Then add the foreign key constraints back
 
-```SQL         
+~~~SQL         
 ALTER TABLE table_name1
     ADD FOREIGN KEY (table2_id)
         REFERENCES table2 (id)
         ON DELETE SET NULL;          
-```          
+~~~          
 
-```SQL         
+~~~SQL         
 ALTER TABLE tablename2
     ADD FOREIGN KEY (table1_id)
         REFERENCES table1 (id)
         ON DELETE SET NULL;          
-```          
+~~~          
 
 # User Queries
 
 ## metadata
 
-```SQL         
+~~~SQL         
 use
     tbcore;
 SELECT user_metadata
@@ -126,14 +126,14 @@ WHERE email IN ('apavlik@talentplus.com');
 SELECT *
 FROM USER
 WHERE id = 60;          
-```          
+~~~          
 
 > extract and unquote
 
-```SQL         
+~~~SQL         
 SELECT id, JSON_UNQUOTE(JSON_EXTRACT(JSON_EXTRACT(app_metadata, '$.tb5'), '$.roleGroups[0]', '$.roleGroups[1]'))
 FROM user;          
-```          
+~~~          
 
 ## Update the Users Client and Roles
 
@@ -141,72 +141,72 @@ FROM user;
 
 ## client
 
-```SQL         
+~~~SQL         
 UPDATE USER
 SET client_setup_id = 1015731,
     user_metadata   = '{"companyCode":"TPUAT","clientId":1015731,"active":true,"dateFormat":"MM/DD/YYYY","timeZonePreference":"America/Chicago","profileColor":"#3D5BA9","given_name":"Brandon","family_name":"Paxton","name":"Brandon Paxton","          
 picture":"https://s.gravatar.com/avatar/c0b18fb00c90568b950b4572bc1ae4b0?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fbp.png","emailVerified":false,"defaultAssessmentView":"RESULTS","defaultListView":"CARD","assessmentCreateType":"ADVANCED","bio":"none","jobTitle":"starving          
 artist","preferredName":"schmuckels","talentBankEnabled":true,"talentBankUser":true,"talentMineEnabled":true,"talentMineUser":true,"defaultAssessmentOrderId":27489}'
 WHERE id = 820;          
-```          
+~~~          
 
 ## app
 
-```SQL         
+~~~SQL         
 UPDATE USER
 SET client_setup_id = 1015731,
     app_metadata    = '{"tb6":{"roleGroups":["tb6-clientadmin"]},"tbcore":{"ordersDateRangePreference":"LAST_365_DAYS","defaultAssessmentType":"AO6","roleGroups":["tbcore-rg-admin-super","tbcore-rg-interviewer"],"defaultDashboardType":"ADMIN","          
 shareResultConfig":null,"defaultClientSetupId":1015731}}'
 WHERE id = 820;
 
-```          
+~~~          
 
 ### change to talentplus
 
 ## client
 
-````SQL         
+~~~`SQL         
 UPDATE USER
 SET client_setup_id = 2000,
-    user_metadata   = '{"companyCode":"TALENTPLUS","clientId":2000,"active":true,"dateFormat":"MM/DD/YYYY","timeZonePreference":"America/Chicago","profileColor":"#3D5BA9","given_name":"Brandon","family_name":"Paxton","name":"Brandon Paxton","          
+user_metadata = '{"companyCode":"TALENTPLUS","clientId":2000,"active":true,"dateFormat":"MM/DD/YYYY","timeZonePreference":"America/Chicago","profileColor":"#3D5BA9","given_name":"Brandon","family_name":"Paxton","name":"Brandon Paxton","          
 picture":"https://s.gravatar.com/avatar/c0b18fb00c90568b950b4572bc1ae4b0?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fbp.png","emailVerified":true,"defaultAssessmentView":"RESULTS","defaultListView":"CARD","assessmentCreateType":"ADVANCED","bio":"none","jobTitle":"starving          
 artist","preferredName":"schmuckels","talentBankEnabled":true,"talentBankUser":true,"talentMineEnabled":true,"talentMineUser":true,"defaultAssessmentOrderId":27489}'
 WHERE id = 820;
 
-````          
+~~~`
 
 ## app
 
-```SQL         
+~~~SQL         
 UPDATE USER
 SET client_setup_id = 2000,
     app_metadata    = '{"tb6":{"roleGroups":["tb6-clientadmin"]},"tbcore":{"ordersDateRangePreference":"LAST_365_DAYS","defaultAssessmentType":"AO6","roleGroups":["tbcore-rg-admin-super","tbcore-rg-interviewer"],"defaultDashboardType":"ADMIN","          
 shareResultConfig":null,"defaultClientSetupId":2000}}'
 WHERE id = 820;          
-```          
+~~~          
 
 ### change to TECHTEST
 
 ## client
 
-```SQL         
+~~~SQL         
 UPDATE USER
 SET client_setup_id = 55,
     user_metadata   = '{"companyCode":"TECHTEST","clientId":55,"active":true,"dateFormat":"MM/DD/YYYY","timeZonePreference":"America/Chicago","profileColor":"#3D5BA9","given_name":"Brandon","family_name":"Paxton","name":"Brandon Paxton","          
 picture":"https://s.gravatar.com/avatar/c0b18fb00c90568b950b4572bc1ae4b0?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fbp.png","emailVerified":false,"defaultAssessmentView":"RESULTS","defaultListView":"CARD","assessmentCreateType":"ADVANCED","bio":"none","jobTitle":"starving          
 artist","preferredName":"schmuckels","talentBankEnabled":true,"talentBankUser":true,"talentMineEnabled":true,"talentMineUser":true,"defaultAssessmentOrderId":27489}'
 WHERE id = 820;          
-```          
+~~~          
 
 ## app
 
-```SQL         
+~~~SQL         
 UPDATE USER
 SET client_setup_id = 55,
     app_metadata    = '{"tb6":{"roleGroups":["tb6-clientadmin"]},"tbcore":{"ordersDateRangePreference":"LAST_365_DAYS","defaultAssessmentType":"AO6","roleGroups":["tbcore-rg-admin-super","tbcore-rg-interviewer"],"defaultDashboardType":"ADMIN","          
 shareResultConfig":null,"defaultClientSetupId":55}}'
 WHERE id = 820;          
-```          
+~~~          
 
 # RoleGroups
 
@@ -225,55 +225,55 @@ WHERE id = 820;
 
 ## update by email
 
-```SQL         
+~~~SQL         
 UPDATE user_role_group
 SET role_group_id = 14
 WHERE user_id IN (SELECT id
                   FROM USER
                   WHERE email = 'd1@mailinator.com');          
-```          
+~~~          
 
 ## delete all by email
 
-```SQL         
+~~~SQL         
 DELETE
 FROM user_role_group
 WHERE user_id IN (SELECT id
                   FROM USER
                   WHERE email = 'd1@mailinator.com');          
-```          
+~~~          
 
-```SQL         
+~~~SQL         
 SELECT *
 FROM user_role_group urg
          JOIN role_group rg ON rg.id = urg.`role_group_id`
          JOIN role_group_role rgr ON rgr.`role_group_id` = urg.`role_group_id`
          JOIN role ON role.`id` = rgr.`role_id`
 WHERE user_id IN (SELECT id FROM user WHERE email = 'boi@mailinator.com');          
-```          
+~~~          
 
-```SQL         
+~~~SQL         
 SELECT rg.display_name, rg.name, urg.user_id
 FROM user_role_group urg
          JOIN role_group rg ON rg.id = urg.`role_group_id`
 WHERE user_id IN (SELECT id FROM user WHERE email = 'kfkfkfkfk52154@mailinator.com');          
-```          
+~~~          
 
 ## display role groups and roles assigned
 
-```SQL         
+~~~SQL         
 SELECT rg.id, display_name, authority
 FROM role_group rg
          JOIN role_group_role rgr ON role_group_id = rg.id
          JOIN role ON role_id = role.id
 WHERE rg.`name` = 'tbcore-rg-manager';          
-```          
+~~~          
 
 # Assessments
 
 ## create assesment orders
 
-```SQL         
+~~~SQL         
 CREATE
     TEMPORARY TABLE temporary_tableBP2 AS
 SELECT *
@@ -282,42 +282,42 @@ WHERE id in (SELECT ugao.id
              FROM user_group_assessment_order ugao
                       JOIN user_group ug ON ugao.user_group_compare = ug.id
              WHERE user_id = 820);          
-```          
+~~~          
 
-```SQL         
+~~~SQL         
 ALTER TABLE temporary_tableBP2
     MODIFY id INT;          
-```          
+~~~          
 
-```SQL         
+~~~SQL         
 UPDATE temporary_tableBP2
 SET user_id = 5,
     id      = NULL;          
-```          
+~~~          
 
-```SQL         
+~~~SQL         
 INSERT INTO user_group
 SELECT *
 FROM temporary_tableBP2;          
-```          
+~~~          
 
-```SQL         
+~~~SQL         
 DROP
     TEMPORARY TABLE temporary_tableBP2;          
-```          
+~~~          
 
 ## FIND ASSESSMENTS WITH SAME CLIENT
 
-```SQL         
+~~~SQL         
 SELECT id, email
 FROM user
 WHERE client_setup_id = 55
 ORDER BY date_created DESC;          
-```          
+~~~          
 
 ## FIND ASSESSMENTS WITH SAME INTERVIEW MODEL
 
-```SQL         
+~~~SQL         
 SELECT ASSESSMENT_ORDER.ID, im.source_id
 FROM ASSESSMENT_ORDER
          JOIN CATALOG_DETAIL cd ON ASSESSMENT_ORDER.CATALOG_DETAIL_ID = cd.id
@@ -330,11 +330,11 @@ WHERE ASSESSMENT_ORDER.ID NOT IN (SELECT ao.id
                                       != 'MYSAVEDGROUP'
                                     AND USER_GROUP.ID = 520
                                     AND USER_GROUP.INTERVIEW_MODEL_ID = 35);          
-```          
+~~~          
 
 ## UserGroupQueries
 
-```SQL         
+~~~SQL         
 SELECT ug.id                   AS id,
        ug.interview_model_id   AS interviewModelId,
        ugao.id                    ugaoid,
@@ -351,9 +351,9 @@ FROM USER_GROUP ug
          JOIN INTERVIEW_MODEL im ON im.id = ug.interview_model_id
 WHERE ug.user_id = 52
 GROUP BY ug.id;          
-```          
+~~~          
 
-```SQL         
+~~~SQL         
 SELECT ug.id AS ugID, ugs.id AS ugs, USER_GROUP_ASSESSMENT_ORDER.*
 FROM USER_GROUP ug
          LEFT JOIN USER_GROUP_ASSESSMENT_ORDER ON ug.id = USER_GROUP_ASSESSMENT_ORDER.USER_GROUP_ID
@@ -390,11 +390,11 @@ WHERE ug.userId = :userId
   AND ug.clientSetupId = :clientSetupId
 GROUP BY ug.id
 ORDER BY @ORDERBY @ @ORDERBYDIRECTION@;          
-```          
+~~~          
 
 ## CHECK USERGROUPS FOR NEW ORDERS
 
-```SQL         
+~~~SQL         
 SELECT *
 FROM user_group
 WHERE user_id = 820;
@@ -402,78 +402,78 @@ WHERE user_id = 820;
 SELECT *
 FROM user_group_assessment_order
 WHERE user_group_id = 314;          
-```          
+~~~          
 
 ## get groups to compare
 
-```SQL         
+~~~SQL         
 SELECT id, interview_model_id, type, name, client_setup_id, date_created
 FROM user_group
 WHERE user_id = 5
   and type != 'GROUP_COMPARE'
 ORDER BY interview_model_id;          
-```          
+~~~          
 
-```SQL         
+~~~SQL         
 SELECT ug.id, interview_model_id, type, name, client_setup_id, ug.date_created, count(ugao.id)
 FROM user_group ug
          JOIN user_group_assessment_order ugao ON ug.id = ugao.user_group_compare
 WHERE user_id = 820
   AND type != 'RESULTGROUP'
 group by ug.id;          
-```          
+~~~          
 
 ## TEST QUERY FOR USERGOUPS WITH ASSESSMENT ORDERS ASSIGNED
 
-```SQL         
+~~~SQL         
 SELECT user_group_id, interview_model_id, type, name, client_setup_id, user_group.date_created
 FROM user_group
          JOIN user_group_assessment_order ugao ON user_group.id = ugao.user_group_id
 WHERE user_id = 820
 ORDER BY date_created DESC;          
-```          
+~~~          
 
 ## SHOW ALL MY USER GROUPS
 
-```SQL         
+~~~SQL         
 SELECT user_group_id, interview_model_id, type, name, client_setup_id, date_created
 FROM user_group
          JOIN group_compare_join_user_group gcjug ON user_group.id = gcjug.user_group_id
 WHERE user_id = 820
 ORDER BY interview_model_id;          
-```          
+~~~          
 
 ## SHOW ALL USER_GROUP GROUPS TO COMPARE
 
-```SQL         
+~~~SQL         
 SELECT user_group.id, ao.id, interview_model_id, type, name, ao.client_setup_id
 FROM user_group
          JOIN assessment_order ao ON user_group.client_setup_id = ao.client_setup_id
 WHERE user_id = 820
   and type != 'MYSAVEDGROUP'
 ORDER BY interview_model_id;          
-```          
+~~~          
 
 ## USE TO TEST IF ASSESSMENT ORDER JOINS ARE BEING CREATED AND DELTED
 
-```SQL         
+~~~SQL         
 SELECT *
 FROM user_group_assessment_order
 ORDER BY id DESC;          
-```          
+~~~          
 
-```SQL         
+~~~SQL         
 SELECT count(*)
 FROM user_group_assessment_order
 WHERE user_group_compare = 596;
 SELECT *
 FROM user_group_assessment_order
 WHERE id = 5810;          
-```          
+~~~          
 
 ## USET TO TEST IF JOINS BETWEEN COMPARE AND USERGROUP ARE BEING CREATED AND DELETED
 
-```SQL         
+~~~SQL         
 SELECT *
 FROM group_compare_join_user_group
 ORDER BY id DESC;
@@ -483,7 +483,7 @@ WHERE group_compare_id = 599;
 SELECT *
 FROM group_compare_join_user_group
 WHERE id = 140;          
-```          
+~~~          
 
 # Table and DB
 
@@ -491,32 +491,32 @@ WHERE id = 140;
 
 > create user group
 
-```SQL         
+~~~SQL         
 CREATE
     TEMPORARY TABLE temporary_tableBP2 AS
 SELECT *
 FROM user_group
 WHERE user_id LIKE 820;          
-```          
+~~~          
 
-```SQL         
+~~~SQL         
  ALTER TABLE temporary_tableBP2
     MODIFY id INT;          
-```          
+~~~          
 
-```SQL         
+~~~SQL         
  UPDATE temporary_tableBP2
  SET user_id = 5,
      id      = NULL;          
-```          
+~~~          
 
-```SQL         
+~~~SQL         
  INSERT INTO user_group
  SELECT *
  FROM temporary_tableBP2;          
-```          
+~~~          
 
-```SQL         
+~~~SQL         
  DROP
     TEMPORARY TABLE temporary_tableBP2;          
-```
+~~~
