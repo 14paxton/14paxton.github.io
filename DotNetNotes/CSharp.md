@@ -1,6 +1,6 @@
 ---
-title:        c#  
-permalink:    DotNetNotes/c#  
+title:     CSharp
+permalink: DotNetNotes/csharp
 category:     DotNetNotes  
 parent:       DotNetNotes  
 layout:       default  
