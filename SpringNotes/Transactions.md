@@ -1,14 +1,14 @@
 ---
-title:        Services  
-permalink:    PersonalGrailsNotes/Services  
-category:     PersonalGrailsNotes  
-parent:       PersonalGrailsNotes  
-layout:       default  
-has_children: false  
+title:        Transactions
+permalink:    SpringNotes/Transactions
+category:     SpringNotes
+parent:       SpringNotes
+layout:       default
+has_children: false
 share:        true
 shortRepo:
 
-  - personalgrailsnotes
+  - springnotes
   - default
 
 ---
@@ -31,18 +31,17 @@ Table of contents
 
 <br/>  
 
-# Transactions
+# TransactionStatus
 
 > An instance of ```TransactionStatus``` is available by default in Grails transactional service methods.  
 > the keys in the Map must correspond to properties  
 > of org.springframework.transaction.support.DefaultTransactionDefinition
 
-```java  
-     Account.withTransaction([propagationBehavior:TransactionDefinition.PROPAGATION_REQUIRES_NEW,isolationLevel:TransactionDefinition.ISOLATION_REPEATABLE_READ]){
-        ...
+```java
+Account.withTransaction([propagationBehavior:TransactionDefinition.PROPAGATION_REQUIRES_NEW,isolationLevel:TransactionDefinition.ISOLATION_REPEATABLE_READ]){
+        // do work
         }
-
-```  
+```
 
 ## Personal Use Case
 
