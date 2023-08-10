@@ -355,35 +355,31 @@ client.Send(message);
 
 ### Carrier destinations
 
-- ATT: Compose a new email and use the recipient's 10-digit wireless phone number, followed by @txt.att.net. For example, 5551234567@txt.att.net.
-- Verizon: Similarly, ##@vtext.com
-- Sprint: ##@messaging.sprintpcs.com
-- TMobile: ##@tmomail.net
-- Virgin Mobile: ##@vmobl.com
-- Nextel: ##@messaging.nextel.com
-- Boost: ##@myboostmobile.com
-- Alltel: ##@message.alltel.com
-- EE: ##@mms.ee.co.uk (might support send without reply-to)
+- ```ATT```: Compose a new email and use the recipient's 10-digit wireless phone number, followed by @txt.att.net. For example, 5551234567@txt.att.net.
+- ```Verizon```: Similarly, ##@vtext.com
+- ```Sprint```: ##@messaging.sprintpcs.com
+- ```TMobile```: ##@tmomail.net
+- ```Virgin Mobile```: ##@vmobl.com
+- ```Nextel```: ##@messaging.nextel.com
+- ```Boost```: ##@myboostmobile.com
+- ```Alltel```: ##@message.alltel.com
+- ```EE```: ##@mms.ee.co.uk (might support send without reply-to)
 
-<html>  
-<body>  
-<!--StartFragment--><br class="Apple-interchange-newline">  
-
- Mobile carrier            | SMS gateway domain      | MMS gateway domain 
----------------------------|-------------------------|--------------------
- sms.alltelwireless.com    | mms.alltelwireless.com  
- txt.att.net               | mms.att.net             
- sms.myboostmobile.com     | myboostmobile.com       
- mailmymobile.net          | mailmymobile.net        
- mms.cricketwireless.com   | mms.cricketwireless.com 
- msg.fi.google.com         | msg.fi.google.com       
- mymetropcs.com            | mymetropcs.com          
- text.republicwireless.com | messaging.sprintpcs.com | pm.sprint.com      
- tmomail.net               | tmomail.net             
- message.ting.com          | email.uscc.net          | mms.uscc.net       
- vtext.com                 | vzwpix.com              
- vmobl.com                 | vmpix.com               
- vtext.com                 | mypixmessages.com       
+| Mobile carrier            | SMS gateway domain      | MMS gateway domain |
+|---------------------------|-------------------------|--------------------|
+| sms.alltelwireless.com    | mms.alltelwireless.com  |                    |
+| txt.att.net               | mms.att.net             |                    |
+| sms.myboostmobile.com     | myboostmobile.com       |                    |
+| mailmymobile.net          | mailmymobile.net        |                    |
+| mms.cricketwireless.com   | mms.cricketwireless.com |                    |
+| msg.fi.google.com         | msg.fi.google.com       |                    |
+| mymetropcs.com            | mymetropcs.com          |                    |
+| text.republicwireless.com | messaging.sprintpcs.com | pm.sprint.com      |
+| tmomail.net               | tmomail.net             |                    |
+| message.ting.com          | email.uscc.net          | mms.uscc.net       |
+| vtext.com                 | vzwpix.com              |                    |
+| vmobl.com                 | vmpix.com               |                    |
+| vtext.com                 | mypixmessages.com       |                    |
 
 | Mobile carrier                                                                                                                                      | SMS gateway domain        | MMS gateway domain      |  
 |-----------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|-------------------------|  
