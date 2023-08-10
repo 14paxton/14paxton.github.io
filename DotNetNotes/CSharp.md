@@ -365,30 +365,14 @@ client.Send(message);
 - ```Alltel```: ##@message.alltel.com
 - ```EE```: ##@mms.ee.co.uk (might support send without reply-to)
 
-| Mobile carrier            | SMS gateway domain      | MMS gateway domain |
-|---------------------------|-------------------------|--------------------|
-| sms.alltelwireless.com    | mms.alltelwireless.com  |                    |
-| txt.att.net               | mms.att.net             |                    |
-| sms.myboostmobile.com     | myboostmobile.com       |                    |
-| mailmymobile.net          | mailmymobile.net        |                    |
-| mms.cricketwireless.com   | mms.cricketwireless.com |                    |
-| msg.fi.google.com         | msg.fi.google.com       |                    |
-| mymetropcs.com            | mymetropcs.com          |                    |
-| text.republicwireless.com | messaging.sprintpcs.com | pm.sprint.com      |
-| tmomail.net               | tmomail.net             |                    |
-| message.ting.com          | email.uscc.net          | mms.uscc.net       |
-| vtext.com                 | vzwpix.com              |                    |
-| vmobl.com                 | vmpix.com               |                    |
-| vtext.com                 | mypixmessages.com       |                    |
-
-| Mobile carrier                                                                                                                                      | SMS gateway domain        | MMS gateway domain      |  
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|-------------------------|  
-| [Alltel](https://en.wikipedia.org/wiki/Alltel)[1](1.md#)(https://en.wikipedia.org/wiki/SMS_gateway#cite_note-Pot2016-1)                             | sms.alltelwireless.com    | mms.alltelwireless.com  |  
-| [AT&T](https://en.wikipedia.org/wiki/AT%26T_Mobility)[2](2.md#)(https://en.wikipedia.org/wiki/SMS_gateway#cite_note-ATT-2)                          | txt.att.net               | mms.att.net             |  
-| [Boost Mobile](https://en.wikipedia.org/wiki/Boost_Mobile_(United_States))[1](1.md#)(https://en.wikipedia.org/wiki/SMS_gateway#cite_note-Pot2016-1) | sms.myboostmobile.com     | myboostmobile.com       |  
-| [Consumer Cellular](https://en.wikipedia.org/wiki/Consumer_Cellular)[3](3.md#)(https://en.wikipedia.org/wiki/SMS_gateway#cite_note-:0-3)            | mailmymobile.net          | mailmymobile.net        |  
-| [Cricket Wireless](https://en.wikipedia.org/wiki/Cricket_Wireless)                                                                                  | mms.cricketwireless.com   | mms.cricketwireless.com |  
-| [Google Fi Wireless](https://en.wikipedia.org/wiki/Google_Fi_Wireless)[4](4.md#)(https://en.wikipedia.org/wiki/SMS_gateway#cite_note-Esparza2016-4) | msg.fi.google.com         | msg.fi.google.com       |  
-| [MetroPCS](https://en.wikipedia.org/wiki/MetroPCS)                                                                                                  | mymetropcs.com            | mymetropcs.com          |  
-| [Republic Wireless](https://en.wikipedia.org/wiki/Republic_Wireless)[5](5.md#)(https://en.wikipedia.org/wiki/SMS_gateway#cite_note-5)               | text.republicwireless.com | na                      |  
-| [Sprint](https://en.wikipedia.org/wiki/Sprint_Corporation)[1](1.md#)(https://en.wikipedia.org/wiki/SMS_gateway#cite_note-Pot2016-1)                 | messaging.sprintpcs.com   | pm.sprint.com           |
+| Mobile carrier                                                             | SMS gateway domain        | MMS gateway domain      |  
+|----------------------------------------------------------------------------|---------------------------|-------------------------|  
+| [Alltel](https://en.wikipedia.org/wiki/Alltel)                             | sms.alltelwireless.com    | mms.alltelwireless.com  |  
+| [AT&T](https://en.wikipedia.org/wiki/AT%26T_Mobility)                      | txt.att.net               | mms.att.net             |  
+| [Boost Mobile](https://en.wikipedia.org/wiki/Boost_Mobile_(United_States)) | sms.myboostmobile.com     | myboostmobile.com       |  
+| [Consumer Cellular](https://en.wikipedia.org/wiki/Consumer_Cellular)       | mailmymobile.net          | mailmymobile.net        |  
+| [Cricket Wireless](https://en.wikipedia.org/wiki/Cricket_Wireless)         | mms.cricketwireless.com   | mms.cricketwireless.com |  
+| [Google Fi Wireless](https://en.wikipedia.org/wiki/Google_Fi_Wireless)     | msg.fi.google.com         | msg.fi.google.com       |  
+| [MetroPCS](https://en.wikipedia.org/wiki/MetroPCS)                         | mymetropcs.com            | mymetropcs.com          |  
+| [Republic Wireless](https://en.wikipedia.org/wiki/Republic_Wireless)       | text.republicwireless.com | na                      |  
+| [Sprint](https://en.wikipedia.org/wiki/Sprint_Corporation)                 | messaging.sprintpcs.com   | pm.sprint.com           |
