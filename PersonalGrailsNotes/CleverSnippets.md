@@ -76,4 +76,6 @@ Table of contents
 
 ## [String search with regex](https://gist.github.com/14paxton/a5382dd3898484bf560dc29e8463409c)
 
+## [Transaction Rollback](https://gist.github.com/14paxton/a212d86552b05b95ef91ee444197fd4e)
+
 ## [User Grails Param map and a closure to build HQL](https://gist.github.com/14paxton/42e595a1bf50e44031b6be6c034003d9)
