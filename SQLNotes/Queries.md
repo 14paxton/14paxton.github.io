@@ -44,14 +44,14 @@ shortRepo:
 </div>          
   
 ***Disable***  
-  
-```mysql          
+
+```SQL         
 SET FOREIGN_KEY_CHECKS = 0;          
 ```          
   
 ***Enable***  
-  
-```mysql          
+
+```SQL         
 SET FOREIGN_KEY_CHECKS = 1;          
 ```          
   
@@ -60,13 +60,13 @@ SET FOREIGN_KEY_CHECKS = 1;
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">          
 Or you can use DISABLE KEYS:          
 </div>          
-  
-```mysql          
+
+```SQL         
 ALTER TABLE table_name  
     DISABLE KEYS;          
 `````          
-  
-```mysql          
+
+```SQL         
 ALTER TABLE table_name  
     ENABLE KEYS;          
 ````          
@@ -75,8 +75,8 @@ ALTER TABLE table_name
 > Note that DISABLE KEYS does not work on InnoDB tables as it works properly for MyISAM.  
   
 Use  
-  
-```mysql          
+
+```SQL         
 ON  
 DELETE SET NULL          
 ```          
@@ -85,22 +85,22 @@ DELETE SET NULL
 > If you don’t want to turn key checking on and off, you can permanently modify it to `ON DELETE SET NULL`  
   
 Delete the current foreign key first:  
-  
-```mysql          
+
+```SQL         
 ALTER TABLE table_name1  
     DROP FOREIGN KEY fk_name1;           
 ```          
   
 Then add the foreign key constraints back  
-  
-```mysql          
+
+```SQL         
 ALTER TABLE table_name1  
     ADD FOREIGN KEY (table2_id)  
         REFERENCES table2 (id)  
         ON DELETE SET NULL;          
 ```          
-  
-```mysql          
+
+```SQL         
 ALTER TABLE tablename2  
     ADD FOREIGN KEY (table1_id)  
         REFERENCES table1 (id)  
@@ -110,8 +110,8 @@ ALTER TABLE tablename2
 # User Queries  
   
 ## metadata  
-  
-```mysql          
+
+```SQL         
 use  
     tbcore;  
 SELECT user_metadata  
@@ -123,8 +123,8 @@ WHERE id = 60;
 ```          
   
 > extract and unquote  
-  
-```mysql          
+
+```SQL         
 select id, JSON_UNQUOTE(JSON_EXTRACT(JSON_EXTRACT(app_metadata, '$.tb5'), '$.roleGroups[0]', '$.roleGroups[1]'))  
 from user;          
 ```          
@@ -134,8 +134,8 @@ from user;
 ### change to uat  
   
 ## client  
-  
-```mysql          
+
+```SQL         
 UPDATE USER  
 SET client_setup_id = 1015731,  
     user_metadata   = '{"companyCode":"TPUAT","clientId":1015731,"active":true,"dateFormat":"MM/DD/YYYY","timeZonePreference":"America/Chicago","profileColor":"#3D5BA9","given_name":"Brandon","family_name":"Paxton","name":"Brandon Paxton","          
@@ -145,8 +145,8 @@ WHERE id = 820;
 ```          
   
 ## app  
-  
-```mysql          
+
+```SQL         
 UPDATE USER  
 SET client_setup_id = 1015731,  
     app_metadata    = '{"tb6":{"roleGroups":["tb6-clientadmin"]},"tbcore":{"ordersDateRangePreference":"LAST_365_DAYS","defaultAssessmentType":"AO6","roleGroups":["tbcore-rg-admin-super","tbcore-rg-interviewer"],"defaultDashboardType":"ADMIN","          
@@ -158,8 +158,8 @@ WHERE id = 820;
 ### change to talentplus  
   
 ## client  
-  
-````mysql          
+
+````SQL         
 UPDATE USER  
 SET client_setup_id = 2000,  
     user_metadata   = '{"companyCode":"TALENTPLUS","clientId":2000,"active":true,"dateFormat":"MM/DD/YYYY","timeZonePreference":"America/Chicago","profileColor":"#3D5BA9","given_name":"Brandon","family_name":"Paxton","name":"Brandon Paxton","          
@@ -170,8 +170,8 @@ WHERE id = 820;
 ````          
   
 ## app  
-  
-```mysql          
+
+```SQL         
 UPDATE USER  
 SET client_setup_id = 2000,  
     app_metadata    = '{"tb6":{"roleGroups":["tb6-clientadmin"]},"tbcore":{"ordersDateRangePreference":"LAST_365_DAYS","defaultAssessmentType":"AO6","roleGroups":["tbcore-rg-admin-super","tbcore-rg-interviewer"],"defaultDashboardType":"ADMIN","          
@@ -182,8 +182,8 @@ WHERE id = 820;
 ### change to TECHTEST  
   
 ## client  
-  
-```mysql          
+
+```SQL         
 UPDATE USER  
 SET client_setup_id = 55,  
     user_metadata   = '{"companyCode":"TECHTEST","clientId":55,"active":true,"dateFormat":"MM/DD/YYYY","timeZonePreference":"America/Chicago","profileColor":"#3D5BA9","given_name":"Brandon","family_name":"Paxton","name":"Brandon Paxton","          
@@ -193,8 +193,8 @@ WHERE id = 820;
 ```          
   
 ## app  
-  
-```mysql          
+
+```SQL         
 UPDATE USER  
 SET client_setup_id = 55,  
     app_metadata    = '{"tb6":{"roleGroups":["tb6-clientadmin"]},"tbcore":{"ordersDateRangePreference":"LAST_365_DAYS","defaultAssessmentType":"AO6","roleGroups":["tbcore-rg-admin-super","tbcore-rg-interviewer"],"defaultDashboardType":"ADMIN","          
@@ -218,8 +218,8 @@ WHERE id = 820;
 12) shared result viewr = coreclient-rg-shared-result  
   
 ## update by email  
-  
-```mysql          
+
+```SQL         
 UPDATE user_role_group  
 SET role_group_id = 14  
 WHERE user_id IN (SELECT id  
@@ -228,16 +228,16 @@ WHERE user_id IN (SELECT id
 ```          
   
 ## delete all by email  
-  
-```mysql          
+
+```SQL         
 DELETE  
 FROM user_role_group  
 WHERE user_id IN (SELECT id  
                   FROM USER  
                   WHERE email = 'd1@mailinator.com');          
 ```          
-  
-```mysql          
+
+```SQL         
 SELECT *  
 FROM user_role_group urg  
          JOIN role_group rg ON rg.id = urg.`role_group_id`  
@@ -245,8 +245,8 @@ FROM user_role_group urg
          JOIN role ON role.`id` = rgr.`role_id`  
 WHERE user_id IN (SELECT id FROM user WHERE email = 'boi@mailinator.com');          
 ```          
-  
-```mysql          
+
+```SQL         
 SELECT rg.display_name, rg.name, urg.user_id  
 FROM user_role_group urg  
          JOIN role_group rg ON rg.id = urg.`role_group_id`  
@@ -254,8 +254,8 @@ WHERE user_id IN (SELECT id FROM user WHERE email = 'kfkfkfkfk52154@mailinator.c
 ```          
   
 ## display role groups and roles assigned  
-  
-```mysql          
+
+```SQL         
 SELECT rg.id, display_name, authority  
 FROM role_group rg  
          JOIN role_group_role rgr ON role_group_id = rg.id  
@@ -266,8 +266,8 @@ WHERE rg.`name` = 'tbcore-rg-manager';
 # Assessments  
   
 ## create assesment orders  
-  
-```mysql          
+
+```SQL         
 CREATE  
     TEMPORARY TABLE temporary_tableBP2 AS  
 SELECT *  
@@ -277,32 +277,32 @@ WHERE id in (select ugao.id
                       join user_group ug on ugao.user_group_compare = ug.id  
              where user_id = 820);          
 ```          
-  
-```mysql          
+
+```SQL         
 ALTER TABLE temporary_tableBP2  
     MODIFY id INT;          
 ```          
-  
-```mysql          
+
+```SQL         
 UPDATE temporary_tableBP2  
 SET user_id = 5,  
     id      = NULL;          
 ```          
-  
-```mysql          
+
+```SQL         
 INSERT INTO user_group  
 SELECT *  
 FROM temporary_tableBP2;          
 ```          
-  
-```mysql          
+
+```SQL         
 DROP  
     TEMPORARY TABLE temporary_tableBP2;          
 ```          
   
 ## FIND ASSESSMENTS WITH SAME CLIENT  
-  
-```mysql          
+
+```SQL         
 select id, email  
 from user  
 where client_setup_id = 55  
@@ -310,8 +310,8 @@ order by date_created desc;
 ```          
   
 ## FIND ASSESSMENTS WITH SAME INTERVIEW MODEL  
-  
-```mysql          
+
+```SQL         
 SELECT ASSESSMENT_ORDER.ID, im.source_id  
 FROM ASSESSMENT_ORDER  
          JOIN CATALOG_DETAIL cd ON ASSESSMENT_ORDER.CATALOG_DETAIL_ID = cd.id  
@@ -327,8 +327,8 @@ WHERE ASSESSMENT_ORDER.ID NOT IN (SELECT ao.id
 ```          
   
 ## UserGroupQueries  
-  
-```mysql          
+
+```SQL         
 SELECT ug.id                   AS id,  
        ug.interview_model_id   AS interviewModelId,  
        ugao.id                    ugaoid,  
@@ -346,8 +346,8 @@ FROM USER_GROUP ug
 WHERE ug.user_id = 52  
 GROUP BY ug.id;          
 ```          
-  
-```mysql          
+
+```SQL         
 SELECT ug.id AS ugID, ugs.id AS ugs, USER_GROUP_ASSESSMENT_ORDER.*  
 FROM USER_GROUP ug  
          LEFT JOIN USER_GROUP_ASSESSMENT_ORDER ON ug.id = USER_GROUP_ASSESSMENT_ORDER.USER_GROUP_ID  
@@ -387,8 +387,8 @@ ORDER BY @ORDERBY @ @ORDERBYDIRECTION@;
 ```          
   
 ## CHECK USERGROUPS FOR NEW ORDERS  
-  
-```mysql          
+
+```SQL         
 select *  
 from user_group  
 where user_id = 820;  
@@ -399,16 +399,16 @@ where user_group_id = 314;
 ```          
   
 ## get groups to compare  
-  
-```mysql          
+
+```SQL         
 select id, interview_model_id, type, name, client_setup_id, date_created  
 from user_group  
 where user_id = 5  
   and type != 'GROUP_COMPARE'  
 order by interview_model_id;          
 ```          
-  
-```mysql          
+
+```SQL         
 select ug.id, interview_model_id, type, name, client_setup_id, ug.date_created, count(ugao.id)  
 from user_group ug  
          join user_group_assessment_order ugao on ug.id = ugao.user_group_compare  
@@ -418,8 +418,8 @@ group by ug.id;
 ```          
   
 ## TEST QUERY FOR USERGOUPS WITH ASSESSMENT ORDERS ASSIGNED  
-  
-```mysql          
+
+```SQL         
 select user_group_id, interview_model_id, type, name, client_setup_id, user_group.date_created  
 from user_group  
          join user_group_assessment_order ugao on user_group.id = ugao.user_group_id  
@@ -428,8 +428,8 @@ order by date_created desc;
 ```          
   
 ## SHOW ALL MY USER GROUPS  
-  
-```mysql          
+
+```SQL         
 select user_group_id, interview_model_id, type, name, client_setup_id, date_created  
 from user_group  
          join group_compare_join_user_group gcjug on user_group.id = gcjug.user_group_id  
@@ -438,8 +438,8 @@ order by interview_model_id;
 ```          
   
 ## SHOW ALL USER_GROUP GROUPS TO COMPARE  
-  
-```mysql          
+
+```SQL         
 select user_group.id, ao.id, interview_model_id, type, name, ao.client_setup_id  
 from user_group  
          join assessment_order ao on user_group.client_setup_id = ao.client_setup_id  
@@ -449,14 +449,14 @@ order by interview_model_id;
 ```          
   
 ## USE TO TEST IF ASSESMENT ORDER JOINS ARE BEING CREATED AND DELTED  
-  
-```mysql          
+
+```SQL         
 select *  
 from user_group_assessment_order  
 order by id desc;          
 ```          
-  
-```mysql          
+
+```SQL         
 select count(*)  
 from user_group_assessment_order  
 where user_group_compare = 596;  
@@ -466,8 +466,8 @@ where id = 5810;
 ```          
   
 ## USET TO TEST IF JOINS BETWEEN COMPARE AND USERGROUP ARE BEING CREATED AND DELETED  
-  
-```mysql          
+
+```SQL         
 select *  
 from group_compare_join_user_group  
 order by id desc;  
@@ -484,33 +484,33 @@ where id = 140;
 ## Clone  
   
 > create user group  
-  
-```mysql          
+
+```SQL         
 CREATE  
     TEMPORARY TABLE temporary_tableBP2 AS  
 SELECT *  
 FROM user_group  
 WHERE user_id LIKE 820;          
 ```          
-  
-```mysql          
+
+```SQL         
  ALTER TABLE temporary_tableBP2  
     MODIFY id INT;          
 ```          
-  
-```mysql          
+
+```SQL         
  UPDATE temporary_tableBP2  
  SET user_id = 5,  
      id      = NULL;          
 ```          
-  
-```mysql          
+
+```SQL         
  INSERT INTO user_group  
  SELECT *  
  FROM temporary_tableBP2;          
 ```          
-  
-```mysql          
+
+```SQL         
  DROP  
     TEMPORARY TABLE temporary_tableBP2;          
 ```
