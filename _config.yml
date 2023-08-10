@@ -28,14 +28,14 @@ kramdown:
   syntax_highlighter_opts:
     block:
       line_numbers: false
-    auto_ids:           true
-    entity_output:      as_char
-    toc_levels: [ 1, 2, 3, 4, 5, 6 ]
-    smart_quotes:       lsquo,rsquo,ldquo,rdquo
-    hard_wrap: true
-    line_width: 240
-    footnote_nr:        1
-    show_warnings:      true
+  auto_ids:           true
+  entity_output:      as_char
+  toc_levels: [ 1, 2, 3, 4, 5, 6 ]
+  smart_quotes:       lsquo,rsquo,ldquo,rdquo
+  hard_wrap: true
+  line_width: 240
+  footnote_nr:        1
+  show_warnings:      true
 
 
 plugins:
@@ -44,9 +44,9 @@ plugins:
   - kramdown-parser-gfm
 #  - kramdown-syntax-coderay
 
-#relative_links:
-#  enabled: true
-#  collections: true
+relative_links:
+ enabled: true
+ collections: true
 
 ################################
 # just-the-docs template config

@@ -29,7 +29,9 @@ ___
 
 # `_config.yml`
 
-## my config for githubpages
+## [my config for githubpages](https://gist.github.com/14paxton/e0dd671b07d810ab13ae37b6828fe63f)
+
+## old simple config
 
 ```yml                
 lsi:          false
