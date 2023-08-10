@@ -1,4 +1,4 @@
----  
+---
 title:        FunctionObject  
 permalink:    JavaScript/FunctionObject  
 category:     JavaScript  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - javascript  
   - default              
----  
+---
   
   
 <br/>              

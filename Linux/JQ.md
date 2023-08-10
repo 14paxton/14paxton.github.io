@@ -1,4 +1,4 @@
----  
+---
 title: JQ  
 permalink: Linux/JQ  
 category:  Linux  
@@ -9,7 +9,7 @@ share: true
 shortRepo:  
   - linux  
   - default  
----  
+---
   
   
 <br/>  

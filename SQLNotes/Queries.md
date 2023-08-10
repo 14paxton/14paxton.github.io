@@ -159,14 +159,12 @@ WHERE id = 820;
 
 ~~~          
 
-### change to talentplus
-
 ## client
 
 ~~~sql         
 UPDATE USER
 SET client_setup_id = 2000,
-    user_metadata = '{"companyCode":"TALENTPLUS","clientId":2000,"active":true,"dateFormat":"MM/DD/YYYY","timeZonePreference":"America/Chicago","profileColor":"#3D5BA9","given_name":"Brandon","family_name":"Paxton","name":"Brandon Paxton","          
+    user_metadata   = '{"companyCode":"TALENTPLUS","clientId":2000,"active":true,"dateFormat":"MM/DD/YYYY","timeZonePreference":"America/Chicago","profileColor":"#3D5BA9","given_name":"Brandon","family_name":"Paxton","name":"Brandon Paxton","          
 picture":"https://s.gravatar.com/avatar/c0b18fb00c90568b950b4572bc1ae4b0?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fbp.png","emailVerified":true,"defaultAssessmentView":"RESULTS","defaultListView":"CARD","assessmentCreateType":"ADVANCED","bio":"none","jobTitle":"starving          
 artist","preferredName":"schmuckels","talentBankEnabled":true,"talentBankUser":true,"talentMineEnabled":true,"talentMineUser":true,"defaultAssessmentOrderId":27489}'
 WHERE id = 820;

@@ -1,4 +1,4 @@
----  
+---
 title: Clever-Tid-bits  
 permalink: GroovyNotes/Clever-Tid-bits  
 category:  GroovyNotes  
@@ -9,7 +9,7 @@ share: true
 shortRepo:  
   - groovynotes  
   - default  
----  
+---
   
   
 <br/>  

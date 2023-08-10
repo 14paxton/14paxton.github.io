@@ -1,4 +1,4 @@
----  
+---
 title:        Config  
 permalink:    PersonalGrailsNotes/Config  
 category:     PersonalGrailsNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - personalgrailsnotes  
   - default  
----  
+---
   
   
 <br/>  

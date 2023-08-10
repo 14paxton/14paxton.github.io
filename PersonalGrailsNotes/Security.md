@@ -1,4 +1,4 @@
----  
+---
 title:        Security  
 permalink:    PersonalGrailsNotes/Security  
 category:     PersonalGrailsNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - personalgrailsnotes  
   - default  
----  
+---
   
   
 <br/>  

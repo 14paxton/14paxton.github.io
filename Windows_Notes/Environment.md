@@ -1,4 +1,4 @@
----  
+---
 title:     Environment  
 permalink: Windows_Notes/Environment  
 category:     Windows_Notes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - windows_notes  
   - default  
----  
+---
   
   
 <br/>  
@@ -177,5 +177,5 @@ Table of contents
 | WindowsSDK_ExecutablePath_x86  | C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\                                                                                          |  
 | WindowsSDKLibVersion           | winv6.3\                                                                                                                                                           |  
 | WindowsSDKVersion              | \                                                                                                                                                                  |  
-  
-----                           -----
+
+----                         -----

@@ -1,4 +1,4 @@
----  
+---
 title:        PersonalGrailsNotes  
 layout:       default  
 permalink:    PersonalGrailsNotes/  
@@ -9,6 +9,6 @@ shortRepo:
   
   - personalgrailsnotes  
   - default  
----  
+---
   
 # [REPO](https://github.com/14paxton/PersonalGrailsNotes)

@@ -1,4 +1,4 @@
----  
+---
 title:        IntelliJNotes  
 layout:       default  
 permalink:    IntelliJNotes/  
@@ -9,6 +9,6 @@ shortRepo:
   
   - intellijnotes  
   - default  
----  
+---
   
 # [REPO](https://github.com/14paxton/IntelliJNotes)

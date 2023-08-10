@@ -1,4 +1,4 @@
----  
+---
 title:        Controllers  
 permalink:    DotNetNotes/Controllers  
 category:     DotNetNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - dotnetnotes  
   - default  
----  
+---
   
   
 <br/>  
@@ -41,7 +41,7 @@ Table of contents
   
 ## [WebAPI](https://learn.microsoft.com/en-us/aspnet/web-api/)  
   
----  
+---
   
 ### Context  
   
@@ -186,7 +186,7 @@ namespace System.Web.Http
     }  
 ```  
   
----  
+---
   
 **NOTE**  
   
@@ -206,7 +206,7 @@ public IHttpActionResult GetSomething()
   
 > In this case, your endpoint doesn't need to be async (unless you have other async-methods)  
   
----  
+---
   
 > - For other future users who do not want to make their controllers asynchronous, or cannot access the HttpContext, or are using dotnet core (this answer is the first I found on Google trying to do this), the following worked for me:  
   
@@ -222,7 +222,7 @@ public IHttpActionResult GetSomething()
      }  
 ```  
   
----  
+---
   
 ##### [Request](https://learn.microsoft.com/en-us/dotnet/api/system.web.httprequestbase?view=netframework-4.8.1)  
   
@@ -349,7 +349,7 @@ HttpResponseMessage fullResponse = Request.CreateResponse(HttpStatusCode.OK);
                 return fullResponse;  
 ```  
   
----  
+---
   
 # Serialize/Deserialize  
   

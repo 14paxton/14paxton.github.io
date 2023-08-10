@@ -1,4 +1,4 @@
----  
+---
 title:        Home  
 permalink:    micronotes/Home  
 category:     micronotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - micronotes  
   - default  
----  
+---
   
   
 <br/>  

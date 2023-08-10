@@ -1,4 +1,4 @@
----  
+---
 title:        HTML  
 permalink:    HTML&CSS/HTML  
 category:     HTML&CSS  
@@ -8,7 +8,7 @@ has_children: false
 share:        true  
 shortRepo:  
   - default        
----  
+---
   
 <details markdown="block">            
 <summary>            

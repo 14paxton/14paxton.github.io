@@ -1,4 +1,4 @@
----  
+---
 title: APIs  
 permalink: GoogleNotes/APIs  
 category:  GoogleNotes  
@@ -9,7 +9,7 @@ share: true
 shortRepo:  
   - googlenotes  
   - default            
----  
+---
   
   
 <br/>            

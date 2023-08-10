@@ -1,4 +1,4 @@
----  
+---
 title:        MicroStream  
 permalink:    micronotes/MicroStream  
 category:     micronotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - micronotes  
   - default  
----  
+---
   
   
 <br/>  
@@ -53,7 +53,7 @@ Table of contents
         Customer customerCopy=objectCopier.copy(customer);  
 ```  
   
----  
+---
   
 # Running  
   
@@ -81,9 +81,9 @@ Table of contents
 ./build/native/nativeCompile/graal-vm-ssi -Dmicronaut.environments=dev  
 ```  
   
----  
+---
   
----  
+---
   
 # Testing  
   
@@ -105,9 +105,9 @@ curl -i -d '{"companyCode": "MICROSTREAM_bpaxton"}' -H "Content-Type: applicatio
 curl -i localhost:8082/ssi/  
 ```  
   
----  
+---
   
----  
+---
   
 # Lombok  
   
@@ -122,9 +122,9 @@ curl -i localhost:8082/ssi/
 >> ```  
   
   
----  
+---
   
----  
+---
   
 # GraalVM  
   
@@ -135,9 +135,9 @@ curl -i localhost:8082/ssi/
 [Microstream source code for working with GraalVM](https://github.com/microstream-one/example-graalvm-native/tree/master/graalvm-native/src/main/resources/META-INF/native-image)  
   
   
----  
+---
   
----  
+---
   
 # Microstream  
   
@@ -152,9 +152,9 @@ touch /src/main/resources/META-INF/native-image/com/ssi/reflect-config.json
 [MicroStream Source Reference](https://gist.github.com/14paxton/d51cc2f493b8d8f4271c0cf55f2aefab)  
   
   
----  
+---
   
----  
+---
   
 ## Microstream gui  
   
@@ -164,9 +164,9 @@ touch /src/main/resources/META-INF/native-image/com/ssi/reflect-config.json
 [and download client ](https://docs.microstream.one/manual/storage/rest-interface/client-gui.html)  
   
   
----  
+---
   
----  
+---
   
 # Resources  
   
@@ -176,8 +176,8 @@ touch /src/main/resources/META-INF/native-image/com/ssi/reflect-config.json
 - [API Reference](https://docs.micronaut.io/3.7.2/api/index.html)  
 - [Configuration Reference](https://docs.micronaut.io/3.7.2/guide/configurationreference.html)  
 - [Micronaut Guides](https://guides.micronaut.io/index.html)  
-  
----  
+
+---
   
 - [Shadow Gradle Plugin](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow)  
   

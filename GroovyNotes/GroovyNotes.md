@@ -1,4 +1,4 @@
----  
+---
 title: GroovyNotes  
 layout: default  
 permalink: GroovyNotes/  
@@ -9,6 +9,6 @@ shortRepo:
   
   - groovynotes  
   - default  
----  
+---
   
 # [REPO](https://github.com/14paxton/GroovyNotes)  

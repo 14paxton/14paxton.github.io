@@ -1,4 +1,4 @@
----  
+---
 title: MySQL  
 permalink: Linux/MySQL  
 category:  Linux  
@@ -9,7 +9,7 @@ share: true
 shortRepo:  
   - linux  
   - default  
----  
+---
   
   
 <br/>  

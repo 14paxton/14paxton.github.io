@@ -1,4 +1,4 @@
----  
+---
 title:        HTTP  
 permalink:    DotNetNotes/HTTP  
 category:     DotNetNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - dotnetnotes  
   - default  
----  
+---
   
   
 <br/>  

@@ -1,4 +1,4 @@
----  
+---
 title:        MacNotes  
 layout:       default  
 has_children: false  
@@ -6,7 +6,7 @@ permalink:    MacNotes/
 category:     MacNotes  
 share:        true  
 shortRepo:    ghpages                
----  
+---
   
   
 <details markdown="block">              
@@ -108,7 +108,7 @@ sudo pmset repeat cancel
 ```            
   
             
----  
+---
   
 # HomeBrew  
   
@@ -219,7 +219,7 @@ diskutil secureErase 4 /dev/disk2
 ```            
   
             
----  
+---
   
 # Users  
   
@@ -367,14 +367,14 @@ xcode-select --install
 ```            
   
             
----  
+---
   
 # RECOVERY  
   
 ## [csrutil](https://ss64.com/osx/csrutil.html)  
   
             
----  
+---
   
 # Create Ram Disk For Intellij  
   
@@ -490,7 +490,7 @@ Matching Java Virtual Machines (4):
         ```            
   
             
----  
+---
   
 # Launching Apps From Terminal  
   
@@ -587,8 +587,8 @@ Creating Shell Aliases for Frequently Launched GUI Apps
     ```  
       
     This creates an alias, so that the ```open -a Adobe\ Photoshop CS``` command is now shortened to simply ```photoshop```.          
-          
----  
+
+---
   
 # DEBUGGING - OBSCURE ISSUES  
   

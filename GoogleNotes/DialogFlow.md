@@ -1,4 +1,4 @@
----  
+---
 title: DialogFlow  
 permalink: GoogleNotes/DialogFlow  
 category:  GoogleNotes  
@@ -9,7 +9,7 @@ share: true
 shortRepo:  
   - googlenotes  
   - default            
----  
+---
   
   
 <br/>            
@@ -102,8 +102,8 @@ $sys.func.IF("$session.params.current-flow = null" , null , "{name : $session.pa
 4. Now, once the creation of the service account is finalized, select it and click on "Create Key"  
 5. Select JSON as "key type"  
 6. Download the new private key in JSON  
-  
----  
+
+---
   
 # [API Docs C# Client](https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Dialogflow.Cx.V3/latest)  
   
@@ -117,8 +117,8 @@ $sys.func.IF("$session.params.current-flow = null" , null , "{name : $session.pa
   here.  
 - Over-training: Too many training phrases for an intent may cause over-training and a less desirable result. It is best practice to use  
   iterative and incremental testing and add in training phrases in the case that there isn't an intent matched.  
-  
----  
+
+---
   
 # Parameters  
   
@@ -135,7 +135,7 @@ You can also use [system functions](https://cloud.google.com/dialogflow/cx/docs/
 | new-cost        | `$sys.func.IDENTITY($session.params.other-cost)`                                                             |  
 | member-verified | $sys.func.IF("$session.params.member-found-count < 2 AND $session.params.member-found = true", true, false)" |  
   
----  
+---
   
 # GitHub  
   
@@ -151,8 +151,8 @@ You can also use [system functions](https://cloud.google.com/dialogflow/cx/docs/
 - `Repository Permissions > Contents: Read and write`  
   
 - `Repository Permissions > Metadata: Read-only (should be auto-selected after selecting Contents permission)`  
-  
----  
+
+---
   
 # [Detect Intent](https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Dialogflow.Cx.V3/latest/Google.Cloud.Dialogflow.Cx.V3.SessionsClient#Google_Cloud_Dialogflow_Cx_V3_SessionsClient_DetectIntent_Google_Cloud_Dialogflow_Cx_V3_DetectIntentRequest_Google_Api_Gax_Grpc_CallSettings_)  
   
@@ -294,7 +294,7 @@ You can also use [system functions](https://cloud.google.com/dialogflow/cx/docs/
 }  
 ```  
   
----  
+---
   
 # [Match Intent](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3beta1/projects.locations.agents.sessions/matchIntent?apix_params=%7B%22session%22%3A%22projects%2Fvcu-virtual-assistant-bot%2Flocations%2Fglobal%2Fagents%2F8ec51540-2933-43d6-aad5-355545059bfe%2Fsessions%2Fcd205a-958-7fc-5d5-0824cd93b%22%2C%22resource%22%3A%7B%22queryInput%22%3A%7B%22languageCode%22%3A%22en%22%2C%22intent%22%3A%7B%22intent%22%3A%22projects%2Fvcu-virtual-assistant-bot%2Flocations%2Fglobal%2Fagents%2F8ec51540-2933-43d6-aad5-355545059bfe%2Fintents%2F335ebd4c-bb93-4ed1-bd4c-610789dbb7ea%22%7D%7D%2C%22queryParams%22%3A%7B%22timeZone%22%3A%22America%2FLos_Angeles%22%7D%7D%7D&apix=true)  
   
@@ -336,7 +336,7 @@ You can also use [system functions](https://cloud.google.com/dialogflow/cx/docs/
 }  
 ```  
   
----  
+---
   
 # [Fulfill Intent](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3beta1/projects.locations.agents.sessions/fulfillIntent?apix_params=%7B%22session%22%3A%22projects%2Fvcu-virtual-assistant-bot%2Flocations%2Fglobal%2Fagents%2F8ec51540-2933-43d6-aad5-355545059bfe%2Fsessions%2Fcd205a-958-7fc-5d5-0824cd93b%22%2C%22resource%22%3A%7B%22matchIntentRequest%22%3A%7B%22session%22%3A%22projects%2Fvcu-virtual-assistant-bot%2Flocations%2Fglobal%2Fagents%2F8ec51540-2933-43d6-aad5-355545059bfe%2Fsessions%2Fcd205a-958-7fc-5d5-0824cd93b%22%2C%22queryInput%22%3A%7B%22languageCode%22%3A%22en%22%2C%22intent%22%3A%7B%22intent%22%3A%22projects%2Fvcu-virtual-assistant-bot%2Flocations%2Fglobal%2Fagents%2F8ec51540-2933-43d6-aad5-355545059bfe%2Fintents%2F335ebd4c-bb93-4ed1-bd4c-610789dbb7ea%22%7D%7D%2C%22persistParameterChanges%22%3Atrue%7D%2C%22match%22%3A%7B%22intent%22%3A%7B%22name%22%3A%22projects%2Fvcu-virtual-assistant-bot%2Flocations%2Fglobal%2Fagents%2F8ec51540-2933-43d6-aad5-355545059bfe%2Fintents%2F335ebd4c-bb93-4ed1-bd4c-610789dbb7ea%22%2C%22displayName%22%3A%22additional-feedback%22%7D%2C%22matchType%22%3A%22DIRECT_INTENT%22%2C%22confidence%22%3A1%7D%7D%7D&apix=true)  
   
@@ -382,7 +382,7 @@ You can also use [system functions](https://cloud.google.com/dialogflow/cx/docs/
 }  
 ```  
   
----  
+---
   
 # [Webhooks](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/WebhookRequest)  
   
@@ -447,7 +447,7 @@ You can also use [system functions](https://cloud.google.com/dialogflow/cx/docs/
   
 `curl -X POST -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "x-goog-user-project: dialogflow-378918" -H "Content-Type: application/json; charset=utf-8" -d '{"queryInput": {"event": {"event": "custom-event"},"languageCode": "en"}, "queryParams": {"timeZone": "America/Los_Angeles"}}' "https://us-central1-dialogflow.googleapis.com/v3/projects/dialogflow-378918/locations/us-central1/agents/340fe3aa-6e96-4ac3-b61b-00c79bd55733/sessions/1ca764-0e7-a39-581-11093b511 :detectIntent"`  
   
----  
+---
   
 ## [Response Body](https://cloud.google.com/dialogflow/cx/docs/concept/webhook#webhook-response)  
   
@@ -594,7 +594,7 @@ field to update and send back the stored parameters you collected from the previ
 }  
 ```  
   
----  
+---
   
 ### Custom Web Hooks  
   
@@ -622,8 +622,8 @@ field to update and send back the stored parameters you collected from the previ
   
 - ex.  
   `projects/dialogflow-378918/locations/global/agents/069075ae-67c3-4223-88cc-137335336001/intents/00000000-0000-0000-0000-000000000000`  
-  
----  
+
+---
   
 #### CLI  
   
@@ -647,7 +647,7 @@ curl -m 70 -X POST <https://global-dialogflow.googleapis.com/v3/projects/dialogf
 curl -m 70 -X POST <https://global-dialogflow.googleapis.com/v3/projects/dialogflow-378918/locations/global/agents/069075ae-67c3-4223-88cc-137335336001/sessions/this_is_a_session_id_123456:detectIntent> --header 'Authorization: Bearer ya29.a0Ael9sCM7Gfk0D95ta0FAr2CR_fMUk1mjyY9RHHOp-KR7xAMR5AjP1p9XNvFrkKhyPjrzfa_Il0YdOcNPCDhtCzLODrgzIEqXR_YyW_FkQWYm8VYTHA2jHD49UMuqyh1WBqdZUe3ukkbwKTpQiIHb2AVc8h4TaCgYKASASARMSFQF4udJh_4KVLgiUV5Gcufk4KcK_WQ0163' --header 'Accept: application/json' --header 'Content-Type: application/json' --data '{"queryInput":{"intent":{"intent":"projects/dialogflow-378918/locations/global/agents/069075ae-67c3-4223-88cc-137335336001/intents/00000000-0000-0000-0000-000000000000"},"languageCode":"en"},"queryParams":{"timeZone":"America/Los_Angeles"}}' --compressed  
 ```  
   
----  
+---
   
 # Events  
   
@@ -655,7 +655,7 @@ curl -m 70 -X POST <https://global-dialogflow.googleapis.com/v3/projects/dialogf
   
 ## [EventInput](https://cloud.google.com/dialogflow/es/docs/reference/rest/v2beta1/EventInput)  
   
----  
+---
   
 # Agent Handoff  
   
@@ -682,7 +682,7 @@ Please check the Business Messages documentation for the precise JSON message.
 For more information on Business Messages live agent handoff formats,  
 see [Handoff from bot to live agent](https://developers.google.com/business-communications/business-messages/guides/how-to/message/conversations/bot-live-agent-handoff?hl=en).  
   
----  
+---
   
 # Agent Responses  
   
@@ -690,7 +690,7 @@ see [Handoff from bot to live agent](https://developers.google.com/business-comm
   
 ## [DialogFlow CX Doc](https://cloud.google.com/dialogflow/cx/docs/concept/integration/dialogflow-messenger#suggestion_chip_response_type)  
   
----  
+---
   
 # Testing  
   
@@ -764,7 +764,7 @@ for (let e of document.querySelectorAll("mat-option")) {
   
 ![alt_text](images/postman-post-response.png "image_tooltip")  
   
----  
+---
   
 # Quick Notes/References  
   

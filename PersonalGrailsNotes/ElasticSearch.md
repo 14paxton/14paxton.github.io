@@ -1,4 +1,4 @@
----  
+---
 title:        ElasticSearch  
 permalink:    PersonalGrailsNotes/ElasticSearch  
 category:     PersonalGrailsNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - personalgrailsnotes  
   - default  
----  
+---
   
   
 <br/>  

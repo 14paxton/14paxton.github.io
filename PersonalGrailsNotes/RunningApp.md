@@ -1,4 +1,4 @@
----  
+---
 title:        RunningApp  
 permalink:    PersonalGrailsNotes/RunningApp  
 category:     PersonalGrailsNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - personalgrailsnotes  
   - default  
----  
+---
   
   
 <br/>  

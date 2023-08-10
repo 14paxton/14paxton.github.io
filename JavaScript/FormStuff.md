@@ -1,4 +1,4 @@
----  
+---
 title:        FormStuff  
 permalink:    JavaScript/FormStuff  
 category:     JavaScript  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - javascript  
   - default              
----  
+---
   
   
 <br/>              

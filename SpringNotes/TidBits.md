@@ -1,4 +1,4 @@
----  
+---
 title:        TidBits  
 permalink:    SpringNotes/TidBits  
 category:     SpringNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - springnotes  
   - default  
----  
+---
   
   
 <br/>  
@@ -70,7 +70,7 @@ public @interface Findable {
 }  
 ```  
 
----  
+---
 
 ## Adding metadata to own classes
 
@@ -166,7 +166,7 @@ Found class: FirstAnnotatedClass, with meta name: Find me
 > This sort of scanning is very good fit for applications that already use Spring Framework.  
 > However, in the future, we’ll see how to solve the same problem, but without Spring.  
   
----  
+---
   
 # How to exclude classes/packages from Component Scan in Spring Framework  
   
@@ -287,7 +287,7 @@ expression="com\.farenda\.java\.spring\.excludescan\.Excluded.*"/>
 </context:component-scan>  
 ```  
   
----  
+---
   
 # Spring Constructor Injection  
   
@@ -408,7 +408,7 @@ Title 1: Effective Java, 2nd edition
 Title 2: Java Concurrency in Practice  
 ```   
   
----  
+---
   
 # Spring Field Injection  
   
@@ -519,7 +519,7 @@ Title 1: Effective Java, 3rd edition
 Title 2: Java Concurrency in Practice  
 ```  
   
----  
+---
   
 # Circular Reference - BeanCurrentlyInCreationException  
   

@@ -1,4 +1,4 @@
----  
+---
 title:        CMD  
 permalink:    Windows_Notes/CMD  
 category:     Windows_Notes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - windows_notes  
   - default  
----  
+---
   
   
 <br/>  

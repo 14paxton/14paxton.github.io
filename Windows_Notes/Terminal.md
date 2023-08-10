@@ -1,4 +1,4 @@
----  
+---
 title:        Terminal  
 permalink:    Windows_Notes/Terminal  
 category:     Windows_Notes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - windows_notes  
   - default  
----  
+---
   
   
 <br/>  

@@ -1,4 +1,4 @@
----  
+---
 title:     LooseNotes          
 layout:    default          
 parent:    Java          
@@ -8,7 +8,7 @@ share:     true
 shortRepo:          
   - javanotes          
   - default            
----  
+---
   
 <br/>          
   

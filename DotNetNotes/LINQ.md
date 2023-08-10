@@ -1,4 +1,4 @@
----  
+---
 title:        LINQ  
 permalink:    DotNetNotes/LINQ  
 category:     DotNetNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - dotnetnotes  
   - default  
----  
+---
   
   
 <br/>  

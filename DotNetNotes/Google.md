@@ -1,4 +1,4 @@
----  
+---
 title:        Google  
 permalink:    DotNetNotes/Google  
 category:     DotNetNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - dotnetnotes  
   - default  
----  
+---
   
   
 <br/>  
@@ -35,7 +35,7 @@ Table of contents
   
 ## [.Net client Library](https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Dialogflow.Cx.V3/latest)  
   
----  
+---
   
 ## [Authorizing Example](https://github.com/14paxton/GCPAuthorization)  
   
@@ -159,7 +159,7 @@ DetectIntentResponse response = sessionsClientFromCred.DetectIntent(request);
 Console.WriteLine(response);  
 ```  
   
----  
+---
   
 ## [REST API Client Library](https://developers.google.com/api-client-library/dotnet/apis)  
   
@@ -295,7 +295,7 @@ Console.WriteLine(response);
 }  
 ```  
   
----  
+---
   
 #### [WebhookRequest](https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Dialogflow.Cx.V3/latest/Google.Cloud.Dialogflow.Cx.V3.WebhookRequest#Google_Cloud_Dialogflow_Cx_V3_WebhookRequest__ctor)  
   
@@ -426,7 +426,7 @@ Console.WriteLine(response);
 }  
 ```  
   
----  
+---
   
 #### [WebhookResponse](https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Dialogflow.Cx.V3/latest/Google.Cloud.Dialogflow.Cx.V3.WebhookResponse)  
   
@@ -455,7 +455,7 @@ WebhookResponse response = new WebhookResponse
         };  
 ```  
   
----  
+---
   
 ##### JSON Example  
   
@@ -481,7 +481,7 @@ WebhookResponse response = new WebhookResponse
 }  
 ```  
   
----  
+---
   
 ### [Logging](https://cloud.google.com/logging/docs/reference/libraries)  
   
@@ -491,7 +491,7 @@ WebhookResponse response = new WebhookResponse
   
 #### [Configuring Longs](https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Diagnostics.AspNetCore3/latest#configuration-1)  
   
----  
+---
   
 ### [Google.Protobuf.WellKnownTypes](https://protobuf.dev/reference/protobuf/google.protobuf/#value)  
   

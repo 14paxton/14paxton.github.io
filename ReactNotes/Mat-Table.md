@@ -1,4 +1,4 @@
----  
+---
 title: Mat-Table    
 permalink: ReactNotes/Mat-Table    
 category: ReactNotes    
@@ -9,7 +9,7 @@ share: true
 shortRepo:    
   - reactnotes    
   - default              
----  
+---
   
 <br/>              
   

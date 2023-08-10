@@ -1,4 +1,4 @@
----  
+---
 title:        SpringNotes  
 layout:       default  
 permalink:    SpringNotes/  
@@ -9,10 +9,10 @@ shortRepo:
   
   - springnotes  
   - default  
----  
+---
   
-# [REPO](https://github.com/14paxton/SpringNotes)  
----  
+# [REPO](https://github.com/14paxton/SpringNotes)
+---
   
 - Annotation CheatSheet  
   

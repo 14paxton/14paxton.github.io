@@ -1,4 +1,4 @@
----  
+---
 title:        Hibernate  
 permalink:    SpringNotes/Hibernate  
 category:     SpringNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - springnotes  
   - default  
----  
+---
   
   
 <br/>  

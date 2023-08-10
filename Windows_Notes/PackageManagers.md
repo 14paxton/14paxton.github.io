@@ -1,4 +1,4 @@
----  
+---
 title:        PackageManagers  
 permalink:    Windows_Notes/PackageManagers  
 category:     Windows_Notes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - windows_notes  
   - default  
----  
+---
   
   
 <br/>  
@@ -41,7 +41,7 @@ Table of contents
 winget install --id Logitech.UnifyingSoftware --force --accept-package-agreements --accept-source-agreements -h -l "C:\Users\Brandon003842\LogiTech"  
 ```  
   
----   
+--- 
   
 ## Quick Scripts  
   

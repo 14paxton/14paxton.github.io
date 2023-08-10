@@ -1,4 +1,4 @@
----  
+---
 title:        Array-Loop-List-Map  
 permalink:    GroovyNotes/Array-Loop-List-Map  
 category:     GroovyNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - groovynotes  
   - default  
----  
+---
   
   
 <br/>  

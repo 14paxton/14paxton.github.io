@@ -1,4 +1,4 @@
----  
+---
 title:        CLI_Gradlew  
 permalink:    PersonalGrailsNotes/CLI_Gradlew  
 category:     PersonalGrailsNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - personalgrailsnotes  
   - default  
----  
+---
   
   
 <br/>  

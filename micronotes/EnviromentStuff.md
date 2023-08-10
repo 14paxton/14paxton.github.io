@@ -1,4 +1,4 @@
----  
+---
 title:        EnviromentStuff  
 permalink:    micronotes/EnviromentStuff  
 category:     micronotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - micronotes  
   - default  
----  
+---
   
   
 <br/>  

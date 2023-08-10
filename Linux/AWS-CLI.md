@@ -1,4 +1,4 @@
----  
+---
 title: AWS-CLI.md  
 permalink: Linux/AWS-CLI  
 category:  Linux  
@@ -9,7 +9,7 @@ share: true
 shortRepo:  
   - linux  
   - default  
----  
+---
   
   
 <br/>  

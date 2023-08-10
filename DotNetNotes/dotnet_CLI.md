@@ -1,4 +1,4 @@
----  
+---
 title:        dotnet_CLI  
 permalink:    DotNetNotes/dotnet_CLI  
 category:     DotNetNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - dotnetnotes  
   - default  
----  
+---
   
   
 <br/>  

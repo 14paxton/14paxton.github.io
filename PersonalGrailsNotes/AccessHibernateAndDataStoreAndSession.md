@@ -1,4 +1,4 @@
----  
+---
 title:        AccessHibernateAndDataStoreAndSession  
 permalink:    PersonalGrailsNotes/AccessHibernateAndDataStoreAndSession  
 category:     PersonalGrailsNotes  
@@ -11,7 +11,7 @@ shortRepo:
 - personalgrailsnotes
 - default
 
----  
+---
 
 
 <br/>  

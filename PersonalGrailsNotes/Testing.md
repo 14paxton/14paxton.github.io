@@ -1,4 +1,4 @@
----  
+---
 title:        Testing  
 permalink:    PersonalGrailsNotes/Testing  
 category:     PersonalGrailsNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - personalgrailsnotes  
   - default  
----  
+---
   
   
 <br/>  

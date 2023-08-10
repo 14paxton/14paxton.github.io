@@ -1,4 +1,4 @@
----  
+---
 title:        GORM_WhereQueris  
 permalink:    PersonalGrailsNotes/GORM_WhereQueris  
 category:     PersonalGrailsNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - personalgrailsnotes  
   - default  
----  
+---
   
   
 <br/>  

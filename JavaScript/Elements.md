@@ -1,4 +1,4 @@
----  
+---
 title:        Elements  
 permalink:    JavaScript/Elements  
 category:     JavaScript  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - javascript  
   - default              
----  
+---
   
   
 <br/>              

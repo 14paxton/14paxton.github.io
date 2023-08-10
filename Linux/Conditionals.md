@@ -1,4 +1,4 @@
----  
+---
 title:        Conditionals  
 permalink:    Linux/Conditionals  
 category:     Linux  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - linux  
   - default  
----  
+---
   
   
 <br/>  

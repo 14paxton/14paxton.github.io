@@ -1,4 +1,4 @@
----  
+---
 title:        Controller  
 permalink:    PersonalGrailsNotes/Controller  
 category:     PersonalGrailsNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - personalgrailsnotes  
   - default  
----  
+---
   
   
 <br/>  

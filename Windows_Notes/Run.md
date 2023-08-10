@@ -1,4 +1,4 @@
----  
+---
 title:        Run  
 permalink:    Windows_Notes/Run  
 category:     Windows_Notes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - windows_notes  
   - default  
----  
+---
   
   
 <br/>  

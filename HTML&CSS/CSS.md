@@ -1,4 +1,4 @@
----  
+---
 title:        CSS  
 permalink:    HTML&CSS/CSS  
 category:     HTML&CSS  
@@ -8,7 +8,7 @@ has_children: false
 share:        true  
 shortRepo:  
   - default        
----  
+---
   
 <details markdown="block">            
 <summary>            
@@ -29,7 +29,7 @@ Table of contents
   
 ![cssSelectors.png](..%2Fassets%2FcssSelectors.png)  
   
----  
+---
   
 # Use SVG in CSS  
   

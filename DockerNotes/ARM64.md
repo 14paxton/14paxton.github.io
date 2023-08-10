@@ -1,4 +1,4 @@
----  
+---
 title:        ARM64  
 permalink:    DockerNotes/ARM64  
 category:     DockerNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - dockernotes  
   - default            
----  
+---
   
   
 <br/>            

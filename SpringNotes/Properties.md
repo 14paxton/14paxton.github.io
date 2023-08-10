@@ -1,4 +1,4 @@
----  
+---
 title:        Properties  
 permalink:    SpringNotes/Properties  
 category:     SpringNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - springnotes  
   - default  
----  
+---
   
   
 <br/>  
@@ -32,9 +32,9 @@ Table of contents
 # Add active profiles  
   
 ```yaml  
----  
+---
 my.property: fromyamlfile  
----  
+---
 spring.profiles: prod  
 spring.profiles.include:  
   - proddb  

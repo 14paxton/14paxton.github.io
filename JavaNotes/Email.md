@@ -1,4 +1,4 @@
----  
+---
 title:     Email            
 layout:    default            
 parent:    Java            
@@ -8,7 +8,7 @@ share:     true
 shortRepo:          
   - javanotes          
   - default            
----  
+---
   
   
 <br/>          
@@ -71,7 +71,7 @@ This is a test email is the subject of the email
   
 This is the body of the email. is the body of the email  
           
----  
+---
   
 # Spring  
   
@@ -190,7 +190,7 @@ String msgStyled="This is my <b style='color:red;'>bold-red email</b> using Java
   
 This_String_will hold our styled text to be sent in the email body.  
           
----  
+---
   
 # Google Cloud Function  
   
@@ -228,7 +228,7 @@ public class SendEmailFunction implements HttpFunction {
 ```          
   
           
----  
+---
   
 # [Using GCP App Enging](https://cloud.google.com/appengine/docs/legacy/standard/java/mail/sending-mail-with-mail-api)  
   
@@ -277,7 +277,7 @@ sender.sendMessage("to@example.com", "Subject", "Body");
 ```          
   
           
----  
+---
   
 # [Through Gmail Server](https://developers.google.com/gmail/api/guides/sending)  
   
@@ -336,7 +336,7 @@ class Mailer {
 ```          
   
           
----  
+---
   
 # With GCP and SendGrid API  
   

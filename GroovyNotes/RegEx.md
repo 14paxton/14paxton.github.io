@@ -1,4 +1,4 @@
----  
+---
 title: RegEx  
 permalink: GroovyNotes/RegEx  
 category:  GroovyNotes  
@@ -9,7 +9,7 @@ share: true
 shortRepo:  
   - groovynotes  
   - default  
----  
+---
   
   
 <br/>  

@@ -1,4 +1,4 @@
----  
+---
 title:        Windows_Notes  
 layout:       default  
 permalink:    Windows_Notes/  
@@ -9,6 +9,6 @@ shortRepo:
   
   - windows_notes  
   - default  
----  
+---
   
 # [REPO](https://github.com/14paxton/Windows_Notes)

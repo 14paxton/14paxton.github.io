@@ -1,4 +1,4 @@
----  
+---
 title: MetaProgramming  
 permalink: GroovyNotes/MetaProgramming  
 category:  GroovyNotes  
@@ -9,7 +9,7 @@ share: true
 shortRepo:  
   - groovynotes  
   - default  
----  
+---
   
   
 <br/>  

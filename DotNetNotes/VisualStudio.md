@@ -1,4 +1,4 @@
----  
+---
 title:        VisualStudio  
 permalink:    DotNetNotes/VisualStudio  
 category:     DotNetNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - dotnetnotes  
   - default  
----  
+---
   
   
 <br/>  

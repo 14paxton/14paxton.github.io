@@ -1,4 +1,4 @@
----  
+---
 title:        Security  
 permalink:    SpringNotes/Security  
 category:     SpringNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - springnotes  
   - default  
----  
+---
   
   
 <br/>  

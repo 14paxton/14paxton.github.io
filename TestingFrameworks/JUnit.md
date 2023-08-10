@@ -1,4 +1,4 @@
----  
+---
 title: JUnit  
 permalink: TestingFrameworks/JUnit  
 category:  TestingFrameworks  
@@ -9,7 +9,7 @@ share: true
 shortRepo:  
   - testingframeworks  
   - default  
----  
+---
   
 <br/>  
 <details markdown="block">  

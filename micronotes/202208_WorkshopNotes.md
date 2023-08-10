@@ -1,4 +1,4 @@
----  
+---
 title:        202208_WorkshopNotes  
 permalink:    micronotes/202208_WorkshopNotes  
 category:     micronotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - micronotes  
   - default  
----  
+---
   
   
 <br/>  
