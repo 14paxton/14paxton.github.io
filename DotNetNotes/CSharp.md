@@ -199,7 +199,7 @@ string[] stringArray = urlPattern.Split(msg);
 
 # Stream
 
-```csharp  
+```csharp
 using System;  
 using System.Threading.Tasks;  
 using System.Windows;  
