@@ -21,8 +21,8 @@ lsi:                     false
 excerpt_separator:       "\n\n"
 incremental:             false
 kramdown:
-  input: GFM
-  gfm_quirks: [ paragraph_end ]
+  input: Kramdown
+  #gfm_quirks: [ paragraph_end ]
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     block:
@@ -39,8 +39,8 @@ kramdown:
   toc_levels: [ 1, 2, 3, 4, 5, 6 ]
   smart_quotes:       lsquo,rsquo,ldquo,rdquo
   hard_wrap: false
-#  footnote_nr:        1
-  show_warnings:      true
+  #footnote_nr:        1
+  #show_warnings:      true
 
 plugins:
   - jekyll-default-layout
