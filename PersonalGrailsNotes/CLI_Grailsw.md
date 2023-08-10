@@ -28,19 +28,7 @@ Table of contents
 ***  
   
 <br/>  
-  
-- [Grails](CLI_Grailsw.md#grails){#toc-grails}  
-    - [Set System Props](CLI_Grailsw.md#set-system-props){#toc-set-system-props}  
-    - [Testing](CLI_Grailsw.md#testing){#toc-testing}  
-        - [](CLI_Grailsw.md#section){#toc-section}  
-- [Liquibase](CLI_Grailsw.md#liquibase){#toc-liquibase}  
-    - [clear liquibase  
-      checksums](#clear-liquibase-checksums){#toc-clear-liquibase-checksums}  
-    - [clear liquibase  
-      locks](#clear-liquibase-locks){#toc-clear-liquibase-locks}  
-    - [ignore checksums in  
-      liquibase](#ignore-checksums-in-liquibase){#toc-ignore-checksums-in-liquibase}  
-  
+ 
 # Grails Command Line  
   
 <table class="tableblock frame-all grid-all stretch">  

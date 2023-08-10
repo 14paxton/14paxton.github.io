@@ -28,16 +28,7 @@ Table of contents
 ***  
   
 <br/>  
-  
-- [Run App](CLI_Gradlew.md#run-app)  
-    - [Run with jvm  
-      debug](#run-with-jvm-debug)  
-- [Testing](CLI_Gradlew.md#testing)  
-    - [run with spaces in method  
-      name](#run-with-spaces-in-method-name)  
-    - [run jvm debug](CLI_Gradlew.md#run-jvm-debug)  
-    - [Set system  
-      properties](#set-system-properties)  
+
   
 # Run App  
   
