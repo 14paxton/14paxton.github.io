@@ -22,9 +22,14 @@ Table of contents
 <br/>              
   
 ***              
+
+<br/>           
+
+# [Kramdown markdown cheat sheet](https://aoterodelaroza.github.io/devnotes/kramdown-cheatsheet/)
+
   
-<br/>              
-  
+---
+
 # [YML Config](https://jekyllrb.com/docs/configuration/default/)  
   
 ## Where things are  

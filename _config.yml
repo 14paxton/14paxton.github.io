@@ -15,13 +15,13 @@ aux_links:
 aux_links_new_tab:       true
 
 # Conversion
-markdown:                kramdown
+#markdown:                kramdown
 highlighter:             rouge
 lsi:                     false
 excerpt_separator:       "\n\n"
 incremental:             false
 kramdown:
-  input: Kramdown
+  #input: Kramdown
   #gfm_quirks: [ paragraph_end ]
   syntax_highlighter: rouge
   syntax_highlighter_opts:
