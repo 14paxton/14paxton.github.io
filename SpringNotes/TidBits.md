@@ -28,172 +28,54 @@ Table of contents
 ***  
   
 <br/>  
-  
-<div>  
-<h1  
-        data-toc-skip=""  
-        style="box-sizing: border-box; margin-top: 3rem; margin-bottom: 1.5rem; font-weight: 400; line-height: 1.2; font-size: 1.9rem; color: var(--heading-color); font-family: Lato, &quot;Microsoft Yahei&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"  
->Spring find annotated classes</h1>  
-  
-<div  
-        class="post-content"  
-        style="box-sizing: border-box; font-size: 1.03rem; margin-top: 2rem; overflow-wrap: break-word; color: rgb(52, 52, 60); font-family: &quot;Source Sans Pro&quot;, &quot;Microsoft Yahei&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"  
-><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem;">How to find annotated classes  
-                                                                          using<span> </span><strong style="box-sizing: border-box; font-weight: bolder;">Spring  
-                                                                                                                                                          Framework</strong><span> </span>and  
-                                                                          read metadata from them? Sometimes you may  
-                                                                          want to attach metadata to your classes using  
-                                                                          custom annotations. Here’s an example how you  
-                                                                          can  
-                                                                          leverage<span> </span><strong style="box-sizing: border-box; font-weight: bolder;">Spring</strong>’s  
-                                                                          classpath scanning mechanism to do that.</p>  
-	<h2  
-            id="the-spring-bean-problem"  
-            style="box-sizing: border-box; margin-top: 2.5rem; margin-bottom: 1.25rem; font-weight: 400; line-height: 1.2; font-size: 1.5rem; color: var(--heading-color); font-family: Lato, &quot;Microsoft Yahei&quot;, sans-serif;"  
-    ><span  
-            class="mr-2" style="box-sizing: border-box; margin-right: 0.5rem !important;"  
-    >The Spring Bean problem</span><a  
-            href="https://farenda.com/spring-find-annotated-classes/#the-spring-bean-problem" class="anchor text-muted"  
-            style="box-sizing: border-box; color: rgb(108, 117, 125) !important; text-decoration: none; background-color: transparent; font-size: 19.2px; visibility: hidden; opacity: 0; transition: opacity 0.25s ease-in 0s, visibility 0s ease-in 0.25s; border-bottom: 1px solid var(--link-underline-color);"  
-    ><i  
-            class="fas fa-hashtag"  
-            style="box-sizing: border-box; -webkit-font-smoothing: antialiased; display: inline-block; font-style: normal; font-variant: normal; text-rendering: auto; line-height: 1; font-family: &quot;Font Awesome 5 Free&quot;; font-weight: 900; user-select: none;"  
-    ></i></a></h2>  
-	<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem;">If you use Spring annotations  
-	                                                                         like<span> </span><strong style="box-sizing: border-box; font-weight: bolder;">@Component</strong>,<span> </span><strong  
-                style="box-sizing: border-box; font-weight: bolder;"  
-        >@Repository</strong><span> </span>or<span> </span><strong  
-                style="box-sizing: border-box; font-weight: bolder;"  
-        >@Service</strong>, then Spring will find such classes, but will make them Spring beans.</p>  
-	<h2  
-            id="classpath-scanner-customization"  
-            style="box-sizing: border-box; margin-top: 2.5rem; margin-bottom: 1.25rem; font-weight: 400; line-height: 1.2; font-size: 1.5rem; color: var(--heading-color); font-family: Lato, &quot;Microsoft Yahei&quot;, sans-serif;"  
-    ><span  
-            class="mr-2" style="box-sizing: border-box; margin-right: 0.5rem !important;"  
-    >Classpath Scanner customization</span><a  
-            href="https://farenda.com/spring-find-annotated-classes/#classpath-scanner-customization" class="anchor text-muted"  
-            style="box-sizing: border-box; color: rgb(108, 117, 125) !important; text-decoration: none; background-color: transparent; font-size: 19.2px; visibility: hidden; opacity: 0; transition: opacity 0.25s ease-in 0s, visibility 0s ease-in 0.25s; border-bottom: 1px solid var(--link-underline-color);"  
-    ><i  
-            class="fas fa-hashtag"  
-            style="box-sizing: border-box; -webkit-font-smoothing: antialiased; display: inline-block; font-style: normal; font-variant: normal; text-rendering: auto; line-height: 1; font-family: &quot;Font Awesome 5 Free&quot;; font-weight: 900; user-select: none;"  
-    ></i></a></h2>  
-	<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem;">Good news is that Spring classpath scanning  
-	                                                                         mechanism is configurable and available in  
-	                                                                         any Spring application. To use custom  
-	                                                                         annotations we have to create an instance  
-	                                                                         of  
-	                                                                         ClassPathScanningCandidateComponentProvider  
-	                                                                         and set appropriate filter - here it  
-	                                                                         is<span> </span><strong style="box-sizing: border-box; font-weight: bolder;">AnnotationTypeFilter</strong>.  
-	                                                                         It  
-	                                                                         returns<span> </span><strong style="box-sizing: border-box; font-weight: bolder;">BeanDefinitions</strong><span> </span>that  
-	                                                                         contains names of found class from which we  
-	                                                                         can get detailed information. The following  
-	                                                                         example will clarify that.</p>  
-	<h2  
-            id="own-annotations"  
-            style="box-sizing: border-box; margin-top: 2.5rem; margin-bottom: 1.25rem; font-weight: 400; line-height: 1.2; font-size: 1.5rem; color: var(--heading-color); font-family: Lato, &quot;Microsoft Yahei&quot;, sans-serif;"  
-    ><span class="mr-2" style="box-sizing: border-box; margin-right: 0.5rem !important;">Own annotations</span><a  
-            href="https://farenda.com/spring-find-annotated-classes/#own-annotations" class="anchor text-muted"  
-            style="box-sizing: border-box; color: rgb(108, 117, 125) !important; text-decoration: none; background-color: transparent; font-size: 19.2px; visibility: hidden; opacity: 0; transition: opacity 0.25s ease-in 0s, visibility 0s ease-in 0.25s; border-bottom: 1px solid var(--link-underline-color);"  
-    ><i  
-            class="fas fa-hashtag"  
-            style="box-sizing: border-box; -webkit-font-smoothing: antialiased; display: inline-block; font-style: normal; font-variant: normal; text-rendering: auto; line-height: 1; font-family: &quot;Font Awesome 5 Free&quot;; font-weight: 900; user-select: none;"  
-    ></i></a></h2>  
-	<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem;">We create our custom annotation that allows  
-	                                                                         us to attach some metatdata:</p>  
-	<div  
-            class="language-java highlighter-rouge"  
-            style="box-sizing: border-box; border-radius: 6px; background: var(--highlight-bg-color); color: var(--highlighter-rouge-color); margin-top: 0.5rem; margin-bottom: 1.2em;"  
-    >  
-		<div  
-                class="code-header" style="box-sizing: border-box; user-select: none; display: flex; justify-content: space-between; align-items: center; height: 2.25rem;"  
-        >  
-                <span data-label-text="Java" style="box-sizing: border-box;"><i  
-                        class="fas fa-code small"  
-                        style="box-sizing: border-box; font-size: 11.536px; font-weight: 900; -webkit-font-smoothing: antialiased; display: inline-block; font-style: normal; font-variant: normal; text-rendering: auto; line-height: 1; font-family: &quot;Font Awesome 5 Free&quot;; user-select: none; margin-right: 0.4rem; color: var(--code-header-icon-color);"  
-                ></i></span>  
-			<button  
-                    aria-label="copy" data-title-succeed="Copied!" data-original-title="" title=""  
-                    style="box-sizing: border-box; border-radius: 6px; margin: 0px; font-family: inherit; font-size: inherit; line-height: inherit; overflow: visible; text-transform: none; appearance: button; cursor: pointer; border: 1px solid rgba(0, 0, 0, 0); height: 2.25rem; width: 2.25rem; padding: 0px; background-color: inherit;"  
-            ><i  
-                    class="far fa-clipboard"  
-                    style="box-sizing: border-box; -webkit-font-smoothing: antialiased; display: inline-block; font-style: normal; font-variant: normal; text-rendering: auto; line-height: 1; font-weight: 400; font-family: &quot;Font Awesome 5 Free&quot;; user-select: none; color: var(--code-header-icon-color);"  
-            ></i></button>  
-		</div>  
-		<code style=" , &quot;, monospace;"> </code>  
-	</div>  
-</div>  
-</div>  
-  
+
+# Spring find annotated classes
+=============================
+
+How to find annotated classes using**Spring Framework**and read metadata from them? Sometimes you may want to attach metadata to your classes using custom annotations. Here’s an example how you can leverage**Spring**’s classpath scanning mechanism to do that.
+
+[The Spring Bean problem](https://farenda.com/spring-find-annotated-classes/#the-spring-bean-problem)
+-----------------------------------------------------------------------------------------------------
+
+If you use Spring annotations like**@Component**,**@Repository**or**@Service**, then Spring will find such classes, but will make them Spring beans.
+
+[Classpath Scanner customization](https://farenda.com/spring-find-annotated-classes/#classpath-scanner-customization)
+---------------------------------------------------------------------------------------------------------------------
+
+Good news is that Spring classpath scanning mechanism is configurable and available in any Spring application. To use custom annotations we have to create an instance of ClassPathScanningCandidateComponentProvider and set appropriate filter - here it is**AnnotationTypeFilter**. It returns**BeanDefinitions**that contains names of found class from which we can get detailed information. The following example will clarify that.
+
+[Own annotations](https://farenda.com/spring-find-annotated-classes/#own-annotations)
+-------------------------------------------------------------------------------------
+
+We create our custom annotation that allows us to attach some metatdata:
+
 ```java  
-  
-import java.lang.annotation.ElementType;  
-import java.lang.annotation.Retention;  
-import java.lang.annotation.RetentionPolicy;  
-import java.lang.annotation.Target;  
-  
-// Make the annotation available at runtime:   
-@Retention(RetentionPolicy.RUNTIME)  
-// Allow to use only on types:   
-@Target(ElementType.TYPE)  
-public @interface Findable {  
-    /**      * User friendly name of annotated class.      */  
-    String name();  
-}   
-```  
-  
-<div><h2 id="summary" style="box-sizing: border-box; margin-top: 2.5rem; margin-bottom: 1.25rem; font-weight: 400; line-height: 1.2; font-size: 1.5rem; color: var(--heading-color); font-family: Lato, &quot;Microsoft Yahei&quot;, sans-serif;"><span class="mr-2" style="box-sizing: border-box; margin-right: 0.5rem !important;">  
-Summary</span><a href="https://farenda.com/spring-find-annotated-classes/#summary" class="anchor text-muted" style="box-sizing: border-box; color: rgb(108, 117, 125) !important; text-decoration: none; background-color: transparent; font-size: 19.2px; visibility: hidden; opacity: 0; transition: opacity 0.25s ease-in 0s, visibility 0s ease-in 0.25s; border-bottom: 1px solid var(--link-underline-color);"><i class="fas fa-hashtag" style="box-sizing: border-box; -webkit-font-smoothing: antialiased; display: inline-block; font-style: normal; font-variant: normal; text-rendering: auto; line-height: 1; font-family: &quot;Font Awesome 5 Free&quot;; font-weight: 900; user-select: none;"></i></a></h2><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem;">  
-This sort of scanning is very good fit for applications that already use Spring Framework. However, in the future, we’ll see how to solve the same problem, but without Spring.</p></div>  
-  
----  
-  
-# Spring find annotated classes  
-  
-How to find annotated classes using Spring Framework and read metadata from them?  
-Sometimes you may want to attach metadata to your classes using custom annotations.  
-Here’s an example how you can  
-leverage Spring’s classpath scanning mechanism to do that.  
-  
-The Spring Bean problem  
-If you use Spring annotations like @Component, @Repository or @Service, then Spring will find such classes, but will make them Spring beans.  
-  
-Classpath Scanner customization  
-Good news is that Spring classpath scanning mechanism is configurable and available in any Spring application.  
-To use custom annotations we have to create an instance of  
-ClassPathScanningCandidateComponentProvider and set appropriate filter - here it is AnnotationTypeFilter.  
-It returns BeanDefinitions that contains names of found class from which we can get detailed  
-information.  
-The following example will clarify that.  
-  
-Own annotations  
-We create our custom annotation that allows us to attach some metatdata:  
-  
-```java  
-  
-import java.lang.annotation.ElementType;  
-import java.lang.annotation.Retention;  
-import java.lang.annotation.RetentionPolicy;  
-import java.lang.annotation.Target;  
-  
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
 // Make the annotation available at runtime:  
-@Retention(RetentionPolicy.RUNTIME)  
+@Retention(RetentionPolicy.RUNTIME)
 // Allow to use only on types:  
-@Target(ElementType.TYPE)  
-public @interface Findable {  
-  
-    /**  
+@Target(ElementType.TYPE)
+public @interface Findable {
+
+    /**
      * User friendly name of annotated class.  
-     */  
-    String name();  
-  
+     */
+    String name();
+
 }  
 ```  
-  
-Adding metadata to own classes  
-Sample classes annotated with the custom annotation:  
-  
+
+---  
+
+## Adding metadata to own classes
+
+### Sample classes annotated with the custom annotation:
+
 ```java  
   
 @Findable(name = "Find me")  
@@ -207,8 +89,9 @@ public class FirstAnnotatedClass {
 public class SecondAnnotatedClass {  
 }  
 ```  
-  
-Spring dependency  
+
+### Spring dependency
+
 The classpath scanner is provided by spring-context project.  
 Here’s the relevant Maven dependency:  
   
@@ -220,8 +103,9 @@ Here’s the relevant Maven dependency:
     <version>4.2.0.RELEASE</version>  
 </dependency>  
 ```  
-  
-The Scanner  
+
+### The Scanner
+
 The Java code below is using ClassPathScanningCandidateComponentProvider to scan classes in com.farenda.java.lang package.  
   
 ```java  
