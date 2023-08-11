@@ -164,17 +164,17 @@ The workaround to this is to disable toolchain detection with this command
 ./gradlew-q javaToolchains    
 ```    
     
-> output    
-> ...    
-    
-+ Oracle JDK 11.0.18+9-LTS-jvmci-22.3-b11    
+> output
+
+```shell
+Oracle JDK 11.0.18+9-LTS-jvmci-22.3-b11    
   | Location:           /Library/Java/JavaVirtualMachines/graalvm-ee-java11-22.3.1/Contents/Home    
   | Language Version:   11    
   | Vendor:             Oracle    
   | Architecture:       x86_64    
   | Is JDK:             true    
   | Detected by:        Current JVM    
-  ...    
+```
     
 # Plugins    
     
