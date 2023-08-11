@@ -28,7 +28,3 @@ Table of contents
 ***                    
     
 <br/>    
-    
-# Add Gist List to relevant notes    
-    
-# Add Rest of personal notes
