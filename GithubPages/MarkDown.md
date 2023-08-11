@@ -97,7 +97,7 @@ I am a info message
 I am a warning message                
 </div>                
     
----    
+---  
     
 # Pandoc    
     
