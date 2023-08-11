@@ -1,8 +1,8 @@
 ---
-title:        ToDo    
-permalink:    JobPrep/ToDo    
-category:     JobPrep    
-parent:       JobPrep    
+title:        ToDo
+permalink: GithubPages/ToDo
+category:     JobPrep
+parent:    MyPersonalDocsAndStuff
 layout:       default    
 has_children: false    
 share:        true    
