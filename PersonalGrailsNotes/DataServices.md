@@ -38,4 +38,3 @@ Table of contents
     
     
 # [dataservice query searching multiple columns by like   ]( https://gist.github.com/14paxton/e72c14086f5d9a6a0c58dc8463b93561)
-    
