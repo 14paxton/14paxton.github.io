@@ -26,11 +26,7 @@ Table of contents
     
 <br/>              
     
-# Code To Know    
-    
-## Docker_Handbook    
-    
-<embed src="/assets/images/docker_handbook.pdf" width="80%" height="600" type="application/pdf">        
+# Code To Know            
     
 ---  
     
@@ -133,12 +129,6 @@ Table of contents
 ## React‐Questions    
     
 <embed src="/assets/images/react_questions.pdf" width="80%" height="600" type="application/pdf">           
-              
----    
-    
-## SQL_Cheatsheet    
-    
-<embed src="/assets/images/SQL_Cheatsheet.pdf" width="80%" height="600" type="application/pdf">              
               
 ---    
     
