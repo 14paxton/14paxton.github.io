@@ -167,7 +167,7 @@ The workaround to this is to disable toolchain detection with this command
 > output
 
 ...
-  + Oracle JDK 11.0.18+9-LTS-jvmci-22.3-b11    
+Oracle JDK 11.0.18+9-LTS-jvmci-22.3-b11    
   | Location:           /Library/Java/JavaVirtualMachines/graalvm-ee-java11-22.3.1/Contents/Home    
   | Language Version:   11    
   | Vendor:             Oracle    
