@@ -1,4 +1,4 @@
----  
+---
 title:        Services    
 permalink:    PersonalGrailsNotes/Services    
 category:     PersonalGrailsNotes    
@@ -11,7 +11,7 @@ shortRepo:
   - personalgrailsnotes  
   - default  
   
----  
+---
   
   
 <br/>    

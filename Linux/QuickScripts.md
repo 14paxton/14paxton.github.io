@@ -1,4 +1,4 @@
----  
+---
 title:        QuickScripts    
 permalink:    Linux/QuickScripts    
 category:     Linux    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - linux    
   - default    
----  
+---
     
     
 <br/>    

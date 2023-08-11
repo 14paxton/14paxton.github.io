@@ -1,4 +1,4 @@
----  
+---
 title:        GRAALVM    
 permalink:    micronotes/GRAALVM    
 category:     micronotes    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - micronotes    
   - default    
----  
+---
     
     
 <br/>    

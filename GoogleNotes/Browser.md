@@ -1,4 +1,4 @@
----  
+---
 title: Browser    
 permalink: GoogleNotes/Browser    
 category:  GoogleNotes    
@@ -9,7 +9,7 @@ share: true
 shortRepo:    
   - googlenotes    
   - default              
----  
+---
     
     
 <br/>              
@@ -73,7 +73,7 @@ https://screencast.apps.chrome/ is a screen recording app that only works on Chr
     
 https://cursive.apps.chrome is a note taking app that can use handwriting.    
     
----  
+---
     
 # Extensions    
     

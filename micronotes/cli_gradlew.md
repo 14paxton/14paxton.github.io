@@ -1,4 +1,4 @@
----  
+---
 title:        cli_gradlew    
 permalink:    micronotes/cli_gradlew    
 category:     micronotes    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - micronotes    
   - default    
----  
+---
     
     
 <br/>    
@@ -39,7 +39,7 @@ Table of contents
 ./gradlew runSingle --debug-jvm -PmainClass=Mai    
 ```    
     
-----  
+----
     
 ## build.gradle    
     

@@ -1,4 +1,4 @@
----  
+---
 title:        CSharp  
 permalink:    DotNetNotes/csharp  
 category:     DotNetNotes  
@@ -9,7 +9,7 @@ share:        true
 shortRepo:  
   - dotnetnotes  
   - default    
----  
+---
   
   
 <br/>    
@@ -36,7 +36,7 @@ Table of contents
 [library](https://github.com/RobThree/IdGen)    
 [generators](https://github.com/pbolduc/FlakeGen/tree/master/src/FlakeGen)  
     
----  
+---
   
 > GUID is 128 bit (16 bytes) data. To convert GUID to integer without data loss, we cannot use Int32 or Int64.  
   
@@ -61,14 +61,14 @@ class Program
 ```    
   
     
----  
+---
   
 ```csharp    
 Guid = Guid.NewGuid()    
 ```    
   
     
----  
+---
   
 ```csharp    
 var id64Generator = new Id64Generator();    
@@ -89,7 +89,7 @@ var id64Generator = new Id64Generator(10);
 ```    
   
     
----  
+---
   
 ```csharp    
 internal static class CorrelationIdGenerator    
@@ -129,7 +129,7 @@ internal static class CorrelationIdGenerator
 ```    
   
     
----  
+---
   
 # Looping  
   
@@ -235,7 +235,7 @@ namespace WpfApplication
 ```    
   
     
----  
+---
   
 # Text Writer  
   

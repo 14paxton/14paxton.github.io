@@ -1,4 +1,4 @@
----  
+---
 title: WebWorker      
 permalink: ReactNotes/WebWorker      
 category: ReactNotes      
@@ -11,7 +11,7 @@ shortRepo:
 - reactnotes  
 - default  
   
----  
+---
   
 <br/>                
   

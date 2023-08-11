@@ -1,4 +1,4 @@
----  
+---
 title:        ReactHookForm      
 permalink:    ReactNotes/ReactHookForm      
 category:     ReactNotes      
@@ -9,7 +9,7 @@ share:        true
 shortRepo:      
   - reactnotes      
   - default                
----  
+---
     
 {% raw %}      
 <br/>    
@@ -32,7 +32,7 @@ Table of contents
 # [React Hook Forms Components](https://github.com/14paxton/ReactHookFormDynamicComponents)    
     
       
----  
+---
     
 # testing context    
     

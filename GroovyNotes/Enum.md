@@ -1,4 +1,4 @@
----  
+---
 title:        Enum    
 permalink:    GroovyNotes/Enum    
 category:     GroovyNotes    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - groovynotes    
   - default    
----  
+---
     
     
 <br/>    

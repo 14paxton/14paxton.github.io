@@ -1,4 +1,4 @@
----  
+---
 title:        WorkingWithFiles    
 permalink:    JavaScript/WorkingWithFiles    
 category:     JavaScript    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - javascript    
   - default                
----  
+---
     
     
 <br/>                

@@ -1,4 +1,4 @@
----  
+---
 title:        Enviroment    
 permalink:    PersonalGrailsNotes/Enviroment    
 category:     PersonalGrailsNotes    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - personalgrailsnotes    
   - default    
----  
+---
     
     
 <br/>    

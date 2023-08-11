@@ -1,4 +1,4 @@
----  
+---
 title:        QuerySelector-Examples    
 permalink:    JavaScript/QuerySelector-Examples    
 category:     JavaScript    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - javascript    
   - default                
----  
+---
     
     
 <br/>                

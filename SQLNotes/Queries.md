@@ -1,4 +1,4 @@
----  
+---
 title:        Queries  
 permalink:    SQLNotes/Queries  
 category:     SQLNotes  
@@ -11,7 +11,7 @@ shortRepo:
   - sqlnotes  
   - default  
   
----  
+---
   
 ***            
   

@@ -1,4 +1,4 @@
----  
+---
 title:        DateAndTime    
 permalink:    JavaScript/DateAndTime    
 category:     JavaScript    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - javascript    
   - default                
----  
+---
     
     
 <br/>                

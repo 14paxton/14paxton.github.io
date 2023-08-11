@@ -1,4 +1,4 @@
----  
+---
 title:        Install    
 permalink:    DockerNotes/Install    
 category:     DockerNotes    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - dockernotes    
   - default              
----  
+---
     
     
 <br/>              

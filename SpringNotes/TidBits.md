@@ -1,4 +1,4 @@
----  
+---
 title:        TidBits    
 permalink:    SpringNotes/TidBits    
 category:     SpringNotes    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - springnotes    
   - default    
----  
+---
     
     
 <br/>    
@@ -33,19 +33,19 @@ Table of contents
 =============================  
   
 How to find annotated classes using**Spring Framework**and read metadata from them? Sometimes you may want to attach metadata to your classes using custom annotations. Here’s an example how you can leverage**Spring**’s classpath scanning mechanism to do that.  
-  
-[The Spring Bean problem](https://farenda.com/spring-find-annotated-classes/#the-spring-bean-problem)  
------------------------------------------------------------------------------------------------------  
+
+[The Spring Bean problem](https://farenda.com/spring-find-annotated-classes/#the-spring-bean-problem)
+-----------------------------------------------------------------------------------------------------
   
 If you use Spring annotations like**@Component**,**@Repository**or**@Service**, then Spring will find such classes, but will make them Spring beans.  
-  
-[Classpath Scanner customization](https://farenda.com/spring-find-annotated-classes/#classpath-scanner-customization)  
----------------------------------------------------------------------------------------------------------------------  
+
+[Classpath Scanner customization](https://farenda.com/spring-find-annotated-classes/#classpath-scanner-customization)
+---------------------------------------------------------------------------------------------------------------------
   
 Good news is that Spring classpath scanning mechanism is configurable and available in any Spring application. To use custom annotations we have to create an instance of ClassPathScanningCandidateComponentProvider and set appropriate filter - here it is**AnnotationTypeFilter**. It returns**BeanDefinitions**that contains names of found class from which we can get detailed information. The following example will clarify that.  
-  
-[Own annotations](https://farenda.com/spring-find-annotated-classes/#own-annotations)  
--------------------------------------------------------------------------------------  
+
+[Own annotations](https://farenda.com/spring-find-annotated-classes/#own-annotations)
+-------------------------------------------------------------------------------------
   
 We create our custom annotation that allows us to attach some metatdata:  
   
@@ -70,7 +70,7 @@ public @interface Findable {
 }    
 ```    
   
----  
+---
   
 ## Adding metadata to own classes  
   
@@ -166,7 +166,7 @@ Found class: FirstAnnotatedClass, with meta name: Find me
 > This sort of scanning is very good fit for applications that already use Spring Framework.    
 > However, in the future, we’ll see how to solve the same problem, but without Spring.    
     
----  
+---
     
 # How to exclude classes/packages from Component Scan in Spring Framework    
     
@@ -287,7 +287,7 @@ expression="com\.farenda\.java\.spring\.excludescan\.Excluded.*"/>
 </context:component-scan>    
 ```    
     
----  
+---
     
 # Spring Constructor Injection    
     
@@ -408,7 +408,7 @@ Title 1: Effective Java, 2nd edition
 Title 2: Java Concurrency in Practice    
 ```     
     
----  
+---
     
 # Spring Field Injection    
     
@@ -519,7 +519,7 @@ Title 1: Effective Java, 3rd edition
 Title 2: Java Concurrency in Practice    
 ```    
     
----  
+---
     
 # Circular Reference - BeanCurrentlyInCreationException    
     

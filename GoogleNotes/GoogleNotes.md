@@ -1,4 +1,4 @@
----  
+---
 title: GoogleNotes      
 layout: default    
 permalink: GoogleNotes/    
@@ -9,6 +9,6 @@ shortRepo:
       
   - googlenotes      
   - default             
----  
+---
     
 # [REPO](https://github.com/14paxton/GoogleNotes)

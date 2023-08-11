@@ -1,4 +1,4 @@
----  
+---
 title:        Document    
 permalink:    JavaScript/Document    
 category:     JavaScript    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - javascript    
   - default                
----  
+---
     
     
 <br/>                

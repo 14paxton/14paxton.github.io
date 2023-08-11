@@ -1,4 +1,4 @@
----  
+---
 title: Functions    
 permalink: GoogleNotes/Functions    
 category:  GoogleNotes    
@@ -9,7 +9,7 @@ share: true
 shortRepo:    
   - googlenotes    
   - default              
----  
+---
     
     
 <br/>              

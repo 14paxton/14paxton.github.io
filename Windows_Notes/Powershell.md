@@ -1,4 +1,4 @@
----  
+---
 title:        Powershell    
 permalink:    Windows_Notes/Powershell    
 category:     Windows_Notes    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - windows_notes    
   - default    
----  
+---
     
     
 <br/>    
@@ -54,7 +54,7 @@ Table of contents
 > The ```$env:ProgramFiles\PowerShell\7``` folder is added to ```$env:PATH```    
 > Folders for previously released versions are deleted    
     
----  
+---
     
 ```powershell    
 dotnet tool install --global PowerShell    
@@ -98,7 +98,7 @@ msiexec.exe /fmu .\PowerShell-7.3.0-win-x64.msi USE_MU=1 ENABLE_MU=1
     
 ```[System.EnvironmentVariableTarget]::Process```    
     
----  
+---
     
 > To get list of variables, you can use    
     
@@ -109,18 +109,18 @@ msiexec.exe /fmu .\PowerShell-7.3.0-win-x64.msi USE_MU=1 ENABLE_MU=1
 # This will mix all scopes in one output    
 ```    
     
----  
+---
     
 > To set variable, you can use    
     
 ```[System.Environment]::SetEnvironmentVariable($varName, $varValue, $scope)```    
     
----  
+---
     
 > If $scope is Machine or User, it will try to store data, otherwise it will throw an exception.    
     
----  
----  
+---
+---
     
 - ```$Env:```    
     

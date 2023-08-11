@@ -1,4 +1,4 @@
----  
+---
 title:        Java              
 layout:       default              
 permalink:    JavaNotes/Java              
@@ -8,10 +8,15 @@ share:        true
 shortRepo:            
   - javanotes            
   - default              
----  
+---
     
 <br/>            
-___            
+___      
+
 ## [Repo](https://github.com/14paxton/JavaNotes)            
     
 ***
+
+# Design Patterns
+
+![JavaDesignPaterns.png](..%2Fassets%2Fimages%2FJavaDesignPaterns.png)

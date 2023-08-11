@@ -1,4 +1,4 @@
----  
+---
 title:        DockerNotes    
 layout:       default    
 permalink:    DockerNotes/    
@@ -9,6 +9,6 @@ shortRepo:
     
   - dockernotes    
   - default             
----  
+---
     
 # [REPO](https://github.com/14paxton/DockerNotes)

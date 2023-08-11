@@ -1,4 +1,4 @@
----  
+---
 title: Async_Parallel-Concurrency    
 permalink: GroovyNotes/Async_Parallel-Concurrency    
 category:  GroovyNotes    
@@ -9,7 +9,7 @@ share: true
 shortRepo:    
   - groovynotes    
   - default    
----  
+---
     
     
 <br/>    

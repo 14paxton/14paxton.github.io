@@ -1,4 +1,4 @@
----  
+---
 title: 1Remember      
 permalink: ReactNotes/1Remember      
 category:  ReactNotes      
@@ -9,7 +9,7 @@ share: true
 shortRepo:      
   - reactnotes      
   - default                
----  
+---
     
 <br/>                
     

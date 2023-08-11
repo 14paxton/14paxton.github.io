@@ -1,4 +1,4 @@
----  
+---
 title:        Window    
 permalink:    JavaScript/Window    
 category:     JavaScript    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - javascript    
   - default                
----  
+---
     
     
 <br/>                
@@ -136,7 +136,7 @@ var fourthWindow = window.open("https://www.wikipedia.org", "_blank", "toolbar=y
 firstWindow.document.write("<p>This is 'firstwindow'. I am 200px wide and 100px tall!</p>");    
 ```    
     
----  
+---
     
 # creating new window with html document    
     

@@ -1,4 +1,4 @@
----  
+---
 title:        CLI_Grailsw  
 permalink:    PersonalGrailsNotes/CLI_Grailsw  
 category:     PersonalGrailsNotes  
@@ -11,7 +11,7 @@ shortRepo:
   - personalgrailsnotes  
   - default  
   
----  
+---
   
   
 <br/>    

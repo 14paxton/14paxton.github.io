@@ -1,4 +1,4 @@
----  
+---
 title:        Spock    
 permalink:    TestingFrameworks/Spock    
 category:     TestingFrameworks    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - testingframeworks    
   - default    
----  
+---
     
 <br/>    
 <details markdown="block">    
@@ -78,7 +78,7 @@ mvn -Dtest=TestApp1#testHello* test
 mvn -Dtest=TestApp1#testHello*+testMagic* test    
 ```    
     
----  
+---
     
 - Don’t run tests:    
     
@@ -176,7 +176,7 @@ mvn install:install-file -Dfile=lang-groovy-5.2.2.jar \
     
 ```    
     
----  
+---
     
 ### Pom for running both spock and junit    
     
@@ -355,7 +355,7 @@ mvn install:install-file -Dfile=lang-groovy-5.2.2.jar \
     </dependencies>    
 ```    
     
----  
+---
     
 # Testing    
     
@@ -1039,7 +1039,7 @@ class CarFunctionalSpec extends Specification {
 }    
 ```    
     
----  
+---
     
 # BuildTest plugin    
     

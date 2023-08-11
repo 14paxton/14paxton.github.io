@@ -1,4 +1,4 @@
----  
+---
 title: Cloud    
 permalink: GoogleNotes/Cloud    
 category:  GoogleNotes    
@@ -9,7 +9,7 @@ share: true
 shortRepo:    
   - googlenotes    
   - default              
----  
+---
     
     
 <br/>              
@@ -105,7 +105,7 @@ To use any of the gcloud logging commands, you must have the serviceusage.servic
 | Update metrics | Logging/Logs Configuration Writer |    
 | Delete metrics | Logging/Logs Configuration Writer |    
     
-----------------------------------------------------------  
+----------------------------------------------------------
     
 ## Audits    
     

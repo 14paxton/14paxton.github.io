@@ -1,4 +1,4 @@
----  
+---
 title:        Jekyll          
 layout:       default          
 permalink:    GithubPages/Jekyll          
@@ -7,7 +7,7 @@ parent:       GHP
 has_children: false          
 share:        true          
 shortRepo:    ghpages          
----  
+---
     
     
 <details markdown="block">                
@@ -28,7 +28,7 @@ Table of contents
 # [Kramdown markdown cheat sheet](https://aoterodelaroza.github.io/devnotes/kramdown-cheatsheet/)  
   
     
----  
+---
   
 # [YML Config](https://jekyllrb.com/docs/configuration/default/)    
     
@@ -131,7 +131,7 @@ show_warnings: false
 ```              
     
               
----   
+--- 
     
 # [Metadata](https://jekyll.github.io/github-metadata/site.github/)    
     
@@ -217,7 +217,7 @@ show_warnings: false
 ```              
     
               
----   
+--- 
     
 # Resources    
     

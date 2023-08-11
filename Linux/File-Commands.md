@@ -1,4 +1,4 @@
----  
+---
 title: File-Commands    
 permalink: Linux/File-Commands    
 category:  Linux    
@@ -9,7 +9,7 @@ share: true
 shortRepo:    
   - linux    
   - default    
----  
+---
     
     
 <br/>    

@@ -1,4 +1,4 @@
----  
+---
 title:        Domain_Stuff  
 permalink:    PersonalGrailsNotes/Domain_Stuff  
 category:     PersonalGrailsNotes  
@@ -11,7 +11,7 @@ shortRepo:
   - personalgrailsnotes  
   - default  
   
----  
+---
   
   
 <br/>    

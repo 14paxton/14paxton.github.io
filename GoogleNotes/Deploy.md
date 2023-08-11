@@ -1,4 +1,4 @@
----  
+---
 title: Deploy    
 permalink: GoogleNotes/Deploy    
 category:  GoogleNotes    
@@ -9,7 +9,7 @@ share: true
 shortRepo:    
   - googlenotes    
   - default              
----  
+---
     
     
 <br/>              

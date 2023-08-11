@@ -1,4 +1,4 @@
----  
+---
 title: VIM_QuickTips    
 permalink: Linux/VIM_QuickTips    
 category:  Linux    
@@ -9,7 +9,7 @@ share: true
 shortRepo:    
   - linux    
   - default    
----  
+---
     
     
 <br/>    

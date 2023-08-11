@@ -1,4 +1,4 @@
----  
+---
 title:        DotNetNotes    
 layout:       default    
 permalink:    DotNetNotes/    
@@ -9,6 +9,6 @@ shortRepo:
     
   - dotnetnotes    
   - default    
----  
+---
     
 # [REPO](https://github.com/14paxton/DotNetNotes)

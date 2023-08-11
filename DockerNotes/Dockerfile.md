@@ -1,4 +1,4 @@
----  
+---
 title:        Dockerfile    
 permalink:    DockerNotes/Dockerfile    
 category:     DockerNotes    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - dockernotes    
   - default              
----  
+---
     
     
 <br/>              

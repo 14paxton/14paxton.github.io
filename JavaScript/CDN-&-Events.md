@@ -1,4 +1,4 @@
----  
+---
 title:        CDN-&-Events    
 permalink:    JavaScript/CDN-&-Events    
 category:     JavaScript    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - javascript    
   - default                
----  
+---
     
     
 <br/>                

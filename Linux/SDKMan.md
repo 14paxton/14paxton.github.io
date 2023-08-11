@@ -1,4 +1,4 @@
----  
+---
 title: SDKMan    
 permalink: Linux/SDKMan    
 category:  Linux    
@@ -9,7 +9,7 @@ share: true
 shortRepo:    
   - linux    
   - default    
----  
+---
     
     
 <br/>    

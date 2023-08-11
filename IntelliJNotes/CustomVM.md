@@ -1,4 +1,4 @@
----  
+---
 title:        CustomVM    
 permalink:    IntelliJNotes/CustomVM    
 category:     IntelliJNotes    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - intellijnotes    
   - default    
----  
+---
     
     
 <br/>    

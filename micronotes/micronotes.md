@@ -1,4 +1,4 @@
----  
+---
 title:        micronotes    
 layout:       default    
 permalink:    micronotes/    
@@ -9,6 +9,6 @@ shortRepo:
     
   - micronotes    
   - default    
----  
+---
     
 # [REPO](https://github.com/14paxton/micronotes)

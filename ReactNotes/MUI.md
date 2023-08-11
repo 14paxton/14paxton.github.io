@@ -1,4 +1,4 @@
----  
+---
 title:        MUI      
 permalink:    ReactNotes/MUI      
 category:     ReactNotes      
@@ -9,7 +9,7 @@ share:        true
 shortRepo:      
   - reactnotes      
   - default                
----  
+---
     
 <br/>                
     

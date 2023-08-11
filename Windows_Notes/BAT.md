@@ -1,4 +1,4 @@
----  
+---
 title:        BAT    
 permalink:    Windows_Notes/BAT    
 category:     Windows_Notes    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - windows_notes    
   - default    
----  
+---
     
     
 <br/>    

@@ -1,4 +1,4 @@
----  
+---
 title:        DataBaseStuff    
 permalink:    micronotes/DataBaseStuff    
 category:     micronotes    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - micronotes    
   - default    
----  
+---
     
     
 <br/>    
@@ -215,7 +215,7 @@ curl http://localhost:8082/person/
 curl http://localhost:8082/person/record    
 ````    
   
----  
+---
     
     
 # In Memory    

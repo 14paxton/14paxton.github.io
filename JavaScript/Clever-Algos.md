@@ -1,4 +1,4 @@
----  
+---
 title:        Clever-Algos    
 permalink:    JavaScript/Clever-Algos    
 category:     JavaScript    
@@ -11,7 +11,7 @@ shortRepo:
 - javascript  
 - default  
   
----  
+---
   
   
 <br/>                
@@ -62,9 +62,9 @@ Table of contents
   
 > [paint new window](https://gist.github.com/14paxton/fb7f33fd6f5fa7a15077b6ebf18fca44)  
       
----  
-# [Add to Reddit Custom Feed](https://gist.github.com/14paxton/63944ec7e8bcd0e7ee9b97e3dc6fd48e)  
----  
+---
+# [Add to Reddit Custom Feed](https://gist.github.com/14paxton/63944ec7e8bcd0e7ee9b97e3dc6fd48e)
+---
   
 # get middle of webpage  
   

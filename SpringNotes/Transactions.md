@@ -1,4 +1,4 @@
----  
+---
 title:        Transactions  
 permalink:    SpringNotes/Transactions  
 category:     SpringNotes  
@@ -11,7 +11,7 @@ shortRepo:
   - springnotes  
   - default  
   
----  
+---
   
   
 <br/>    

@@ -1,4 +1,4 @@
----  
+---
 title: DateAndTime    
 permalink: GroovyNotes/DateAndTime    
 category:  GroovyNotes    
@@ -9,7 +9,7 @@ share: true
 shortRepo:    
   - groovynotes    
   - default    
----  
+---
     
     
 <br/>    

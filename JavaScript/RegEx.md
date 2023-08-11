@@ -1,4 +1,4 @@
----  
+---
 title:        RegEx    
 permalink:    JavaScript/RegEx    
 category:     JavaScript    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - javascript    
   - default                
----  
+---
     
     
 <br/>                

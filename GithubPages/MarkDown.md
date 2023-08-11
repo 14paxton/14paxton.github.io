@@ -1,4 +1,4 @@
----  
+---
 title:        MarkDown    
 layout:       default    
 permalink:    GithubPages/MarkDown    
@@ -7,7 +7,7 @@ parent:       GHP
 has_children: false    
 share:        true    
 shortRepo:    ghpages                    
----  
+---
     
     
 <details markdown="block">                  
@@ -29,7 +29,7 @@ Table of contents
     
 > Code block Syntax yml    
     
----  
+---
     
 # GitHub Styling Quirks    
     
@@ -97,7 +97,7 @@ I am a info message
 I am a warning message                
 </div>                
     
----      
+---    
     
 # Pandoc    
     

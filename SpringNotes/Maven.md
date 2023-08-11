@@ -1,4 +1,4 @@
----  
+---
 title:        Maven  
 permalink:    SpringNotes/Maven  
 category:     SpringNotes  
@@ -11,7 +11,7 @@ shortRepo:
   - springnotes  
   - default  
   
----  
+---
   
   
 <br/>    

@@ -1,4 +1,4 @@
----  
+---
 title:        HTTPExamples  
 permalink:    IntelliJNotes/HTTPExamples  
 category:     IntelliJNotes  
@@ -11,7 +11,7 @@ shortRepo:
   - intellijnotes  
   - default  
   
----  
+---
   
   
 <br/>    

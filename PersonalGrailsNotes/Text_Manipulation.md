@@ -1,4 +1,4 @@
----  
+---
 title:        Text_Manipulation    
 permalink:    PersonalGrailsNotes/Text_Manipulation    
 category:     PersonalGrailsNotes    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - personalgrailsnotes    
   - default    
----  
+---
     
     
 <br/>    

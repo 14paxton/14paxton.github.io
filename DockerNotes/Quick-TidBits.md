@@ -1,4 +1,4 @@
----  
+---
 title:        Quick-TidBits  
 permalink:    DockerNotes/Quick-TidBits  
 category:     DockerNotes  
@@ -10,7 +10,7 @@ shortRepo:
   
   - dockernotes  
   - default  
----  
+---
   
   
 <br/>              
@@ -99,12 +99,12 @@ gateway.docker.internal
 </code>  
 </div>              
   
----  
+---
 If you are running this stack on Linux  
 you need to have the ```DOCKER_GATEWAY_HOST``` environment variable set for the Docker gateway host.  
 Simply put this line into your  
-`.bashrc (.bash_profile or .zshrc)`  
----  
+`.bashrc (.bash_profile or .zshrc)`
+---
   
 ```shell  
  export DOCKER_GATEWAY_HOST=172.17.0.1    

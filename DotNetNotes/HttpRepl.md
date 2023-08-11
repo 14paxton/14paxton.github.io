@@ -1,4 +1,4 @@
----  
+---
 title:        HttpRepl    
 permalink:    DotNetNotes/HttpRepl    
 category:     DotNetNotes    
@@ -9,7 +9,7 @@ share:        true
 shortRepo:    
   - dotnetnotes    
   - default    
----  
+---
     
     
 <br/>    
