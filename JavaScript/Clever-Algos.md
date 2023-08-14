@@ -30,17 +30,24 @@ Table of contents
 ***                      
 
 <br/>      
-# Group and object by key and possible subkey      
 
-## returns {(key to group by) : [{(secondary key) : (key to group by)}]}
+# Group and object by key and possible subkey
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">            
+<em>Returns: </em>   
+<br/>
+<code>{(key to group by) : [{(secondary key) : (key to group by)}]}</code>          
+</div> 
 
 <a href="https://gist.github.com/14paxton/a87f5d47aaf678e89a1dfeffa51b46d9"> groupArrayOfObjectsByKey</a>      
 
 # Union / Enum for JS
 
-## java like enum can be used for pointer type function ex. https://dev.to/avalander/union-types-with-javascript-4emo
+## java like enum can be used for pointer type function
 
-  <a href="https://gist.github.com/14paxton/685637fd8c513c7539a10f66b2386cfe"> Union Example </a>       
+> [resource](https://dev.to/avalander/union-types-with-javascript-4emo)
+
+<a href="https://gist.github.com/14paxton/685637fd8c513c7539a10f66b2386cfe"> Union Example </a>       
 
 # Print separate page from current page
 
@@ -61,15 +68,15 @@ Table of contents
 - alt
 
 > [paint new window](https://gist.github.com/14paxton/fb7f33fd6f5fa7a15077b6ebf18fca44)
-      
----
+
 # [Add to Reddit Custom Feed](https://gist.github.com/14paxton/63944ec7e8bcd0e7ee9b97e3dc6fd48e)
+
 ---
 
 # get middle of webpage
 
 ```javascript      
-   const x = window.innerWidth / 2;
+const x = window.innerWidth / 2;
 const y = window.innerHeight / 2;
 
 const eye = document.documentElement
