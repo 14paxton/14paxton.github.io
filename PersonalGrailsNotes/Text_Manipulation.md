@@ -1,19 +1,19 @@
 ---
-title:        Text_Manipulation    
-permalink:    PersonalGrailsNotes/Text_Manipulation    
-category:     PersonalGrailsNotes    
-parent:       PersonalGrailsNotes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - personalgrailsnotes    
+title:        Text_Manipulation
+permalink:    PersonalGrailsNotes/Text_Manipulation
+category:     PersonalGrailsNotes
+parent:       PersonalGrailsNotes
+layout:       default
+has_children: false
+share:        true
+shortRepo:
+  - personalgrailsnotes
   - default    
 ---
-    
-    
+
+
 <br/>    
-    
+
 <details markdown="block">    
 <summary>    
 Table of contents    
@@ -22,50 +22,32 @@ Table of contents
 1. TOC    
 {:toc}    
 </details>    
-    
+
 <br/>    
-    
+
 ***    
-    
+
 <br/>    
-    
-- [Server Side](Text_Manipulation.md#server-side)    
-    - [GRAILS TYPE    
-      Converters](#grails-type-converters)    
-    - [JSON](Text_Manipulation.md#json)    
-        - [JSON Parser    
-          Example](#json-parser-example)    
-- [Frontend    
-  manipulation](#frontend-manipulation)    
-    - [Using    
-      messageSource](#using-messagesource)    
-    - [Render grails tags to return in    
-      controller](#render-grails-tags-to-return-in-controller)    
-    - [save grails tag in variable and render on    
-      page](#save-grails-tag-in-variable-and-render-on-page)    
-    - [JSON](Text_Manipulation.md#json-1)    
-        - [Javascript    
-          manipulation](#javascript-manipulation)    
-    
-# Server Side    
-    
-## GRAILS TYPE Converters    
-    
+
+# Server Side
+
+## GRAILS TYPE Converters
+
 > Convert and check type in controller    
-> [TypeCheck](http://docs.grails.org/latest/guide/theWebLayer.html#typeConverters)    
-    
-``` groovy    
-param.short(...)    
-param.byte(...)    
-param.long(...)    
-param.double(...)    
-param.boolean(...)    
-```    
-    
-## JSON    
-    
-### JSON Parser Example    
-    
+> [TypeCheck](http://docs.grails.org/latest/guide/theWebLayer.html#typeConverters)
+
+  ``` groovy    
+      param.short(...)    
+      param.byte(...)    
+      param.long(...)    
+      param.double(...)    
+      param.boolean(...)    
+  ```    
+
+## JSON
+
+### JSON Parser Example
+
 ``` groovy    
     
 def json = '''{    
@@ -92,9 +74,9 @@ def json = '''{
     
 def jsonObj = grails.converters.JSON.parse(json)    
 ```    
-    
-> This is your JSON object that should be passed in to the method    
-    
+
+> This is your JSON object that should be passed in to the method
+
 ``` groovy    
 print jsonObj     
 // optput [markings:[rightForeMarkings:sock, otherMarkings:, leftForeMarkings:, leftHindMarkings:sock, rightHindMarkings:, headMarkings:Brindle]]    
@@ -109,40 +91,40 @@ def getBackJsobObj = grails.converters.JSON.parse(jsonStr)
     
 assert getBackJsobObj.markings.leftHindMarkings == 'sock'    
 ```    
-    
-# Frontend manipulation    
-    
-## Using messageSource    
-    
-[i18n Docs](https://docs.grails.org/4.0.1/guide/i18n.html)    
-    
+
+# Frontend manipulation
+
+## Using messageSource
+
+[i18n Docs](https://docs.grails.org/4.0.1/guide/i18n.html)
+
 ``` groovy    
  messageSource.getMessage('batch.user.registration.confirmation.message', [jobId as String].toArray() , LocaleContextHolder.locale)    
 ```    
-    
-## Render grails tags to return in controller    
-    
+
+## Render grails tags to return in controller
+
 ``` groovy    
         render  g.select(from: languages, optionKey: "key" , optionValue: "value",  name: "languageChoice",    
         class:"form-control", value: assessmentLanguage)    
 ```    
-    
-## save grails tag in variable and render on page    
-    
+
+## save grails tag in variable and render on page
+
 ``` groovy    
 `${yourTag.encodeAsRaw()}`    
 ```    
-    
-> or    
-    
+
+> or
+
 ``` groovy    
    `${raw(user.description)}`    
 ```    
-    
-## JSON    
-    
-### Javascript manipulation    
-    
+
+## JSON
+
+### Javascript manipulation
+
 ``` javascript    
 var catalogsByType = null;    
 <g:applyCodec encodeAs="none">    
