@@ -1,19 +1,19 @@
 ---
-title: AWS-CLI.md    
-permalink: Linux/AWS-CLI    
-category:  Linux    
-parent:   Linux    
-layout: default    
-has_children: false    
-share: true    
-shortRepo:    
-  - linux    
+title:        AWS-CLI.md
+permalink:    Linux/AWS-CLI
+category:     Linux
+parent:       Linux
+layout:       default
+has_children: false
+share:        true
+shortRepo:
+  - linux
   - default    
 ---
-    
-    
+
+
 <br/>    
-    
+
 <details markdown="block">    
 <summary>    
 Table of contents    
@@ -22,33 +22,33 @@ Table of contents
 1. TOC    
 {:toc}    
 </details>    
-    
+
 <br/>    
-    
+
 ***    
-    
+
 <br/>    
-    
-# Database Stuff    
-    
-> some scripts use jq for parsing json    
-    
-> get db instances    
-    
+
+# Database Stuff
+
+> some scripts use jq for parsing json
+
+> get db instances
+
 ```shell    
 aws rds describe-db-instances \                                                      
   --filters "Name=engine,Values=mysql" \                      
   --query "*[].[DBInstanceIdentifier,Endpoint.Address,Endpoint.Port,MasterUsername]"    
 ```    
-    
-> configure    
-    
+
+> configure
+
 ```shell    
 aws configure    
 ```    
-    
-# create IAM user    
-    
+
+# create IAM user
+
 ```shell    
 aws iam create-group --group-name Administrators    
 aws iam create-user --user-name Administrator    
@@ -56,9 +56,9 @@ aws iam add-user-to-group --user-name Administrator --group-name Administrators
 aws iam attach-group-policy --group-name Administrators --policy-arn $(aws iam list-policies --query 'Policies[?PolicyName==`AdministratorAccess`].{ARN:Arn}' --output text)    
 aws iam create-access-key --user-name Administrator    
 ```    
-    
-# Create VPC, security group, subnets and subnet group (optional) with jq (https://stedolan.github.io/jq/)    
-    
+
+# Create VPC, security group, subnets and subnet group (optional) with jq (https://stedolan.github.io/jq/)
+
 ```shell    
 # VPC, internet gateway and route table    
 export VPC_ID=$(aws ec2 create-vpc --cidr-block 10.0.0.0/16 | jq -r '.Vpc.VpcId')    
@@ -82,9 +82,9 @@ aws ec2 modify-subnet-attribute --subnet-id $SN0_ID --map-public-ip-on-launch
 aws ec2 modify-subnet-attribute --subnet-id $SN1_ID --map-public-ip-on-launch    
 aws rds create-db-subnet-group --db-subnet-group-name crud-data-aws-db-create-micro-person-sng --db-subnet-group-description "DB subnet group for the Micronaut MySQL guide" --subnet-ids "$SN0_ID" "$SN1_ID"    
 ```    
-    
-# create mysql db instance    
-    
+
+# create mysql db instance
+
 ```shell    
 aws rds create-db-instance \    
     --db-instance-identifier crud-data-aws-db-create-micro-person \    
@@ -97,22 +97,22 @@ aws rds create-db-instance \
 #    --db-subnet-group-name crud-data-aws-db-create-micro-person-sng \    
 #    --vpc-security-group-ids $SG_ID \    
 ```    
-    
-## wait for instance    
-    
+
+## wait for instance
+
 ```shell    
 aws rds wait db-instance-available --db-instance-identifier crud-data-aws-db-create-micro-person    
 ```    
-    
-## stop aws instance    
-    
+
+## stop aws instance
+
 ```shell    
 aws rds delete-db-instance --db-instance-identifier crud-data-aws-db-create-micro-person --skip-final-snapshot    
 aws rds wait db-instance-deleted --db-instance-identifier crud-data-aws-db-create-micro-person    
 ```    
-    
-# remove security ec2 instances    
-    
+
+# remove security ec2 instances
+
 ```shell    
 aws ec2 delete-subnet --subnet-id $SN0_ID    
 aws ec2 delete-subnet --subnet-id $SN1_ID    
