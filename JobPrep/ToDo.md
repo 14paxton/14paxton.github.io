@@ -1,13 +1,13 @@
 ---
 title:        ToDo
-permalink: GithubPages/ToDo
+permalink:    GithubPages/ToDo
 category:     JobPrep
-parent:    MyPersonalDocsAndStuff
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - jobprep    
+parent:       MyPersonalDocsAndStuff
+layout:       default
+has_children: false
+share:        true
+shortRepo:
+  - jobprep
   - default              
 ---
     
