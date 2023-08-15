@@ -29,20 +29,22 @@ Table of contents
     
 <br/>    
     
-## The GrailsParameterMap    
+# The GrailsParameterMap    
+
+> [Using Param map Object](https://gist.github.com/14paxton/42e595a1bf50e44031b6be6c034003d9)
     
 ```groovy    
 def paramMap = ["firstName": "brandon", "lastName": "paxton", "email": "bpaxton@talentplus.com", "assessmentType": "AO6"]    
 def x = new grails.web.servlet.mvc.GrailsParameterMap(paramMap, request)    
 ```    
     
-## Demo Command Object with Validation-*    
+#  Command Object with Validation-*    
     
 ## command object allows you to validate with services    
     
 <a href="https://gist.github.com/14paxton/282d48ed20642c697315e15dffb7df2d"> GRAILSCommandObject </a>    
     
-#### Custom Validator for Nested Command objects in a list    
+### Custom Validator for Nested Command objects in a list    
     
 > creating error code    
     
@@ -76,7 +78,7 @@ void validateWSConfig() {
 }    
 ```    
     
-#### Import and excluding other domain constrains    
+### Import and excluding other domain constrains    
     
 ```groovy    
         importFrom SOAPClientOrderConfig, exclude: ["binarySecTokenEncodingType", "binarySecTokenValueType", "countryCodeFormat"]    
@@ -84,6 +86,6 @@ void validateWSConfig() {
     
 ### JSON return bodies Spring/Jackson examples    
     
-### https://www.baeldung.com/jackson-json-view-annotation    
+#### https://www.baeldung.com/jackson-json-view-annotation    
     
-### https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-jackson
+#### https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-jackson
