@@ -13,7 +13,7 @@ shortRepo:
     
 1. [Adv postgres 2023](https://www.linkedin.com/learning/advanced-postgresql/advanced-features-in-postgresql?contextUrn=urn%3Ali%3AlearningCollection%3A7085095211655163904&u=103729738)    
 2. [Adv postgres. 2021](https://www.linkedin.com/learning/postgresql-advanced-queries/gain-additional-insights-from-your-postgresql-data?contextUrn=urn%3Ali%3AlearningCollection%3A7085095211655163904&u=103729738)    
-3. [Adv Java](https://hyperskill.org/study-plan)    
+3. [Android](https://www.linkedin.com/learning/android-development-essential-training-1-your-first-app/your-first-android-app?u=103729738) 
 4. [Maven](https://www.linkedin.com/learning/introducing-maven/building-java-the-maven-way?contextUrn=urn%3Ali%3AlearningCollection%3A7085095211655163904&u=103729738)    
 5. [Spring Security , Secure a REST app](https://app.pluralsight.com/library/courses/spring-security-5-securing-rest-services/table-of-contents)    
 6. [Install configure kubernetes](https://app.pluralsight.com/library/courses/kubernetes-installation-configuration-fundamentals/table-of-contents)    
