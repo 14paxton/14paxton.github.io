@@ -11,4 +11,10 @@ shortRepo: ghpages
   
 # My Personal Documents and Other Stuff  
   
-![](.//14paxton.github.io/assets/images/BrandonPaxton.docx)![](.//14paxton.github.io/assets/images/CoverLetter.rtf)![](.//14paxton.github.io/assets/images/ToddWyrick_LetterOfRecommendation.docx)
+![](.//14paxton.github.io/assets/images/BrandonPaxton 1.docx)  
+  
+![](.//14paxton.github.io/assets/images/CoverLetter 1.rtf)  
+  
+![](.//14paxton.github.io/assets/images/ToddWyrick_LetterOfRecommendation 1.docx)  
+  
+<embed src="/assets/images/BrandonPaxton%201.docx" width="80%" height="600" type="application/pdf">    
