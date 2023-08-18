@@ -42,13 +42,16 @@ Table of contents
         - [Obsidian Git](https://publish.obsidian.md/git-doc/Start+here)
         - [Obsidian TOC](https://github.com/hipstersmoothie/obsidian-plugin-toc#obsidian-plugin-toc)
 
-## Mac
+# Mac Specific
 
 - [Rectangle](https://rectangleapp.com/)
 - [Cheat Sheet](https://cheatsheet-mac.en.softonic.com/mac)
 - [Mission Control Plus](https://www.fadel.io/missioncontrolplus)
 - [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12)
+- [BetterDisplay](https://github.com/waydabber/BetterDisplay#readme)
+- [Monitor Control](https://github.com/MonitorControl/MonitorControl#readme)
+
 - [HomeBrew](https://brew.sh/)
-   ```/bin/bash -c "$(curl -fsSL     
-      https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
-  ```
+   ```shell
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
+   ```
