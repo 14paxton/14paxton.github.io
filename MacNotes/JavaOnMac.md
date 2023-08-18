@@ -109,14 +109,14 @@ Matching Java Virtual Machines (4):
 3. The next step is to update your ```/etc/hosts``` file. This must be done as root, so at the Terminal, type in
     ```shell  
       sudo vi /etc/hosts  
-   ```  
+    ```  
 
    This will ask for your password...  
    Add the hostname you noted from earlier at the end of lines that start with ```127.0.0.1``` and ```::1```.
 
    In the end this is what my ```/etc/hosts``` file looked like:
     ```text            
-   127.0.0.1       TPLNK-BPAXTON3.local            
-   255.255.255.255 broadcasthost            
-   ::1             TPLNK-BPAXTON3.local`            
+     127.0.0.1       TPLNK-BPAXTON3.local            
+     255.255.255.255 broadcasthost            
+     ::1             TPLNK-BPAXTON3.local`            
     ```
