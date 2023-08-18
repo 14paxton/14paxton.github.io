@@ -105,7 +105,6 @@ key code 0 using command down
 --new playlist from selection- Command-Shift-N
 key code 45 using {command down, shift down}
 end tell
-
 ```
 
 ## select all tracks of front playlist - Command-A
@@ -115,9 +114,10 @@ tell application "System Events"
 tell application "iTunes" to activate
 key code 0 using command down
 end tell
-``
+```
 
 ## toggle browse mode - Command-B
+
 ```shell
 tell application "System Events"
 tell application "iTunes" to activate
