@@ -75,12 +75,12 @@ Matching Java Virtual Machines (4):
    ```  
    output ->  ```/usr/bin/java```
 2) Check you have the needed version of Java, by typing            
-   `java -version`            
-   `JAVA_HOME` is essentially the full path of the directory that contains a sub-directory named `bin` which in turn contains the java.            
-   For Mac OSX it is `/Library/Java/Home`==
+   ```java -version```            
+   ```JAVA_HOME``` is essentially the full path of the directory that contains a sub-directory named ```bin``` which in turn contains the java.            
+   For Mac OSX it is ```/Library/Java/Home```
 3) Set JAVA_HOME            
-   ` export JAVA_HOME=/Library/Java/Home`
-4) `echo $JAVA_HOME` on Terminal to confirm the path
+   ``` export JAVA_HOME=/Library/Java/Home```
+4) ```echo $JAVA_HOME``` on Terminal to confirm the path
 
 - Note that this sets JAVA_HOME only for this session. If you want it to persist, you will have to add the command to your ```~/.profile file```
 
@@ -102,11 +102,11 @@ Matching Java Virtual Machines (4):
    You do this from System Preferences.          
    Click the Sharing icon in System Preferences.
 
-2. You will see a box that shows the Computer Name, under that will be the hostname ending in ```.local```.          
+2. You will see a box that shows the Computer Name, under that will be the hostname ending in ```.local```        
    That's what you will need, so take note of it.          
-   In my case it was ```Enzyme.local```.
+   In my case it was ```Enzyme.local```
 
-3. The next step is to update your `/etc/hosts` file. This must be done as root, so at the Terminal, type in
+3. The next step is to update your ```/etc/hosts``` file. This must be done as root, so at the Terminal, type in
     ```shell  
       sudo vi /etc/hosts  
    ```  
@@ -114,9 +114,9 @@ Matching Java Virtual Machines (4):
    This will ask for your password...  
    Add the hostname you noted from earlier at the end of lines that start with ```127.0.0.1``` and ```::1```.
 
-   In the end this is what my `/etc/hosts `file looked like:
-   ```text            
+   In the end this is what my ```/etc/hosts``` file looked like:
+    ```text            
    127.0.0.1       TPLNK-BPAXTON3.local            
    255.255.255.255 broadcasthost            
    ::1             TPLNK-BPAXTON3.local`            
-   ```
+    ```
