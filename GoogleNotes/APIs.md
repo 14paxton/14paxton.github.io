@@ -33,9 +33,9 @@ Table of contents
     
 ## Google    
     
-https://cloud.google.com/apis/docs/overview    
+-[Cloud Overview](https://cloud.google.com/apis/docs/overview)
     
-https://googleapis.dev/dotnet/Google.Apis.Auth/latest/    
+-[DotNet Auth](https://googleapis.dev/dotnet/Google.Apis.Auth/latest/)
     
 ## Dev improvements    
     
@@ -43,13 +43,13 @@ https://googleapis.dev/dotnet/Google.Apis.Auth/latest/
     
 ## .Net    
     
-### Cloud SDKs    
+### [Cloud SDKs](https://cloud.google.com/dotnet/docs/reference  )
     
-https://cloud.google.com/dotnet/docs/reference    
+  
     
-### APIs    
+### [APIs](https://developers.google.com/api-client-library/dotnet/apis   )    
     
-https://developers.google.com/api-client-library/dotnet/apis    
+ 
     
 #### [Available APIs](https://cloud.google.com/apis/docs/cloud-client-libraries)    
     
