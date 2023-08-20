@@ -63,16 +63,22 @@ chrome://proximity-auth
     
 ### browser apps    
     
-paint app that you can use to draw with.    
+> paint app that you can use to draw with.    
     
-```https://canvas.apps.chrome/```    
+```
+https://canvas.apps.chrome
+```
     
 > edit: Using the Site: query on google there's two others.    
     
-```https://screencast.apps.chrome/```
+```
+https://screencast.apps.chrome
+```
 > is a screen recording app that only works on Chrome OS. Sort of like Windows step recorder.    
     
-```https://cursive.apps.chrome```
+```
+https://cursive.apps.chrome
+```
 > is a note taking app that can use handwriting.    
     
 ---
