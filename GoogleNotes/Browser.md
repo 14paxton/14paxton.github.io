@@ -65,13 +65,15 @@ chrome://proximity-auth
     
 paint app that you can use to draw with.    
     
-https://canvas.apps.chrome/    
+```https://canvas.apps.chrome/```    
     
-edit: Using the Site: query on google there's two others.    
+> edit: Using the Site: query on google there's two others.    
     
-https://screencast.apps.chrome/ is a screen recording app that only works on Chrome OS. Sort of like Windows step recorder.    
+```https://screencast.apps.chrome/```
+> is a screen recording app that only works on Chrome OS. Sort of like Windows step recorder.    
     
-https://cursive.apps.chrome is a note taking app that can use handwriting.    
+```https://cursive.apps.chrome```
+> is a note taking app that can use handwriting.    
     
 ---
     
@@ -79,27 +81,28 @@ https://cursive.apps.chrome is a note taking app that can use handwriting.
     
 ## File Locations    
     
-Windows XP: C:\Documents and Settings\%USERNAME%\Local Settings\Application Data\Google\Chrome\User Data\Default\Extensions\<Extension ID>    
+Windows XP: ```C:\Documents and Settings\%USERNAME%\Local Settings\Application Data\Google\Chrome\User Data\Default\Extensions\<Extension ID>  ```  
     
-Windows 10/8/7/Vista: C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Extensions\<Extension ID>    
+Windows 10/8/7/Vista: ```C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Extensions\<Extension ID>    ```
     
-macOS: ~/Library/Application Support/Google/Chrome/Default/Extensions/<Extension ID>    
+macOS: ```~/Library/Application Support/Google/Chrome/Default/Extensions/<Extension ID>   ``` 
     
-Mac Path: /Users/<username>/Library/Application Support/Google/Chrome/Default/Extensions/<Extension ID> Extension ID can be found at chrome://extensions (with Developer Mode enabled)    
+Mac Path: ```/Users/<username>/Library/Application Support/Google/Chrome/Default/Extensions/<Extension ID> ```
+> Extension ID can be found at ```chrome://extensions``` (with Developer Mode enabled)    
     
-Linux: ~/.config/google-chrome/Default/Extensions/<Extension ID>    
+Linux: ```~/.config/google-chrome/Default/Extensions/<Extension ID> ```   
     
-Ubuntu: ~/.config/google-chrome/Default/Extensions    
+Ubuntu: ```~/.config/google-chrome/Default/Extensions ```   
     
-Chrome OS: /home/chronos/Extensions/<Extension ID>    
+Chrome OS: ```/home/chronos/Extensions/<Extension ID>   ``` 
     
 You can copy the extension folder and drop it on a USB or in a network drive.    
     
 To install    
-Open Chrome and go to chrome://extensions.    
-Make sure Developer Mode is checked.    
-Click Load Unpacked Extension....    
-Find your copied directory and click Open.    
+1. Open Chrome and go to ```chrome://extensions```
+2. Make sure Developer Mode is checked.    
+3. Click Load Unpacked Extension....    
+4. Find your copied directory and click Open.    
     
 # [CLI](https://www.chromium.org/developers/how-tos/run-chromium-with-flags/)    
     
@@ -107,13 +110,17 @@ Find your copied directory and click Open.
     
 To run Chrome from the terminal on Mac, you can use the following command:    
     
-`open -a "Google Chrome"`    
+```shell
+open -a "Google Chrome"
+```
     
 This will open a new instance of Chrome.    
     
 You can also use the following command to open a specific URL in Chrome:    
     
-`open -a "Google Chrome" "https://www.google.com"`    
+```shell
+open -a "Google Chrome" "https://www.google.com"
+```
     
 This will open the Google homepage in Chrome.    
     
@@ -157,15 +164,18 @@ start chrome www.<websiteURL>.com
     
 ## [Run With Switches](https://www.chromium.org/developers/how-tos/run-chromium-with-flags/)    
     
-```    
- Exit any running-instance of Chrome.    
-Right click on your "Chrome" shortcut.    
-Choose properties.    
-At the end of your "Target:" line add the command-line switch. For example:    
---disable-gpu-vsync    
-With that example flag, it should look like below (replacing "--disable-gpu-vsync" with any other command-line switch you want to use): chrome.exe --disable-gpu-vsync    
-Launch Chrome like normal with the shortcut.    
-```    
+### Exit any running-instance of Chrome.    
+1. Right click on your "Chrome" shortcut.    
+2. Choose properties.    
+3. At the end of your "Target:" line add the command-line switch. For example:    
+```--disable-gpu-vsync    ```
+> With that example flag, it should look like below (replacing ```--disable-gpu-vsync``` with any other command-line switch you want to use):
+
+```
+chrome.exe --disable-gpu-vsync
+```
+> Launch Chrome like normal with the shortcut.    
+
     
 ### [Some Switches ](https://peter.sh/experiments/chromium-command-line-switches/)    
     
