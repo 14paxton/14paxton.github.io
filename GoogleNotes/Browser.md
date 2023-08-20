@@ -212,3 +212,12 @@ chrome.exe --disable-gpu-vsync
 | --start-maximized           	 | Starts the Chrome window maximized.                                 	 |    
 | --window-position           	 | Specify the initial window position using --window-position=x,y     	 |    
 | --window-size               	 | Specify the initial window size using --window-size=x,y             	 |
+
+
+---
+
+# Resources
+
+- [List Of CLI switches](https://www.ghacks.net/2013/10/06/list-useful-google-chrome-command-line-switches/)
+- [Browser Dev Console Utilities Doc](https://developer.chrome.com/docs/devtools/console/utilities/#debug-function)
+- [Developer Tools Documentation](https://developer.chrome.com/docs/)
