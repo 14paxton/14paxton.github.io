@@ -28,3 +28,15 @@ Table of contents
 ***                
 
 <br/>
+
+# Connection
+
+![azureSQLConnection.png](assets%2Fimages%2FazureSQLConnection.png)
+
+![JavaDesignPaterns.png](assets%2Fimages%2FJavaDesignPaterns.png)
+
+![mySQLConnection.png](assets%2Fimages%2FmySQLConnection.png)
+
+![oracleConnection.png](assets%2Fimages%2ForacleConnection.png)
+
+![postgreSQLConnection.png](assets%2Fimages%2FpostgreSQLConnection.png)
