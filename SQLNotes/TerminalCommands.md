@@ -7,8 +7,8 @@ layout:       default
 has_children: false
 share:        true
 shortRepo:
- - sqlnotes
- - default
+  - sqlnotes
+  - default
 ---
 
 ***
@@ -32,35 +32,53 @@ shortRepo:
 
 # MYSQL
 
+```shell
 mysql -u USERNAME -p
 
+```
+
+```shell
 show databases;
 
+```
 ## SETTING TIMEZONES
 
-Get timezone = SELECT @@global.time_zone, @@session.time_zone;
+- Get timezone
 
-Get timestamp = SELECT CURRENT_TIMESTAMP();
+```sql
+SELECT @@global.time_zone, @@session.time_zone;
+```
 
-Set timestamp utc = SET @@session.time_zone='+00:00';
+- Get timestamp
+
+```sql
+ SELECT CURRENT_TIMESTAMP();
+```
+
+- Set timestamp utc
+
+```sql
+ SET
+@@session.time_zone='+00:00';
+```
 
 You can set in my.cnf
 
 [mysqld]
 
-## other variables**
+## other variables
 
 default_time_zone='+00:00'
 
--GET PATHS
+- GET PATHS
 
-```bash
+```mysql
 SHOW VARIABLES WHERE Variable_Name LIKE "%dir"
 ```
 
 ## MySQL import
 
-```bash
+```shell
 LOAD DATA LOCAL INFILE 'C:/Groovy/englishData.csv' INTO TABLE original_data 
 
 FIELDS TERMINATED BY ','  
@@ -72,6 +90,6 @@ LINES TERMINATED BY '\r\n'
 
 ## Show db users
 
-```bash
+```mysql
 SELECT user,authentication_string,plugin,host FROM mysql.user;
 ```
