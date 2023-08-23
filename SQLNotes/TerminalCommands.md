@@ -41,30 +41,30 @@ mysql -u USERNAME -p
 show databases;
 
 ```
+
 ## SETTING TIMEZONES
 
-- Get timezone
+### Get timezone
 
 ```sql
 SELECT @@global.time_zone, @@session.time_zone;
 ```
 
-- Get timestamp
+### Get timestamp
 
 ```sql
  SELECT CURRENT_TIMESTAMP();
 ```
 
-- Set timestamp utc
+### Set timestamp utc
 
 ```sql
- SET
-@@session.time_zone='+00:00';
+ SET @@session.time_zone = '+00:00';
 ```
 
-You can set in my.cnf
-
-[mysqld]
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+    You can set in my.cnf       
+</div>
 
 ## other variables
 
@@ -72,8 +72,8 @@ default_time_zone='+00:00'
 
 - GET PATHS
 
-```mysql
-SHOW VARIABLES WHERE Variable_Name LIKE "%dir"
+```sql
+SHOW VARIABLES WHERE Variable_Name LIKE "%dir";
 ```
 
 ## MySQL import
@@ -90,6 +90,7 @@ LINES TERMINATED BY '\r\n'
 
 ## Show db users
 
-```mysql
-SELECT user,authentication_string,plugin,host FROM mysql.user;
+```sql
+SELECT user, authentication_string, plugin, host
+FROM mysql.user;
 ```
