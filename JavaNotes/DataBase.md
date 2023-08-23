@@ -31,11 +31,10 @@ Table of contents
   
 # Connection  
   
+![azureSQLConnection.png](assets%2Fimages%2FazureSQLConnection.png)  
   
-![](..//14paxton.github.io/assets/images/Pasted image 20230823115602.png)  
+![mySQLConnection.png](assets%2Fimages%2FmySQLConnection.png)  
   
-![](..//14paxton.github.io/assets/images/Pasted image 20230823115627.png)  
+![oracleConnection.png](assets%2Fimages%2ForacleConnection.png)  
   
-![](..//14paxton.github.io/assets/images/Pasted image 20230823115652.png)  
-  
-![](..//14paxton.github.io/assets/images/Pasted image 20230823115728.png)
+![postgreSQLConnection.png](assets%2Fimages%2FpostgreSQLConnection.png)
