@@ -80,6 +80,7 @@ ls -l ~/.sdkman/candidates/java
 - A summary is to add the following to ~/.sdkman/etc/config
   ```sdkman_auto_env=true```
 
+- my usecase
 ```text
 # Enable auto-env through the sdkman_auto_env config
 # Add key=value pairs of SDKs to use below
