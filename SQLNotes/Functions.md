@@ -28,8 +28,9 @@ Table of contents
 ***                    
     
 <br/>                    
-    
-# MySQL    
+
+# [MySQL](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html)
+
     
 ## extract JSON    
     
