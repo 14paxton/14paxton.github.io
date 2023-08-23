@@ -29,12 +29,26 @@ Table of contents
 
 <br/>
 
-# Connection
+# PostgreSQL
 
-![azureSQLConnection.png](assets%2Fimages%2FazureSQLConnection.png)
+## Connection
+
+![postgreSQLConnection.png](assets%2Fimages%2FpostgreSQLConnection.png)
+
+# MySQL
+
+## Connection
 
 ![mySQLConnection.png](assets%2Fimages%2FmySQLConnection.png)
 
+# Oracle
+
+## Connection
+
 ![oracleConnection.png](assets%2Fimages%2ForacleConnection.png)
 
-![postgreSQLConnection.png](assets%2Fimages%2FpostgreSQLConnection.png)
+# Azure
+
+## Connection
+
+![azureSQLConnection.png](assets%2Fimages%2FazureSQLConnection.png)
