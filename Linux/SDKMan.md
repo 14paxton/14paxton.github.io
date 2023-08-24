@@ -69,3 +69,21 @@ ls -l ~/.sdkman/candidates/java
 ```    
 
 # [available canidates](https://api.sdkman.io/2/candidates/java/Darwin/versions/list?installed=)  
+
+# [Environment Switching](https://sdkman.io/usage)
+
+> use a .sdkmanrc file at root of project
+
+- Use sdkman to run "sdk env" to initialize with correct JDK version
+- Enable auto-env through the sdkman_auto_env config
+- [See https://sdkman.io/usage#config](https://sdkman.io/usage#config)
+- A summary is to add the following to ~/.sdkman/etc/config
+  ```sdkman_auto_env=true```
+
+- my usecase
+```text
+# Enable auto-env through the sdkman_auto_env config
+# Add key=value pairs of SDKs to use below
+java=22.1.0.r17-grl
+#java=17041-LibArch64
+```

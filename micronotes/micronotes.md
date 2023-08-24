@@ -10,7 +10,10 @@ shortRepo:
   - micronotes    
   - default    
 ---
-    
+# [Install](https://micronaut-projects.github.io/micronaut-starter/latest/guide/#installation)
+
+## [Download and Install](https://micronaut.io/download/)
+
 # [REPO](https://github.com/14paxton/micronotes)
 
 # Run
