@@ -95,48 +95,45 @@ Table of contents
 
 ## Terminal
 
-- ***CREATE***
+### CREATE
 
 ```bash    
 curl -i -d '{"companyCode": "MICROSTREAM_bpaxton"}' -H "Content-Type: application/json" -X POST POST http://localhost:8082/ssi    
 ```    
 
-- ***LIST***
+### LIST
 
 ```bash    
 curl -i localhost:8082/ssi/    
 ```    
 
-    
 ---
     
 ---
 
 # Lombok
 
-## ***Needs to be above micronaut annotations on classpath***
-
-## ***For lombok to recognize micronaut annotations and inject into constructor***
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;">            
+<em>***Needs to be above micronaut annotations on classpath***</em>
+<br/>
+<em> ***For lombok to recognize micronaut annotations and inject into constructor***      </em>
+</div>     
 
 > create lombok.config at root, insert line:
->
->> ```propeties    
->>    lombok.copyableannotations += io.micronaut.core.annotation.Nullable    
->> ```    
 
-    
+```properties    
+ lombok.copyableannotations=+= io.micronaut.core.annotation.Nullable    
+```    
+
 ---
     
 ---
 
 # GraalVM
 
-`To work with microstream add:`
-
-`reflect-config.json to /src/main/resources/META-INF/native-image/[package]`
+> To work with microstream add: ```reflect-config.json``` to ```/src/main/resources/META-INF/native-image/[package]```
 
 [Microstream source code for working with GraalVM](https://github.com/microstream-one/example-graalvm-native/tree/master/graalvm-native/src/main/resources/META-INF/native-image)
-
     
 ---
     
@@ -146,7 +143,7 @@ curl -i localhost:8082/ssi/
 
 ## GraalVM configeration
 
-- add a reflect-config.json so Graal recognizes imported classes that need to be reflective
+> add a ```reflect-config.json``` so Graal recognizes imported classes that need to be reflective
 
 ```bash    
 touch /src/main/resources/META-INF/native-image/com/ssi/reflect-config.json    
@@ -154,18 +151,19 @@ touch /src/main/resources/META-INF/native-image/com/ssi/reflect-config.json
 
 [MicroStream Source Reference](https://gist.github.com/14paxton/d51cc2f493b8d8f4271c0cf55f2aefab)
 
-    
 ---
     
 ---
 
 ## Microstream gui
 
-> add to build.gradle
->> developmentOnly("io.micronaut.microstream:micronaut-microstream-rest")
+> add to ```build.gradle```
+
+```groovy
+developmentOnly("io.micronaut.microstream:micronaut-microstream-rest")
+```
 
 [and download client ](https://docs.microstream.one/manual/storage/rest-interface/client-gui.html)
-
     
 ---
     
