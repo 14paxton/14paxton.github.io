@@ -26,7 +26,7 @@ shortRepo:
 
 # YouTube Watch List
 
-> [Brandon.Paxton.Aviture WatchList](https://www.youtube.com/playlist?list=WL)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=alzEVtqKXk2YrnG8&amp;list=PLuwDc-r5PDTizNjLrq7IlT3KCDzZ4q2Ok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ***    
     
