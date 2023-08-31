@@ -26,9 +26,17 @@ shortRepo:
 
 # YouTube Watch List
 
-# Brandon.Paxton.Aviture WatchList
+# Brandon.Paxton.Aviture
+
+## Watch and Learn
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=alzEVtqKXk2YrnG8&amp;list=PLuwDc-r5PDTizNjLrq7IlT3KCDzZ4q2Ok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+***
+
+## Projects To Follow Along With
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=AsF69VqVhT-IA7NY&amp;list=PLuwDc-r5PDTgMgkPfnxP4IBNl9MgT0ms9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ---
 
