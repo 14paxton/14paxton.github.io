@@ -10,7 +10,9 @@ shortRepo:
   - jobprep    
   - default            
 ---
-    
+
+# Tutorials To Learn
+
 1. [Adv postgres 2023](https://www.linkedin.com/learning/advanced-postgresql/advanced-features-in-postgresql?contextUrn=urn%3Ali%3AlearningCollection%3A7085095211655163904&u=103729738)    
 2. [Adv postgres. 2021](https://www.linkedin.com/learning/postgresql-advanced-queries/gain-additional-insights-from-your-postgresql-data?contextUrn=urn%3Ali%3AlearningCollection%3A7085095211655163904&u=103729738)    
 3. [Android](https://www.linkedin.com/learning/android-development-essential-training-1-your-first-app/your-first-android-app?u=103729738) 
@@ -21,7 +23,11 @@ shortRepo:
 8. [MicroStream Lecture](https://www.youtube.com/watch?v=5W6oVj0h6rQ&t=602s) : [MicroStream Tutorial App](https://guides.micronaut.io/latest/micronaut-microstream-persistence-gradle-java.html)    
 9. [GraalVM](https://www.graal.cloud/gcn/gcn-modules/database/micronaut-data-jdbc-repository/?buildTool=gradle&lang=java)  
 10. [Java Concurrency](https://www.linkedin.com/learning/java-advanced-concepts-for-high-performance-development/introduction-to-concurrency-in-java?contextUrn=urn%3Ali%3AlearningCollection%3A7085095211655163904&resume=false&u=103729738)  
-    
+
+# YouTube Watch List
+
+> [Brandon.Paxton.Aviture WatchList](https://www.youtube.com/playlist?list=WL)
+
 ***    
     
 # Possibly Useful Software?    
