@@ -24,6 +24,17 @@ shortRepo:
 9. [GraalVM](https://www.graal.cloud/gcn/gcn-modules/database/micronaut-data-jdbc-repository/?buildTool=gradle&lang=java)  
 10. [Java Concurrency](https://www.linkedin.com/learning/java-advanced-concepts-for-high-performance-development/introduction-to-concurrency-in-java?contextUrn=urn%3Ali%3AlearningCollection%3A7085095211655163904&resume=false&u=103729738)  
 
+***    
+    
+# Possibly Useful Software?    
+    
+- [YouTrack](https://www.jetbrains.com/youtrack/?source=google&medium=cpc&campaign=10594515075&term=youtrack&content=632524409028&gad=1&gclid=CjwKCAjwt52mBhB5EiwA05YKo75QYHNEw1esfAxcWOo7FnSg05MIV35fiBy0nmlDu71xUGFr1b-b-RoCDHwQAvD_BwE)    
+- [Qodana](https://www.jetbrains.com/qodana/)    
+- [TeamCity](https://www.jetbrains.com/teamcity/)    
+- [Space](https://www.jetbrains.com/space/)
+
+***
+
 # YouTube Watch List
 
 # Brandon.Paxton.Aviture
@@ -39,14 +50,3 @@ shortRepo:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=AsF69VqVhT-IA7NY&amp;list=PLuwDc-r5PDTgMgkPfnxP4IBNl9MgT0ms9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ---
-
-
-
-***    
-    
-# Possibly Useful Software?    
-    
-- [YouTrack](https://www.jetbrains.com/youtrack/?source=google&medium=cpc&campaign=10594515075&term=youtrack&content=632524409028&gad=1&gclid=CjwKCAjwt52mBhB5EiwA05YKo75QYHNEw1esfAxcWOo7FnSg05MIV35fiBy0nmlDu71xUGFr1b-b-RoCDHwQAvD_BwE)    
-- [Qodana](https://www.jetbrains.com/qodana/)    
-- [TeamCity](https://www.jetbrains.com/teamcity/)    
-- [Space](https://www.jetbrains.com/space/)
