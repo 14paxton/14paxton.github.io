@@ -128,27 +128,29 @@ git add .
 > removes all references of unreachable commits in reflog.
 
 ```shell    
-git reflog expire --expire-unreachable=now --all    
+  git reflog expire --expire-unreachable=now --all    
 ```     
 
 > removes the commits themselves.
 
 ```shell    
-git gc --prune=now    
+  git gc --prune=now    
 ```    
 
 ```shell    
-git reflog expire --expire-unreachable=now --all    
-git gc --prune=now    
+  git reflog expire --expire-unreachable=now --all    
+  git gc --prune=now    
 ```    
 
 - or    
-  ``` git gc --aggressive ``` with a later git version (or ``` git repack -a -f -d --window=250 --depth=250 ```)
+  ``` git gc --aggressive ``` with a later git version
+- or
+  ``` git repack -a -f -d --window=250 --depth=250 ```
 
 ## get all deletes and changes
 
 ```shell    
-g git log --shortstat --author "bpaxton"  --since "35 days ago" --until "today" | egrep "file[s]* changed" | sed 's/changed, \([0-9]\+ deletions\)/changed, 0 insertions(+), \1/g' | awk '{files+=$1; inserted+=$4; deleted+=$6} END {print "files changed", files,"total: " inserted - deleted , "lines inserted:", inserted, "lines deleted:", deleted}'    
+ git log --shortstat --author "bpaxton"  --since "35 days ago" --until "today" | egrep "file[s]* changed" | sed 's/changed, \([0-9]\+ deletions\)/changed, 0 insertions(+), \1/g' | awk '{files+=$1; inserted+=$4; deleted+=$6} END {print "files changed", files,"total: " inserted - deleted , "lines inserted:", inserted, "lines deleted:", deleted}'    
 ```    
 
 ## get changed lines
@@ -183,14 +185,14 @@ git push;
 2) Using an SSH key
 3) Using your GitHub password with 2-factor authentication
 
-   > With either of the first two approaches you can avoid entering a username and password each time
+> With either of the first two approaches you can avoid entering a username and password each time
 
 ***    
 
 ### Personal Authentication
 
 ```shell    
-git config -l    
+ git config -l    
 ```    
 
 In what follows, I'll refer to the account or organization the repository exists in as ACCOUNT and the repository as REPO.
@@ -200,11 +202,11 @@ The standard way to interact with a repository is via HTTPS.
 You can clone a repository using HTTPS like this:
 
 ```shell    
-git clone https://github.com/ACCOUNT/REPO    
+ git clone https://github.com/ACCOUNT/REPO    
 ```    
 
-> You'll be asked to enter your username and password (where the latter could be either your GitHub password or your personal    
-> authentication token).
+> You'll be asked to enter your username and password (where the latter could be either your
+> GitHub password or your personal authentication token.
 
 > As of fall 2021, GitHub will no longer allow usage of a password alone.    
 > One good option is to use a personal authentication    
@@ -217,72 +219,75 @@ git clone https://github.com/ACCOUNT/REPO
 > Saving your password or token to avoid entering it    
 > You can save, or cache, your credentials so that you don't have to reenter them each time you interact with the remote repository.
 
-> Your credentials can be stored in the keychain of your operating system or cached in memory or in a file.
+> Your credentials can be stored in the keychain of your operating system or cached in memory
+>  or in a file.
 
-> To cache in memory, in the MacOS keychain, or in the Windows keychain, choose the relevant one of these three invocations:
+> To cache in memory, in the MacOS keychain, or in the Windows keychain, choose the relevant
+>  one of these three invocations:
 
 ***    
 
 #### In memory
 
 ```shell    
-git config --global credential.helper cache    
+ git config --global credential.helper cache    
 ```    
 
 > MacOS
 
 ```shell    
-git config --global credential.helper osxkeychain    
+ git config --global credential.helper osxkeychain    
 ```    
 
 > Windows
 
 ```shell    
-git config --global credential.helper wincred    
+ git config --global credential.helper wincred    
 ```    
 
 > To set the cache in memory to last for a particular amount of time, here 3600 seconds (i.e., 1 hour):
 
 ```shell    
-git config --global credential.helper 'cache --timeout=3600'    
+ git config --global credential.helper 'cache --timeout=3600'    
 ```    
 
-> If you prefer to set the credential helper on a repository-specific basis, you can omit the '--global' flag.
+> If you prefer to set the credential helper on a repository-specific basis, you can omit the ```--global``` flag.
 
 > To check if the credential helper is set up:
 
 ```shell    
-git config --get credential.helper    
+ git config --get credential.helper    
 ```    
 
 ### SSH keys
 
 To use SSH, you need to put your SSH public key in your GitHub account.    
 Your public key file is found in the    
-`~/.ssh` directory on a Mac or Linux machine and will generally be a file ending in .pub.    
+```~/.ssh``` directory on a Mac or Linux machine and will generally be a file ending in .pub
+
 Go to <https://github.com/settings/keys> and copy/paste your public key from the public key file.
 
 > You can then clone a repository using syntax of either of the following types:
 
 ```shell    
-git clone git@github.com:ACCOUNT/REPO.git    
-git clone ssh://github.com/ACCOUNT/REPO    
+ git clone git@github.com:ACCOUNT/REPO.git    
+ git clone ssh://github.com/ACCOUNT/REPO    
 ```    
 
 > To confirm you are using ssh, run
 
 ```shell    
-git config --get remote.origin.url    
+ git config --get remote.origin.url    
 ```    
 
 > If you see either of the following, you know you're using SSH to interact with the repository.
 
 ```shell    
-git@github.com:paciorek/test-auth.git    
+ git@github.com:paciorek/test-auth.git    
 ```    
 
 ```shell    
-ssh://github.com/paciorek/test-auth    
+ ssh://github.com/paciorek/test-auth    
 ```    
 
 > Avoiding having to enter your SSH passphrase    
@@ -290,25 +295,25 @@ ssh://github.com/paciorek/test-auth
 > To avoid having to keep doing this, > you can add your passphrase to your running SSH authentication agent, like this (assuming here your key is called 'id_rsa'):
 
 ```shell    
-ssh-add ~/.ssh/id_rsa    
+ ssh-add ~/.ssh/id_rsa    
 ```    
 
 > Note that you might need to start your SSH agent with:
 
 ```shell    
-eval `ssh-agent -s    
+ eval `ssh-agent -s    
 ```    
 
-> More details on using the SSH agent can be found [here](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
+> More details on using the SSH agent can be found [here](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
 > If you have a repository that is using HTTPS and you want to switch to SSH, you can run either of these invocations from within a > directory within your repository:
 
 ```shell    
-git config remote.origin.url git@github.com:ACCOUNT/REPO.git    
+ git config remote.origin.url git@github.com:ACCOUNT/REPO.git    
 ```    
 
 ```shell    
-git remote set-url origin git@github.com:ACCOUNT/REPO.git    
+ git remote set-url origin git@github.com:ACCOUNT/REPO.git    
 ```    
 
 > Using a password plus two-factor authentication
@@ -324,7 +329,7 @@ git remote set-url origin git@github.com:ACCOUNT/REPO.git
 ## set difftool with config file
 
 ```shell    
-git config --global -e     
+ git config --global -e     
 ```    
 
 > text to add
