@@ -1,15 +1,15 @@
 ---
-title:        MarkDown    
-layout:       default    
-permalink:    GithubPages/MarkDown    
-category:     GithubPages    
-parent:       GHP    
-has_children: false    
-share:        true    
-shortRepo:    ghpages                    
+title: MarkDown
+layout: default
+permalink: GithubPages/MarkDown
+category: GithubPages
+parent: GHP
+has_children: false
+share: true
+shortRepo: ghpages                    
 ---
-    
-    
+
+
 <details markdown="block">                  
 <summary>                  
 Table of contents                  
@@ -18,118 +18,118 @@ Table of contents
 1. TOC                  
 {:toc}                  
 </details>                  
-    
+
 <br/>                  
-    
+
 ***                  
-    
+
 <br/>                  
-    
-# [GitHub Linguist](https://github.com/github-linguist/linguist/blob/master/lib/linguist/languages.yml)    
-    
-> Code block Syntax yml    
+
+# [GitHub Linguist](https://github.com/github-linguist/linguist/blob/master/lib/linguist/languages.yml)
+
+> Code block Syntax yml
     
 ---
-    
-# GitHub Styling Quirks    
-    
-## visible in GitHub md page    
-    
+
+# GitHub Styling Quirks
+
+## visible in GitHub md page
+
 ```markdown    
 > **Note**<br>    
 > This is a note    
 ```    
-    
+
 > **Note**<br>    
-> This is a note    
-    
+> This is a note
+
 ```markdown    
 > **Warning**<br>    
 > This is a warning    
 ```    
-    
+
 > **Warning**<br>    
-> This is a warning    
-    
-## visible online    
-    
+> This is a warning
+
+## visible online
+
 ```html    
-    
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">    
     I am a success message    
 </div>     
 ```    
-    
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">                
 I am a success message                
 </div>                
-    
+
 ```html    
-    
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;">    
     I am an error message    
 </div>      
 ```    
-    
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;">                
 I am an error message                
 </div>                
-    
+
 ```html    
-    
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">    
     I am a info message    
 </div>       
 ```    
-    
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">                
 I am a info message                
 </div>                
-    
+
 ```html    
-    
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">    
     I am a warning message    
 </div>         
 ```    
-    
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">                
 I am a warning message                
 </div>                
     
 ---  
-    
-# Pandoc    
-    
-## Add Table of Contents to mark down doc with pandoc    
-    
-1) set file name    
-    
+
+# [Pandoc](https://pandoc.org/demos.html)
+
+## Add Table of Contents to mark down doc with pandoc
+
+1) set file name
+
 ```shell                  
 fileMD=CLI_Grailsw.md;                  
 ```                  
-    
-2) run    
-    
+
+2) run
+
 ```shell                  
 pandoc -s --toc $fileMD -o output.md; rm -f $fileMD; mv output.md ./$fileMD;                  
 ```                  
-    
-## docx to markdown    
-    
+
+## docx to markdown
+
 ```shell                  
 pandoc -s example30.docx --wrap=none --reference-links -t markdown -o example35.md                  
 ```                  
-    
-> or    
-    
+
+> or
+
   ```shell                  
   pandoc -t markdown_strict \                  
   --extract-media='./BrandonPaxton' myfilename.docx -o myfilename.md                  
   ```                  
-    
-- scripts    
-    - convert docx    
+
+- scripts
+    - convert docx
       ```shell                  
         #!/bin/bash                  
                     
@@ -142,8 +142,8 @@ pandoc -s example30.docx --wrap=none --reference-links -t markdown -o example35.
          # convert word to markdown                  
          pandoc -f docx -t markdown "$input"  -o $filename.md                  
        ```                  
-    
-    - files    
+
+    - files
       ```shell                  
         #!/bin/bash                  
                    
@@ -164,9 +164,9 @@ pandoc -s example30.docx --wrap=none --reference-links -t markdown -o example35.
         pandoc -f docx -t markdown "$line" -o $the_filename.md                  
         done                  
       ```                
-    
-> Example Used    
-    
+
+> Example Used
+
 ```shell                
  #!/bin/bash                
 pandoc -t markdown_strict -s BrandonPaxton.docx --wrap=none --reference-links -t markdown -o BPResume.md;                
