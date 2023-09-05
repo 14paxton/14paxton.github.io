@@ -17,4 +17,4 @@ ___
 
 # Architecture
 
-![kubernetes.gif](..%2Fassets%2Fimages%2Fkubernetes.gif)
+![](..assets/images/kubernetes.gif)
