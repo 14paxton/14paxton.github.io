@@ -2,7 +2,7 @@
 title: Annotations
 permalink: JavaNotes/Annotations
 category:  JavaNotes
-parent:   JavaNotes
+parent: Java
 layout: default
 has_children: false
 share: true
@@ -10,7 +10,6 @@ shortRepo:
   - javanotes
   - default          
 ---
-
 
 <br/>          
 
@@ -31,4 +30,4 @@ Table of contents
 
 # Create Custom Annotation
 
-![createAnnotation.png](../assets/images/createAnnotation.png)
+![createAnnotation.png](..%2Fassets%2Fimages%2FcreateAnnotation.png)
