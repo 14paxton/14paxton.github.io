@@ -1,8 +1,8 @@
 ---
-title:        Testing    
-permalink:    micronotes/Testing    
-category:     micronotes    
-parent:       micronotes    
+title:        Testing
+permalink: Micronotes/Testing
+category: Micronotes
+parent: Micronotes
 layout:       default    
 has_children: false    
 share:        true    

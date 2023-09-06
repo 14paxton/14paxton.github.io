@@ -1,8 +1,8 @@
 ---
 title:        EnviromentStuff
-permalink:    micronotes/EnviromentStuff
-category:     micronotes
-parent:       micronotes
+permalink: Micronotes/EnviromentStuff
+category: Micronotes
+parent: Micronotes
 layout:       default
 has_children: false
 share:        true

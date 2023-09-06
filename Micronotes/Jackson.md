@@ -1,8 +1,8 @@
 ---
-title:        Jackson    
-permalink:    micronotes/Jackson    
-category:     micronotes    
-parent:       micronotes    
+title:        Jackson
+permalink: Micronotes/Jackson
+category: Micronotes
+parent: Micronotes
 layout:       default    
 has_children: false    
 share:        true    

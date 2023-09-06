@@ -1,8 +1,8 @@
 ---
-title:        cli_gradlew    
-permalink:    micronotes/cli_gradlew    
-category:     micronotes    
-parent:       micronotes    
+title:        cli_gradlew
+permalink: Micronotes/cli_gradlew
+category: Micronotes
+parent: Micronotes
 layout:       default    
 has_children: false    
 share:        true    

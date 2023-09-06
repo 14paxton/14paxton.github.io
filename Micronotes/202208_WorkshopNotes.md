@@ -1,8 +1,8 @@
 ---
-title:        202208_WorkshopNotes    
-permalink:    micronotes/202208_WorkshopNotes    
-category:     micronotes    
-parent:       micronotes    
+title:        202208_WorkshopNotes
+permalink: Micronotes/202208_WorkshopNotes
+category: Micronotes
+parent: Micronotes
 layout:       default    
 has_children: false    
 share:        true    

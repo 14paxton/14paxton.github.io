@@ -1,8 +1,8 @@
 ---
 title:        DataBaseStuff
-permalink:    micronotes/DataBaseStuff
-category:     micronotes
-parent:       micronotes
+permalink: Micronotes/DataBaseStuff
+category: Micronotes
+parent: Micronotes
 layout:       default
 has_children: false
 share:        true

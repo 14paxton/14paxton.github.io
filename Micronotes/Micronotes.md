@@ -1,20 +1,21 @@
 ---
-title:        micronotes    
-layout:       default    
-permalink:    micronotes/    
-category:     micronotes    
-has_children: true    
-share:        true    
-shortRepo:    
-    
-  - micronotes    
+title: Micronotes
+layout: default
+permalink: Micronotes/
+category: Micronotes
+has_children: true
+share: true
+shortRepo:
+
+  - micronotes
   - default    
 ---
+
 # [Install](https://micronaut-projects.github.io/micronaut-starter/latest/guide/#installation)
 
 ## [Download and Install](https://micronaut.io/download/)
 
-# [REPO](https://github.com/14paxton/micronotes)
+# [REPO](https://github.com/14paxton/Micronotes)
 
 # Run
 

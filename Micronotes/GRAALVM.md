@@ -1,8 +1,8 @@
 ---
-title:        GRAALVM    
-permalink:    micronotes/GRAALVM    
-category:     micronotes    
-parent:       micronotes    
+title:        GRAALVM
+permalink: Micronotes/GRAALVM
+category: Micronotes
+parent: Micronotes
 layout:       default    
 has_children: false    
 share:        true    

@@ -1,8 +1,8 @@
 ---
 title:        @Annotations
-permalink:    micronotes/@Annotations
-category:     micronotes
-parent:       micronotes
+permalink: Micronotes/@Annotations
+category: Micronotes
+parent: Micronotes
 layout:       default
 has_children: false
 share:        true

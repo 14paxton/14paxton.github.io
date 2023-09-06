@@ -1,8 +1,8 @@
 ---
 title: MicroStream
-permalink: micronotes/MicroStream
-category: micronotes
-parent: micronotes
+permalink: Micronotes/MicroStream
+category: Micronotes
+parent: Micronotes
 layout: default
 has_children: false
 share: true
