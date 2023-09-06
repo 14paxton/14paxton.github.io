@@ -21,5 +21,4 @@ ___
 ![kubernetes.gif](..%2Fassets%2Fimages%2Fkubernetes.gif)
 ![kubernetes.gif](./assets%2Fimages%2Fkubernetes.gif)
 ![kubernetes](https://github.com/14paxton/14paxton.github.io/blob/master/assets/images/kubernetes.gif)
-
 <img src='https://github.com/14paxton/14paxton.github.io/blob/master/assets/images/kubernetes.gif?raw=true' />

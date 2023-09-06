@@ -95,7 +95,24 @@ I am a info message
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">                
 I am a warning message                
-</div>                
+</div>            
+
+## Adding Image
+
+### Works
+
+```markdown
+![kubernetes.gif](../assets/images/kubernetes.gif)
+![kubernetes.gif](./assets%2Fimages%2Fkubernetes.gif)
+<img src='https://github.com/14paxton/14paxton.github.io/blob/master/assets/images/kubernetes.gif?raw=true' />
+```
+
+### Not Working
+
+```markdown
+![kubernetes](https://github.com/14paxton/14paxton.github.io/blob/master/assets/images/kubernetes.gif)
+```
+
     
 ---  
 
