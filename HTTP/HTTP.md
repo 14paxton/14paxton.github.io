@@ -18,7 +18,7 @@ shortRepo:
 # Status Codes
 
 ![httpStatusCodes.png](..%2Fassets%2Fimages%2FhttpStatusCodes.png)
-
+![httpStatusCodes.png](../assets/images/httpStatusCodes.png)
 ---
 
 # HTTP Request Methods

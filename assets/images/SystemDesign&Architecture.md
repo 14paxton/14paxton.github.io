@@ -23,3 +23,7 @@ shortRepo:
 # System Design Template
 
 ![systemDesignTemplate.png](..%2Fassets%2Fimages%2FsystemDesignTemplate.png)
+
+# Microservice
+
+![img.png](../../SystemDesign&Architecture/SystemDesignMicroservice.png)

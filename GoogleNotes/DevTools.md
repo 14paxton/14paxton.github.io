@@ -28,6 +28,10 @@ Table of contents
 ***                    
     
 <br/>    
+
+# Console
+
+![img.png](../assets/images/GoogleDevConsole.png)
     
 # [Re-Enable Right click](https://stackoverflow.com/questions/21335136/how-to-re-enable-right-click-so-that-i-can-inspect-html-elements-in-chrome)    
     
