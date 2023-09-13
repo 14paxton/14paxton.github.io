@@ -26,4 +26,4 @@ shortRepo:
 
 # Microservice
 
-![img.png](../../SystemDesign&Architecture/SystemDesignMicroservice.png)
+![img.png](../assets/images/SystemDesignMicroservice.png)
