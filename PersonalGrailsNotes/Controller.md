@@ -48,6 +48,8 @@ def x = new grails.web.servlet.mvc.GrailsParameterMap(paramMap, request)
 
 > creating error code
 
+> Error Object = package org.springframework.validation (Public Interface Errors)
+
 > Example com.talentbank.tbex.SelfServiceIntegration.WSConfigCommand.rest
 
 ```groovy
@@ -56,14 +58,51 @@ rest nullable: true, validator: { RESTCommand restCmd, WSConfigCommand obj ->
 }
 ```
 
-```groovy     
+> error object params Example - Errors.java
 
-Object { "rest" : "${WSConfigCommand.class}" } , Property[{ 0 }] of class [ { 1 } ] with value [ { 2 } ] does not pass custom validation }
+```groovy
+// void reject(String errorCode, Object[] errorArgs, String defaultMessage);
 
-user .errors.reject (
-'user.password.doesnotmatch',
-[ 'password', 'class User' ] as Object [ ],
-'[Property [{0}] of class [{1}] does not match confirmation]' )    
+"com.talentbank.tbex.SelfServiceIntegration.WSConfigCommand.rest" , Object { "rest" : "${WSConfigCommand.class}" } , "Property[{ 0 }] of class [ { 1 } ] with value [ { 2 } ] does not pass custom validation" 
+```
+
+```groovy
+user.errors.reject('user.password.doesnotmatch', ['password', 'class User'] as Object[], '[Property [{0}] of class [{1}] does not match confirmation]')
+```
+
+> usage com.talentbank.tbex.SelfServiceIntegration.CommandObjects.IntegrationCommand
+
+```groovy
+private void validateSubCommandObject(Validateable childCmdObj) {
+    if (!childCmdObj.validate()) {
+        childCmdObj.errors.allErrors.each { ObjectError errObj ->
+            String msg = errObj.defaultMessage
+            errObj.arguments.eachWithIndex { Object err, int index ->
+                msg = msg.replace("{${index}}", "${err}")
+            }
+            errors.reject(errObj.codes[0], errObj.arguments, msg)
+        }
+    }
+}
+
+void beforeValidate() {
+    ["wSConfig", "clientResultConfig"].each { String prop ->
+        if (this[prop]) {
+            validateSubCommandObject(this[prop] as Validateable)
+        } else {
+            errors.reject($/com.talentbank.tbex.SelfServiceIntegration.validator.null.${prop}/$,
+                    ["$prop", "class IntegrationCommand"] as Object[],
+                    $/Property ${prop} of class IntegrationCommand is null/$)
+        }
+    }
+
+    if (this.clientEntityMap) {
+        this.clientEntityMap.each { ClientEntityMapType key, List<ClientEntityDetailsCommand> value ->
+            value.each { validateSubCommandObject(it as Validateable) }
+        }
+    }
+
+}
 ```    
 
 > this forces validate on nested command object, then adds errors to parent errors, only the parent need to be confirmed

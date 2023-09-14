@@ -132,9 +132,7 @@ public class Example {
 ```    
 
 ```java    
-Public
-
-class Example {
+public class Example {
     Class<?> clazz = Class.forName("com.foo.MyClass");
     Constructor<?> constructor = clazz.getConstructor(String.class, Integer.class);
     Object instance = constructor.newInstance("stringparam", 42);
