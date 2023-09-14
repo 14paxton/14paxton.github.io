@@ -31,6 +31,15 @@ Table of contents
 
 <br/>                    
 
+# Threads
+
+## Create Random Number
+
+```java
+public class CreateRando {
+    Long rando = ThreadLocalRandom.current().nextLong(100000);
+}
+```
 # binary search
 
 ```java                  

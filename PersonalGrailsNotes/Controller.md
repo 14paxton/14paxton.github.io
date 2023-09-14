@@ -1,19 +1,19 @@
 ---
-title:        Controller    
-permalink:    PersonalGrailsNotes/Controller    
-category:     PersonalGrailsNotes    
-parent:       PersonalGrailsNotes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - personalgrailsnotes    
+title: Controller
+permalink: PersonalGrailsNotes/Controller
+category: PersonalGrailsNotes
+parent: PersonalGrailsNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - personalgrailsnotes
   - default    
 ---
-    
-    
+
+
 <br/>    
-    
+
 <details markdown="block">    
 <summary>    
 Table of contents    
@@ -22,70 +22,76 @@ Table of contents
 1. TOC    
 {:toc}    
 </details>    
-    
+
 <br/>    
-    
+
 ***    
-    
+
 <br/>    
-    
-# The GrailsParameterMap    
+
+# The Grails Parameter Map
 
 > [Using Param map Object](https://gist.github.com/14paxton/42e595a1bf50e44031b6be6c034003d9)
-    
+
 ```groovy    
-def paramMap = ["firstName": "brandon", "lastName": "paxton", "email": "bpaxton@talentplus.com", "assessmentType": "AO6"]    
+def paramMap = ["firstName": "brandon", "lastName": "paxton", "email": "bpaxton@talentplus.com", "assessmentType": "AO6"]
 def x = new grails.web.servlet.mvc.GrailsParameterMap(paramMap, request)    
 ```    
-    
-#  Command Object with Validation-*    
-    
-## command object allows you to validate with services    
-    
+
+# Command Object with Validation-*
+
+## command object allows you to validate with services
+
 <a href="https://gist.github.com/14paxton/282d48ed20642c697315e15dffb7df2d"> GRAILSCommandObject </a>    
-    
-### Custom Validator for Nested Command objects in a list    
-    
-> creating error code    
-    
-  ```groovy     
-     com.talentbank.tbex.SelfServiceIntegration.WSConfigCommand.rest.validator.error.com.talentbank.tbex.SelfServiceIntegration.WSConfigCommand.rest ,    
-Object { "rest" : "${WSConfigCommand.class}" } ,    
-Property[{ 0 }] of class [ { 1 } ] with value [ { 2 } ] does not pass custom validation    
-    
-user. errors.reject (    
-'user.password.doesnotmatch',    
-[ 'password' , 'class User' ] as Object [ ],    
+
+### Custom Validator for Nested Command objects in a list
+
+> creating error code
+
+> Example com.talentbank.tbex.SelfServiceIntegration.WSConfigCommand.rest
+
+```groovy
+rest nullable: true, validator: { RESTCommand restCmd, WSConfigCommand obj ->
+    return (obj?.wSConfigTypes?.size() > 0) ? null : "error: must have config rest, ftp, or soap"
+}
+```
+
+```groovy     
+
+Object { "rest" : "${WSConfigCommand.class}" } , Property[{ 0 }] of class [ { 1 } ] with value [ { 2 } ] does not pass custom validation }
+
+user .errors.reject (
+'user.password.doesnotmatch',
+[ 'password', 'class User' ] as Object [ ],
 '[Property [{0}] of class [{1}] does not match confirmation]' )    
-  ```    
-    
-> this forces validate on nested command object, then adds errors to parent errors, only the parent need to be confirmed    
-    
+```    
+
+> this forces validate on nested command object, then adds errors to parent errors, only the parent need to be confirmed
+
 ```groovy    
-    List<WSConfigCommand> wSConfig    
-...    
-    
-void validateWSConfig() {    
-    if (this.wSConfig.size() > 0) {    
-        this.wSConfig.each { WSConfigCommand cmd ->    
-            if (!cmd.validate()) {    
-                cmd.errors.allErrors.each {    
-                    errors.reject(it.codes[0], it.arguments, it.defaultMessage)    
-                }    
-            }    
-        }    
-    }    
+List<WSConfigCommand> wSConfig
+
+void validateWSConfig() {
+    if (this.wSConfig.size() > 0) {
+        this.wSConfig.each { WSConfigCommand cmd ->
+            if (!cmd.validate()) {
+                cmd.errors.allErrors.each {
+                    errors.reject(it.codes[0], it.arguments, it.defaultMessage)
+                }
+            }
+        }
+    }
 }    
 ```    
-    
-### Import and excluding other domain constrains    
-    
+
+### Import and excluding other domain constrains
+
 ```groovy    
         importFrom SOAPClientOrderConfig, exclude: ["binarySecTokenEncodingType", "binarySecTokenValueType", "countryCodeFormat"]    
 ```    
-    
-### JSON return bodies Spring/Jackson examples    
-    
-#### https://www.baeldung.com/jackson-json-view-annotation    
-    
+
+### JSON return bodies Spring/Jackson examples
+
+#### https://www.baeldung.com/jackson-json-view-annotation
+
 #### https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-jackson
