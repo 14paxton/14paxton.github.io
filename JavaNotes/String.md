@@ -59,8 +59,8 @@ String padded=String.format("%-20s",str);
 ```    
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
-    In a formatter, <em>%</em> introduces a format sequence.<br>
-    The <em>-</em> means that the string will be left-justified (spaces will be added at the end of the string).<br>
-    The <em>20</em> means the resulting string will be 20 characters long.<br>
-    The <em>s</em> is the character string format code, and ends the format sequence.       <br>
+    <span>In a formatter, <strong>"<em style="background-color: lightgrey;"> % </em>"</strong> introduces a format sequence.</span><br>
+    <span >The <strong>"<em style="background-color: lightgrey;"> - </em>"</strong> means that the string will be left-justified (spaces will be added at the end of the string).</span><br>
+   <span> The <strong>"<em style="background-color: lightgrey;"> 20</em>"</strong> means the resulting string will be 20 characters long.</span><br>
+   <span> The <strong>"<em style="background-color: lightgrey;"> s</em>"</strong> is the character string format code, and ends the format sequence.</span><br>
 </div> 
