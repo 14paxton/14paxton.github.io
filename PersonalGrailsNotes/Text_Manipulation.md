@@ -1,11 +1,11 @@
 ---
-title:        Text_Manipulation
-permalink:    PersonalGrailsNotes/Text_Manipulation
-category:     PersonalGrailsNotes
-parent:       PersonalGrailsNotes
-layout:       default
+title: Text_Manipulation
+permalink: PersonalGrailsNotes/Text_Manipulation
+category: PersonalGrailsNotes
+parent: PersonalGrailsNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - personalgrailsnotes
   - default    
@@ -33,62 +33,52 @@ Table of contents
 
 ## GRAILS TYPE Converters
 
-> Convert and check type in controller    
+> Convert and check type in controller
+
 > [TypeCheck](http://docs.grails.org/latest/guide/theWebLayer.html#typeConverters)
 
-  ``` groovy    
-      param.short(...)    
-      param.byte(...)    
-      param.long(...)    
-      param.double(...)    
-      param.boolean(...)    
-  ```    
+```groovy    
+param.short(var)
+param.byte(var)
+param.long(var)
+param.double(var)
+param.boolean(var)    
+```    
 
 ## JSON
 
 ### JSON Parser Example
 
-``` groovy    
-    
+> This is your JSON object that should be passed in to the method
+
+```groovy    
+
 def json = '''{    
-    
                   "markings": {    
-    
                       "headMarkings": "Brindle",    
-    
                       "leftForeMarkings": "",    
-    
                       "rightForeMarkings": "sock",    
-    
                       "leftHindMarkings": "sock",    
-    
                       "rightHindMarkings": "",    
-    
                       "otherMarkings": ""    
-    
                    }    
-    
-                }'''    
-    
-     
-    
+                }'''
+
 def jsonObj = grails.converters.JSON.parse(json)    
 ```    
 
-> This is your JSON object that should be passed in to the method
+```groovy    
+print jsonObj
+//optput [markings:[rightForeMarkings:sock, otherMarkings:, leftForeMarkings:, leftHindMarkings:sock, rightHindMarkings:, headMarkings:Brindle]]    
 
-``` groovy    
-print jsonObj     
-// optput [markings:[rightForeMarkings:sock, otherMarkings:, leftForeMarkings:, leftHindMarkings:sock, rightHindMarkings:, headMarkings:Brindle]]    
-    
-def jsonStr = jsonObj.toString()    
-    
+def jsonStr = jsonObj.toString()
+
 //This is the string which should be persisted in db    
-assert jsonStr == '{"markings":{"rightForeMarkings":"sock","otherMarkings":"","leftForeMarkings":"","leftHindMarkings":"sock","rightHindMarkings":"","headMarkings":"Brindle"}}'    
-    
+assert jsonStr == '{"markings":{"rightForeMarkings":"sock","otherMarkings":"","leftForeMarkings":"","leftHindMarkings":"sock","rightHindMarkings":"","headMarkings":"Brindle"}}'
+
 //Get back json obj from json str    
-def getBackJsobObj = grails.converters.JSON.parse(jsonStr)    
-    
+def getBackJsobObj = grails.converters.JSON.parse(jsonStr)
+
 assert getBackJsobObj.markings.leftHindMarkings == 'sock'    
 ```    
 
@@ -98,44 +88,41 @@ assert getBackJsobObj.markings.leftHindMarkings == 'sock'
 
 [i18n Docs](https://docs.grails.org/4.0.1/guide/i18n.html)
 
-``` groovy    
- messageSource.getMessage('batch.user.registration.confirmation.message', [jobId as String].toArray() , LocaleContextHolder.locale)    
+```groovy    
+ messageSource.getMessage('batch.user.registration.confirmation.message', [jobId as String].toArray(), LocaleContextHolder.locale)    
 ```    
 
 ## Render grails tags to return in controller
 
-``` groovy    
-        render  g.select(from: languages, optionKey: "key" , optionValue: "value",  name: "languageChoice",    
-        class:"form-control", value: assessmentLanguage)    
+```groovy    
+render g.select(from: languages, optionKey: "key", optionValue: "value", name: "languageChoice", class: "form-control", value: assessmentLanguage)    
 ```    
 
 ## save grails tag in variable and render on page
 
-``` groovy    
-`${yourTag.encodeAsRaw()}`    
+```groovy    
+"${yourTag.encodeAsRaw()}"    
 ```    
 
 > or
 
-``` groovy    
-   `${raw(user.description)}`    
+```groovy    
+"${raw(user.description)}"    
 ```    
 
 ## JSON
 
 ### Javascript manipulation
 
-``` javascript    
-var catalogsByType = null;    
+```html    
+
+<script>
+const catalogsByType = null;    
+</script>
 <g:applyCodec encodeAs="none">    
     catalogsByType = ${resultCatalogs.catalogsByType as grails.converters.JSON};    
-</g:applyCodec>    
-    
-     
-    
+</g:applyCodec>
 <script>    
-    
-    var data = ${raw(data)};    
-    
+    let data = ${raw(data)};    
 </script>    
 ```
