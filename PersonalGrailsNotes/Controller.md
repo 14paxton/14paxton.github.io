@@ -52,6 +52,8 @@ def x = new grails.web.servlet.mvc.GrailsParameterMap(paramMap, request)
 
 > Example com.talentbank.tbex.SelfServiceIntegration.WSConfigCommand.rest
 
+> (Validator)[https://docs.grails.org/latest/ref/Constraints/validator.html]
+
 ```groovy
 rest nullable: true, validator: { RESTCommand restCmd, WSConfigCommand obj ->
     return (obj?.wSConfigTypes?.size() > 0) ? null : "error: must have config rest, ftp, or soap"
@@ -131,6 +133,6 @@ void validateWSConfig() {
 
 ### JSON return bodies Spring/Jackson examples
 
-#### https://www.baeldung.com/jackson-json-view-annotation
+#### (jackson-json-view-annotation)[https://www.baeldung.com/jackson-json-view-annotation]
 
-#### https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-jackson
+#### (spring-mvc-ann-jackson)[https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-jackson]

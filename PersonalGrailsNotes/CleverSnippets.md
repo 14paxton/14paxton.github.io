@@ -1,11 +1,11 @@
 ---
-title:        CleverSnippets
-permalink:    PersonalGrailsNotes/CleverSnippets
-category:     PersonalGrailsNotes
-parent:       PersonalGrailsNotes
-layout:       default
+title: CleverSnippets
+permalink: PersonalGrailsNotes/CleverSnippets
+category: PersonalGrailsNotes
+parent: PersonalGrailsNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
 
   - personalgrailsnotes
@@ -70,6 +70,8 @@ Table of contents
 ### <a href="https://gist.github.com/14paxton/b7f8be4d37b29eb2d25e1a2e993f5bf4"> save </a>
 
 ### <a href="https://gist.github.com/14paxton/74672cad5253c56c36efc6473078de34"> delete </a>
+
+## [Command Object](https://gist.github.com/14paxton/282d48ed20642c697315e15dffb7df2d)
 
 ## [Dynamic String building HQL](https://gist.github.com/14paxton/0ed8e82644cd661dc8c9fc0d4b8c2009)
 
