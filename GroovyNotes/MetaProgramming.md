@@ -63,7 +63,7 @@ class BaseObject {
 ## if you don’t know the name of method at runtime
 
 ```groovy
-peter.invokeMethod(“ walk ”, 10)
+peter.invokeMethod("walk", 10)
 ```
 
 # MetaProgramming
@@ -86,7 +86,7 @@ dynamicProperties.eachWithIndex { String newProp, Integer index ->
 
 ```groovy
  def x = vobj[usrRequestedProperty]
-def y = vobj.” $ { usrRequestedProperty } ”
+def y = vobj."${usrRequestedProperty}"
 ```    
 
 ## iterate over an objects properties
@@ -118,6 +118,12 @@ test.metaClass.methods.each { method -> if (method.name == 'thismethod') method.
 ```groovy
  object.respondsTo(methodName)
 ```    
+
+## invoke method dynamically
+
+```groovy
+if (methodUsed) returnSet = invokeMethod(methodUsed as String, group) as Set
+```
 
 # Class object -- reflection
 

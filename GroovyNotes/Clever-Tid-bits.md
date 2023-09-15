@@ -1,11 +1,11 @@
 ---
-title:        Clever-Tid-bits
-permalink:    GroovyNotes/Clever-Tid-bits
-category:     GroovyNotes
-parent:       GroovyNotes
-layout:       default
+title: Clever-Tid-bits
+permalink: GroovyNotes/Clever-Tid-bits
+category: GroovyNotes
+parent: GroovyNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - groovynotes
   - default    
