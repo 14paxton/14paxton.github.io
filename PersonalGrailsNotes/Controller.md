@@ -52,7 +52,7 @@ def x = new grails.web.servlet.mvc.GrailsParameterMap(paramMap, request)
 
 > Example com.talentbank.tbex.SelfServiceIntegration.WSConfigCommand.rest
 
-> (Validator)[https://docs.grails.org/latest/ref/Constraints/validator.html]
+(Validator)[https://docs.grails.org/latest/ref/Constraints/validator.html]
 
 ```groovy
 rest nullable: true, validator: { RESTCommand restCmd, WSConfigCommand obj ->
