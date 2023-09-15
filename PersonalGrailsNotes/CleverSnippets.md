@@ -85,4 +85,4 @@ Table of contents
 
 ## [User Grails Param map and a closure to build HQL](https://gist.github.com/14paxton/42e595a1bf50e44031b6be6c034003d9)
 
-## [Elastic Search Fuzzy Matching](https://gist.github.com/14paxton/3a352d2824bde0e97960409056f682ccd)
+## [Elastic Search Fuzzy Matching](https://gist.github.com/14paxton/3a352d2824bde0e97960409056f682cc)
