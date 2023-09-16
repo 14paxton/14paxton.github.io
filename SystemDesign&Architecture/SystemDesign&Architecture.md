@@ -10,13 +10,17 @@ shortRepo:
   - default         
 ---
 
+# Software Development Process
+
+![SoftwareDevProcess.gif](../assets/images/SoftwareDevProcess.gif)
+
 # API Architectures
 
 ## Common Patterns
 
 ![apiArchitecture.gif](..%2Fassets%2Fimages%2FapiArchitecture.gif)
 
-## SecureAPIDesign 
+## SecureAPIDesign
 
 ![SecureAPIDesign.png](..%2Fassets%2Fimages%2FSecureAPIDesign.png)
 

@@ -29,6 +29,10 @@ Table of contents
 
 <br/>
 
-# Web Annotations
+# Web
 
 ![SpringBootWebAnnotations.png](..%2Fassets%2Fimages%2FSpringBootWebAnnotations.png)
+
+# Security
+
+![img.png](../assets/images/SpringSecurityAnnotations.png)
