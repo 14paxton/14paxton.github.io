@@ -14,4 +14,15 @@ shortRepo: ghpages
 - [GitHub Repositories](https://github.com/14paxton?tab=repositories)
 - [GISTs](https://gist.github.com/14paxton)
 - [LinkedIn](https://www.linkedin.com/in/paxtonbrandon/)
-- [Resume, CoverLetter, Letter of Recommendation](https://github.com/14paxton/JobPrep/tree/master/ResumeAndRecommendation)  
+- [Resume, CoverLetter, Letter of Recommendation](https://github.com/14paxton/JobPrep/tree/master/ResumeAndRecommendation)
+
+---
+
+<details markdown="block">                    
+<summary>                    
+Table of contents                    
+</summary>                    
+{: .text-delta }                    
+1. TOC                    
+{:toc}                    
+</details>    
