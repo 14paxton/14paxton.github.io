@@ -262,6 +262,8 @@ data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//...
 
 ### [URL Encoder for SVG](https://yoksel.github.io/url-encoder/)
 
+### [Data URI Generator](https://dopiaza.org/tools/datauri/index.php)
+
 ### [Image To Data Uri](https://websemantics.uk/tools/image-to-data-uri-converter/)
 
 ### [PNG to SVG](https://png2svg.com/)
