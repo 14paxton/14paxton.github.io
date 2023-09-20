@@ -31,21 +31,23 @@ Table of contents
 
 # SVG
 
+```xml
+
+<svg version="1.1"
+     width="300" height="200"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <rect width="100%" height="100%" fill="red"/>
+
+    <circle cx="150" cy="100" r="80" fill="green"/>
+
+    <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">SVG</text>
+
+</svg>
+
+```
+
 ## CSS
-
-```css    
-html {
-    background-image: url('data:image/jpg;base64,/9j/4RkARXhpZgAATU0AKgAAAAgAB6f/9k='), url(/TBEX/resource/src/815-teams-north-gate-path.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    height: 100%;
-    /*background-color: #FFFFFF; !* match backgroud to bottom of page *!*/
-}    
-```    
-
-> or
 
 ```html
 <a href="/" class="logo">
@@ -107,13 +109,10 @@ To aid readability you may even attempt such audacity as this:
 
 ```html
 
-<svg
-        version="1.1" baseProfile="full" width="300" height="200" xmlns="http://www.w3.org/2000/svg"
->
-  <rect width="100%" height="100%" fill="black"/>
-  <circle cx="150" cy="100" r="90" fill="blue"/>
+<svg baseProfile="full" height="200" version="1.1" width="300" xmlns="http://www.w3.org/2000/svg">
+  <rect fill="black" height="100%" width="100%"/>
+  <circle cx="150" cy="100" fill="blue" r="90"/>
 </svg>
-
 ```
 
 ### image element
@@ -137,6 +136,16 @@ body {background: url(fallback.png);background-image: url(image.svg), none;}
    <!-- paste in SVG code, image shows up!  -->
 
 </body>
+```
+
+### iframe element
+
+```html
+
+<iframe height="500" sandbox src="triangle.svg" width="500">
+  <img alt="Triangle with three unequal sides" src="triangle.png"/>
+</iframe>
+
 ```
 
 ### object element
@@ -186,6 +195,20 @@ li {
     padding: 5px 0 5px 25px;
 }
 ```
+
+> or
+
+```css    
+html {
+    background-image: url('data:image/jpg;base64,/9j/4RkARXhpZgAATU0AKgAAAAgAB6f/9k='), url(/TBEX/resource/src/815-teams-north-gate-path.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    /*background-color: #FFFFFF; !* match backgroud to bottom of page *!*/
+}    
+```   
 
 ## html
 
