@@ -302,11 +302,11 @@ export function elementsToNewDocument(arrayOfElementObjects, dimensionsObj, addI
 ```      
     
 # CDN or workaround for Content Security Policy    
-    
-https://content-security-policy.com/      
-https://web.dev/csp/#source-whitelists      
-https://stackoverflow.com/questions/31211359/refused-to-load-the-script-because-it-violates-the-following-content-security-po/31219814#31219814    
-    
+
+[content-security-policy](https://content-security-policy.com/      )
+[source whitelist](https://web.dev/csp/#source-whitelists      )
+[stack overflow refused-to-load-the-script-because-it-violates-the-following-content-security](https://stackoverflow.com/questions/31211359/refused-to-load-the-script-because-it-violates-the-following-content-security-po/31219814#31219814)
+
 ```javascript      
 export async function add_Dangerous_CSP_MetaTags(scriptSrcArray, documentElement) {    
     const srcArray = Array.isArray(scriptSrcArray)    
