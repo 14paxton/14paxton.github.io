@@ -123,8 +123,11 @@ To aid readability you may even attempt such audacity as this:
 
 ### body element
 
-```html
-body {background: url(fallback.png);background-image: url(image.svg), none;}
+```css
+body {
+    background: url(fallback.png);
+    background-image: url(image.svg), none;
+}
 ```
 
 ## inline
