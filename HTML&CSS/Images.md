@@ -185,9 +185,15 @@ If the browser doesn’t recognise the object element’s MIME type it won’t d
 
 The object element effectively replaces it’s default content with the SVG data. Only if the browser doesn’t support SVG does the element inside get styled. This to my knowledge is the best way to use SVG without any overhead.
 
-#[ Data URIs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)
+# [ Data URIs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)
 
 ## css
+
+```css
+.logo {
+    background: url("data:image/svg+xml;base64,[data]");
+}
+```
 
 ```css
 li {
@@ -210,13 +216,26 @@ html {
 }    
 ```   
 
-## html
+## image
 
 > format
 >> data:[<mime type>][;charset=<charset>][;base64],<encoded data>
 
 ```html
+<img src="data:image/svg+xml;base64,[data]">
+```
+
+```html
 <img alt="star" height="16" src="data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7" width="16">
+```
+
+## object
+
+```html
+
+<object type="image/svg+xml" data="data:image/svg+xml;base64,[data]">
+  fallback
+</object>
 ```
 
 ## Formats
