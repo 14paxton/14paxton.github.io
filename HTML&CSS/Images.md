@@ -185,7 +185,7 @@ If the browser doesn’t recognise the object element’s MIME type it won’t d
 
 The object element effectively replaces it’s default content with the SVG data. Only if the browser doesn’t support SVG does the element inside get styled. This to my knowledge is the best way to use SVG without any overhead.
 
-# Data URIs
+#[ Data URIs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)
 
 ## css
 
@@ -234,3 +234,15 @@ data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://...'
 <!-- Fully URL encoded ASCII -->
 data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//...
 ```
+
+# Resources
+
+- [CSSTricks](https://css-tricks.com/using-svg/)
+
+## Encoder/Converter
+
+### [URL Encoder for SVG](https://yoksel.github.io/url-encoder/)
+
+### [Image To Data Uri](https://websemantics.uk/tools/image-to-data-uri-converter/)
+
+### [PNG to SVG](https://png2svg.com/)
