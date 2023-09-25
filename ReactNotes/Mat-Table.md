@@ -56,9 +56,7 @@ state = {
 >
 
 ```javascript
-<MaterialTable
-    tableRef={this.state.tableRef}
-/>
+<MaterialTable tableRef={this.state.tableRef} />
 ```
 
 > Then on the onRowClick prop/function use tableRef to access dataManager and onSelectionChange
