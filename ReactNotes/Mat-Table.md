@@ -28,7 +28,7 @@ Table of contents
 
 <br/>      
 
-# (Table With Async Call)[https://github.com/14paxton/TableWithAsyncCall/tree/main] 
+# [Table With Async Call](https://github.com/14paxton/TableWithAsyncCall/tree/main)
 
 # Use ref to update table info in parent
 
@@ -56,9 +56,7 @@ state = {
 >
 
 ```javascript
-<MaterialTable
-    tableRef={this.state.tableRef}
-/>
+<MaterialTable tableRef={this.state.tableRef} />
 ```
 
 > Then on the onRowClick prop/function use tableRef to access dataManager and onSelectionChange
@@ -85,6 +83,6 @@ state = {
 
 # Issues
 
-## (Add API for selecting/deselecting rows programmatically)[https://github.com/mbrn/material-table/issues/515] 
+## [Add API for selecting/deselecting rows programmatically](https://github.com/mbrn/material-table/issues/515)
 
-## (Select all' also selects disabled checkboxes)[https://github.com/mbrn/material-table/issues/686]
+## ["Select All" also selects disabled checkboxes](https://github.com/mbrn/material-table/issues/686)
