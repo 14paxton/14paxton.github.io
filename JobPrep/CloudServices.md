@@ -1,6 +1,6 @@
 ---
 title:        CloudServices
-permalink:    GithubPages/CloudServices
+permalink: GitHubPages/CloudServices
 category:     JobPrep
 parent:       MyPersonalDocsAndStuff
 layout:       default

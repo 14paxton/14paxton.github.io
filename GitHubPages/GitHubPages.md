@@ -1,8 +1,8 @@
 ---
 title: GHP
 layout: default
-permalink: GithubPages/GHP
-category: GithubPages
+permalink: GitHubPages/GHP
+category: GitHubPages
 has_children: true
 share: true
 shortRepo: ghpages          
@@ -24,8 +24,6 @@ Table of contents
 <br/>                  
 
 # [QUICKSTART](https://docs.github.com/en/pages/quickstart)
-
-___                  
 
 # ```_config.yml```
 

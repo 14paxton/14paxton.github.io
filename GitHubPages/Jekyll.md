@@ -1,8 +1,8 @@
 ---
 title:        Jekyll          
-layout:       default          
-permalink:    GithubPages/Jekyll          
-category:     GithubPages          
+layout:       default
+permalink: GitHubPages/Jekyll
+category: GitHubPages
 parent:       GHP          
 has_children: false          
 share:        true          

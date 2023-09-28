@@ -1,6 +1,6 @@
 ---
 title:        InterviewQ&A
-permalink:    GithubPages/InterviewQ&A
+permalink: GitHubPages/InterviewQ&A
 category:     JobPrep
 parent:       MyPersonalDocsAndStuff
 layout:       default

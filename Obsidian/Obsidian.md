@@ -48,8 +48,8 @@ Obsidian lets you edit text in multiple places at the same time using multiple c
     
 ```yml                      
 ---
-title:    GHP              
-category: GithubPages/Pages              
+title:    GHP
+category: GitHubPages/Pages
 share:    true              
 repo:              
   owner:     14paxton              

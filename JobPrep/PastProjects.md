@@ -1,6 +1,6 @@
 ---
-title:        PastProjects      
-permalink:    GithubPages/PastProjects      
+title:        PastProjects
+permalink: GitHubPages/PastProjects
 category:     JobPrep      
 parent:       MyPersonalDocsAndStuff      
 layout:       default      

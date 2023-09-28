@@ -1,6 +1,6 @@
 ---
 title: PriorityLearning
-permalink: GithubPages/PriorityLearning
+permalink: GitHubPages/PriorityLearning
 category: JobPrep
 parent: MyPersonalDocsAndStuff
 layout: default

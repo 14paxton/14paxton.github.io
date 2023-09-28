@@ -1,6 +1,6 @@
 ---
 title:        ToDo
-permalink:    GithubPages/ToDo
+permalink: GitHubPages/ToDo
 category:     JobPrep
 parent:       MyPersonalDocsAndStuff
 layout:       default

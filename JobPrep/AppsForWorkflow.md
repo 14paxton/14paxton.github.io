@@ -1,6 +1,6 @@
 ---
 title:        AppsForWorkflow
-permalink:    GithubPages/AppsForWorkflow
+permalink: GitHubPages/AppsForWorkflow
 category:     JobPrep
 parent:       MyPersonalDocsAndStuff
 layout:       default

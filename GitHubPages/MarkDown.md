@@ -1,8 +1,8 @@
 ---
 title: MarkDown
 layout: default
-permalink: GithubPages/MarkDown
-category: GithubPages
+permalink: GitHubPages/MarkDown
+category: GitHubPages
 parent: GHP
 has_children: false
 share: true
