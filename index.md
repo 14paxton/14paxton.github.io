@@ -22,7 +22,16 @@ shortRepo: ghpages
 
 <object data="../HTMLSnippets/Nav.html" type="text/html"></object>
 
-> md link
+> embed
 
-[Nav.html](HTMLSnippets%2FNav.html)
+<embed type="text/html" src="../HTMLSnippets/Nav.html" >
+
+> https call
+
+<object data="https://github.com/14paxton/14paxton.github.io/blob/master/HTMLSnippets/Nav.html" type="text/html"></object>
+
+> embed
+
+<embed type="text/html" src="https://github.com/14paxton/14paxton.github.io/blob/master/HTMLSnippets/Nav.html" >
+
 ***

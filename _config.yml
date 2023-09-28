@@ -1,41 +1,41 @@
-title:                   Paxton's Notes
-description:             Coding Notes
-theme:                   just-the-docs
-source:                  .
-baseurl:                 "" # the subpath of your site, e.g. /blog
-url:                     https://paxtonb.com # the base hostname & protocol for your site, e.g. http://example.com
-repository:              14paxton.github.io/14paxton.github.io  # for github-metadata
+title: Paxton's Notes
+description: Coding Notes
+theme: just-the-docs
+source: .
+baseurl: "" # the subpath of your site, e.g. /blog
+url: https://paxtonb.com # the base hostname & protocol for your site, e.g. http://example.com
+repository: 14paxton.github.io/14paxton.github.io  # for github-metadata
 gist:
   noscript: false
 
-permalink:               pretty
+permalink: pretty
 
 aux_links:
   Template Repository: https://github.com/14paxton/14paxton.github.io
-aux_links_new_tab:       true
+aux_links_new_tab: true
 
 # Conversion
-markdown:                kramdown
-highlighter:             rouge
-lsi:                     false
-excerpt_separator:       "\n\n"
-incremental:             false
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
 kramdown:
-  math_engine:        mathjax
+  math_engine: mathjax
   #input: Kramdown
   #gfm_quirks: [ paragraph_end ]
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     block:
       line_numbers: false
-  auto_ids:           true
-  entity_output:      as_char
+  auto_ids: true
+  entity_output: as_char
   toc_levels: [ 1, 2, 3, 4, 5, 6 ]
-  smart_quotes:       lsquo,rsquo,ldquo,rdquo
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
   hard_wrap: true
   line_width: 240
-  footnote_nr:        1
-  show_warnings:      true
+  footnote_nr: 1
+  show_warnings: true
 
 
 plugins:
@@ -45,56 +45,57 @@ plugins:
 #  - kramdown-syntax-coderay
 
 relative_links:
- enabled: true
- collections: true
+  enabled: true
+  collections: true
 
 ################################
 # just-the-docs template config
+# reference https://github.com/just-the-docs/just-the-docs/blob/f246498a8fab71a8716194aaca8ef690bbdc1b94/_config.yml
 
 # Footer content
 # appears at the bottom of every page's main content
 
-# Back to top link
-back_to_top:             true
-back_to_top_text:        "Back to top"
+# Back to a top link
+back_to_top: true
+back_to_top_text: "Back to top"
 
-footer_content:          ""
+footer_content: ""
 
 # Footer last edited timestamp
-last_edit_timestamp:     true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
-last_edit_time_format:   "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
+last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
+last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
 
 
 
 # Footer "Edit this page on GitHub" link text
-gh_edit_link:            true # show or hide edit this page link
-gh_edit_link_text:       "Edit this page on GitHub"
-gh_edit_repository:      "https://github.com/14paxton/14paxton.github.io"
-gh_edit_branch:          "master" # the branch that your docs is served from
-gh_edit_source:          . # the source that your files originate from
-gh_edit_view_mode:       "edit" # "tree" or "edit" if you want the user to jump into the editor immediately
+gh_edit_link: true # show or hide edit this page link
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/14paxton/14paxton.github.io"
+gh_edit_branch: "master" # the branch that your docs is served from
+gh_edit_source: . # the source that your files originate from
+gh_edit_view_mode: "edit" # "tree" or "edit" if you want the user to jump into the editor immediately
 
 # Enable or disable heading anchors
-heading_anchors:         true
+heading_anchors: true
 # For copy button on code
 enable_copy_code_button: true
 
 # Color scheme supports "light" (default) and "dark"
-color_scheme:            dark
+color_scheme: dark
 
 #To avoid non-conforming HTML and unsatisfactory layout, HTML compression can be turned off by
 #using the following configuration option:
 compress_html:
-  clippings:  all
-  comments:   all
-  endings:    all
+  clippings: all
+  comments: all
+  endings: all
   startings: [ ]
   blanklines: false
-  profile:    false
+  profile: false
   # ignore:
   #   envs: all
 
-callouts_level:          quiet # or loud
+callouts_level: quiet # or loud
 callouts:
   highlight:
     color: yellow
@@ -113,14 +114,14 @@ callouts:
 
 # Enable or disable the site search
 # Supports true (default) or false
-search_enabled:          true
+search_enabled: true
 
 search: # Split pages into sections that can be searched individually
   # Supports 1 - 6, default: 2
-  heading_level:       6
+  heading_level: 6
   # Maximum amount of previews per search result
   # Default: 3
-  previews:            5
+  previews: 5
   # Maximum amount of words to display before a matched word in the preview
   # Default: 5
   preview_words_before: 5
@@ -133,8 +134,8 @@ search: # Split pages into sections that can be searched individually
   tokenizer_separator: /[\s/]+/
   # Display the relative url in search results
   # Supports true (default) or false
-  rel_url:             true
+  rel_url: true
   # Enable or disable the search button that appears in the bottom right corner of every page
   # Supports true or false (default)
-  button:              true
+  button: true
 #############################
