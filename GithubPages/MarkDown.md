@@ -36,66 +36,70 @@ Table of contents
 ## visible in GitHub md page
 
 ```markdown    
-> **Note**<br>    
+> **Note**
+<br/>
 > This is a note    
 ```    
 
-> **Note**<br>    
+> **Note**
+> <br/>
 > This is a note
 
 ```markdown    
-> **Warning**<br>    
+> **Warning**
+<br/>
 > This is a warning    
 ```    
 
-> **Warning**<br>    
+> **Warning**
+> <br/>
 > This is a warning
 
 ## visible online
 
 ```html    
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">    
-    I am a success message    
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">
+    I am a success message
+</div> 
+```    
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">            
+I am a success message                
+</div>            
+
+```html    
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;">
+    I am an error message
+</div>  
+```    
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;">            
+I am an error message                
+</div>            
+
+```html    
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+    I am an info message
+</div>   
+```    
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">            
+I am a info message                
+</div>            
+
+```html    
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">
+    I am a warning message
 </div>     
 ```    
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">                
-I am a success message                
-</div>                
-
-```html    
-
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;">    
-    I am an error message    
-</div>      
-```    
-
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;">                
-I am an error message                
-</div>                
-
-```html    
-
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">    
-    I am a info message    
-</div>       
-```    
-
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">                
-I am a info message                
-</div>                
-
-```html    
-
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">    
-    I am a warning message    
-</div>         
-```    
-
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">                
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
 I am a warning message                
-</div>            
+</div>        
 
 ## Adding Image
 
@@ -104,17 +108,9 @@ I am a warning message
 ```markdown
 ![kubernetes.gif](../assets/images/kubernetes.gif)
 ![kubernetes.gif](./assets%2Fimages%2Fkubernetes.gif)
-<img src='https://github.com/14paxton/14paxton.github.io/blob/master/assets/images/kubernetes.gif?raw=true' />
+<img src='https://github.com/14paxton/14paxton.github.io/blob/master/assets/images/kubernetes.gif?raw=true'  alt="kubernetes"/>
+![kubernetes](https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/assets/images/kubernetes.gif)
 ```
-
-### Not Working
-
-```markdown
-![kubernetes](https://github.com/14paxton/14paxton.github.io/blob/master/assets/images/kubernetes.gif)
-```
-
-    
----  
 
 # [Pandoc](https://pandoc.org/demos.html)
 
