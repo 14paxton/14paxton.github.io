@@ -34,6 +34,10 @@ Table of contents
 <object data="css.html" height="10000" type="text/html" width="1000"></object>
 ```
 
+### load html into page
+
+[JS Code Reference](https://www.paxtonb.com/JavaScript/Clever-Algos#load-html-into-html-doc)
+
 # UI Elements
 
 <div class="py-0 xs:ml-xs inline-block max-w-full" id="-post-rtjson-content">

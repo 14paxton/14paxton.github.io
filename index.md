@@ -43,6 +43,6 @@ return await fetch(path)
 }
 window.addEventListener("load", async function () {
     const promise = await fetchHTMLFile(pathToHTML);
-    document.querySelector('body').innerHTML = await promise.text();
+    document.querySelector('#insertion').innerHTML = await promise.text();
 }, false)
 </script>
