@@ -1,19 +1,19 @@
 ---
-title:        Powershell    
-permalink:    Windows_Notes/Powershell    
-category:     Windows_Notes    
-parent:       Windows_Notes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - windows_notes    
+title: Powershell
+permalink: Windows_Notes/Powershell
+category: Windows_Notes
+parent: Windows_Notes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - windows_notes
   - default    
 ---
-    
-    
+
+
 <br/>    
-    
+
 <details markdown="block">    
 <summary>    
 Table of contents    
@@ -22,161 +22,193 @@ Table of contents
 1. TOC    
 {:toc}    
 </details>    
-    
+
 <br/>    
-    
+
 ***    
-    
+
 <br/>    
-    
-# [PowerShell](https://learn.microsoft.com/en-us/powershell/module/cimcmdlets/?view=powershell-7.3)    
-    
-- Run    
-  Just run    
-    
-> powershell core 7+    
-``pwsh testscript_writefile.ps1```    
-    
-> OS powershell 5    
-```powershell testscript_writefile.ps1```    
-    
-- [Install](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)    
-    
+
+# [PowerShell](https://learn.microsoft.com/en-us/powershell/module/cimcmdlets/?view=powershell-7.3)
+
+- Run
+
+> powershell core 7+
+
+```shell
+pwsh testscript_writefile.ps1
+```    
+
+> OS powershell 5
+
+```shell
+powershell testscript_writefile.ps1
+```
+
+- [Install](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)
+
   > By default the package is installed to ```$env:ProgramFiles\PowerShell\<version>```    
-  > You can launch PowerShell via the Start Menu or ```$env:ProgramFiles\PowerShell\<version>\pwsh.exe```    
-    
-- Note    
-    
+  > You can launch PowerShell via the Start Menu or ```$env:ProgramFiles\PowerShell\<version>\pwsh.exe```
+
+- Note
+
   > PowerShell 7.3 installs to a new directory and runs side-by-side with Windows PowerShell 5.1.    
-  > PowerShell 7.3 is an in-place upgrade that replaces PowerShell 7.0 and lower.    
-    
+  > PowerShell 7.3 is an in-place upgrade that replaces PowerShell 7.0 and lower.
+
 > PowerShell 7.3 is installed to ```$env:ProgramFiles\PowerShell\7```    
 > The ```$env:ProgramFiles\PowerShell\7``` folder is added to ```$env:PATH```    
-> Folders for previously released versions are deleted    
+> Folders for previously released versions are deleted
     
 ---
-    
+
 ```powershell    
 dotnet tool install --global PowerShell    
 ```    
-    
+
 ```powershell    
 msiexec.exe /package PowerShell-7.3.2-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1 ADD_PATH=1    
 ```    
-    
-# [Releases](https://github.com/PowerShell/PowerShell/releases)    
-    
-## Update PowerShell using Windows Package Manager (winget)    
-    
+
+# [Releases](https://github.com/PowerShell/PowerShell/releases)
+
+## Update PowerShell using Windows Package Manager (winget)
+
 ```powershell    
 winget upgrade Microsoft.PowerShell    
 ```    
-    
-## You also can install PowerShell by using below command via winget    
-    
+
+## You also can install PowerShell by using below command via winget
+
 ```powershell    
 winget install Microsoft.PowerShell    
 ```    
-    
-> update    
-    
+
+> update
+
 ```powershell    
 msiexec.exe /fmu .\PowerShell-7.3.0-win-x64.msi USE_MU=1 ENABLE_MU=1    
 ```    
-    
-- [winget in Microsoft Docs](https://learn.microsoft.com/en-us/windows/package-manager/winget/)    
-- [winget in GitHub repository](https://github.com/microsoft/winget-cli)    
-    
+
+- [winget in Microsoft Docs](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
+- [winget in GitHub repository](https://github.com/microsoft/winget-cli)
+
 ***    
-    
-# Environment    
-    
-> There are 3 scopes of what is called Environment Variables:    
-```[System.EnvironmentVariableTarget]::Machine```    
-    
-```[System.EnvironmentVariableTarget]::User```    
-    
-```[System.EnvironmentVariableTarget]::Process```    
+
+# Environment
+
+> There are three scopes of what is called Environment Variables:
+
+```shell
+[System.EnvironmentVariableTarget]::Machine
+```
+
+```shell
+[System.EnvironmentVariableTarget]::User
+```
+
+```shell
+[System.EnvironmentVariableTarget]::Process
+```
+
     
 ---
-    
-> To get list of variables, you can use    
-    
-```[System.Environment]::GetEnvironmentVariables($scope)```    
-    
-```    
+
+> To get a list of variables, you can use
+
+```shell
+[System.Environment]::GetEnvironmentVariables($scope)
+```
+
+```shell
 [System.Environment]::GetEnvironmentVariables()     
 # This will mix all scopes in one output    
+```
+
+    
+---
+
+> To set variable, you can use
+
+```shell
+[System.Environment]::SetEnvironmentVariable($varName, $varValue, $scope)
+```
+
+    
+---
+
+> If $scope is Machine or User, it will try to store data, otherwise it will throw an exception.
+    
+---
+---
+
+```shell
+$Env:
+```
+
+> is actually a virtual PowerShell drive and environment variables are items on it.
+> There is a special provider Get-PSProvider -PSProvider Environment    
+> that implements this method of accessing to environment in powershell.
+
+***    
+
+> You can run
+
+```shell
+Get-ChildItem -Path 'Env:\
 ```    
-    
----
-    
-> To set variable, you can use    
-    
-```[System.Environment]::SetEnvironmentVariable($varName, $varValue, $scope)```    
-    
----
-    
-> If $scope is Machine or User, it will try to store data, otherwise it will throw an exception.    
-    
----
----
-    
-- ```$Env:```    
-    
-> is actually a virtual PowerShell drive and environment variables are items on it. There is a special provider Get-PSProvider -PSProvider Environment    
-> that implements this method of accessing to environment in powershell.    
-    
+
+> and this is exactly the same as
+
+```shell
+[System.Environment]::GetEnvironmentVariables()
+```    
+
+> without specifying scope.
+
 ***    
-    
-> You can run '''Get-ChildItem -Path 'Env:\''''    
-> and this is exactly the same as ```[System.Environment]::GetEnvironmentVariables()```    
-> without specifying scope.    
-    
-***    
-    
-## WSL    
-    
-- get list of distros    
-    
+
+## WSL
+
+- get a list of distros
+
 ```powershell    
 wslconfig /l    
 ```    
-    
-- run wsl    
-    
+
+- run wsl
+
 ```powershell    
 wsl    
 ```    
-    
-# Quick Scripts    
-    
-## lock screen    
-    
+
+# Quick Scripts
+
+## lock screen
+
 ```powershell    
 $xCmdString = {rundll32.exe user32.dll,LockWorkStation}    
     
 Invoke-Command $xCmdString    
 ```    
-    
-## - get file http    
-    
+
+## get file http
+
 ```bash    
 Invoke-WebRequest -Uri "http://www.contoso.com" -OutFile "C:\path\file"    
 ```    
-    
+
 ```bash    
 wget "http://www.contoso.com" -outfile "file"    
 ```    
-    
-## - Get version    
-    
+
+## Get version
+
 ```powershell    
 $PSVersionTable    
 ```    
-    
-## Run As Admin    
-    
+
+## Run As Admin
+
 ```powershell    
     
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))     
@@ -184,62 +216,62 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 Start-Process -FilePath 'C:\Users\Brandon003842\Downloads\ConnectUtility_2.30.9_Logitech.exe' -WorkingDirectory 'C:\Users\Brandon003842\LogiTech' -Verb RunAs    
     
 ```    
-    
-## rename and expand zip    
-    
+
+## rename and expand zip
+
 ```powershell    
 Rename-Item .\Ubuntu.appx .\Ubuntu.zip    
 Expand-Archive .\Ubuntu.zip .\Ubuntu    
 ```    
-    
-## - execute    
-    
+
+## - execute
+
 ```powershell    
 Start-Process test.exe    
 #or    
 Invoke-Expression -Command "path...test.exe"    
 ```    
-    
-## - set env variable    
-    
+
+## - set env variable
+
 ```powershell    
 $env:AZURE_RESOURCE_GROUP = 'MyTestResourceGroup'    
 ```    
-    
-- set env variable persistently    
-    
+
+- set env variable persistently
+
 ```powershell    
 [System.Environment]::SetEnvironmentVariable('ResourceGroup','AZ_Resource_Group')    
 ```    
-    
-## Get execution policy    
-    
+
+## Get execution policy
+
 ```    
  Get-ExecutionPolicy. If it returns Restricted, then run Set-ExecutionPolicy AllSigned or Set-ExecutionPolicy Bypass -Scope Process    
 ```    
-    
-## search piped string    
-    
+
+## search piped string
+
 ```bash    
 Select-String -Path "Users\*.csv" -Pattern "Joe"    
     
 ```    
-    
-## download file from web    
-    
+
+## download file from web
+
 ```powershell    
 $WebClient = New-Object System.Net.WebClient    
 $WebClient.DownloadFile("https://www.contoso.com/file","C:\path\file")    
 ```    
-    
-## - invoke-WebRequest    
-    
+
+## - invoke-WebRequest
+
 ```powershell    
 Invoke-WebRequest -Uri "http://www.contoso.com" -OutFile "C:\path\file"    
 ```    
-    
-## foreach    
-    
+
+## foreach
+
 ```powershell    
 # Create an array of folders    
 $folders = @('C:\Folder','C:\Program Files\Folder2','C:\Folder3')    
@@ -249,21 +281,21 @@ foreach ($i in $folders) {
     Add-Content -Path "$i\SampleFile.txt" -Value "This is the content of the file"    
 }    
 ```    
-    
+
 ```shell    
 $folders = @('C:\Folder','C:\Program Files\Folder2','C:\Folder3')    
 $folders | ForEach-Object (Add-Content -Path "$_\SampleFile.txt" -Value "This is the content of the file")    
 ```    
-    
+
 ```shell    
 $folders = @('C:\Folder','C:\Program Files\Folder2','C:\Folder3')    
 $folders.ForEach({    
 	Add-Content -Path "$_\SampleFile.txt" -Value "This is the content of the file"    
 })    
 ```    
-    
-### Creating a File in Each Sub-Folder in a Directory using the ForEach Statement    
-    
+
+### Creating a File in Each Sub-Folder in a Directory using the ForEach Statement
+
 ```shell    
 # Define the TOP-level folder    
 $TOP_FOLDER = "C:\ARCHIVE_VOLUMES"    
@@ -276,15 +308,15 @@ foreach ($foldername in $Child_Folders.FullName) {
    (get-date -Format G) | Out-File -FilePath "$($foldername)\BackupState.txt" -Force    
 }    
 ```    
-    
-> Using the Get-ChildItem cmdlet, you can confirm that the files were created or update inside each of the sub-folders.    
-    
+
+> Using the Get-ChildItem cmdlet, you can confirm that the files were created or update inside each of the sub-folders.
+
 ```shell    
 Get-ChildItem -Recurse -Path C:\ARCHIVE_VOLUMES -Include backupstate.txt | Select-Object Fullname,CreationTime,LastWriteTime,Length    
 ```    
-    
-### Reading the Contents of each Text File in Sub-Directories    
-    
+
+### Reading the Contents of each Text File in Sub-Directories
+
 ```shell    
 ## Find all BackupState.txt files in C:\ARCHIVE_VOLUMES    
 $files = Get-ChildItem -Recurse -Path C:\ARCHIVE_VOLUMES -Include 'BackupState.txt' | Select-Object DirectoryName,FullName    
@@ -294,9 +326,9 @@ foreach ($file in $files) {
     Write-Output ("$($file.DirectoryName) last backup time - " + (Get-Content $file.FullName))    
 }    
 ```    
-    
-### Getting Services and Starting Them using the ForEach-Object CmdLet    
-    
+
+### Getting Services and Starting Them using the ForEach-Object CmdLet
+
 ```shell    
 ## Get a list of automatic services that are stopped.    
 $services = Get-Service | Where-Object {$.StartType -eq 'Automatic' -and $.Status -ne 'Running'}    
@@ -312,9 +344,9 @@ $services | ForEach-Object {
     }    
 }    
 ```    
-    
-### Reading Data from CSV using the ForEach() Method    
-    
+
+### Reading Data from CSV using the ForEach() Method
+
 ```shell    
 # Import list of Firstname and Lastname from CSV file    
 $newUsers = Import-Csv -Path .\Employees.csv    
@@ -349,9 +381,9 @@ $newUsers.foreach(
     }    
 )    
 ```    
-    
-## Don't Sleep    
-    
+
+## Don't Sleep
+
 ```powershell    
  param($minutes = 900)    
  $myShell = New-Object -com "Wscript.Shell"    
@@ -364,9 +396,9 @@ $newUsers.foreach(
    $myShell.sendkeys(" ")    
  }    
 ```    
-    
-- or    
-    
+
+- or
+
 ```powershell    
  Echo "Keep-alive with Scroll Lock..."    
  $WShell = New-Object -com "Wscript.Shell"    
@@ -381,28 +413,24 @@ $newUsers.foreach(
    Start-Sleep -Seconds 100    
  }    
 ```    
-    
-## answer prompt    
-    
+
+## answer prompt
+
 ```shell    
  foreach($i in $files) {'y' | powershell -c "Remove-Item $i -Force -ErrorAction silentlycontinue"}    
 ```    
-    
-## parallel    
-    
+
+## parallel
+
 ```shell    
 powershell.exe Get-ChildItem C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default | ForEach-Object -Parallel {Remove-Item "$_" -Force -Recurse | Out-Null}    
 powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" | Where-Object Name -NotIn @( 'Cache','Code Cache','databases','Extension State','File System' , 'IndexedDB', 'WebStorage', 'Sessions', 'Service Worker', 'Web Applications', 'Default') | ForEach-Object -Parallel {Copy-Item "$_" -Destination C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default -Recurse -Force}    
 ```    
-    
+
 ***    
-    
-# Basic Commands    
-    
-<html>    
-<body>    
-<!--StartFragment-->    
-    
+
+# Basic Commands
+
 | Command name      | Alias                         | Description                                                                                                           |    
 |-------------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------|    
 | Set-Location      | cd, chdir, sl                 | Sets the current working location to a specified location.                                                            |    
@@ -430,16 +458,9 @@ powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrom
 | Wait-Job          | wjb                           | Suppresses the command prompt until one or all of the Windows PowerShell background jobs running in the session are … |    
 | Where-Object      | ?, where                      | Selects objects from a collection based on their property values.                                                     |    
 | Write-Output      | echo, write                   | Sends the specified objects to the next command in the pipeline. If the command is the last command in the pipeline,… |    
-    
-<!--EndFragment-->    
-</body>    
-</html>    
-    
-***     
-<html>    
-<body>    
-<!--StartFragment-->    
-    
+
+***
+
 | Command alias | Cmdlet name                    | Description of command                                                                                                                                                                             |    
 |---------------|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|    
 | %             | ForEach-Object                 | Performs an operation against each item in a collection of input objects.                                                                                                                          |    
@@ -573,7 +594,3 @@ powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrom
 | set           | Set-Variable                   | Sets the value of a variable. Creates the variable if one with the requested name does not exist.                                                                                                  |    
 | shcm          | Show-Command                   | Creates Windows PowerShell commands in a graphical command window.                                                                                                                                 |    
 | si            | Set-Item                       | Changes the value of an item to the valu                                                                                                                                                           |    
-    
-<!--EndFragment-->    
-</body>    
-</html>
