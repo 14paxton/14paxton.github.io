@@ -20,21 +20,10 @@ shortRepo: ghpages
 
 # Site Map
 
-<object  data="./HTMLSnippets/Nav.html" type="text/html"></object>
+<embed src="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/HTMLSnippets/Nav.html" style="width:400px; height: 400px;">
+<iframe src="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/HTMLSnippets/Nav.html" style="width:400px; height: 400px;"></iframe>
 
-> embed
+# local
 
-<embed type="text/html" src="./HTMLSnippets/Nav.html"/>
-
-> https call
-
-<object data="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/HTMLSnippets/Nav.html" type="text/html"></object>
-
-> embed
-
-<embed type="text/html" src="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/HTMLSnippets/Nav.html" >
-
-
-> image
-
-![kubernetes](https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/assets/images/kubernetes.gif)
+<embed src="./HTMLSnippets/Nav.html" style="width:400px; height: 400px;">
+<iframe src="./HTMLSnippets/Nav.html" style="width:400px; height: 400px;"></iframe>
