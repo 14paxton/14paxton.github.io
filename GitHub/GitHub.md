@@ -14,7 +14,7 @@ shortRepo:
 
 > use raw
 
- ```text
+```text
 https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/assets/images/kubernetes.gif
 ```
 
