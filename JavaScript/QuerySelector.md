@@ -1,6 +1,6 @@
 ---
-title: QuerySelector-Examples
-permalink: JavaScript/QuerySelector-Examples
+title: QuerySelector
+permalink: JavaScript/QuerySelector
 category: JavaScript
 parent: JavaScript
 layout: default
