@@ -20,29 +20,23 @@ shortRepo: ghpages
 
 # Site Map
 
-[//]: # (<embed src="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/HTMLSnippets/Nav.html" style="width:400px; height: 400px;">)
-
-[//]: # (<iframe src="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/HTMLSnippets/Nav.html" style="width:400px; height: 400px;"></iframe>)
-
-[//]: # ()
-
-[//]: # (# local)
-
-[//]: # ()
-
-[//]: # (<embed src="./HTMLSnippets/Nav.html" style="width:400px; height: 400px;">)
-
-[//]: # (<iframe src="./HTMLSnippets/Nav.html" style="width:400px; height: 400px;"></iframe>)
-
-
 <div id="insertion"></div>
 <script>
 const pathToHTML = "https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/HTMLSnippets/Nav.html";
 async function fetchHTMLFile(path) {
 return await fetch(path)
 }
-window.addEventListener("load", async function () {
-    const promise = await fetchHTMLFile(pathToHTML);
+async function loadHTML() {
+const promise = await fetchHTMLFile(pathToHTML);
     document.querySelector('#insertion').innerHTML = await promise.text();
-}, false)
+}
+function ready(fn) {
+if (document.readyState !== 'loading') {
+fn();
+}
+else {
+document.addEventListener('DOMContentLoaded', fn);
+}
+}
+ready(loadHTML);
 </script>

@@ -27,16 +27,91 @@ Table of contents
 
 # TidBits
 
-## embed html file into html using object tag
+## embed or load html file into html using object tag
 
 ```html
 
 <object data="css.html" height="10000" type="text/html" width="1000"></object>
 ```
 
+```html
+
+<embed src="./HTMLSnippets/Nav.html" style="width:400px; height: 400px;">
+```
+
+```html
+
+<iframe src="./HTMLSnippets/Nav.html" style="width:400px; height: 400px;"></iframe>
+```
+
 ### load html into page
 
-[JS Code Reference](https://www.paxtonb.com/JavaScript/Clever-Algos#load-html-into-html-doc)
+```javascript
+const response = await fetch('/path/to/template.html');
+const body = await response.text();
+
+document.querySelector('#some.selector').innerHTML = body;
+```
+
+- [JS Code Reference](https://www.paxtonb.com/JavaScript/Clever-Algos#load-html-into-html-doc)
+
+- [Read HTML Doc with scripst and css into HTML page](https://gist.github.com/14paxton/a5a6b17131a2791b757973f866e3eb98)
+
+### HTML Include
+
+> HTML
+
+```html
+
+<div w3-include-html="content.html"></div>
+
+```
+
+> call includeHTML
+
+```html
+
+<script>
+    function includeHTML() {
+        let z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+                /* Make an HTTP request using the attribute value as the file name: */
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                        if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                        /* Remove the attribute, and call this function once more: */
+                        elmnt.removeAttribute("w3-include-html");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /* Exit the function: */
+                return;
+            }
+        }
+    }
+
+    function ready(fn) {
+        if (document.readyState !== 'loading') {
+            fn();
+        }
+        else {
+            document.addEventListener('DOMContentLoaded', fn);
+        }
+    }
+
+    ready(includeHTML);
+</script>
+```
 
 # UI Elements
 

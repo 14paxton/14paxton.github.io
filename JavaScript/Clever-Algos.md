@@ -1,11 +1,11 @@
 ---
-title:        Clever-Algos
-permalink:    JavaScript/Clever-Algos
-category:     JavaScript
-parent:       JavaScript
-layout:       default
+title: Clever-Algos
+permalink: JavaScript/Clever-Algos
+category: JavaScript
+parent: JavaScript
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
 
   - javascript
@@ -30,6 +30,21 @@ Table of contents
 ***                      
 
 <br/>      
+
+# Custom Sort Array
+
+```javascript
+function sortOptions(a, b) {
+    var at = a.textContent, bt = b.textContent;
+    return (at > bt)? 1 : ((at < bt)? -1 : 0);
+}
+
+if (selectBox) {
+    let options = Array.from(selectBox.children).sort(sortOptions)
+    selectBox.append(...options)
+    addBlankSelectOption(selectBox)
+}
+```
 
 # Group and object by key and possible subkey
 
@@ -124,7 +139,7 @@ async function fetchHTMLFile(path) {
 }      
 ```      
 
-# Conditionally load scripts included in HTML by manipulating the type attribute
+# Conditional load scripts included in HTML by manipulating the type attribute
 
 ```javascript      
 if (conditional === true) {
