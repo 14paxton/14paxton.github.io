@@ -1,9 +1,10 @@
 ---
-title: GHP
+title: GitHubPages
 layout: default
-permalink: GitHubPages/GHP
-category: GitHubPages
-has_children: true
+permalink: GitHub/GitHubPages
+category: GitHub
+parent: GitHub
+has_children: false
 share: true
 shortRepo: ghpages          
 ---

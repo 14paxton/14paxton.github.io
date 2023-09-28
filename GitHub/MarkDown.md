@@ -1,9 +1,9 @@
 ---
 title: MarkDown
 layout: default
-permalink: GitHubPages/MarkDown
-category: GitHubPages
-parent: GHP
+permalink: GitHub/MarkDown
+category: GitHub
+parent: GitHub
 has_children: false
 share: true
 shortRepo: ghpages                    
