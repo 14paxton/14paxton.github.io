@@ -20,7 +20,7 @@ shortRepo: ghpages
 
 # Site Map
 
-<object width="1000" height="10000" data="./HTMLSnippets/Nav.html" type="text/html"></object>
+<object  data="./HTMLSnippets/Nav.html" type="text/html"></object>
 
 > embed
 
@@ -28,13 +28,13 @@ shortRepo: ghpages
 
 > https call
 
-<object data="https://raw.githubusercontent.com/14paxton/14paxton.github.io/blob/master/HTMLSnippets/Nav.html" type="text/html"></object>
+<object data="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/HTMLSnippets/Nav.html" type="text/html"></object>
 
 > embed
 
-<embed type="text/html" src="https://raw.githubusercontent.com/14paxton/14paxton.github.io/blob/master/HTMLSnippets/Nav.html" >
+<embed type="text/html" src="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/HTMLSnippets/Nav.html" >
 
 
 > image
 
-![kubernetes](https://raw.githubusercontent.com/14paxton/14paxton.github.io/blob/master/assets/images/kubernetes.gif)
+![kubernetes](https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/assets/images/kubernetes.gif)
