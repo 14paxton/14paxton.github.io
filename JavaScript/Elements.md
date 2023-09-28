@@ -43,7 +43,7 @@ if (element.tagName === 'OL') {}
 const tagName = el.tagName || el.nodeName    
 ```    
 
-> [nodetype](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType)
+> [Node Types](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType)
 
 ```javascript    
 if (node?.nodeType) {}    
@@ -109,7 +109,13 @@ node = e.childNodes[0]
 node.nodeType === 3
 node.nodeName === '#text'
 node.tagName === undefined    
-```    
+```
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+only use nodeType to get the node type: nodeName breaks for nodeType === 1
+ <br>
+only use tagName for nodeType === 1   
+</div> 
 
 ## Deconstruct element to get names
 
@@ -126,11 +132,14 @@ function addBlankSelectOption(selectBox) {
 }
 ```
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
-only use nodeType to get the node type: nodeName breaks for nodeType === 1
- <br>
-only use tagName for nodeType === 1   
-</div> 
+## Get Type
+
+```javascript
+Object.prototype.toString
+      .call(obj)
+      .replace(/^\[object (.+)\]$/, '$1')
+      .toLowerCase();
+```
 
 # create clone
 

@@ -27,6 +27,25 @@ Table of contents
 
 # TidBits
 
+## On Load (onload) Attribute
+
+```html
+<!DOCTYPE html>
+<html>
+<body onload="myFunction()">
+<h1>HTML DOM Events</h1>
+<h2>The onload Event</h2>
+
+<script>
+    function myFunction() {
+        alert("Page is loaded");
+    }
+</script>
+
+</body>
+</html>
+```
+
 ## embed or load html file into html using object tag
 
 ```html
