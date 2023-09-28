@@ -31,6 +31,30 @@ Table of contents
 
 <br/>      
 
+# Custom Ready / Load / onLoad
+
+```javascript
+window.addEventListener("load", async function () {
+    const promise = await fetchHTMLFile(pathToHTML);
+    document.querySelector('#insertion').innerHTML = await promise.text();
+}, false)
+```
+
+> or
+
+```javascript
+function ready(fn) {
+    if (document.readyState !== 'loading') {
+        fn();
+    }
+    else {
+        document.addEventListener('DOMContentLoaded', fn);
+    }
+}
+
+ready(loadHTML);
+```
+
 # Custom Sort Array
 
 ```javascript
