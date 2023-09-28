@@ -25,6 +25,15 @@ Table of contents
 
 <br/>              
 
+# TidBits
+
+## embed html file into html using object tag
+
+```html
+
+<object data="css.html" height="10000" type="text/html" width="1000"></object>
+```
+
 # UI Elements
 
 <div class="py-0 xs:ml-xs inline-block max-w-full" id="-post-rtjson-content">
