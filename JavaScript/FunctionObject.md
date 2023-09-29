@@ -51,7 +51,7 @@ Table of contents
 
 > ```arguments.length```: The number of arguments that were passed to the function.
 
-> ```arguments[@@iterator]```: Returns a new [Array iterator]{.underline} object that contains the values for each index in arguments.
+> ```arguments[@@iterator]```: Returns a new Array iterator object that contains the values for each index in arguments.
 
 ## Function Methods
 
@@ -62,7 +62,7 @@ Table of contents
 > ```Fn.bind```: will bind parameters to a new function
 
 ```javascript
-var newFunc = oldFunc.bind({name: ted}, params[])
+var newFunc = oldFunc.bind({name: ted}, params["param1", "param2"])
 ```
 
 # Get function as string

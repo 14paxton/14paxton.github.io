@@ -37,9 +37,18 @@ Table of contents
  <p hidden>
 ```
 
-> aria-hidden = "true"
+```html
+
+<button>
+    <span class="fa fa-tweet" aria-hidden="true"></span> <span class="label"> Tweet </span>
+</button>
+```
 
 > in the case of form data, input type = "hidden"
+
+```html
+  <input type="hidden" id="postId" name="postId" value="34657"/>
+```
 
 ## On Load (onload) Attribute
 

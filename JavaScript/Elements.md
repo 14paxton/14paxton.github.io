@@ -67,7 +67,7 @@ console.log(el.ariaHidden); // false
 $('element').toggle()
 ```
 
-# find / search / get
+# find / search / get by Attributes
 
 ```javascript
 document.querySelector("input[name=rate]:checked").value
