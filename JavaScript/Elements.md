@@ -29,14 +29,124 @@ Table of contents
 
 <br/>      
 
-# Check an Element type
+# Hide/Show
+
+## CSS Style Hide
+
+```javascript
+
+element.style.display = 'block'; // Show
+element.style.display = 'inline'; // Show
+element.style.visibility = 'visible'; // Show
+element.style.display = 'inline-block'; // Show
+
+element.style.display = 'none'; // Hide
+element.style.visibility = 'hidden'; // Hide
+element.style.opacity = 0; // Hide
+element.setAttribute("hidden", true); //hide
+
+element.toggle() // hide/show
+```
+
+## Aria Hidden
+
+```javascript
+let el = document.getElementById("hidden");
+console.log(el.ariaHidden); // true
+el.ariaHidden = "false";
+console.log(el.ariaHidden); // false
+```
+
+## jQuery
+
+```javascript
+('element').show()
+
+//also
+
+$('element').toggle()
+```
+
+# find / search / get
+
+```javascript
+document.querySelector("input[name=rate]:checked").value
+
+```
+
+## wild card / search ids where id is like
+
+```javascript
+document.querySelector('[id^="poll-"]').id;
+```
+
+## check if exists
+
+```javascript
+document.body.contains(document.getElementById('test'))
+```
+
+## jQuery
+
+```javascript
+$("input[type='radio'][name='scheduleType']:not(:checked)").attr("disabled", true);
+```
+
+> find by text jQuery ```:contains(text)```
+
+# Attribute Value
+
+> [Using Custom data- attributes](https://html5doctor.com/html5-custom-data-attributes/)
+
+> Attribute must be camel cased ```Element.dataset.attributeNameCamelCased```
+
+## Get
+
+```javascript
+document.getElementById('groupsWrapper-' + id).getAttribute('data-saved-assessment-count')
+
+```
+
+## Set
+
+```javascript
+document.getElementById('groupsWrapper-' + id).setAttribute('data-saved-assessment-count', "my text value")
+
+```
+
+## Remove
+
+```javascript
+document.getElementById('groupsWrapper-' + id).removeAttribute('data-saved-assessment-count')
+
+```
+
+## jQuery
+
+```javascript
+$(selectElement).data('saved-assessment-count', currentTotalResultCount);
+```
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;">            
+<p>
+If using <code>.data()</code> to modify, you need to retrieve by <code>.data()</code> so new value will be reflected
+</p>      
+</div>            
+
+
+
+[You Can pass arguments to functions that do no accept parameters]{.underline}
+
+[call arguments in method to see what has been passed]{.underline} Properties
+
+# Check Type
 
 ```javascript    
 if (element.tagName === 'OL') {}    
 ```    
 
 ```javascript    
-    if (elementsObject && elementsObject?.body?.nodeName === 'TABLE') {}    
+if (elementsObject && elementsObject?.body?.nodeName === 'TABLE') {}    
 ```    
 
 ```javascript    
@@ -233,9 +343,7 @@ export const getChildren = (element) => {
 }      
 ```      
 
-# get unrendered element dimensions
-
-https://gist.github.com/remarkablemark/51ff6d8405d8c023d4aa30c5d0826225
+# [get un-rendered element dimensions](https://gist.github.com/remarkablemark/51ff6d8405d8c023d4aa30c5d0826225)
 
 ```javascript      
 function getWidthAndHeight(node) {

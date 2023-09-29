@@ -27,6 +27,20 @@ Table of contents
 
 # TidBits
 
+## hide element attribute
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+    <span>the hidden rule is a User Agent style, which means it's less specific than a moderate sneeze [ref]. This means that your favourite display style will override it</span>       
+</div> 
+
+```html
+ <p hidden>
+```
+
+> aria-hidden = "true"
+
+> in the case of form data, input type = "hidden"
+
 ## On Load (onload) Attribute
 
 ```html

@@ -10,10 +10,10 @@ shortRepo:
   - javascript    
   - default                
 ---
-    
-    
+
+
 <br/>                
-    
+
 <details markdown="block">                      
 <summary>                      
 Table of contents                      
@@ -22,16 +22,38 @@ Table of contents
 1. TOC                      
 {:toc}                      
 </details>                      
-    
+
 <br/>                      
-    
+
 ***                      
-    
+
 <br/>      
-# Leave only Alpha Chars and remove space      
-    
+
+# TESTS IT EXISTS
+
+```javascript
+regEx.test(string)
+```
+
+# RETURN MATCHES
+
+```javascript
+string.match(regEx)
+
+```
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+    use ( ) in expression to capture a group to select/replace substring or to find something before or behind
+</div> 
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+    regEx(string) can be used to continue to iterate through string, each call will get next match
+</div> 
+
+# Leave only Alpha Chars and remove space
+
 ```javascript      
- const removeSpecialChar = /[^a-zA-Z\d ]/g    
+const removeSpecialChar = /[^a-zA-Z\d ]/g
 const replaceSpace = /\s/g    
 const onlyAlpha = (fileName    
                    ? fileName    
