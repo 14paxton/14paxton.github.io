@@ -74,13 +74,12 @@ ls -l ~/.sdkman/candidates/java
 
 > use a .sdkmanrc file at root of project
 
-- Use sdkman to run "sdk env" to initialize with correct JDK version
-- Enable auto-env through the sdkman_auto_env config
+- Use sdkman to run ```sdk env``` to initialize with correct JDK version
+- Enable ```auto-env``` through the ```sdkman_auto_env``` config
 - [See https://sdkman.io/usage#config](https://sdkman.io/usage#config)
-- A summary is to add the following to ~/.sdkman/etc/config
-  ```sdkman_auto_env=true```
+- Add ```sdkman_auto_env=true``` to ```~/.sdkman/etc/config```
 
-- my usecase
+> my use case, contents of my .sdkmanrc file for GraalVM java project
 
 ```text
 # Enable auto-env through the sdkman_auto_env config
