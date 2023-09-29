@@ -1,11 +1,11 @@
 ---
-title:        SDKMan
-permalink:    Linux/SDKMan
-category:     Linux
-parent:       Linux
-layout:       default
+title: SDKMan
+permalink: Linux/SDKMan
+category: Linux
+parent: Linux
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - linux
   - default    
@@ -29,7 +29,7 @@ Table of contents
 
 <br/>    
 
-- https://sdkman.io/usage
+# [Using SDKMan](https://sdkman.io/usage)
 
 # Install sdkman
 
@@ -68,7 +68,7 @@ sdk default [program][version number]
 ls -l ~/.sdkman/candidates/java    
 ```    
 
-# [available canidates](https://api.sdkman.io/2/candidates/java/Darwin/versions/list?installed=)  
+# [available canidates](https://api.sdkman.io/2/candidates/java/Darwin/versions/list?installed=)
 
 # [Environment Switching](https://sdkman.io/usage)
 
@@ -81,6 +81,7 @@ ls -l ~/.sdkman/candidates/java
   ```sdkman_auto_env=true```
 
 - my usecase
+
 ```text
 # Enable auto-env through the sdkman_auto_env config
 # Add key=value pairs of SDKs to use below
