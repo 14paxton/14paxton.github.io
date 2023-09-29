@@ -1,11 +1,11 @@
 ---
-title:        AWS-CLI.md
-permalink:    Linux/AWS-CLI
-category:     Linux
-parent:       Linux
-layout:       default
+title: AWS-CLI
+permalink: Linux/AWS-CLI
+category: Linux
+parent: Linux
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - linux
   - default    
@@ -33,7 +33,7 @@ Table of contents
 
 > some scripts use jq for parsing json
 
-> get db instances
+## get db instances
 
 ```shell    
 aws rds describe-db-instances \                                                      
