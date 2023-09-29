@@ -18,40 +18,6 @@ shortRepo: ghpages
 
 ---
 
-# TEST
-
-## XYZ fug
-
-<div style="z-index: -99999; opacity: 0;">
-    <p>fux xxx 69x</p>
-</div>
-
-> fuck me running
-
-# fug me 2
-
-<div hidden>
-    <p>sixnine fuggly</p>
-</div>
-
-> words here
-
-# Funkly xxx
-
-<div style="visibility: hidden;">
-    <p>shit piss fcuck cock</p>
-</div>
-fuck
-> some text
-
-# Display None
-
-<div style="display: none">
-    <p>cox wild</p>
-</div>
-
-> coxsucks
-
 # Site Map
 
 <div id="insertion"></div>
