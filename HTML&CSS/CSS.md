@@ -120,7 +120,7 @@ html {
 
 > invisible, but with absolute positioning off the left of the screen:
 
-```CSS
+```css
 #yourelement {
     visibility: hidden;
     position: absolute;

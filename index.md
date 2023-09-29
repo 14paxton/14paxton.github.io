@@ -28,6 +28,18 @@ shortRepo: ghpages
 
 > fuck me running
 
+# fug me 2
+
+<div hidden>
+    <p>sixnine fuggly</p>
+</div>
+
+# Funkly xxx
+
+<div style="visibility: hidden;">
+    <p>shit piss fcuck cock</p>
+</div>
+
 # Site Map
 
 <div id="insertion"></div>
