@@ -44,6 +44,14 @@ shortRepo: ghpages
 
 > some text
 
+# Display None
+
+<div style="display: none">
+    <p>cox wild</p>
+</div>
+
+> coxsucks
+
 # Site Map
 
 <div id="insertion"></div>

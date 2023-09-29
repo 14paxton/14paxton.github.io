@@ -1,11 +1,11 @@
 ---
-title:        QuickScripts
-permalink:    Linux/QuickScripts
-category:     Linux
-parent:       Linux
-layout:       default
+title: QuickScripts
+permalink: Linux/QuickScripts
+category: Linux
+parent: Linux
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - linux
   - default    
@@ -68,6 +68,59 @@ zip -er last_resort.zip attachments;
     ```    
 
 ### [UseCase Examples](https://gist.github.com/14paxton/0af2e0618a579d1cdc64d2b183af08e6)
+
+## CAT
+
+### Show Line Endings
+
+```shell
+cat -e file.txt
+```
+
+### Display Line Numbers
+
+```shell
+ cat -n file.txt
+```
+
+> This command is equivalent to the ‘nl file’ command.
+
+```shell
+ nl file.txt
+```
+
+### Display Tab Characters
+
+```shell
+ cat -T file.txt
+```
+
+### Reverse a File using tac
+
+```shell
+tac file.txt file2.txt
+```
+
+### Remove Blank Lines
+
+```shell
+cat -s file.txt
+```
+
+### Create Here Document
+
+> A here document (here doc) is a way to interactively input multiple lines of text into a command or program. In the case of the cat command, you can use a here doc to provide the content that cat should display. Here’s an example using a here doc with the cat command:
+
+```shell
+cat << EOF
+> type text
+> more text
+> and more text
+> more more more text
+> EOF
+```
+
+> In this example, the << EOF notation indicates the start of the here doc, and the lines following it are treated as input until the EOF delimiter is encountered. The cat command will display the content of the here doc, which in this case consists of three lines.
 
 # Mac
 
