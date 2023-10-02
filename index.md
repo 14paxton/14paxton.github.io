@@ -26,7 +26,7 @@ shortRepo: ghpages
 //const pathToHTML = "https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/assets/HTMLSnippets/Nav.html";
 -->
 <script>
-const pathToHTML = "./assets/HTMLSnippets/Nav.html";
+const pathToHTML = "/assets/HTMLSnippets/Nav.html";
 async function fetchHTMLFile(path) {
 return await fetch(path)
 }
