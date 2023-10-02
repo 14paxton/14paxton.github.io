@@ -35,9 +35,8 @@ Table of contents
 
 > powershell core 7+
 
-```powershell`
+```powershell
 pwsh testscript_writefile.ps1
-
 ```    
 
 > OS powershell 5
@@ -188,11 +187,11 @@ Invoke-Command $xCmdString
 
 ## get file http
 
-```bash    
+```powershell    
 Invoke-WebRequest -Uri "http://www.contoso.com" -OutFile "C:\path\file"    
 ```    
 
-```bash    
+```powershell    
 wget "http://www.contoso.com" -outfile "file"    
 ```    
 
@@ -241,15 +240,22 @@ $env:AZURE_RESOURCE_GROUP = 'MyTestResourceGroup'
 
 ## Get execution policy
 
+```powershell    
+ Get-ExecutionPolicy    
 ```    
- Get-ExecutionPolicy. If it returns Restricted, then run Set-ExecutionPolicy AllSigned or Set-ExecutionPolicy Bypass -Scope Process    
-```    
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+    If it returns Restricted, then run 
+<br/><br/>
+<code>Set-ExecutionPolicy AllSigned </code><br/>
+or <br/>
+<code>Set-ExecutionPolicy Bypass -Scope Process    </code>   
+</div> 
 
 ## search piped string
 
-```bash    
+```powershell    
 Select-String -Path "Users\*.csv" -Pattern "Joe"    
-    
 ```    
 
 ## download file from web
@@ -259,7 +265,7 @@ $WebClient = New-Object System.Net.WebClient
 $WebClient.DownloadFile("https://www.contoso.com/file","C:\path\file")    
 ```    
 
-## - invoke-WebRequest
+## invoke-WebRequest
 
 ```powershell    
 Invoke-WebRequest -Uri "http://www.contoso.com" -OutFile "C:\path\file"    
@@ -277,10 +283,14 @@ foreach ($i in $folders) {
 }    
 ```    
 
+> or
+
 ```powershell    
 $folders = @('C:\Folder','C:\Program Files\Folder2','C:\Folder3')    
 $folders | ForEach-Object (Add-Content -Path "$_\SampleFile.txt" -Value "This is the content of the file")    
 ```    
+
+> or
 
 ```powershell    
 $folders = @('C:\Folder','C:\Program Files\Folder2','C:\Folder3')    
@@ -304,7 +314,9 @@ foreach ($foldername in $Child_Folders.FullName) {
 }    
 ```    
 
-> Using the Get-ChildItem cmdlet, you can confirm that the files were created or update inside each of the sub-folders.
+## Get-ChildItem cmdlet
+
+> you can confirm that the files were created or update inside each of the subfolders
 
 ```powershell    
 Get-ChildItem -Recurse -Path C:\ARCHIVE_VOLUMES -Include backupstate.txt | Select-Object Fullname,CreationTime,LastWriteTime,Length    
@@ -322,7 +334,7 @@ foreach ($file in $files) {
 }    
 ```    
 
-### Getting Services and Starting Them using the ForEach-Object CmdLet
+## Getting Services and Starting Them using the ForEach-Object CmdLet
 
 ```powershell    
 ## Get a list of automatic services that are stopped.    
@@ -340,7 +352,7 @@ $services | ForEach-Object {
 }    
 ```    
 
-### Reading Data from CSV using the ForEach() Method
+## Reading Data from CSV using the ForEach() Method
 
 ```powershell    
 # Import list of Firstname and Lastname from CSV file    
