@@ -58,7 +58,6 @@ Table of contents
 ## visible online
 
 ```html    
-
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">
     I am a success message
 </div> 
@@ -68,19 +67,21 @@ Table of contents
 I am a success message                
 </div>            
 
-```html    
+---
 
+```html    
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;">
     I am an error message
 </div>  
-```    
+```
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;">            
 I am an error message                
-</div>            
+</div>      
+
+---
 
 ```html    
-
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
     I am an info message
 </div>   
@@ -90,8 +91,9 @@ I am an error message
 I am a info message                
 </div>            
 
-```html    
+---
 
+```html    
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">
     I am a warning message
 </div>     
@@ -103,12 +105,19 @@ I am a warning message
 
 ## Adding Image
 
-### Works
-
 ```markdown
 ![kubernetes.gif](../assets/images/kubernetes.gif)
+```
+
+```markdown
 ![kubernetes.gif](./assets%2Fimages%2Fkubernetes.gif)
+```
+
+```html
 <img src='https://github.com/14paxton/14paxton.github.io/blob/master/assets/images/kubernetes.gif?raw=true'  alt="kubernetes"/>
+```
+
+```markdown
 ![kubernetes](https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/assets/images/kubernetes.gif)
 ```
 
@@ -141,46 +150,49 @@ pandoc -s example30.docx --wrap=none --reference-links -t markdown -o example35.
   --extract-media='./BrandonPaxton' myfilename.docx -o myfilename.md                  
   ```                  
 
-- scripts
-    - convert docx
-      ```shell                  
-        #!/bin/bash                  
-                    
-         # save input from command line                  
-         input=$1                  
-                    
-         # get filename from input                  
-         filename=$(basename -s .docx $input)                  
-                    
-         # convert word to markdown                  
-         pandoc -f docx -t markdown "$input"  -o $filename.md                  
-       ```                  
+## scripts
 
-    - files
-      ```shell                  
-        #!/bin/bash                  
-                   
-        # save current working directory to variable                  
-        cwd=$(pwd)                  
-                   
-        # find all .docx files in current directory                  
-        find $cwd -name "*.docx" -type f -print0 | while IFS= read -r -d $'\0' line; do                  
-                   
-        # remove spaces in filename                  
-        ns_filename=$(echo $line | sed 's/ /_/g')                  
-                   
-        # get filename from input                  
-        the_filename=$(basename -s .docx $ns_filename)                  
-                   
-        # convert word to markdown                  
-        # echo "pandoc -f docx -t markdown \"$line\" -o $the_filename.md"                  
-        pandoc -f docx -t markdown "$line" -o $the_filename.md                  
-        done                  
-      ```                
+### convert to docx
 
-> Example Used
+```shell                  
+#!/bin/bash                  
+                    
+# save input from command line                  
+  input=$1                  
+                    
+# get filename from input                  
+  filename=$(basename -s .docx $input)                  
+                    
+# convert word to markdown                  
+  pandoc -f docx -t markdown "$input"  -o $filename.md                  
+```                  
+
+## files
+      
+```shell                  
+#!/bin/bash                  
+                   
+# save current working directory to variable                  
+  cwd=$(pwd)                  
+                   
+# find all .docx files in current directory                  
+  find $cwd -name "*.docx" -type f -print0 | while IFS= read -r -d $'\0' line; do                  
+                   
+# remove spaces in filename                  
+  ns_filename=$(echo $line | sed 's/ /_/g')                  
+                   
+# get filename from input                  
+  the_filename=$(basename -s .docx $ns_filename)                  
+                   
+# convert word to markdown                  
+# echo "pandoc -f docx -t markdown \"$line\" -o $the_filename.md"                  
+  pandoc -f docx -t markdown "$line" -o $the_filename.md                  
+  done                  
+```
+
+### Example Used
 
 ```shell                
- #!/bin/bash                
-pandoc -t markdown_strict -s BrandonPaxton.docx --wrap=none --reference-links -t markdown -o BPResume.md;                
+  #!/bin/bash                
+  pandoc -t markdown_strict -s BrandonPaxton.docx --wrap=none --reference-links -t markdown -o BPResume.md;
 ```    
