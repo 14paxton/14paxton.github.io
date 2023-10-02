@@ -28,3 +28,19 @@ Table of contents
 ***                
 
 <br/>
+
+# Dynamic Import
+
+```html
+
+<script type="module">
+    (async () => {
+        const moduleSpecifier = './lib.mjs';
+        const {repeat, shout} = await import(moduleSpecifier);
+        repeat('hello');
+        // → 'hello hello'
+        shout('Dynamic import in action');
+        // → 'DYNAMIC IMPORT IN ACTION!'
+    })();
+</script>
+```
