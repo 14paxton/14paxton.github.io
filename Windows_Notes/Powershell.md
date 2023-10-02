@@ -35,28 +35,33 @@ Table of contents
 
 > powershell core 7+
 
-```shell
+```powershell`
 pwsh testscript_writefile.ps1
+
 ```    
 
 > OS powershell 5
 
-```shell
+```powershell
 powershell testscript_writefile.ps1
 ```
 
-- [Install](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)
+# [Install](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)
 
-  > By default the package is installed to ```$env:ProgramFiles\PowerShell\<version>```    
-  > You can launch PowerShell via the Start Menu or ```$env:ProgramFiles\PowerShell\<version>\pwsh.exe```
+> By default, the package is installed to ```$env:ProgramFiles\PowerShell\<version>```    
+> You can launch PowerShell via the Start Menu or ```$env:ProgramFiles\PowerShell\<version>\pwsh.exe```
 
-- Note
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+ <p>PowerShell 7.3 installs to a new directory and runs side-by-side with Windows PowerShell 5.1. </p>
+<br/><br/>
+ <p>PowerShell 7.3 is an in-place upgrade that replaces PowerShell 7.0 and lower.</p>       
+</div> 
 
-  > PowerShell 7.3 installs to a new directory and runs side-by-side with Windows PowerShell 5.1.    
-  > PowerShell 7.3 is an in-place upgrade that replaces PowerShell 7.0 and lower.
 
-> PowerShell 7.3 is installed to ```$env:ProgramFiles\PowerShell\7```    
-> The ```$env:ProgramFiles\PowerShell\7``` folder is added to ```$env:PATH```    
+> PowerShell 7.3 is installed to ```$env:ProgramFiles\PowerShell\7```
+
+> The ```$env:ProgramFiles\PowerShell\7``` folder is added to ```$env:PATH```
+
 > Folders for previously released versions are deleted
     
 ---
@@ -77,105 +82,95 @@ msiexec.exe /package PowerShell-7.3.2-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_ME
 winget upgrade Microsoft.PowerShell    
 ```    
 
-## You also can install PowerShell by using below command via winget
+### You also can install PowerShell by using below command via winget
 
 ```powershell    
 winget install Microsoft.PowerShell    
 ```    
 
-> update
+### update with msi
 
 ```powershell    
 msiexec.exe /fmu .\PowerShell-7.3.0-win-x64.msi USE_MU=1 ENABLE_MU=1    
 ```    
 
+### WinGet resources
+
 - [winget in Microsoft Docs](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
 - [winget in GitHub repository](https://github.com/microsoft/winget-cli)
 
-***    
-
 # Environment
 
-> There are three scopes of what is called Environment Variables:
-
-```shell
-[System.EnvironmentVariableTarget]::Machine
-```
-
-```shell
-[System.EnvironmentVariableTarget]::User
-```
-
-```shell
-[System.EnvironmentVariableTarget]::Process
-```
-
-    
----
-
-> To get a list of variables, you can use
-
-```shell
-[System.Environment]::GetEnvironmentVariables($scope)
-```
-
-```shell
-[System.Environment]::GetEnvironmentVariables()     
-# This will mix all scopes in one output    
-```
-
-    
----
-
-> To set variable, you can use
-
-```shell
-[System.Environment]::SetEnvironmentVariable($varName, $varValue, $scope)
-```
-
-    
----
-
-> If $scope is Machine or User, it will try to store data, otherwise it will throw an exception.
-    
----
----
-
-```shell
+```powershell
 $Env:
 ```
 
-> is actually a virtual PowerShell drive and environment variables are items on it.
-> There is a special provider Get-PSProvider -PSProvider Environment    
+> ```Env``` is actually a virtual PowerShell drive and environment variables are items on it.
+> There is a special provider ```Get-PSProvider -PSProvider Environment ```   
 > that implements this method of accessing to environment in powershell.
 
-***    
+## There are three scopes of what is called Environment Variables:
 
-> You can run
+```powershell
+[System.EnvironmentVariableTarget]::Machine
+```
 
-```shell
+```powershell
+[System.EnvironmentVariableTarget]::User
+```
+
+```powershell
+[System.EnvironmentVariableTarget]::Process
+```
+
+## To get a list of variables
+
+```powershell
+[System.Environment]::GetEnvironmentVariables($scope)
+```
+
+```powershell
+# This will mix all scopes in one output    
+[System.Environment]::GetEnvironmentVariables()     
+```
+
+## set ENV variable
+
+```powershell
+[System.Environment]::SetEnvironmentVariable($varName, $varValue, $scope)
+```
+
+> If ```$scope``` is Machine or User, it will try to store data, otherwise it will throw an exception.
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+    You can run       
+</div> 
+
+```powershell
 Get-ChildItem -Path 'Env:\
 ```    
 
-> and this is exactly the same as
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+    and this is exactly the same as       
+</div> 
 
-```shell
+```powershell
 [System.Environment]::GetEnvironmentVariables()
 ```    
 
-> without specifying scope.
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+    without specifying scope.       
+</div> 
 
-***    
+# WSL
 
-## WSL
-
-- get a list of distros
+## get a list of distros
 
 ```powershell    
 wslconfig /l    
 ```    
 
-- run wsl
+## run wsl
 
 ```powershell    
 wsl    
@@ -282,12 +277,12 @@ foreach ($i in $folders) {
 }    
 ```    
 
-```shell    
+```powershell    
 $folders = @('C:\Folder','C:\Program Files\Folder2','C:\Folder3')    
 $folders | ForEach-Object (Add-Content -Path "$_\SampleFile.txt" -Value "This is the content of the file")    
 ```    
 
-```shell    
+```powershell    
 $folders = @('C:\Folder','C:\Program Files\Folder2','C:\Folder3')    
 $folders.ForEach({    
 	Add-Content -Path "$_\SampleFile.txt" -Value "This is the content of the file"    
@@ -296,7 +291,7 @@ $folders.ForEach({
 
 ### Creating a File in Each Sub-Folder in a Directory using the ForEach Statement
 
-```shell    
+```powershell    
 # Define the TOP-level folder    
 $TOP_FOLDER = "C:\ARCHIVE_VOLUMES"    
     
@@ -311,13 +306,13 @@ foreach ($foldername in $Child_Folders.FullName) {
 
 > Using the Get-ChildItem cmdlet, you can confirm that the files were created or update inside each of the sub-folders.
 
-```shell    
+```powershell    
 Get-ChildItem -Recurse -Path C:\ARCHIVE_VOLUMES -Include backupstate.txt | Select-Object Fullname,CreationTime,LastWriteTime,Length    
 ```    
 
 ### Reading the Contents of each Text File in Sub-Directories
 
-```shell    
+```powershell    
 ## Find all BackupState.txt files in C:\ARCHIVE_VOLUMES    
 $files = Get-ChildItem -Recurse -Path C:\ARCHIVE_VOLUMES -Include 'BackupState.txt' | Select-Object DirectoryName,FullName    
     
@@ -329,7 +324,7 @@ foreach ($file in $files) {
 
 ### Getting Services and Starting Them using the ForEach-Object CmdLet
 
-```shell    
+```powershell    
 ## Get a list of automatic services that are stopped.    
 $services = Get-Service | Where-Object {$.StartType -eq 'Automatic' -and $.Status -ne 'Running'}    
     
@@ -347,7 +342,7 @@ $services | ForEach-Object {
 
 ### Reading Data from CSV using the ForEach() Method
 
-```shell    
+```powershell    
 # Import list of Firstname and Lastname from CSV file    
 $newUsers = Import-Csv -Path .\Employees.csv    
     
@@ -397,7 +392,7 @@ $newUsers.foreach(
  }    
 ```    
 
-- or
+> or
 
 ```powershell    
  Echo "Keep-alive with Scroll Lock..."    
@@ -416,18 +411,16 @@ $newUsers.foreach(
 
 ## answer prompt
 
-```shell    
+```powershell    
  foreach($i in $files) {'y' | powershell -c "Remove-Item $i -Force -ErrorAction silentlycontinue"}    
 ```    
 
 ## parallel
 
-```shell    
+```powershell    
 powershell.exe Get-ChildItem C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default | ForEach-Object -Parallel {Remove-Item "$_" -Force -Recurse | Out-Null}    
 powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" | Where-Object Name -NotIn @( 'Cache','Code Cache','databases','Extension State','File System' , 'IndexedDB', 'WebStorage', 'Sessions', 'Service Worker', 'Web Applications', 'Default') | ForEach-Object -Parallel {Copy-Item "$_" -Destination C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default -Recurse -Force}    
-```    
-
-***    
+```
 
 # Basic Commands
 
