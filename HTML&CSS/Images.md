@@ -50,9 +50,7 @@ Table of contents
 ## CSS
 
 ```html
-<a href="/" class="logo">
-  Kiwi Corp
-</a>
+<a href="/" class="logo"> Kiwi Corp </a>
 ```
 
 ```css
@@ -95,7 +93,7 @@ And just like raster graphics, you can base64 encode them right into the stylesh
 }
 ```
 
-To aid readability you may even attempt such audacity as this:
+To aid readability, you may even attempt such audacity as this:
 
 ```css
 .illustration {
@@ -110,8 +108,8 @@ To aid readability you may even attempt such audacity as this:
 ```html
 
 <svg baseProfile="full" height="200" version="1.1" width="300" xmlns="http://www.w3.org/2000/svg">
-  <rect fill="black" height="100%" width="100%"/>
-  <circle cx="150" cy="100" fill="blue" r="90"/>
+    <rect fill="black" height="100%" width="100%"/>
+    <circle cx="150" cy="100" fill="blue" r="90"/>
 </svg>
 ```
 
@@ -136,7 +134,7 @@ body {
 
 <body>
 
-   <!-- paste in SVG code, image shows up!  -->
+<!-- paste in SVG code, image shows up!  -->
 
 </body>
 ```
@@ -146,7 +144,7 @@ body {
 ```html
 
 <iframe height="500" sandbox src="triangle.svg" width="500">
-  <img alt="Triangle with three unequal sides" src="triangle.png"/>
+    <img alt="Triangle with three unequal sides" src="triangle.png"/>
 </iframe>
 
 ```
@@ -169,7 +167,7 @@ This is the oldest method we have. And of course, data URIs are possible here to
 </object>
 ```
 
-If the browser doesn’t recognise the object element’s MIME type it won’t download the SVG file but the “fallback” image inside is always downloaded. Again, we’re not doing things quite right. There is a better solution and those crafty devils at ClearLeft are sporting it in their logo markup. The answer? Simply use CSS to apply the fallback image:
+If the browser doesn’t recognise the object element’s MIME type, it won’t download the SVG file, but the “fallback” image inside is always downloaded. Again, we’re not doing things quite right. There is a better solution and those crafty devils at ClearLeft are sporting it in their logo markup. The answer? Simply use CSS to apply the fallback image:
 
 ```html
 
@@ -186,9 +184,52 @@ If the browser doesn’t recognise the object element’s MIME type it won’t d
 }
 ```
 
-The object element effectively replaces it’s default content with the SVG data. Only if the browser doesn’t support SVG does the element inside get styled. This to my knowledge is the best way to use SVG without any overhead.
+The object element effectively replaces its default content with the SVG data. Only if the browser doesn’t support SVG, does the element inside get styled. This, to my knowledge, is the best way to use SVG without any overhead.
 
-# [ Data URIs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)
+# [ Data URI](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)
+
+> The data URI format is pretty simple and is spelled out in RFC 2397 (which actually is short enough that you can read it all). The basic format is as follows:
+
+```data:[<mime type>][;charset=<charset>][;base64],<encoded data>```
+
+> In this format, ```data: ``` is the protocol of the URI, indicating that this is a data URI. The second part, the ```MIME type```, indicates the type of data being represented. For PNG images, for example, this would be ```image/png```. When not specified, the ```MIME``` type defaults to ```text/plain```. The character set can, most often, safely be omitted and isn’t used at all for images. The next section indicates the encoding used. Contrary to popular belief, you do not have to use ```base 64 encoding```. If the content isn’t base 64 encoded, then the data is encoded using standard URL-encoding (URL-safe ```ASCII``` characters represented as themselves, all others represented as a hex encoding in the format ```%xx```). The encoded data may contain white space, which is not considered significant.
+
+## Formats
+
+```
+<!-- base64 -->
+data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL...
+```
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+    Base 64 encoding is a system of encoding whereby data is converted into bits and then grouped numerically into a set of base 64 digits. Base 64 digits include A through Z, both uppercase and lowercase, numbers, and plus (+) and slash (/). The equals sign (=) is used to indicate padding has occurred. All you really need to understand is that base 64 encoding makes the encoded data much smaller.       
+</div> 
+<br/><br/>
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;">            
+    **Note: **Base 64-encoding actually makes images larger. If you’re using HTTP compression, however, you likely won’t notice a difference because base 64-encoded data compresses extremely well. If for some reason you can’t use HTTP compression, you may want to check how many bytes you’re sending over the wire to determine if the tradeoff is worth it.      
+</div>            
+
+
+***
+
+```
+<!-- UTF-8, not encoded -->
+data:image/svg+xml;charset=UTF-8,<svg ...> ... </svg>
+```
+
+***
+
+```
+<!-- UTF-8, optimized encoding for compatibility -->
+data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://...'
+```
+
+***
+
+```
+<!-- Fully URL encoded ASCII -->
+data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//...
+```
 
 ## css
 
@@ -207,22 +248,41 @@ li {
 
 > or
 
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">            
+           this uses a fallback url
+</div>            
+
 ```css    
 html {
-    background-image: url('data:image/jpg;base64,/9j/4RkARXhpZgAATU0AKgAAAAgAB6f/9k='), url(/TBEX/resource/src/815-teams-north-gate-path.jpg);
+    background-image: url(data:image/jpg;base64,/9j/4RkARXhpZgAATU0AKgAAAAgAB6f/9k=), url(/TBEX/resource/src/815-teams-north-gate-path.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     height: 100%;
-    /*background-color: #FFFFFF; !* match backgroud to bottom of page *!*/
 }    
 ```   
 
-## image
+### Preload Image with CSS and HTML
 
-> format
->> data:[<mime type>][;charset=<charset>][;base64],<encoded data>
+```css
+.masthead {
+    height: 100vh;
+    background-image: url("[masthead.jpg|<data URI>]");
+    background-size: cover;
+}
+```
+
+```html
+
+<link rel="preload" href="masthead.jpg" as="image"/>
+
+<title>Preloaded Image</title>
+
+<link rel="stylesheet" href="image.css"/>
+```
+
+## image
 
 ```html
 <img src="data:image/svg+xml;base64,[data]">
@@ -244,24 +304,8 @@ html {
 ```html
 
 <object type="image/svg+xml" data="data:image/svg+xml;base64,[data]">
-  fallback
+    fallback
 </object>
-```
-
-## Formats
-
-```
-<!-- base64 -->
-data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL...
-
-<!-- UTF-8, not encoded -->
-data:image/svg+xml;charset=UTF-8,<svg ...> ... </svg>
-
-<!-- UTF-8, optimized encoding for compatibility -->
-data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://...'
-
-<!-- Fully URL encoded ASCII -->
-data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//...
 ```
 
 # Resources

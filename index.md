@@ -21,8 +21,12 @@ shortRepo: ghpages
 # Site Map
 
 <div id="insertion"></div>
+<!--
+//http path
+//const pathToHTML = "https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/assets/HTMLSnippets/Nav.html";
+-->
 <script>
-const pathToHTML = "https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/HTMLSnippets/Nav.html";
+const pathToHTML = "./assets/HTMLSnippets/Nav.html";
 async function fetchHTMLFile(path) {
 return await fetch(path)
 }
