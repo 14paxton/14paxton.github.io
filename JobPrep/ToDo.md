@@ -69,3 +69,5 @@ Table of contents
 > coxsucks
 
 ```
+
+2. set up to run and test locally! 
