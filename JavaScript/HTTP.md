@@ -1,11 +1,11 @@
 ---
-title: HTTP
-permalink: JavaScript/HTTP
-category: JavaScript
-parent: JavaScript
-layout: default
+title:        HTTP
+permalink:    JavaScript/HTTP
+category:     JavaScript
+parent:       JavaScript
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - javascript
   - default          
@@ -97,8 +97,16 @@ req.send();
 
 ## Types of requests
 
-> A request made via XMLHttpRequest can fetch the data in one of two ways, asynchronously or synchronously. The type of request is dictated by the optional async argument (the third argument) that is set on the XMLHttpRequest.open() method. If this argument is true or not specified, the XMLHttpRequest is processed asynchronously, otherwise the process is handled synchronously. A detailed discussion and demonstrations of these two types of requests can be found on the synchronous and asynchronous requests page. You can't use synchronous requests outside web workers as it freezes the main interface.
+> A request made via XMLHttpRequest can fetch the data in one of two ways, asynchronously or synchronously.
+> The type of request is dictated by the optional async argument (the third argument) that is
+> set on the XMLHttpRequest.open() method.
+> If this argument is true or not specified, the XMLHttpRequest is processed asynchronously, otherwise the process is handled synchronously.
+> A detailed
+> discussion and demonstrations of these two types of requests can be found on the synchronous and asynchronous requests page.
+> You can't use synchronous requests outside web workers as it freezes the
+> main interface.
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
-    The constructor XMLHttpRequest isn't limited to only XML documents. It starts with "XML" because when it was created the main format that was originally used for asynchronous data exchange was XML.       
+    The constructor XMLHttpRequest isn't limited to only XML documents.
+It starts with "XML" because when it was created the main format that was originally used for asynchronous data exchange was XML.       
 </div> 

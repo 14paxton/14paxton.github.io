@@ -1,11 +1,11 @@
 ---
-title: Images
-permalink: HTML&CSS/Images
-category: HTML&CSS
-parent: HTML&CSS
-layout: default
+title:        Images
+permalink:    HTML&CSS/Images
+category:     HTML&CSS
+parent:       HTML&CSS
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - html&css
   - default          
@@ -167,7 +167,12 @@ This is the oldest method we have. And of course, data URIs are possible here to
 </object>
 ```
 
-If the browser doesn’t recognise the object element’s MIME type, it won’t download the SVG file, but the “fallback” image inside is always downloaded. Again, we’re not doing things quite right. There is a better solution and those crafty devils at ClearLeft are sporting it in their logo markup. The answer? Simply use CSS to apply the fallback image:
+If the browser doesn’t recognise the object element’s MIME type, it won’t download the SVG file, but the “fallback” image inside is always downloaded.
+Again, we’re not doing things quite right.
+There
+is a better solution and those crafty devils at ClearLeft are sporting it in their logo markup.
+The answer?
+Simply use CSS to apply the fallback image:
 
 ```html
 
@@ -184,7 +189,10 @@ If the browser doesn’t recognise the object element’s MIME type, it won’t 
 }
 ```
 
-The object element effectively replaces its default content with the SVG data. Only if the browser doesn’t support SVG, does the element inside get styled. This, to my knowledge, is the best way to use SVG without any overhead.
+The object element effectively replaces its default content with the SVG data.
+Only if the browser doesn’t support SVG, does the element inside get styled.
+This, to my knowledge, is the best way to
+use SVG without any overhead.
 
 # [ Data URI](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)
 
@@ -192,7 +200,19 @@ The object element effectively replaces its default content with the SVG data. O
 
 ```data:[<mime type>][;charset=<charset>][;base64],<encoded data>```
 
-> In this format, ```data: ``` is the protocol of the URI, indicating that this is a data URI. The second part, the ```MIME type```, indicates the type of data being represented. For PNG images, for example, this would be ```image/png```. When not specified, the ```MIME``` type defaults to ```text/plain```. The character set can, most often, safely be omitted and isn’t used at all for images. The next section indicates the encoding used. Contrary to popular belief, you do not have to use ```base 64 encoding```. If the content isn’t base 64 encoded, then the data is encoded using standard URL-encoding (URL-safe ```ASCII``` characters represented as themselves, all others represented as a hex encoding in the format ```%xx```). The encoded data may contain white space, which is not considered significant.
+> In this format, ```data: ``` is the protocol of the URI, indicating that this is a data URI.
+> The second part, the ```MIME type```, indicates the type of data being represented.
+> For PNG images, for
+> example, this would be ```image/png```.
+> When not specified, the ```MIME``` type defaults to ```text/plain```.
+> The character set can, most often, safely be omitted and isn’t used at all for images.
+> The
+> next section indicates the encoding used.
+> Contrary to popular belief, you do not have to use ```base 64 encoding```.
+> If the content isn’t base 64 encoded, then the data is encoded using standard
+> URL-encoding (URL-safe ```ASCII``` characters represented as themselves, all others represented as a hex encoding in the format ```%xx```).
+> The encoded data may contain white space, which is not
+> considered significant.
 
 ## Formats
 
@@ -202,11 +222,16 @@ data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL...
 ```
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
-    Base 64 encoding is a system of encoding whereby data is converted into bits and then grouped numerically into a set of base 64 digits. Base 64 digits include A through Z, both uppercase and lowercase, numbers, and plus (+) and slash (/). The equals sign (=) is used to indicate padding has occurred. All you really need to understand is that base 64 encoding makes the encoded data much smaller.       
+    Base 64 encoding is a system of encoding whereby data is converted into bits and then grouped numerically into a set of base 64 digits.
+Base 64 digits include A through Z, both uppercase and lowercase, numbers, and plus (+) and slash (/).
+The equals sign (=) is used to indicate padding has occurred.
+All you really need to understand is that base 64 encoding makes the encoded data much smaller.       
 </div> 
 <br/><br/>
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;">            
-    **Note: **Base 64-encoding actually makes images larger. If you’re using HTTP compression, however, you likely won’t notice a difference because base 64-encoded data compresses extremely well. If for some reason you can’t use HTTP compression, you may want to check how many bytes you’re sending over the wire to determine if the tradeoff is worth it.      
+    **Note: **Base 64-encoding actually makes images larger.
+If you’re using HTTP compression, however, you likely won’t notice a difference because base 64-encoded data compresses extremely well.
+If for some reason you can’t use HTTP compression, you may want to check how many bytes you’re sending over the wire to determine if the tradeoff is worth it.      
 </div>            
 
 
@@ -289,7 +314,12 @@ html {
 ```
 
 ```html
-<img alt="star" height="16" src="data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7" width="16">
+<img
+        alt="star"
+        height="16"
+        src="data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7"
+        width="16"
+>
 ```
 
 ## iframe

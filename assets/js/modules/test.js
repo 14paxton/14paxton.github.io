@@ -1,5 +1,5 @@
 function alertMe() {
-    window.alert("get fucked")
+    console.log("module working")
 }
 
 
