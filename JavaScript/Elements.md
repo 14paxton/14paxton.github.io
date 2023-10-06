@@ -383,7 +383,7 @@ function measure(element, returnValue, parentNode) {
 # Script Type
 
 > Classic ```<script>```s block the ```HTML``` parser by default.
-> You can work around it by adding the defer attribute, which ensures that the script download happens in parallel with ```HTML```
+> You can work around it by adding the ```defer``` attribute, which ensures that the script download happens in parallel with ```HTML```
 > parsing.
 
 ## Script Element defer / async / module, fetch, load, and execution timeline
