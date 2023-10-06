@@ -18,8 +18,6 @@ shortRepo:    ghpages
 
 ---
 
-<script type="module" src="/assets/js/main.js"></script>
-
 # Site Map
 
 <div id="insertion"></div>

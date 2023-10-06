@@ -249,12 +249,18 @@ data:image/svg+xml;charset=UTF-8,<svg ...> ... </svg>
 data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://...'
 ```
 
+> example :
+```data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M224%20387.814V512L32 320l192-192v126.912C447.375 260.152 437.794 103.016 380.93 0 521.287 151.707 491.48 394.785 224 387.814z'/%3E%3C/svg%3E```
+
 ***
 
 ```
 <!-- Fully URL encoded ASCII -->
 data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//...
 ```
+
+> example :
+```data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20d%3D%22M224%20387.814V512L32%20320l192-192v126.912C447.375%20260.152%20437.794%20103.016%20380.93%200%20521.287%20151.707%20491.48%20394.785%20224%20387.814z%22%2F%3E%3C%2Fsvg%3E```
 
 ## css
 

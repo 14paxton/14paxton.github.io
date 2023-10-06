@@ -1,3 +1,5 @@
-import {alertMe} from './modules/test.js'
-
-alertMe();
+(async () => {
+    const moduleSpecifier = './modules/loadJavaOOPImages.js';
+    const {loadImages} = await import(moduleSpecifier);
+    await loadImages();
+})();
