@@ -1,6 +1,6 @@
 ---
 title:        ToDo
-permalink: GitHubPages/ToDo
+permalink:    GitHubPages/ToDo
 category:     JobPrep
 parent:       MyPersonalDocsAndStuff
 layout:       default
@@ -10,10 +10,10 @@ shortRepo:
   - jobprep
   - default              
 ---
-    
-    
+
+
 <br/>              
-    
+
 <details markdown="block">                    
 <summary>                    
 Table of contents                    
@@ -22,14 +22,16 @@ Table of contents
 1. TOC                    
 {:toc}                    
 </details>                    
-    
+
 <br/>                    
-    
+
 ***                    
     
 <br/>    
 
-1. add hidden elements with wording to make images with code and explanations searchable
+1. fix sitemap at index show only when mobile
+
+2. add hidden elements with wording to make images with code and explanations searchable
 
 > text searchable from all hidden elements
 
@@ -67,5 +69,4 @@ Table of contents
 </div>
 
 > coxsucks
-
 ```
