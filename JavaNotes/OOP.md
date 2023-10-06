@@ -15,5 +15,5 @@ shortRepo:
 <br/>
 
 <link rel="modulepreload" href="/assets/js/main.js">
-<script type="module" src="/assets/js/main.js"></script>
+<script type="module" async src="/assets/js/main.js"></script>
 <div id="imageContainer"></div>
