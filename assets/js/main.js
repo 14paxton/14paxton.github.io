@@ -1,5 +1,5 @@
 (async () => {
-    const moduleSpecifier = './modules/loadJavaOOPImages.js';
-    const {loadImages} = await import(moduleSpecifier);
-    await loadImages();
+    const moduleSpecifier = "/assets/js/modules/siteonload.js";
+    const {imageToCSS} = await import(moduleSpecifier);
+    await imageToCSS();
 })();

@@ -14,5 +14,15 @@ shortRepo:
 
 <br/>
 
+<link rel="modulepreload" href="/assets/js/main.js">
+<script>
+  import("/assets/js/modules/createElements.js").then(async (module) => {
+    const {addElements} = module;
+    await addElements();
+  });
+</script>
+<script type="module" async src="/assets/js/main.js"></script>
 
-<div id="image1"></div>
+***
+
+<div id="imageContainer" ></div>
