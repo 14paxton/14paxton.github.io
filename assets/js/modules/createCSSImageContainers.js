@@ -1,25 +1,23 @@
 import {javaOOPImages} from '/assets/js/Objects/JavaOOPImages.js'
 
-async function createElements(id) {
+async function createCSSImageContainers(id) {
     return new Promise((resolve, reject) => {
         console.log("create div")
         const div = document.createElement('div')
         div.id = id;
-        // div.style.width = "auto";
         div.style.width = "1035px";
         div.style.height = "1322px"
-        // div.style.height = "auto"
         resolve(document.querySelector("#imageContainer").appendChild(div))
     })
 }
 
-async function addElements() {
+async function addCSSImageContainers() {
     const divPromises = []
     Object.keys(javaOOPImages).forEach((key) => {
-        divPromises.push(createElements(key));
+        divPromises.push(createCSSImageContainers(key));
     })
 
     await Promise.all(divPromises)
 }
 
-export {addElements}
+export {addCSSImageContainers}
