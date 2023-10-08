@@ -96,22 +96,58 @@ $("input[type='radio'][name='scheduleType']:not(:checked)").attr("disabled", tru
 
 # Attribute Value
 
+> dataset returns DOMStringMap
+
 > [Using Custom data- attributes](https://html5doctor.com/html5-custom-data-attributes/)
 
 > Attribute must be camel cased ```Element.dataset.attributeNameCamelCased```
 
 ## Get
 
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+<ul>
+<li>
+Attributes can be set and read by the <code>camelCase</code> <code>name/key</code> as an object property of the dataset: <code>element.dataset.keyname</code>
+</li>
+<li>
+Attributes can also be set and read using bracket syntax: <code>element.dataset['keyname']</code>
+</li>
+<li>The in operator can check if a given attribute exists: 'keyname' in <code>element.dataset</code>       
+</li>
+</ul>
+</div> 
+
 ```javascript
 document.getElementById('groupsWrapper-' + id).getAttribute('data-saved-assessment-count')
+```
 
+> or
+
+```javascript
+imageContainer.dataset.images
 ```
 
 ## Set
 
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+ <p>
+When the attribute is set, its value is always converted to a string. For example: <code>element.dataset.example = null</code> is converted into <code>data-example="null"</code>
+To remove an attribute, you can use the <code>delete</code> operator: <code>delete element.dataset.keyname</code>     
+</p>    
+</div> 
+
 ```javascript
 document.getElementById('groupsWrapper-' + id).setAttribute('data-saved-assessment-count', "my text value")
 
+```
+
+> or
+
+```javascript
+// set a data attribute
+el.dataset.dateOfBirth = "1960-10-03";
+// Result on JS: el.dataset.dateOfBirth === '1960-10-03'
+// Result on HTML: <div id="user" data-id="1234567890" data-user="carinaanand" data-date-of-birth="1960-10-03">Carina Anand</div>
 ```
 
 ## Remove
@@ -119,6 +155,24 @@ document.getElementById('groupsWrapper-' + id).setAttribute('data-saved-assessme
 ```javascript
 document.getElementById('groupsWrapper-' + id).removeAttribute('data-saved-assessment-count')
 
+```
+
+> or
+
+```javascript
+delete el.dataset.dateOfBirth;
+// Result on JS: el.dataset.dateOfBirth === undefined
+// Result on HTML: <div id="user" data-id="1234567890" data-user="carinaanand">Carina Anand</div>
+```
+
+## null check
+
+```javascript
+if (!("someDataAttr" in el.dataset)) {
+    el.dataset.someDataAttr = "mydata";
+    // Result on JS: 'someDataAttr' in el.dataset === true
+    // Result on HTML: <div id="user" data-id="1234567890" data-user="carinaanand" data-some-data-attr="mydata">Carina Anand</div>
+}
 ```
 
 ## jQuery

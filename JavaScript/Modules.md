@@ -29,7 +29,32 @@ Table of contents
 
 <br/>
 
-# Dynamic Import
+# Import
+
+```javascript
+// Classic string literals
+const module1 = await import('./myModule.js');
+
+// A variable
+const path = './myOtherModule.js';
+const module2 = await import(path);
+
+// Function call
+const getPath = (version) => `./myModule/versions/${version}.js`;
+const moduleVersion1 = await import(getPath('v1.0'));
+const moduleVersion2 = await import(getPath('v2.0'));
+```
+
+## Import and run in script tag
+
+```javascript
+<script>
+    import("/assets/js/modules/createCSSImageContainers.js").then(async (module) => {const {addCSSImageContainers} = module;
+    await addCSSImageContainers();});
+</script>
+```
+
+## Dynamic Import
 
 ```html
 
@@ -45,10 +70,26 @@ Table of contents
 </script>
 ```
 
-# Preload modules
+## Async Import
+
+```javascript
+async function loadMyModule() {
+    console.log("loadMyModule")
+    const {default: runFunc} = await import(moduleSpecifier(file));
+    await runFunc();
+}
+
+await loadMyModule();
+```
+
+## Preload modules
+
+***
 
 > You can optimize the delivery of your modules further by using ```<link rel="modulepreload">```.
 > This way, browsers can preload and even preparse and precompile modules and their dependencies.
+
+***
 
 ```html
 
@@ -58,13 +99,15 @@ Table of contents
 <script nomodule src="fallback.js"></script>
 ```
 
+***
+
 > This is especially important for larger dependency trees.
 > Without ```rel="modulepreload"```,
 > the browser needs to perform multiple ```HTTP``` requests to figure out the full dependency tree.
 > However, if you declare the full list of dependent module scripts with ```rel="modulepreload"```,
-> the browser doesn’t have to discover these dependencies progressively.
+> the browser does not have to discover these dependencies progressively.
 
-# Import
+***
 
 ## Use Side Effects
 
@@ -83,9 +126,7 @@ Table of contents
 ```javascript
 (async () => {
     if (somethingIsTrue) {
-        const {
-                  default: myDefault, foo, bar,
-              } = await import("/modules/my-module.js");
+        const {default: myDefault, foo, bar} = await import("/modules/my-module.js");
     }
 })();
 

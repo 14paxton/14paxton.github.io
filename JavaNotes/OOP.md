@@ -14,15 +14,9 @@ shortRepo:
 
 <br/>
 
-<link rel="modulepreload" href="/assets/js/main.js">
-<script>
-  import("/assets/js/modules/createCSSImageContainers.js").then(async (module) => {
-    const {addCSSImageContainers} = module;
-    await addCSSImageContainers();
-  });
-</script>
-<script type="module" async src="/assets/js/main.js"></script>
+<link rel="modulepreload" href="/assets/js/imageLoader.js">
+<script type="module" async src="/assets/js/imageLoader.js"></script>
 
 ***
 
-<div id="imageContainer" style="width: auto"></div>
+<div id="imageContainer" style="width: auto" data-images='{"file": "javaOOPImages.js" , "func": "loadImages"}'></div>
