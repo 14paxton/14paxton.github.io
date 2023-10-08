@@ -5,8 +5,10 @@ async function createElements(id) {
         console.log("create div")
         const div = document.createElement('div')
         div.id = id;
+        // div.style.width = "auto";
         div.style.width = "1035px";
         div.style.height = "1322px"
+        // div.style.height = "auto"
         resolve(document.querySelector("#imageContainer").appendChild(div))
     })
 }

@@ -25,4 +25,4 @@ shortRepo:
 
 ***
 
-<div id="imageContainer" ></div>
+<div id="imageContainer" style="width: auto"></div>

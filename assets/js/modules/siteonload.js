@@ -7,8 +7,8 @@ async function imageToCSS() {
         if (javaOOPImages.hasOwnProperty(key)) {
             const stylesheet = document.createElement('style');
             stylesheet.type = 'text/css';
-            // stylesheet.innerText = `#${key} { background: url('${javaOOPImages[key]}') no-repeat;}`
-            stylesheet.innerText = `#${key} { background: url('${javaOOPImages[key]}'); background-size: cover; background-repeat: no-repeat; background-position: center; height: 100%; width: 90%;}`
+            stylesheet.innerText = `#${key} { background: url('${javaOOPImages[key]}') no-repeat; background-size: cover; width: auto; height: auto; }`
+            // stylesheet.innerText = `#${key} { background: url('${javaOOPImages[key]}'); background-size: cover; background-repeat: no-repeat; background-position: center; height: 100%; width: 90%;}`
             document.head.appendChild(stylesheet);
         }
     })
