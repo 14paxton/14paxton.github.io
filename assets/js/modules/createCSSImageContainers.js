@@ -4,7 +4,8 @@ async function createCSSImageContainers(id) {
         const div = document.createElement('div')
         div.id = id;
         div.style.width = "auto";
-        div.style.height = "auto"
+        div.style.height = "100vh"
+        div.style.display = "block"
         resolve(document.querySelector("#imageContainer").appendChild(div))
     })
 }

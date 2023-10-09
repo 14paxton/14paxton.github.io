@@ -18,4 +18,4 @@ shortRepo:
 
 ***
 
-<div id="imageContainer" style="width: auto; height: auto;" data-images='{"file": "dotNetImages.js" , "func": "loadImages"}'></div>
+<div id="imageContainer" style="display: block; width: auto; height: auto;" data-images='{"file": "dotNetImages.js" , "func": "loadImages"}'></div>

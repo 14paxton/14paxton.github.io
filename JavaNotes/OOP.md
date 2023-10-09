@@ -19,4 +19,4 @@ shortRepo:
 
 ***
 
-<div id="imageContainer" style="width: auto" data-images='{"file": "javaOOPImages.js" , "func": "loadImages"}'></div>
+<div id="imageContainer" style="display: block; width: auto; height: auto;" data-images='{"file": "javaOOPImages.js" , "func": "loadImages"}'></div>

@@ -2,8 +2,15 @@ async function createStyleElement(key, jsonImageURI) {
     return new Promise(resolve => {
         const stylesheet = document.createElement('style');
         stylesheet.type = 'text/css';
-        stylesheet.innerText = `#${key} { background: url('${jsonImageURI[key]}') no-repeat; background-size: cover; width: auto; height: auto; }`
+
+        //first use at TPlus
         // stylesheet.innerText = `#${key} { background: url('${javaOOPImages[key]}'); background-size: cover; background-repeat: no-repeat; background-position: center; height: 100%; width: 90%;}`
+
+        //works but leave spaces
+        // stylesheet.innerText = `#${key} { background: url('${jsonImageURI[key]}') no-repeat; display: 100% auto; background-size: 100%; background-position: center; width: 100%; height: 100%; margin:0 auto;}`
+
+        stylesheet.innerText = `#${key} { background: url('${jsonImageURI[key]}') no-repeat; background-position: top; background-size: contain; width: auto; height: auto; margin: auto;}`
+
         document.head.appendChild(stylesheet);
         resolve();
     })
