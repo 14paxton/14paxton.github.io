@@ -6,6 +6,6 @@ export default async function () {
     console.log("create images javaOOPIMAGES")
     createAndAppendStyle(javaOOPImages,).then(async () => {
         console.log("images added javaOOPImages")
-        await addCSSImageContainers(javaOOPImages);
+        await addCSSImageContainers(javaOOPImages, "javaOOPImages.js");
     })
 }

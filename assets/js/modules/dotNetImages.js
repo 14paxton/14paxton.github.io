@@ -6,6 +6,6 @@ export default async function () {
     console.log("create images dotNetImages")
     createAndAppendStyle(dotNetImages).then(async () => {
         console.log("images added dotNetImages")
-        await addCSSImageContainers(dotNetImages);
+        await addCSSImageContainers(dotNetImages, "dotNetImages.js");
     })
 }
