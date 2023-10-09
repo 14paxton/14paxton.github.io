@@ -1,18 +1,21 @@
 (async () => {
-    const imageContainer = document.querySelector("#imageContainer");
+    const createContainerPromiseList = []
+    const listOfImageContainers = document.querySelectorAll("[data-img-loader]")
 
-    if (imageContainer && ("images" in imageContainer.dataset) && !!imageContainer.dataset.images) {
-        const {file, func} = JSON.parse(imageContainer.dataset.images);
-        const moduleSpecifier = (fileName) => `/assets/js/modules/${fileName}`;
-        const path = moduleSpecifier(file)
-        console.log("get module " + moduleSpecifier(file))
+    listOfImageContainers.forEach(element => {
+        const {imgLoader, ...rest} = element.dataset
+        createContainerPromiseList.push(new Promise(async resolve => {
+            console.log(`load module ${imgLoader}`)
 
-        async function loadMyModule() {
-            console.log("loadMyModule")
-            const {default: runFunc} = await import(path);
-            await runFunc();
-        }
+            async function loadMyModule() {
+                const {default: loadModuleFunc} = await import('/assets/js/modules/loadModule.js');
+                await loadModuleFunc(imgLoader);
+            }
 
-        await loadMyModule();
-    }
+            resolve(loadMyModule())
+        }))
+
+    })
+
+    Promise.all(createContainerPromiseList)
 })();
