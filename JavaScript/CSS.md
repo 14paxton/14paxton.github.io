@@ -1,11 +1,11 @@
 ---
-title: CSS
-permalink: JavaScript/CSS
-category: JavaScript
-parent: JavaScript
-layout: default
+title:        CSS
+permalink:    JavaScript/CSS
+category:     JavaScript
+parent:       JavaScript
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - javascript
   - default                
@@ -90,7 +90,9 @@ div.classList.replace("foo", "bar");
 
 ```javascript    
 const el = document.getElementById("item");
-el.className = el.className === "active"? "inactive" : "active";
+el.className = el.className === "active"
+               ? "inactive"
+               : "active";
 
 elm.setAttribute("class", elm.getAttribute("class"));    
 ```    
@@ -100,7 +102,9 @@ elm.setAttribute("class", elm.getAttribute("class"));
 
 ```javascript      
 function RGBToHex(rgb) {
-    let sep = rgb.indexOf(",") > -1? "," : " ";
+    let sep = rgb.indexOf(",") > -1
+              ? ","
+              : " ";
     rgb = rgb.substr(4).split(")")[0].split(sep);
 
     // Convert %s to 0–255      
@@ -111,10 +115,13 @@ function RGBToHex(rgb) {
          75% -> 191      
          75/100 = 0.75, * 255 = 191.25 -> 191      
          */
-    }      
+    }
+}
 ```      
 
-# Create Style element insert into document head
+# Create Style element / modify css style sheets
+
+## insert into document head
 
 ```javascript      
 generateRulesAll(tableRef.current).then((css) => {
@@ -123,3 +130,20 @@ generateRulesAll(tableRef.current).then((css) => {
     iframeRef?.current.contentWindow.document.head.appendChild(styleElement);
 });      
 ```  
+
+## Append new stylesheet to current stylesheets
+
+> [CSSStyleSheet](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet)
+
+> [AdoptedStyleSheets ](https://developer.mozilla.org/en-US/docs/Web/API/Document/adoptedStyleSheets)
+>> The adoptedStyleSheets property of the Document interface is used for setting an array of constructed stylesheets to be used by the document.
+>>> [ShadowRoot AdoptedStyleSheets](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/adoptedStyleSheets)
+
+```javascript
+const extraSheet = new CSSStyleSheet();
+extraSheet.insertRule("p { color: green; }");
+
+// Combine the existing sheets and new one
+document.adoptedStyleSheets = [...document.adoptedStyleSheets, extraSheet];
+
+```

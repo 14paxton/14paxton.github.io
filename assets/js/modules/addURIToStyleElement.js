@@ -9,9 +9,15 @@ async function createStyleElement(key, jsonImageURI) {
         //works but leave spaces
         // stylesheet.innerText = `#${key} { background: url('${jsonImageURI[key]}') no-repeat; display: 100% auto; background-size: 100%; background-position: center; width: 100%; height: 100%; margin:0 auto;}`
 
-        stylesheet.innerText = `#${key} { background: url('${jsonImageURI[key]}') no-repeat; background-position: top; background-size: contain; width: auto; height: auto; margin: auto;}`
+        // stylesheet.innerText = `#${key} { background: url('${jsonImageURI[key]}') no-repeat; background-position: top; background-size: contain; width: auto; height: auto; margin: auto;}`
+        // stylesheet.innerText.concat(` #${key}:hover{transform: scale(2)}`)
 
-        document.head.appendChild(stylesheet);
+        const imageStyles = new CSSStyleSheet();
+        imageStyles.insertRule(`#${key} { background: url('${jsonImageURI[key]}') no-repeat; background-position: top; background-size: contain; width: auto; height: auto; margin: auto;}`);
+        // imageStyles.insertRule(` #${key}:hover{transform: scale(2)}`)
+
+        document.adoptedStyleSheets = [...document.adoptedStyleSheets, imageStyles];
+        // document.head.appendChild(stylesheet);
         resolve();
     })
 }

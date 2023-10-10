@@ -11,14 +11,16 @@ shortRepo:
   - default    
 ---
 
-<details markdown="block">    
-<summary>    
-Table of contents    
-</summary>    
-{: .text-delta }    
-1. TOC    
-{:toc}    
-</details>    
+<br/>
+
+<details markdown="block">                
+<summary>                
+Table of contents                
+</summary>                
+{: .text-delta }                
+1. TOC                
+{:toc}                
+</details>                
 
 <br/>   
 
@@ -29,4 +31,4 @@ Table of contents
 
 ***
 
-<div id="imageContainer" data-key-as-header="true"  data-img-loader="linuxImages.js" style="display: block; width: auto; height: auto;"></div>
+<div id="imageContainer" data-key-as-header="true" data-zoom-on-hover="true"  data-img-loader="linuxImages.js" style="display: block; width: auto; height: auto;"></div>
