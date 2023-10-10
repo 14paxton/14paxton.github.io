@@ -1,3 +1,9 @@
+async function addPadding(element, top, side) {
+    return new Promise(() => {
+        element.style.padding = `${top}% ${side}%`
+    })
+}
+
 async function createCSSImageContainers(id, callingFile) {
     return new Promise((resolve, reject) => {
         const imgDiv = document.querySelector(`[data-img-loader="${callingFile}"]`)
@@ -8,6 +14,9 @@ async function createCSSImageContainers(id, callingFile) {
         div.style.width = "auto";
         // div.style.height = "100vh"
         // div.style.padding = 'padding:70% 0%;'
+        div.onload = Promise.resolve(addPadding(div, keyAsHeader
+                                                     ? 60
+                                                     : 71, 0))
         div.onmouseover = zoomOnHover
                           ? (e) => e.target.style.transform = 'scale(2)'
                           : null
