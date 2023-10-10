@@ -138,25 +138,6 @@ document.querySelector('#some.selector').innerHTML = body;
   <input type="hidden" id="postId" name="postId" value="34657"/>
 ```
 
-## On Load (onload) Attribute
-
-```html
-<!DOCTYPE html>
-<html>
-<body onload="myFunction()">
-<h1>HTML DOM Events</h1>
-<h2>The onload Event</h2>
-
-<script>
-    function myFunction() {
-        alert("Page is loaded");
-    }
-</script>
-
-</body>
-</html>
-```
-
 ## [JS Events As Attributes](https://developer.mozilla.org/en-US/docs/Web/Events)
 
 > inline event in html tag
@@ -191,6 +172,33 @@ document.querySelector('#some.selector').innerHTML = body;
         <span class="name" style="display:inline-block;background-color:orange;"> T E S T </span>
     </span>
 </div>
+```
+
+### [On Load (onload) / Window Load Event](https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event)
+
+```html
+<!DOCTYPE html>
+<html>
+<body onload="myFunction()">
+<h1>HTML DOM Events</h1>
+<h2>The onload Event</h2>
+
+<script>
+    function myFunction() {
+        alert("Page is loaded");
+    }
+</script>
+
+</body>
+</html>
+```
+
+> or use an element and js
+
+```javascript
+ div.onload = Promise.resolve(addPadding(div, keyAsHeader
+                                              ? 60
+                                              : 71, 0))
 ```
 
 ### [mouseover](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event)
