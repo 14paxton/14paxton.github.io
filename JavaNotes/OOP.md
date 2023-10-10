@@ -19,4 +19,4 @@ shortRepo:
 
 ***
 
-<div id="imageContainer" data-img-loader="javaOOPImages.js" style="display: block; width: auto; height: auto;"></div>
+<div id="imageContainer" data-img-loader="javaOOPImages.js" style="width: auto; height: auto;"></div>

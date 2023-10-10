@@ -4,7 +4,6 @@ import {addCSSImageContainers} from "/assets/js/modules/createCSSImageContainers
 
 export default async function () {
     console.log("create images linuxImages")
-    console.log(linuxImages)
     createAndAppendStyle(linuxImages).then(async () => {
         console.log("images added linuxImages")
         await addCSSImageContainers(linuxImages, "linuxImages.js");
