@@ -1,19 +1,37 @@
 ---
-title: HTTP
-layout: default
-permalink: HTTP
-category: HTTP
+title:        HTTP
+layout:       default
+permalink:    HTTP
+category:     HTTP
 has_children: true
-share: true
+share:        true
 shortRepo:
 
   - http
   - default       
 ---
 
-<br/>
+<br/>          
+
+<details markdown="block">                
+<summary>                
+Table of contents                
+</summary>                
+{: .text-delta }                
+1. TOC                
+{:toc}                
+</details>                
+
+<br/>                
 
 ***
+
+<link rel="modulepreload" href="/assets/js/imageLoader.js">
+<script type="module" async src="/assets/js/imageLoader.js"></script>
+
+***
+
+<div id="imageContainer" data-key-as-header="true" data-zoom-on-hover="true" data-img-loader="httpImages.js" style="width: auto; height: auto;"></div>
 
 # URL Lifecycle
 
@@ -38,7 +56,14 @@ and not stored in the browser history.</td></tr><tr><td><a href="/Article/HttpPu
 It cannot be cached, bookmarked,
 and not stored in browser history.</td></tr><tr><td><a href="/Article/HttpPatch">PATCH</a></td><td>Partially modify the specified resource on the server. It is faster and requires less resources than the PUT method.
 It cannot be cached, bookmarked,
-and not stored in browser history.</td></tr><tr><td><a href="/Article/HttpDelete">DELETE</a></td><td>Delete a resource from the server. May change server status. It cannot be cached, bookmarked, and not stored in browser history.</td></tr><tr><td><a href="/Article/HttpOptions">OPTIONS</a></td><td>Used by browsers for CORS operations. Describes the communication options available for the requested resource. Does not change data on the server. It cannot be cached, bookmarked, and not stored in browser history.</td></tr><tr><td><a href="/Article/HttpConnect">CONNECT</a></td><td>Establishes two-way communication with the server by creating an HTTP tunnel through a proxy server.</td></tr><tr><td><a href="/Article/HttpTrace">TRACE</a></td><td>It is designed for diagnostic purposes. When used, the web server sends back to the client the exact request that was received.</td></tr></tbody></table>
+and not stored in browser history.</td></tr><tr><td><a href="/Article/HttpDelete">DELETE</a></td><td>Delete a resource from the server. May change server status.
+It cannot be cached, bookmarked,
+and not stored in browser history.</td></tr><tr><td><a href="/Article/HttpOptions">OPTIONS</a></td><td>Used by browsers for CORS operations.
+Describes the communication options available for the requested resource.
+Does not change data on the server.
+It cannot be cached, bookmarked,
+and not stored in browser history.</td></tr><tr><td><a href="/Article/HttpConnect">CONNECT</a></td><td>Establishes two-way communication with the server
+by creating an HTTP tunnel through a proxy server.</td></tr><tr><td><a href="/Article/HttpTrace">TRACE</a></td><td>It is designed for diagnostic purposes. When used, the web server sends back to the client the exact request that was received.</td></tr></tbody></table>
 
 ---
 
