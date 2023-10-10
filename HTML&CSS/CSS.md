@@ -1,11 +1,11 @@
 ---
-title: CSS
-permalink: HTML&CSS/CSS
-category: HTML&CSS
-parent: HTML&CSS
-layout: default
+title:        CSS
+permalink:    HTML&CSS/CSS
+category:     HTML&CSS
+parent:       HTML&CSS
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - default          
 ---
@@ -79,6 +79,39 @@ div {
 </div>
 </body>
 </html>
+
+```
+
+# [Pseudo-classes / JS Events / Styles](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+
+> A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s). For example, the pseudo-class :hover can be used to select a button when a user's
+> pointer hovers over the button and this selected button can then be styled.
+
+## [Hover](https://developer.mozilla.org/en-US/docs/Web/CSS/:hover)
+
+```css
+a:hover {
+    background-color: gold;
+}
+
+/* Any button over which the user's pointer is hovering */
+button:hover {
+    color: blue;
+}
+
+#myID:hover {
+    transform: scale(2)
+}
+```
+
+### [Any Hover / any-hover / ](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-hover)
+
+```css
+@media (any-hover: hover) {
+    a:hover {
+        background: yellow;
+    }
+}
 
 ```
 

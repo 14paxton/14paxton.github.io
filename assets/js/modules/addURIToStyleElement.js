@@ -13,8 +13,7 @@ async function createStyleElement(key, jsonImageURI) {
         // stylesheet.innerText.concat(` #${key}:hover{transform: scale(2)}`)
 
         const imageStyles = new CSSStyleSheet();
-        imageStyles.insertRule(`#${key} { background: url('${jsonImageURI[key]}') no-repeat; background-position: top; background-size: contain; width: auto; height: auto; margin: auto;}`);
-        // imageStyles.insertRule(` #${key}:hover{transform: scale(2)}`)
+        imageStyles.insertRule(`#${key} { background: url('${jsonImageURI[key]}') no-repeat; background-position: center; background-size: 100% auto; padding:70% 0%;}`);
 
         document.adoptedStyleSheets = [...document.adoptedStyleSheets, imageStyles];
         // document.head.appendChild(stylesheet);

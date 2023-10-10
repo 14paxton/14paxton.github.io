@@ -6,13 +6,22 @@ async function createCSSImageContainers(id, callingFile) {
         const div = document.createElement('div')
         div.id = id;
         div.style.width = "auto";
-        div.style.height = "100vh"
-        div.style.display = "block"
-        // div.onmouseover. = zoomOnHover ?(e)=> console.log(e) : ''
+        // div.style.height = "100vh"
+        // div.style.padding = 'padding:70% 0%;'
+        div.onmouseover = zoomOnHover
+                          ? (e) => e.target.style.transform = 'scale(2)'
+                          : null
+        div.onmouseout = zoomOnHover
+                         ? (e) => e.target.style.transform = 'scale(1)'
+                         : null
 
         if (keyAsHeader) {
+            // div.style.margin = '-25% 0px'
+
             const headerOne = document.createElement('h1')
             headerOne.innerText = id.replace(/([A-Z])/g, ' $1');
+            headerOne.style.padding = '0px';
+            headerOne.style.margin = '0px'
             imgDiv.appendChild(headerOne)
             Promise.resolve(addHeadingToTOC(headerOne))
         }

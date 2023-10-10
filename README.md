@@ -14,7 +14,7 @@ bundle exec jekyll serve;
 
 ***
 
-<div id="imageContainer" data-key-as-header="true" data-img-loader="javaOOPImages.js" style="display: block; width: auto; height: auto;"></div>
+<div id="imageContainer" data-key-as-header="true" data-zoom-on-hover="true" data-img-loader="linuxImages.js" style="width: auto; height: auto;"></div></div>
 ```
 
 > use json object put header as key if you need header, data uri as value

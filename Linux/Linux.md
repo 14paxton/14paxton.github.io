@@ -31,4 +31,4 @@ Table of contents
 
 ***
 
-<div id="imageContainer" data-key-as-header="true" data-zoom-on-hover="true"  data-img-loader="linuxImages.js" style="display: block; width: auto; height: auto;"></div>
+<div id="imageContainer" data-key-as-header="true" data-zoom-on-hover="true"  data-img-loader="linuxImages.js" style="width: auto; height: auto;"></div>

@@ -1,11 +1,11 @@
 ---
-title: HTML
-permalink: HTML&CSS/HTML
-category: HTML&CSS
-parent: HTML&CSS
-layout: default
+title:        HTML
+permalink:    HTML&CSS/HTML
+category:     HTML&CSS
+parent:       HTML&CSS
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - default          
 ---
@@ -26,48 +26,6 @@ Table of contents
 <br/>              
 
 # TidBits
-
-## hide element attribute
-
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
-    <span>the hidden rule is a User Agent style, which means it's less specific than a moderate sneeze [ref]. This means that your favourite display style will override it</span>       
-</div> 
-
-```html
- <p hidden>
-```
-
-```html
-
-<button>
-    <span class="fa fa-tweet" aria-hidden="true"></span> <span class="label"> Tweet </span>
-</button>
-```
-
-> in the case of form data, input type = "hidden"
-
-```html
-  <input type="hidden" id="postId" name="postId" value="34657"/>
-```
-
-## On Load (onload) Attribute
-
-```html
-<!DOCTYPE html>
-<html>
-<body onload="myFunction()">
-<h1>HTML DOM Events</h1>
-<h2>The onload Event</h2>
-
-<script>
-    function myFunction() {
-        alert("Page is loaded");
-    }
-</script>
-
-</body>
-</html>
-```
 
 ## embed or load html file into html using object tag
 
@@ -153,6 +111,102 @@ document.querySelector('#some.selector').innerHTML = body;
 
     ready(includeHTML);
 </script>
+```
+
+# Attributes
+
+## hide element attribute
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+    <span>the hidden rule is a User Agent style, which means it's less specific than a moderate sneeze [ref]. This means that your favourite display style will override it</span>       
+</div> 
+
+```html
+ <p hidden>
+```
+
+```html
+
+<button>
+    <span class="fa fa-tweet" aria-hidden="true"></span> <span class="label"> Tweet </span>
+</button>
+```
+
+> in the case of form data, input type = "hidden"
+
+```html
+  <input type="hidden" id="postId" name="postId" value="34657"/>
+```
+
+## On Load (onload) Attribute
+
+```html
+<!DOCTYPE html>
+<html>
+<body onload="myFunction()">
+<h1>HTML DOM Events</h1>
+<h2>The onload Event</h2>
+
+<script>
+    function myFunction() {
+        alert("Page is loaded");
+    }
+</script>
+
+</body>
+</html>
+```
+
+## [JS Events As Attributes](https://developer.mozilla.org/en-US/docs/Web/Events)
+
+> inline event in html tag
+
+```html
+
+<div onMouseover="this.style.transform='scale(2)';">
+    //content
+</div>
+```
+
+> or
+
+```html
+
+<div onmouseover="this.childNodes[1].childNodes[1].style.background='green';">
+    //content
+</div>
+```
+
+> or
+
+```html
+
+<div
+        class="pdf-icon-box"
+        onmouseout="this.getElementsByClassName('name')[0].style.backgroundColor = 'green';"
+        onmouseover="this.getElementsByClassName('name')[0].style.backgroundColor = 'yellow'"
+        style="position:relative;"
+>
+    <span class="pdf-style">
+        <span class="name" style="display:inline-block;background-color:orange;"> T E S T </span>
+    </span>
+</div>
+```
+
+### [mouseover](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event)
+
+> use js to create an element and add function to element event/attribute
+
+```javascript
+div.onmouseover = (e) => e.target.style.transform = 'scale(2)';
+div.onmouseout = (e) => e.target.style.transform = 'scale(1)';
+```
+
+> pure js
+
+```javascript
+addEventListener("mouseover", (event) => {});
+onmouseover = (event) => {};
 ```
 
 # UI Elements
