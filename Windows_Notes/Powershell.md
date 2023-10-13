@@ -1,11 +1,11 @@
 ---
-title: Powershell
-permalink: Windows_Notes/Powershell
-category: Windows_Notes
-parent: Windows_Notes
-layout: default
+title:        Powershell
+permalink:    Windows_Notes/Powershell
+category:     Windows_Notes
+parent:       Windows_Notes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - windows_notes
   - default    
@@ -427,7 +427,7 @@ $newUsers.foreach(
  foreach($i in $files) {'y' | powershell -c "Remove-Item $i -Force -ErrorAction silentlycontinue"}    
 ```    
 
-## parallel
+## run in parallel / async
 
 ```powershell    
 powershell.exe Get-ChildItem C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default | ForEach-Object -Parallel {Remove-Item "$_" -Force -Recurse | Out-Null}    
