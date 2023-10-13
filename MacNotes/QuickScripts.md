@@ -1,11 +1,11 @@
 ---
-title: QuickScripts
-permalink: MacNotes/QuickScripts
-category: MacNotes
-parent: MacNotes
-layout: default
+title:        QuickScripts
+permalink:    MacNotes/QuickScripts
+category:     MacNotes
+parent:       MacNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - macnotes
   - default          
@@ -28,6 +28,12 @@ Table of contents
 ***                
 
 <br/>
+
+# get env variables
+
+```shell
+env
+```
 
 # get local ip
 
