@@ -66,6 +66,38 @@ then echo $GH_TOKEN | gh auth login --with-token;
 gh repo sync --force;    
 ```    
 
+```sh    
+export GH_TOKEN=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;    
+act=$(gh auth status -t >>(tee -a) 2>&1 | sed -n 's/.*Token: //p');    
+if [ "$act" == *"$GH_TOKEN"* ](%22$act%22%20==%20*%22$GH_TOKEN%22*.md#)    
+then echo $GH_TOKEN | gh auth login --with-token;      
+gh repo sync --force;    
+```    
+
+```zsh    
+export GH_TOKEN=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;    
+act=$(gh auth status -t >>(tee -a) 2>&1 | sed -n 's/.*Token: //p');    
+if [ "$act" == *"$GH_TOKEN"* ](%22$act%22%20==%20*%22$GH_TOKEN%22*.md#)    
+then echo $GH_TOKEN | gh auth login --with-token;      
+gh repo sync --force;    
+```    
+
+```bash    
+export GH_TOKEN=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;    
+act=$(gh auth status -t >>(tee -a) 2>&1 | sed -n 's/.*Token: //p');    
+if [ "$act" == *"$GH_TOKEN"* ](%22$act%22%20==%20*%22$GH_TOKEN%22*.md#)    
+then echo $GH_TOKEN | gh auth login --with-token;      
+gh repo sync --force;    
+```    
+
+```shell-script    
+export GH_TOKEN=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;    
+act=$(gh auth status -t >>(tee -a) 2>&1 | sed -n 's/.*Token: //p');    
+if [ "$act" == *"$GH_TOKEN"* ](%22$act%22%20==%20*%22$GH_TOKEN%22*.md#)    
+then echo $GH_TOKEN | gh auth login --with-token;      
+gh repo sync --force;    
+``` 
+
 ## workflow
 
 ### print env variables

@@ -258,6 +258,20 @@ Get-ChildItem  "C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Defau
 Start-Process chrome --restore-last-session;
 ```
 
+```pwsh
+Set-Location "C:\Users\$env:UserName\source\repos\GitHub\Veridian";
+git fetch
+git pull
+
+taskkill /F /IM "chrome.exe" /T
+
+Get-ChildItem  "C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default" | ForEach-Object -Parallel {
+    Copy-Item "$_" -Destination "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" -Recurse -Force
+};
+
+Start-Process chrome --restore-last-session;
+```
+
 ```posh
 Set-Location "C:\Users\$env:UserName\source\repos\GitHub\Veridian";
 git fetch
@@ -273,6 +287,48 @@ Start-Process chrome --restore-last-session;
 ```
 
 ```powershell
+Set-Location "C:\Users\$env:UserName\source\repos\GitHub\Veridian";
+git fetch
+git pull
+
+taskkill /F /IM "chrome.exe" /T
+
+Get-ChildItem  "C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default" | ForEach-Object -Parallel {
+    Copy-Item "$_" -Destination "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" -Recurse -Force
+};
+
+Start-Process chrome --restore-last-session;
+```
+
+```ps1
+Set-Location "C:\Users\$env:UserName\source\repos\GitHub\Veridian";
+git fetch
+git pull
+
+taskkill /F /IM "chrome.exe" /T
+
+Get-ChildItem  "C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default" | ForEach-Object -Parallel {
+    Copy-Item "$_" -Destination "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" -Recurse -Force
+};
+
+Start-Process chrome --restore-last-session;
+```
+
+```psd1
+Set-Location "C:\Users\$env:UserName\source\repos\GitHub\Veridian";
+git fetch
+git pull
+
+taskkill /F /IM "chrome.exe" /T
+
+Get-ChildItem  "C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default" | ForEach-Object -Parallel {
+    Copy-Item "$_" -Destination "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" -Recurse -Force
+};
+
+Start-Process chrome --restore-last-session;
+```
+
+```psm1
 Set-Location "C:\Users\$env:UserName\source\repos\GitHub\Veridian";
 git fetch
 git pull
