@@ -147,3 +147,9 @@ cat ./post_u_north_gate.jpg | openssl base64 | tr -d '\n' | pbcopy
 ```bash    
 ./post_u_north_gate.jpg | openssl base64 | tr -d '\n' | pbcopy        
 ```
+
+# Gists
+
+## [Sync Chrome Bookmarks ](https://gist.github.com/14paxton/c10cfd597e7e7b487e27d641cf964c59)
+
+> used to sync bookmarks file to a repo to update on both mac and windows using bash and powershell when account can not sync due to admin restrictions
