@@ -41,38 +41,13 @@ Table of contents
         <environmentVariable name="AnotherVariable" value="My Value"/>
     </environmentVariables>
 </aspNetCore>    
-```    
+```
 
-```rss    
-<aspNetCore processPath="%LAUNCHER_PATH%" arguments="%LAUNCHER_ARGS%" stdoutLogEnabled="false" stdoutLogFile=".\logs\stdout" forwardWindowsAuthToken="false">    
-    <environmentVariables>    
-        <environmentVariable name="ASPNETCORE_ENVIRONMENT" value="QA" />    
-        <environmentVariable name="AnotherVariable" value="My Value" />    
-    </environmentVariables>    
-</aspNetCore>    
-``` 
+> or
 
-```xsd    
-<aspNetCore processPath="%LAUNCHER_PATH%" arguments="%LAUNCHER_ARGS%" stdoutLogEnabled="false" stdoutLogFile=".\logs\stdout" forwardWindowsAuthToken="false">    
-    <environmentVariables>    
-        <environmentVariable name="ASPNETCORE_ENVIRONMENT" value="QA" />    
-        <environmentVariable name="AnotherVariable" value="My Value" />    
-    </environmentVariables>    
-</aspNetCore>    
-``` 
-
-```wsdl    
-<aspNetCore processPath="%LAUNCHER_PATH%" arguments="%LAUNCHER_ARGS%" stdoutLogEnabled="false" stdoutLogFile=".\logs\stdout" forwardWindowsAuthToken="false">    
-    <environmentVariables>    
-        <environmentVariable name="ASPNETCORE_ENVIRONMENT" value="QA" />    
-        <environmentVariable name="AnotherVariable" value="My Value" />    
-    </environmentVariables>    
-</aspNetCore>    
-``` 
-
-or
-
--- set in launchSettings.json
+<div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+    set in launchSettings.json       
+</div> 
 
 ```json    
     {
@@ -94,7 +69,9 @@ or
 
 ## Set ENV variable
 
-- set in Web.config
+<div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+    set in Web.config       
+</div> 
 
 ```xml    
 
@@ -106,225 +83,6 @@ or
 # C#
 
 ```csharp    
-public class EnvironmentService    
-    {    
-    
-        string GetAppSettingValue(string key)    
-        {    
-            return ConfigurationManager.AppSettings[key];    
-        }    
-    
-        public bool SetEnvironmentVariableFromAppSetting(string envVariableName)    
-        {    
-            var envSet = !string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable(envVariableName));    
-    
-            if (!envSet)    
-            {    
-                var envValue = GetAppSettingValue(envVariableName);    
-                envSet = !string.IsNullOrWhiteSpace(envValue);    
-    
-                if (envSet)    
-                {    
-                    Environment.SetEnvironmentVariable(envVariableName, envValue);    
-                    return envSet;    
-                }    
-            }    
-    
-            return envSet;    
-        }    
-    
-    }    
-```
-
-```csx    
-public class EnvironmentService    
-    {    
-    
-        string GetAppSettingValue(string key)    
-        {    
-            return ConfigurationManager.AppSettings[key];    
-        }    
-    
-        public bool SetEnvironmentVariableFromAppSetting(string envVariableName)    
-        {    
-            var envSet = !string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable(envVariableName));    
-    
-            if (!envSet)    
-            {    
-                var envValue = GetAppSettingValue(envVariableName);    
-                envSet = !string.IsNullOrWhiteSpace(envValue);    
-    
-                if (envSet)    
-                {    
-                    Environment.SetEnvironmentVariable(envVariableName, envValue);    
-                    return envSet;    
-                }    
-            }    
-    
-            return envSet;    
-        }    
-    
-    }    
-```
-
-```cake    
-public class EnvironmentService    
-    {    
-    
-        string GetAppSettingValue(string key)    
-        {    
-            return ConfigurationManager.AppSettings[key];    
-        }    
-    
-        public bool SetEnvironmentVariableFromAppSetting(string envVariableName)    
-        {    
-            var envSet = !string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable(envVariableName));    
-    
-            if (!envSet)    
-            {    
-                var envValue = GetAppSettingValue(envVariableName);    
-                envSet = !string.IsNullOrWhiteSpace(envValue);    
-    
-                if (envSet)    
-                {    
-                    Environment.SetEnvironmentVariable(envVariableName, envValue);    
-                    return envSet;    
-                }    
-            }    
-    
-            return envSet;    
-        }    
-    
-    }    
-```
-
-```cs    
-public class EnvironmentService    
-    {    
-    
-        string GetAppSettingValue(string key)    
-        {    
-            return ConfigurationManager.AppSettings[key];    
-        }    
-    
-        public bool SetEnvironmentVariableFromAppSetting(string envVariableName)    
-        {    
-            var envSet = !string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable(envVariableName));    
-    
-            if (!envSet)    
-            {    
-                var envValue = GetAppSettingValue(envVariableName);    
-                envSet = !string.IsNullOrWhiteSpace(envValue);    
-    
-                if (envSet)    
-                {    
-                    Environment.SetEnvironmentVariable(envVariableName, envValue);    
-                    return envSet;    
-                }    
-            }    
-    
-            return envSet;    
-        }    
-    
-    }    
-```
-
-```cakescript    
-public class EnvironmentService    
-    {    
-    
-        string GetAppSettingValue(string key)    
-        {    
-            return ConfigurationManager.AppSettings[key];    
-        }    
-    
-        public bool SetEnvironmentVariableFromAppSetting(string envVariableName)    
-        {    
-            var envSet = !string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable(envVariableName));    
-    
-            if (!envSet)    
-            {    
-                var envValue = GetAppSettingValue(envVariableName);    
-                envSet = !string.IsNullOrWhiteSpace(envValue);    
-    
-                if (envSet)    
-                {    
-                    Environment.SetEnvironmentVariable(envVariableName, envValue);    
-                    return envSet;    
-                }    
-            }    
-    
-            return envSet;    
-        }    
-    
-    }    
-```
-
-> asp
-
-```asp    
-public class EnvironmentService    
-    {    
-    
-        string GetAppSettingValue(string key)    
-        {    
-            return ConfigurationManager.AppSettings[key];    
-        }    
-    
-        public bool SetEnvironmentVariableFromAppSetting(string envVariableName)    
-        {    
-            var envSet = !string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable(envVariableName));    
-    
-            if (!envSet)    
-            {    
-                var envValue = GetAppSettingValue(envVariableName);    
-                envSet = !string.IsNullOrWhiteSpace(envValue);    
-    
-                if (envSet)    
-                {    
-                    Environment.SetEnvironmentVariable(envVariableName, envValue);    
-                    return envSet;    
-                }    
-            }    
-    
-            return envSet;    
-        }    
-    
-    }    
-```
-
-```asp.net    
-public class EnvironmentService    
-    {    
-    
-        string GetAppSettingValue(string key)    
-        {    
-            return ConfigurationManager.AppSettings[key];    
-        }    
-    
-        public bool SetEnvironmentVariableFromAppSetting(string envVariableName)    
-        {    
-            var envSet = !string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable(envVariableName));    
-    
-            if (!envSet)    
-            {    
-                var envValue = GetAppSettingValue(envVariableName);    
-                envSet = !string.IsNullOrWhiteSpace(envValue);    
-    
-                if (envSet)    
-                {    
-                    Environment.SetEnvironmentVariable(envVariableName, envValue);    
-                    return envSet;    
-                }    
-            }    
-    
-            return envSet;    
-        }    
-    
-    }    
-```
-
-```aspx    
 public class EnvironmentService    
     {    
     

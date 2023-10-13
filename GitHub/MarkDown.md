@@ -37,6 +37,10 @@ Table of contents
   > ```batch```, ```bat```, ```dosbatch```, ```winbatch```
 * ### bash / shell / .sh
   > ```sh```, ```shell```, ```zsh``` , ```bash```
+* ### XML
+  > ```xml```
+* ### C#
+  > ```csharp```, ```cs```
 
 ---
 
