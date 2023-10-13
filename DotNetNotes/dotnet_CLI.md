@@ -43,22 +43,21 @@ Invoke-WebRequest -Uri https://dot.net/v1/dotnet-install.ps1 -OutFile "$env:temp
 
 # PowerShell Core
 
-```posershell    
+```powershell    
 Invoke-WebRequest -Uri https://dot.net/v1/dotnet-install.ps1 -OutFile "$env:temp/dotnet-install.ps1"; pwsh "$env:temp/dotnet-install.ps1"    
 ```    
 
-# Shell
+# Bash
 
-```shell    
+```sh    
 wget https://dot.net/v1/dotnet-install.sh && chmod +x ./dotnet-install.sh && sudo ./dotnet-install.sh    
 ```    
 
-# Apt
+## Apt
 
-```shell    
+```sh    
 sudo apt update    
 sudo apt install dotnet6    
-    
 ```    
 
 # WinGet

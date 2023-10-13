@@ -22,7 +22,7 @@ Table of contents
 1. TOC    
 {:toc}    
 </details>    
-    
+
 <br/>    
 
 ***    
@@ -71,17 +71,16 @@ Console.WriteLine(response.Content);
 > or
 
 ```csharp    
-RestClientOptions options = new RestClientOptions(_stringUrl)    
-     {    
+RestClientOptions options = new RestClientOptions(_stringUrl){    
       Authenticator = new HttpBasicAuthenticator(username, apiKey),    
       MaxTimeout = -1    
      };    
     
-     RestClient client = new RestClient(options);    
-     RestRequest restRequest = new RestRequest(/the/endpoint);    
-     restRequest.AddParameter("siteId", paramValue);    
-     RestResponse response = await client.ExecuteAsync(restRequest);    
+RestClient client = new RestClient(options);    
+RestRequest restRequest = new RestRequest(/the/endpoint);    
+restRequest.AddParameter("siteId", paramValue);    
+RestResponse response = await client.ExecuteAsync(restRequest);    
     
-     List<JsonElement> visitorList = JsonSerializer.Deserialize<List<JsonElement>>(response.Content ?? string.Empty);    
-     List<JsonElement> filteredList = visitorList.FindAll(match: visitor => visitor.GetProperty("name").GetString() == nameParameterValue.StringValue);    
+List<JsonElement> visitorList = JsonSerializer.Deserialize<List<JsonElement>>(response.Content ?? string.Empty);    
+List<JsonElement> filteredList = visitorList.FindAll(match: visitor => visitor.GetProperty("name").GetString() == nameParameterValue.StringValue);    
 ```

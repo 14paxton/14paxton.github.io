@@ -35,7 +35,7 @@ Table of contents
 
 ### add
 
-```bash    
+```bat    
 dotnet add package Microsoft.EntityFrameworkCore.Sqlite;    
 dotnet add package Microsoft.EntityFrameworkCore.Design;    
 dotnet tool install --global dotnet-ef;    
@@ -43,36 +43,34 @@ dotnet tool install --global dotnet-ef;
 
 ### create db tables
 
-```bash    
+```bat    
 using ContosoPizza.Data;    
 ```    
 
 ### apply create
 
-```bash    
+```bat    
 dotnet ef database update --context PizzaContext    
 ```    
 
 ### revisions
 
-```bash    
+```bat    
 dotnet ef migrations add ModelRevisions --context PizzaContext    
 ```    
 
 ### update
 
-```bash    
+```bat    
 dotnet ef database update --context PizzaContext    
 ```    
 
 ### Build scafolding
 
-```bash    
+```bat    
 dotnet ef dbcontext scaffold "Data Source=./Promotions/Promotions.db" Microsoft.EntityFrameworkCore.Sqlite --context-dir ./Data --output-dir .\Models    
 ```    
 
-    
--    
 
 ```    
 The preceding command:    
