@@ -1,11 +1,11 @@
 ---
-title: CMD
-permalink: Windows_Notes/CMD
-category: Windows_Notes
-parent: Windows_Notes
-layout: default
+title:        CMD
+permalink:    Windows_Notes/CMD
+category:     Windows_Notes
+parent:       Windows_Notes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - windows_notes
   - default    
@@ -54,10 +54,10 @@ Table of contents
 
 #### Personal Use Example
 
-```shell
+```bat
 cd "C:\Users\%USERNAME%\source\repos\GitHub\Veridian";    
 git pull    
-#xcopy "C:\Users\%USERNAME%\source\repos\GitHub\Veridian\Google\Default\*" "C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\"/y /q /s /i /r    
+::xcopy "C:\Users\%USERNAME%\source\repos\GitHub\Veridian\Google\Default\*" "C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\"/y /q /s /i /r    
 xcopy "C:\Users\%USERNAME%\source\repos\GitHub\Veridian\Google\Default" "C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default"/y /q /s /i /r /c /e /j
 ```
 
@@ -69,7 +69,7 @@ From a standard user process call ``` msiexec /I foo.msi REBOOT=R /qb``` and thi
 
 ### Check time
 
-```shell
+```bat
 echo %date% %time% & tzutil /g    
 ```    
 
@@ -81,7 +81,7 @@ Central Standard Time"
 
 ### Force delete
 
-```shell    
+```bat    
 RMDIR /S /Q    
 ```    
 
@@ -89,31 +89,31 @@ RMDIR /S /Q
 
 - check timezone
 
-```shell
+```bat
  tzutil /g
 ```
 
 - list timezones
 
-```shell
+```bat
  tzutil /l
 ```
 
 - set timezone
 
-```shell
+```bat
  tzutil /s
 ```
 
 ### Create a symbolic link
 
-```shell
+```bat
 mklink /D \"E:\\Path\\newFolder\" \"F:\\folderIwantToLinkFrom\"
 ```
 
 ### Get WIFI password
 
-```shell    
+```bat    
  netsh wlan show profile ALLO1D67CF_5G key=clear    
 ```     
 
@@ -121,24 +121,24 @@ mklink /D \"E:\\Path\\newFolder\" \"F:\\folderIwantToLinkFrom\"
 
 #### Power saver
 
-```shell
+```bat
   powercfg -duplicatescheme a1841308-3541-4fab-bc81-f71556f20b4a    
 ```    
 
 #### Balanced
 
-```shell
+```bat
   powercfg -duplicatescheme 381b4222-f694-41f0-9685-ff5bb260df2e    
 ```    
 
 #### High Performance
 
-```shell
+```bat
   powercfg -duplicatescheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c    
 ```    
 
 #### Ultimate Performance (available since Windows 10 April 2018 Update)
 
-```shell
+```bat
    powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61    
 ```

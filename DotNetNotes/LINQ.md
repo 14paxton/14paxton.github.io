@@ -1,19 +1,19 @@
 ---
-title:        LINQ    
-permalink:    DotNetNotes/LINQ    
-category:     DotNetNotes    
-parent:       DotNetNotes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - dotnetnotes    
+title:        LINQ
+permalink:    DotNetNotes/LINQ
+category:     DotNetNotes
+parent:       DotNetNotes
+layout:       default
+has_children: false
+share:        true
+shortRepo:
+  - dotnetnotes
   - default    
 ---
-    
-    
+
+
 <br/>    
-    
+
 <details markdown="block">    
 <summary>    
 Table of contents    
@@ -22,17 +22,17 @@ Table of contents
 1. TOC    
 {:toc}    
 </details>    
-    
+
 <br/>    
     
 ***    
-    
+
 <br/>    
-    
-# Quick Snips    
-    
-## use in foreach    
-    
+
+# Quick Snips
+
+## use in foreach
+
 ```csharp    
 foreach (DetectIntentResponse jsonPayload in    
 				         from row in rawData    
@@ -46,9 +46,9 @@ foreach (DetectIntentResponse jsonPayload in
                                     
                                   }    
 ```    
-    
-## modify list    
-    
+
+## modify list
+
 ```csharp    
 loggingServiceV2Client.ListLogEntriesAsync(resourceNames: query.ResourceNames, filter: query.Filter, orderBy: query.OrderBy)    
                         .ToListAsync()    
@@ -58,14 +58,14 @@ loggingServiceV2Client.ListLogEntriesAsync(resourceNames: query.ResourceNames, f
                         .ToList()    
                         .GetRange(index: 1, count: 10);    
 ```    
-    
+
 ```csharp    
  List<RawData> c = loggingServiceV2Client.ListLogEntries(resourceNames: query.ResourceNames, filter: query.Filter, orderBy: query.OrderBy)    
                         .AsParallel()    
                         .Select(selector: RawData.CreateInstance)    
                         .ToList();    
 ```    
-    
+
 ```csharp    
 var c = loggingServiceV2Client    
                     .ListLogEntries(resourceNames: query.ResourceNames, filter: query.Filter, orderBy: query.OrderBy)    
@@ -73,11 +73,11 @@ var c = loggingServiceV2Client
                     .Select(selector: entry => RawData.CreateInstance(timestamp: entry.ReceiveTimestamp, severity: entry.Severity, type: entry?.Resource?.Type, logName: entry.LogName, textPayload: entry?.TextPayload, protoPayload: entry?.ProtoPayload, jsonPayload: entry?.JsonPayload))    
                     .ToList();    
 ```    
-    
+
 ***    
-    
-# Examples    
-    
+
+# Examples
+
 ```csharp    
     
 		static void Main(string[] args)    

@@ -1,19 +1,19 @@
 ---
-title:        Controllers    
-permalink:    DotNetNotes/Controllers    
-category:     DotNetNotes    
-parent:       DotNetNotes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - dotnetnotes    
+title:        Controllers
+permalink:    DotNetNotes/Controllers
+category:     DotNetNotes
+parent:       DotNetNotes
+layout:       default
+has_children: false
+share:        true
+shortRepo:
+  - dotnetnotes
   - default    
 ---
-    
-    
+
+
 <br/>    
-    
+
 <details markdown="block">    
 <summary>    
 Table of contents    
@@ -22,42 +22,44 @@ Table of contents
 1. TOC    
 {:toc}    
 </details>    
-    
+
 <br/>    
-    
+
 ***    
-    
+
 <br/>    
-    
-# Core    
-    
-## [create controllers](https://learn.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-7.0)    
-    
-### [controller return actions](https://learn.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-7.0)    
-    
-# ASP    
-    
-## [Samples](https://github.com/aspnet/samples/tree/main/samples/aspnet/WebApi)    
-    
-## [WebAPI](https://learn.microsoft.com/en-us/aspnet/web-api/)    
+
+# Core
+
+## [create controllers](https://learn.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-7.0)
+
+### [controller return actions](https://learn.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-7.0)
+
+# ASP
+
+## [Samples](https://github.com/aspnet/samples/tree/main/samples/aspnet/WebApi)
+
+## [WebAPI](https://learn.microsoft.com/en-us/aspnet/web-api/)
+
     
 ---
-    
-### Context    
-    
-> HttpContext exists on both the .NET Framework and .NET Core (both of which implement .NET Standard, by the way), but being specific to the Web, it does not exist on .NET Standard.    
-    
-> So, you have three options:    
-    
-1. Target the .NET Framework and use System.Web.HttpContext    
-2. Target .NET Core and use Microsoft.AspNetCore.Http.HttpContext    
+
+### Context
+
+> HttpContext exists on both the .NET Framework and .NET Core (both of which implement .NET Standard, by the way), but being specific to the Web, it does not exist on .NET Standard.
+
+> So, you have three options:
+
+1. Target the .NET Framework and use System.Web.HttpContext
+2. Target .NET Core and use Microsoft.AspNetCore.Http.HttpContext
 3. Move the logic that uses HttpContext away from the .NET Standard project    
-   Do notice, though, that those classes vary greatly. The .NET Core version was created for ASP.NET Core which is vastly different to ASP.NET 4.5 and olders.    
-    
-#### .Net Core    
-    
-- GCP serverless function example    
-    
+   Do notice, though, that those classes vary greatly.
+   The .NET Core version was created for ASP.NET Core which is vastly different to ASP.NET 4.5 and olders.
+
+#### .Net Core
+
+- GCP serverless function example
+
 ```csharp    
 public class Function : IHttpFunction {    
      public async Task HandleAsync(HttpContext context){    
@@ -90,29 +92,31 @@ public class Function : IHttpFunction {
     }    
 }    
 ```    
-    
-##### HTTP context accessor    
-    
-> you can use the IHttpContextAccessor helper service to get the HTTP context in any class that is managed by the ASP.NET Core dependency injection system. This is useful when you have a common service that is used by your controllers.    
-    
-- Request this interface in your constructor:    
-    
+
+##### HTTP context accessor
+
+> you can use the IHttpContextAccessor helper service to get the HTTP context in any class that is managed by the ASP.NET Core dependency injection system.
+> This is useful when you have a common
+> service that is used by your controllers.
+
+- Request this interface in your constructor:
+
   ```csharp    
       public MyMiddleware(IHttpContextAccessor httpContextAccessor)    
       {    
           _httpContextAccessor = httpContextAccessor;    
       }    
   ```    
-    
-- You can then access the current HTTP context in a safe way:    
-    
+
+- You can then access the current HTTP context in a safe way:
+
   ```charp    
       var context = _httpContextAccessor.HttpContext;    
       // Do something with the current HTTP context...    
   ```    
-    
-- IHttpContextAccessor isn't always added to the service container by default, so register it in ConfigureServices just to be safe:    
-    
+
+- IHttpContextAccessor isn't always added to the service container by default, so register it in ConfigureServices just to be safe:
+
   ```csharp    
       public void ConfigureServices(IServiceCollection services)    
       {    
@@ -122,9 +126,9 @@ public class Function : IHttpFunction {
           // Other code...    
       }    
   ```    
-    
-#### [.Net Framework 4+](https://learn.microsoft.com/en-us/dotnet/api/system.web.httpcontext?view=netframework-4.8.1)    
-    
+
+#### [.Net Framework 4+](https://learn.microsoft.com/en-us/dotnet/api/system.web.httpcontext?view=netframework-4.8.1)
+
 ```csharp    
 public static string GetRequestBody()    
 {    
@@ -134,7 +138,7 @@ public static string GetRequestBody()
     return bodyText;    
 }    
 ```    
-    
+
 ```csharp    
 public async Task<IHttpActionResult> GetSomething()    
 {    
@@ -143,9 +147,9 @@ public async Task<IHttpActionResult> GetSomething()
     return Ok();    
 }    
 ```    
-    
-- using extention method    
-    
+
+- using extention method
+
 ```csharp    
 using System.IO;    
 using System.Text;    
@@ -168,7 +172,7 @@ namespace System.Web.Http
     }    
 }    
 ```    
-    
+
 ```csharp    
       public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "HttpTriggerCSharp/name/{name}")]HttpRequestMessage req, string name, TraceWriter log)    
     {    
@@ -185,13 +189,17 @@ namespace System.Web.Http
     
     }    
 ```    
+
     
 ---
-    
-**NOTE**    
-    
-> if you're receiving an empty string from this method, it means something else has already read it. When it does that, it leaves the pointer at the end. An alternative method of doing this is as follows:    
-    
+
+**NOTE**
+
+> if you're receiving an empty string from this method, it means something else has already read it.
+> When it does that, it leaves the pointer at the end.
+> An alternative method of doing this is as
+> follows:
+
 ```csharp    
 public IHttpActionResult GetSomething()    
 {    
@@ -203,13 +211,14 @@ public IHttpActionResult GetSomething()
     
 }    
 ```    
-    
-> In this case, your endpoint doesn't need to be async (unless you have other async-methods)    
+
+> In this case, your endpoint doesn't need to be async (unless you have other async-methods)
     
 ---
-    
-> - For other future users who do not want to make their controllers asynchronous, or cannot access the HttpContext, or are using dotnet core (this answer is the first I found on Google trying to do this), the following worked for me:    
-    
+
+> - For other future users who do not want to make their controllers asynchronous, or cannot access the HttpContext, or are using dotnet core (this answer is the first I found on Google trying to do
+    this), the following worked for me:
+
 ```csharp    
      [HttpPut("{pathId}/{subPathId}"),    
      public IActionResult Put(int pathId, int subPathId, [FromBody] myViewModel viewModel)    
@@ -221,13 +230,14 @@ public IHttpActionResult GetSomething()
          //etc, we use this for an audit trail    
      }    
 ```    
+
     
 ---
-    
-##### [Request](https://learn.microsoft.com/en-us/dotnet/api/system.web.httprequestbase?view=netframework-4.8.1)    
-    
-###### use query string    
-    
+
+##### [Request](https://learn.microsoft.com/en-us/dotnet/api/system.web.httprequestbase?view=netframework-4.8.1)
+
+###### use query string
+
 ```csharp    
 public partial class AddToCart : Page    
     {    
@@ -250,15 +260,15 @@ public partial class AddToCart : Page
         }    
     }    
 ```    
-    
-- also    
-    
+
+- also
+
   ```csharp    
          string fullname1 = Request.QueryString["fullname"];    
   ```    
-    
-###### is authenticated    
-    
+
+###### is authenticated
+
 ```csharp    
         public partial class RestrictedPage : Page    
     
@@ -273,9 +283,9 @@ public partial class AddToCart : Page
         }    
     }    
 ```    
-    
-###### form    
-    
+
+###### form
+
 ```csharp    
         int loop1;    
         NameValueCollection coll;    
@@ -289,9 +299,9 @@ public partial class AddToCart : Page
            Response.Write("Form: " + arr1[loop1] + "<br>");    
         }    
 ```    
-    
-###### cookies    
-    
+
+###### cookies
+
 ```csharp    
 int loop1, loop2;    
 HttpCookieCollection MyCookieColl;    
@@ -319,9 +329,9 @@ for (loop1 = 0; loop1 < arr1.Length; loop1++)
    }    
 }    
 ```    
-    
-###### server variables    
-    
+
+###### server variables
+
 ```csharp    
 int loop1, loop2;    
 NameValueCollection coll;    
@@ -339,25 +349,26 @@ for (loop1 = 0; loop1 < arr1.Length; loop1++)
    }    
 }    
 ```    
-    
-#### [Response](https://learn.microsoft.com/en-us/dotnet/api/system.web.httpresponsebase?view=netframework-4.8.1)    
-    
+
+#### [Response](https://learn.microsoft.com/en-us/dotnet/api/system.web.httpresponsebase?view=netframework-4.8.1)
+
 ```csharp    
 HttpResponseMessage fullResponse = Request.CreateResponse(HttpStatusCode.OK);    
                 fullResponse.Content = new StreamContent(memStream);    
                 fullResponse.Content.Headers.ContentType = _mediaType;    
                 return fullResponse;    
 ```    
+
     
 ---
-    
-# Serialize/Deserialize    
-    
+
+# Serialize/Deserialize
+
 ```csharp    
 ValueTask<WebhookRequest> t  = JsonSerializer.DeserializeAsync<WebhookRequest>(httpRequest.Body);    
 WebhookRequest uu = t.Result;    
 ```    
-    
+
 ```csharp    
  TextReader      reader   = new StreamReader(httpRequest.Body);    
  string          text     = await reader.ReadToEndAsync();    
@@ -365,68 +376,68 @@ JsonElement     json     = JsonSerializer.Deserialize <JsonElement>(text);
 JsonElement json2 = JsonConvert.DeserializeObject<JsonElement>(text, new JsonSerializerSettings());    
 string json3 = JsonConvert.SerializeObject(json, typeof(String), new JsonSerializerSettings());    
 ```    
-    
+
 ```csharp    
 WebhookRequest webhookRequest = new WebhookRequest(json.Deserialize <WebhookRequest>());    
 ```    
-    
+
 ```csharp    
 webhookRequest = (WebhookRequest) JsonConvert.DeserializeObject <object>(JsonConvert.DeserializeObject(text, typeof(object)).ToString(), new JsonSerializerSettings());    
 ```    
-    
+
 ```csharp    
 WebhookRequest webhookRequest1 = JsonConvert.DeserializeObject <WebhookRequest>(text);    
 JsonConvert.PopulateObject( JsonConvert.ToString(json),  webhookRequest);    
 ```    
-    
+
 ```csharp    
 string         h   =  JsonConvert.ToString(text);    
     
 ```    
-    
+
 ```csharp    
 WebhookRequest pp  = JsonSerializer.Deserialize <WebhookRequest>(text);    
     
 ```    
-    
+
 ```csharp    
 WebhookRequest   pp2 = json.Deserialize <WebhookRequest>();    
     
 ```    
-    
+
 ```csharp    
  object pp3 = JsonSerializer.Deserialize(text, typeof(WebhookRequest));    
     
 ```    
-    
+
 ```csharp    
   object   pp4 = json.Deserialize( typeof(WebhookRequest));    
     
 ```    
-    
+
 ```csharp    
  object   w   = JsonConvert.DeserializeObject(value: text, type: typeof(WebhookRequest));    
     
 ```    
-    
+
 ```csharp    
  object i   = json.Deserialize( typeof(WebhookRequest));    
     
 ```    
-    
+
 ```csharp    
 object  kk  = json.Deserialize(typeof(WebhookRequest));    
 ```    
-    
+
 ```csharp    
 WebhookRequest webhookRequest = new WebhookRequest    
 JsonConvert.PopulateObject(value: text, target: webhookRequest);    
 ```    
-    
+
 ```csharp    
  JObject.Parse(request.Content.ReadAsStringAsync().Result);    
 ```    
-    
+
 ```csharp    
 var content = response.Content;    
   var jsonResult = JsonConvert.DeserializeObject(content).ToString();    

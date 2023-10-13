@@ -1,19 +1,19 @@
 ---
-title:        Database    
-permalink:    DotNetNotes/Database    
-category:     DotNetNotes    
-parent:       DotNetNotes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - dotnetnotes    
+title:        Database
+permalink:    DotNetNotes/Database
+category:     DotNetNotes
+parent:       DotNetNotes
+layout:       default
+has_children: false
+share:        true
+shortRepo:
+  - dotnetnotes
   - default    
 ---
-    
-    
+
+
 <br/>    
-    
+
 <details markdown="block">    
 <summary>    
 Table of contents    
@@ -22,15 +22,15 @@ Table of contents
 1. TOC    
 {:toc}    
 </details>    
-    
+
 <br/>    
-    
+
 ***    
-    
+
 <br/>    
-    
-# Type Comparisons    
-    
+
+# Type Comparisons
+
 <table cellspacing="1" cellpadding="7" width="548" border="1">    
 <tbody>    
 <tr>    

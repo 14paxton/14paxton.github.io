@@ -1,19 +1,19 @@
 ---
-title:        HTTP    
-permalink:    DotNetNotes/HTTP    
-category:     DotNetNotes    
-parent:       DotNetNotes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - dotnetnotes    
+title:        HTTP
+permalink:    DotNetNotes/HTTP
+category:     DotNetNotes
+parent:       DotNetNotes
+layout:       default
+has_children: false
+share:        true
+shortRepo:
+  - dotnetnotes
   - default    
 ---
-    
-    
+
+
 <br/>    
-    
+
 <details markdown="block">    
 <summary>    
 Table of contents    
@@ -24,13 +24,13 @@ Table of contents
 </details>    
     
 <br/>    
-    
+
 ***    
-    
+
 <br/>    
-    
-# [HTTPClient](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-8.0)    
-    
+
+# [HTTPClient](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-8.0)
+
 ```csharp    
 var client = new HttpClient();    
 var request = new HttpRequestMessage(HttpMethod.Get, "localhost:8080");    
@@ -41,18 +41,18 @@ var response = await client.SendAsync(request);
 response.EnsureSuccessStatusCode();    
 Console.WriteLine(await response.Content.ReadAsStringAsync());    
 ```    
-    
-## create basic auth    
-    
+
+## create basic auth
+
 ```csharp    
   var mergedCredentials = string.Format("{0}:{1}", _comm100ApiUsername, _comm100ApiKey);    
   var encodedCredentials = Convert.ToBase64String(byteCredentials);    
   var byteCredentials = Encoding.UTF8.GetBytes(mergedCredentials);    
   client.DefaultRequestHeaders.Add("Authorization", "Basic " + encodedCredentials);    
 ```    
-    
-# [RestSharp](https://restsharp.dev/intro.html#introduction)    
-    
+
+# [RestSharp](https://restsharp.dev/intro.html#introduction)
+
 ```csharp    
 var options = new RestClientOptions("null")    
 {    
@@ -67,9 +67,9 @@ request.AddStringBody(body, DataFormat.Json);
 RestResponse response = await client.ExecuteAsync(request);    
 Console.WriteLine(response.Content);    
 ```    
-    
-> or    
-    
+
+> or
+
 ```csharp    
 RestClientOptions options = new RestClientOptions(_stringUrl)    
      {    
