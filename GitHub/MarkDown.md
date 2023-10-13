@@ -1,12 +1,12 @@
 ---
-title: MarkDown
-layout: default
-permalink: GitHub/MarkDown
-category: GitHub
-parent: GitHub
+title:        MarkDown
+layout:       default
+permalink:    GitHub/MarkDown
+category:     GitHub
+parent:       GitHub
 has_children: false
-share: true
-shortRepo: ghpages                    
+share:        true
+shortRepo:    ghpages                    
 ---
 
 
@@ -28,7 +28,16 @@ Table of contents
 # [GitHub Linguist](https://github.com/github-linguist/linguist/blob/master/lib/linguist/languages.yml)
 
 > Code block Syntax yml
-    
+
+## Working aliases
+
+* ### powershell
+  > ```posh``` , ```powershell```, ```bat```
+* ### batch
+  > ```batch```, ```bat```, ```dosbatch```, ```winbatch```
+* ### bash / shell / .sh
+  > ```sh```, ```shell```, ```zsh``` , ```bash```
+
 ---
 
 # GitHub Styling Quirks
@@ -58,6 +67,7 @@ Table of contents
 ## visible online
 
 ```html    
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">
     I am a success message
 </div> 
@@ -70,6 +80,7 @@ I am a success message
 ---
 
 ```html    
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;">
     I am an error message
 </div>  
@@ -82,6 +93,7 @@ I am an error message
 ---
 
 ```html    
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
     I am an info message
 </div>   
@@ -94,6 +106,7 @@ I am a info message
 ---
 
 ```html    
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">
     I am a warning message
 </div>     
@@ -114,7 +127,7 @@ I am a warning message
 ```
 
 ```html
-<img src='https://github.com/14paxton/14paxton.github.io/blob/master/assets/images/kubernetes.gif?raw=true'  alt="kubernetes"/>
+<img src='https://github.com/14paxton/14paxton.github.io/blob/master/assets/images/kubernetes.gif?raw=true' alt="kubernetes"/>
 ```
 
 ```markdown
@@ -168,7 +181,7 @@ pandoc -s example30.docx --wrap=none --reference-links -t markdown -o example35.
 ```                  
 
 ## files
-      
+
 ```shell                  
 #!/bin/bash                  
                    

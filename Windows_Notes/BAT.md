@@ -116,38 +116,13 @@ ___
 ---
 ___
 
-```shell
-cd C:\Users\%USERNAME%\source\repos\GitHub\Veridian
-git fetch
-git pull
-
-#powershell.exe Get-ChildItem "C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default" | ForEach-Object -Parallel {Remove-Item "$_" -Force -Recurse | Out-Null}
-#powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" | Where-Object Name -NotIn @( 'Cache','Code Cache','databases','Extension State','File System' , 'IndexedDB', 'WebStorage', 'Sessions', 'Service Worker', 'Web Applications', 'Default') | ForEach-Object -Parallel {Copy-Item "$_" -Destination C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default -Recurse -Force}
-
-powershell.exe Copy-Item -Path 'C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\*' -Destination 'C:\Users\%USERNAME%\source\repos\GitHub\Veridian\Google\Default' -Recurse -Force
-powershell.exe Copy-Item -Path 'C:\Users\%USERNAME%\source\repos\GitHub\Veridian\Google\Default\Bookmarks' -Destination 'C:\Users\%USERNAME%\source\repos\GitHub\Veridian\Google\%USERNAME%_Bookmarks.bak' -Recurse -Force
-
-
-rmdir /s /q "C:\Users\%USERNAME%\source\repos\GitHub\Veridian\Google\Default\Cache";
-rmdir /s /q "C:\Users\%USERNAME%\source\repos\GitHub\Veridian\Google\Default\Code Cache";
-rmdir /s /q "C:\Users\%USERNAME%\source\repos\GitHub\Veridian\Google\Default\databases";
-rmdir /s /q "C:\Users\%USERNAME%\source\repos\GitHub\Veridian\Google\Default\Extension State";
-rmdir /s /q "C:\Users\%USERNAME%\source\repos\GitHub\Veridian\Google\Default\File System";
-rmdir /s /q "C:\Users\%USERNAME%\source\repos\GitHub\Veridian\Google\Default\IndexedDB";
-rmdir /s /q "C:\Users\%USERNAME%\source\repos\GitHub\Veridian\Google\Default\WebStorage";
-
-git add -A --ignore-errors
-git commit -am "update script $(date +'%s')"
-git push
-```
-
 ```bat
 cd C:\Users\%USERNAME%\source\repos\GitHub\Veridian
 git fetch
 git pull
 
-#powershell.exe Get-ChildItem "C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default" | ForEach-Object -Parallel {Remove-Item "$_" -Force -Recurse | Out-Null}
-#powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" | Where-Object Name -NotIn @( 'Cache','Code Cache','databases','Extension State','File System' , 'IndexedDB', 'WebStorage', 'Sessions', 'Service Worker', 'Web Applications', 'Default') | ForEach-Object -Parallel {Copy-Item "$_" -Destination C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default -Recurse -Force}
+::powershell.exe Get-ChildItem "C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default" | ForEach-Object -Parallel {Remove-Item "$_" -Force -Recurse | Out-Null}
+@powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" | Where-Object Name -NotIn @( 'Cache','Code Cache','databases','Extension State','File System' , 'IndexedDB', 'WebStorage', 'Sessions', 'Service Worker', 'Web Applications', 'Default') | ForEach-Object -Parallel {Copy-Item "$_" -Destination C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default -Recurse -Force}
 
 powershell.exe Copy-Item -Path 'C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\*' -Destination 'C:\Users\%USERNAME%\source\repos\GitHub\Veridian\Google\Default' -Recurse -Force
 powershell.exe Copy-Item -Path 'C:\Users\%USERNAME%\source\repos\GitHub\Veridian\Google\Default\Bookmarks' -Destination 'C:\Users\%USERNAME%\source\repos\GitHub\Veridian\Google\%USERNAME%_Bookmarks.bak' -Recurse -Force
@@ -239,120 +214,4 @@ rmdir /s /q "C:\Users\%USERNAME%\source\repos\GitHub\Veridian\Google\Default\Web
 git add -A --ignore-errors
 git commit -am "update script $(date +'%s')"
 git push
-```
-
-
-> powershell
-
-```shell
-Set-Location "C:\Users\$env:UserName\source\repos\GitHub\Veridian";
-git fetch
-git pull
-
-taskkill /F /IM "chrome.exe" /T
-
-Get-ChildItem  "C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default" | ForEach-Object -Parallel {
-    Copy-Item "$_" -Destination "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" -Recurse -Force
-};
-
-Start-Process chrome --restore-last-session;
-```
-
-```pwsh
-Set-Location "C:\Users\$env:UserName\source\repos\GitHub\Veridian";
-git fetch
-git pull
-
-taskkill /F /IM "chrome.exe" /T
-
-Get-ChildItem  "C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default" | ForEach-Object -Parallel {
-    Copy-Item "$_" -Destination "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" -Recurse -Force
-};
-
-Start-Process chrome --restore-last-session;
-```
-
-```posh
-Set-Location "C:\Users\$env:UserName\source\repos\GitHub\Veridian";
-git fetch
-git pull
-
-taskkill /F /IM "chrome.exe" /T
-
-Get-ChildItem  "C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default" | ForEach-Object -Parallel {
-    Copy-Item "$_" -Destination "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" -Recurse -Force
-};
-
-Start-Process chrome --restore-last-session;
-```
-
-```powershell
-Set-Location "C:\Users\$env:UserName\source\repos\GitHub\Veridian";
-git fetch
-git pull
-
-taskkill /F /IM "chrome.exe" /T
-
-Get-ChildItem  "C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default" | ForEach-Object -Parallel {
-    Copy-Item "$_" -Destination "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" -Recurse -Force
-};
-
-Start-Process chrome --restore-last-session;
-```
-
-```ps1
-Set-Location "C:\Users\$env:UserName\source\repos\GitHub\Veridian";
-git fetch
-git pull
-
-taskkill /F /IM "chrome.exe" /T
-
-Get-ChildItem  "C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default" | ForEach-Object -Parallel {
-    Copy-Item "$_" -Destination "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" -Recurse -Force
-};
-
-Start-Process chrome --restore-last-session;
-```
-
-```psd1
-Set-Location "C:\Users\$env:UserName\source\repos\GitHub\Veridian";
-git fetch
-git pull
-
-taskkill /F /IM "chrome.exe" /T
-
-Get-ChildItem  "C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default" | ForEach-Object -Parallel {
-    Copy-Item "$_" -Destination "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" -Recurse -Force
-};
-
-Start-Process chrome --restore-last-session;
-```
-
-```psm1
-Set-Location "C:\Users\$env:UserName\source\repos\GitHub\Veridian";
-git fetch
-git pull
-
-taskkill /F /IM "chrome.exe" /T
-
-Get-ChildItem  "C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default" | ForEach-Object -Parallel {
-    Copy-Item "$_" -Destination "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" -Recurse -Force
-};
-
-Start-Process chrome --restore-last-session;
-```
-
-
-```bat
-Set-Location "C:\Users\$env:UserName\source\repos\GitHub\Veridian";
-git fetch
-git pull
-
-taskkill /F /IM "chrome.exe" /T
-
-Get-ChildItem  "C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default" | ForEach-Object -Parallel {
-    Copy-Item "$_" -Destination "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" -Recurse -Force
-};
-
-Start-Process chrome --restore-last-session;
 ```

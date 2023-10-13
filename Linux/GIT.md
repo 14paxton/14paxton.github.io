@@ -64,39 +64,7 @@ act=$(gh auth status -t >>(tee -a) 2>&1 | sed -n 's/.*Token: //p');
 if [ "$act" == *"$GH_TOKEN"* ](%22$act%22%20==%20*%22$GH_TOKEN%22*.md#)    
 then echo $GH_TOKEN | gh auth login --with-token;      
 gh repo sync --force;    
-```    
-
-```sh    
-export GH_TOKEN=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;    
-act=$(gh auth status -t >>(tee -a) 2>&1 | sed -n 's/.*Token: //p');    
-if [ "$act" == *"$GH_TOKEN"* ](%22$act%22%20==%20*%22$GH_TOKEN%22*.md#)    
-then echo $GH_TOKEN | gh auth login --with-token;      
-gh repo sync --force;    
-```    
-
-```zsh    
-export GH_TOKEN=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;    
-act=$(gh auth status -t >>(tee -a) 2>&1 | sed -n 's/.*Token: //p');    
-if [ "$act" == *"$GH_TOKEN"* ](%22$act%22%20==%20*%22$GH_TOKEN%22*.md#)    
-then echo $GH_TOKEN | gh auth login --with-token;      
-gh repo sync --force;    
-```    
-
-```bash    
-export GH_TOKEN=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;    
-act=$(gh auth status -t >>(tee -a) 2>&1 | sed -n 's/.*Token: //p');    
-if [ "$act" == *"$GH_TOKEN"* ](%22$act%22%20==%20*%22$GH_TOKEN%22*.md#)    
-then echo $GH_TOKEN | gh auth login --with-token;      
-gh repo sync --force;    
-```    
-
-```shell-script    
-export GH_TOKEN=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;    
-act=$(gh auth status -t >>(tee -a) 2>&1 | sed -n 's/.*Token: //p');    
-if [ "$act" == *"$GH_TOKEN"* ](%22$act%22%20==%20*%22$GH_TOKEN%22*.md#)    
-then echo $GH_TOKEN | gh auth login --with-token;      
-gh repo sync --force;    
-``` 
+```
 
 ## workflow
 
@@ -252,10 +220,10 @@ You can clone a repository using HTTPS like this:
 > You can save, or cache, your credentials so that you don't have to reenter them each time you interact with the remote repository.
 
 > Your credentials can be stored in the keychain of your operating system or cached in memory
->  or in a file.
+> or in a file.
 
 > To cache in memory, in the MacOS keychain, or in the Windows keychain, choose the relevant
->  one of these three invocations:
+> one of these three invocations:
 
 ***    
 

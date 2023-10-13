@@ -1,11 +1,11 @@
 ---
-title: QuickScripts
-permalink: Linux/QuickScripts
-category: Linux
-parent: Linux
-layout: default
+title:        QuickScripts
+permalink:    Linux/QuickScripts
+category:     Linux
+parent:       Linux
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - linux
   - default    
@@ -109,7 +109,10 @@ cat -s file.txt
 
 ### Create Here Document
 
-> A here document (here doc) is a way to interactively input multiple lines of text into a command or program. In the case of the cat command, you can use a here doc to provide the content that cat should display. Here’s an example using a here doc with the cat command:
+> A here document (here doc) is a way to interactively input multiple lines of text into a command or program.
+> In the case of the cat command, you can use a here doc to provide the content that cat
+> should display.
+> Here’s an example using a here doc with the cat command:
 
 ```shell
 cat << EOF
@@ -120,31 +123,33 @@ cat << EOF
 > EOF
 ```
 
-> In this example, the << EOF notation indicates the start of the here doc, and the lines following it are treated as input until the EOF delimiter is encountered. The cat command will display the content of the here doc, which in this case consists of three lines.
+> In this example, the << EOF notation indicates the start of the here doc, and the lines following it are treated as input until the EOF delimiter is encountered.
+> The cat command will display the
+> content of the here doc, which in this case consists of three lines.
 
 # Mac
 
 ## get local ip
 
-```bash    
+```zsh    
 osascript -e "IPv4 address of (system info)"    
 ```    
 
-```bash    
+```zsh    
 ifconfig | grep "inet "     
 ```    
 
 ## convert file/image to base64
 
-```bash    
+```zsh    
 base64 -i ./post_u_north_gate.jpg | pbcopy     
 ```    
 
-```bash    
+```zsh    
 cat ./post_u_north_gate.jpg | openssl base64 | tr -d '\n' | pbcopy    
 ```    
 
-```bash    
+```zsh    
 ./post_u_north_gate.jpg | openssl base64 | tr -d '\n' | pbcopy        
 ```
 
