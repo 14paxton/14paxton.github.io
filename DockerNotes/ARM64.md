@@ -1,19 +1,19 @@
 ---
-title:        ARM64    
-permalink:    DockerNotes/ARM64    
-category:     DockerNotes    
-parent:       DockerNotes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - dockernotes    
+title:        ARM64
+permalink:    DockerNotes/ARM64
+category:     DockerNotes
+parent:       DockerNotes
+layout:       default
+has_children: false
+share:        true
+shortRepo:
+  - dockernotes
   - default              
 ---
-    
-    
+
+
 <br/>              
-    
+
 <details markdown="block">                    
 <summary>                    
 Table of contents                    
@@ -22,43 +22,45 @@ Table of contents
 1. TOC                    
 {:toc}                    
 </details>                    
-    
+
 <br/>                    
-    
+
 ***                    
-    
+
 <br/>    
-    
-# cli build    
-    
+
+# cli build
+
 ```shell    
 docker build --platform linux/arm64  .    
 ```    
-    
-# cli run    
-    
+
+# cli run
+
 ```shell    
 docker run --platform linux/arm/v8 dbmigration:1.1    
 ```    
-    
-## all platforms    
-    
+
+## all platforms
+
 ```shell    
 docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t username/demo:latest --push .    
 ```    
-    
-# add to from    
-    
+
+# add to from
+
 ```shell    
 FROM --platform=linux/x86_64 $REGISTRY_HOST/guardian/base-images/node16-builder:1.0.0 as builder    
 ```    
-    
-# Add this snipped to your ~/.zshrc and ~/.bashrc. It allows you not to repeat the flag anytime you perform a docker run command:    
-    
-> useful only for Mac OS Silicon M1,    
-    
-> still working but useless for the other platforms    
-    
+
+# Stop repeating flag when you perform a docker run command:
+
+> useful only for macOS Silicon M1,
+
+> still working but useless for the other platforms
+
+> Add this snipped to your ```~/.zshrc``` and ```~/.bashrc```
+
 ```shell    
 docker() {    
   if [ `uname -m` == "arm64" ](%60uname%20-m%60%20==%20%22arm64%22.md#) && [| "$1" == "build" ](%22$1%22%20==%20%22run%22.md#); then    
@@ -68,54 +70,59 @@ docker() {
   fi    
 }    
 ```    
-    
-You can set the environment variable DOCKER_DEFAULT_PLATFORM:    
-    
+
+# set the environment variable DOCKER_DEFAULT_PLATFORM
+
 ```shell    
 export DOCKER_DEFAULT_PLATFORM=linux/amd64    
 ```    
-    
-# you can add in your docker-compose.yaml:    
-    
+
+# add in your docker-compose.yaml
+
 ```yaml    
-services:    
-  service_name:    
-    environment:    
+services:
+  service_name:
+    environment:
       - DOCKER_DEFAULT_PLATFORM=linux/amd64    
 ```    
-    
-# add to build as env    
-    
+
+# add to build as env
+
 ```shell    
 DOCKER_DEFAULT_PLATFORM=linux/amd64 docker-compose build    
 ```    
-    
-> Keep in mind that if you've already downloaded the image for a different platform, docker will keep using that image no matter what platform you specify as your default, you would delete the image using docker image rm your_img first to fix that.    
-    
-# Alternatively, in the Dockerfile, include the following flag in the FROM command (for a multi-stage Dockerfile build, the flag is only needed for the first stage):    
-    
+
+> Keep in mind that if you've already downloaded the image for a different platform, docker will keep using that image no matter what platform you specify as your default, you would delete the image
+> using docker image rm your_img first to fix that.
+
+# Alternatively - Adding in the Dockerfile
+
+> include the following flag in the ```FROM``` command (for a multi-stage Dockerfile build, the flag is only needed for the first stage):
+
 ```shell    
 FROM --platform=linux/amd64 python:3.7-alpine    
 ```    
-    
-# For building images as part of a docker-compose build, include the platform: linux/amd64 for each service. For example:    
-    
+
+# Building images as part of a docker-compose build
+
+> include the platform: ```linux/amd64``` for each service
+
 ```yaml    
-  services:    
-    frontend:    
-      platform: linux/amd64    
-      build:    frontend    
-      ports:    
-        - 80:80    
-      depends_on:    
-        - backend    
-    backend:    
-      platform: linux/amd64    
+  services:
+    frontend:
+      platform: linux/amd64
+      build:    frontend
+      ports:
+        - 80:80
+      depends_on:
+        - backend
+    backend:
+      platform: linux/amd64
       build:    backend     
 ```    
-    
-# Debian ARM    
-    
+
+# Debian ARM
+
 ```shell    
   FROM        aemdesign/tini:debian-arm    
     
