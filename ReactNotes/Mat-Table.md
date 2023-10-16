@@ -1,11 +1,11 @@
 ---
-title: Mat-Table
-permalink: ReactNotes/Mat-Table
-category: ReactNotes
-parent: ReactNotes
-layout: default
+title:        Mat-Table
+permalink:    ReactNotes/Mat-Table
+category:     ReactNotes
+parent:       ReactNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - reactnotes
   - default                
@@ -32,7 +32,7 @@ Table of contents
 
 # Use ref to update table info in parent
 
-```javascript
+```jsx
 const updatePrivateGroupsTable = () => {
     if (privateGroupTableRef?.current) {
         privateGroupTableRef.current.onQueryChange();
@@ -46,22 +46,21 @@ const updatePrivateGroupsTable = () => {
 
 > Add tableRef to state:
 
-```javascript
+```jsx
 state = {
     tableRef: React.createRef(),
 }
 ```
 
 > Then add the tableRef prop to your Material Table
->
 
-```javascript
-<MaterialTable tableRef={this.state.tableRef} />
+```jsx
+<MaterialTable tableRef={this.state.tableRef}/>
 ```
 
 > Then on the onRowClick prop/function use tableRef to access dataManager and onSelectionChange
 
-```javascript
+```jsx
 <MaterialTable
     tableRef={this.state.tableRef}
     onRowClick={(event, rowData) => {
@@ -77,7 +76,7 @@ state = {
 />
 ```
 
-## prop options to header from customize component
+## prop options to header from a customize component
 
 ![image5](https://user-images.githubusercontent.com/26972590/188926053-d48bcf30-3a9a-4d64-8a73-24c569724eeb.png)
 
