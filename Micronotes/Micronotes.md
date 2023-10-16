@@ -1,10 +1,10 @@
 ---
-title: Micronotes
-layout: default
-permalink: Micronotes/
-category: Micronotes
+title:        Micronotes
+layout:       default
+permalink:    Micronotes/
+category:     Micronotes
 has_children: true
-share: true
+share:        true
 shortRepo:
 
   - micronotes
