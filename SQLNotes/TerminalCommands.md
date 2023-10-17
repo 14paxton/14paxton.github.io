@@ -34,31 +34,29 @@ shortRepo:
 
 ```shell
 mysql -u USERNAME -p
-
 ```
 
 ```shell
 show databases;
-
 ```
 
 ## SETTING TIMEZONES
 
 ### Get timezone
 
-```sql
+```bash
 SELECT @@global.time_zone, @@session.time_zone;
 ```
 
 ### Get timestamp
 
-```sql
+```bash
  SELECT CURRENT_TIMESTAMP();
 ```
 
 ### Set timestamp utc
 
-```sql
+```bash
  SET @@session.time_zone = '+00:00';
 ```
 
@@ -68,17 +66,19 @@ SELECT @@global.time_zone, @@session.time_zone;
 
 ## other variables
 
+```bash
 default_time_zone='+00:00'
+```
 
-- GET PATHS
+> GET PATHS
 
-```sql
+```bash
 SHOW VARIABLES WHERE Variable_Name LIKE "%dir";
 ```
 
-## MySQL import
+## Import
 
-```shell
+```bash
 LOAD DATA LOCAL INFILE 'C:/Groovy/englishData.csv' INTO TABLE original_data 
 
 FIELDS TERMINATED BY ','  
@@ -90,7 +90,7 @@ LINES TERMINATED BY '\r\n'
 
 ## Show db users
 
-```sql
+```bash
 SELECT user, authentication_string, plugin, host
 FROM mysql.user;
 ```
