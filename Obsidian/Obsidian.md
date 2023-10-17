@@ -105,12 +105,12 @@ multipleRepo:
   - repo:
       branch:    string #change default branch                     
       repo:      string #change default repository                    
-      owner: string #change a default owner (it's your GitHub Username)                    
+      owner:     string #change a default owner (it's your GitHub Username)                    
       autoclean: boolean #enable auto cleaning                    
   - repo:
       branch:    string #change default branch                     
       repo:      string #change default repository                    
-      owner: string #change a default owner (it's your GitHub Username)                    
+      owner:     string #change a default owner (it's your GitHub Username)                    
       autoclean: boolean #enable auto cleaning                    
 ```                    
 
