@@ -1,8 +1,8 @@
 ---
 title:        EnviromentStuff
-permalink: Micronotes/EnviromentStuff
-category: Micronotes
-parent: Micronotes
+permalink:    Micronotes/EnviromentStuff
+category:     Micronotes
+parent:       Micronotes
 layout:       default
 has_children: false
 share:        true
@@ -42,12 +42,9 @@ Table of contents
 <a href="https://docs.micronaut.io/latest/api/io/micronaut/context/env/Environment.html">Available Env Fields</a>
 </div> 
 
+# Run in Development
 
----
-
-## Run in Development
-
-### replace application
+## replace application
 
 ```java    
 public class Application {
@@ -58,23 +55,22 @@ public class Application {
                 .start();
     }
 }
-
 ```    
 
-### add to build.gradle
+## add to build.gradle
 
-```groovy    
+```gradle    
 run {
     systemProperty('micronaut.environments', 'dev')
 }    
 ```    
 
-### cli
+## cli
 
 ```shell    
 ./gradlew -Dmicronaut.environments=dev run    
 ```    
 
-### ide
+## ide
 
 <img width="1262" alt="image" src="https://user-images.githubusercontent.com/26972590/212477618-198bc498-6520-44d6-8e20-25b7569e735d.png">

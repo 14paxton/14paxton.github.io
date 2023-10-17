@@ -119,7 +119,7 @@ function RGBToHex(rgb) {
 }
 ```      
 
-# Create Style element / modify css style sheets
+# Create a Style element / modify css style sheets
 
 ## insert into document head
 

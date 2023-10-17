@@ -1,11 +1,11 @@
 ---
-title: Clever-Snippets
-permalink: ReactNotes/Clever-Snippets
-category: ReactNotes
-parent: ReactNotes
-layout: default
+title:        Clever-Snippets
+permalink:    ReactNotes/Clever-Snippets
+category:     ReactNotes
+parent:       ReactNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
 
   - clever-snippets
@@ -40,16 +40,16 @@ Table of contents
 
 # Force an Update
 
-```javascript      
+```jsx      
 const [, updateState] = React.useState();
 const forceUpdate = React.useCallback(() => updateState({}), []);      
-```      
+```  
 
 # recursive component example
 
 ## template
 
-```javascript      
+```jsx      
 const RecursiveWrapper = props => {
 
     const wrappedChildren = React.Children.map(props.children, child => {
@@ -71,11 +71,11 @@ const RecursiveWrapper = props => {
         </div>
     </React.Fragment>
 }    
-```      
+```  
 
 ## use case
 
-```javascript    
+```jsx    
 import React, {forwardRef, useCallback, useEffect, useState} from "react";
 import PropTypes from "prop-types";
 import {styled} from "@material-ui/styles";
@@ -118,7 +118,9 @@ const RecursiveComponent = forwardRef(({parentRefHandler, nodeNameOrIdArray, chi
                 nodeNameOrIdArray.forEach((name, index) => {
                     foundElement = el.querySelector(name)
                     if (foundElement) {
-                        foundElement.id = `${name}_${index}`? `${name}_${index}` : `nested_element_id_${index}`
+                        foundElement.id = `${name}_${index}`
+                                          ? `${name}_${index}`
+                                          : `nested_element_id_${index}`
                         children[name] = foundElement
                     }
                 })
@@ -151,11 +153,11 @@ RecursiveComponent.defaultProps = {
     nodeNameOrIdArray: []
 }
 export default RecursiveComponent    
-```    
+```
 
 # dynamic component
 
-```javascript      
+```jsx      
 const WebApp = (props) => {
     return <div>
         {config.map((componentName) => {
@@ -164,11 +166,11 @@ const WebApp = (props) => {
         })}
     </div>
 };      
-```      
+```  
 
 # Force Load a JS script file
 
-```javascript      
+```jsx      
 import React, {useState, useEffect} from 'react';
 import './style.css';
 
@@ -202,7 +204,11 @@ export default function App() {
             Script Loading State:{' '}
             <span
                 style={{
-                    color: scriptLoadingState === 'IDLE'? 'grey' : scriptLoadingState === 'LOADED'? 'green' : 'red',
+                    color: scriptLoadingState === 'IDLE'
+                           ? 'grey'
+                           : scriptLoadingState === 'LOADED'
+                             ? 'green'
+                             : 'red',
                 }}
             >
                 {scriptLoadingState}
@@ -210,27 +216,27 @@ export default function App() {
         </h2>
     </div>);
 }    
-```      
+```  
 
 # hyperlink
 
-```javascript      
+```jsx      
 <Link to={`/products/${product.id}`}>{product.name}</Link>      
-```      
+```  
 
-> Rather than `<a>`
+> Rather than ```<a>```
 
 # Creating tags
 
-```javascript      
+```jsx      
     Ul > (li[className = 'test'])    
-```      
+```  
 
 # Access the Dom
 
 > [React Docs - Manipulate Dom With Ref](https://react.dev/learn/manipulating-the-dom-with-refs)
 
-```javascript      
+```jsx      
 import {useRef} from 'react';
 
 function MyInput(props) {
@@ -252,11 +258,11 @@ export default function MyForm() {
     </>);
 }
 
-```      
+```  
 
-- alt
+> or
 
-```javascript    
+```jsx    
 import {useRef} from 'react';
 
 const ref = useRef(null);
@@ -265,12 +271,11 @@ const element = <div ref={ref}/>;
 // ...    
 
 ref.current; // DOM element    
-
-```    
+```
 
 - alt
 
-```javascript    
+```jsx    
 export default function Component(props) {
     const nodeRef = useRef();
 
@@ -281,63 +286,62 @@ export default function Component(props) {
     // Root Node    
     return <input ref={nodeRef}/>
 }    
-```    
+```
 
 # Conditional Rendering
 
-```javascript      
-    {
-    error && <div className="alert      
-      alert-danger">{error}</div>
-}      
-```    
+```jsx      
+{error && <div className="alert alert-danger">{error}</div>}      
+```
 
 # Axios
 
 ## Patch()
 
->       Used to update 1 or more properties      
+> Used to update one or more properties
 
-```javascript      
+```jsx      
  Axios.patch(apiEndpoint + '/' + post.id, {title: post.title});      
-```      
+```  
 
 ## Put()
 
 > Update all properties
 
-```javascript      
+```jsx      
   axios.put(apiEndpoint + '/' + post.id, post)    
-```      
+```  
 
 ## Interceptors
 
-```javascript      
+```jsx      
 axios.interceptors.response.use(success, error)
 this.props.history.push('/');      
-```      
+```  
 
 # used to navigate
 
-```javascript      
+```jsx      
 this.props.history.push('/');      
-```      
+```  
 
-```javascript      
+```jsx      
 localStorage.setItem('token', response.headers['x-auth-token']);      
-```      
+```  
 
-# set local storage and access response header, need to have backend make headers visible> set local storage and access response header, need to have backend make headers visible
+# set local storage and access response header
+
+> need to have backend make headers visible> set local storage and access response header, need to have backend make headers visible
 
 ```.header("access-control-expose-headers", "x-auth-token")```
 
 # dangerouslySetInnerHTMLset html in a string
 
-```javascript       
+```jsx       
 { __html: '<p>' + result?.themeSummary + '. <i>Theme Of Significance.</i></p> '}
 
 < Tooltip title={<div dangerouslySetInnerHTML={modifiedToolTip}/>} childrenDisplayStyle="inline">      
-```      
+```  
 
 # useEffect()
 
@@ -345,30 +349,30 @@ localStorage.setItem('token', response.headers['x-auth-token']);
 
 > react will prioritize UI
 
-```javascript      
+```jsx      
 React.useEffect(() => {
 // Will be invoked on the initial render      
 // and all subsequent re-renders.      
 
 })      
-```      
+```  
 
-```javascript      
+```jsx      
 React.useEffect(() => {
 // Will be invoked on the initial render      
 // and when "id" or "authed" changes.      
 
 }, [id, authed])      
-```      
+```  
 
-```javascript      
+```jsx      
 React.useEffect(() => {
 // Will only be invoked on the initial render      
 
 }, [])      
-```      
+```  
 
-```javascript      
+```jsx      
 React.useEffect(() => {
 
     return () => {
@@ -383,19 +387,19 @@ React.useEffect(() => {
 
     }
 })    
-```    
+```
 
 ## check for unmounting
 
-```javascript    
+```jsx    
 useEffect(() => {
     return () => console.log('unmounting...');
 })    
-```    
+```
 
-## clean on unmount
+## clean on unmounting
 
-```javascript    
+```jsx  
 useEffect(() => {
     let isMounted = true;
     register('interviewModelId');

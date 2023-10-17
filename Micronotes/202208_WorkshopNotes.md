@@ -1,19 +1,19 @@
 ---
 title:        202208_WorkshopNotes
-permalink: Micronotes/202208_WorkshopNotes
-category: Micronotes
-parent: Micronotes
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - micronotes    
+permalink:    Micronotes/202208_WorkshopNotes
+category:     Micronotes
+parent:       Micronotes
+layout:       default
+has_children: false
+share:        true
+shortRepo:
+  - micronotes
   - default    
 ---
-    
-    
+
+
 <br/>    
-    
+
 <details markdown="block">    
 <summary>    
 Table of contents    
@@ -22,35 +22,35 @@ Table of contents
 1. TOC    
 {:toc}    
 </details>    
-    
+
 <br/>    
-    
+
 ***    
-    
+
 <br/>    
-    
-## practices    
-    
-https://guides.micronaut.io/latest/micronaut-configuration-gradle-java.html    
-    
-https://guides.micronaut.io/latest/micronaut-http-client-gradle-java.html    
-    
-## instructor dropbox    
-    
-https://www.dropbox.com/home/micronaut_examples?file_subpath=%2Fmicronaut-essentials-august-2022-main&preview=micronaut-essentials-august-2022-main.zip    
-    
-## instructor git    
-    
-https://github.com/OCI-Training-and-Events/micronaut-essentials-august-2022    
-    
-## my dropbox    
-    
-https://www.dropbox.com/home/micronaut_examples/micronaut-essentials-august-2022-main/micronaut-essentials-august-2022-main    
-    
-## relevant docs    
-    
-service discovery >  https://micronaut-projects.github.io/micronaut-discovery-client/latest/guide/    
-    
-built in endpoints > https://docs.micronaut.io/latest/guide/#providedEndpoints    
-    
-grails use micronaut http > https://guides.grails.org/grails-micronaut-http/guide/index.html
+
+# practices
+
+<https://guides.micronaut.io/latest/micronaut-configuration-gradle-java.html>
+
+<https://guides.micronaut.io/latest/micronaut-http-client-gradle-java.html>
+
+# instructor dropbox
+
+<https://www.dropbox.com/home/micronaut_examples?file_subpath=%2Fmicronaut-essentials-august-2022-main&preview=micronaut-essentials-august-2022-main.zip>
+
+# instructor git
+
+<https://github.com/OCI-Training-and-Events/micronaut-essentials-august-2022>
+
+# my dropbox
+
+<https://www.dropbox.com/home/micronaut_examples/micronaut-essentials-august-2022-main/micronaut-essentials-august-2022-main>
+
+# relevant docs
+
+[service discovery ]( https://micronaut-projects.github.io/micronaut-discovery-client/latest/guide/ )
+
+[built in endpoints ](https://docs.micronaut.io/latest/guide/#providedEndpoints )
+
+[grails use micronaut http ](https://guides.grails.org/grails-micronaut-http/guide/index.html)
