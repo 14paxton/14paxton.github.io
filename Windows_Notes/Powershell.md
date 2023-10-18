@@ -434,6 +434,11 @@ powershell.exe Get-ChildItem C:\Users\$env:UserName\source\repos\GitHub\Veridian
 powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" | Where-Object Name -NotIn @( 'Cache','Code Cache','databases','Extension State','File System' , 'IndexedDB', 'WebStorage', 'Sessions', 'Service Worker', 'Web Applications', 'Default') | ForEach-Object -Parallel {Copy-Item "$_" -Destination C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default -Recurse -Force}    
 ```
 
+## Gists
+
+### [Sync Chrome Bookmarks](https://gist.github.com/14paxton/c10cfd597e7e7b487e27d641cf964c59#powershell)
+  > used to sync bookmarks file to a repo to update on both mac and windows using bash and powershell when account can not sync due to admin restrictions
+
 # Basic Commands
 
 | Command name      | Alias                         | Description                                                                                                           |    
