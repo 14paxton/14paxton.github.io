@@ -32,6 +32,13 @@ Table of contents
 - > [Microsoft Docs](https://learn.microsoft.com/en-us/powershell/module/cimcmdlets/?view=powershell-7.3)
 - > [Releases](https://github.com/PowerShell/PowerShell/releases)
 
+# Gists
+
+### [Sync Chrome Bookmarks](https://gist.github.com/14paxton/c10cfd597e7e7b487e27d641cf964c59#powershell)
+  > used to sync bookmarks file to a repo to update on both mac and windows using bash and powershell when account can not sync due to admin restrictions
+
+---
+
 # [Installing](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-5.1)
 
   > By default, the package is installed to ```$env:ProgramFiles\PowerShell\<version>```    
@@ -220,14 +227,14 @@ Start-Process -FilePath 'C:\Users\Brandon003842\Downloads\ConnectUtility_2.30.9_
     
 ```    
 
-## rename and expand zip
+## Rename and Expand .zip
 
 ```powershell    
 Rename-Item .\Ubuntu.appx .\Ubuntu.zip    
 Expand-Archive .\Ubuntu.zip .\Ubuntu    
 ```    
 
-## - execute
+## Execute
 
 ```powershell    
 Start-Process test.exe    
@@ -235,19 +242,19 @@ Start-Process test.exe
 Invoke-Expression -Command "path...test.exe"    
 ```    
 
-## - set env variable
+## Set ENV Variable
 
 ```powershell    
 $env:AZURE_RESOURCE_GROUP = 'MyTestResourceGroup'    
 ```    
 
-- set env variable persistently
+### Set ENV Persistently
 
 ```powershell    
 [System.Environment]::SetEnvironmentVariable('ResourceGroup','AZ_Resource_Group')    
 ```    
 
-## Get execution policy
+## Get Execution Policy
 
 ```powershell    
  Get-ExecutionPolicy    
@@ -261,26 +268,26 @@ or <br/>
 <code>Set-ExecutionPolicy Bypass -Scope Process    </code>   
 </div> 
 
-## search piped string
+## Search Piped String
 
 ```powershell    
 Select-String -Path "Users\*.csv" -Pattern "Joe"    
 ```    
 
-## download file from web
+## Download File From Web
 
 ```powershell    
 $WebClient = New-Object System.Net.WebClient    
 $WebClient.DownloadFile("https://www.contoso.com/file","C:\path\file")    
 ```    
 
-## invoke-WebRequest
+## Invoke-WebRequest
 
 ```powershell    
 Invoke-WebRequest -Uri "http://www.contoso.com" -OutFile "C:\path\file"    
 ```    
 
-## foreach
+## For Each / foreach
 
 ```powershell    
 # Create an array of folders    
@@ -331,7 +338,7 @@ foreach ($foldername in $Child_Folders.FullName) {
 Get-ChildItem -Recurse -Path C:\ARCHIVE_VOLUMES -Include backupstate.txt | Select-Object Fullname,CreationTime,LastWriteTime,Length    
 ```    
 
-### Reading the Contents of each Text File in Sub-Directories
+## Reading the Contents of each Text File in Sub-Directories
 
 ```powershell    
 ## Find all BackupState.txt files in C:\ARCHIVE_VOLUMES    
@@ -430,23 +437,18 @@ $newUsers.foreach(
  }    
 ```    
 
-## answer prompt
+## Answer / Reply to Yes(y) No(n) Prompt
 
 ```powershell    
  foreach($i in $files) {'y' | powershell -c "Remove-Item $i -Force -ErrorAction silentlycontinue"}    
 ```    
 
-## run in parallel / async
+## Run In Parallel / Async
 
 ```powershell    
 powershell.exe Get-ChildItem C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default | ForEach-Object -Parallel {Remove-Item "$_" -Force -Recurse | Out-Null}    
 powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" | Where-Object Name -NotIn @( 'Cache','Code Cache','databases','Extension State','File System' , 'IndexedDB', 'WebStorage', 'Sessions', 'Service Worker', 'Web Applications', 'Default') | ForEach-Object -Parallel {Copy-Item "$_" -Destination C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default -Recurse -Force}    
 ```
-
-## Gists
-
-### [Sync Chrome Bookmarks](https://gist.github.com/14paxton/c10cfd597e7e7b487e27d641cf964c59#powershell)
-  > used to sync bookmarks file to a repo to update on both mac and windows using bash and powershell when account can not sync due to admin restrictions
 
 # Basic Commands
 
@@ -479,6 +481,7 @@ powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrom
 | Write-Output      | echo, write                   | Sends the specified objects to the next command in the pipeline. If the command is the last command in the pipeline,… |    
 
 ***
+---
 
 | Command alias | Cmdlet name                    | Description of command                                                                                                                                                                             |    
 |---------------|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|    
