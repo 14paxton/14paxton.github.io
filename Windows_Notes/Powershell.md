@@ -84,6 +84,8 @@ Table of contents
 
 # Run
 
+> - [Run Bypassing Execution Policy](https://www.netspi.com/blog/technical/network-penetration-testing/15-ways-to-bypass-the-powershell-execution-policy/)
+
 ## powershell core 7+
 
   ```powershell
