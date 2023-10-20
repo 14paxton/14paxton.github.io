@@ -54,48 +54,50 @@ Table of contents
 
 ## DotNet CLI
 
-```powershell    
-dotnet tool install --global PowerShell    
-```    
+  ```powershell    
+   dotnet tool install --global PowerShell    
+  ```    
 
 ## MSI
-```powershell    
-msiexec.exe /package PowerShell-7.3.2-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1 ADD_PATH=1    
-```    
+  
+  ```powershell    
+   msiexec.exe /package PowerShell-7.3.2-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 
+   USE_MU=1 ENABLE_MU=1 ADD_PATH=1    
+  ```    
 
-## winget
+## Winget
 
-```powershell    
-winget install Microsoft.PowerShell    
-```
+  ```powershell    
+  winget install Microsoft.PowerShell    
+  ```
 
-## Run
+# Run
 
-### powershell core 7+
+## powershell core 7+
 
-```powershell
-pwsh testscript_writefile.ps1
-```    
+  ```powershell
+   pwsh testscript_writefile.ps1
+  ```    
 
-### OS powershell 5
+## OS powershell 5
 
-```powershell
-powershell testscript_writefile.ps1
-```
+  ```powershell
+   powershell testscript_writefile.ps1
+  ```
 
 # Update 
 
 ## Winget
 
-```powershell    
-winget upgrade Microsoft.PowerShell    
-```    
+  ```powershell    
+  winget upgrade Microsoft.PowerShell    
+  ```    
 
 ## MSI
 
-```powershell    
-msiexec.exe /fmu .\PowerShell-7.3.0-win-x64.msi USE_MU=1 ENABLE_MU=1    
-```    
+  ```powershell    
+  msiexec.exe /fmu .\PowerShell-7.3.0-win-x64.msi USE_MU=1 ENABLE_MU=1    
+  ```    
 
 # Environment
 
