@@ -73,6 +73,8 @@ Table of contents
   winget install Microsoft.PowerShell    
   ```
 
+---
+
 # Run
 
 ## powershell core 7+
@@ -86,6 +88,8 @@ Table of contents
   ```powershell
    powershell testscript_writefile.ps1
   ```
+
+---
 
 # Update 
 
@@ -101,15 +105,17 @@ Table of contents
   msiexec.exe /fmu .\PowerShell-7.3.0-win-x64.msi USE_MU=1 ENABLE_MU=1    
   ```    
 
+---
+
 # Environment
 
-```powershell
-$Env:
-```
+  ```powershell
+   $Env:
+  ```
 
-> ```Env``` is actually a virtual PowerShell drive and environment variables are items on it.
-> There is a special provider ```Get-PSProvider -PSProvider Environment ```   
-> that implements this method of accessing to environment in powershell.
+  > ```Env``` is actually a virtual PowerShell drive and environment variables are items on it.
+  > There is a special provider ```Get-PSProvider -PSProvider Environment ```   
+  > that implements this method of accessing to environment in powershell.
 
 ## There are three scopes of what is called Environment Variables:
 
