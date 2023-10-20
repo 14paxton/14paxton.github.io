@@ -66,7 +66,7 @@ Remove-Item winget.msixbundle
 
   > If you get an error that the framework "Microsoft.UI.Xaml.2.7" could not be found, then you can use the following commands to install it:
 
-    ```powershell
+  ```powershell
       Invoke-WebRequest `
         -URI https://www.nuget.org/api/v2/package/Microsoft.UI.Xaml/2.7.3 `
         -OutFile xaml.zip -UseBasicParsing
@@ -75,25 +75,25 @@ Remove-Item winget.msixbundle
       Add-AppxPackage -Path "xaml\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.7.appx"
       Remove-Item xaml.zip
       Remove-Item xaml -Recurse
-    ```
+  ```
 
   > If you then get another error that the framework "Microsoft.VCLibs.140.00.UWPDesktop" could not be found, then you can additionally use the following commands to install it:
 
-     ```powershell
+  ```powershell
       Invoke-WebRequest `
           -URI https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx `
           -OutFile UWPDesktop.appx -UseBasicParsing
       Add-AppxPackage UWPDesktop.appx
       Remove-Item UWPDesktop.appx
-     ```
+  ```
 
   > Then, repeat the initial commands
 
 > Once you have followed the above steps, you can use winget on the command line. For example, to update PowerShell:
-
-    ```powershell
+  
+  ```powershell
       winget install --id Microsoft.Powershell --source winget
-    ```
+  ```
 
 > Remember to again run this with administrative privileges. If you want to execute it in PowerShell itself, prefix the line with an ampersand ```&```
 
