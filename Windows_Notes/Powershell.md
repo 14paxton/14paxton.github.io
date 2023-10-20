@@ -29,26 +29,23 @@ Table of contents
 
 <br/>    
 
-# [PowerShell](https://learn.microsoft.com/en-us/powershell/module/cimcmdlets/?view=powershell-7.3)
+- > [Microsoft Docs](https://learn.microsoft.com/en-us/powershell/module/cimcmdlets/?view=powershell-7.3)
+- > [Releases](https://github.com/PowerShell/PowerShell/releases)
 
-- Run
+# Gists
 
-> powershell core 7+
+## [Sync Chrome Bookmarks](https://gist.github.com/14paxton/c10cfd597e7e7b487e27d641cf964c59#powershell)
+  > used to sync bookmarks file to a repo to update on both mac and windows using bash and powershell when account can not sync due to admin restrictions
 
-```powershell
-pwsh testscript_writefile.ps1
-```    
+---
 
-> OS powershell 5
+# [Installing](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-5.1)
 
-```powershell
-powershell testscript_writefile.ps1
-```
+  > By default, the package is installed to ```$env:ProgramFiles\PowerShell\<version>```    
 
-# [Install](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)
+  > You can launch PowerShell via the Start Menu or ```$env:ProgramFiles\PowerShell\<version>\pwsh.exe```
 
-> By default, the package is installed to ```$env:ProgramFiles\PowerShell\<version>```    
-> You can launch PowerShell via the Start Menu or ```$env:ProgramFiles\PowerShell\<version>\pwsh.exe```
+## [Install 7.3](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
  <p>PowerShell 7.3 installs to a new directory and runs side-by-side with Windows PowerShell 5.1. </p>
@@ -56,57 +53,76 @@ powershell testscript_writefile.ps1
  <p>PowerShell 7.3 is an in-place upgrade that replaces PowerShell 7.0 and lower.</p>       
 </div> 
 
+  > PowerShell 7.3 is installed to ```$env:ProgramFiles\PowerShell\7```
 
-> PowerShell 7.3 is installed to ```$env:ProgramFiles\PowerShell\7```
+  > The ```$env:ProgramFiles\PowerShell\7``` folder is added to ```$env:PATH```
 
-> The ```$env:ProgramFiles\PowerShell\7``` folder is added to ```$env:PATH```
-
-> Folders for previously released versions are deleted
+  > Folders for previously released versions are deleted
     
 ---
 
-```powershell    
-dotnet tool install --global PowerShell    
-```    
+### DotNet CLI
 
-```powershell    
-msiexec.exe /package PowerShell-7.3.2-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1 ADD_PATH=1    
-```    
+  ```powershell    
+   dotnet tool install --global PowerShell    
+  ```    
 
-# [Releases](https://github.com/PowerShell/PowerShell/releases)
+### MSI
+  
+  ```powershell    
+   msiexec.exe /package PowerShell-7.3.2-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 
+   USE_MU=1 ENABLE_MU=1 ADD_PATH=1    
+  ```    
 
-## Update PowerShell using Windows Package Manager (winget)
+### Winget
 
-```powershell    
-winget upgrade Microsoft.PowerShell    
-```    
+  ```powershell    
+  winget install Microsoft.PowerShell    
+  ```
 
-### You also can install PowerShell by using below command via winget
+---
 
-```powershell    
-winget install Microsoft.PowerShell    
-```    
+# Run
 
-### update with msi
+## powershell core 7+
 
-```powershell    
-msiexec.exe /fmu .\PowerShell-7.3.0-win-x64.msi USE_MU=1 ENABLE_MU=1    
-```    
+  ```powershell
+   pwsh testscript_writefile.ps1
+  ```    
 
-### WinGet resources
+## OS powershell 5
 
-- [winget in Microsoft Docs](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
-- [winget in GitHub repository](https://github.com/microsoft/winget-cli)
+  ```powershell
+   powershell testscript_writefile.ps1
+  ```
+
+---
+
+# Update 
+
+## Winget
+
+  ```powershell    
+  winget upgrade Microsoft.PowerShell    
+  ```    
+
+## MSI
+
+  ```powershell    
+  msiexec.exe /fmu .\PowerShell-7.3.0-win-x64.msi USE_MU=1 ENABLE_MU=1    
+  ```    
+
+---
 
 # Environment
 
-```powershell
-$Env:
-```
+  ```powershell
+   $Env:
+  ```
 
-> ```Env``` is actually a virtual PowerShell drive and environment variables are items on it.
-> There is a special provider ```Get-PSProvider -PSProvider Environment ```   
-> that implements this method of accessing to environment in powershell.
+  > ```Env``` is actually a virtual PowerShell drive and environment variables are items on it.
+  > There is a special provider ```Get-PSProvider -PSProvider Environment ```   
+  > that implements this method of accessing to environment in powershell.
 
 ## There are three scopes of what is called Environment Variables:
 
@@ -211,14 +227,14 @@ Start-Process -FilePath 'C:\Users\Brandon003842\Downloads\ConnectUtility_2.30.9_
     
 ```    
 
-## rename and expand zip
+## Rename and Expand .zip
 
 ```powershell    
 Rename-Item .\Ubuntu.appx .\Ubuntu.zip    
 Expand-Archive .\Ubuntu.zip .\Ubuntu    
 ```    
 
-## - execute
+## Execute
 
 ```powershell    
 Start-Process test.exe    
@@ -226,19 +242,19 @@ Start-Process test.exe
 Invoke-Expression -Command "path...test.exe"    
 ```    
 
-## - set env variable
+## Set ENV Variable
 
 ```powershell    
 $env:AZURE_RESOURCE_GROUP = 'MyTestResourceGroup'    
 ```    
 
-- set env variable persistently
+### Set ENV Persistently
 
 ```powershell    
 [System.Environment]::SetEnvironmentVariable('ResourceGroup','AZ_Resource_Group')    
 ```    
 
-## Get execution policy
+## Get Execution Policy
 
 ```powershell    
  Get-ExecutionPolicy    
@@ -252,26 +268,26 @@ or <br/>
 <code>Set-ExecutionPolicy Bypass -Scope Process    </code>   
 </div> 
 
-## search piped string
+## Search Piped String
 
 ```powershell    
 Select-String -Path "Users\*.csv" -Pattern "Joe"    
 ```    
 
-## download file from web
+## Download File From Web
 
 ```powershell    
 $WebClient = New-Object System.Net.WebClient    
 $WebClient.DownloadFile("https://www.contoso.com/file","C:\path\file")    
 ```    
 
-## invoke-WebRequest
+## Invoke-WebRequest
 
 ```powershell    
 Invoke-WebRequest -Uri "http://www.contoso.com" -OutFile "C:\path\file"    
 ```    
 
-## foreach
+## For Each / foreach
 
 ```powershell    
 # Create an array of folders    
@@ -322,7 +338,7 @@ foreach ($foldername in $Child_Folders.FullName) {
 Get-ChildItem -Recurse -Path C:\ARCHIVE_VOLUMES -Include backupstate.txt | Select-Object Fullname,CreationTime,LastWriteTime,Length    
 ```    
 
-### Reading the Contents of each Text File in Sub-Directories
+## Reading the Contents of each Text File in Sub-Directories
 
 ```powershell    
 ## Find all BackupState.txt files in C:\ARCHIVE_VOLUMES    
@@ -421,23 +437,18 @@ $newUsers.foreach(
  }    
 ```    
 
-## answer prompt
+## Answer / Reply to Yes(y) No(n) Prompt
 
 ```powershell    
  foreach($i in $files) {'y' | powershell -c "Remove-Item $i -Force -ErrorAction silentlycontinue"}    
 ```    
 
-## run in parallel / async
+## Run In Parallel / Async
 
 ```powershell    
 powershell.exe Get-ChildItem C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default | ForEach-Object -Parallel {Remove-Item "$_" -Force -Recurse | Out-Null}    
 powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" | Where-Object Name -NotIn @( 'Cache','Code Cache','databases','Extension State','File System' , 'IndexedDB', 'WebStorage', 'Sessions', 'Service Worker', 'Web Applications', 'Default') | ForEach-Object -Parallel {Copy-Item "$_" -Destination C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default -Recurse -Force}    
 ```
-
-## Gists
-
-### [Sync Chrome Bookmarks](https://gist.github.com/14paxton/c10cfd597e7e7b487e27d641cf964c59#powershell)
-  > used to sync bookmarks file to a repo to update on both mac and windows using bash and powershell when account can not sync due to admin restrictions
 
 # Basic Commands
 
@@ -470,6 +481,7 @@ powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrom
 | Write-Output      | echo, write                   | Sends the specified objects to the next command in the pipeline. If the command is the last command in the pipeline,… |    
 
 ***
+---
 
 | Command alias | Cmdlet name                    | Description of command                                                                                                                                                                             |    
 |---------------|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|    
