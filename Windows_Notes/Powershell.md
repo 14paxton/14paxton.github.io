@@ -34,7 +34,7 @@ Table of contents
 
 # Gists
 
-### [Sync Chrome Bookmarks](https://gist.github.com/14paxton/c10cfd597e7e7b487e27d641cf964c59#powershell)
+## [Sync Chrome Bookmarks](https://gist.github.com/14paxton/c10cfd597e7e7b487e27d641cf964c59#powershell)
   > used to sync bookmarks file to a repo to update on both mac and windows using bash and powershell when account can not sync due to admin restrictions
 
 ---
@@ -45,7 +45,7 @@ Table of contents
 
   > You can launch PowerShell via the Start Menu or ```$env:ProgramFiles\PowerShell\<version>\pwsh.exe```
 
-# [Install 7.3](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)
+## [Install 7.3](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
  <p>PowerShell 7.3 installs to a new directory and runs side-by-side with Windows PowerShell 5.1. </p>
@@ -61,20 +61,20 @@ Table of contents
     
 ---
 
-## DotNet CLI
+### DotNet CLI
 
   ```powershell    
    dotnet tool install --global PowerShell    
   ```    
 
-## MSI
+### MSI
   
   ```powershell    
    msiexec.exe /package PowerShell-7.3.2-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 
    USE_MU=1 ENABLE_MU=1 ADD_PATH=1    
   ```    
 
-## Winget
+### Winget
 
   ```powershell    
   winget install Microsoft.PowerShell    
