@@ -29,23 +29,10 @@ Table of contents
 
 <br/>    
 
-# [PowerShell](https://learn.microsoft.com/en-us/powershell/module/cimcmdlets/?view=powershell-7.3)
+- > [Microsoft Docs](https://learn.microsoft.com/en-us/powershell/module/cimcmdlets/?view=powershell-7.3)
+- > [Releases](https://github.com/PowerShell/PowerShell/releases)
 
-- Run
-
-> powershell core 7+
-
-```powershell
-pwsh testscript_writefile.ps1
-```    
-
-> OS powershell 5
-
-```powershell
-powershell testscript_writefile.ps1
-```
-
-# [Install](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)
+# [Install 7.3](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)
 
 > By default, the package is installed to ```$env:ProgramFiles\PowerShell\<version>```    
 > You can launch PowerShell via the Start Menu or ```$env:ProgramFiles\PowerShell\<version>\pwsh.exe```
@@ -73,30 +60,40 @@ dotnet tool install --global PowerShell
 msiexec.exe /package PowerShell-7.3.2-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1 ADD_PATH=1    
 ```    
 
-# [Releases](https://github.com/PowerShell/PowerShell/releases)
+## Install via winget
 
-## Update PowerShell using Windows Package Manager (winget)
+```powershell    
+winget install Microsoft.PowerShell    
+```
+
+# Quick Scripts
+
+## Run
+
+### powershell core 7+
+
+```powershell
+pwsh testscript_writefile.ps1
+```    
+
+### OS powershell 5
+
+```powershell
+powershell testscript_writefile.ps1
+```
+## Update 
+
+### Windows Package Manager (winget)
 
 ```powershell    
 winget upgrade Microsoft.PowerShell    
 ```    
 
-### You also can install PowerShell by using below command via winget
-
-```powershell    
-winget install Microsoft.PowerShell    
-```    
-
-### update with msi
+### msi
 
 ```powershell    
 msiexec.exe /fmu .\PowerShell-7.3.0-win-x64.msi USE_MU=1 ENABLE_MU=1    
 ```    
-
-### WinGet resources
-
-- [winget in Microsoft Docs](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
-- [winget in GitHub repository](https://github.com/microsoft/winget-cli)
 
 # Environment
 
