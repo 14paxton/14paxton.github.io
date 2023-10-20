@@ -58,7 +58,7 @@ Invoke-WebRequest -URI $DOWNLOAD_URL -OutFile winget.msixbundle -UseBasicParsing
 Add-AppxPackage winget.msixbundle
 ```
 
-# Remove the installer:
+### Remove the installer:
 
 ```powershell
 Remove-Item winget.msixbundle
@@ -76,7 +76,7 @@ Remove-Item winget.msixbundle
       Remove-Item xaml -Recurse
     ```
 
-> If you then get another error that the framework "Microsoft.VCLibs.140.00.UWPDesktop" could not be found, then you can additionally use the following commands to install it:
+  > If you then get another error that the framework "Microsoft.VCLibs.140.00.UWPDesktop" could not be found, then you can additionally use the following commands to install it:
     ```powershell
       Invoke-WebRequest `
           -URI https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx `
@@ -85,7 +85,7 @@ Remove-Item winget.msixbundle
       Remove-Item UWPDesktop.appx
     ```
 
-> Then, repeat the initial commands
+  > Then, repeat the initial commands
 
 > Once you have followed the above steps, you can use winget on the command line. For example, to update PowerShell:
     ```powershell
