@@ -117,7 +117,7 @@ Install-Module -Name Microsoft.WinGet.Client
 winget install --id Logitech.UnifyingSoftware --force --accept-package-agreements --accept-source-agreements -h -l "C:\Users\Brandon003842\LogiTech"    
 ```
     
-### Upgrade    
+### [Upgrade](https://learn.microsoft.com/en-us/windows/package-manager/winget/upgrade)    
     
 ```bash    
 winget upgrade --all --include-unknown    
