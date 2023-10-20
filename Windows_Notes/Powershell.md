@@ -32,10 +32,13 @@ Table of contents
 - > [Microsoft Docs](https://learn.microsoft.com/en-us/powershell/module/cimcmdlets/?view=powershell-7.3)
 - > [Releases](https://github.com/PowerShell/PowerShell/releases)
 
-# [Install 7.3](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)
+# [Installing](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-5.1)
 
-> By default, the package is installed to ```$env:ProgramFiles\PowerShell\<version>```    
-> You can launch PowerShell via the Start Menu or ```$env:ProgramFiles\PowerShell\<version>\pwsh.exe```
+  > By default, the package is installed to ```$env:ProgramFiles\PowerShell\<version>```    
+
+  > You can launch PowerShell via the Start Menu or ```$env:ProgramFiles\PowerShell\<version>\pwsh.exe```
+
+# [Install 7.3](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
  <p>PowerShell 7.3 installs to a new directory and runs side-by-side with Windows PowerShell 5.1. </p>
@@ -43,12 +46,11 @@ Table of contents
  <p>PowerShell 7.3 is an in-place upgrade that replaces PowerShell 7.0 and lower.</p>       
 </div> 
 
+  > PowerShell 7.3 is installed to ```$env:ProgramFiles\PowerShell\7```
 
-> PowerShell 7.3 is installed to ```$env:ProgramFiles\PowerShell\7```
+  > The ```$env:ProgramFiles\PowerShell\7``` folder is added to ```$env:PATH```
 
-> The ```$env:ProgramFiles\PowerShell\7``` folder is added to ```$env:PATH```
-
-> Folders for previously released versions are deleted
+  > Folders for previously released versions are deleted
     
 ---
 
