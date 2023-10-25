@@ -68,6 +68,7 @@ Table of contents
 # For Windows
 
 * ## [WSL](https://learn.microsoft.com/en-us/windows/wsl/install-on-server)
+* ## [Powertoys](https://learn.microsoft.com/en-us/windows/powertoys/install)
 * ## [Ubuntu Subsystem](https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions)
   ### Install
     * #### powershell
