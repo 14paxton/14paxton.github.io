@@ -30,7 +30,7 @@ Table of contents
 <br/>    
     
 # [WingetCLI](https://github.com/microsoft/winget-cli)    
-  - > [WingetRun](https://github.com/winget-run)    
+  - > [WingetRun - Find WinGet Packages](https://github.com/winget-run)    
   - > [Customize Settings](https://github.com/microsoft/winget-cli/blob/master/doc/Settings.md)
   - > [Microsoft Winget Docs](https://learn.microsoft.com/en-us/windows/package-manager/winget/) 
 
@@ -116,12 +116,82 @@ Install-Module -Name Microsoft.WinGet.Client
 ```powershell    
 winget install --id Logitech.UnifyingSoftware --force --accept-package-agreements --accept-source-agreements -h -l "C:\Users\Brandon003842\LogiTech"    
 ```
+
+> install multiple pieces of software
+
+```powershell
+winget install Microsoft.AzureStorageExplorer; winget install Microsoft.VisualStudioCode;  winget install Microsoft.AzureCLI
+```
+
+#### Options
+
+| **_Option_** | Description |  |  |  |
+|:---:|---|---|---|---|
+| **_-m, --manifest_** | Must be followed by the path to the manifest (YAML) file. You can use the manifest to run the install experience from a local YAML file. |
+| **_--id_** | Limits the install to the ID of the application. |
+| **_--name_** | Limits the search to the name of the application. |
+| **_--moniker_** | Limits the search to the moniker listed for the application. |
+| **_-v, --version_** | Enables you to specify an exact version to install. If not specified, latest will install the highest versioned application. |
+| **_-s, --source_** | Restricts the search to the source name provided. Must be followed by the source name. |
+| **_--scope_** | Allows you to specify if the installer should target user or machine scope.|
+| **_-e, --exact_** | Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |
+| **_-i, --interactive_** | Runs the installer in interactive mode. The default experience shows installer progress. |
+| **_-h, --silent_** | Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress. |
+| **_--locale_** | Specifies which locale to use (BCP47 format). |
+| **_-o, --log_** | Directs the logging to a log file. You must provide a path to a file that you have the write rights to. |
+| **_--override_** | A string that will be passed directly to the installer. |
+| **_-l, --location_** | Location to install to (if supported). |
+| **_--force_** | Overrides the installer hash check. Not recommended. |
     
 ### [Upgrade](https://learn.microsoft.com/en-us/windows/package-manager/winget/upgrade)    
     
-```bash    
+```powwershell    
 winget upgrade --all --include-unknown    
 ```
+
+### Uninstall
+
+```powershell
+winget uninstall Microsoft.AzureStorageExplorer
+```
+
+#### Options
+
+| **Option** 	| Description 	|
+|:---:	|---	|
+| **-m, --manifest** 	| Must be followed by the path to the manifest (YAML) file. You can use the manifest to run the uninstall experience from a local YAML file. 	|
+| **--id** 	| Limits the uninstall to the ID of the application. 	|
+| **--name** 	| Limits the search to the name of the application. 	|
+| **--moniker** 	| Limits the search to the moniker listed for the application. 	|
+| **-v, --version** 	| Enables you to specify an exact version to uninstall. If not specified, latest will uninstall the highest versioned application. 	|
+| **-s, --source** 	| Restricts the search to the source name provided. Must be followed by the source name. 	|
+| **-e, --exact** 	| Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. 	|
+| **-i, --interactive** 	| Runs the uninstaller in interactive mode. The default experience shows uninstaller progress. 	|
+| **-h, --silent** 	| Runs the uninstaller in silent mode. This suppresses all UI. The default experience shows uninstaller progress. 	|
+| **-o, --log** 	| Directs the logging to a log file. You must provide a path to a file that you have the write rights to. 	|
+| _--locale_ 	| Specifies which locale to use (BCP47 format). 	|
+| _-o, --log_ 	| Directs the logging to a log file. You must provide a path to a file that you have the write rights to. 	|
+| _--override_ 	| A string that will be passed directly to the installer. 	|
+| _-l, --location_ 	| Location to install to (if supported). 	|
+| _--force_ 	| Overrides the installer hash check. Not recommended. 	|
+
+### Find software to install
+
+```powershell
+winget search
+```
+
+### Browse a Windows Package Manage repository
+
+```powershell
+manifests / m / Microsoft / PowerShell / 7.1.4.0
+```
+
+# [NuGet](https://learn.microsoft.com/en-us/nuget/)
+
+## Install
+
+### [Using dotnet CLI](https://learn.microsoft.com/en-us/nuget/consume-packages/install-use-packages-dotnet-cli)
 
 # Chocolatey    
     
