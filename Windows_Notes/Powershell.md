@@ -452,6 +452,55 @@ powershell.exe Get-ChildItem C:\Users\$env:UserName\source\repos\GitHub\Veridian
 powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" | Where-Object Name -NotIn @( 'Cache','Code Cache','databases','Extension State','File System' , 'IndexedDB', 'WebStorage', 'Sessions', 'Service Worker', 'Web Applications', 'Default') | ForEach-Object -Parallel {Copy-Item "$_" -Destination C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default -Recurse -Force}    
 ```
 
+## JSON
+
+### [ConvertFrom-Json](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-5.1)
+
+```powershell
+#USING POWERSHELL TO WRITE JSON
+
+$obj = @{
+    "PropertyName" = "PropertyValue"
+    "ObjectName" = @{
+        "ObjectPropertyName" = "ObjectPropertyValue"
+    }
+}
+
+# Convert object to JSON
+$json = $obj | ConvertTo-Json
+
+# Save JSON to file
+$json | Set-Content -Path C:\alkane\example.json
+
+#USING POWERSHELL TO READ JSON
+
+# Load JSON file
+$json = Get-Content -Path C:\alkane\example.json -Raw | ConvertFrom-Json
+
+# Access JSON properties
+$json.PropertyName
+$json.ObjectName.PropertyName
+
+# USING POWERSHELL TO ITERATE THROUGH JSON
+
+$obj = @{
+    "ObjectName1" = @{
+        "Object1PropertyName1" = "Object1PropertyValue1"
+        "Object1PropertyName2" = "Object1PropertyValue2"
+    }
+    "ObjectName2" = @{
+        "Object2PropertyName1" = "Object2PropertyValue1"
+        "Object2PropertyName2" = "Object2PropertyValue2"
+    }
+}
+
+# Convert object to JSON
+$json = $obj | ConvertTo-Json
+
+# Save JSON to file
+$json | Set-Content -Path C:\alkane\example.json
+```
+
 # Basic Commands
 
 | Command name      | Alias                         | Description                                                                                                           |    
