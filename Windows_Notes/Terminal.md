@@ -28,11 +28,20 @@ Table of contents
 ***    
     
 <br/>    
-    
+# Resources
+
+- > [Windows Docs](https://learn.microsoft.com/en-us/windows/terminal/)
+
 # Install    
-    
+
+## Winget
+
 - via powershell    
     
 ```bash    
 winget install --id Microsoft.WindowsTerminal -e    
 ```
+
+## Download .zip package
+
+- > [Releases](https://github.com/microsoft/terminal/releases)
