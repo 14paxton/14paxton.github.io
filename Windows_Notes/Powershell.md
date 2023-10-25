@@ -283,7 +283,7 @@ $WebClient = New-Object System.Net.WebClient
 $WebClient.DownloadFile("https://www.contoso.com/file","C:\path\file")    
 ```    
 
-## Invoke-WebRequest
+## [Invoke-WebRequest](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.3&viewFallbackFrom=powershell-6)
 
 ```powershell    
 Invoke-WebRequest -Uri "http://www.contoso.com" -OutFile "C:\path\file"    
