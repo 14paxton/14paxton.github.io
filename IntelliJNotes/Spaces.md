@@ -29,7 +29,9 @@ Table of contents
 
 <br/>    
 
-# creating dev env
+# Creating An Environment
+
+## Example Used With Java7 and Grails2
 
 1. added repo
 2. created application then connected it to repo
