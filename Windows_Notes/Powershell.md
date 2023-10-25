@@ -456,9 +456,10 @@ powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrom
 
 ### [ConvertFrom-Json](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-5.1)
 
-```powershell
-#USING POWERSHELL TO WRITE JSON
 
+#### USING POWERSHELL TO WRITE JSON
+
+```powershell
 $obj = @{
     "PropertyName" = "PropertyValue"
     "ObjectName" = @{
@@ -471,18 +472,22 @@ $json = $obj | ConvertTo-Json
 
 # Save JSON to file
 $json | Set-Content -Path C:\alkane\example.json
+```
 
-#USING POWERSHELL TO READ JSON
+#### USING POWERSHELL TO READ JSON
 
+```powershell
 # Load JSON file
 $json = Get-Content -Path C:\alkane\example.json -Raw | ConvertFrom-Json
 
 # Access JSON properties
 $json.PropertyName
 $json.ObjectName.PropertyName
+```
 
-# USING POWERSHELL TO ITERATE THROUGH JSON
+#### USING POWERSHELL TO ITERATE THROUGH JSON
 
+```powershell
 $obj = @{
     "ObjectName1" = @{
         "Object1PropertyName1" = "Object1PropertyValue1"
