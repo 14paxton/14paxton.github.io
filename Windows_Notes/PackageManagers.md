@@ -125,8 +125,8 @@ winget install Microsoft.AzureStorageExplorer; winget install Microsoft.VisualSt
 
 #### Options
 
-| **_Option_** | Description |  |  |  |
-|:---:|---|---|---|---|
+| **Option** 	| Description 	|
+|:---:	|---	|
 | **_-m, --manifest_** | Must be followed by the path to the manifest (YAML) file. You can use the manifest to run the install experience from a local YAML file. |
 | **_--id_** | Limits the install to the ID of the application. |
 | **_--name_** | Limits the search to the name of the application. |
