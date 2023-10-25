@@ -152,7 +152,11 @@ Table of contents
 [System.Environment]::GetEnvironmentVariables()     
 ```
 
-## set ENV variable
+## Set $env variable
+
+```powershell    
+$env:AZURE_RESOURCE_GROUP = 'MyTestResourceGroup'    
+```    
 
 ```powershell
 [System.Environment]::SetEnvironmentVariable($varName, $varValue, $scope)
@@ -180,6 +184,12 @@ Get-ChildItem -Path 'Env:\
     without specifying scope.       
 </div> 
 
+### Set ENV Persistently
+
+```powershell    
+[System.Environment]::SetEnvironmentVariable('ResourceGroup','AZ_Resource_Group')    
+```    
+
 # WSL
 
 ## get a list of distros
@@ -194,6 +204,218 @@ wslconfig /l
 wsl    
 ```    
 
+# JSON
+
+## [ConvertFrom-Json](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-5.1)
+
+### USING POWERSHELL TO WRITE JSON
+
+```powershell
+$obj = @{
+    "PropertyName" = "PropertyValue"
+    "ObjectName" = @{
+        "ObjectPropertyName" = "ObjectPropertyValue"
+    }
+}
+
+# Convert object to JSON
+$json = $obj | ConvertTo-Json
+
+# Save JSON to file
+$json | Set-Content -Path C:\alkane\example.json
+```
+
+### USING POWERSHELL TO READ JSON
+
+```powershell
+# Load JSON file
+$json = Get-Content -Path C:\alkane\example.json -Raw | ConvertFrom-Json
+
+# Access JSON properties
+$json.PropertyName
+$json.ObjectName.PropertyName
+```
+
+### USING POWERSHELL TO ITERATE THROUGH JSON
+
+```powershell
+$obj = @{
+    "ObjectName1" = @{
+        "Object1PropertyName1" = "Object1PropertyValue1"
+        "Object1PropertyName2" = "Object1PropertyValue2"
+    }
+    "ObjectName2" = @{
+        "Object2PropertyName1" = "Object2PropertyValue1"
+        "Object2PropertyName2" = "Object2PropertyValue2"
+    }
+}
+
+# Convert object to JSON
+$json = $obj | ConvertTo-Json
+
+# Save JSON to file
+$json | Set-Content -Path C:\alkane\example.json
+```
+
+# XML
+
+## Write
+
+```powershell
+# Create new XML document
+$xml = New-Object -TypeName System.Xml.XmlDocument
+
+# Create root node
+$root = $xml.CreateElement("RootNode")
+$xml.AppendChild($root)
+
+# Create child node with attribute and value
+$child = $xml.CreateElement("ChildNode")
+$child.SetAttribute("AttributeName", "AttributeValue")
+$child.InnerText = "Inner text"
+$root.AppendChild($child)
+
+# Save XML to file
+$xml.Save("C:\alkane\example.xml")
+```
+
+## Read
+
+```powershell
+# Load XML file
+[xml]$xml = Get-Content -Path C:\alkane\example.xml
+
+# Access XML elements and attributes
+$xml.RootNode.ChildNode.AttributeName
+$xml.RootNode.ChildNode.InnerText
+
+```
+
+## Iterate
+
+````powershell
+# Create new XML document
+$xml = New-Object -TypeName System.Xml.XmlDocument
+
+# Create root node
+$root = $xml.CreateElement("RootNode")
+$xml.AppendChild($root)
+
+# Create child node with attribute and value
+$child = $xml.CreateElement("ChildNode")
+$child.SetAttribute("AttributeName", "AttributeValue1")
+$child.InnerText = "Inner text 1"
+$root.AppendChild($child)
+
+# Create another child node with attribute and value
+$child = $xml.CreateElement("ChildNode")
+$child.SetAttribute("AttributeName", "AttributeValue2")
+$child.InnerText = "Inner text 2"
+$root.AppendChild($child)
+
+# Save XML to file
+$xml.Save("C:\alkane\example.xml")
+````
+
+# Read From txt File
+
+```powershell
+$content = get-content C:\alkane.txt -tail 3
+
+foreach($line in $content) {
+    write-host $line
+}
+```
+
+# Find cmdlets / functions
+
+```powershell
+#Find cmdlets
+Get-Command | where-object CommandType -eq "Cmdlet"
+
+#Find functions
+Get-Command | where-object CommandType -eq "Function"
+```
+
+# [Invoke-WebRequest](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.3&viewFallbackFrom=powershell-6)
+
+```powershell    
+Invoke-WebRequest -Uri "http://www.contoso.com" -OutFile "C:\path\file"    
+```   
+
+## get file http
+
+```powershell    
+wget "http://www.contoso.com" -outfile "file"    
+```
+
+## Download File From Web
+
+```powershell    
+$WebClient = New-Object System.Net.WebClient    
+$WebClient.DownloadFile("https://www.contoso.com/file","C:\path\file")    
+```
+
+# For Each / foreach / ForEach-Object
+
+- > [foreach(){}](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_foreach?view=powershell-7.3)
+- > [ForEach-Object](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.3)
+
+```powershell    
+# Create an array of folders    
+$folders = @('C:\Folder','C:\Program Files\Folder2','C:\Folder3')    
+    
+# Perform iteration to create the same file in each folder    
+foreach ($i in $folders) {    
+    Add-Content -Path "$i\SampleFile.txt" -Value "This is the content of the file"    
+}    
+```    
+
+> or
+
+```powershell    
+$folders = @('C:\Folder','C:\Program Files\Folder2','C:\Folder3')    
+$folders | ForEach-Object (Add-Content -Path "$_\SampleFile.txt" -Value "This is the content of the file")    
+```    
+
+> or
+
+```powershell    
+$folders = @('C:\Folder','C:\Program Files\Folder2','C:\Folder3')    
+$folders.ForEach({    
+	Add-Content -Path "$_\SampleFile.txt" -Value "This is the content of the file"    
+})    
+```    
+
+# Run In Parallel / Async
+
+```powershell    
+powershell.exe Get-ChildItem C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default | ForEach-Object -Parallel {Remove-Item "$_" -Force -Recurse | Out-Null}    
+powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" | Where-Object Name -NotIn @( 'Cache','Code Cache','databases','Extension State','File System' , 'IndexedDB', 'WebStorage', 'Sessions', 'Service Worker', 'Web Applications', 'Default') | ForEach-Object -Parallel {Copy-Item "$_" -Destination C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default -Recurse -Force}    
+```
+
+# Get-ChildItem cmdlet
+
+> you can confirm that the files were created or update inside each of the subfolders
+
+```powershell    
+Get-ChildItem -Recurse -Path C:\ARCHIVE_VOLUMES -Include backupstate.txt | Select-Object Fullname,CreationTime,LastWriteTime,Length    
+```    
+
+# Map Network Drive / [New-PSDrive](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-psdrive?view=powershell-5.1) / [Remove-PSDrive](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/remove-psdrive?view=powershell-5.1)
+
+```powershell
+New-PSDrive -Persist -Name T -PSProvider FileSystem -Root \\ss.test-dev.net\BPAXTON_TEST -Scope Global
+Remove-PSDrive -Name T -Force -PSProvider FileSystem -Scope Global
+```
+
+## cmd Net Use
+
+```powershell
+net use x: "\\ss.test-dev.net\BPAXTON_TEST"
+net use /delete x:
+```
+
 # Quick Scripts
 
 ## lock screen
@@ -202,16 +424,6 @@ wsl
 $xCmdString = {rundll32.exe user32.dll,LockWorkStation}    
     
 Invoke-Command $xCmdString    
-```    
-
-## get file http
-
-```powershell    
-Invoke-WebRequest -Uri "http://www.contoso.com" -OutFile "C:\path\file"    
-```    
-
-```powershell    
-wget "http://www.contoso.com" -outfile "file"    
 ```    
 
 ## Get version
@@ -243,19 +455,7 @@ Expand-Archive .\Ubuntu.zip .\Ubuntu
 Start-Process test.exe    
 #or    
 Invoke-Expression -Command "path...test.exe"    
-```    
-
-## Set ENV Variable
-
-```powershell    
-$env:AZURE_RESOURCE_GROUP = 'MyTestResourceGroup'    
-```    
-
-### Set ENV Persistently
-
-```powershell    
-[System.Environment]::SetEnvironmentVariable('ResourceGroup','AZ_Resource_Group')    
-```    
+```
 
 ## Get Execution Policy
 
@@ -275,48 +475,7 @@ or <br/>
 
 ```powershell    
 Select-String -Path "Users\*.csv" -Pattern "Joe"    
-```    
-
-## Download File From Web
-
-```powershell    
-$WebClient = New-Object System.Net.WebClient    
-$WebClient.DownloadFile("https://www.contoso.com/file","C:\path\file")    
-```    
-
-## [Invoke-WebRequest](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.3&viewFallbackFrom=powershell-6)
-
-```powershell    
-Invoke-WebRequest -Uri "http://www.contoso.com" -OutFile "C:\path\file"    
-```    
-
-## For Each / foreach
-
-```powershell    
-# Create an array of folders    
-$folders = @('C:\Folder','C:\Program Files\Folder2','C:\Folder3')    
-    
-# Perform iteration to create the same file in each folder    
-foreach ($i in $folders) {    
-    Add-Content -Path "$i\SampleFile.txt" -Value "This is the content of the file"    
-}    
-```    
-
-> or
-
-```powershell    
-$folders = @('C:\Folder','C:\Program Files\Folder2','C:\Folder3')    
-$folders | ForEach-Object (Add-Content -Path "$_\SampleFile.txt" -Value "This is the content of the file")    
-```    
-
-> or
-
-```powershell    
-$folders = @('C:\Folder','C:\Program Files\Folder2','C:\Folder3')    
-$folders.ForEach({    
-	Add-Content -Path "$_\SampleFile.txt" -Value "This is the content of the file"    
-})    
-```    
+```
 
 ### Creating a File in Each Sub-Folder in a Directory using the ForEach Statement
 
@@ -331,14 +490,6 @@ $Child_Folders = Get-ChildItem -Path $TOP_FOLDER -Recurse | Where-Object { $_.PS
 foreach ($foldername in $Child_Folders.FullName) {    
    (get-date -Format G) | Out-File -FilePath "$($foldername)\BackupState.txt" -Force    
 }    
-```    
-
-## Get-ChildItem cmdlet
-
-> you can confirm that the files were created or update inside each of the subfolders
-
-```powershell    
-Get-ChildItem -Recurse -Path C:\ARCHIVE_VOLUMES -Include backupstate.txt | Select-Object Fullname,CreationTime,LastWriteTime,Length    
 ```    
 
 ## Reading the Contents of each Text File in Sub-Directories
@@ -445,146 +596,6 @@ $newUsers.foreach(
 ```powershell    
  foreach($i in $files) {'y' | powershell -c "Remove-Item $i -Force -ErrorAction silentlycontinue"}    
 ```    
-
-## Run In Parallel / Async
-
-```powershell    
-powershell.exe Get-ChildItem C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default | ForEach-Object -Parallel {Remove-Item "$_" -Force -Recurse | Out-Null}    
-powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" | Where-Object Name -NotIn @( 'Cache','Code Cache','databases','Extension State','File System' , 'IndexedDB', 'WebStorage', 'Sessions', 'Service Worker', 'Web Applications', 'Default') | ForEach-Object -Parallel {Copy-Item "$_" -Destination C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default -Recurse -Force}    
-```
-
-## JSON
-
-### [ConvertFrom-Json](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-5.1)
-
-#### USING POWERSHELL TO WRITE JSON
-
-```powershell
-$obj = @{
-    "PropertyName" = "PropertyValue"
-    "ObjectName" = @{
-        "ObjectPropertyName" = "ObjectPropertyValue"
-    }
-}
-
-# Convert object to JSON
-$json = $obj | ConvertTo-Json
-
-# Save JSON to file
-$json | Set-Content -Path C:\alkane\example.json
-```
-
-#### USING POWERSHELL TO READ JSON
-
-```powershell
-# Load JSON file
-$json = Get-Content -Path C:\alkane\example.json -Raw | ConvertFrom-Json
-
-# Access JSON properties
-$json.PropertyName
-$json.ObjectName.PropertyName
-```
-
-#### USING POWERSHELL TO ITERATE THROUGH JSON
-
-```powershell
-$obj = @{
-    "ObjectName1" = @{
-        "Object1PropertyName1" = "Object1PropertyValue1"
-        "Object1PropertyName2" = "Object1PropertyValue2"
-    }
-    "ObjectName2" = @{
-        "Object2PropertyName1" = "Object2PropertyValue1"
-        "Object2PropertyName2" = "Object2PropertyValue2"
-    }
-}
-
-# Convert object to JSON
-$json = $obj | ConvertTo-Json
-
-# Save JSON to file
-$json | Set-Content -Path C:\alkane\example.json
-```
-
-## XML
-
-### Write
-
-```powershell
-# Create new XML document
-$xml = New-Object -TypeName System.Xml.XmlDocument
-
-# Create root node
-$root = $xml.CreateElement("RootNode")
-$xml.AppendChild($root)
-
-# Create child node with attribute and value
-$child = $xml.CreateElement("ChildNode")
-$child.SetAttribute("AttributeName", "AttributeValue")
-$child.InnerText = "Inner text"
-$root.AppendChild($child)
-
-# Save XML to file
-$xml.Save("C:\alkane\example.xml")
-```
-
-### Read
-
-```powershell
-# Load XML file
-[xml]$xml = Get-Content -Path C:\alkane\example.xml
-
-# Access XML elements and attributes
-$xml.RootNode.ChildNode.AttributeName
-$xml.RootNode.ChildNode.InnerText
-
-```
-
-### Iterate
-
-````powershell
-# Create new XML document
-$xml = New-Object -TypeName System.Xml.XmlDocument
-
-# Create root node
-$root = $xml.CreateElement("RootNode")
-$xml.AppendChild($root)
-
-# Create child node with attribute and value
-$child = $xml.CreateElement("ChildNode")
-$child.SetAttribute("AttributeName", "AttributeValue1")
-$child.InnerText = "Inner text 1"
-$root.AppendChild($child)
-
-# Create another child node with attribute and value
-$child = $xml.CreateElement("ChildNode")
-$child.SetAttribute("AttributeName", "AttributeValue2")
-$child.InnerText = "Inner text 2"
-$root.AppendChild($child)
-
-# Save XML to file
-$xml.Save("C:\alkane\example.xml")
-````
-
-## Read From txt File
-
-```powershell
-$content = get-content C:\alkane.txt -tail 3
-
-foreach($line in $content) {
-    write-host $line
-}
-```
-
-## Find cmdlets / functions
-
-```powershell
-#Find cmdlets
-Get-Command | where-object CommandType -eq "Cmdlet"
-
-#Find functions
-Get-Command | where-object CommandType -eq "Function"
-```
 
 # Basic Commands
 

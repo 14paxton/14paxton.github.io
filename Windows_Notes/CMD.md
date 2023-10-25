@@ -114,6 +114,16 @@ ___
 ---
 ___
 
+* ```bat
+  net use
+  ```
+  > Connects a computer to or disconnects a computer from a shared resource, or displays information about computer connections. The command also controls persistent net connections. Used without
+  parameters, net use retrieves a list of network connections.
+  - > [Microsoft Docs](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/gg651155(v=ws.11))
+
+---
+___
+
 # XCopy
 
 > ```/y``` Suppresses prompting to confirm that you want to overwrite an existing destination file.    
