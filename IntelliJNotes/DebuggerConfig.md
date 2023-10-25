@@ -24,12 +24,14 @@ Table of contents
 </details>    
 
 <br/>    
-    
+
 ***    
 
 <br/>    
 
-# Micronaut runnin in intelli J
+# Micronaut
+
+## Running Application in Debug mode
 
 > can run gradle command and attach any debugger listening on 5005
 

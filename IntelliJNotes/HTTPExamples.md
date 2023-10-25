@@ -31,9 +31,11 @@ Table of contents
 
 <br/>    
 
-# [IntelliJ HTTP Client](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html)
+# [HTTP Client](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html)
 
-# create GROUP_COMPARE
+## Example Scripts
+
+### create GROUP_COMPARE
 
 ```shell    
 POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json    
@@ -48,7 +50,7 @@ POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
     
 ```    
 
-# update GROUP_COMPARE
+### update GROUP_COMPARE
 
 ```shell    
 POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json    
@@ -63,7 +65,7 @@ POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
     
 ```    
 
-# SHARE
+### SHARE
 
 ```shell    
 POST http://192.168.12.26:8080/am/userGroups/v1/599/shareContent-Type: application/json    
@@ -74,13 +76,13 @@ POST http://192.168.12.26:8080/am/userGroups/v1/599/shareContent-Type: applicati
     
 ```    
 
-# DELETE
+### DELETE
 
 ```shell    
 DELETE http://192.168.12.26:8080/am/userGroups/v1/599    
 ```    
 
-# create RESULT_SHARE
+### create RESULT_SHARE
 
 ```shell    
 POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: application/json    
@@ -94,7 +96,7 @@ POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: appli
     
 ```    
 
-# update RESULT_SHARE
+### update RESULT_SHARE
 
 ```shell    
 POST http://192.168.12.26:8080/am/userGroups/v1/groupContent-Type: application/json    
