@@ -35,15 +35,16 @@ Table of contents
 # Gists
 
 ## [Sync Chrome Bookmarks](https://gist.github.com/14paxton/c10cfd597e7e7b487e27d641cf964c59#powershell)
-  > used to sync bookmarks file to a repo to update on both mac and windows using bash and powershell when account can not sync due to admin restrictions
+
+> used to sync bookmarks file to a repo to update on both mac and windows using bash and powershell when account can not sync due to admin restrictions
 
 ---
 
 # [Installing](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-5.1)
 
-  > By default, the package is installed to ```$env:ProgramFiles\PowerShell\<version>```    
+> By default, the package is installed to ```$env:ProgramFiles\PowerShell\<version>```
 
-  > You can launch PowerShell via the Start Menu or ```$env:ProgramFiles\PowerShell\<version>\pwsh.exe```
+> You can launch PowerShell via the Start Menu or ```$env:ProgramFiles\PowerShell\<version>\pwsh.exe```
 
 ## [Install 7.3](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)
 
@@ -53,11 +54,11 @@ Table of contents
  <p>PowerShell 7.3 is an in-place upgrade that replaces PowerShell 7.0 and lower.</p>       
 </div> 
 
-  > PowerShell 7.3 is installed to ```$env:ProgramFiles\PowerShell\7```
+> PowerShell 7.3 is installed to ```$env:ProgramFiles\PowerShell\7```
 
-  > The ```$env:ProgramFiles\PowerShell\7``` folder is added to ```$env:PATH```
+> The ```$env:ProgramFiles\PowerShell\7``` folder is added to ```$env:PATH```
 
-  > Folders for previously released versions are deleted
+> Folders for previously released versions are deleted
     
 ---
 
@@ -68,7 +69,7 @@ Table of contents
   ```    
 
 ### MSI
-  
+
   ```powershell    
    msiexec.exe /package PowerShell-7.3.2-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 
    USE_MU=1 ENABLE_MU=1 ADD_PATH=1    
@@ -100,7 +101,7 @@ Table of contents
 
 ---
 
-# Update 
+# Update
 
 ## Winget
 
@@ -122,9 +123,9 @@ Table of contents
    $Env:
   ```
 
-  > ```Env``` is actually a virtual PowerShell drive and environment variables are items on it.
-  > There is a special provider ```Get-PSProvider -PSProvider Environment ```   
-  > that implements this method of accessing to environment in powershell.
+> ```Env``` is actually a virtual PowerShell drive and environment variables are items on it.
+> There is a special provider ```Get-PSProvider -PSProvider Environment ```   
+> that implements this method of accessing to environment in powershell.
 
 ## There are three scopes of what is called Environment Variables:
 
@@ -456,7 +457,6 @@ powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrom
 
 ### [ConvertFrom-Json](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-5.1)
 
-
 #### USING POWERSHELL TO WRITE JSON
 
 ```powershell
@@ -504,6 +504,86 @@ $json = $obj | ConvertTo-Json
 
 # Save JSON to file
 $json | Set-Content -Path C:\alkane\example.json
+```
+
+## XML
+
+### Write
+
+```powershell
+# Create new XML document
+$xml = New-Object -TypeName System.Xml.XmlDocument
+
+# Create root node
+$root = $xml.CreateElement("RootNode")
+$xml.AppendChild($root)
+
+# Create child node with attribute and value
+$child = $xml.CreateElement("ChildNode")
+$child.SetAttribute("AttributeName", "AttributeValue")
+$child.InnerText = "Inner text"
+$root.AppendChild($child)
+
+# Save XML to file
+$xml.Save("C:\alkane\example.xml")
+```
+
+### Read
+
+```powershell
+# Load XML file
+[xml]$xml = Get-Content -Path C:\alkane\example.xml
+
+# Access XML elements and attributes
+$xml.RootNode.ChildNode.AttributeName
+$xml.RootNode.ChildNode.InnerText
+
+```
+
+### Iterate
+
+````powershell
+# Create new XML document
+$xml = New-Object -TypeName System.Xml.XmlDocument
+
+# Create root node
+$root = $xml.CreateElement("RootNode")
+$xml.AppendChild($root)
+
+# Create child node with attribute and value
+$child = $xml.CreateElement("ChildNode")
+$child.SetAttribute("AttributeName", "AttributeValue1")
+$child.InnerText = "Inner text 1"
+$root.AppendChild($child)
+
+# Create another child node with attribute and value
+$child = $xml.CreateElement("ChildNode")
+$child.SetAttribute("AttributeName", "AttributeValue2")
+$child.InnerText = "Inner text 2"
+$root.AppendChild($child)
+
+# Save XML to file
+$xml.Save("C:\alkane\example.xml")
+````
+
+## Read From txt File
+
+```powershell
+$content = get-content C:\alkane.txt -tail 3
+
+foreach($line in $content) {
+    write-host $line
+}
+```
+
+## Find cmdlets / functions
+
+```powershell
+#Find cmdlets
+Get-Command | where-object CommandType -eq "Cmdlet"
+
+#Find functions
+Get-Command | where-object CommandType -eq "Function"
 ```
 
 # Basic Commands
