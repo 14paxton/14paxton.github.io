@@ -71,7 +71,7 @@ prepend in front of bootstrap class path
 
 # ORIGINAL
 
-```properties    
+```shell    
 -Xms128m=
 -Xmx750m=
 -XX=ReservedCodeCacheSize=240m
@@ -91,7 +91,7 @@ prepend in front of bootstrap class path
 
 [UPDATED]( https://medium.com/stochastic-stories/tuning-my-intellij-ide-8255781f6a0d)
 
-```properties    
+```shell    
 -Xms15g=
 -XX=ReservedCodeCacheSize=2g
 -XX=+UseCompressedOops
@@ -109,7 +109,6 @@ prepend in front of bootstrap class path
 -Djdk.attach.allowAttachSelf=true
 -Dkotlinx.coroutines.debug=off
 -Djdk.module.illegalAccess.silent=true
-
 ```    
 
 [other custom settings]( http://tomaszdziurko.com/2015/11/1-and-the-only-one-to-customize-intellij-idea-memory-settings/)
@@ -117,15 +116,13 @@ prepend in front of bootstrap class path
 [boost performance putting caches in memory]( https://medium.com/@sergio.igwt/boosting-performance-of-intellij-idea-and-the-rest-of-jetbrains-ides-cd34952bb978)
 
 ```shell
-
 mklink /D "R:\Temp\intellij\caches" "C:\Users\bpaxton\.IntelliJIdea2019.3\system\caches"    
 mklink /D "R:\Temp\intellij\index" "C:\Users\bpaxton\.IntelliJIdea2019.3\system\index"
-
 ```
 
 # current
 
-```properties    
+```shell    
 -server=
 -Xms8g=
 -Xmx8g=
@@ -159,7 +156,7 @@ mklink /D "R:\Temp\intellij\index" "C:\Users\bpaxton\.IntelliJIdea2019.3\system\
 
 # working
 
-```properties    
+```shell    
   # custom IntelliJ IDEA VM options (expand/override 'bin/idea.vmoptions')    
 -ea=
 -server=
@@ -207,7 +204,6 @@ jvmArgs = ["-server",
            "-XX:+AlwaysPreTouch",
            "-XX:+TieredCompilation",
            "-XX:+UseCompressedOops", "-Xdebug", "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005", "-Xmx8g"]
-
 ```
 
 ### set remote connection
