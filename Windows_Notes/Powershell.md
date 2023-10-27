@@ -449,13 +449,24 @@ Rename-Item .\Ubuntu.appx .\Ubuntu.zip
 Expand-Archive .\Ubuntu.zip .\Ubuntu    
 ```    
 
-## Execute
+## Execute / Start / Run process / Application
 
 ```powershell    
 Start-Process test.exe    
 #or    
 Invoke-Expression -Command "path...test.exe"    
 ```
+
+## Handle Expected Error
+
+```powershell
+ps notepad -ErrorAction SilentlyContinue | kill -PassThru
+```
+
+  > without aliases
+    ```powershell
+     Get-Process notepad -ErrorAction SilentlyContinue | Stop-Process -PassThru
+    ```
 
 ## Get Execution Policy
 
