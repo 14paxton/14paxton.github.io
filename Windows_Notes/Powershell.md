@@ -463,11 +463,11 @@ Invoke-Expression -Command "path...test.exe"
 ps notepad -ErrorAction SilentlyContinue | kill -PassThru
 ```
 
-  > without aliases
+- > without aliases
 
-    ```powershell
+     ```powershell
      Get-Process notepad -ErrorAction SilentlyContinue | Stop-Process -PassThru
-    ```
+     ```
 
 ## Get Execution Policy
 
