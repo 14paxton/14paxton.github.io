@@ -464,6 +464,7 @@ ps notepad -ErrorAction SilentlyContinue | kill -PassThru
 ```
 
   > without aliases
+
     ```powershell
      Get-Process notepad -ErrorAction SilentlyContinue | Stop-Process -PassThru
     ```
