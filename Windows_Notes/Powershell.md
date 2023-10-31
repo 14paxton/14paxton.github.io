@@ -42,24 +42,42 @@ Table of contents
 
 # [Installing](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-5.1)
 
-> By default, the package is installed to ```$env:ProgramFiles\PowerShell\<version>```
-
-> You can launch PowerShell via the Start Menu or ```$env:ProgramFiles\PowerShell\<version>\pwsh.exe```
+> You can launch PowerShell 7 via the Start Menu or ```$env:ProgramFiles\PowerShell\<version>\pwsh.exe```
+> You can launch PowerShell 5 via the Start Menu or ```$env:WINDIR\System32\WindowsPowerShell\v1.0```
 
 ## [Install 7.3](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
  <p>PowerShell 7.3 installs to a new directory and runs side-by-side with Windows PowerShell 5.1. </p>
-<br/><br/>
  <p>PowerShell 7.3 is an in-place upgrade that replaces PowerShell 7.0 and lower.</p>       
 </div> 
 
-> PowerShell 7.3 is installed to ```$env:ProgramFiles\PowerShell\7```
+- > Separate installation path and executable name.
+  > Is installed in the ```$env:WINDIR\System32\WindowsPowerShell\v1.0```
+  > PowerShell 7 is installed in the ```$env:ProgramFiles\PowerShell\7```
+  > The new location is added to your ``PATH``, which allows you to run both ```Windows PowerShell 5.1``` and ```PowerShell 7```.
+  > In ```Windows PowerShell```, the PowerShell executable is
+  > named ```powershell.exe```.
+  > In version 6 and newer, the executable is named ```pwsh.exe```.
+  > The new name makes it easy to support side-by-side execution of both versions
+- > Separate PSModulePath.
+  > By default, Windows PowerShell and ```PowerShell 7``` store modules in different locations.
+  > PowerShell 7 combines those locations in the ```$Env:PSModulePath``` environment variable.
+  When you import a module by name, PowerShell checks the location that ```$Env:PSModulePath``` specifies.
+  > This feature allows PowerShell 7 to load both Core and Desktop modules.
+- > Separate profiles for each version.
+  > A PowerShell profile is a script that runs when PowerShell starts.
+  > This script customizes the PowerShell environment by adding commands, aliases, functions,
+  variables, modules, and PowerShell drives.
+  > In ```Windows PowerShell 5.1```, the profile's location is ```$HOME\Documents\WindowsPowerShell```.
+  > In ```PowerShell 7```, the profile's location is
+  ```$HOME\Documents\PowerShell```.
+- > Separate event logs. ```Windows PowerShell``` and ```PowerShell 7``` log events to separate Windows event logs.
+- > When you're reviewing a PowerShell session, it's important to determine which version you're using.
+  > To determine the current version, enter ```$PSVersionTable``` in the PowerShell console, and then
+  select ```Enter```.
+  > PowerShell displays the version numbers for various components, including the main PowerShell version number.
 
-> The ```$env:ProgramFiles\PowerShell\7``` folder is added to ```$env:PATH```
-
-> Folders for previously released versions are deleted
-    
 ---
 
 ### DotNet CLI
@@ -442,6 +460,49 @@ Start-Process -FilePath 'C:\Users\Brandon003842\Downloads\ConnectUtility_2.30.9_
     
 ```    
 
+### Get Execution Policy
+
+```powershell    
+ Get-ExecutionPolicy    
+```    
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+    If it returns Restricted, then run 
+<br/><br/>
+<code>Set-ExecutionPolicy AllSigned </code><br/>
+or <br/>
+<code>Set-ExecutionPolicy Bypass -Scope Process    </code>   
+</div> 
+
+> You can configure the following policy settings:
+
+- > ```AllSigned```: Limits script execution on all signed scripts.
+  > This setting requires that all scripts are signed by a trusted publisher, including scripts that you write on the local computer.
+  > It
+  prompts you before running scripts from publishers that you haven't yet classified as trusted or untrusted.
+  > However, verifying the signature of a script doesn't eliminate the possibility of that
+  script being malicious.
+  > It simply provides an extra check that minimizes this possibility.
+- > ```Default```: Sets the default execution policy, which is Restricted for Windows clients and RemoteSigned for Windows servers.
+- > ```RemoteSigned```: This is the default execution policy for Windows server computers.
+  > Scripts can run, but the policy requires a digital signature from a trusted publisher on scripts and
+  configuration files that have been downloaded from the internet.
+  > This setting doesn't require digital signatures on scripts that are written on the local computer.
+- > ```Restricted```: This is the default execution policy for Windows client computers. It permits running individual commands, but it doesn't allow scripts.
+- > ```Unrestricted```: This is the default execution policy for non-Windows computers, which you can't change.
+  > It allows unsigned scripts to run.
+  > This policy warns the user before running scripts and
+  configuration files that aren't from the local intranet zone.
+- > ```Undefined```: Indicates that there isn't an execution policy set in the current scope.
+  > If the execution policy in all scopes is Undefined, the effective execution policy is Restricted for
+  Windows clients and RemoteSigned for Windows Server.
+
+> To change the execution policy in PowerShell, use the following command:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy <PolicyName>
+```
+
 ## Rename and Expand .zip
 
 ```powershell    
@@ -468,20 +529,6 @@ ps notepad -ErrorAction SilentlyContinue | kill -PassThru
      ```powershell
      Get-Process notepad -ErrorAction SilentlyContinue | Stop-Process -PassThru
      ```
-
-## Get Execution Policy
-
-```powershell    
- Get-ExecutionPolicy    
-```    
-
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
-    If it returns Restricted, then run 
-<br/><br/>
-<code>Set-ExecutionPolicy AllSigned </code><br/>
-or <br/>
-<code>Set-ExecutionPolicy Bypass -Scope Process    </code>   
-</div> 
 
 ## Search Piped String
 
