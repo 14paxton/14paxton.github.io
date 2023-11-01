@@ -8,9 +8,8 @@ has_children: false
 share:        true
 shortRepo:
    - googlenotes
-  - default              
+   - default              
 ---
-
 
 <br/>              
 
