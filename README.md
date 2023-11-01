@@ -3,7 +3,6 @@
 
 ```bash  
 bundle exec jekyll serve;     
-
 ```
 
 # Adding images data uri
