@@ -1,7 +1,11 @@
 # [Link for Site: www.paxtonb.com](https://www.paxtonb.com)
 # Run Locally
 
-```bash  
+```shell
+bundle install
+```
+
+```shell  
 bundle exec jekyll serve;     
 ```
 
