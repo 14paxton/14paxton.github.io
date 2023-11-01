@@ -497,6 +497,9 @@ or <br/>
   > If the execution policy in all scopes is Undefined, the effective execution policy is Restricted for
   Windows clients and RemoteSigned for Windows Server.
 
+<div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+    <p>Mine v7 was saved at <cod>C:\Users\1527151437E\AppData\Local\Microsoft\WindowsApps\pwsh.exe</cod> </p>       
+</div> 
 > To change the execution policy in PowerShell, use the following command:
 
 ```powershell
@@ -516,6 +519,12 @@ Expand-Archive .\Ubuntu.zip .\Ubuntu
 Start-Process test.exe    
 #or    
 Invoke-Expression -Command "path...test.exe"    
+```
+
+### Run with no exit
+
+```powershell
+ Start-Process pwsh -ArgumentList '-noexit -noprofile -command "powershell C:\Ruby32-x64\bin\ridk"'
 ```
 
 ## Handle Expected Error
