@@ -30,7 +30,7 @@ Table of contents
 
 # [Chromium Docs](https://chromium.googlesource.com/chromium/src/+/master/docs/user_data_dir.md)
 
-## URIs of interest
+## [URIs of interest](chrome://chrome-urls/  )
 
 - get profile info
 
