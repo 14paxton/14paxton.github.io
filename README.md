@@ -7,7 +7,7 @@ bundle cache --all-platforms --all
 ```
 
 ```shell
-bundle install --full-index binstubs
+bundle install --full-index --binstubs
 ```
 
 > make standalone to not rely on bundler , saves to bundle folder
