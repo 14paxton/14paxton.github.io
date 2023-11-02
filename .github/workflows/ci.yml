@@ -18,4 +18,4 @@ jobs: # Build job
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 5 # Increment this number if you need to re-download cached gems
       - name: Build with Jekyll
-        run: bundle exec jekyll build
+        run:  bundle exec jekyll build --incremental
