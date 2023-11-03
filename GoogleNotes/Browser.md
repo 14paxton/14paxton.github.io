@@ -134,37 +134,43 @@ This will open the Google homepage in Chrome.
 
 ### Open
 
-```shell    
+```winbatch    
 start chrome    
 ```    
 
 ### open no address bar
 
-```shell    
+```winbatch    
  start chrome --app="http://www.youtube.com/"    
 ```    
 
 ### Kill all instances
 
-```shell    
+```winbatch    
 taskkill /F /IM "chrome.exe" /T    
 ```     
 
+> or powershell
+
+```powershell
+Stop-Process chrome
+```
+
 ### runas admin
 
-```shell    
+```winbatch    
 runas /user:administrator "C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe"    
 ```    
 
 ### incognito
 
-```shell    
+```winbatch    
 start chrome /incognito    
 ```    
 
 ### at specific site
 
-```shell    
+```winbatch    
 start chrome www.<websiteURL>.com    
 ```    
 
@@ -172,14 +178,14 @@ start chrome www.<websiteURL>.com
 
 ### Exit any running-instance of Chrome.
 
-1. Right click on your "Chrome" shortcut.
+1. Right-click on your "Chrome" shortcut.
 2. Choose properties.
-3. At the end of your "Target:" line add the command-line switch. For example:    
+3. At the end of your "Target:" line adds the command-line switch. For example:    
    ```--disable-gpu-vsync    ```
 
 > With that example flag, it should look like below (replacing ```--disable-gpu-vsync``` with any other command-line switch you want to use):
 
-```
+```winbatch
 chrome.exe --disable-gpu-vsync
 ```
 
