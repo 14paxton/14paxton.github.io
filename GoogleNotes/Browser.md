@@ -156,6 +156,10 @@ taskkill /F /IM "chrome.exe" /T
 Stop-Process chrome
 ```
 
+```powershell
+Get-Process -Name "chrome" -ErrorAction SilentlyContinue | kill -PassThru
+```
+
 ### runas admin
 
 ```winbatch    
