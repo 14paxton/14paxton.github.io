@@ -16,15 +16,9 @@ shortRepo:    ghpages
 - [LinkedIn](https://www.linkedin.com/in/paxtonbrandon/)
 - [Resume, CoverLetter, Letter of Recommendation](https://github.com/14paxton/JobPrep/tree/master/ResumeAndRecommendation)
 
-![kubernetes](https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/)
-<a href="..%2JobPrep%2Fassets%2Fdocuments%2FBrandonPaxton112023.docx" download>Resume</a>
-<a href="..%2JobPrep%2Fassets%2Fdocuments%2FBrandonPaxton112023" download>Resume</a>
-<a href="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/JobPrep/assets/documents/BrandonPaxton112023" download>Resume</a>
-<a href="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/JobPrep/assets/documents/BrandonPaxton112023.docx" download>Resume</a>
+<a href="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/JobPrep/assets/documents/BrandonPaxton112023.docx" download target="_blank">Resume</a>
 
-
-<a href="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/JobPrep/assets/documents" download="BrandonPaxton112023">Download link</a>
-<a href="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/JobPrep/assets/documents" download="BrandonPaxton112023.docx">Download link</a>
+<a href="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/JobPrep/assets/documents" download="BrandonPaxton112023.docx" target="_blank">Download link</a>
 
 
 
