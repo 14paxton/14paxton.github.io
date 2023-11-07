@@ -16,7 +16,8 @@ shortRepo:    ghpages
 - [LinkedIn](https://www.linkedin.com/in/paxtonbrandon/)
 - [Resume, CoverLetter, Letter of Recommendation](https://github.com/14paxton/JobPrep/tree/master/ResumeAndRecommendation)
 
-[Resume](.%2Fassets%2Fdocuments%2FBrandonPaxton112023.docx)
+
+<a href=".%2Fassets%2Fdocuments%2FBrandonPaxton112023.docx" download>Resume</a>
 
 ---
 
