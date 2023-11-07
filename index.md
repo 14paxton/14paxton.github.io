@@ -19,7 +19,7 @@ shortRepo:    ghpages
 <br/>
 - > <a href="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/JobPrep/assets/CoverLetter.rtf" download target="_blank">CoverLetter</a>
 <br/>
--  > [Tod Wyrick Letter Of Recommendation](JobPrep%2FLetterOfRecommendation.md)
+-  > [Tod Wyrick Letter Of Recommendation](/JobPrep/LetterOfRecommendation)
 
 ---
 
