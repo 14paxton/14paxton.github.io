@@ -11,5 +11,4 @@ shortRepo:
   - default         
 ---
 
-![LetterOfRecommendation.jpg](./assets%2Fdocuments%2FLetterOfRecommendation.jpg)
 ![LetterOfRecommendation.jpg](https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/JobPrep/assets/documents/LetterOfRecommendation.jpg)
