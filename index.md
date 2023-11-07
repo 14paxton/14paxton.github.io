@@ -14,9 +14,12 @@ shortRepo:    ghpages
 - [GitHub Repositories](https://github.com/14paxton?tab=repositories)
 - [GISTs](https://gist.github.com/14paxton)
 - [LinkedIn](https://www.linkedin.com/in/paxtonbrandon/)
-- [Resume, CoverLetter, Letter of Recommendation](https://github.com/14paxton/JobPrep/tree/master/ResumeAndRecommendation)
 
-<a href="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/JobPrep/assets/documents/BrandonPaxton112023.docx" download target="_blank">Resume</a>
+- > <a href="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/JobPrep/assets/documents/BrandonPaxton112023.docx" download target="_blank">Resume</a>
+<br/>
+- > <a href="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/JobPrep/assets/CoverLetter.rtf" download target="_blank">CoverLetter</a>
+<br/>
+-  > [Tod Wyrick Letter Of Recommendation](JobPrep%2FLetterOfRecommendation.md)
 
 ---
 
