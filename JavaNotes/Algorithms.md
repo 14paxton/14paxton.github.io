@@ -1,10 +1,10 @@
 ---
-title: Algorithms
-layout: default
-parent: Java
+title:     Algorithms
+layout:    default
+parent:    Java
 permalink: JavaNotes/Algorithms
-category: JavaNotes
-share: true
+category:  JavaNotes
+share:     true
 shortRepo:
   - javanotes
   - default              
@@ -40,6 +40,7 @@ public class CreateRando {
     Long rando = ThreadLocalRandom.current().nextLong(100000);
 }
 ```
+
 # binary search
 
 ```java                  
@@ -59,7 +60,6 @@ public class BinarySearch {
                 max = pos - 1;
             }
         }
-
         // +1, because 0 belongs to positive indices                  
         return -(min + 1);
     }
@@ -73,14 +73,13 @@ public class SelectionSort {
     public void sort(int[] values) {
         // 1. Iteration over the input data                   
         for (int i = 0; i < values.length; i++) {
-// 2. Find the index of the smallest element                          
+            // 2. Find the index of the smallest element                          
             int minPos = indexOfMinimum(values, i);
-// 3. Move the smallest element into the current position                          
+            // 3. Move the smallest element into the current position                          
             swap(values, i, minPos);
         }
     }
 }
-
 ```                  
 
 # filter string
@@ -105,7 +104,6 @@ public class FilterString {
                         index.getAndIncrement();
                         return true;
                     }
-
                     return false;
                 })
                 .mapToObj(o -> (char) o)
@@ -126,9 +124,7 @@ public class FilterString {
                 }
             }
         }
-
         return returnVal.get();
     }
 }
-
 ```    
