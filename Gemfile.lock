@@ -107,7 +107,6 @@ DEPENDENCIES
   just-the-docs (~> 0.5.4)
   kramdown-parser-gfm
   rouge (~> 4.1, >= 4.1.2)
-  wdm (>= 0.1.0)
   webrick (~> 1.8, >= 1.8.1)
 
 BUNDLED WITH
