@@ -18,13 +18,6 @@ shortRepo:    ghpages
 
 <a href="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/JobPrep/assets/documents/BrandonPaxton112023.docx" download target="_blank">Resume</a>
 
-<a href="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/JobPrep/assets/documents" download="BrandonPaxton112023.docx">Download link</a>
-
-<a href="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/JobPrep/assets/documents" download="BrandonPaxton112023">no ext</a>
-<a href="https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/JobPrep/assets/documents" download="BrandonPaxton112023.docx">with ext</a>
-
-
-
 ---
 
 # Site Map
