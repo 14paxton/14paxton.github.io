@@ -105,6 +105,7 @@ DEPENDENCIES
   jekyll-github-metadata
   json (~> 2.6, >= 2.6.3)
   just-the-docs (~> 0.5.4)
+  kramdown (~> 2.4)
   kramdown-parser-gfm
   rouge (~> 4.1, >= 4.1.2)
   webrick (~> 1.8, >= 1.8.1)
