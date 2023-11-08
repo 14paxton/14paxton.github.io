@@ -45,6 +45,8 @@ GEM
     jekyll-github-metadata (2.16.0)
       jekyll (>= 3.4, < 5.0)
       octokit (>= 4, < 7, != 4.4.0)
+    jekyll-include-cache (0.2.1)
+      jekyll (>= 3.7, < 5.0)
     jekyll-sass-converter (3.0.0)
       sass-embedded (~> 1.54)
     jekyll-seo-tag (2.8.0)
@@ -52,8 +54,9 @@ GEM
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     json (2.6.3)
-    just-the-docs (0.5.4)
+    just-the-docs (0.7.0)
       jekyll (>= 3.8.5)
+      jekyll-include-cache
       jekyll-seo-tag (>= 2.0)
       rake (>= 12.3.1)
     kramdown (2.4.0)
@@ -103,11 +106,12 @@ DEPENDENCIES
   jekyll (~> 4.3, >= 4.3.2)
   jekyll-default-layout (~> 0.1.5)
   jekyll-github-metadata
+  jekyll-watch
   json (~> 2.6, >= 2.6.3)
-  just-the-docs (~> 0.5.4)
+  just-the-docs (~> 0.7.0)
   kramdown (~> 2.4)
   kramdown-parser-gfm
-  rouge (~> 4.1, >= 4.1.2)
+  rouge (~> 4.2)
   webrick (~> 1.8, >= 1.8.1)
 
 BUNDLED WITH
