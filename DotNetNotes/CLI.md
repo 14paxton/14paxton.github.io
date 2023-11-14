@@ -1,6 +1,6 @@
 ---
-title:        dotnet_CLI
-permalink:    DotNetNotes/dotnet_CLI
+title:        CLI
+permalink:    DotNetNotes/CLI
 category:     DotNetNotes
 parent:       DotNetNotes
 layout:       default
@@ -31,9 +31,9 @@ Table of contents
 
 # [Docs](https://learn.microsoft.com/en-us/dotnet/core/tools/)
 
- ***    
+# [Environment Variables](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-environment-variables#net-sdk-and-cli-environment-variables)
 
-## [Install Scripts](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script)
+# [Install Scripts](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script)
 
 # Windows PowerShell
 
