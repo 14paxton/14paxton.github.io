@@ -87,7 +87,9 @@ tar -cjvf file.tar.bz2 /home/vivek/data/
 
 ```bash    
 zip -er last_resort.zip attachments;    
-```    # find and remove files
+```
+
+# find and remove files
 
 ```bash    
 for st in $(mdfind -name ultdata); do rm -rf "$st"; done    
