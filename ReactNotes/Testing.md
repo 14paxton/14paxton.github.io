@@ -1,11 +1,11 @@
 ---
-title:        Testing
-permalink:    ReactNotes/Testing
-category:     ReactNotes
-parent:       ReactNotes
-layout:       default
+title: Testing
+permalink: ReactNotes/Testing
+category: ReactNotes
+parent: ReactNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - reactnotes
   - default                
@@ -40,7 +40,7 @@ Table of contents
     "transformIgnorePatterns": [
       "<rootDir>/node_modules/defaultPhrases.js"
     ],
-    "transform"              : {
+    "transform": {
       "^.+\\.worker.[t|j]sx?$": "workerloader-jest-transformer"
     }
   }
@@ -88,9 +88,7 @@ test('counter increments the count', () => {
     import {BrowserRouter as Router} from 'react-router-dom';
 
 it('containts stuff', () => {
-    const wrapper = mount(<Router>
-        <Footer/>
-    </Router>)
+    const wrapper = mount(<Router> <Footer/> </Router>)
     console.log(wrapper.find('FooterContainer').html())
 
     expect(wrapper.find('a[href="https://talentmine.talentplus.com/s/contactsupport"]').text()).toBe('Contact    Support    ')
@@ -136,9 +134,8 @@ expect(wrapper.find('[text="Sometitle"]').text()).toBe('Welcome to React')
 
 it('test with enzyme', () => {
 
-    const container = shallow(<GoalCreationForm
-        {...defaultProps}
-        currentStep={GOAL_CREATION_WIZARD.LANDING}
+    const container = shallow(<GoalCreationForm{...defaultProps}
+                                               currentStep={GOAL_CREATION_WIZARD.LANDING}
     />);
 
     container.setProps({
@@ -184,7 +181,7 @@ global.MutationObserver = class {
     disconnect() {}
 
     observe(element, initObject) {}
-}
+};
 ```      
 
 > or
@@ -301,11 +298,7 @@ describe("<EditProfileForm/>", () => {
 ```jsx      
 
 it('ellipsis should not appear for shared result viewer role', async () => {
-    render(<LanguageProvider>
-        <CurrentUserContext.Provider value={{user: sharedResultViewer}}>
-            <Members data={members}/>
-        </CurrentUserContext.Provider>
-    </LanguageProvider>);
+    render(<LanguageProvider> <CurrentUserContext.Provider value={{user: sharedResultViewer}}> <Members data={members}/> </CurrentUserContext.Provider> </LanguageProvider>);
 
     const ellipsisColumn = await waitFor(() => screen.queryByTestId('ellipses-action-buttons-members-table'))
     expect(ellipsisColumn).toBeNull()
