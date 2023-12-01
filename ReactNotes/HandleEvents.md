@@ -1,14 +1,14 @@
 ---
-title:        HandleEvents
-permalink:    ReactNotes/HandleEvents
-category:     ReactNotes
-parent:       ReactNotes
-layout:       default
+title: HandleEvents
+permalink: ReactNotes/HandleEvents
+category: ReactNotes
+parent: ReactNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
-   - reactnotes
-  - default                
+  - reactnotes
+  - default
 ---
 
 <br/>

@@ -1,15 +1,14 @@
 ---
-title:        HQL
-permalink:    SQLNotes/HQL
-category:     SQLNotes
-parent:       SQLNotes
-layout:       default
+title: HQL
+permalink: SQLNotes/HQL
+category: SQLNotes
+parent: SQLNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
-
-   - sqlnotes
-  - default          
+  - sqlnotes
+  - default
 ---
 
 <br/>
@@ -130,9 +129,9 @@ public class ConnPool {
 ```xml
 
 <dependency>
-   <groupId>com.h2database</groupId>
-   <artifactId>h2</artifactId>
-   <version>2.2.220</version>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <version>2.2.220</version>
 </dependency>
 ```
 
@@ -143,7 +142,7 @@ public class ConnPool {
 ```xml
 
 <property name="dialect">
-   org.hibernate.dialect.H2Dialect
+    org.hibernate.dialect.H2Dialect
 </property>
 ```
 
@@ -206,10 +205,10 @@ public class ConnPool {
 
    > To connect to an `H2` embedded database, you need to use one of the following `JDBC` `URLs`:
 
-    - > `_jdbc:h2:~/test_` the ‘test’ database in the user home directory
-    - > `_jdbc:h2:./test_` the ‘test’ database in the current directory
-    - > `_jdbc:h2:/data/test_` the ‘test’ database in the `/data `directory (`Unix`)
-    - > `_jdbc:h2:D:/data/test_` the ‘test’ database in the `D:/data` directory (`Windows`)
+   - > `_jdbc:h2:~/test_` the ‘test’ database in the user home directory
+   - > `_jdbc:h2:./test_` the ‘test’ database in the current directory
+   - > `_jdbc:h2:/data/test_` the ‘test’ database in the `/data `directory (`Unix`)
+   - > `_jdbc:h2:D:/data/test_` the ‘test’ database in the `D:/data` directory (`Windows`)
 
 3. Mixed mode `jdbc:h2:/data/test;AUTO_SERVER=TRUE`
 
@@ -227,8 +226,8 @@ public class ConnPool {
 
    > To connect to an `H2` `in-memory `database, you need to use `JDBC` `URLs`
 
-    - > > multiple connections in one process `jdbc:h2:mem:test`
-    - > > unnamed private; one connection `jdbc:h2:mem:`
+   - > > multiple connections in one process `jdbc:h2:mem:test`
+   - > > unnamed private; one connection `jdbc:h2:mem:`
 
 ## execute sql scripts
 
@@ -247,33 +246,33 @@ jdbc:h2:~/test;DB_CLOSE_ON_EXIT=FALSE
 ```xml
 
 <plugin>
-   <groupId>org.codehaus.mojo</groupId>
-   <artifactId>exec-maven-plugin</artifactId>
-   <version>3.1.0</version>
-   <executions>
-      <execution>
-         <!-- start H2 DB before integration tests -->
-         <id>start</id>
-         <phase>pre-integration-test</phase>
-         <goals>
-            <goal>java</goal>
-         </goals>
-         <configuration>
-            <mainClass>com.mastertheboss.StartServer</mainClass>
-         </configuration>
-      </execution>
-      <execution>
-         <!-- stop H2 DB after integration tests -->
-         <id>stop</id>
-         <phase>post-integration-test</phase>
-         <goals>
-            <goal>java</goal>
-         </goals>
-         <configuration>
-            <mainClass>com.mastertheboss.StopServer</mainClass>
-         </configuration>
-      </execution>
-   </executions>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>exec-maven-plugin</artifactId>
+    <version>3.1.0</version>
+    <executions>
+        <execution>
+            <!-- start H2 DB before integration tests -->
+            <id>start</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+                <goal>java</goal>
+            </goals>
+            <configuration>
+                <mainClass>com.mastertheboss.StartServer</mainClass>
+            </configuration>
+        </execution>
+        <execution>
+            <!-- stop H2 DB after integration tests -->
+            <id>stop</id>
+            <phase>post-integration-test</phase>
+            <goals>
+                <goal>java</goal>
+            </goals>
+            <configuration>
+                <mainClass>com.mastertheboss.StopServer</mainClass>
+            </configuration>
+        </execution>
+    </executions>
 </plugin>
 ```
 

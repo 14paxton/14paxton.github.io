@@ -2,8 +2,9 @@
 title: Jekyll
 layout: default
 permalink: GitHub/Jekyll
-category: GitHub
+category: Git/GitHub
 parent: GitHub
+grand_parent: Git
 has_children: false
 share: true
 shortRepo: ghpages

@@ -1,38 +1,33 @@
 ---
-title: GIT
-permalink: Linux/GIT
-category: Linux
-parent: Linux
+title: Git
 layout: default
-has_children: false
+permalink: Git
+category: Git
+has_children: true
 share: true
 shortRepo:
-  - linux
+  - git
   - default
 ---
 
 <br/>
 
-<details markdown="block">    
-<summary>    
-Table of contents    
-</summary>    
-{: .text-delta }    
-1. TOC    
-{:toc}    
-</details>
-
-<br/>
+---
 
 ---
 
-<br/>
+<details markdown="block">                
+<summary>                
+Table of contents                
+</summary>                
+{: .text-delta }                
+1. TOC                
+{:toc}                
+</details>
 
-# GITHub
+# Scripts
 
-## Scripts
-
-### main to master
+## main to master
 
 ```shell
 git branch -m main master
@@ -41,7 +36,7 @@ git branch -u origin/master master
 git remote set-head origin -a
 ```
 
-### get users gists
+## get users gists
 
 ```shell
 curl -L \
@@ -53,9 +48,9 @@ curl -L \
 
 ---
 
-## gh cli
+# gh cli
 
-### use token to authorize and merge
+## use token to authorize and merge
 
 ```shell
 export GH_TOKEN=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;
@@ -65,9 +60,9 @@ then echo $GH_TOKEN | gh auth login --with-token;
 gh repo sync --force;
 ```
 
-## workflow
+# workflow
 
-### print env variables
+## print env variables
 
 ```yaml
 name: Print environment variables
@@ -178,7 +173,7 @@ git push;
 
 # Authentication
 
-## There are three main approaches you can take
+# There are three main approaches you can take
 
 1. Using a personal authentication token or password
 2. Using an SSH key
@@ -188,7 +183,7 @@ git push;
 
 ---
 
-### Personal Authentication
+## Personal Authentication
 
 ```shell
  git config -l
@@ -226,7 +221,7 @@ You can clone a repository using HTTPS like this:
 
 ---
 
-#### In memory
+### In memory
 
 ```shell
  git config --global credential.helper cache
@@ -258,7 +253,7 @@ You can clone a repository using HTTPS like this:
  git config --get credential.helper
 ```
 
-### SSH keys
+## SSH keys
 
 To use SSH, you need to put your SSH public key in your GitHub account.  
 Your public key file is found in the  
@@ -355,7 +350,7 @@ git config --global core.editor 'code --wait'
 git config --global core.editor 'code --wait --new-window'
 ```
 
-### unset
+## unset
 
 ```shell
 git config --global --unset core.editor

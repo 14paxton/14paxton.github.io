@@ -158,14 +158,18 @@ cssLink.type = "text/css";
 cssLink.href = cssFilePath;
 document.querySelector("head").appendChild(cssLink);
 
-window.addEventListener("load", async function () {
+window.addEventListener(
+  "load",
+  async function () {
     const promise = await fetchHTMLFile(pathToHTML);
     const html = await promise.text();
     document.querySelector("body").innerHTML = html;
-}, false,);
+  },
+  false,
+);
 
 async function fetchHTMLFile(path) {
-    return await fetch(path);
+  return await fetch(path);
 }
 ```
 

@@ -281,13 +281,13 @@ li {
 
 ```css
 html {
-    background-image: url(data:image/jpg;base64,/9j/4RkARXhpZgAATU0AKgAAAAgAB6f/9k=),
+  background-image: url(data:image/jpg;base64,/9j/4RkARXhpZgAATU0AKgAAAAgAB6f/9k=),
     url(/TBEX/resource/src/815-teams-north-gate-path.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100%;
 }
 ```
 

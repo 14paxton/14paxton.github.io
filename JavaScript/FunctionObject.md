@@ -140,24 +140,27 @@ function annotate(fn) {
 
 ```javascript
 export function cleanWebPackImports(stringFunc) {
-    const webPackRegex = /[^\s]*(WEBPACK_IMPORTED)(.*?)(\]\)|\])/g;
-    const importedFunctionRegex = /\[\"(.*?)\"\]/g;
-    let cleanedFunc = "";
+  const webPackRegex = /[^\s]*(WEBPACK_IMPORTED)(.*?)(\]\)|\])/g;
+  const importedFunctionRegex = /\[\"(.*?)\"\]/g;
+  let cleanedFunc = "";
 
-    const extractedWebpack = Array.from(stringFunc.matchAll(webPackRegex));
-    extractedWebpack.forEach((webPackGarbage) => {
-        const extractedFunction = Array.from(webPackGarbage[0].matchAll(importedFunctionRegex), (x) => x[1],);
-        cleanedFunc += stringFunc.replace(webPackGarbage[0], extractedFunction);
+  const extractedWebpack = Array.from(stringFunc.matchAll(webPackRegex));
+  extractedWebpack.forEach((webPackGarbage) => {
+    const extractedFunction = Array.from(
+      webPackGarbage[0].matchAll(importedFunctionRegex),
+      (x) => x[1],
+    );
+    cleanedFunc += stringFunc.replace(webPackGarbage[0], extractedFunction);
 
-        //TODO find way to call function with string then can dynamically add used imports
-        // let imported = ''
-        // if (webPackRegex.test(window[func] + '')) {
-        //     imported = cleanWebPackImports(window[func] + '')
-        //     console.log("imported", imported)
-        // cleanedFunc += `${imported} `
-        // }
-    });
+    //TODO find way to call function with string then can dynamically add used imports
+    // let imported = ''
+    // if (webPackRegex.test(window[func] + '')) {
+    //     imported = cleanWebPackImports(window[func] + '')
+    //     console.log("imported", imported)
+    // cleanedFunc += `${imported} `
+    // }
+  });
 
-    return cleanedFunc? cleanedFunc : stringFunc;
+  return cleanedFunc ? cleanedFunc : stringFunc;
 }
 ```

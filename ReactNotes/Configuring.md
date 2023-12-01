@@ -36,7 +36,7 @@ Table of contents
 {: .text-delta }                      
 1. TOC                      
 {:toc}                      
-</details>                      
+</details>
 
 <br/>
 

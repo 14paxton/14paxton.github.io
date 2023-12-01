@@ -210,10 +210,10 @@ FitStatement.getEnumConstants().find{(it.value==member.result)}?.match?:member.r
     
 - What budget will I have for my continuing professional development? What restrictions are there on what I can spend it on?    
     
-- What is best thing about working here? And what is the worst thing?    
-    
-- Describe a recent interpersonal conflict within the team, and how it was handled.    
-    
-- How much time does the team typically get for a) technical debt reduction & b) research projects per quarter?    
+- What is best thing about working here? And what is the worst thing?
+
+- Describe a recent interpersonal conflict within the team, and how it was handled.
+
+- How much time does the team typically get for a) technical debt reduction & b) research projects per quarter?
 
 - Describe a recent prioritisation conflict - perhaps between the team & PM, or between different stakeholders. How was it resolved?

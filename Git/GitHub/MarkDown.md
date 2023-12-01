@@ -2,8 +2,9 @@
 title: MarkDown
 layout: default
 permalink: GitHub/MarkDown
-category: GitHub
+category: Git/GitHub
 parent: GitHub
+grand_parent: Git
 has_children: false
 share: true
 shortRepo: ghpages
@@ -48,8 +49,7 @@ Table of contents
 ## visible in GitHub md page
 
 ```markdown
-> **Note**
-> <br/>
+> **Note** > <br/>
 > This is a note
 ```
 
@@ -57,8 +57,7 @@ Table of contents
 > This is a note
 
 ```markdown
-> **Warning**
-> <br/>
+> **Warning** > <br/>
 > This is a warning
 ```
 
@@ -124,7 +123,7 @@ I am a warning message
 ## Adding Image
 
 ```markdown
-![kubernetes.gif](../assets/images/kubernetes.gif)
+![kubernetes.gif](../../assets/images/kubernetes.gif)
 ```
 
 ```markdown

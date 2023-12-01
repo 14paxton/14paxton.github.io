@@ -76,6 +76,7 @@ Table of contents
           -ENV JAVA_VERSION 7u231
        ```
     7. Example for Java 7 using Ubuntu 14.04
+
         1. Install a Docker - Docker CE free version is fine. See, for example, https://docs.docker.com/install/linux/docker-ce/ubuntu/ or use the docker.io package in recent Ubuntu versions shipped.
         2. In an empty folder, create a file Dockerfile:
            ```dockerfile
@@ -102,7 +103,9 @@ Table of contents
              OpenJDK 64-Bit Server VM (build 24.181-b01, mixed mode)
            ```
         5. Optionally, create a wrapper for convenience.
+
             - Create a file /usr/local/bin/java7-in-docker with contents:
+
               ```dockerfile
                   #!/usr/bin/env sh -e
    
@@ -119,6 +122,7 @@ Table of contents
                  "${DOCKER_IMAGE}" \
                  $@
               ```
+
             - This will make the current working directory available inside the container—not your whole filesystem, and it will impersonate your local user account in the container namespace.
             - Mark it as executable:
               ```shell
