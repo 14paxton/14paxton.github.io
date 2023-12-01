@@ -221,11 +221,11 @@ CloudTasksClient cloudTasksClient=CloudTasksClient.create();
 1. [Generate a JSON service account key](https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts).
 
 2. After downloading that key, you must do one of the following:
-    - Define the environment variable GOOGLE_APPLICATION_CREDENTIALS to be the location of the key. For example:
+   - Define the environment variable GOOGLE_APPLICATION_CREDENTIALS to be the location of the key. For example:
    ```bash
    export GOOGLE_APPLICATION_CREDENTIALS=/path/to/my/key.json
    ```
-    - Supply the JSON credentials file when building the service options. For example, this Storage object has the necessary permissions to interact with your Google Cloud Storage data:
+   - Supply the JSON credentials file when building the service options. For example, this Storage object has the necessary permissions to interact with your Google Cloud Storage data:
    ```java
    Storage storage = StorageOptions.newBuilder()
        .setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream("/path/to/my/key.json")))

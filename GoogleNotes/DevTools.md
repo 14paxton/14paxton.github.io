@@ -21,10 +21,10 @@ Table of contents
 1. TOC                    
 {:toc}                    
 </details>                    
-    
-<br/>                    
 
-***
+<br/>
+
+---
 
 <br/>
 

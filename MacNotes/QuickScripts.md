@@ -115,243 +115,6 @@ pmset -g sched
 sudo pmset repeat cancel
 ```
 
-# Users
-
-## Get User List
-
-```shell
-dscl . list /Users | grep -v "^_"
-```
-
-## List existing group
-
-- > IDs in numerical order
-  ```shell
-    dscl . -list /Groups PrimaryGroupID | awk '{print $2}' | sort -n
-  ```
-- > List sorted by group name:
-
-  ```shell
-   dscl . list /Groups PrimaryGroupID
-  ```
-
-- > List sorted by group gid
-
-  ```shell
-   dscl . list /Groups PrimaryGroupID | tr -s ' ' | sort -n -t ' ' -k2,2
-  ```
-
-- > List groups with members
-  ```shell
-    dscl . list /Groups GroupMembership
-  ```
-
-<div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
-    Note: neither dscacheutil nor dscl list members of the group staff other than root. Use dsmemberutil to confirm a member belongs to the group staff.       
-</div>
-
-> Example a user with uid 501:
-
-```shell
- dsmemberutil checkmembership -u 501 -g 20
-```
-
-### Create the new group 'newgroup' and assign it an ID
-
-<div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
-    One thing you have to take care when choosing a group id is that the id is not already used by another group. In order to list the existing group ids in numerical order you can do:
-<p>
-<code>
-dscl . -list /groups PrimaryGroupID | awk '{print $2}' | sort -n
-</code> 
-</p>      
-</div>
-
-```shell
-sudo dscl . -create /Groups/newgroup
-sudo dscl . -create /Groups/newgroup PrimaryGroupID 1000
-```
-
-#### View the new group
-
-```shell
-dscl . -read /Groups/newgroup
-```
-
-> output
-
-```
- AppleMetaNodeLocation: /Local/Default
- GeneratedUID: 423AF02C-F053-41E0-ABCD-33127EF9A9CA
- PrimaryGroupID: 1000
- RecordName: newgroup
- RecordType: dsRecTypeStandard:Groups
-```
-
-<div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
-OS X conventionally uses different ID ranges for different types of accounts. Here's the current layout as I understand it:
-
-up to 100: Reserved for static system-defined (built in) groups
-
-101 - 199: Used by the OS for dynamically-created groups (e.g. share point access groups)
-
-200 - ?: More static system groups (apparently 100 wasn't enough)
-
-400 - 500: More dynamic system groups
-
-501 and up: Local admin-created groups
-
-1024 and up: Domain-based admin-created groups
-
-</div>
-
-## Add user to group
-
-```shell
-sudo dseditgroup -o edit -a john -t user admin
-sudo dseditgroup -o edit -a john -t user wheel
-```
-
-## Create new user
-
-```shell
-sudo dscl . -create /Users/newuser
-sudo dscl . -create /Users/newuser UserShell /bin/bash
-sudo dscl . -create /Users/newuser RealName "New User"
-sudo dscl . -create /Users/newuser UniqueID "1000"
-sudo dscl . -create /Users/newuser PrimaryGroupID 1000
-```
-
-```shell
-sudo dscl . -create /Users/username NFSHomeDirectory /Local/Users/username
-```
-
-```shell
-sudo dscl . -passwd /Users/username password
-```
-
-```shell
-sudo dscl . -append /Groups/admin GroupMembership username
-```
-
-### View the new user
-
-```shell
-dscl . -read /Users/newuser
-```
-
-> output
-
-```
-AppleMetaNodeLocation: /Local/Default
-GeneratedUID: 47D6D841-C7F1-4962-9F7E-167E8BFC3A91
-PrimaryGroupID: 1000
-RealName:
-Application
-RecordName: newuser
-RecordType: dsRecTypeStandard:Users
-UniqueID: 1000
-UserShell: /usr/bash
-```
-
-## add user to SUDO
-
-```shell
-su AdminUser
-authentication, and then:
-```
-
-> Now, as Adminuser, use the visudo command to edit the sudoers file:
-
-```shell
-sudo visudo
-# Add the following line to the sudoers file:
-username ALL = (ALL) ALL
-```
-
-> If you want to be able to use sudo without typing a password:
-
-```shell
-username        ALL = (ALL) NOPASSWD:ALL
-```
-
-## Change Password
-
-```shell
-sudo dscl . -passwd /Users/username password
-```
-
-# Software Update Utility
-
-## How do I apply all recommended updates?
-
-> All updates that are recommended for your system:
-
-```shell
-sudo softwareupdate -r
-```
-
-## Updating Mac using the Terminal app
-
-> To install all updates that are applicable to your system, enter:
-
-```shell
-sudo softwareupdate -i -a
-```
-
-## Install all but make sure you ignore ‘JavaForOSX’ updates:
-
-```shell
-sudo softwareupdate --ignore JavaForOSX
-```
-
-## To clear the list, ignored updates, enter:
-
-```shell
-sudo softwareupdate --reset-ignored
-```
-
-## Update/Install OS
-
-### This gives you a list of available releases you can choose from. Once downloaded it will be saved in your Applications folder
-
-```shell
-softwareupdate --list-full-installers;echo;echo "Please enter version number you wish to download:";read;$(if [ -n "$REPLY" ]; then; echo "softwareupdate --fetch-full-installer --full-installer-version "$REPLY; fi);
-```
-
-#### Munki's InstallInstallMacOS utility
-
-> Once finished, you'll find in your ~/macOS-Installer/
-
-```shell
-mkdir -p ~/macOS-installer && cd ~/macOS-installer && curl https://raw.githubusercontent.com/munki/macadmin-scripts/main/installinstallmacos.py > installinstallmacos.py && sudo python installinstallmacos.py
-```
-
-### [create installer](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment)
-
-#### run `createinstallmedia` command provided by Apple (opens a new window). Note that the command is made for USB's formatted with the name MyVolume:
-
-```shell
-sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
-```
-
-> Note for users on Apple Silicon installing macOS older than Big Sur  
-> If the `createinstallmedia` fails with `zsh: killed ` or `Killed: 9` then it's most likely an issue with the installer's code signature.  
-> To fix this, you can run the following command:
-
-```shell
-cd /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/
-codesign -s - -f --deep /Applications/Install\ macOS\ Big\ Sur.app
-```
-
-> You will need the command line tools for Xcode installed:
-
-```shell
-xcode-select --install
-```
-
----
-
 # Create Ram Disk For Intellij
 
 ```shell
@@ -373,7 +136,7 @@ Input this number in place of the X characters in the command above:
 diskutil erasevolume HFS+ 'RAM Disk' `hdiutil attach -nomount ram://8388608
 ```
 
-## script to create ramdisk
+## create ramdisk
 
 ```shell
 if [ ! -d /Volumes/JetBrainsKeys/tbcore/intellij ]; then diskutil erasevolume HFS+ JetBrainsKeys `hdiutil attach -nomount ram://6291456`;
@@ -386,3 +149,110 @@ fi
 ```
 
 ---
+
+# Launching Apps From Terminal
+
+> Terminal command to launch macOS gui apps is appropriately called `open` and here is how it works at its most simple:
+
+```shell
+open -a ApplicationName
+
+```
+
+> That will open the defined app named “ApplicationName”
+
+<div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">            
+           But open is much more powerful than that.          
+If you just type <code>open</code> at the command prompt, you’ll return the basic help file with details on how to properly use the command with a variety of flags and            
+syntax.
+</div>            
+<br/>
+<div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">            
+           While the open command exists in all versions of Mac OS X, the abilities vary somewhat depending on what version of macOS / Mac OS X the Mac is running.          
+Nonetheless, in modern releases this is what            
+you’ll see:
+</div>
+
+- `Usage`: `open [-e] [-t] [-f] [-W] [-R] [-n] [-g] [-h] [-b ] [-a ] [filenames] [--args arguments]`
+
+- `Help`: Open opens files from a shell. By default, open each file using the default application for that file. If the file is in the form of a URL, the file will be opened as a URL.
+
+- `Options`:  
+  `-a ` : Opens with the specified application.  
+  `-b ` : Opens with the specified application bundle identifier.  
+  `-e ` : Opens with TextEdit.  
+  `-t ` : Opens with default text editor.  
+  `-f ` : Reads input from standard input and opens with TextEdit.  
+  `-F --fresh` : Launches the app fresh, that is, without restoring windows. Saved persistent state is lost, excluding Untitled documents.  
+  `-R, --reveal` : Selects in the Finder instead of opening.  
+  `-W, --wait-apps ` : Blocks until the used applications are closed (even if they were already running).  
+  `--args ` : All remaining arguments are passed in argv to the application's main() function instead of opened.  
+  `-n, --new` : Open a new instance of the application even if one is already running.  
+  `-j, --hide` : Launches the app hidden.  
+  `-g, --background ` : Does not bring the application to the foreground.  
+  `-h, --header` : Searches header file locations for headers matching the given filenames, and opens them.
+
+In other words, example simple command syntax could look like the following, opening “ApplicationName” with the file located at the path `/file/to/open`:
+
+```shell
+open -a ApplicationName /file/to/open
+```
+
+> You’ll note you don’t need the full path to the application name, but you would need the full path to a file name.
+
+> The usage is likely self-explanatory to those who have experience in the command line environment, but for those who are new to the Terminal, don’t be too confused, it is easy to use, and we’ll
+> explain.  
+> For example, if you want to edit `/etc/motd ` with `TextWrangler` to change your Message of the Day, but you hate the command line editors `nano` and `vi`, here is what you’d type:
+
+```shell
+open -a TextWrangler /etc/motd
+```
+
+<div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">              
+     Also worth noting is that if you are launching an application with spaces in its name, you’ll want to add a backslash after each word, opening Adobe Photoshop CS would look like this:  
+</div>
+
+```shell
+open -a Adobe\ Photoshop\ CS
+```
+
+> Launching GUI Apps as root from the Command Line
+
+```shell
+sudo open -a TextEdit /tmp/magicfile
+
+```
+
+## Creating Shell Aliases for Frequently Launched GUI Apps
+
+1. First launch the profile or .bash_profile into a text editor:
+
+   ```shell
+     nano .profile
+   ```
+
+   > or
+
+   ```shell
+     open -e .profile
+   ```
+
+2. add the following to a new line:
+
+   ```text
+     alias photoshop="open -a Adobe\ Photoshop\ CS"
+   ```
+
+> This creates an alias, so that the `open -a Adobe\ Photoshop CS` command is now shortened to simply `photoshop`.
+
+---
+
+# DEBUGGING - OBSCURE ISSUES
+
+## _[How to fix Mac OSX stuck/hanging on progress bar after login](https://smyl.es/how-to-fix-mac-osx-stuckhanging-on-progress-bar-will-not-boot/)_
+
+# Resources
+
+- [ CLI Gist Resource ](https://gist.github.com/bzerangue/dca8fc2d63309ba2bd9f)
+- [ Making OS installer ](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment)
+- [ Mac Official Doc, Make bootable installer ](https://support.apple.com/en-us/HT201372)
