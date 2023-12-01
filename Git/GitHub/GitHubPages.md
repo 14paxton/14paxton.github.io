@@ -2,11 +2,11 @@
 title: GitHubPages
 layout: default
 permalink: GitHub/GitHubPages
-category: GitHub
+category: Git/GitHub
 parent: GitHub
+grand_parent: Git
 has_children: false
 share: true
-shortRepo: ghpages
 ---
 
 <details markdown="block">                  
@@ -75,25 +75,25 @@ relative_links:
    an`A`record in addition to your`AAAA`record, due to slow adoption of IPv6 globally.  
    For more information about how to create the correct record, see your DNS provider's documentation.
 
-    - To create an`ALIAS`or`ANAME`record, point your apex domain to the default domain for your site.  
-      For more information about the default domain for your site, see [About GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites)
-    - To create`A`records, point your apex domain to the IP addresses for GitHub Pages.
+   - To create an`ALIAS`or`ANAME`record, point your apex domain to the default domain for your site.  
+     For more information about the default domain for your site, see [About GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites)
+   - To create`A`records, point your apex domain to the IP addresses for GitHub Pages.
 
-      ```shell
-      185.199.108.153
-      185.199.109.153
-      185.199.110.153
-      185.199.111.153
-      ```
+     ```shell
+     185.199.108.153
+     185.199.109.153
+     185.199.110.153
+     185.199.111.153
+     ```
 
-    - To create`AAAA`records, point your apex domain to the IP addresses for GitHub Pages.
+   - To create`AAAA`records, point your apex domain to the IP addresses for GitHub Pages.
 
-      ```shell
-      2606:50c0:8000::153
-      2606:50c0:8001::153
-      2606:50c0:8002::153
-      2606:50c0:8003::153
-      ```
+     ```shell
+     2606:50c0:8000::153
+     2606:50c0:8001::153
+     2606:50c0:8002::153
+     2606:50c0:8003::153
+     ```
 
    **Warning:**We strongly recommend that you do not use wildcard DNS records, such as `*.example.com`.  
    These records put you at an immediate risk of domain takeovers, even if you verify the domain.  
@@ -104,25 +104,25 @@ relative_links:
 
 7. To confirm that your DNS record configured correctly, use the`dig`command, replacing_EXAMPLE.COM_with your apex domain. Confirm that the results match the IP addresses for GitHub Pages above.
 
-    - For `A` records:
+   - For `A` records:
 
-      ```shell
-      $ dig EXAMPLE.COM +noall +answer -t A
-      > EXAMPLE.COM    3600    IN A     185.199.108.153
-      > EXAMPLE.COM    3600    IN A     185.199.109.153
-      > EXAMPLE.COM    3600    IN A     185.199.110.153
-      > EXAMPLE.COM    3600    IN A     185.199.111.153
-      ```
+     ```shell
+     $ dig EXAMPLE.COM +noall +answer -t A
+     > EXAMPLE.COM    3600    IN A     185.199.108.153
+     > EXAMPLE.COM    3600    IN A     185.199.109.153
+     > EXAMPLE.COM    3600    IN A     185.199.110.153
+     > EXAMPLE.COM    3600    IN A     185.199.111.153
+     ```
 
-    - For `AAAA` records:
+   - For `AAAA` records:
 
-      ```shell
-      $ dig EXAMPLE.COM +noall +answer -t AAAA
-      > EXAMPLE.COM     3600    IN AAAA     2606:50c0:8000::153
-      > EXAMPLE.COM     3600    IN AAAA     2606:50c0:8001::153
-      > EXAMPLE.COM     3600    IN AAAA     2606:50c0:8002::153
-      > EXAMPLE.COM     3600    IN AAAA     2606:50c0:8003::153
-      ```
+     ```shell
+     $ dig EXAMPLE.COM +noall +answer -t AAAA
+     > EXAMPLE.COM     3600    IN AAAA     2606:50c0:8000::153
+     > EXAMPLE.COM     3600    IN AAAA     2606:50c0:8001::153
+     > EXAMPLE.COM     3600    IN AAAA     2606:50c0:8002::153
+     > EXAMPLE.COM     3600    IN AAAA     2606:50c0:8003::153
+     ```
 
 ## Personal Steps
 

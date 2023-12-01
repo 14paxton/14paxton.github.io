@@ -16,6 +16,15 @@ shortRepo:
 
 ---
 
+<details markdown="block">                
+<summary>                
+Table of contents                
+</summary>                
+{: .text-delta }                
+1. TOC                
+{:toc}                
+</details>
+
 # Scripts
 
 ## main to master
@@ -82,13 +91,13 @@ jobs:
 
 # Quick Scripts
 
-# SSL certificate problem: unable to get local issuer certificate
+## SSL certificate problem: unable to get local issuer certificate
 
 ```shell
 git config --global http.sslbackend schannel
 ```
 
-# in conflicted state, and you want to just accept all of theirs
+## in conflicted state, and you want to just accept all of theirs
 
 ```shell
 git checkout --theirs .
@@ -102,13 +111,13 @@ git checkout --ours .
 git add .
 ```
 
-# That limits the delta cache size to one byte (effectively disabling it) instead of the default of 0 which means unlimited
+## That limits the delta cache size to one byte (effectively disabling it) instead of the default of 0 which means unlimited
 
 ```shell
  git config pack.deltaCacheSize 1
 ```
 
-# removed all of my dangling blobs and dangling commits
+## removed all of my dangling blobs and dangling commits
 
 > removes all references of unreachable commits in reflog.
 
@@ -132,13 +141,13 @@ git add .
 - or
   `git repack -a -f -d --window=250 --depth=250`
 
-# get all deletes and changes
+## get all deletes and changes
 
 ```shell
  git log --shortstat --author "bpaxton"  --since "35 days ago" --until "today" | egrep "file[s]* changed" | sed 's/changed, \([0-9]\+ deletions\)/changed, 0 insertions(+), \1/g' | awk '{files+=$1; inserted+=$4; deleted+=$6} END {print "files changed", files,"total: " inserted - deleted , "lines inserted:", inserted, "lines deleted:", deleted}'
 ```
 
-# get changed lines
+## get changed lines
 
 ```shell
 git log --shortstat --author "username"  --since "5 days ago" --until "today" \
@@ -147,7 +156,7 @@ git log --shortstat --author "username"  --since "5 days ago" --until "today" \
     | awk '{files+=$1; inserted+=$4; deleted+=$6} END {print "files changed", files, "lines inserted:", inserted, "lines deleted:", deleted}'
 ```
 
-# clone set commit
+## clone set commit
 
 ```shell
 git clone git@github.com:14paxton/ScriptsAndSuch.git .;
@@ -311,7 +320,7 @@ Go to <https://github.com/settings/keys> and copy/paste your public key from the
 
 # Diff
 
-# set difftool with config file
+## set difftool with config file
 
 ```shell
  git config --global -e
@@ -334,7 +343,7 @@ Go to <https://github.com/settings/keys> and copy/paste your public key from the
 [mergetool "vscode"]  
 `cmd = code --wait $MERGED`
 
-# set default editor
+## set default editor
 
 ```shell
 git config --global core.editor 'code --wait'
@@ -347,14 +356,14 @@ git config --global core.editor 'code --wait --new-window'
 git config --global --unset core.editor
 ```
 
-# default tool
+## default tool
 
 ```shell
 git config --global diff.tool vscode
 git config --global difftool.vscode.cmd 'code --wait --diff $LOCAL $REMOTE'
 ```
 
-# default merge
+## default merge
 
 ```shell
 git config --global merge.tool vscode

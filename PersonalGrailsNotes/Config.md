@@ -100,7 +100,7 @@ This however is ideal when you are in the middle of development, where it is not
 put most of your test data in the Bootstrap.    
     
 validate - this will not alter your database, but will just compare your data model with the database on start up. And create warnings if necessary. This is ideal when deploying to production environment.    
-    
-- Add the mysql deps as runtime in the dependencies of your build.gradle. E.g.    
+
+- Add the mysql deps as runtime in the dependencies of your build.gradle. E.g.
 
 - runtime 'mysql:mysql-connector-java:5.1.36'

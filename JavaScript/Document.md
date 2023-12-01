@@ -34,17 +34,16 @@ Table of contents
 var s = doc.createElement("script");
 s.type = "text/javascript";
 let sum = function () {
-    alert("mooo");
+  alert("mooo");
 };
 const x = sum.toString();
 var code = `${x}; sum();`;
 try {
-    s.appendChild(doc.createTextNode(code));
-    doc.body.appendChild(s);
-}
-catch (e) {
-    s.text = code;
-    doc.body.appendChild(s);
+  s.appendChild(doc.createTextNode(code));
+  doc.body.appendChild(s);
+} catch (e) {
+  s.text = code;
+  doc.body.appendChild(s);
 }
 ```
 

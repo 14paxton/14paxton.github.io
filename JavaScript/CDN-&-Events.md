@@ -49,59 +49,64 @@ Table of contents
 
 ```html
 <script>
-    const cdnLoadErrorFallback = {
-        jquery: "https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js", bootstrap: "https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js", validator: "https://s3.amazonaws.com/tb.tbex.rsrcs/lib.common/js/bootstrap-validator/dist/validator.min.js", h5f: "https://s3.amazonaws.com/tb.tbex.rsrcs/lib.common/js/H5F/h5f.min.js",
-    };
+  const cdnLoadErrorFallback = {
+    jquery: "https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js",
+    bootstrap:
+      "https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js",
+    validator:
+      "https://s3.amazonaws.com/tb.tbex.rsrcs/lib.common/js/bootstrap-validator/dist/validator.min.js",
+    h5f: "https://s3.amazonaws.com/tb.tbex.rsrcs/lib.common/js/H5F/h5f.min.js",
+  };
 
-    function cdnLoaded(x) {
-        console.log("loaded", x);
+  function cdnLoaded(x) {
+    console.log("loaded", x);
+  }
+
+  function buildScript(id) {
+    const script = document.createElement("script");
+    script.id = "test";
+    script.async = true;
+    script.crossOrigin = "anonymous";
+    script.fetchpriority = "high";
+    script.setAttribute("referrerpolicy", "origins");
+    script.setAttribute("type", "text/javascript");
+    script.setAttribute("src", cdnLoadErrorFallback[id]);
+
+    document.write(`<script src=${cdnLoadErrorFallback[id]}>\x3C/script>`);
+  }
+
+  function cdnError(script) {
+    const { id, src } = script;
+    console.log(`error loading ${id}`, src);
+
+    if (Object.hasOwn(cdnLoadErrorFallback, id)) {
+      buildScript(id);
     }
-
-    function buildScript(id) {
-        const script = document.createElement("script");
-        script.id = "test";
-        script.async = true;
-        script.crossOrigin = "anonymous";
-        script.fetchpriority = "high";
-        script.setAttribute("referrerpolicy", "origins");
-        script.setAttribute("type", "text/javascript");
-        script.setAttribute("src", cdnLoadErrorFallback[id]);
-
-        document.write(`<script src=${cdnLoadErrorFallback[id]}>\x3C/script>`);
-    }
-
-    function cdnError(script) {
-        const {id, src} = script;
-        console.log(`error loading ${id}`, src);
-
-        if (Object.hasOwn(cdnLoadErrorFallback, id)) {
-            buildScript(id);
-    }
-    }
+  }
 </script>
 <script
-        id="jquery"
-        onload="cdnLoaded()"
-        onerror="cdnError(this)"
-        src="/TBEX/assets/jquery.min.js"
+  id="jquery"
+  onload="cdnLoaded()"
+  onerror="cdnError(this)"
+  src="/TBEX/assets/jquery.min.js"
 ></script>
 <script
-        id="bootstrap"
-        onload="cdnLoaded()"
-        onerror="cdnError(this)"
-        src="/TBEX/assets/bootstrap.min.js"
+  id="bootstrap"
+  onload="cdnLoaded()"
+  onerror="cdnError(this)"
+  src="/TBEX/assets/bootstrap.min.js"
 ></script>
 <script
-        id="validator"
-        onload="cdnLoaded()"
-        onerror="cdnError(this)"
-        src="/TBEX/assets/validator.min.js"
+  id="validator"
+  onload="cdnLoaded()"
+  onerror="cdnError(this)"
+  src="/TBEX/assets/validator.min.js"
 ></script>
 <script
-        id="h5f"
-        onload="cdnLoaded()"
-        onerror="cdnError(this)"
-        src="/TBEX/assets/h5f.min.js"
+  id="h5f"
+  onload="cdnLoaded()"
+  onerror="cdnError(this)"
+  src="/TBEX/assets/h5f.min.js"
 ></script>
 ```
 

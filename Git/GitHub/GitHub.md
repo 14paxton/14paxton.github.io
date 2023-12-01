@@ -1,13 +1,11 @@
 ---
 title: GitHub
 layout: default
-permalink: GitHub/
-category: GitHub
+permalink: Git/GitHub
+category: Git/GitHub
+parent: Git
 has_children: true
 share: true
-shortRepo:
-  - github
-  - default
 ---
 
 # Use URL for file on GitHub
