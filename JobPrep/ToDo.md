@@ -1,18 +1,17 @@
 ---
-title:        ToDo
-permalink:    GitHubPages/ToDo
-category:     JobPrep
-parent:       MyPersonalDocsAndStuff
-layout:       default
+title: ToDo
+permalink: GitHubPages/ToDo
+category: JobPrep
+parent: MyPersonalDocsAndStuff
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - jobprep
-  - default              
+  - default
 ---
 
-
-<br/>              
+<br/>
 
 <details markdown="block">                    
 <summary>                    
@@ -21,13 +20,13 @@ Table of contents
 {: .text-delta }                    
 1. TOC                    
 {:toc}                    
-</details>                    
+</details>
 
-<br/>                    
+<br/>
 
-***                    
-    
-<br/>    
+---
+
+<br/>
 
 1. fix sitemap at index show only when mobile
 

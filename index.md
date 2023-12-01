@@ -1,12 +1,12 @@
 ---
-title:        MyPersonalDocsAndStuff
-name:         index.md
-permalink:    index
-layout:       default
-nav_order:    1
+title: MyPersonalDocsAndStuff
+name: index.md
+permalink: index
+layout: default
+nav_order: 1
 has_children: true
-share:        true
-shortRepo:    ghpages
+share: true
+shortRepo: ghpages
 ---
 
 # My Personal Documents and Other Stuff
@@ -29,9 +29,9 @@ shortRepo:    ghpages
 //const pathToHTML = "https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/assets/HTMLSnippets/Nav.html";
 -->
 <script>
-const pathToHTML = "/assets/HTMLSnippets/Nav.html";
+const pathToHTML = '/assets/HTMLSnippets/Nav.html';
 async function fetchHTMLFile(path) {
-return await fetch(path)
+return await fetch(path);
 }
 async function loadHTML() {
 console.log(navigator.userAgent);
@@ -51,4 +51,4 @@ document.addEventListener('DOMContentLoaded', fn);
 ready(loadHTML);
 </script>
 
-***
+---

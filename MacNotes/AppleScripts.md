@@ -1,18 +1,17 @@
 ---
-title:        AppleScripts
-permalink:    MacNotes/AppleScripts
-category:     MacNotes
-parent:       MacNotes
-layout:       default
+title: AppleScripts
+permalink: MacNotes/AppleScripts
+category: MacNotes
+parent: MacNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - macnotes
-  - default          
+  - default
 ---
 
-
-<br/>          
+<br/>
 
 <details markdown="block">                
 <summary>                
@@ -21,11 +20,11 @@ Table of contents
 {: .text-delta }                
 1. TOC                
 {:toc}                
-</details>                
+</details>
 
-<br/>                
+<br/>
 
-***                
+---
 
 <br/>
 
@@ -244,7 +243,7 @@ tell application "System Events"
 tell application "iTunes" to activate
 key code 45 using {command down, shift down}
 end tell
-````
+```
 
 ### new playlist from selection - Command-Shift-N
 
@@ -351,7 +350,6 @@ end tell
 
 > The number 4 refers to the key "h". (For more info on how to construct a keystroke or key code command, check out the "System Events" sdef via AppleScript Editor's Window > Library.)
 
-
 ---
 
 # KeyCodes
@@ -364,19 +362,19 @@ Using the keystroke command is fairly straight forward: just use the key's chara
 
 > From the AppleScript System Events dictionary:
 
-```key code integer or list of integer : The key code(s) to be sent. May be a list.```
+`key code integer or list of integer : The key code(s) to be sent. May be a list.`
 
-```[using command down/‌control down/‌option down/‌shift down or list of command down/‌control down/‌option down/‌shift down] : modifiers with which the key codes are to be entered```
+`[using command down/‌control down/‌option down/‌shift down or list of command down/‌control down/‌option down/‌shift down] : modifiers with which the key codes are to be entered`
 
-```keystroke text : The keystrokes to be sent.```
+`keystroke text : The keystrokes to be sent.`
 
-```[using as above]```
+`[using as above]`
 
 - Some examples illustrating their use:
 
 ```shell
 
-tell application "System Events"       
+tell application "System Events"
 key code 124 using {shift down, command down} --> Right arrow
 key code 8 using command down --> ⌘-C
 key code {4, 14, 37, 37, 31, 47} --> H, e, l, l, o, .
@@ -389,11 +387,11 @@ end tell
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
     (Note: I stylised ⌘-C and ⌘-V with their uppercase representations, but these indicate Cmd+C or V, respectively, without use of the Shift key.)
-</div> 
+</div>
 
-```keystroke can also accept the AppleScript constants tab, space return, and quote.```
+`keystroke can also accept the AppleScript constants tab, space return, and quote.`
 
-```The target is always the application window that has focus, so it’s important to set the focus to the desired application before issuing these commands (e.g. tell application "Finder" to activate).```
+`The target is always the application window that has focus, so it’s important to set the focus to the desired application before issuing these commands (e.g. tell application "Finder" to activate).`
 
 ## Move Mouse With Key Codes
 
@@ -413,8 +411,8 @@ Mouse keys allow you to use the number pad of the keyboard in place of a mouse.
 Numpad 5 is click, and the surrounding numbers correspond to direction (2 down, 6 right, 3 down-right, and so on)
 
 Once Mouse Keys are enabled, in applescript we can say
-```tell application "System Events" to key code ##```
-with ```##``` being replaced with the corresponding integer value of the key code and it will move the cursor roughly 1 pixel in that direction.
+`tell application "System Events" to key code ##`
+with `##` being replaced with the corresponding integer value of the key code and it will move the cursor roughly 1 pixel in that direction.
 
 # References
 

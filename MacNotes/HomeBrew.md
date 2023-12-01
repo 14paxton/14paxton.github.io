@@ -1,18 +1,17 @@
 ---
-title:        HomeBrew
-permalink:    MacNotes/HomeBrew
-category:     MacNotes
-parent:       MacNotes
-layout:       default
+title: HomeBrew
+permalink: MacNotes/HomeBrew
+category: MacNotes
+parent: MacNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - macnotes
-  - default          
+  - default
 ---
 
-
-<br/>          
+<br/>
 
 <details markdown="block">                
 <summary>                
@@ -21,11 +20,11 @@ Table of contents
 {: .text-delta }                
 1. TOC                
 {:toc}                
-</details>                
+</details>
 
-<br/>                
+<br/>
 
-***                
+---
 
 <br/>
 
@@ -33,22 +32,22 @@ Table of contents
 
 ruby is keg-only, which means it was not symlinked into
 
-```            
-/opt/homebrew            
-```            
+```
+/opt/homebrew
+```
 
-because macOS already provides this software and installing another version in            
+because macOS already provides this software and installing another version in  
 parallel can cause all kinds of trouble.
 
 If you need to have ruby first in your PATH, run:
 
-```ruby            
-echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.zshrc            
-```            
+```ruby
+echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.zshrc
+```
 
 For compilers to find ruby you may need to set:
 
-```shell            
-export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"            
-export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"            
-```            
+```shell
+export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+```

@@ -1,17 +1,16 @@
 ---
-title:        WindowsServer    
-permalink:    Windows_Notes/WindowsServer    
-category:     Windows_Notes    
-parent:       Windows_Notes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - windows_notes    
-  - default    
+title: WindowsServer
+permalink: Windows_Notes/WindowsServer
+category: Windows_Notes
+parent: Windows_Notes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - windows_notes
+  - default
 ---
-    
-    
+
 <br/>    
     
 <details markdown="block">    

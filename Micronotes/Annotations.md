@@ -1,18 +1,17 @@
 ---
-title:        Annotations
-permalink:    Micronotes/Annotations
-category:     Micronotes
-parent:       Micronotes
-layout:       default
+title: Annotations
+permalink: Micronotes/Annotations
+category: Micronotes
+parent: Micronotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - micronotes
-  - default          
+  - default
 ---
 
-
-<br/>          
+<br/>
 
 <details markdown="block">                
 <summary>                
@@ -21,11 +20,11 @@ Table of contents
 {: .text-delta }                
 1. TOC                
 {:toc}                
-</details>                
+</details>
 
-<br/>                
+<br/>
 
-***                
+---
 
 <br/>
 
@@ -98,17 +97,17 @@ public class MyObject {
 
 <div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
     *** In the case of using JPA only a subset of annotations is supported including the following: ***       
-</div> 
+</div>
 
-- > Basic: ```@Table```, ```@Id ``` ,```@Version```, ```@Column```, ```@Transient```, ```@Enumerated```
+- > Basic: `@Table`, `@Id ` ,`@Version`, `@Column`, `@Transient`, `@Enumerated`
 
-- > Embedded definition: ```@Embedded``` ```@EmbeddedId``` ```@Embeddable```
+- > Embedded definition: `@Embedded` `@EmbeddedId` `@Embeddable`
 
-- > Relationship mapping: ```@OneToMany``` ```@OneToOne ``` ```@ManyToOne``` ```@ManyToMany```
+- > Relationship mapping: `@OneToMany` `@OneToOne ` `@ManyToOne` `@ManyToMany`
 
-- > Join specification: ```@JoinTable``` ```@JoinColumn```
+- > Join specification: `@JoinTable` `@JoinColumn`
 
-- > Type converters: ```@Convert``` ```@Converter``` and ```AttributeConverter Interface```
+- > Type converters: `@Convert` `@Converter` and `AttributeConverter Interface`
 
 # Validation
 
@@ -206,7 +205,7 @@ public class MyObject {
 
 <div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
     Needs to be above micronaut annotations on classpath in gradle       
-</div> 
+</div>
 
 ```gradle
   annotationProcessor 'org.projectlombok:lombok:1.18.24'
@@ -214,9 +213,9 @@ public class MyObject {
 
 <div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
     For lombok to recognize micronaut annotations and inject into constructor       
-</div> 
+</div>
 
-> create ```lombok.config``` at ```root```, insert line:
+> create `lombok.config` at `root`, insert line:
 
 ```
    lombok.copyableannotations += io.micronaut.core.annotation.Nullable

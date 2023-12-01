@@ -1,18 +1,17 @@
 ---
-title:        Jackson
-permalink:    Micronotes/Jackson
-category:     Micronotes
-parent:       Micronotes
-layout:       default
+title: Jackson
+permalink: Micronotes/Jackson
+category: Micronotes
+parent: Micronotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - micronotes
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,13 +20,13 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # [Jackson](https://github.com/FasterXML/jackson-docs)
 
@@ -35,7 +34,7 @@ Table of contents
 
 ## toString and toMap
 
-```java    
+```java
 public class JacksonToStuff {
     @JsonValue
     @Override
@@ -49,15 +48,15 @@ public class JacksonToStuff {
     @JsonValue
     @Override
     public String toString() {
-        // add JSON processing exception handling, dropped for readability    
+        // add JSON processing exception handling, dropped for readability
         return new ObjectMapper().writeValueAsString(this.toMap());
     }
 }
-```    
+```
 
 ### Pass a string as JSON
 
-```java    
+```java
 public class Data {
     private Map<String, User> record;
 
@@ -75,12 +74,12 @@ public class Data {
                 "record=" + record +
                 '}';
     }
-}    
-```    
+}
+```
 
 ## JSON string to JsonNode
 
-```java    
+```java
 public class StringToNode {
     Map<String, Object> agencyMap = Map.of(
             "name", "Agencia Prueba",
@@ -95,26 +94,26 @@ public class StringToNode {
 
     ObjectNode agencyNode = new ObjectMapper().valueToTree(agencyMap);
 }
-```    
+```
 
 # Common Config Settings
 
-```yml    
+```yml
 jackson:
   property-naming-strategy: LOWER_CAMEL_CASE
-  locale:                   en_US
-  date-format:              yyyy-MM-dd'T'HH:mm:ss.SSS
+  locale: en_US
+  date-format: yyyy-MM-dd'T'HH:mm:ss.SSS
   mapper:
     ACCEPT_CASE_INSENSITIVE_ENUMS: true
   serialization:
-    INDENT_OUTPUT:                        false
+    INDENT_OUTPUT: false
     WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS: false
-    WRITE_DATES_AS_TIMESTAMPS:            false
+    WRITE_DATES_AS_TIMESTAMPS: false
   deserialization:
-    FAIL_ON_UNKNOWN_PROPERTIES:          false
+    FAIL_ON_UNKNOWN_PROPERTIES: false
     READ_DATE_TIMESTAMPS_AS_NANOSECONDS: false
-  serialization-inclusion:  non_null    
-```     
+  serialization-inclusion: non_null
+```
 
 # References
 

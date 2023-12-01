@@ -1,17 +1,16 @@
 ---
-title: Storage    
-permalink: GoogleNotes/Storage    
-category:  GoogleNotes    
-parent:   GoogleNotes    
-layout: default    
-has_children: false    
-share: true    
-shortRepo:    
-  - googlenotes    
-  - default              
+title: Storage
+permalink: GoogleNotes/Storage
+category: GoogleNotes
+parent: GoogleNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - googlenotes
+  - default
 ---
-    
-    
+
 <br/>              
     
 <details markdown="block">                    

@@ -1,17 +1,16 @@
 ---
-title:        PastProjects
+title: PastProjects
 permalink: GitHubPages/PastProjects
-category:     JobPrep      
-parent:       MyPersonalDocsAndStuff      
-layout:       default      
-has_children: false      
-share:        true      
-shortRepo:      
-      
-  - jobprep      
-  - default      
+category: JobPrep
+parent: MyPersonalDocsAndStuff
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - jobprep
+  - default
 ---
-    
+
 <details markdown="block">                    
 <summary>                    
 Table of contents                    
@@ -216,5 +215,5 @@ FitStatement.getEnumConstants().find{(it.value==member.result)}?.match?:member.r
 - Describe a recent interpersonal conflict within the team, and how it was handled.    
     
 - How much time does the team typically get for a) technical debt reduction & b) research projects per quarter?    
-    
-- Describe a recent prioritisation conflict - perhaps between the team & PM, or between different stakeholders. How was it resolved?    
+
+- Describe a recent prioritisation conflict - perhaps between the team & PM, or between different stakeholders. How was it resolved?

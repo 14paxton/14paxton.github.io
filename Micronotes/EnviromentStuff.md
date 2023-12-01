@@ -1,18 +1,17 @@
 ---
-title:        EnviromentStuff
-permalink:    Micronotes/EnviromentStuff
-category:     Micronotes
-parent:       Micronotes
-layout:       default
+title: EnviromentStuff
+permalink: Micronotes/EnviromentStuff
+category: Micronotes
+parent: Micronotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - micronotes
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,32 +20,32 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # [Environment Settings](https://docs.micronaut.io/latest/guide/#environments)
 
 > The Micronaut framework uses the following hierarchy for environment processing (lowest to highest priority):
 
 - Deduced environments
-- Environments from the ```micronaut.environments``` system property
-- Environments from the ```MICRONAUT_ENVIRONMENTS``` environment variable
+- Environments from the `micronaut.environments` system property
+- Environments from the `MICRONAUT_ENVIRONMENTS` environment variable
 - Environments specified explicitly through the application context builder
 
 <div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">            
 <a href="https://docs.micronaut.io/latest/api/io/micronaut/context/env/Environment.html">Available Env Fields</a>
-</div> 
+</div>
 
 # Run in Development
 
 ## replace application
 
-```java    
+```java
 public class Application {
     public static void main(String[] args) {
         Micronaut.build(args)
@@ -55,21 +54,21 @@ public class Application {
                 .start();
     }
 }
-```    
+```
 
 ## add to build.gradle
 
-```gradle    
+```gradle
 run {
     systemProperty('micronaut.environments', 'dev')
-}    
-```    
+}
+```
 
 ## cli
 
-```shell    
-./gradlew -Dmicronaut.environments=dev run    
-```    
+```shell
+./gradlew -Dmicronaut.environments=dev run
+```
 
 ## ide
 

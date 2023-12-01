@@ -1,18 +1,17 @@
 ---
-title:        Basics
-permalink:    DockerNotes/Basics
-category:     DockerNotes
-parent:       DockerNotes
-layout:       default
+title: Basics
+permalink: DockerNotes/Basics
+category: DockerNotes
+parent: DockerNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - dockernotes
-  - default          
+  - default
 ---
 
-
-<br/>          
+<br/>
 
 <details markdown="block">                
 <summary>                
@@ -21,11 +20,11 @@ Table of contents
 {: .text-delta }                
 1. TOC                
 {:toc}                
-</details>                
+</details>
 
-<br/>                
+<br/>
 
-***                
+---
 
 <br/>
 
@@ -203,19 +202,19 @@ docker commit
 
 ```shell
 docker run -d image:
-``` 
+```
 
 ## Map a port from the host to a container.
 
 ```shell
 docker run -p host_port:container_port image
- ```
+```
 
 ## Mount a volume from the host to a container.
 
 ```shell
 docker run -v host_volume:container_volume image
- ```
+```
 
 ## Set environment variables in a container.
 
@@ -237,63 +236,63 @@ docker run -v host_volume:container_volume image
 
 # Dockerfile Commands
 
-## ```FROM image```
+## `FROM image`
 
 > Set the base image.
 
-## ```RUN```
+## `RUN`
 
 > Run a command.
 
-## ```CMD```
+## `CMD`
 
 > Set a default command that will run when the container starts.
 
-## ```ENV VAR=VALUE```
+## `ENV VAR=VALUE`
 
 > Set environment variables.
 
-## ```ADD source destination```
+## `ADD source destination`
 
 > Copy files from source to the container\'s filesystem at the destination.
 
-## ```COPY source destination```
+## `COPY source destination`
 
 > Copy new files or directories from source and add them to the filesystem of the container at the destination.
 
-## ```ENTRYPOINT```
+## `ENTRYPOINT`
 
 > Allow you to configure a container that will run as an executable.
 
-## ```LABEL```
+## `LABEL`
 
 > Adds metadata to an image.
 
-## ```EXPOSE```
+## `EXPOSE`
 
 > Informs Docker that the container listens on the specified network ports at runtime.
 
-## ```ENTRYPOINT```
+## `ENTRYPOINT`
 
 > Allows you to configure a container that will run as an executable.
 
-## ```VOLUME```
+## `VOLUME`
 
 > Creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers.
 
-## ```USER```
+## `USER`
 
 > Set the username (or UID) and optionally the user group (or GID) to use when running the image and for any RUN, CMD and ENTRYPOINT instructions that follow it in the Dockerfile.
 
-## ```WORKDIR```
+## `WORKDIR`
 
 > Set the working directory for any RUN, CMD, ENTRYPOINT, COPY, and ADD instructions that follow it in the Dockerfile.
 
-## ```ARG```
+## `ARG`
 
 > Define a variable that users can pass at build-time to the builder with the docker build command.
 
-## ```ONBUILD```
+## `ONBUILD`
 
 > Adds a trigger instruction when the image is used as the base for another build.
 
@@ -389,7 +388,7 @@ vim Dockerfile
 
 > Dockerfile contents:
 
-```dockerfile   
+```dockerfile
 # Create an image for the weather-app using multi-stage build
 
 FROM node AS build

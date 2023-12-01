@@ -8,11 +8,10 @@ has_children: false
 share: true
 shortRepo:
   - linux
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,52 +20,52 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # [Using SDKMan](https://sdkman.io/usage)
 
 # Install sdkman
 
-```bash    
-curl -s https://get.sdkman.io | bash     
-source "$HOME/.sdkman/bin/sdkman-init.sh"     
-```    
+```bash
+curl -s https://get.sdkman.io | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+```
 
 # list candidates
 
-```shell    
-sdk list     
-```    
+```shell
+sdk list
+```
 
 # list versions
 
-```shell    
-sdk list [program]     
-```    
+```shell
+sdk list [program]
+```
 
 # will use for cmd shell only
 
-```shell    
-sdk use [program] [version number]     
-```    
+```shell
+sdk use [program] [version number]
+```
 
 # will switch default
 
-```shell    
-sdk default [program][version number]     
-```    
+```shell
+sdk default [program][version number]
+```
 
 # list all candidates
 
-```bash    
-ls -l ~/.sdkman/candidates/java    
-```    
+```bash
+ls -l ~/.sdkman/candidates/java
+```
 
 # [available canidates](https://api.sdkman.io/2/candidates/java/Darwin/versions/list?installed=)
 
@@ -74,10 +73,10 @@ ls -l ~/.sdkman/candidates/java
 
 > use a .sdkmanrc file at root of project
 
-- Use sdkman to run ```sdk env``` to initialize with correct JDK version
-- Enable ```auto-env``` through the ```sdkman_auto_env``` config
+- Use sdkman to run `sdk env` to initialize with correct JDK version
+- Enable `auto-env` through the `sdkman_auto_env` config
 - [See https://sdkman.io/usage#config](https://sdkman.io/usage#config)
-- Add ```sdkman_auto_env=true``` to ```~/.sdkman/etc/config```
+- Add `sdkman_auto_env=true` to `~/.sdkman/etc/config`
 
 > my use case, contents of my .sdkmanrc file for GraalVM java project
 

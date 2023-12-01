@@ -1,17 +1,16 @@
 ---
-title: VoiceAgent    
-permalink: GoogleNotes/VoiceAgent    
-category:  GoogleNotes    
-parent:   GoogleNotes    
-layout: default    
-has_children: false    
-share: true    
-shortRepo:    
-  - googlenotes    
-  - default              
+title: VoiceAgent
+permalink: GoogleNotes/VoiceAgent
+category: GoogleNotes
+parent: GoogleNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - googlenotes
+  - default
 ---
-    
-    
+
 <br/>              
     
 <details markdown="block">                    

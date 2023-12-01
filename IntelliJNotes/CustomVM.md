@@ -1,18 +1,17 @@
 ---
-title:        CustomVM
-permalink:    IntelliJNotes/CustomVM
-category:     IntelliJNotes
-parent:       IntelliJNotes
-layout:       default
+title: CustomVM
+permalink: IntelliJNotes/CustomVM
+category: IntelliJNotes
+parent: IntelliJNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - intellijnotes
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,25 +20,25 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # References
 
-- > [Other Memory Settings]( http://tomaszdziurko.com/2015/11/1-and-the-only-one-to-customize-intellij-idea-memory-settings/)
+- > [Other Memory Settings](http://tomaszdziurko.com/2015/11/1-and-the-only-one-to-customize-intellij-idea-memory-settings/)
 
-- > [boost performance putting caches in memory]( https://medium.com/@sergio.igwt/boosting-performance-of-intellij-idea-and-the-rest-of-jetbrains-ides-cd34952bb978)
+- > [boost performance putting caches in memory](https://medium.com/@sergio.igwt/boosting-performance-of-intellij-idea-and-the-rest-of-jetbrains-ides-cd34952bb978)
 
 - > [serpro69 config vmoptions example](https://github.com/serpro69/config/blob/master/idea64.vmoptions#L36)
 
 # ORIGINAL idea.vmoptions
 
-```shell    
+```shell
 -Xms128m=
 -Xmx750m=
 -XX=ReservedCodeCacheSize=240m
@@ -54,12 +53,12 @@ Table of contents
 -XX=-OmitStackTraceInFastThrow
 -Djdk.attach.allowAttachSelf=true
 -Dkotlinx.coroutines.debug=off
--Djdk.module.illegalAccess.silent=true    
-```    
+-Djdk.module.illegalAccess.silent=true
+```
 
-[UPDATED From Tuning Article]( https://medium.com/stochastic-stories/tuning-my-intellij-ide-8255781f6a0d)
+[UPDATED From Tuning Article](https://medium.com/stochastic-stories/tuning-my-intellij-ide-8255781f6a0d)
 
-```shell    
+```shell
 -Xms15g=
 -XX=ReservedCodeCacheSize=2g
 -XX=+UseCompressedOops
@@ -84,14 +83,14 @@ Table of contents
 ## Set Symbolic link for storing caches in memory
 
 ```shell
-mklink /D "R:\Temp\intellij\caches" "C:\Users\bpaxton\.IntelliJIdea2019.3\system\caches"    
+mklink /D "R:\Temp\intellij\caches" "C:\Users\bpaxton\.IntelliJIdea2019.3\system\caches"
 mklink /D "R:\Temp\intellij\index" "C:\Users\bpaxton\.IntelliJIdea2019.3\system\index"
 ```
 
 # Working Examples I Have Used
 
-```shell    
-  # custom IntelliJ IDEA VM options (expand/override 'bin/idea.vmoptions')    
+```shell
+  # custom IntelliJ IDEA VM options (expand/override 'bin/idea.vmoptions')
 -ea=
 -server=
 -Xms6g=
@@ -119,12 +118,12 @@ mklink /D "R:\Temp\intellij\index" "C:\Users\bpaxton\.IntelliJIdea2019.3\system\
 -XX=+UseStringCache
 -XX=+UseFastAccessorMethods
 -XX=+UseCompressedOops
--XX=-OmitStackTraceInFastThrow    
-```    
+-XX=-OmitStackTraceInFastThrow
+```
 
 > or
 
-```shell    
+```shell
 -server=
 -Xms8g=
 -Xmx8g=
@@ -151,8 +150,8 @@ mklink /D "R:\Temp\intellij\index" "C:\Users\bpaxton\.IntelliJIdea2019.3\system\
 -Dide.no.platform.update=true
 -Dsun.io.useCanonCaches=false
 -XX=ReservedCodeCacheSize=512m
--Didea.plugins.path=C:\\Users\\bpaxton\\AppData\\Local\\JetBrains\\Toolbox\\apps\\IDEA-U\\ch-0\\203.6682.168.plugins    
-```    
+-Didea.plugins.path=C:\\Users\\bpaxton\\AppData\\Local\\JetBrains\\Toolbox\\apps\\IDEA-U\\ch-0\\203.6682.168.plugins
+```
 
 ## Set JVM args in build.gradle bootRun{}
 

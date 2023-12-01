@@ -1,17 +1,16 @@
 ---
-title:        Security    
-permalink:    SpringNotes/Security    
-category:     SpringNotes    
-parent:       SpringNotes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - springnotes    
-  - default    
+title: Security
+permalink: SpringNotes/Security
+category: SpringNotes
+parent: SpringNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - springnotes
+  - default
 ---
-    
-    
+
 <br/>    
     
 <details markdown="block">    

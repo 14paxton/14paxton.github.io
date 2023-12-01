@@ -1,17 +1,16 @@
 ---
-title: ServiceAccounts    
-permalink: GoogleNotes/ServiceAccounts    
-category:  GoogleNotes    
-parent:   GoogleNotes    
-layout: default    
-has_children: false    
-share: true    
-shortRepo:    
-  - googlenotes    
-  - default              
+title: ServiceAccounts
+permalink: GoogleNotes/ServiceAccounts
+category: GoogleNotes
+parent: GoogleNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - googlenotes
+  - default
 ---
-    
-    
+
 <br/>              
     
 <details markdown="block">                    

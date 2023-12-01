@@ -8,11 +8,10 @@ has_children: false
 share: true
 shortRepo:
   - windows_notes
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,13 +20,13 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # [WSL](https://learn.microsoft.com/en-us/windows/wsl/basic-commands)
 
@@ -39,34 +38,34 @@ Table of contents
 
 > ps script enable and install
 
-```shell    
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux    
-Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseBasicParsing    
-Add-AppxPackage .\Ubuntu.appx    
-```    
+```shell
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseBasicParsing
+Add-AppxPackage .\Ubuntu.appx
+```
 
 > or
 
 > ps steps
 
-```shell    
-# enable    
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart    
-    
-# enable virtual machine    
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart    
-    
-# use wsl2    
-wsl --set-default-version 2    
-```    
+```shell
+# enable
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+# enable virtual machine
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+# use wsl2
+wsl --set-default-version 2
+```
 
 > or
 
-- use run and enable ```windows subsystem for linux``` in windows features
+- use run and enable `windows subsystem for linux` in windows features
 
-> hit ```win + R```
+> hit `win + R`
 
-> then input ```optionalfeatures.exe```
+> then input `optionalfeatures.exe`
 
 ## install linux distro
 
@@ -92,7 +91,7 @@ cd <somefolder>
 Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile Ubuntu.appx -UseBasicParsing
 ```
 
-### install downloaded *.appx file
+### install downloaded \*.appx file
 
 ```shell
 Add-AppxPackage .\Ubuntu.appx
@@ -126,24 +125,24 @@ Restart-Service LxssManager
 
 > or
 
-```shell  
-wsl --terminate [YourDistroName]    
-wsl --shutdown    
+```shell
+wsl --terminate [YourDistroName]
+wsl --shutdown
 ```
 
 ## Points of Interest
 
 ### Path from windows file system
 
-> relative path: ```\wsl$\Ubuntu\home\bpaxton```
+> relative path: `\wsl$\Ubuntu\home\bpaxton`
 
-> Absolute Path: ```C:\Users\bpaxton\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs```
+> Absolute Path: `C:\Users\bpaxton\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs`
 
 #### shell exe, (can point ide to this to use ubuntu in terminal)
 
-[Use in JetBrains ides]( https://www.jetbrains.com/help/idea/how-to-use-wsl-development-environment-in-product.html)
-```C:\Users\bpaxton\AppData\Local\Microsoft\WindowsApps\ubuntu.exe```
+[Use in JetBrains ides](https://www.jetbrains.com/help/idea/how-to-use-wsl-development-environment-in-product.html)
+`C:\Users\bpaxton\AppData\Local\Microsoft\WindowsApps\ubuntu.exe`
 
 ### distribution Ubuntu
 
-```wsl.exe```
+`wsl.exe`

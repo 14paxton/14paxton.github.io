@@ -1,17 +1,16 @@
 ---
-title:     CommandLineDiddys
-layout:    default
-parent:    Java
+title: CommandLineDiddys
+layout: default
+parent: Java
 permalink: JavaNotes/CommandLineDiddys
-category:  JavaNotes
-share:     true
+category: JavaNotes
+share: true
 shortRepo:
   - javanotes
-  - default              
+  - default
 ---
 
-
-<br/>            
+<br/>
 
 <details markdown="block">                  
 <summary>                  
@@ -20,32 +19,32 @@ Table of contents
 {: .text-delta }                  
 1. TOC                  
 {:toc}                  
-</details>                  
+</details>
 
-<br/>                  
+<br/>
 
-***                  
+---
 
-<br/>                  
+<br/>
 
-# [JPS]( https://docs.oracle.com/en/java/javase/17/docs/specs/man/jps.html  )
+# [JPS](https://docs.oracle.com/en/java/javase/17/docs/specs/man/jps.html)
 
 ## list running java processes
 
-```shell  
-jps -lV    
-```  
+```shell
+jps -lV
+```
 
 ## Find java and remove applications you don’t want killed
 
-```bash            
-jps | egrep -v (pgrep idea)            
-```            
+```bash
+jps | egrep -v (pgrep idea)
+```
 
 ### Find apps running jvm, deliminate by first space, return the field1 (PID), kill all -
 
-```bash            
-for pid in $(jps | egrep -v $(pgrep webstorm) | egrep -v $(pgrep idea)| egrep -v $(pgrep jps) | cut -d' ' -f1); do kill -9 $pid; done            
+```bash
+for pid in $(jps | egrep -v $(pgrep webstorm) | egrep -v $(pgrep idea)| egrep -v $(pgrep jps) | cut -d' ' -f1); do kill -9 $pid; done
 ```
 
 # JVM
@@ -60,7 +59,7 @@ java -X
 
 > and you will get a list of all -X options:
 
-```shell    
+```shell
 -Xmixed           mixed mode execution (default)
 -Xint             interpreted mode execution only
 -Xbootclasspath:<directories and zip/jar files separated by ;>
@@ -89,4 +88,4 @@ prepend in front of bootstrap class path
 -XshowSettings:vm          show all vm related settings and continue
 -XshowSettings:properties  show all property settings and continue
 -XshowSettings:locale      show all locale related settings and continue
-```    
+```

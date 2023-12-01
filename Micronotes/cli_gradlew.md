@@ -1,18 +1,17 @@
 ---
-title:        cli_gradlew
-permalink:    Micronotes/cli_gradlew
-category:     Micronotes
-parent:       Micronotes
-layout:       default
+title: cli_gradlew
+permalink: Micronotes/cli_gradlew
+category: Micronotes
+parent: Micronotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - micronotes
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,23 +20,23 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # Debug
 
-```bash    
-./gradlew runSingle --debug-jvm -PmainClass=Mai    
-```    
+```bash
+./gradlew runSingle --debug-jvm -PmainClass=Mai
+```
 
-## ```build.gradle```
+## `build.gradle`
 
-```gradle    
+```gradle
 test {
     debugOptions {
         enabled = true
@@ -45,52 +44,52 @@ test {
         server = true
         suspend = true
     }
-}    
-```    
+}
+```
 
 > or
 
 ```gradle
-run{     
+run{
 debugOptions {
         enabled = true
         port = 4455
         server = true
         suspend = true
-    } 
+    }
  }
 ```
 
 ## Remote Debugging in Gradle
 
-```gradle    
+```gradle
 tasks.withType(JavaExec) {
     if (System.getProperty('DEBUG', 'false') == 'true') {
         jvmArgs '-Xdebug', '-Xrunjdwp:transport=debug_socket,server=y,suspend=y,address=9099'
     }
-}    
-```    
+}
+```
 
 > To know what's happening with the arguments, read this about the arguments that you need to send to jvm to make remote debugging possible:
-> [enable-remote-debugging](https://www.eclipse.org/jetty/documentation/9.3.x/enable-remote-debugging.html )
+> [enable-remote-debugging](https://www.eclipse.org/jetty/documentation/9.3.x/enable-remote-debugging.html)
 
 ## Running instructions
 
 ### Step1:
 
-```bash    
-gradle -DDEBUG=true run    
-```    
+```bash
+gradle -DDEBUG=true run
+```
 
 > Now in the console you will see something like this:
 
-```shell    
-Listening for transport debug_socket at address: 9099    
-```    
+```shell
+Listening for transport debug_socket at address: 9099
+```
 
 ### Step2:
 
-> ```Configuration``` -> ```Remote Java Application```
+> `Configuration` -> `Remote Java Application`
 
 - set these fields:
   1. project

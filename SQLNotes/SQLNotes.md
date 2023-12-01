@@ -1,18 +1,17 @@
 ---
-title:        SQLNotes
-layout:       default
-permalink:    SQLNotes/
-category:     SQLNotes
+title: SQLNotes
+layout: default
+permalink: SQLNotes/
+category: SQLNotes
 has_children: true
-share:        true
+share: true
 shortRepo:
-
   - sqlnotes
-  - default             
+  - default
 ---
 
 <br/>              
 ___              
-## [Repo](https://github.com/14paxton/SQLNotes)              
+## [Repo](https://github.com/14paxton/SQLNotes)
 
-***
+---

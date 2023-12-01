@@ -19,5 +19,8 @@ https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/assets/imag
 ```
 
 ```html
-<img alt="kubernetes" src="https://github.com/14paxton/14paxton.github.io/blob/master/assets/images/kubernetes.gif?raw=true"/>
+<img
+  alt="kubernetes"
+  src="https://github.com/14paxton/14paxton.github.io/blob/master/assets/images/kubernetes.gif?raw=true"
+/>
 ```

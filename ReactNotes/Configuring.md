@@ -1,17 +1,33 @@
 ---
-title:        Configuring
-permalink:    ReactNotes/Configuring.md
-category:     ReactNotes
-parent:       ReactNotes
-layout:       default
+title: Configuring
+permalink: ReactNotes/Configuring.md
+category: ReactNotes
+parent: ReactNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - reactnotes
-  - default                
+  - default
 ---
 
-<br/>                
+<br/>
+
+<details markdown="block">                      
+<summary>                      
+Table of contents                      
+</summary>                      
+{: .text-delta }                      
+1. TOC                      
+{:toc}                      
+</details>
+
+<br/>
+
+---
+
+<br/>      
+<br/>
 
 <details markdown="block">                      
 <summary>                      
@@ -22,27 +38,11 @@ Table of contents
 {:toc}                      
 </details>                      
 
-<br/>                      
+<br/>
 
-***                      
+---
 
-<br/>      
-<br/>                
-
-<details markdown="block">                      
-<summary>                      
-Table of contents                      
-</summary>                      
-{: .text-delta }                      
-1. TOC                      
-{:toc}                      
-</details>                      
-    
-<br/>                      
-
-***                      
-
-<br/>      
+<br/>
 
 # Change ip or port when running
 
@@ -52,10 +52,10 @@ Table of contents
 
 > In Linux and Mac terminals, it would be
 
-```export PORT=5000```      
-```export HOST=IP ADDRESS```
+`export PORT=5000`  
+`export HOST=IP ADDRESS`
 
 > In Windows, the command is slightly different
 
-```env:PORT=5000```      
-```env:HOST=IP ADDRESS```
+`env:PORT=5000`  
+`env:HOST=IP ADDRESS`

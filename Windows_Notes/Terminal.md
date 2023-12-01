@@ -1,17 +1,16 @@
 ---
-title:        Terminal    
-permalink:    Windows_Notes/Terminal    
-category:     Windows_Notes    
-parent:       Windows_Notes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - windows_notes    
-  - default    
+title: Terminal
+permalink: Windows_Notes/Terminal
+category: Windows_Notes
+parent: Windows_Notes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - windows_notes
+  - default
 ---
-    
-    
+
 <br/>    
     
 <details markdown="block">    
@@ -32,14 +31,14 @@ Table of contents
 
 - > [Windows Docs](https://learn.microsoft.com/en-us/windows/terminal/)
 
-# Install    
+# Install
 
 ## Winget
 
-- via powershell    
-    
-```bash    
-winget install --id Microsoft.WindowsTerminal -e    
+- via powershell
+
+```bash
+winget install --id Microsoft.WindowsTerminal -e
 ```
 
 ## Download .zip package

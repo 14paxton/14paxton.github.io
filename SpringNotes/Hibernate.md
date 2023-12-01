@@ -11,8 +11,7 @@ shortRepo:
   - default    
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,13 +20,13 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # Grails Notes
 
@@ -35,19 +34,19 @@ Table of contents
 
 ### getting session-
 
-```def sessionFactory```
+`def sessionFactory`
 
-```def session = sessionFactory?.getCurrentSession()```
+`def session = sessionFactory?.getCurrentSession()`
 
-```RequestContextHolder.currentRequestAttributes().getSession()```
+`RequestContextHolder.currentRequestAttributes().getSession()`
 
 ## -get hibernate datastore in session-
 
 ### -Get hibernatedatasource-
 
-[hibernate datastore ex.](https://guides.grails.org/grails-dynamic-multiple-datasources/guide/index.html  )
+[hibernate datastore ex.](https://guides.grails.org/grails-dynamic-multiple-datasources/guide/index.html)
 
-```java    
+```java
 public class HibernateExample {
    @Autowired
    HibernateDatastore hibernateDatastore;
@@ -62,42 +61,42 @@ public class HibernateExample {
       hibernateDatastore.getConnectionSources().addConnectionSource(databaseConfiguration.dataSourceName, databaseConfiguration.configuration);
    }
 }
-``` 
+```
 
 ### -get table columns-
 
-```groovy    
-hibernateDatastore.getSessionFactory().getClassMetadata(GroupCompare).getProperties().sort()    
-```    
+```groovy
+hibernateDatastore.getSessionFactory().getClassMetadata(GroupCompare).getProperties().sort()
+```
 
-```groovy    
-ctx.sessionFactory.getClassMetadata(Team).attributes.collect { it.name }    
-```    
+```groovy
+ctx.sessionFactory.getClassMetadata(Team).attributes.collect { it.name }
+```
 
 ### -get data bindings/properties/class/domain table/declared fields-
 
-```def mapping = org.grails.orm.hibernate.cfg.GrailsDomainBinder.getMapping(UserGroup)```
+`def mapping = org.grails.orm.hibernate.cfg.GrailsDomainBinder.getMapping(UserGroup)`
 
-```sessionFactory.getClassMetadata(Foo).tableName```
+`sessionFactory.getClassMetadata(Foo).tableName`
 
-```org.grails.orm.hibernate.cfg.GrailsDomainBinder.getMapping(groupCompare.class).class.declaedFields```
+`org.grails.orm.hibernate.cfg.GrailsDomainBinder.getMapping(groupCompare.class).class.declaedFields`
 
 ### -get a service-
 
-1.
+1.  ```java
+        public class HibernateExample {
 
-  ```java    
-      public class HibernateExample {
- 
-     @Autowired
-     HibernateDatastore hibernateDatastore;
-     UserDataService userDataService;
- 
-     UserService(HibernateDatastore hibernateDatastore) {
-         this.userDataService = hibernateDatastore.getService(UserDataService);
-     }
- }
- ```    
+       @Autowired
+       HibernateDatastore hibernateDatastore;
+       UserDataService userDataService;
+
+       UserService(HibernateDatastore hibernateDatastore) {
+           this.userDataService = hibernateDatastore.getService(UserDataService);
+       }
+    }
+    ```
+
+````
 
 2. ```(YourService)Holders.grailsApplication.mainContext["yourService"]```
 3. ```applicationContext."${yourServiceName}".serviceMethod()```
@@ -105,15 +104,15 @@ ctx.sessionFactory.getClassMetadata(Team).attributes.collect { it.name }
 5. ```Holders.applicationContext.getBean("myService")```
 6.
 
-  ```groovy    
-    class HibernateExample {
- 
-     ApplicationContext ctx = (ApplicationContext) ServletContextHolder
-             .getServletContext()
-             .getAttribute(GrailsApplicationAttributes
-                     .APPLICATION_CONTEXT)
- 
-     def statisticsService = (StatisticsService).ctx.getBean("statisticsService ")
- }
- 
- ```
+ ```groovy
+   class HibernateExample {
+
+    ApplicationContext ctx = (ApplicationContext) ServletContextHolder
+            .getServletContext()
+            .getAttribute(GrailsApplicationAttributes
+                    .APPLICATION_CONTEXT)
+
+    def statisticsService = (StatisticsService).ctx.getBean("statisticsService ")
+}
+
+````

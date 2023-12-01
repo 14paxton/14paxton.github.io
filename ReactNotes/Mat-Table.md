@@ -1,17 +1,17 @@
 ---
-title:        Mat-Table
-permalink:    ReactNotes/Mat-Table
-category:     ReactNotes
-parent:       ReactNotes
-layout:       default
+title: Mat-Table
+permalink: ReactNotes/Mat-Table
+category: ReactNotes
+parent: ReactNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - reactnotes
-  - default                
+  - default
 ---
 
-<br/>                
+<br/>
 
 <details markdown="block">                      
 <summary>                      
@@ -20,13 +20,13 @@ Table of contents
 {: .text-delta }                      
 1. TOC                      
 {:toc}                      
-</details>                      
+</details>
 
-<br/>                      
+<br/>
 
-***                      
+---
 
-<br/>      
+<br/>
 
 # [Table With Async Call](https://github.com/14paxton/TableWithAsyncCall/tree/main)
 
@@ -34,11 +34,11 @@ Table of contents
 
 ```jsx
 const updatePrivateGroupsTable = () => {
-    if (privateGroupTableRef?.current) {
-        privateGroupTableRef.current.onQueryChange();
-    }
+  if (privateGroupTableRef?.current) {
+    privateGroupTableRef.current.onQueryChange();
+  }
 };
-```    
+```
 
 # table ref
 
@@ -48,31 +48,34 @@ const updatePrivateGroupsTable = () => {
 
 ```jsx
 state = {
-    tableRef: React.createRef(),
-}
+  tableRef: React.createRef(),
+};
 ```
 
 > Then add the tableRef prop to your Material Table
 
 ```jsx
-<MaterialTable tableRef={this.state.tableRef}/>
+<MaterialTable tableRef={this.state.tableRef} />
 ```
 
 > Then on the onRowClick prop/function use tableRef to access dataManager and onSelectionChange
 
 ```jsx
 <MaterialTable
-    tableRef={this.state.tableRef}
-    onRowClick={(event, rowData) => {
-// Update the clicked rows checked state
-        rowData.tableData.checked = !rowData.tableData.checked;
+  tableRef={this.state.tableRef}
+  onRowClick={(event, rowData) => {
+    // Update the clicked rows checked state
+    rowData.tableData.checked = !rowData.tableData.checked;
 
-        // pass dataManager the current rows checked state and path/ID, the path/ID needs to be an array, ex: [1]
-        this.state.tableRef.current.dataManager.changeRowSelected(rowData.tableData.checked, [rowData.tableData.id]);
+    // pass dataManager the current rows checked state and path/ID, the path/ID needs to be an array, ex: [1]
+    this.state.tableRef.current.dataManager.changeRowSelected(
+      rowData.tableData.checked,
+      [rowData.tableData.id],
+    );
 
-        // call the onSelectionChange and pass it the row selected to ensure it updates your selection properly for any custom onSelectionChange functions.
-        this.state.tableRef.current.onSelectionChange(rowData);
-    }}
+    // call the onSelectionChange and pass it the row selected to ensure it updates your selection properly for any custom onSelectionChange functions.
+    this.state.tableRef.current.onSelectionChange(rowData);
+  }}
 />
 ```
 

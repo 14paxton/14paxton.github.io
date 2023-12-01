@@ -1,5 +1,5 @@
 async function createStyleElement(key, jsonImageURI) {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
         const stylesheet = document.createElement('style');
         stylesheet.type = 'text/css';
 
@@ -15,24 +15,24 @@ async function createStyleElement(key, jsonImageURI) {
         // stylesheet.innerText.concat(` #${key}:hover{transform: scale(2)}`)
 
         const imageStyles = new CSSStyleSheet();
-        imageStyles.insertRule(`#${key} { background: url('${jsonImageURI[key]}') no-repeat; background-position: center; background-size: 100% auto; }`);
+        imageStyles.insertRule(`#${key} { background: url('${jsonImageURI[key]}') no-repeat; background-position: center; background-size: 100% auto; }`,);
 
         document.adoptedStyleSheets = [...document.adoptedStyleSheets, imageStyles];
         // document.head.appendChild(stylesheet);
         resolve();
-    })
+    });
 }
 
 async function createAndAppendStyle(jsonImageURI) {
-    const promiseArray = []
-    Object.keys(jsonImageURI).forEach(key => {
-        console.log(`uri style for ${key}`)
+    const promiseArray = [];
+    Object.keys(jsonImageURI).forEach((key) => {
+        console.log(`uri style for ${key}`);
         if (jsonImageURI.hasOwnProperty(key)) {
             promiseArray.push(createStyleElement(key, jsonImageURI));
         }
-    })
+    });
 
     await Promise.all(promiseArray);
 }
 
-export {createAndAppendStyle}
+export {createAndAppendStyle};

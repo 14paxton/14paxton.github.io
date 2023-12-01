@@ -1,18 +1,17 @@
 ---
-title:        202208_WorkshopNotes
-permalink:    Micronotes/202208_WorkshopNotes
-category:     Micronotes
-parent:       Micronotes
-layout:       default
+title: 202208_WorkshopNotes
+permalink: Micronotes/202208_WorkshopNotes
+category: Micronotes
+parent: Micronotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - micronotes
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,13 +20,13 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # practices
 
@@ -49,8 +48,8 @@ Table of contents
 
 # relevant docs
 
-[service discovery ]( https://micronaut-projects.github.io/micronaut-discovery-client/latest/guide/ )
+[service discovery ](https://micronaut-projects.github.io/micronaut-discovery-client/latest/guide/)
 
-[built in endpoints ](https://docs.micronaut.io/latest/guide/#providedEndpoints )
+[built in endpoints ](https://docs.micronaut.io/latest/guide/#providedEndpoints)
 
 [grails use micronaut http ](https://guides.grails.org/grails-micronaut-http/guide/index.html)

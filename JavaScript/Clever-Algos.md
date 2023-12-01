@@ -7,14 +7,11 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-
   - javascript
   - default
-
 ---
 
-
-<br/>                
+<br/>
 
 <details markdown="block">                      
 <summary>                      
@@ -23,33 +20,36 @@ Table of contents
 {: .text-delta }                      
 1. TOC                      
 {:toc}                      
-</details>                      
+</details>
 
-<br/>                      
+<br/>
 
-***                      
+---
 
-<br/>      
+<br/>
 
 # Custom Ready / Load / onLoad
 
 ```javascript
-window.addEventListener("load", async function () {
+window.addEventListener(
+  "load",
+  async function () {
     const promise = await fetchHTMLFile(pathToHTML);
-    document.querySelector('#insertion').innerHTML = await promise.text();
-}, false)
+    document.querySelector("#insertion").innerHTML = await promise.text();
+  },
+  false,
+);
 ```
 
 > or
 
 ```javascript
 function ready(fn) {
-    if (document.readyState !== 'loading') {
-        fn();
-    }
-    else {
-        document.addEventListener('DOMContentLoaded', fn);
-    }
+  if (document.readyState !== "loading") {
+    fn();
+  } else {
+    document.addEventListener("DOMContentLoaded", fn);
+  }
 }
 
 ready(loadHTML);
@@ -59,14 +59,15 @@ ready(loadHTML);
 
 ```javascript
 function sortOptions(a, b) {
-    var at = a.textContent, bt = b.textContent;
-    return (at > bt)? 1 : ((at < bt)? -1 : 0);
+  var at = a.textContent,
+    bt = b.textContent;
+  return at > bt ? 1 : at < bt ? -1 : 0;
 }
 
 if (selectBox) {
-    let options = Array.from(selectBox.children).sort(sortOptions)
-    selectBox.append(...options)
-    addBlankSelectOption(selectBox)
+  let options = Array.from(selectBox.children).sort(sortOptions);
+  selectBox.append(...options);
+  addBlankSelectOption(selectBox);
 }
 ```
 
@@ -76,9 +77,9 @@ if (selectBox) {
 <em>Returns: </em>   
 <br/>
 <code>{(key to group by) : [{(secondary key) : (key to group by)}]}</code>          
-</div> 
+</div>
 
-<a href="https://gist.github.com/14paxton/a87f5d47aaf678e89a1dfeffa51b46d9"> groupArrayOfObjectsByKey</a>      
+<a href="https://gist.github.com/14paxton/a87f5d47aaf678e89a1dfeffa51b46d9"> groupArrayOfObjectsByKey</a>
 
 # Union / Enum for JS
 
@@ -86,15 +87,15 @@ if (selectBox) {
 
 > [resource](https://dev.to/avalander/union-types-with-javascript-4emo)
 
-<a href="https://gist.github.com/14paxton/685637fd8c513c7539a10f66b2386cfe"> Union Example </a>       
+<a href="https://gist.github.com/14paxton/685637fd8c513c7539a10f66b2386cfe"> Union Example </a>
 
 # Print separate page from current page
 
-<a href="https://gist.github.com/14paxton/8bf4b0df10a7c4add52c9d4d2da88879"> print pre-defined page </a>      
+<a href="https://gist.github.com/14paxton/8bf4b0df10a7c4add52c9d4d2da88879"> print pre-defined page </a>
 
 # Script to fill form example
 
-<a href="https://gist.github.com/14paxton/fedc95a9b660e1625373bea6f92e4648"> fill form </a>      
+<a href="https://gist.github.com/14paxton/fedc95a9b660e1625373bea6f92e4648"> fill form </a>
 
 # Get All CSS for element and children- returns css string
 
@@ -114,86 +115,85 @@ if (selectBox) {
 
 # get middle of webpage
 
-```javascript      
+```javascript
 const x = window.innerWidth / 2;
 const y = window.innerHeight / 2;
 
-const eye = document.documentElement
-const {left, top, width, height} = eye.getBoundingClientRect()
-const centerX = left + width / 2
-const centerY = top + height / 2      
-```      
+const eye = document.documentElement;
+const { left, top, width, height } = eye.getBoundingClientRect();
+const centerX = left + width / 2;
+const centerY = top + height / 2;
+```
 
 # run an async await inline
 
-```javascript      
-(async () => { await createDataUrls(clonedTableArray, dimensionsObj, additionalSlides, resolveURLCreation, rejectURL)})()      
-```      
+```javascript
+(async () => {
+  await createDataUrls(
+    clonedTableArray,
+    dimensionsObj,
+    additionalSlides,
+    resolveURLCreation,
+    rejectURL,
+  );
+})();
+```
 
 # load html into html doc
 
-```javascript      
-//************** Add path to files to test **********************//      
-//path to html file you want to use      
-const pathToHTML = '/Yuma_Regional/yuma_regional_launch.html';
-//path to html file you want to use      
+```javascript
+//************** Add path to files to test **********************//
+//path to html file you want to use
+const pathToHTML = "/Yuma_Regional/yuma_regional_launch.html";
+//path to html file you want to use
 
+//path to css file
+const cssFilePath = "01Launch_Page_Default_Template.css";
+//path to css file
+//************** Add path to files to test **********************//
 
-//path to css file      
-const cssFilePath = '01Launch_Page_Default_Template.css'
-//path to css file      
-//************** Add path to files to test **********************//      
-
-
-const cssLink = document.createElement('link')
-cssLink.rel = "stylesheet"
-cssLink.type = 'text/css'
-cssLink.href = cssFilePath
-document.querySelector('head').appendChild(cssLink)
+const cssLink = document.createElement("link");
+cssLink.rel = "stylesheet";
+cssLink.type = "text/css";
+cssLink.href = cssFilePath;
+document.querySelector("head").appendChild(cssLink);
 
 window.addEventListener("load", async function () {
-    const promise = await fetchHTMLFile(pathToHTML)
-    const html = await promise.text()
-    document.querySelector('body').innerHTML = html;
-}, false);
-
+    const promise = await fetchHTMLFile(pathToHTML);
+    const html = await promise.text();
+    document.querySelector("body").innerHTML = html;
+}, false,);
 
 async function fetchHTMLFile(path) {
-    return await fetch(path)
-}      
-```      
+    return await fetch(path);
+}
+```
 
 # Conditional load scripts included in HTML by manipulating the type attribute
 
-```javascript      
+```javascript
 if (conditional === true) {
+  const cScripts = document.querySelectorAll(".conditional");
 
-    const cScripts = document.querySelectorAll('.conditional');
+  cScripts.forEach((item) => {
+    const script = document.createElement("script");
 
-    cScripts.forEach((item) => {
+    const attrs = item.getAttributeNames();
 
-        const script = document.createElement('script');
+    attrs.forEach((attr) => {
+      script.setAttribute(attr, item.getAttribute(attr));
+    });
 
-        const attrs = item.getAttributeNames();
+    script.type = "text/javascript";
 
-        attrs.forEach((attr) => {
+    script.async = false;
 
-            script.setAttribute(attr, item.getAttribute(attr));
+    item.remove();
 
-        });
-
-        script.type = 'text/javascript';
-
-        script.async = false;
-
-        item.remove();
-
-        document.head.appendChild(script);
-
-    })
-
-}      
-```  
+    document.head.appendChild(script);
+  });
+}
+```
 
 # Gists
 

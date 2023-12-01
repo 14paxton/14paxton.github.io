@@ -1,17 +1,16 @@
 ---
-title:        HQLComplexQueries    
-permalink:    PersonalGrailsNotes/HQLComplexQueries    
-category:     PersonalGrailsNotes    
-parent:       PersonalGrailsNotes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - personalgrailsnotes    
-  - default    
+title: HQLComplexQueries
+permalink: PersonalGrailsNotes/HQLComplexQueries
+category: PersonalGrailsNotes
+parent: PersonalGrailsNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - personalgrailsnotes
+  - default
 ---
-    
-    
+
 <br/>    
     
 <details markdown="block">    

@@ -1,17 +1,16 @@
 ---
-title:        Enviroment    
-permalink:    PersonalGrailsNotes/Enviroment    
-category:     PersonalGrailsNotes    
-parent:       PersonalGrailsNotes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - personalgrailsnotes    
-  - default    
+title: Enviroment
+permalink: PersonalGrailsNotes/Enviroment
+category: PersonalGrailsNotes
+parent: PersonalGrailsNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - personalgrailsnotes
+  - default
 ---
-    
-    
+
 <br/>    
     
 <details markdown="block">    

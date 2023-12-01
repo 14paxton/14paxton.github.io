@@ -1,18 +1,17 @@
 ---
-title:        Install
-permalink:    DockerNotes/Install
-category:     DockerNotes
-parent:       DockerNotes
-layout:       default
+title: Install
+permalink: DockerNotes/Install
+category: DockerNotes
+parent: DockerNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - dockernotes
-  - default              
+  - default
 ---
 
-
-<br/>              
+<br/>
 
 <details markdown="block">                    
 <summary>                    
@@ -21,12 +20,12 @@ Table of contents
 {: .text-delta }                    
 1. TOC                    
 {:toc}                    
-</details>                    
+</details>
 
-<br/>                    
+<br/>
 
-***                    
+---
 
-<br/>    
+<br/>
 
 # Windows10

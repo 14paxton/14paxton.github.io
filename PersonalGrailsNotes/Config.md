@@ -1,17 +1,16 @@
 ---
-title:        Config    
-permalink:    PersonalGrailsNotes/Config    
-category:     PersonalGrailsNotes    
-parent:       PersonalGrailsNotes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - personalgrailsnotes    
-  - default    
+title: Config
+permalink: PersonalGrailsNotes/Config
+category: PersonalGrailsNotes
+parent: PersonalGrailsNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - personalgrailsnotes
+  - default
 ---
-    
-    
+
 <br/>    
     
 <details markdown="block">    
@@ -103,5 +102,5 @@ put most of your test data in the Bootstrap.
 validate - this will not alter your database, but will just compare your data model with the database on start up. And create warnings if necessary. This is ideal when deploying to production environment.    
     
 - Add the mysql deps as runtime in the dependencies of your build.gradle. E.g.    
-    
-- runtime 'mysql:mysql-connector-java:5.1.36' 
+
+- runtime 'mysql:mysql-connector-java:5.1.36'

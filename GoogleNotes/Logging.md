@@ -1,17 +1,16 @@
 ---
-title: Logging    
-permalink: GoogleNotes/Logging    
-category:  GoogleNotes    
-parent:   GoogleNotes    
-layout: default    
-has_children: false    
-share: true    
-shortRepo:    
-  - googlenotes    
-  - default              
+title: Logging
+permalink: GoogleNotes/Logging
+category: GoogleNotes
+parent: GoogleNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - googlenotes
+  - default
 ---
-    
-    
+
 <br/>              
     
 <details markdown="block">                    

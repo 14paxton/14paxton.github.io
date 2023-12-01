@@ -1,17 +1,17 @@
 ---
-title:        Docker
-permalink:    SQLNotes/Docker
-category:     SQLNotes
-parent:       SQLNotes
-layout:       default
+title: Docker
+permalink: SQLNotes/Docker
+category: SQLNotes
+parent: SQLNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - sqlnotes
-  - default                
+  - default
 ---
 
-<br/>                
+<br/>
 
 <details markdown="block">                      
 <summary>                      
@@ -20,37 +20,37 @@ Table of contents
 {: .text-delta }                      
 1. TOC                      
 {:toc}                      
-</details>                      
+</details>
 
-<br/>                      
+<br/>
 
-***                      
+---
 
-<br/>               
+<br/>
 
 # Postgres
 
-```shell          
-docker pull postgres:9.6.14          
-```          
+```shell
+docker pull postgres:9.6.14
+```
 
-> You can change the Postgres password by changing the ```_POSTGRESS_PASSWORD_``` value from ```_hydrogen_``` to any preferred secured password
+> You can change the Postgres password by changing the `_POSTGRESS_PASSWORD_` value from `_hydrogen_` to any preferred secured password
 
 ```bash
 docker run --name <CONTAINER_NAME || postgres-9.6.14> -e POSTGRES_PASSWORD=hydrogen -p 5432:5432 -d -v $HOME/docker/volumes/postgres:/var/lib/postgresql postgres:9.6.14
-```          
+```
 
 ## PSQL Terminal
 
 > Use the following command to hop into the PSQL terminal session.
 
 ```bash
-docker exec -ti <CONTAINER_NAME || postgres-9.6.14> psql -h localhost -U postgres          
+docker exec -ti <CONTAINER_NAME || postgres-9.6.14> psql -h localhost -U postgres
 ```
 
-> data-source in ```respository/conf/identity/identity.xml``` with the ```Postgres``` ```JNDI``` configuration name
+> data-source in `respository/conf/identity/identity.xml` with the `Postgres` `JNDI` configuration name
 
-```xml          
+```xml
 <!-- identity.xml -->
 <JDBCPersistenceManager>
     <DataSource>
@@ -60,49 +60,49 @@ docker exec -ti <CONTAINER_NAME || postgres-9.6.14> psql -h localhost -U postgre
         <Name>jdbc/WSO2CarbonPostgresDB</Name>
     </DataSource>
 </JDBCPersistenceManager>
-```          
+```
 
 # MySQL
 
-```shell          
-docker pull mysql          
-```          
+```shell
+docker pull mysql
+```
 
 ## Run Container
 
-```shell          
-docker run --detach --name=jspmysql --env="MYSQL_ROOT_PASSWORD=jsppassword" --publish 6603:3306 mysql          
-```          
+```shell
+docker run --detach --name=jspmysql --env="MYSQL_ROOT_PASSWORD=jsppassword" --publish 6603:3306 mysql
+```
 
 ### Exposing MySQL Container to Host
 
-> Expose the ```MySQL``` container to the outside world by mapping the container’s ```MySQL``` port to the host machine port using the ```publish``` flag.
-> Now, we can connect to the ```MySQL```
+> Expose the `MySQL` container to the outside world by mapping the container’s `MySQL` port to the host machine port using the `publish` flag.
+> Now, we can connect to the `MySQL`
 > container through port 6703
 
 > Notice, the IP address comes from docker machine. For my docker machine, it is 192.168.99.100.
 
-```shell          
- docker rm -f jspmysql          
- docker run --detach --name=jspmysql --env="MYSQL_ROOT_PASSWORD=jsppassword" --publish 6703:3306 mysql          
-```          
+```shell
+ docker rm -f jspmysql
+ docker run --detach --name=jspmysql --env="MYSQL_ROOT_PASSWORD=jsppassword" --publish 6703:3306 mysql
+```
 
 ## Creating MySQL Image
 
-```shell          
- docker run --detach --name=jspmysql --env="MYSQL_ROOT_PASSWORD=jsppassword" --publish 6603:3306 mysql          
-```          
+```shell
+ docker run --detach --name=jspmysql --env="MYSQL_ROOT_PASSWORD=jsppassword" --publish 6603:3306 mysql
+```
 
 > What is this command doing?
 
-- > Create a ```MySQL``` container named ```jspmysql```
-- > Set environment variable ``` MYSQL_ROOT_PASSWORD``` to ```jsppassword```
-- > Expose ```3306``` and map to ```6603``` for an outside world to connect to this ```MySQL``` database
-- > In addition, we manually created database ```jsptutorial``` and table ```Product```
+- > Create a `MySQL` container named `jspmysql`
+- > Set environment variable ` MYSQL_ROOT_PASSWORD` to `jsppassword`
+- > Expose `3306` and map to `6603` for an outside world to connect to this `MySQL` database
+- > In addition, we manually created database `jsptutorial` and table `Product`
 
 ```bash
 mysqladmin -u root -p create jsptutorial
-```          
+```
 
 ```bash
 mysql -u root -p jsptutorial < jsp_backup.sql
@@ -123,19 +123,19 @@ mysql -u root -p jsptutorial < jsp_backup.sql
 
 #### Create MySQL Image for JSP Tutorial Application
 
-```dockerfile         
-FROM mysql          
-MAINTAINER csgeek@mail.com          
-          
-ENV MYSQL_ROOT_PASSWORD jsppassword          
-ADD jsp_backup.sql /docker-entrypoint-initdb.d          
-          
-EXPOSE 3306          
-```          
+```dockerfile
+FROM mysql
+MAINTAINER csgeek@mail.com
+
+ENV MYSQL_ROOT_PASSWORD jsppassword
+ADD jsp_backup.sql /docker-entrypoint-initdb.d
+
+EXPOSE 3306
+```
 
 <div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
     The following points need to be noted about the above file.
-</div> 
+</div>
 
 - > The first line is a comment. You can add comments to the Docker File with the help of the # command
 - > The FROM keyword tells which base image you want to use. In our example, we are creating an image from the mysql image.
@@ -154,4 +154,4 @@ EXPOSE 3306
 
 ```bash
  docker build -t jspmysql:0.1 .
- ```  
+```

@@ -1,17 +1,16 @@
 ---
-title:        FormStuff    
-permalink:    JavaScript/FormStuff    
-category:     JavaScript    
-parent:       JavaScript    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - javascript    
-  - default                
+title: FormStuff
+permalink: JavaScript/FormStuff
+category: JavaScript
+parent: JavaScript
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - javascript
+  - default
 ---
-    
-    
+
 <br/>                
     
 <details markdown="block">                      

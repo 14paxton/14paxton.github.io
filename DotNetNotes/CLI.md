@@ -8,11 +8,10 @@ has_children: false
 share: true
 shortRepo:
   - dotnetnotes
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,13 +20,13 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # [Docs](https://learn.microsoft.com/en-us/dotnet/core/tools/)
 
@@ -39,40 +38,40 @@ Table of contents
 
 ## Windows PowerShell
 
-```powershell    
-Invoke-WebRequest -Uri https://dot.net/v1/dotnet-install.ps1 -OutFile "$env:temp/dotnet-install.ps1"; powershell -executionpolicy bypass "$env:temp/dotnet-install.ps1"    
-```    
+```powershell
+Invoke-WebRequest -Uri https://dot.net/v1/dotnet-install.ps1 -OutFile "$env:temp/dotnet-install.ps1"; powershell -executionpolicy bypass "$env:temp/dotnet-install.ps1"
+```
 
 ## PowerShell Core
 
-```powershell    
-Invoke-WebRequest -Uri https://dot.net/v1/dotnet-install.ps1 -OutFile "$env:temp/dotnet-install.ps1"; pwsh "$env:temp/dotnet-install.ps1"    
-```    
+```powershell
+Invoke-WebRequest -Uri https://dot.net/v1/dotnet-install.ps1 -OutFile "$env:temp/dotnet-install.ps1"; pwsh "$env:temp/dotnet-install.ps1"
+```
 
 ## Bash
 
-```sh    
-wget https://dot.net/v1/dotnet-install.sh && chmod +x ./dotnet-install.sh && sudo ./dotnet-install.sh    
-```    
+```sh
+wget https://dot.net/v1/dotnet-install.sh && chmod +x ./dotnet-install.sh && sudo ./dotnet-install.sh
+```
 
 ## Apt
 
-```sh    
-sudo apt update    
-sudo apt install dotnet6    
-```    
+```sh
+sudo apt update
+sudo apt install dotnet6
+```
 
 # WinGet
 
-```bat    
-winget install Microsoft.DotNet.SDK.6    
-```    
+```bat
+winget install Microsoft.DotNet.SDK.6
+```
 
 ## Chocolatey
 
-```bat    
-choco upgrade dotnet-sdk    
-```    
+```bat
+choco upgrade dotnet-sdk
+```
 
 - [Self Updating Plans](https://github.com/dotnet/sdk/issues/23700)
 - [Chocolatey .Net Packages](https://community.chocolatey.org/packages/dotnet-sdk/)
@@ -86,7 +85,7 @@ choco upgrade dotnet-sdk
 > Check if there are updates available for the template packs that are currently installed. Available since .NET Core 3.0 SDK.
 
 ```bat
-dotnet new --update-check  
+dotnet new --update-check
 ```
 
 ### Applying Updates
@@ -122,14 +121,14 @@ dotnet tool install --arch arm64
 
 - Install the latest versions only (which should install into the correct locations)
 
-</div> 
+</div>
 
 ## Environment Variables
 
 ### For Framework dependent apps , x64 , ARCH
 
 > I DON'T KNOW IF THIS HELPS, ENV SHOULD BE SET AUTOMATICALLY WHEN INSTALLING,USE CAUTION
-> set in ```~/.zshenv```
+> set in `~/.zshenv`
 
 ```shell
 export DOTNET_ROOT_ARM64=/usr/local/share/dotnet
@@ -140,4 +139,4 @@ export DOTNET_ROOT_X64=/usr/local/share/dotnet/x64
 
 ## [dotnet 6 and ubuntu](https://devblogs.microsoft.com/dotnet/dotnet-6-is-now-in-ubuntu-2204/)
 
-### [Ubuntu Packages](https://packages.ubuntu.com/search?suite=default&section=all&arch=any&keywords=dotnet&searchon=names)    
+### [Ubuntu Packages](https://packages.ubuntu.com/search?suite=default&section=all&arch=any&keywords=dotnet&searchon=names)

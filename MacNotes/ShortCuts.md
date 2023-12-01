@@ -8,11 +8,10 @@ has_children: false
 share: true
 shortRepo:
   - macnotes
-  - default          
+  - default
 ---
 
-
-<br/>          
+<br/>
 
 <details markdown="block">                
 <summary>                
@@ -21,11 +20,11 @@ Table of contents
 {: .text-delta }                
 1. TOC                
 {:toc}                
-</details>                
+</details>
 
-<br/>                
+<br/>
 
-***                
+---
 
 <br/>
 

@@ -1,18 +1,17 @@
 ---
-title:        DebuggerConfig
-permalink:    IntelliJNotes/DebuggerConfig
-category:     IntelliJNotes
-parent:       IntelliJNotes
-layout:       default
+title: DebuggerConfig
+permalink: IntelliJNotes/DebuggerConfig
+category: IntelliJNotes
+parent: IntelliJNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - intellijnotes
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,13 +20,13 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # Micronaut
 
@@ -35,9 +34,9 @@ Table of contents
 
 > can run gradle command and attach any debugger listening on 5005
 
-```bash    
-gradle run --debug-jvm    
-```    
+```bash
+gradle run --debug-jvm
+```
 
 > or modify run/debug config
 

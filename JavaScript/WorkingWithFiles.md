@@ -1,18 +1,17 @@
 ---
-title:        WorkingWithFiles
-permalink:    JavaScript/WorkingWithFiles
-category:     JavaScript
-parent:       JavaScript
-layout:       default
+title: WorkingWithFiles
+permalink: JavaScript/WorkingWithFiles
+category: JavaScript
+parent: JavaScript
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - javascript
-  - default                
+  - default
 ---
 
-
-<br/>                
+<br/>
 
 <details markdown="block">                      
 <summary>                      
@@ -21,37 +20,37 @@ Table of contents
 {: .text-delta }                      
 1. TOC                      
 {:toc}                      
-</details>                      
+</details>
 
-<br/>                      
+<br/>
 
-***                      
+---
 
-<br/>      
+<br/>
 
 # download a new file
 
-```javascript      
+```javascript
 const formV = document.querySelector("input");
 const btn = document.querySelector("button");
 
 btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    filefetch(formV.value);
-})
+  e.preventDefault();
+  filefetch(formV.value);
+});
 
 function filefetch(url) {
-    fetch(url)
-        .then(resp => resp.blob())
-        .then(file => {
-            let tURL = URL.createObjectURL(file);
-            let aTag = document.createElement("a");
-            aTag.href = tURL;
-            aTag.download = "file name";
-            document.body.appendChild(aTag);
-            aTag.click();
-            aTag.remove();
-            URL.revokeObjectURL(tURL);
-        })
-}    
+  fetch(url)
+    .then((resp) => resp.blob())
+    .then((file) => {
+      let tURL = URL.createObjectURL(file);
+      let aTag = document.createElement("a");
+      aTag.href = tURL;
+      aTag.download = "file name";
+      document.body.appendChild(aTag);
+      aTag.click();
+      aTag.remove();
+      URL.revokeObjectURL(tURL);
+    });
+}
 ```

@@ -1,17 +1,16 @@
 ---
-title: APIs    
-permalink: GoogleNotes/APIs    
-category:  GoogleNotes    
-parent:   GoogleNotes    
-layout: default    
-has_children: false    
-share: true    
-shortRepo:    
-  - googlenotes    
-  - default              
+title: APIs
+permalink: GoogleNotes/APIs
+category: GoogleNotes
+parent: GoogleNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - googlenotes
+  - default
 ---
-    
-    
+
 <br/>              
     
 <details markdown="block">                    

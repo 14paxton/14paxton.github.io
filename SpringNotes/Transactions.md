@@ -7,14 +7,11 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-
   - springnotes
   - default
-
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -23,29 +20,29 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # TransactionStatus
 
-> An instance of ```TransactionStatus``` is available by default in Grails transactional service methods.    
-> the keys in the Map must correspond to properties    
+> An instance of `TransactionStatus` is available by default in Grails transactional service methods.  
+> the keys in the Map must correspond to properties  
 > of org.springframework.transaction.support.DefaultTransactionDefinition
 
-```java  
+```java
 public class AccountExample {
     Account.withTransaction([propagationBehavior:TransactionDefinition.PROPAGATION_REQUIRES_NEW,isolationLevel:TransactionDefinition.ISOLATION_REPEATABLE_READ])
 
     {
-        // do work  
+        // do work
     }
 }
-```  
+```
 
 ## Personal Use Case
 

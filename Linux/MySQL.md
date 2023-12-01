@@ -1,18 +1,17 @@
 ---
-title:        MySQL
-permalink:    Linux/MySQL
-category:     Linux
-parent:       Linux
-layout:       default
+title: MySQL
+permalink: Linux/MySQL
+category: Linux
+parent: Linux
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - linux
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,23 +20,23 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # Loose Notes
 
-```shell    
-MYSQL mysql -u USERNAME -p   
-``` 
+```shell
+MYSQL mysql -u USERNAME -p
+```
 
 ```shell
-show databases;  
-```  
+show databases;
+```
 
 ## SETTING TIMEZONES
 
@@ -45,7 +44,7 @@ show databases;
 
 ```shell
 SELECT @@global.time_zone, @@session.time_zone;
-```    
+```
 
 - Get timestamp
 
@@ -62,53 +61,53 @@ SELECT CURRENT_TIMESTAMP();
 > You can set in my.cnf
 
 ```shell
- [mysqld]    
-    
-  **other variables**    
-    
-  default_time_zone='+00:00'    
-```    
+ [mysqld]
+
+  **other variables**
+
+  default_time_zone='+00:00'
+```
 
 # csv to table
 
 ```shell
- GET PATHS    
-    
-MySQL import    
-    
-LOAD DATA LOCAL INFILE 'C:/Groovy/englishData.csv' INTO TABLE original_data    
-    
-FIELDS TERMINATED BY ','    
-    
-ENCLOSED BY '"'    
-    
-LINES TERMINATED BY '\r\n'    
-    
-IGNORE 1 LINES    
-    
+ GET PATHS
+
+MySQL import
+
+LOAD DATA LOCAL INFILE 'C:/Groovy/englishData.csv' INTO TABLE original_data
+
+FIELDS TERMINATED BY ','
+
+ENCLOSED BY '"'
+
+LINES TERMINATED BY '\r\n'
+
+IGNORE 1 LINES
+
 ```
 
 # trouble installing
 
 ```shell
 sudo apt-get remove --purge mysql-\*
-```    
+```
 
 ```shell
 sudo apt-get autoremove
-```    
+```
 
 ```shell
 sudo apt-get autoclean
-```    
+```
 
 ```shell
 sudo apt-get dist-upgrade
-```    
+```
 
 ```shell
 sudo apt-get install mysql-server mysql-client
-``` 
+```
 
 > (or maria if still having trouble).
 
@@ -125,26 +124,26 @@ sudo apt-get install mariadb-server
 
 # other trouble shooting
 
--      A very simple solution which I (the linux noob) had to dig up... is to create the file.    
+-      A very simple solution which I (the linux noob) had to dig up... is to create the file.
 
 ```
-  nano /etc/mysql/my.cnf.fallback    
-```  
+  nano /etc/mysql/my.cnf.fallback
+```
 
 > and fill it with the default content from the mysql-common 5.7.11-0ubuntu6 package.
 
 ```text
-  #     
+  #
   # The MySQL database server configuration file.
-  #     
+  #
   # You can copy this to one of:
   # - "/etc/mysql/my.cnf" to set global options,
   # - "~/.my.cnf" to set user-specific options.
-  #          
+  #
   # One can use all long options that the program supports.
   # Run program with --help to get a list of available options and with
   # --print-defaults to see which it would actually understand and use.
-  #     
+  #
   # For explanations see
   # http://dev.mysql.com/doc/mysql/en/server-system-variables.html
 
@@ -156,17 +155,17 @@ sudo apt-get install mariadb-server
   # Here is entries for some specific programs
   # The following values assume you have at least 32M ram
 
-  !includedir /etc/mysql/conf.d/  #     
+  !includedir /etc/mysql/conf.d/  #
   # The MySQL database server configuration file.
-  #     
+  #
   # You can copy this to one of:
   # - "/etc/mysql/my.cnf" to set global options,
   # - "~/.my.cnf" to set user-specific options.
-  #          
+  #
   # One can use all long options that the program supports.
   # Run program with --help to get a list of available options and with
   # --print-defaults to see which it would actually understand and use.
-  #     
+  #
   # For explanations see
   # http://dev.mysql.com/doc/mysql/en/server-system-variables.html
 

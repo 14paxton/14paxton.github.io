@@ -7,13 +7,13 @@ has_children: true
 share: true
 shortRepo:
   - kubernetes
-  - default       
+  - default
 ---
 
 <br/>      
-___        
+___
 
-***
+---
 
 # Architecture
 

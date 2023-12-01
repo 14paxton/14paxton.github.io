@@ -1,17 +1,16 @@
 ---
-title:        GORM_WhereQueris    
-permalink:    PersonalGrailsNotes/GORM_WhereQueris    
-category:     PersonalGrailsNotes    
-parent:       PersonalGrailsNotes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - personalgrailsnotes    
-  - default    
+title: GORM_WhereQueris
+permalink: PersonalGrailsNotes/GORM_WhereQueris
+category: PersonalGrailsNotes
+parent: PersonalGrailsNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - personalgrailsnotes
+  - default
 ---
-    
-    
+
 <br/>    
     
 <details markdown="block">    

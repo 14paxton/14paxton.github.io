@@ -7,7 +7,7 @@ has_children: true
 share: true
 shortRepo:
   - systemdesign&architecture
-  - default         
+  - default
 ---
 
 # Software Development Process
