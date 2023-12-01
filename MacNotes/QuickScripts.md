@@ -281,7 +281,7 @@ username        ALL = (ALL) NOPASSWD:ALL
 sudo dscl . -passwd /Users/username password
 ```
 
-# Command Line Software Update Utility
+# Software Update Utility
 
 ## How do I apply all recommended updates?
 
