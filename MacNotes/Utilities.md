@@ -99,6 +99,14 @@ xcode-select --install
 
 ---
 
+# [dscl](https://ss64.com/osx/dscl.html)
+
+## unhide a user account
+
+```shell
+sudo dscl . create /Users/hiddenuser IsHidden 0
+```
+
 # [DISKUTIL ](https://ss64.com/osx/diskutil.html)
 
 ## find disk
