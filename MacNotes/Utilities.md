@@ -97,14 +97,20 @@ codesign -s - -f --deep /Applications/Install\ macOS\ Big\ Sur.app
 xcode-select --install
 ```
 
----
-
 # [dscl](https://ss64.com/osx/dscl.html)
 
 ## unhide a user account
 
 ```shell
 sudo dscl . create /Users/hiddenuser IsHidden 0
+```
+
+# [chflags](https://ss64.com/osx/chflags.html)
+
+## Hide Home folder
+
+```shell
+sudo chflags hidden /Users/username
 ```
 
 # [DISKUTIL ](https://ss64.com/osx/diskutil.html)
@@ -190,10 +196,15 @@ diskutil eraseDisk JHFS+ CleanDrive /dev/disk1
 diskutil secureErase 4 /dev/disk2
 ```
 
----
+# [csrutil](https://ss64.com/osx/csrutil.html)
 
-# RECOVERY
+# [pwpolicy](https://www.manpagez.com/man/8/pwpolicy/)
 
-## [csrutil](https://ss64.com/osx/csrutil.html)
+- [alt man page](https://www.unix.com/man-page/osx/8/pwpolicy/)
+- [alt man page - config](https://mosen.github.io/profiledocs/macos/pwpolicy.html#macos-10-10)
 
----
+## Set Global Policy
+
+```shell
+pwpolicy -setglobalpolicy minChars=0
+```
