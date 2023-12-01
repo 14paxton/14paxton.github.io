@@ -1,14 +1,13 @@
 ---
-title:        Linux
-layout:       default
-permalink:    Linux/
-category:     Linux
+title: Linux
+layout: default
+permalink: Linux/
+category: Linux
 has_children: true
-share:        true
+share: true
 shortRepo:
-
   - linux
-  - default    
+  - default
 ---
 
 <br/>
@@ -20,15 +19,15 @@ Table of contents
 {: .text-delta }                
 1. TOC                
 {:toc}                
-</details>                
+</details>
 
-<br/>   
+<br/>
 
 # [REPO](https://github.com/14paxton/Linux)
 
 <link rel="modulepreload" href="/assets/js/imageLoader.js">
 <script type="module" async src="/assets/js/imageLoader.js"></script>
 
-***
+---
 
 <div id="imageContainer" data-key-as-header="true" data-zoom-on-hover="true"  data-img-loader="linuxImages.js" style="width: auto; height: auto;"></div>

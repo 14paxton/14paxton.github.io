@@ -1,16 +1,15 @@
 ---
-title:     Email              
-layout:    default              
-parent:    Java              
-permalink: JavaNotes/Email              
-category:  JavaNotes              
-share:     true              
-shortRepo:            
-  - javanotes            
-  - default              
+title: Email
+layout: default
+parent: Java
+permalink: JavaNotes/Email
+category: JavaNotes
+share: true
+shortRepo:
+  - javanotes
+  - default
 ---
-    
-    
+
 <br/>            
     
 <details markdown="block">                  

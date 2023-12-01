@@ -1,17 +1,17 @@
 ---
-title:        Terminal-Commands
-permalink:    SQLNotes/TerminalCommands
-category:     SQLNotes/
-parent:       SQLNotes
-layout:       default
+title: Terminal-Commands
+permalink: SQLNotes/TerminalCommands
+category: SQLNotes/
+parent: SQLNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - sqlnotes
   - default
 ---
 
-***
+---
 
 <details  markdown="block">  
   <summary>  
@@ -20,15 +20,15 @@ shortRepo:
   {: .text-delta }  
 1. TOC  
 {:toc}  
-</details>  
+</details>
 
-<br/>  
+<br/>
 
-***  
+---
 
-<br/>  
+<br/>
 
-***
+---
 
 # MYSQL
 
@@ -79,13 +79,13 @@ SHOW VARIABLES WHERE Variable_Name LIKE "%dir";
 ## Import
 
 ```bash
-LOAD DATA LOCAL INFILE 'C:/Groovy/englishData.csv' INTO TABLE original_data 
+LOAD DATA LOCAL INFILE 'C:/Groovy/englishData.csv' INTO TABLE original_data
 
-FIELDS TERMINATED BY ','  
+FIELDS TERMINATED BY ','
 
-ENCLOSED BY '"'  
+ENCLOSED BY '"'
 
-LINES TERMINATED BY '\r\n' 
+LINES TERMINATED BY '\r\n'
 ```
 
 ## Show db users

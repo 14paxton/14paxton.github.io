@@ -1,16 +1,15 @@
 ---
-title:     GCP              
-layout:    default              
-parent:    Java              
-permalink: JavaNotes/GCP              
-category:  JavaNotes              
-share:     true              
-shortRepo:            
-  - javanotes            
-  - default              
+title: GCP
+layout: default
+parent: Java
+permalink: JavaNotes/GCP
+category: JavaNotes
+share: true
+shortRepo:
+  - javanotes
+  - default
 ---
-    
-    
+
 <br/>            
     
 <details markdown="block">                  

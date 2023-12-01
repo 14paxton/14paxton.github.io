@@ -1,14 +1,14 @@
 ---
-title:        CloudServices
+title: CloudServices
 permalink: GitHubPages/CloudServices
-category:     JobPrep
-parent:       MyPersonalDocsAndStuff
-layout:       default
+category: JobPrep
+parent: MyPersonalDocsAndStuff
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - jobprep
-  - default          
+  - default
 ---
 
 # Cloud Service Comparison

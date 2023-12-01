@@ -8,11 +8,10 @@ has_children: false
 share: true
 shortRepo:
   - personalgrailsnotes
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,11 +20,11 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
 <br/>
 
@@ -33,37 +32,37 @@ Table of contents
 
 ## Modify config
 
-```groovy    
+```groovy
 
 Holders.grailsApplication.config.outlook.clientId = "GUUNAR5"
 
-```    
+```
 
 ## Get at application
 
-```groovy    
+```groovy
 
 grails.util.Holders.grailsApplication.domainClasses.find { it.shortName == 'User' }
 
-```    
+```
 
 ## Use db in memory to run tests
 
-```groovy    
+```groovy
 @shared Sql sql = Sql.newInstance("jdbc: h2 : mem: ", "org.h2.Driver")
-```    
+```
 
 ## Mocking service and then method call, setting dummy data for the return(put in test method)
 
-```groovy    
+```groovy
 controller.openweathermapService = Mock(OpenweathermapService)
 
-controller.openweathermapService.currentWeatherByGeoID(_) >> currentWeather    
-```    
+controller.openweathermapService.currentWeatherByGeoID(_) >> currentWeather
+```
 
 ## Mocking Service used in a service you are testing(put at beginning of the test class)
 
-```groovy    
+```groovy
 
 Closure doWithSpring() {
     { ->
@@ -71,12 +70,12 @@ Closure doWithSpring() {
     }
 }
 
-AssessmentOrderService assessmentOrderService    
-```    
+AssessmentOrderService assessmentOrderService
+```
 
 ## Mocking Method in service you are testing
 
-```groovy    
+```groovy
  @Shared
 GroupCompareJoinUserGroupService groupCompareJoinUserGroupService
 
@@ -91,26 +90,26 @@ def "some test"() {
 
 }
 
-```    
+```
 
 ## Mocking method in domain
 
-```groovy    
+```groovy
 [service / controller / domain].metaclass.'static'.[method] = { [arguments] -> [returnValue] }
-```    
+```
 
 ## Using Test Data from BuildTest plugin
 
 ### Snippet from spock test
 
-> Pluggin for using test data builder    
+> Pluggin for using test data builder  
 > [BuildTestData](http://plugins.grails.org/plugin/longwa/build-test-data)
 
 > import grails.buildtestdata.mixin.Build
 
 > use- implements BuildDomanTest\< \> instead of DomainUnitTest \< \>
 
-```groovy    
+```groovy
 
 @Build([Job, Tag, Type, Publisher])
 class StatisticsServiceSpec extends Specification implements AutowiredTest, DataTest, BuildDataTest, ServiceUnitTest<StatisticsService>, GrailsWebUnitTest {
@@ -156,12 +155,12 @@ class StatisticsServiceSpec extends Specification implements AutowiredTest, Data
 
 }
 
-}   
-```    
+}
+```
 
 - config file test/resources/TestDataConfig
 
-```groovy    
+```groovy
 import com.talentbank.core.ClientSetup
 
 import java.util.concurrent.ThreadLocalRandom
@@ -191,75 +190,75 @@ testDataConfig {
     }
 }
 
-```    
+```
 
 #### Different ways to build
 
-```groovy    
+```groovy
 
 def intviewModel = TestData.build(InterviewModel)
 def y = InterviewModel.build(source: Source.TBSIX)
 def z = build(InterviewModel, source: Source.TBSIX)
 
-```    
+```
 
 # Configurations
 
 ## Checking validity of constraints
 
-```groovy    
+```groovy
 !newScheduledInterview2.validate(['scheduledBy', 'scheduledDate'])
 !newScheduledInterview2.save(flush: true)
-newScheduledInterview2.errors['scheduledDate']?.code == 'unique'    
-```    
+newScheduledInterview2.errors['scheduledDate']?.code == 'unique'
+```
 
 ## check if method was called for another service
 
-```groovy    
+```groovy
 def called = false
 service.notifierService = Mock(NotifierService)
-service.notifierService.sendPostMarkEmail(_ as PostMarkEmail, _) >> { it -> called = true }    
-```    
+service.notifierService.sendPostMarkEmail(_ as PostMarkEmail, _) >> { it -> called = true }
+```
 
 ## check if method was called for same service
 
-```groovy    
-service.metaClass.sendReminderEmail = { assessmentOrderId, templateId, sender, newTemplateBody, jobId -> calls++ }    
-```    
+```groovy
+service.metaClass.sendReminderEmail = { assessmentOrderId, templateId, sender, newTemplateBody, jobId -> calls++ }
+```
 
 ## create an exception
 
-```groovy    
-//create expando    
+```groovy
+//create expando
 def testDelete = new Expando()
 
-// add exception to method call    
+// add exception to method call
 def exception = { new Exception("TEST") }
 testDelete.delete = { throw exception }
 
-// add class as return for a method    
+// add class as return for a method
 service.metaClass.method_to_throw_exception = { testDelete }
 
-//example in CalenderServiceSpec.groovy / “test delete exception”    
-//or    
-service.metaClass.yourMethod >> { throw exception }    
-```    
+//example in CalenderServiceSpec.groovy / “test delete exception”
+//or
+service.metaClass.yourMethod >> { throw exception }
+```
 
 ## catch exception
 
-```groovy    
-def response = thrown(GraphServiceException)    
-```    
+```groovy
+def response = thrown(GraphServiceException)
+```
 
 ## modify config during/for test
 
-```groovy    
-   Holders.grailsApplication.config.outlook.clientId = "GUUNAR5"    
-```    
+```groovy
+   Holders.grailsApplication.config.outlook.clientId = "GUUNAR5"
+```
 
 ## create a custom manager for a test
 
-```groovy    
+```groovy
 
 def managerMap = [:]
 RoleGroup.findAll().each {
@@ -274,12 +273,12 @@ RoleGroup.findAll().each {
 service.userService = Mock(UserService)
 service.userService.fetchDirectReportIds(_) >> { it ->
     managerMap.get(it[0])
-}    
-```    
+}
+```
 
 ## Mocking hibernate used to test methods using where queriers / detached criteria / criteria builder
 
-```groovy    
+```groovy
  @Shared
 InterviewModelService interviewModelService
 
@@ -299,25 +298,25 @@ transactionManager = hibernateDatastore.getTransactionManager()
 catalogDetailService = hibernateDatastore.getService(CatalogDetailService)
 
 
-//Set tests to rollback    
+//Set tests to rollback
 
 @Rollback
 void "test criteria builder for getting interview models should return all"() {
-    //test    
-}    
-```    
+    //test
+}
+```
 
 ## Mock return value for service method used in the service you are testing
 
-```groovy    
-service.springSecurityService = [authentication: [details: currentUser]]    
-```    
+```groovy
+service.springSecurityService = [authentication: [details: currentUser]]
+```
 
 ## Mock a static method call from a domain
 
-```groovy    
-ClientSetup.metaClass.static.fetchSecurityGroupLabelsByClientSetupId = { Long id, String en -> [secGroupNameLabel: 'secGroupNameLabel', secGroupCodeLabel: 'secGroupCodeLabel'] }    
-```    
+```groovy
+ClientSetup.metaClass.static.fetchSecurityGroupLabelsByClientSetupId = { Long id, String en -> [secGroupNameLabel: 'secGroupNameLabel', secGroupCodeLabel: 'secGroupCodeLabel'] }
+```
 
 # Test Snippets
 
@@ -331,7 +330,7 @@ ClientSetup.metaClass.static.fetchSecurityGroupLabelsByClientSetupId = { Long id
 
 #### Ex. Integrations test for controller
 
-```groovy    
+```groovy
 package musicandcars
 
 import grails.testing.mixin.integration.Integration
@@ -368,5 +367,5 @@ class CarFunctionalSpec extends Specification {
         resp.body().size() == 0
         resp.contentType.get().extension == MediaType.EXTENSION_JSON
     }
-}    
+}
 ```

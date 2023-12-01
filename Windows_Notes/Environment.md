@@ -1,17 +1,16 @@
 ---
-title:     Environment    
-permalink: Windows_Notes/Environment    
-category:     Windows_Notes    
-parent:       Windows_Notes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - windows_notes    
-  - default    
+title: Environment
+permalink: Windows_Notes/Environment
+category: Windows_Notes
+parent: Windows_Notes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - windows_notes
+  - default
 ---
-    
-    
+
 <br/>    
     
 <details markdown="block">    
@@ -176,6 +175,6 @@ Table of contents
 | WindowsSDK_ExecutablePath_x64  | C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64\                                                                                      |    
 | WindowsSDK_ExecutablePath_x86  | C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\                                                                                          |    
 | WindowsSDKLibVersion           | winv6.3\                                                                                                                                                           |    
-| WindowsSDKVersion              | \                                                                                                                                                                  |    
+| WindowsSDKVersion              | \                                                                                                                                                                  |
 
-----                  -----
+---

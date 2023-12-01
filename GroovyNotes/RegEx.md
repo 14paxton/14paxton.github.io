@@ -1,17 +1,16 @@
 ---
-title: RegEx    
-permalink: GroovyNotes/RegEx    
-category:  GroovyNotes    
-parent:   GroovyNotes    
-layout: default    
-has_children: false    
-share: true    
-shortRepo:    
-  - groovynotes    
-  - default    
+title: RegEx
+permalink: GroovyNotes/RegEx
+category: GroovyNotes
+parent: GroovyNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - groovynotes
+  - default
 ---
-    
-    
+
 <br/>    
     
 <details markdown="block">    
@@ -52,4 +51,4 @@ def replacedTxt = txt.replaceAll(/.*(\d{2}-\d{2}-\d{4}).*(Gr.*)./) { all, date, 
     def dateObj = Date.parse('dd-MM-yyyy', date)    
     "The text '$all' was created with $lang on a ${dateObj.format('EEEE')}."    
 }    
-```  
+```

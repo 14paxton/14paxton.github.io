@@ -1,16 +1,16 @@
 ---
-title: JUnit    
-permalink: TestingFrameworks/JUnit    
-category:  TestingFrameworks    
-parent:   TestingFrameworks    
-layout: default    
-has_children: false    
-share: true    
-shortRepo:    
-  - testingframeworks    
-  - default    
+title: JUnit
+permalink: TestingFrameworks/JUnit
+category: TestingFrameworks
+parent: TestingFrameworks
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - testingframeworks
+  - default
 ---
-    
+
 <br/>    
 <details markdown="block">    
 <summary>    

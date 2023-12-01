@@ -1,14 +1,13 @@
 ---
-title:        Micronotes
-layout:       default
-permalink:    Micronotes/
-category:     Micronotes
+title: Micronotes
+layout: default
+permalink: Micronotes/
+category: Micronotes
 has_children: true
-share:        true
+share: true
 shortRepo:
-
   - micronotes
-  - default    
+  - default
 ---
 
 # [Install](https://micronaut-projects.github.io/micronaut-starter/latest/guide/#installation)
@@ -19,32 +18,32 @@ shortRepo:
 
 # Run
 
-```bash    
-gradlew server:run     
-```    
+```bash
+gradlew server:run
+```
 
-```bash     
-gradlew client:start     
-```    
+```bash
+gradlew client:start
+```
 
 ## Create executable jar for multibuild
 
-```bash    
-gradlew assembleServerAndClient     
-```    
+```bash
+gradlew assembleServerAndClient
+```
 
 > Start
 
-```bash     
-java -jar     
-```    
+```bash
+java -jar
+```
 
-```bash     
-java -jar server/build/libs/server/[nameOfJar].jar     
-```    
+```bash
+java -jar server/build/libs/server/[nameOfJar].jar
+```
 
 ## create a groovy app
 
-```bash     
-mn create-app example.micronaut.complete --lang=groovy     
+```bash
+mn create-app example.micronaut.complete --lang=groovy
 ```

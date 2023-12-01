@@ -1,17 +1,17 @@
 ---
-title:        HttpRepl
-permalink:    DotNetNotes/HttpRepl
-category:     DotNetNotes
-parent:       DotNetNotes
-layout:       default
+title: HttpRepl
+permalink: DotNetNotes/HttpRepl
+category: DotNetNotes
+parent: DotNetNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - dotnetnotes
-  - default    
+  - default
 ---
 
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -28,25 +28,25 @@ Table of contents
 
 ## setup
 
-```bat    
-::install    
-dotnet tool install;    
-    
-::set path to tools    
-export PATH="$PATH:/Users/bp/.dotnet/tools";    
-    
-::test web api    
-httprepl http://localhost:5001     
-```    
+```bat
+::install
+dotnet tool install;
+
+::set path to tools
+export PATH="$PATH:/Users/bp/.dotnet/tools";
+
+::test web api
+httprepl http://localhost:5001
+```
 
 ## list and select controllers
 
-```bat    
-ls , cd    
-```    
+```bat
+ls , cd
+```
 
 ## post
 
-```bat    
-post -c "{"name":"Hawaii", "isGlutenFree":false}"    
+```bat
+post -c "{"name":"Hawaii", "isGlutenFree":false}"
 ```

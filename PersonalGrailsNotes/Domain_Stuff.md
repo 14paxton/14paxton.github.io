@@ -7,14 +7,11 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-
   - personalgrailsnotes
   - default
-
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -23,13 +20,13 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # Binding
 
@@ -39,9 +36,9 @@ Table of contents
 
 > package org.springframework.validation;
 
-```groovy    
-domain.properties = newMap as BindingResult    
-```    
+```groovy
+domain.properties = newMap as BindingResult
+```
 
 ## DataBinder
 
@@ -72,9 +69,9 @@ class BindSomeData implements DataBinder {
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">            
    was used to modify existing domain to add a parent , and existing records would have a class          
-</div> 
+</div>
 
-```groovy    
+```groovy
 class Group {
     String name
     UserGroupType type
@@ -104,7 +101,7 @@ class Group {
 
                 groupAssessmentOrders joinTable: ["user_group_assessment_order",
                                                   column: 'user_group_assessment_order_id',
-                                                  key   : 'user_group_id'] //Custom Join Table name and Column    
+                                                  key   : 'user_group_id'] //Custom Join Table name and Column
 
                 visibility defaultValue: Visibility.PRIVATE
             }
@@ -211,12 +208,12 @@ class GroupCompareJoinUserGroup implements Serializable {
                         if (val.interviewModelId != obj.groupCompare.interviewModelId) errors.reject("different_interview_models", "interviewModelId is not the same for these groups")
                 }
             }
-}  
-```  
+}
+```
 
 ## standard
 
-```groovy    
+```groovy
 class TeamCompare extends Team {
 
     Collection teamsToCompare
@@ -243,5 +240,5 @@ class TeamCompare extends Team {
         TeamCompareJoinUser join = new TeamCompareJoinUser(team: team)
         addToTeamsToCompare(join)
     }
-}    
+}
 ```

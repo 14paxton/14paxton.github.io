@@ -7,14 +7,11 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-
   - personalgrailsnotes
   - default
-
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -23,19 +20,19 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # User Domain
 
 ## hibernate id is already being used
 
-```groovy    
+```groovy
  class UserGroupShare {
 
     Long userGroupId
@@ -55,13 +52,13 @@ Table of contents
     }
 
     static mapping = {
-        //can keep userGroupId column, and create usergroup parent reference without creating new db column    
-        //need to use foreign Key reference to save    
+        //can keep userGroupId column, and create usergroup parent reference without creating new db column
+        //need to use foreign Key reference to save
         userGroup insertable: false
         userGroup updateable: false
     }
 }
-```  
+```
 
 # Gists
 

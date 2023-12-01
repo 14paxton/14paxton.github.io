@@ -1,17 +1,17 @@
 ---
-title:        String
-permalink:    ReactNotes/String
-category:     ReactNotes
-parent:       ReactNotes
-layout:       default
+title: String
+permalink: ReactNotes/String
+category: ReactNotes
+parent: ReactNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - reactnotes
-  - default                
+  - default
 ---
 
-<br/>                
+<br/>
 
 <details markdown="block">                      
 <summary>                      
@@ -20,41 +20,44 @@ Table of contents
 {: .text-delta }                      
 1. TOC                      
 {:toc}                      
-</details>                      
+</details>
 
-<br/>                      
+<br/>
 
-***                      
+---
 
-<br/>      
+<br/>
 
 # Text Manipulation
 
 ## keep space
 
-```jsx      
-        <FieldDescription style={{whiteSpace: 'pre-wrap'}}>
-    {`    -Choose one or more of these options      
+```jsx
+<FieldDescription style={{ whiteSpace: "pre-wrap" }}>
+  {`    -Choose one or more of these options      
               CLIENT_ADMIN / RESULT_VIEWER / INTERVIEWER / REQUESTOR /      
               SCHEDULER / CLIENT_ADMIN / RESEARCH / COACH / ORDER_MANAGER /      
               TADMIN `}
-    <br/>
-</FieldDescription>       
-```      
+  <br />
+</FieldDescription>
+```
 
 ## add formatting to component
 
-```jsx      
-      const createThemeToolTip = (themeSummary, significance) => {
-    return significance
-           ? <> {themeSummary}.
-            <i>
-                <FormattedMessage id="theme.significance.tooltip.label"/>
-            </i>
-           </>
-           : themeSummary;
-};      
-```      
+```jsx
+const createThemeToolTip = (themeSummary, significance) => {
+  return significance ? (
+    <>
+      {" "}
+      {themeSummary}.<i>
+        <FormattedMessage id="theme.significance.tooltip.label" />
+      </i>
+    </>
+  ) : (
+    themeSummary
+  );
+};
+```
 
 ## dynamic internationalized component
 

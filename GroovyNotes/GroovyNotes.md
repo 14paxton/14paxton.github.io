@@ -6,9 +6,8 @@ category: GroovyNotes
 has_children: true
 share: true
 shortRepo:
-
   - groovynotes
-  - default    
+  - default
 ---
 
-# [REPO](https://github.com/14paxton/GroovyNotes)  
+# [REPO](https://github.com/14paxton/GroovyNotes)

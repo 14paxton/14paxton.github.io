@@ -1,17 +1,16 @@
 ---
-title:        CLI_Gradlew    
-permalink:    PersonalGrailsNotes/CLI_Gradlew    
-category:     PersonalGrailsNotes    
-parent:       PersonalGrailsNotes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - personalgrailsnotes    
-  - default    
+title: CLI_Gradlew
+permalink: PersonalGrailsNotes/CLI_Gradlew
+category: PersonalGrailsNotes
+parent: PersonalGrailsNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - personalgrailsnotes
+  - default
 ---
-    
-    
+
 <br/>    
     
 <details markdown="block">    

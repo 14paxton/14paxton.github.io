@@ -1,17 +1,16 @@
 ---
-title:        Enum    
-permalink:    GroovyNotes/Enum    
-category:     GroovyNotes    
-parent:       GroovyNotes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - groovynotes    
-  - default    
+title: Enum
+permalink: GroovyNotes/Enum
+category: GroovyNotes
+parent: GroovyNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - groovynotes
+  - default
 ---
-    
-    
+
 <br/>    
     
 <details markdown="block">    

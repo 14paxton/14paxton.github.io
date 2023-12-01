@@ -7,10 +7,10 @@ category: JavaNotes
 share: true
 shortRepo:
   - javanotes
-  - default              
+  - default
 ---
 
-<br/>            
+<br/>
 
 <details markdown="block">                  
 <summary>                  
@@ -19,28 +19,28 @@ Table of contents
 {: .text-delta }                  
 1. TOC                  
 {:toc}                  
-</details>                  
+</details>
 
-<br/>                  
+<br/>
 
-***                  
+---
 
-<br/>                  
+<br/>
 
 # Optionals
 
-```java            
+```java
 public class OptEx {
     Optional<Map<String, String>> aorMap = Optional.ofNullable(this.customAORMap);
 
 }
-```            
+```
 
 # Streams
 
 ## Map and Collect
 
-```java            
+```java
 
 public class MapExample {
 
@@ -51,25 +51,25 @@ public class MapExample {
 
         return Map.of("externalCode", "");
     }).collect(Collectors.toList())));
-}          
-```            
+}
+```
 
 ## ConcurrentHashMap and LinkedList
 
-```java  
+```java
 public class LinkedListEx {
     Map newMap = this.clientEntityMap.entrySet().stream().map(entry -> Map.entry(entry.getKey(), entry.getValue().stream().map(ClientEntityDetails::toMap).collect(Collectors.toCollection(LinkedList::new)))).collect(Collectors.toConcurrentMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> b, ConcurrentHashMap::new));
 
-}          
-```            
+}
+```
 
 ## Map to String
 
-```java            
+```java
 public class MapToString {
     Map mapToString = this.clientEntityMap.entrySet().stream().map(entry -> Map.entry(entry.getKey(), entry.getValue().stream().map(ClientEntityDetails::toMap).collect(Collectors.toCollection(LinkedList::new)))).collect(Collectors.toConcurrentMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> b, ConcurrentHashMap::new));
 
-}         
+}
 ```
 
 # Sealed Classes

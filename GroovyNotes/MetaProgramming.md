@@ -8,11 +8,10 @@ has_children: false
 share: true
 shortRepo:
   - groovynotes
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,28 +20,28 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # Objects
 
 ## properties to map
 
-```groovy    
+```groovy
 intCmd.class
         .declaredFields
         .findAll { !it.synthetic }
-        .collectEntries { [it.name, intCmd."$it.name"] }    
-```    
+        .collectEntries { [it.name, intCmd."$it.name"] }
+```
 
 ### can also use slurper
 
-```groovy    
+```groovy
 class BaseObject {
     Map asMap() {
         def jsonSlurper = new groovy.json.JsonSlurperClassic()
@@ -55,8 +54,8 @@ class BaseObject {
         String json = jsonOutput.toJson(this)
         return json
     }
-}    
-```    
+}
+```
 
 # Object Extensions
 
@@ -72,52 +71,52 @@ peter.invokeMethod("walk", 10)
 
 > code example from class constructor
 
-```groovy    
+```groovy
 dynamicProperties.eachWithIndex { String newProp, Integer index ->
     if (index < 4) {
         String propName = newProp.substring(1).replaceAll("\\s", "")
         String propNameCamelCased = Character.toString(newProp.charAt(0)).toUpperCase() + noWhite
         this.metaClass["get${propNameCamelCased}"] = raw.get(newProp)
     }
-}    
-```    
+}
+```
 
 ## to invoke a property dynamically
 
 ```groovy
  def x = vobj[usrRequestedProperty]
 def y = vobj."${usrRequestedProperty}"
-```    
+```
 
 ## iterate over an objects properties
 
-```groovy 
+```groovy
 obj.properties.each {}
-```    
+```
 
 ## check if property exists
 
 ```groovy
  object.hasProperty(methodName)
-```    
+```
 
 ## iterate through objects methods
 
-```groovy 
+```groovy
 object.methods.each {}
-```    
+```
 
 ## iterate through methods
 
-```groovy 
+```groovy
 test.metaClass.methods.each { method -> if (method.name == 'thismethod') method.invoke(arg) }
-```    
+```
 
 ## check if method exists
 
 ```groovy
  object.respondsTo(methodName)
-```    
+```
 
 ## invoke method dynamically
 
@@ -129,37 +128,37 @@ if (methodUsed) returnSet = invokeMethod(methodUsed as String, group) as Set
 
 ## dynamically create class
 
-```java    
+```java
 
 public class Example {
     Class<?> clazz = Class.forName("java.util.Date");
     Object date = clazz.newInstance();
-} 
-```    
+}
+```
 
-```java    
+```java
 public class Example {
     Class<?> clazz = Class.forName("com.foo.MyClass");
     Constructor<?> constructor = clazz.getConstructor(String.class, Integer.class);
     Object instance = constructor.newInstance("stringparam", 42);
 }
 
-```    
+```
 
-```groovy    
+```groovy
 def p3 = Class.forName("Person").newInstance()
-assert p3    
-```    
+assert p3
+```
 
 > using groovy classLoader
 
-```groovy    
-def instance = this.class.classLoader.loadClass('Item', true, false)?.newInstance()    
-```    
+```groovy
+def instance = this.class.classLoader.loadClass('Item', true, false)?.newInstance()
+```
 
-> ***Code Example***
+> **_Code Example_**
 
-```groovy    
+```groovy
 // expected configmap
 // Map configMap = [rest: RESTClientResultConfig, soap: SOAPClientResultConfig, ftp: FTPClientResultConfig, email: EmailClientResultConfig]
 
@@ -173,13 +172,13 @@ if (err) {
     returnObj.errors = [(err.name): err]
 } else {
     returnObj = [(type.getKey()): newInstance.save(flush: true).id]
-}    
-```    
+}
+```
 
 > possible errors
 
-1) the JVM can't find or can't load your class
-2) the class you're trying to instantiate doesn't have the right sort of constructors
-3) the constructor itself threw an exception
-4) the constructor you're trying to invoke isn't public
-5) a security manager has been installed and is preventing reflection from occurring  
+1. the JVM can't find or can't load your class
+2. the class you're trying to instantiate doesn't have the right sort of constructors
+3. the constructor itself threw an exception
+4. the constructor you're trying to invoke isn't public
+5. a security manager has been installed and is preventing reflection from occurring

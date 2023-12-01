@@ -1,19 +1,19 @@
 ---
-title:        Liquibase
-permalink:    SQLNotes/Liquibase
-category:     SQLNotes
-parent:       SQLNotes
-layout:       default
+title: Liquibase
+permalink: SQLNotes/Liquibase
+category: SQLNotes
+parent: SQLNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - sqlnotes
-  - default            
+  - default
 ---
 
-<br/>            
+<br/>
 
-___            
+---
 
 <details  markdown="block">              
   <summary>              
@@ -22,18 +22,19 @@ ___
   {: .text-delta }              
 1. TOC              
 {:toc}              
-</details>              
+</details>
 
+---
 
-***              
-***            
-<br/>            
+---
+
+<br/>
 
 # Available DataTypes
 
 ## CODE USED TO GET TYPES
 
-`````````groovy            
+```groovy
 @Grab('org.liquibase:liquibase-core:3.5.1')
 
 import liquibase.database.core.*
@@ -49,695 +50,695 @@ datatypes.each {
     println datatype.name
     databases.each { println "$it.simpleName: ${datatype.toDatabaseDataType(it.newInstance())}" }
     println ''
-}             
-`````````            
+}
+```
 
 ## BOOLEAN
 
-### ```MySQLDatabase``` : BIT(1)
+### `MySQLDatabase` : BIT(1)
 
-### ```SQLiteDatabase``` : BOOLEAN
+### `SQLiteDatabase` : BOOLEAN
 
-### ```H2Database``` : BOOLEAN
+### `H2Database` : BOOLEAN
 
-### ```PostgresDatabase``` : BOOLEAN
+### `PostgresDatabase` : BOOLEAN
 
-### ```UnsupportedDatabase``` : BOOLEAN
+### `UnsupportedDatabase` : BOOLEAN
 
-### ```DB2Database``` : SMALLINT
+### `DB2Database` : SMALLINT
 
-### ```MSSQLDatabase``` : bit
+### `MSSQLDatabase` : bit
 
-### ```OracleDatabase``` : NUMBER(1)
+### `OracleDatabase` : NUMBER(1)
 
-### ```HsqlDatabase``` : BOOLEAN
+### `HsqlDatabase` : BOOLEAN
 
-### ```FirebirdDatabase``` : SMALLINT
+### `FirebirdDatabase` : SMALLINT
 
-### ```DerbyDatabase``` : SMALLINT
+### `DerbyDatabase` : SMALLINT
 
-### ```InformixDatabase``` : BOOLEAN
+### `InformixDatabase` : BOOLEAN
 
-### ```SybaseDatabase``` : BIT
+### `SybaseDatabase` : BIT
 
-### ```SybaseASADatabase``` : BIT
+### `SybaseASADatabase` : BIT
 
 ## TINYINT
 
-### ```MySQLDatabase``` : TINYINT
+### `MySQLDatabase` : TINYINT
 
-### ```SQLiteDatabase``` : TINYINT
+### `SQLiteDatabase` : TINYINT
 
-### ```H2Database``` : TINYINT
+### `H2Database` : TINYINT
 
-### ```PostgresDatabase``` : SMALLINT
+### `PostgresDatabase` : SMALLINT
 
-### ```UnsupportedDatabase``` : TINYINT
+### `UnsupportedDatabase` : TINYINT
 
-### ```DB2Database``` : SMALLINT
+### `DB2Database` : SMALLINT
 
-### ```MSSQLDatabase``` : tinyint
+### `MSSQLDatabase` : tinyint
 
-### ```OracleDatabase``` : NUMBER(3)
+### `OracleDatabase` : NUMBER(3)
 
-### ```HsqlDatabase``` : TINYINT
+### `HsqlDatabase` : TINYINT
 
-### ```FirebirdDatabase``` : SMALLINT
+### `FirebirdDatabase` : SMALLINT
 
-### ```DerbyDatabase``` : SMALLINT
+### `DerbyDatabase` : SMALLINT
 
-### ```InformixDatabase``` : TINYINT
+### `InformixDatabase` : TINYINT
 
-### ```SybaseDatabase``` : TINYINT
+### `SybaseDatabase` : TINYINT
 
-### ```SybaseASADatabase``` : TINYINT
+### `SybaseASADatabase` : TINYINT
 
 ## INT
 
-### ```MySQLDatabase``` : INT
+### `MySQLDatabase` : INT
 
-### ```SQLiteDatabase``` : INTEGER
+### `SQLiteDatabase` : INTEGER
 
-### ```H2Database``` : INT
+### `H2Database` : INT
 
-### ```PostgresDatabase``` : INT
+### `PostgresDatabase` : INT
 
-### ```UnsupportedDatabase``` : INT
+### `UnsupportedDatabase` : INT
 
-### ```DB2Database``` : INTEGER
+### `DB2Database` : INTEGER
 
-### ```MSSQLDatabase``` : int
+### `MSSQLDatabase` : int
 
-### ```OracleDatabase``` : INTEGER
+### `OracleDatabase` : INTEGER
 
-### ```HsqlDatabase``` : INT
+### `HsqlDatabase` : INT
 
-### ```FirebirdDatabase``` : INT
+### `FirebirdDatabase` : INT
 
-### ```DerbyDatabase``` : INTEGER
+### `DerbyDatabase` : INTEGER
 
-### ```InformixDatabase``` : INT
+### `InformixDatabase` : INT
 
-### ```SybaseDatabase``` : INT
+### `SybaseDatabase` : INT
 
-### ```SybaseASADatabase``` : INT
+### `SybaseASADatabase` : INT
 
 ## MEDIUMINT
 
-### ```MySQLDatabase``` : MEDIUMINT
+### `MySQLDatabase` : MEDIUMINT
 
-### ```SQLiteDatabase``` : MEDIUMINT
+### `SQLiteDatabase` : MEDIUMINT
 
-### ```H2Database``` : MEDIUMINT
+### `H2Database` : MEDIUMINT
 
-### ```PostgresDatabase``` : MEDIUMINT
+### `PostgresDatabase` : MEDIUMINT
 
-### ```UnsupportedDatabase``` : MEDIUMINT
+### `UnsupportedDatabase` : MEDIUMINT
 
-### ```DB2Database``` : MEDIUMINT
+### `DB2Database` : MEDIUMINT
 
-### ```MSSQLDatabase``` : int
+### `MSSQLDatabase` : int
 
-### ```OracleDatabase``` : MEDIUMINT
+### `OracleDatabase` : MEDIUMINT
 
-### ```HsqlDatabase``` : MEDIUMINT
+### `HsqlDatabase` : MEDIUMINT
 
-### ```FirebirdDatabase``` : MEDIUMINT
+### `FirebirdDatabase` : MEDIUMINT
 
-### ```DerbyDatabase``` : MEDIUMINT
+### `DerbyDatabase` : MEDIUMINT
 
-### ```InformixDatabase``` : MEDIUMINT
+### `InformixDatabase` : MEDIUMINT
 
-### ```SybaseDatabase``` : MEDIUMINT
+### `SybaseDatabase` : MEDIUMINT
 
-### ```SybaseASADatabase``` : MEDIUMINT
+### `SybaseASADatabase` : MEDIUMINT
 
 ## BIGINT
 
-### ```MySQLDatabase``` : BIGINT
+### `MySQLDatabase` : BIGINT
 
-### ```SQLiteDatabase``` : BIGINT
+### `SQLiteDatabase` : BIGINT
 
-### ```H2Database``` : BIGINT
+### `H2Database` : BIGINT
 
-### ```PostgresDatabase``` : BIGINT
+### `PostgresDatabase` : BIGINT
 
-### ```UnsupportedDatabase``` : BIGINT
+### `UnsupportedDatabase` : BIGINT
 
-### ```DB2Database``` : BIGINT
+### `DB2Database` : BIGINT
 
-### ```MSSQLDatabase``` : bigint
+### `MSSQLDatabase` : bigint
 
-### ```OracleDatabase``` : NUMBER(38, 0)
+### `OracleDatabase` : NUMBER(38, 0)
 
-### ```HsqlDatabase``` : BIGINT
+### `HsqlDatabase` : BIGINT
 
-### ```FirebirdDatabase``` : BIGINT
+### `FirebirdDatabase` : BIGINT
 
-### ```DerbyDatabase``` : BIGINT
+### `DerbyDatabase` : BIGINT
 
-### ```InformixDatabase``` : INT8
+### `InformixDatabase` : INT8
 
-### ```SybaseDatabase``` : BIGINT
+### `SybaseDatabase` : BIGINT
 
-### ```SybaseASADatabase``` : BIGINT
+### `SybaseASADatabase` : BIGINT
 
 ## FLOAT
 
-### ```MySQLDatabase``` : FLOAT
+### `MySQLDatabase` : FLOAT
 
-### ```SQLiteDatabase``` : FLOAT
+### `SQLiteDatabase` : FLOAT
 
-### ```H2Database``` : FLOAT
+### `H2Database` : FLOAT
 
-### ```PostgresDatabase``` : FLOAT
+### `PostgresDatabase` : FLOAT
 
-### ```UnsupportedDatabase``` : FLOAT
+### `UnsupportedDatabase` : FLOAT
 
-### ```DB2Database``` : FLOAT
+### `DB2Database` : FLOAT
 
-### ```MSSQLDatabase``` : FLOAT(53)
+### `MSSQLDatabase` : FLOAT(53)
 
-### ```OracleDatabase``` : FLOAT
+### `OracleDatabase` : FLOAT
 
-### ```HsqlDatabase``` : FLOAT
+### `HsqlDatabase` : FLOAT
 
-### ```FirebirdDatabase``` : FLOAT
+### `FirebirdDatabase` : FLOAT
 
-### ```DerbyDatabase``` : FLOAT
+### `DerbyDatabase` : FLOAT
 
-### ```InformixDatabase``` : FLOAT
+### `InformixDatabase` : FLOAT
 
-### ```SybaseDatabase``` : FLOAT
+### `SybaseDatabase` : FLOAT
 
-### ```SybaseASADatabase``` : FLOAT
+### `SybaseASADatabase` : FLOAT
 
 ## DOUBLE
 
-### ```MySQLDatabase``` : DOUBLE
+### `MySQLDatabase` : DOUBLE
 
-### ```SQLiteDatabase``` : DOUBLE
+### `SQLiteDatabase` : DOUBLE
 
-### ```H2Database``` : DOUBLE
+### `H2Database` : DOUBLE
 
-### ```PostgresDatabase``` : DOUBLE PRECISION
+### `PostgresDatabase` : DOUBLE PRECISION
 
-### ```UnsupportedDatabase``` : DOUBLE
+### `UnsupportedDatabase` : DOUBLE
 
-### ```DB2Database``` : DOUBLE
+### `DB2Database` : DOUBLE
 
-### ```MSSQLDatabase``` : FLOAT(53)
+### `MSSQLDatabase` : FLOAT(53)
 
-### ```OracleDatabase``` : FLOAT(24)
+### `OracleDatabase` : FLOAT(24)
 
-### ```HsqlDatabase``` : DOUBLE
+### `HsqlDatabase` : DOUBLE
 
-### ```FirebirdDatabase``` : DOUBLE PRECISION
+### `FirebirdDatabase` : DOUBLE PRECISION
 
-### ```DerbyDatabase``` : DOUBLE
+### `DerbyDatabase` : DOUBLE
 
-### ```InformixDatabase``` : DOUBLE PRECISION
+### `InformixDatabase` : DOUBLE PRECISION
 
-### ```SybaseDatabase``` : DOUBLE
+### `SybaseDatabase` : DOUBLE
 
-### ```SybaseASADatabase``` : DOUBLE
+### `SybaseASADatabase` : DOUBLE
 
 ## DECIMAL
 
-### ```MySQLDatabase``` : DECIMAL
+### `MySQLDatabase` : DECIMAL
 
-### ```SQLiteDatabase``` : DECIMAL
+### `SQLiteDatabase` : DECIMAL
 
-### ```H2Database``` : DECIMAL
+### `H2Database` : DECIMAL
 
-### ```PostgresDatabase``` : DECIMAL
+### `PostgresDatabase` : DECIMAL
 
-### ```UnsupportedDatabase``` : DECIMAL
+### `UnsupportedDatabase` : DECIMAL
 
-### ```DB2Database``` : DECIMAL
+### `DB2Database` : DECIMAL
 
-### ```MSSQLDatabase``` : DECIMAL(18, 0)
+### `MSSQLDatabase` : DECIMAL(18, 0)
 
-### ```OracleDatabase``` : DECIMAL
+### `OracleDatabase` : DECIMAL
 
-### ```HsqlDatabase``` : DECIMAL
+### `HsqlDatabase` : DECIMAL
 
-### ```FirebirdDatabase``` : DECIMAL
+### `FirebirdDatabase` : DECIMAL
 
-### ```DerbyDatabase``` : DECIMAL
+### `DerbyDatabase` : DECIMAL
 
-### ```InformixDatabase``` : DECIMAL
+### `InformixDatabase` : DECIMAL
 
-### ```SybaseDatabase``` : DECIMAL
+### `SybaseDatabase` : DECIMAL
 
-### ```SybaseASADatabase``` : DECIMAL
+### `SybaseASADatabase` : DECIMAL
 
 ## NUMBER
 
-### ```MySQLDatabase``` : numeric
+### `MySQLDatabase` : numeric
 
-### ```SQLiteDatabase``` : NUMBER
+### `SQLiteDatabase` : NUMBER
 
-### ```H2Database``` : NUMBER
+### `H2Database` : NUMBER
 
-### ```PostgresDatabase``` : numeric
+### `PostgresDatabase` : numeric
 
-### ```UnsupportedDatabase``` : NUMBER
+### `UnsupportedDatabase` : NUMBER
 
-### ```DB2Database``` : numeric
+### `DB2Database` : numeric
 
-### ```MSSQLDatabase``` : numeric(18, 0)
+### `MSSQLDatabase` : numeric(18, 0)
 
-### ```OracleDatabase``` : NUMBER
+### `OracleDatabase` : NUMBER
 
-### ```HsqlDatabase``` : numeric
+### `HsqlDatabase` : numeric
 
-### ```FirebirdDatabase``` : numeric
+### `FirebirdDatabase` : numeric
 
-### ```DerbyDatabase``` : numeric
+### `DerbyDatabase` : numeric
 
-### ```InformixDatabase``` : numeric
+### `InformixDatabase` : numeric
 
-### ```SybaseDatabase``` : numeric
+### `SybaseDatabase` : numeric
 
-### ```SybaseASADatabase``` : numeric
+### `SybaseASADatabase` : numeric
 
 ## BLOB
 
-### ```MySQLDatabase``` : LONGBLOB
+### `MySQLDatabase` : LONGBLOB
 
-### ```SQLiteDatabase``` : BLOB
+### `SQLiteDatabase` : BLOB
 
-### ```H2Database``` : BLOB
+### `H2Database` : BLOB
 
-### ```PostgresDatabase``` : BYTEA
+### `PostgresDatabase` : BYTEA
 
-### ```UnsupportedDatabase``` : BLOB
+### `UnsupportedDatabase` : BLOB
 
-### ```DB2Database``` : BLOB
+### `DB2Database` : BLOB
 
-### ```MSSQLDatabase``` : varbinary(MAX)
+### `MSSQLDatabase` : varbinary(MAX)
 
-### ```OracleDatabase``` : BLOB
+### `OracleDatabase` : BLOB
 
-### ```HsqlDatabase``` : BLOB
+### `HsqlDatabase` : BLOB
 
-### ```FirebirdDatabase``` : BLOB
+### `FirebirdDatabase` : BLOB
 
-### ```DerbyDatabase``` : BLOB
+### `DerbyDatabase` : BLOB
 
-### ```InformixDatabase``` : BLOB
+### `InformixDatabase` : BLOB
 
-### ```SybaseDatabase``` : IMAGE
+### `SybaseDatabase` : IMAGE
 
-### ```SybaseASADatabase``` : LONG BINARY
+### `SybaseASADatabase` : LONG BINARY
 
 ## FUNCTION
 
-### ```MySQLDatabase``` : FUNCTION
+### `MySQLDatabase` : FUNCTION
 
-### ```SQLiteDatabase``` : FUNCTION
+### `SQLiteDatabase` : FUNCTION
 
-### ```H2Database``` : FUNCTION
+### `H2Database` : FUNCTION
 
-### ```PostgresDatabase``` : FUNCTION
+### `PostgresDatabase` : FUNCTION
 
-### ```UnsupportedDatabase``` : FUNCTION
+### `UnsupportedDatabase` : FUNCTION
 
-### ```DB2Database``` : FUNCTION
+### `DB2Database` : FUNCTION
 
-### ```MSSQLDatabase``` : function
+### `MSSQLDatabase` : function
 
-### ```OracleDatabase``` : FUNCTION
+### `OracleDatabase` : FUNCTION
 
-### ```HsqlDatabase``` : FUNCTION
+### `HsqlDatabase` : FUNCTION
 
-### ```FirebirdDatabase``` : FUNCTION
+### `FirebirdDatabase` : FUNCTION
 
-### ```DerbyDatabase``` : FUNCTION
+### `DerbyDatabase` : FUNCTION
 
-### ```InformixDatabase``` : FUNCTION
+### `InformixDatabase` : FUNCTION
 
-### ```SybaseDatabase``` : FUNCTION
+### `SybaseDatabase` : FUNCTION
 
-### ```SybaseASADatabase``` : FUNCTION
+### `SybaseASADatabase` : FUNCTION
 
 ## UNKNOWN
 
-### ```MySQLDatabase``` : UNKNOWN
+### `MySQLDatabase` : UNKNOWN
 
-### ```SQLiteDatabase``` : UNKNOWN
+### `SQLiteDatabase` : UNKNOWN
 
-### ```H2Database``` : UNKNOWN
+### `H2Database` : UNKNOWN
 
-### ```PostgresDatabase``` : UNKNOWN
+### `PostgresDatabase` : UNKNOWN
 
-### ```UnsupportedDatabase``` : UNKNOWN
+### `UnsupportedDatabase` : UNKNOWN
 
-### ```DB2Database``` : UNKNOWN
+### `DB2Database` : UNKNOWN
 
-### ```MSSQLDatabase``` : UNKNOWN
+### `MSSQLDatabase` : UNKNOWN
 
-### ```OracleDatabase``` : UNKNOWN
+### `OracleDatabase` : UNKNOWN
 
-### ```HsqlDatabase``` : UNKNOWN
+### `HsqlDatabase` : UNKNOWN
 
-### ```FirebirdDatabase``` : UNKNOWN
+### `FirebirdDatabase` : UNKNOWN
 
-### ```DerbyDatabase``` : UNKNOWN
+### `DerbyDatabase` : UNKNOWN
 
-### ```InformixDatabase``` : UNKNOWN
+### `InformixDatabase` : UNKNOWN
 
-### ```SybaseDatabase``` : UNKNOWN
+### `SybaseDatabase` : UNKNOWN
 
-### ```SybaseASADatabase``` : UNKNOWN
+### `SybaseASADatabase` : UNKNOWN
 
 ## DATETIME
 
-### ```MySQLDatabase``` : datetime
+### `MySQLDatabase` : datetime
 
-### ```SQLiteDatabase``` : TEXT
+### `SQLiteDatabase` : TEXT
 
-### ```H2Database``` : TIMESTAMP
+### `H2Database` : TIMESTAMP
 
-### ```PostgresDatabase``` : TIMESTAMP WITHOUT TIME ZONE
+### `PostgresDatabase` : TIMESTAMP WITHOUT TIME ZONE
 
-### ```UnsupportedDatabase``` : datetime
+### `UnsupportedDatabase` : datetime
 
-### ```DB2Database``` : TIMESTAMP
+### `DB2Database` : TIMESTAMP
 
-### ```MSSQLDatabase``` : datetime
+### `MSSQLDatabase` : datetime
 
-### ```OracleDatabase``` : TIMESTAMP
+### `OracleDatabase` : TIMESTAMP
 
-### ```HsqlDatabase``` : TIMESTAMP
+### `HsqlDatabase` : TIMESTAMP
 
-### ```FirebirdDatabase``` : TIMESTAMP
+### `FirebirdDatabase` : TIMESTAMP
 
-### ```DerbyDatabase``` : TIMESTAMP
+### `DerbyDatabase` : TIMESTAMP
 
-### ```InformixDatabase``` : DATETIME YEAR TO FRACTION(5)
+### `InformixDatabase` : DATETIME YEAR TO FRACTION(5)
 
-### ```SybaseDatabase``` : datetime
+### `SybaseDatabase` : datetime
 
-### ```SybaseASADatabase``` : datetime
+### `SybaseASADatabase` : datetime
 
 ## TIME
 
-### ```MySQLDatabase``` : time
+### `MySQLDatabase` : time
 
-### ```SQLiteDatabase``` : time
+### `SQLiteDatabase` : time
 
-### ```H2Database``` : time
+### `H2Database` : time
 
-### ```PostgresDatabase``` : TIME WITHOUT TIME ZONE
+### `PostgresDatabase` : TIME WITHOUT TIME ZONE
 
-### ```UnsupportedDatabase``` : time
+### `UnsupportedDatabase` : time
 
-### ```DB2Database``` : time
+### `DB2Database` : time
 
-### ```MSSQLDatabase``` : time(7)
+### `MSSQLDatabase` : time(7)
 
-### ```OracleDatabase``` : DATE
+### `OracleDatabase` : DATE
 
-### ```HsqlDatabase``` : time
+### `HsqlDatabase` : time
 
-### ```FirebirdDatabase``` : time
+### `FirebirdDatabase` : time
 
-### ```DerbyDatabase``` : time
+### `DerbyDatabase` : time
 
-### ```InformixDatabase``` : INTERVAL HOUR TO FRACTION(5)
+### `InformixDatabase` : INTERVAL HOUR TO FRACTION(5)
 
-### ```SybaseDatabase``` : time
+### `SybaseDatabase` : time
 
-### ```SybaseASADatabase``` : time
+### `SybaseASADatabase` : time
 
 ## TIMESTAMP
 
-### ```MySQLDatabase``` : timestamp
+### `MySQLDatabase` : timestamp
 
-### ```SQLiteDatabase``` : TEXT
+### `SQLiteDatabase` : TEXT
 
-### ```H2Database``` : TIMESTAMP
+### `H2Database` : TIMESTAMP
 
-### ```PostgresDatabase``` : TIMESTAMP WITHOUT TIME ZONE
+### `PostgresDatabase` : TIMESTAMP WITHOUT TIME ZONE
 
-### ```UnsupportedDatabase``` : timestamp
+### `UnsupportedDatabase` : timestamp
 
-### ```DB2Database``` : timestamp
+### `DB2Database` : timestamp
 
-### ```MSSQLDatabase``` : datetime
+### `MSSQLDatabase` : datetime
 
-### ```OracleDatabase``` : TIMESTAMP
+### `OracleDatabase` : TIMESTAMP
 
-### ```HsqlDatabase``` : TIMESTAMP
+### `HsqlDatabase` : TIMESTAMP
 
-### ```FirebirdDatabase``` : TIMESTAMP
+### `FirebirdDatabase` : TIMESTAMP
 
-### ```DerbyDatabase``` : TIMESTAMP
+### `DerbyDatabase` : TIMESTAMP
 
-### ```InformixDatabase``` : DATETIME YEAR TO FRACTION(5)
+### `InformixDatabase` : DATETIME YEAR TO FRACTION(5)
 
-### ```SybaseDatabase``` : datetime
+### `SybaseDatabase` : datetime
 
-### ```SybaseASADatabase``` : timestamp
+### `SybaseASADatabase` : timestamp
 
 ## DATE
 
-### ```MySQLDatabase``` : date
+### `MySQLDatabase` : date
 
-### ```SQLiteDatabase``` : date
+### `SQLiteDatabase` : date
 
-### ```H2Database``` : date
+### `H2Database` : date
 
-### ```PostgresDatabase``` : date
+### `PostgresDatabase` : date
 
-### ```UnsupportedDatabase``` : date
+### `UnsupportedDatabase` : date
 
-### ```DB2Database``` : date
+### `DB2Database` : date
 
-### ```MSSQLDatabase``` : date
+### `MSSQLDatabase` : date
 
-### ```OracleDatabase``` : date
+### `OracleDatabase` : date
 
-### ```HsqlDatabase``` : date
+### `HsqlDatabase` : date
 
-### ```FirebirdDatabase``` : date
+### `FirebirdDatabase` : date
 
-### ```DerbyDatabase``` : date
+### `DerbyDatabase` : date
 
-### ```InformixDatabase``` : date
+### `InformixDatabase` : date
 
-### ```SybaseDatabase``` : date
+### `SybaseDatabase` : date
 
-### ```SybaseASADatabase``` : date
+### `SybaseASADatabase` : date
 
 ## CHAR
 
-### ```MySQLDatabase``` : CHAR
+### `MySQLDatabase` : CHAR
 
-### ```SQLiteDatabase``` : CHAR
+### `SQLiteDatabase` : CHAR
 
-### ```H2Database``` : CHAR
+### `H2Database` : CHAR
 
-### ```PostgresDatabase``` : CHAR
+### `PostgresDatabase` : CHAR
 
-### ```UnsupportedDatabase``` : CHAR
+### `UnsupportedDatabase` : CHAR
 
-### ```DB2Database``` : CHAR
+### `DB2Database` : CHAR
 
-### ```MSSQLDatabase``` : char(1)
+### `MSSQLDatabase` : char(1)
 
-### ```OracleDatabase``` : CHAR
+### `OracleDatabase` : CHAR
 
-### ```HsqlDatabase``` : CHAR
+### `HsqlDatabase` : CHAR
 
-### ```FirebirdDatabase``` : CHAR
+### `FirebirdDatabase` : CHAR
 
-### ```DerbyDatabase``` : CHAR
+### `DerbyDatabase` : CHAR
 
-### ```InformixDatabase``` : CHAR
+### `InformixDatabase` : CHAR
 
-### ```SybaseDatabase``` : CHAR
+### `SybaseDatabase` : CHAR
 
-### ```SybaseASADatabase``` : CHAR
+### `SybaseASADatabase` : CHAR
 
 ## VARCHAR
 
-### ```MySQLDatabase``` : VARCHAR
+### `MySQLDatabase` : VARCHAR
 
-### ```SQLiteDatabase``` : VARCHAR
+### `SQLiteDatabase` : VARCHAR
 
-### ```H2Database``` : VARCHAR
+### `H2Database` : VARCHAR
 
-### ```PostgresDatabase``` : VARCHAR
+### `PostgresDatabase` : VARCHAR
 
-### ```UnsupportedDatabase``` : VARCHAR
+### `UnsupportedDatabase` : VARCHAR
 
-### ```DB2Database``` : VARCHAR
+### `DB2Database` : VARCHAR
 
-### ```MSSQLDatabase``` : varchar(1)
+### `MSSQLDatabase` : varchar(1)
 
-### ```OracleDatabase``` : VARCHAR2
+### `OracleDatabase` : VARCHAR2
 
-### ```HsqlDatabase``` : VARCHAR
+### `HsqlDatabase` : VARCHAR
 
-### ```FirebirdDatabase``` : VARCHAR
+### `FirebirdDatabase` : VARCHAR
 
-### ```DerbyDatabase``` : VARCHAR
+### `DerbyDatabase` : VARCHAR
 
-### ```InformixDatabase``` : VARCHAR
+### `InformixDatabase` : VARCHAR
 
-### ```SybaseDatabase``` : VARCHAR
+### `SybaseDatabase` : VARCHAR
 
-### ```SybaseASADatabase``` : VARCHAR
+### `SybaseASADatabase` : VARCHAR
 
 ## NCHAR
 
-### ```MySQLDatabase``` : NCHAR
+### `MySQLDatabase` : NCHAR
 
-### ```SQLiteDatabase``` : NCHAR
+### `SQLiteDatabase` : NCHAR
 
-### ```H2Database``` : NCHAR
+### `H2Database` : NCHAR
 
-### ```PostgresDatabase``` : NCHAR
+### `PostgresDatabase` : NCHAR
 
-### ```UnsupportedDatabase``` : NCHAR
+### `UnsupportedDatabase` : NCHAR
 
-### ```DB2Database``` : NCHAR
+### `DB2Database` : NCHAR
 
-### ```MSSQLDatabase``` : nchar(1)
+### `MSSQLDatabase` : nchar(1)
 
-### ```OracleDatabase``` : NCHAR
+### `OracleDatabase` : NCHAR
 
-### ```HsqlDatabase``` : CHAR
+### `HsqlDatabase` : CHAR
 
-### ```FirebirdDatabase``` : NCHAR
+### `FirebirdDatabase` : NCHAR
 
-### ```DerbyDatabase``` : NCHAR
+### `DerbyDatabase` : NCHAR
 
-### ```InformixDatabase``` : NCHAR
+### `InformixDatabase` : NCHAR
 
-### ```SybaseDatabase``` : NCHAR
+### `SybaseDatabase` : NCHAR
 
-### ```SybaseASADatabase``` : NCHAR
+### `SybaseASADatabase` : NCHAR
 
 ## NVARCHAR
 
-### ```MySQLDatabase``` : NVARCHAR
+### `MySQLDatabase` : NVARCHAR
 
-### ```SQLiteDatabase``` : NVARCHAR
+### `SQLiteDatabase` : NVARCHAR
 
-### ```H2Database``` : NVARCHAR
+### `H2Database` : NVARCHAR
 
-### ```PostgresDatabase``` : VARCHAR
+### `PostgresDatabase` : VARCHAR
 
-### ```UnsupportedDatabase``` : NVARCHAR
+### `UnsupportedDatabase` : NVARCHAR
 
-### ```DB2Database``` : NVARCHAR
+### `DB2Database` : NVARCHAR
 
-### ```MSSQLDatabase``` : nvarchar(1)
+### `MSSQLDatabase` : nvarchar(1)
 
-### ```OracleDatabase``` : NVARCHAR2
+### `OracleDatabase` : NVARCHAR2
 
-### ```HsqlDatabase``` : VARCHAR
+### `HsqlDatabase` : VARCHAR
 
-### ```FirebirdDatabase``` : NVARCHAR
+### `FirebirdDatabase` : NVARCHAR
 
-### ```DerbyDatabase``` : VARCHAR
+### `DerbyDatabase` : VARCHAR
 
-### ```InformixDatabase``` : NVARCHAR
+### `InformixDatabase` : NVARCHAR
 
-### ```SybaseDatabase``` : NVARCHAR
+### `SybaseDatabase` : NVARCHAR
 
-### ```SybaseASADatabase``` : NVARCHAR
+### `SybaseASADatabase` : NVARCHAR
 
 ## CLOB
 
-### ```MySQLDatabase``` : LONGTEXT
+### `MySQLDatabase` : LONGTEXT
 
-### ```SQLiteDatabase``` : TEXT
+### `SQLiteDatabase` : TEXT
 
-### ```H2Database``` : CLOB
+### `H2Database` : CLOB
 
-### ```PostgresDatabase``` : TEXT
+### `PostgresDatabase` : TEXT
 
-### ```UnsupportedDatabase``` : CLOB
+### `UnsupportedDatabase` : CLOB
 
-### ```DB2Database``` : CLOB
+### `DB2Database` : CLOB
 
-### ```MSSQLDatabase``` : varchar(MAX)
+### `MSSQLDatabase` : varchar(MAX)
 
-### ```OracleDatabase``` : CLOB
+### `OracleDatabase` : CLOB
 
-### ```HsqlDatabase``` : CLOB
+### `HsqlDatabase` : CLOB
 
-### ```FirebirdDatabase``` : BLOB SUB_TYPE TEXT
+### `FirebirdDatabase` : BLOB SUB_TYPE TEXT
 
-### ```DerbyDatabase``` : CLOB
+### `DerbyDatabase` : CLOB
 
-### ```InformixDatabase``` : CLOB
+### `InformixDatabase` : CLOB
 
-### ```SybaseDatabase``` : TEXT
+### `SybaseDatabase` : TEXT
 
-### ```SybaseASADatabase``` : LONG VARCHAR
+### `SybaseASADatabase` : LONG VARCHAR
 
 ## CURRENCY
 
-### ```MySQLDatabase``` : DECIMAL
+### `MySQLDatabase` : DECIMAL
 
-### ```SQLiteDatabase``` : REAL
+### `SQLiteDatabase` : REAL
 
-### ```H2Database``` : DECIMAL
+### `H2Database` : DECIMAL
 
-### ```PostgresDatabase``` : DECIMAL
+### `PostgresDatabase` : DECIMAL
 
-### ```UnsupportedDatabase``` : DECIMAL
+### `UnsupportedDatabase` : DECIMAL
 
-### ```DB2Database``` : DECIMAL(19, 4)
+### `DB2Database` : DECIMAL(19, 4)
 
-### ```MSSQLDatabase``` : money
+### `MSSQLDatabase` : money
 
-### ```OracleDatabase``` : NUMBER(15, 2)
+### `OracleDatabase` : NUMBER(15, 2)
 
-### ```HsqlDatabase``` : DECIMAL
+### `HsqlDatabase` : DECIMAL
 
-### ```FirebirdDatabase``` : DECIMAL(18, 4)
+### `FirebirdDatabase` : DECIMAL(18, 4)
 
-### ```DerbyDatabase``` : DECIMAL
+### `DerbyDatabase` : DECIMAL
 
-### ```InformixDatabase``` : MONEY
+### `InformixDatabase` : MONEY
 
-### ```SybaseDatabase``` : MONEY
+### `SybaseDatabase` : MONEY
 
-### ```SybaseASADatabase``` : MONEY
+### `SybaseASADatabase` : MONEY
 
 ## UUID
 
-### ```MySQLDatabase``` : char(36)
+### `MySQLDatabase` : char(36)
 
-### ```SQLiteDatabase``` : TEXT
+### `SQLiteDatabase` : TEXT
 
-### ```H2Database``` : UUID
+### `H2Database` : UUID
 
-### ```PostgresDatabase``` : UUID
+### `PostgresDatabase` : UUID
 
-### ```UnsupportedDatabase``` : char(36)
+### `UnsupportedDatabase` : char(36)
 
-### ```DB2Database``` : char(36)
+### `DB2Database` : char(36)
 
-### ```MSSQLDatabase``` : uniqueidentifier
+### `MSSQLDatabase` : uniqueidentifier
 
-### ```OracleDatabase``` : RAW(16)
+### `OracleDatabase` : RAW(16)
 
-### ```HsqlDatabase``` : char(36)
+### `HsqlDatabase` : char(36)
 
-### ```FirebirdDatabase``` : char(36)
+### `FirebirdDatabase` : char(36)
 
-### ```DerbyDatabase``` : char(36)
+### `DerbyDatabase` : char(36)
 
-### ```InformixDatabase``` : char(36)
+### `InformixDatabase` : char(36)
 
-### ```SybaseDatabase``` : UNIQUEIDENTIFIER
+### `SybaseDatabase` : UNIQUEIDENTIFIER
 
-### ```SybaseASADatabase``` : UNIQUEIDENTIFIER
+### `SybaseASADatabase` : UNIQUEIDENTIFIER

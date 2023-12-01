@@ -1,18 +1,16 @@
 ---
-title:        HTTP    
-permalink:    TestingFrameworks/HTTP    
-category:     TestingFrameworks    
-parent:       TestingFrameworks    
-layout:       default    
-has_children: false    
-share:        true  
-shortRepo:  
-  
-  - testingframeworks  
-  - default  
-  
+title: HTTP
+permalink: TestingFrameworks/HTTP
+category: TestingFrameworks
+parent: TestingFrameworks
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - testingframeworks
+  - default
 ---
-  
+
 <br/>    
 <details markdown="block">    
 <summary>    

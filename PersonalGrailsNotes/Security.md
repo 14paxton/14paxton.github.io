@@ -1,17 +1,16 @@
 ---
-title:        Security    
-permalink:    PersonalGrailsNotes/Security    
-category:     PersonalGrailsNotes    
-parent:       PersonalGrailsNotes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - personalgrailsnotes    
-  - default    
+title: Security
+permalink: PersonalGrailsNotes/Security
+category: PersonalGrailsNotes
+parent: PersonalGrailsNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - personalgrailsnotes
+  - default
 ---
-    
-    
+
 <br/>    
     
 <details markdown="block">    

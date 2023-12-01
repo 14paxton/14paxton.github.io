@@ -1,16 +1,16 @@
 ---
-title:        Spock    
-permalink:    TestingFrameworks/Spock    
-category:     TestingFrameworks    
-parent:       TestingFrameworks    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - testingframeworks    
-  - default    
+title: Spock
+permalink: TestingFrameworks/Spock
+category: TestingFrameworks
+parent: TestingFrameworks
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - testingframeworks
+  - default
 ---
-    
+
 <br/>    
 <details markdown="block">    
 <summary>    

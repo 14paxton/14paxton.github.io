@@ -31,8 +31,7 @@ It is possible to route and store logs elsewhere
 
 [Triggers a function based on Cloud Logging entries.](https://cloud.google.com/functions/docs/samples/functions-log-stackdriver?hl=en#functions_log_stackdriver-java)
 
-***
-
+---
 
 > To authenticate for REST command line calls, you use the gcloud CLI. The [gcloud auth login]
 > (https://cloud.google.com/sdk/gcloud/reference/auth/login) command logs you in to gcloud with your user account, which should be done before > calling the API.
@@ -60,7 +59,7 @@ you in to gcloud for application default credentials with your user account, whi
 The [gcloud auth application-default set-quota-project](https://cloud.google.com/sdk/gcloud/reference/auth/application-default/set-quota-project) command must be used to set your project for billing
 and quotas related to API calls. Normally, this is the same project used by your agent, and you supply the project ID for the project you created in steps above.
 
-The ```GOOGLE_APPLICATION_CREDENTIALS``` environment variable must not be set in order for your application default credentials to be used by client libraries.
+The `GOOGLE_APPLICATION_CREDENTIALS` environment variable must not be set in order for your application default credentials to be used by client libraries.
 
 - To create application default credentials for your local environment:
 
@@ -101,7 +100,6 @@ created key [e44da1202f82f8f4bdd9d92bc412d1d8a837fa83] of type [json] as
 > The downloaded key has the following format, where PRIVATE_KEY is the private portion of the public/private key pair:
 
 ```json
-
 {
   "type": "service_account",
   "project_id": "dialogflow-378918",
@@ -114,8 +112,6 @@ created key [e44da1202f82f8f4bdd9d92bc412d1d8a837fa83] of type [json] as
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflowserviceaccount%40dialogflow-378918.iam.gserviceaccount.com"
 }
-
-
 ```
 
 Make sure to store the key file securely, because it can be used to authenticate as your service account. You can move and rename this file however you would like.
@@ -132,19 +128,19 @@ dialogflowserviceaccount \
 
 > Replace the following values:
 
-```SERVICE_ACCOUNT_ID: the service account ID```
-```PROJECT_ID: the project ID```
+`SERVICE_ACCOUNT_ID: the service account ID`
+`PROJECT_ID: the project ID`
 
 > To find these IDs, in Google Cloud, click the Navigation menu at the top-left of the screen, hold your pointer over IAM & Admin and click Service Accounts.
 
 The Email column shows the unique SERVICE_ACCOUNT_ID and PROJECT_ID for each of your service accounts in the following format:
 
-```SERVICE_ACCOUNT_ID@PROJECT_ID.iam.gserviceaccount.com```
+`SERVICE_ACCOUNT_ID@PROJECT_ID.iam.gserviceaccount.com`
 
-For example: A service account email address of ```my-service-account@my-project.iam.gserviceaccount.com``` has the following values:
+For example: A service account email address of `my-service-account@my-project.iam.gserviceaccount.com` has the following values:
 
-```SERVICE_ACCOUNT_ID: my-service-account```
-```PROJECT_ID: my-project```
+`SERVICE_ACCOUNT_ID: my-service-account`
+`PROJECT_ID: my-project`
 
 Grant your service account the appropriate role. The following sample command grants the Cloud Translation API User role. To determine the role to grant, see the documentation for the Cloud API you're
 using.
@@ -173,7 +169,7 @@ export \
 
 ```
 
-Optional: To permit users to [impersonate the service account](https://cloud.google.com/iam/docs/impersonating-service-accounts), run the ```gcloud iam service-accounts add-iam-policy-binding```
+Optional: To permit users to [impersonate the service account](https://cloud.google.com/iam/docs/impersonating-service-accounts), run the `gcloud iam service-accounts add-iam-policy-binding`
 command to grant a user the Service Account User role (roles/iam.serviceAccountUser) on the service account:
 
 ```
@@ -189,7 +185,7 @@ Replace the following values:
 > [Auth with Service Account File](https://cloud.google.com/sdk/docs/authorizing#authorize_with_a_service_account)
 
 ```bash
-gcloud auth login --cred-file=/Users/bp/gcp/dialogflowkeyfile;              
+gcloud auth login --cred-file=/Users/bp/gcp/dialogflowkeyfile;
 ```
 
 # [Authenticating](https://cloud.google.com/code/docs/vscode/client-libraries#setting_up_authentication)
@@ -225,19 +221,17 @@ CloudTasksClient cloudTasksClient=CloudTasksClient.create();
 1. [Generate a JSON service account key](https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts).
 
 2. After downloading that key, you must do one of the following:
-    * Define the environment variable GOOGLE_APPLICATION_CREDENTIALS to be the location of the key.
-      For example:
-    ```bash
-    export GOOGLE_APPLICATION_CREDENTIALS=/path/to/my/key.json
-    ```
-    * Supply the JSON credentials file when building the service options. For example, this Storage
-      object has the necessary permissions to interact with your Google Cloud Storage data:
-    ```java
-    Storage storage = StorageOptions.newBuilder()
-        .setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream("/path/to/my/key.json")))
-        .build()
-        .getService();
-    ```
+    - Define the environment variable GOOGLE_APPLICATION_CREDENTIALS to be the location of the key. For example:
+   ```bash
+   export GOOGLE_APPLICATION_CREDENTIALS=/path/to/my/key.json
+   ```
+    - Supply the JSON credentials file when building the service options. For example, this Storage object has the necessary permissions to interact with your Google Cloud Storage data:
+   ```java
+   Storage storage = StorageOptions.newBuilder()
+       .setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream("/path/to/my/key.json")))
+       .build()
+       .getService();
+   ```
 
 #### Local development/testing
 
@@ -284,21 +278,21 @@ Credentials in the following locations (in order):
 
 ### get/create user access key and secret
 
-1) navigate to [storage settings](https://console.cloud.google.com/storage/settings;tab=interoperability?project=vcu-virtual-assistant-bot)
-2) under "INTEROPERABILITY" tab
-3) User account HMAC -> Access keys for your user account
+1. navigate to [storage settings](https://console.cloud.google.com/storage/settings;tab=interoperability?project=vcu-virtual-assistant-bot)
+2. under "INTEROPERABILITY" tab
+3. User account HMAC -> Access keys for your user account
 
 ### [Credentials, access, security, and identity](https://support.google.com/googleapi/answer/6158857?hl=en)
 
 ## [ADC - Application Default Credentials](https://cloud.google.com/docs/authentication/application-default-credentials#GAC)
 
- ***
+---
 
 ## [Google Identity](https://developers.google.com/identity)
 
 ## [Authorize With Service Account](https://developers.google.com/identity/protocols/oauth2/service-account)
 
-***
+---
 
 ## .NET
 
@@ -306,11 +300,11 @@ Credentials in the following locations (in order):
 
 ### [.Net OAuth Client Libraries](https://developers.google.com/api-client-library/dotnet/guide/aaa_oauth)
 
-***
+---
 
 ## [Setting up OAuth2](https://support.google.com/cloud/answer/6158849)
 
-***
+---
 
 ## Examples
 

@@ -8,11 +8,10 @@ has_children: false
 share: true
 shortRepo:
   - personalgrailsnotes
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,28 +20,28 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # The Grails Parameter Map
 
 > [Using Param map Object](https://gist.github.com/14paxton/42e595a1bf50e44031b6be6c034003d9)
 
-```groovy    
+```groovy
 def paramMap = ["firstName": "brandon", "lastName": "paxton", "email": "bpaxton@talentplus.com", "assessmentType": "AO6"]
-def x = new grails.web.servlet.mvc.GrailsParameterMap(paramMap, request)    
-```    
+def x = new grails.web.servlet.mvc.GrailsParameterMap(paramMap, request)
+```
 
-# Command Object with Validation-*
+# Command Object with Validation-\*
 
 ## command object allows you to validate with services
 
-<a href="https://gist.github.com/14paxton/282d48ed20642c697315e15dffb7df2d"> GRAILSCommandObject </a>    
+<a href="https://gist.github.com/14paxton/282d48ed20642c697315e15dffb7df2d"> GRAILSCommandObject </a>
 
 ### Custom Validator for Nested Command objects in a list
 
@@ -65,7 +64,7 @@ rest nullable: true, validator: { RESTCommand restCmd, WSConfigCommand obj ->
 ```groovy
 // void reject(String errorCode, Object[] errorArgs, String defaultMessage);
 
-"com.talentbank.tbex.SelfServiceIntegration.WSConfigCommand.rest" , Object { "rest" : "${WSConfigCommand.class}" } , "Property[{ 0 }] of class [ { 1 } ] with value [ { 2 } ] does not pass custom validation" 
+"com.talentbank.tbex.SelfServiceIntegration.WSConfigCommand.rest" , Object { "rest" : "${WSConfigCommand.class}" } , "Property[{ 0 }] of class [ { 1 } ] with value [ { 2 } ] does not pass custom validation"
 ```
 
 ```groovy
@@ -105,11 +104,11 @@ void beforeValidate() {
     }
 
 }
-```    
+```
 
 > this forces validate on nested command object, then adds errors to parent errors, only the parent need to be confirmed
 
-```groovy    
+```groovy
 List<WSConfigCommand> wSConfig
 
 void validateWSConfig() {
@@ -122,14 +121,14 @@ void validateWSConfig() {
             }
         }
     }
-}    
-```    
+}
+```
 
 ### Import and excluding other domain constrains
 
-```groovy    
-        importFrom SOAPClientOrderConfig, exclude: ["binarySecTokenEncodingType", "binarySecTokenValueType", "countryCodeFormat"]    
-```    
+```groovy
+        importFrom SOAPClientOrderConfig, exclude: ["binarySecTokenEncodingType", "binarySecTokenValueType", "countryCodeFormat"]
+```
 
 ### JSON return bodies Spring/Jackson examples
 

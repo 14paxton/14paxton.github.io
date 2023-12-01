@@ -1,18 +1,17 @@
 ---
-title:        Microservice.md
-permalink:    DotNetNotes/Microservice.md
-category:     DotNetNotes
-parent:       DotNetNotes
-layout:       default
+title: Microservice.md
+permalink: DotNetNotes/Microservice.md
+category: DotNetNotes
+parent: DotNetNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - dotnetnotes
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,13 +20,13 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # Tutorials
 

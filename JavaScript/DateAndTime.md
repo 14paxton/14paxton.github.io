@@ -1,17 +1,16 @@
 ---
-title:        DateAndTime    
-permalink:    JavaScript/DateAndTime    
-category:     JavaScript    
-parent:       JavaScript    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - javascript    
-  - default                
+title: DateAndTime
+permalink: JavaScript/DateAndTime
+category: JavaScript
+parent: JavaScript
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - javascript
+  - default
 ---
-    
-    
+
 <br/>                
     
 <details markdown="block">                      

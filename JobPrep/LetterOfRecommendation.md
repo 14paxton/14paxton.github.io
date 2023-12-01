@@ -1,14 +1,14 @@
 ---
-title:        LetterOfRecommendation
-layout:       default
-permalink:    GitHubPages/LetterOfRecommendation
-category:     JobPrep
-parent:       MyPersonalDocsAndStuff
+title: LetterOfRecommendation
+layout: default
+permalink: GitHubPages/LetterOfRecommendation
+category: JobPrep
+parent: MyPersonalDocsAndStuff
 has_children: false
-share:        true
+share: true
 shortRepo:
   - jobprep
-  - default         
+  - default
 ---
 
 ![LetterOfRecommendation.jpg](https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/JobPrep/assets/documents/LetterOfRecommendation.jpg)

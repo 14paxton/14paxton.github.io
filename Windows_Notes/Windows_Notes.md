@@ -6,9 +6,8 @@ category: Windows_Notes
 has_children: true
 share: true
 shortRepo:
-
   - windows_notes
-  - default    
+  - default
 ---
 
 # [REPO](https://github.com/14paxton/Windows_Notes)

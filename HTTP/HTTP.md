@@ -1,17 +1,16 @@
 ---
-title:        HTTP
-layout:       default
-permalink:    HTTP
-category:     HTTP
+title: HTTP
+layout: default
+permalink: HTTP
+category: HTTP
 has_children: true
-share:        true
+share: true
 shortRepo:
-
   - http
-  - default       
+  - default
 ---
 
-<br/>          
+<br/>
 
 <details markdown="block">                
 <summary>                
@@ -20,16 +19,16 @@ Table of contents
 {: .text-delta }                
 1. TOC                
 {:toc}                
-</details>                
+</details>
 
-<br/>                
+<br/>
 
-***
+---
 
 <link rel="modulepreload" href="/assets/js/imageLoader.js">
 <script type="module" async src="/assets/js/imageLoader.js"></script>
 
-***
+---
 
 <div id="imageContainer" data-key-as-header="true" data-zoom-on-hover="true" data-img-loader="httpImages.js" style="width: auto; height: auto;"></div>
 

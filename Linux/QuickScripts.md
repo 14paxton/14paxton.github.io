@@ -8,11 +8,10 @@ has_children: false
 share: true
 shortRepo:
   - linux
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,13 +20,13 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/> 
+<br/>
 
 # Gists
 
@@ -37,87 +36,89 @@ Table of contents
 
 # [Tar File](https://www.cyberciti.biz/faq/how-to-tar-a-file-in-linux-using-command-line/)
 
-- > Compress an entire directory ```/home/vivek/data/```
-     ```bash    
-       tar -czvf file.tar.gz /home/vivek/data/    
-     ```    
+- > Compress an entire directory `/home/vivek/data/`
+
+  ```bash
+    tar -czvf file.tar.gz /home/vivek/data/
+  ```
 
 - > To compress multiple directories and files, execute:
-     ```bash    
-      tar -czvf file.tar.gz /home/vivek/data/ /home/vivek/pics/ /home/vivek/.accounting.db    
-     ```    
+  ```bash
+   tar -czvf file.tar.gz /home/vivek/data/ /home/vivek/pics/ /home/vivek/.accounting.db
+  ```
 
-> One can use ```bzip2``` compression instead of ```gzip``` by passing the ```-j``` option to the ```tar``` command:
+> One can use `bzip2` compression instead of `gzip` by passing the `-j` option to the `tar` command:
 
-```bash    
-tar -cjvf file.tar.bz2 /home/vivek/data/    
-```    
+```bash
+tar -cjvf file.tar.bz2 /home/vivek/data/
+```
 
 ## Options
 
 ### Create a new archive
 
-```- c ```
+`- c `
 
 ### Verbose output
 
-```- v ```
+`- v `
 
 ### Use archive file
 
-```- f ```
+`- f `
 
-### Filter the archive through ```gzipfile.tar.gz```
+### Filter the archive through `gzipfile.tar.gz`
 
-```- z ```
+`- z `
 
-### Filter the archive through ```bzip2```
+### Filter the archive through `bzip2`
 
-```- j ```
+`- j `
 
 ## Un Tar
 
-```bash    
-  tar xvf  <.tar file>    
-  tar xzvf <.tar.gz file>    
-  tar xjvf <.tar.bz2 file>    
-```  
+```bash
+  tar xvf  <.tar file>
+  tar xzvf <.tar.gz file>
+  tar xjvf <.tar.bz2 file>
+```
 
 # zip folder with pw
 
-```bash    
-zip -er last_resort.zip attachments;    
+```bash
+zip -er last_resort.zip attachments;
 ```
 
 # find and remove files
 
-```bash    
-for st in $(mdfind -name ultdata); do rm -rf "$st"; done    
-```    
+```bash
+for st in $(mdfind -name ultdata); do rm -rf "$st"; done
+```
 
 # find and kill by pid
 
-```bash    
-pkill -f '.*GradleDaemon.*'    
-```    
+```bash
+pkill -f '.*GradleDaemon.*'
+```
 
 # kill by port
 
-```bash    
-npx kill-port 18090    
+```bash
+npx kill-port 18090
 ```
 
 # Add Table of Contents to mark down doc with pandoc
 
-1) set file name
-    ```bash    
-    fileMD=CLI_Grailsw.md;    
-    ```    
+1. set file name
 
-2) run
-    ```bash    
-     pandoc -s --toc $fileMD -o output.md; rm -f $fileMD; mv output.md ./$fileMD;    
-    ```    
+   ```bash
+   fileMD=CLI_Grailsw.md;
+   ```
+
+2. run
+   ```bash
+    pandoc -s --toc $fileMD -o output.md; rm -f $fileMD; mv output.md ./$fileMD;
+   ```
 
 ## [UseCase Examples](https://gist.github.com/14paxton/0af2e0618a579d1cdc64d2b183af08e6)
 
@@ -183,24 +184,24 @@ cat << EOF
 
 ## get local ip
 
-```zsh    
-osascript -e "IPv4 address of (system info)"    
-```    
+```zsh
+osascript -e "IPv4 address of (system info)"
+```
 
-```zsh    
-ifconfig | grep "inet "     
-```    
+```zsh
+ifconfig | grep "inet "
+```
 
 ## convert file/image to base64
 
-```zsh    
-base64 -i ./post_u_north_gate.jpg | pbcopy     
-```    
+```zsh
+base64 -i ./post_u_north_gate.jpg | pbcopy
+```
 
-```zsh    
-cat ./post_u_north_gate.jpg | openssl base64 | tr -d '\n' | pbcopy    
-```    
+```zsh
+cat ./post_u_north_gate.jpg | openssl base64 | tr -d '\n' | pbcopy
+```
 
-```zsh    
-./post_u_north_gate.jpg | openssl base64 | tr -d '\n' | pbcopy        
+```zsh
+./post_u_north_gate.jpg | openssl base64 | tr -d '\n' | pbcopy
 ```

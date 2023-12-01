@@ -1,19 +1,16 @@
 ---
-title:        AccessHibernateAndDataStoreAndSession    
-permalink:    PersonalGrailsNotes/AccessHibernateAndDataStoreAndSession    
-category:     PersonalGrailsNotes    
-parent:       PersonalGrailsNotes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:  
-  
-- personalgrailsnotes  
-- default  
-  
+title: AccessHibernateAndDataStoreAndSession
+permalink: PersonalGrailsNotes/AccessHibernateAndDataStoreAndSession
+category: PersonalGrailsNotes
+parent: PersonalGrailsNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - personalgrailsnotes
+  - default
 ---
-  
-  
+
 <br/>    
   
 <details markdown="block">    

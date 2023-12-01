@@ -8,7 +8,7 @@ has_children: false
 share: true
 shortRepo:
   - jobprep
-  - default            
+  - default
 ---
 
 # Tutorials To Learn
@@ -22,7 +22,7 @@ shortRepo:
 7. [GraalVM](https://www.graal.cloud/gcn/gcn-modules/database/micronaut-data-jdbc-repository/?buildTool=gradle&lang=java)
 8. [Java Concurrency](https://www.linkedin.com/learning/java-advanced-concepts-for-high-performance-development/introduction-to-concurrency-in-java?contextUrn=urn%3Ali%3AlearningCollection%3A7085095211655163904&resume=false&u=103729738)
 
-***    
+---
 
 # Possibly Useful Software?
 
@@ -31,7 +31,7 @@ shortRepo:
 - [TeamCity](https://www.jetbrains.com/teamcity/)
 - [Space](https://www.jetbrains.com/space/)
 
-***
+---
 
 # YouTube Watch List
 
@@ -41,7 +41,7 @@ shortRepo:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=alzEVtqKXk2YrnG8&amp;list=PLuwDc-r5PDTizNjLrq7IlT3KCDzZ4q2Ok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-***
+---
 
 ## Projects To Follow Along With
 

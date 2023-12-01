@@ -1,18 +1,17 @@
 ---
-title:        Testing
-permalink:    Micronotes/Testing
-category:     Micronotes
-parent:       Micronotes
-layout:       default
+title: Testing
+permalink: Micronotes/Testing
+category: Micronotes
+parent: Micronotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - micronotes
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,14 +20,14 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # [Spock](https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html#spock)
 
-## [Example Microstream test suite  ](https://github.com/14paxton/SpockMicronautMicrostream/tree/main/test/groovy/com/ssi/integration)
+## [Example Microstream test suite ](https://github.com/14paxton/SpockMicronautMicrostream/tree/main/test/groovy/com/ssi/integration)

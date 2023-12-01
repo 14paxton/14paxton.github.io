@@ -8,11 +8,10 @@ has_children: false
 share: true
 shortRepo:
   - personalgrailsnotes
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,13 +20,13 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # Server Side
 
@@ -37,13 +36,13 @@ Table of contents
 
 > [TypeCheck](http://docs.grails.org/latest/guide/theWebLayer.html#typeConverters)
 
-```groovy    
+```groovy
 param.short(var)
 param.byte(var)
 param.long(var)
 param.double(var)
-param.boolean(var)    
-```    
+param.boolean(var)
+```
 
 ## JSON
 
@@ -51,36 +50,36 @@ param.boolean(var)
 
 > This is your JSON object that should be passed in to the method
 
-```groovy    
+```groovy
 
-def json = '''{    
-                  "markings": {    
-                      "headMarkings": "Brindle",    
-                      "leftForeMarkings": "",    
-                      "rightForeMarkings": "sock",    
-                      "leftHindMarkings": "sock",    
-                      "rightHindMarkings": "",    
-                      "otherMarkings": ""    
-                   }    
+def json = '''{
+                  "markings": {
+                      "headMarkings": "Brindle",
+                      "leftForeMarkings": "",
+                      "rightForeMarkings": "sock",
+                      "leftHindMarkings": "sock",
+                      "rightHindMarkings": "",
+                      "otherMarkings": ""
+                   }
                 }'''
 
-def jsonObj = grails.converters.JSON.parse(json)    
-```    
+def jsonObj = grails.converters.JSON.parse(json)
+```
 
-```groovy    
+```groovy
 print jsonObj
-//optput [markings:[rightForeMarkings:sock, otherMarkings:, leftForeMarkings:, leftHindMarkings:sock, rightHindMarkings:, headMarkings:Brindle]]    
+//optput [markings:[rightForeMarkings:sock, otherMarkings:, leftForeMarkings:, leftHindMarkings:sock, rightHindMarkings:, headMarkings:Brindle]]
 
 def jsonStr = jsonObj.toString()
 
-//This is the string which should be persisted in db    
+//This is the string which should be persisted in db
 assert jsonStr == '{"markings":{"rightForeMarkings":"sock","otherMarkings":"","leftForeMarkings":"","leftHindMarkings":"sock","rightHindMarkings":"","headMarkings":"Brindle"}}'
 
-//Get back json obj from json str    
+//Get back json obj from json str
 def getBackJsobObj = grails.converters.JSON.parse(jsonStr)
 
-assert getBackJsobObj.markings.leftHindMarkings == 'sock'    
-```    
+assert getBackJsobObj.markings.leftHindMarkings == 'sock'
+```
 
 # Frontend manipulation
 
@@ -88,41 +87,40 @@ assert getBackJsobObj.markings.leftHindMarkings == 'sock'
 
 [i18n Docs](https://docs.grails.org/4.0.1/guide/i18n.html)
 
-```groovy    
- messageSource.getMessage('batch.user.registration.confirmation.message', [jobId as String].toArray(), LocaleContextHolder.locale)    
-```    
+```groovy
+ messageSource.getMessage('batch.user.registration.confirmation.message', [jobId as String].toArray(), LocaleContextHolder.locale)
+```
 
 ## Render grails tags to return in controller
 
-```groovy    
-render g.select(from: languages, optionKey: "key", optionValue: "value", name: "languageChoice", class: "form-control", value: assessmentLanguage)    
-```    
+```groovy
+render g.select(from: languages, optionKey: "key", optionValue: "value", name: "languageChoice", class: "form-control", value: assessmentLanguage)
+```
 
 ## save grails tag in variable and render on page
 
-```groovy    
-"${yourTag.encodeAsRaw()}"    
-```    
+```groovy
+"${yourTag.encodeAsRaw()}"
+```
 
 > or
 
-```groovy    
-"${raw(user.description)}"    
-```    
+```groovy
+"${raw(user.description)}"
+```
 
 ## JSON
 
 ### Javascript manipulation
 
-```html    
-
+```html
 <script>
-const catalogsByType = null;    
+  const catalogsByType = null;
 </script>
-<g:applyCodec encodeAs="none">    
-    catalogsByType = ${resultCatalogs.catalogsByType as grails.converters.JSON};    
+<g:applyCodec encodeAs="none">
+  catalogsByType = ${resultCatalogs.catalogsByType as grails.converters.JSON};
 </g:applyCodec>
-<script>    
-    let data = ${raw(data)};    
-</script>    
+<script>
+  let data = ${raw(data)};
+</script>
 ```

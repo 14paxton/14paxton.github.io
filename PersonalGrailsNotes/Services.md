@@ -7,14 +7,11 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-
   - personalgrailsnotes
   - default
-
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -23,25 +20,25 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # Transactions
 
-> An instance of ```TransactionStatus``` is available by default in Grails transactional service methods.    
+> An instance of `TransactionStatus` is available by default in Grails transactional service methods.  
 > the keys in the Map must correspond to properties
 > of [org.springframework.transaction.support.DefaultTransactionDefinition](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/support/DefaultTransactionDefinition.html)
 
-```groovy    
+```groovy
 Account.withTransaction([propagationBehavior: TransactionDefinition.PROPAGATION_REQUIRES_NEW, isolationLevel: TransactionDefinition.ISOLATION_REPEATABLE_READ]) {
-    //code 
+    //code
 }
-```    
+```
 
 ## Personal Use Case
 
@@ -55,7 +52,7 @@ Account.withTransaction([propagationBehavior: TransactionDefinition.PROPAGATION_
 
 ### Grails Docs
 
-- [withTransaction](https://grails.github.io/legacy-gorm-doc/6.0.x/hibernate/api/org/grails/datastore/gorm/GormEntity.html#withTransaction(java.util.Map,%20Closure%3CT%3E))
+- [withTransaction](<https://grails.github.io/legacy-gorm-doc/6.0.x/hibernate/api/org/grails/datastore/gorm/GormEntity.html#withTransaction(java.util.Map,%20Closure%3CT%3E)>)
 - [Transactions Rollback and the Session](https://docs.grails.org/latest/guide/services.html#transactionsRollbackAndTheSession)
 - [GORM Programmatic Transactions](http://gorm.grails.org/6.0.x/hibernate/manual/index.html#programmaticTransactions)
 

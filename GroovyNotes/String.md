@@ -1,17 +1,16 @@
 ---
-title:        String    
-permalink:    GroovyNotes/String    
-category:     GroovyNotes    
-parent:       GroovyNotes    
-layout:       default    
-has_children: false    
-share:        true    
-shortRepo:    
-  - groovynotes    
-  - default    
+title: String
+permalink: GroovyNotes/String
+category: GroovyNotes
+parent: GroovyNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - groovynotes
+  - default
 ---
-    
-    
+
 <br/>    
     
 <details markdown="block">    

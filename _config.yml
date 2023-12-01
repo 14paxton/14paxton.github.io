@@ -3,8 +3,8 @@ description: Coding Notes
 theme: just-the-docs
 source: .
 baseurl: "" # the subpath of your site, e.g. /blog
-url:                 https://paxtonb.com # the base hostname & protocol for your site, e.g., http://example.com
-repository: 14paxton.github.io/14paxton.github.io  # for github-metadata
+url: https://paxtonb.com # the base hostname & protocol for your site, e.g., http://example.com
+repository: 14paxton.github.io/14paxton.github.io # for github-metadata
 gist:
   noscript: false
 
@@ -22,7 +22,7 @@ excerpt_separator: "\n\n"
 incremental: false
 kramdown:
   math_engine: mathjax
-  input:       GFM
+  input: GFM
   #input: Kramdown
   #gfm_quirks: [ paragraph_end ]
   syntax_highlighter: rouge
@@ -37,7 +37,6 @@ kramdown:
   line_width: 240
   footnote_nr: 1
   show_warnings: true
-
 
 plugins:
   - jekyll-default-layout
@@ -66,13 +65,11 @@ footer_content: ""
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the front matter
 last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
 
-
-
 # Footer "Edit this page on GitHub" link text
 gh_edit_link: true # show or hide edit this page link
 gh_edit_link_text: "Edit this page on GitHub"
 gh_edit_repository: "https://github.com/14paxton/14paxton.github.io"
-gh_edit_branch:      "develop" # the branch that your docs are served from
+gh_edit_branch: "develop" # the branch that your docs are served from
 gh_edit_source: . # the source that your files originate from
 gh_edit_view_mode: "edit" # "tree" or "edit" if you want the user to jump into the editor immediately
 
@@ -119,7 +116,7 @@ search_enabled: true
 
 search: # Split pages into sections that can be searched individually
   # Supports 1 - 6, default: 2
-  heading_level:        1
+  heading_level: 1
   # Maximum number of previews per search result
   # Default: 3
   previews: 5

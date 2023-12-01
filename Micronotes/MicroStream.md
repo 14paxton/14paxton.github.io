@@ -1,18 +1,17 @@
 ---
-title:        MicroStream
-permalink:    Micronotes/MicroStream
-category:     Micronotes
-parent:       Micronotes
-layout:       default
+title: MicroStream
+permalink: Micronotes/MicroStream
+category: Micronotes
+parent: Micronotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - micronotes
-  - default    
+  - default
 ---
 
-
-<br/>    
+<br/>
 
 <details markdown="block">    
 <summary>    
@@ -21,37 +20,37 @@ Table of contents
 {: .text-delta }    
 1. TOC    
 {:toc}    
-</details>    
+</details>
 
-<br/>    
+<br/>
 
-***    
+---
 
-<br/>    
+<br/>
 
 # [Type Handlers](https://docs.microstream.one/manual/storage/addendum/specialized-type-handlers.html)
 
 # Running
 
-```bash    
-./gradlew run    
-```    
+```bash
+./gradlew run
+```
 
 <div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
     *** Use in build.gradle to run in dev ***       
-</div> 
+</div>
 
-```gradle    
+```gradle
  run {
     systemProperty('micronaut.environments', 'dev')
-}    
+}
 ```
 
 # Tid-Bits
 
 ## [Copy Object](https://docs.microstream.one/manual/storage/storing-data/deep-copy.html)
 
-```java    
+```java
 public class Copy {
     ObjectCopier objectCopier = ObjectCopier.New();
 
@@ -59,11 +58,11 @@ public class Copy {
 
     Customer customerCopy = objectCopier.copy(customer);
 }
-```  
+```
 
 # GUI
 
-> add to ```build.gradle```
+> add to `build.gradle`
 
 ```gradle
 developmentOnly("io.micronaut.microstream:micronaut-microstream-rest")
@@ -77,9 +76,9 @@ developmentOnly("io.micronaut.microstream:micronaut-microstream-rest")
 <em>*** Needs to be above micronaut annotations on classpath ***</em>
 <br/>
 <em> *** For lombok to recognize micronaut annotations and inject into constructor *** </em>
-</div>     
+</div>
 
-> create ```lombok.config``` at ```root```
+> create `lombok.config` at `root`
 
 > insert line:
 
@@ -94,23 +93,24 @@ lombok.copyableannotations += io.micronaut.core.annotation.Nullable
 ## Configuration
 
 > To run with GraalVM add:
->> [reflect-config.json](https://gist.github.com/14paxton/d51cc2f493b8d8f4271c0cf55f2aefab)  to  ```/src/main/resources/META-INF/native-image/[package]```
-> so ```Graal``` recognizes imported classes that need to be reflective
+>
+> > [reflect-config.json](https://gist.github.com/14paxton/d51cc2f493b8d8f4271c0cf55f2aefab) to `/src/main/resources/META-INF/native-image/[package]`
+> > so `Graal` recognizes imported classes that need to be reflective
 
-```bash    
-touch /src/main/resources/META-INF/native-image/com/ssi/reflect-config.json    
+```bash
+touch /src/main/resources/META-INF/native-image/com/ssi/reflect-config.json
 ```
 
 ## Create native image
 
-```bash    
-./gradlew nativeCompile    
-```    
+```bash
+./gradlew nativeCompile
+```
 
 ## Run Native Image in Dev
 
 ```bash
-./build/native/nativeCompile/graal-vm-ssi -Dmicronaut.environments=dev    
+./build/native/nativeCompile/graal-vm-ssi -Dmicronaut.environments=dev
 ```
 
 # Resources

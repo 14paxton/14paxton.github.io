@@ -1,17 +1,16 @@
 ---
-title: Async_Parallel-Concurrency    
-permalink: GroovyNotes/Async_Parallel-Concurrency    
-category:  GroovyNotes    
-parent:   GroovyNotes    
-layout: default    
-has_children: false    
-share: true    
-shortRepo:    
-  - groovynotes    
-  - default    
+title: Async_Parallel-Concurrency
+permalink: GroovyNotes/Async_Parallel-Concurrency
+category: GroovyNotes
+parent: GroovyNotes
+layout: default
+has_children: false
+share: true
+shortRepo:
+  - groovynotes
+  - default
 ---
-    
-    
+
 <br/>    
     
 <details markdown="block">    
@@ -68,4 +67,4 @@ Table of contents
     
     return ["emailsSent": emailsSent, "emailsNotSent": emailsNotSent]    
 }    
-``` 
+```
