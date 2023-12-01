@@ -1,10 +1,10 @@
 ---
-title: 1Remember
-permalink: ReactNotes/1Remember
-category: ReactNotes
-parent: ReactNotes
+title: ReactNotes
 layout: default
-has_children: false
+permalink: JavaScript/ReactNotes
+category: JavaScript/ReactNotes
+parent: Javascript
+has_children: true
 share: true
 shortRepo:
   - reactnotes
@@ -13,20 +13,9 @@ shortRepo:
 
 <br/>
 
-<details markdown="block">                      
-<summary>                      
-Table of contents                      
-</summary>                      
-{: .text-delta }                      
-1. TOC                      
-{:toc}                      
-</details>
-
-<br/>
-
 ---
 
-<br/>
+## [Repo](https://github.com/14paxton/ReactNotes)
 
 # Adding to actual DOM
 

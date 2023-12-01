@@ -3,6 +3,7 @@ title: MUI
 permalink: ReactNotes/MUI
 category: ReactNotes
 parent: ReactNotes
+grand_parent: Javascript
 layout: default
 has_children: false
 share: true

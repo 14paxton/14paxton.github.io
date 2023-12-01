@@ -3,6 +3,7 @@ title: Mat-Table
 permalink: ReactNotes/Mat-Table
 category: ReactNotes
 parent: ReactNotes
+grand_parent: Javascript
 layout: default
 has_children: false
 share: true

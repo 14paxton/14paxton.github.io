@@ -1,6 +1,6 @@
 (async () => {
     const createContainerPromiseList = [];
-    const listOfImageContainers = document.querySelectorAll('[data-img-loader]');
+    const listOfImageContainers = document.querySelectorAll("[data-img-loader]");
 
     listOfImageContainers.forEach((element) => {
         const {imgLoader, ...rest} = element.dataset;
@@ -9,7 +9,7 @@
 
             async function loadMyModule() {
                 const {default: loadModuleFunc} = await import(
-                    '/assets/js/modules/loadModule.js'
+                    "/assets/js/modules/loadModule.js"
                     );
                 await loadModuleFunc(imgLoader);
             }

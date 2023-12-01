@@ -3,6 +3,7 @@ title: ReactHookForm
 permalink: ReactNotes/ReactHookForm
 category: ReactNotes
 parent: ReactNotes
+grand_parent: Javascript
 layout: default
 has_children: false
 share: true

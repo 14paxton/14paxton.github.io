@@ -3,6 +3,7 @@ title: Configuring
 permalink: ReactNotes/Configuring.md
 category: ReactNotes
 parent: ReactNotes
+grand_parent: Javascript
 layout: default
 has_children: false
 share: true
