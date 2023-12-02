@@ -39,7 +39,7 @@ Table of contents
       rm -rf *
       mkdir Settings
       touch Settings/.profilesAreInstalled
-    ```
+   ```
 5. Reboot.
 6. Boot the Mac into Recovery Mode (hold down command+R during startup).
 7. Go to the Utilities menu and open Terminal and type: csrutil enable. This will re-enable SIP.

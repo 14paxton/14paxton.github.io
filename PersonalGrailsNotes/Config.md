@@ -97,7 +97,7 @@ This is done by adding the missing tables or columns to your database.
 In my testing, this will not drop tables or columns from the database when you removed their corresponding items in the data model.    
 It does not guarantee a clean table representation of your data model.    
 This however is ideal when you are in the middle of development, where it is not practical to    
-put most of your test data in the Bootstrap.    
+put most of your test data in the Bootstrap.
 
 validate - this will not alter your database, but will just compare your data model with the database on start up. And create warnings if necessary. This is ideal when deploying to production environment.
 

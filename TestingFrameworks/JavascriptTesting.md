@@ -1,25 +1,25 @@
 ---
-title: Testing
-permalink: ReactNotes/Testing
-category: ReactNotes
-parent: ReactNotes
+title: Javascript
+permalink: TestingFrameworks/JavascriptTesting
+category: TestingFrameworks
+parent: TestingFrameworks
 layout: default
 has_children: false
 share: true
 shortRepo:
-  - reactnotes
+  - testingframeworks
   - default
 ---
 
 <br/>
 
-<details markdown="block">                      
-<summary>                      
-Table of contents                      
-</summary>                      
-{: .text-delta }                      
-1. TOC                      
-{:toc}                      
+<details markdown="block">                
+<summary>                
+Table of contents                
+</summary>                
+{: .text-delta }                
+1. TOC                
+{:toc}                
 </details>
 
 <br/>
@@ -101,28 +101,7 @@ it("containts stuff", () => {
 
 ---
 
-# Enzyme
-
-<https://enzymejs.github.io/enzyme/docs/api/selector.html>
-
-<https://enzymejs.github.io/enzyme/docs/api/ReactWrapper/find.html>
-
-```jsx
-expect(wrapper.find(".App-intro").exists()).toBe(true);
-
-expect(wrapper.find("ul").children().length).toBe(3);
-
-expect(wrapper.find("ul").hasClass("tyler")).toBe(true);
-
-expect(wrapper.find("h1").text()).toBe("Welcome to React");
-
-expect(wrapper.find('[href="tyler"]').text()).toBe("WelcometoReact");
-
-expect(wrapper.find('[href="tyler ~.clark"]').text()).toBe("Welcome to React");
-expect(wrapper.find('[text="Sometitle"]').text()).toBe("Welcome to React");
-```
-
-# Use the object property selector to find nodes
+## Use the object property selector to find nodes
 
 > by passing in an object that matches the property of a node as a selectoin
 
@@ -388,4 +367,25 @@ global.document.createRange = () => ({
     ownerDocument: document,
   },
 });
+```
+
+# Enzyme
+
+<https://enzymejs.github.io/enzyme/docs/api/selector.html>
+
+<https://enzymejs.github.io/enzyme/docs/api/ReactWrapper/find.html>
+
+```jsx
+expect(wrapper.find(".App-intro").exists()).toBe(true);
+
+expect(wrapper.find("ul").children().length).toBe(3);
+
+expect(wrapper.find("ul").hasClass("tyler")).toBe(true);
+
+expect(wrapper.find("h1").text()).toBe("Welcome to React");
+
+expect(wrapper.find('[href="tyler"]').text()).toBe("WelcometoReact");
+
+expect(wrapper.find('[href="tyler ~.clark"]').text()).toBe("Welcome to React");
+expect(wrapper.find('[text="Sometitle"]').text()).toBe("Welcome to React");
 ```

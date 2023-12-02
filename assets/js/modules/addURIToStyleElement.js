@@ -1,7 +1,7 @@
 async function createStyleElement(key, jsonImageURI) {
     return new Promise((resolve) => {
-        const stylesheet = document.createElement('style');
-        stylesheet.type = 'text/css';
+        const stylesheet = document.createElement("style");
+        stylesheet.type = "text/css";
 
         //first use at TPlus
         // stylesheet.innerText = `#${key} { background: url('${javaOOPImages[key]}'); background-size: cover; background-repeat: no-repeat;
