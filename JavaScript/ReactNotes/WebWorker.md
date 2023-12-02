@@ -1,9 +1,9 @@
 ---
 title: WebWorker
 permalink: ReactNotes/WebWorker
-category: ReactNotes
+category:  JavaScript/ReactNotes
 parent: ReactNotes
-grand_parent: Javascript
+grand_parent: JavaScript
 layout: default
 has_children: false
 share: true

@@ -3,7 +3,7 @@ title: Clever-Snippets
 permalink: ReactNotes/Clever-Snippets
 category:  JavaScript/ReactNotes
 parent: ReactNotes
-grand_parent: Javascript
+grand_parent: JavaScript
 layout: default
 has_children: false
 share: true

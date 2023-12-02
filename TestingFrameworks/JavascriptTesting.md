@@ -1,6 +1,6 @@
 ---
 title: Javascript
-permalink: TestingFrameworks/Javascript
+permalink: TestingFrameworks/JavascriptTesting
 category: TestingFrameworks
 parent: TestingFrameworks
 layout: default
