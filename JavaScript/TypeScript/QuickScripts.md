@@ -35,12 +35,12 @@ Table of contents
 
 ```typescript
 export const exampleRouter = router({
-    exampleQuery: exampleQueryImplementation,
+   exampleQuery: exampleQueryImplementation,
 });
 
 // extracting a single object type from an array of that type
 export type ArrayElement<ArrayType extends unknown[] | null> =
-    ArrayType extends (infer ElementType)[] ? ElementType : never;
+        ArrayType extends (infer ElementType)[] ? ElementType : never;
 
 // the output types of a specific router, indexable by query identifiers
 type RouterOutput = inferRouterOutputs<typeof exampleRouter>;
@@ -119,9 +119,9 @@ const thread = <ThreadData>threadDocument.data();
 
 ```typescript
 const converter = {
-    toFirestore: (dataToBeWritten: ThreadData) => data,
-    fromFirestore: (document: QueryDocumentSnapshot) =>
-        <ThreadData>document.data(),
+   toFirestore: (dataToBeWritten: ThreadData) => data,
+   fromFirestore: (document: QueryDocumentSnapshot) =>
+           <ThreadData>document.data(),
 };
 ```
 
@@ -163,39 +163,39 @@ const thread = threadDocument.data(); // this will be of type ThreadData
 export type Listener<EventType> = (event: EventType) => void;
 
 export type ObserverReturnType<KeyType, EventType> = {
-    subscribe: (entryKey: KeyType, listener: Listener<EventType>) => () => void;
-    publish: (entryKey: KeyType, event: EventType) => void;
+   subscribe: (entryKey: KeyType, listener: Listener<EventType>) => () => void;
+   publish: (entryKey: KeyType, event: EventType) => void;
 };
 
 export default function createObserver<
-    KeyType extends string | number | symbol,
-    EventType,
+        KeyType extends string | number | symbol,
+        EventType,
 >(): ObserverReturnType<KeyType, EventType> {
-    const listeners: Record<KeyType, Listener<EventType>[]> = {} as Record<
-        KeyType,
-        Listener<EventType>[]
-    >;
+   const listeners: Record<KeyType, Listener<EventType>[]> = {} as Record<
+           KeyType,
+           Listener<EventType>[]
+   >;
 
-    return {
-        subscribe: (entryKey: KeyType, listener: Listener<EventType>) => {
-            if (!listeners[entryKey]) listeners[entryKey] = [];
-            listeners[entryKey].push(listener);
-            return () => {
-                listeners[entryKey].splice(listeners[entryKey].indexOf(listener), 1);
-            };
-        },
-        publish: (entryKey: KeyType, event: EventType) => {
-            if (!listeners[entryKey]) listeners[entryKey] = [];
-            listeners[entryKey].forEach((listener: Listener<EventType>) =>
-                listener(event),
-            );
-        },
-    };
+   return {
+      subscribe: (entryKey: KeyType, listener: Listener<EventType>) => {
+         if (!listeners[entryKey]) listeners[entryKey] = [];
+         listeners[entryKey].push(listener);
+         return () => {
+            listeners[entryKey].splice(listeners[entryKey].indexOf(listener), 1);
+         };
+      },
+      publish: (entryKey: KeyType, event: EventType) => {
+         if (!listeners[entryKey]) listeners[entryKey] = [];
+         listeners[entryKey].forEach((listener: Listener<EventType>) =>
+                 listener(event),
+         );
+      },
+   };
 }
 
 export const LocalStorageObserver = createObserver<
-    LOCAL_STORAGE_KEYS,
-    string
+        LOCAL_STORAGE_KEYS,
+        string
 >();
 
 export const {subscribe, publish} = LocalStorageObserver;
@@ -205,34 +205,34 @@ export const {subscribe, publish} = LocalStorageObserver;
 
 ```typescript
 export function useLocalStorage<T>(key: LOCAL_STORAGE_KEYS, initialValue: T) {
-    const [storedValue, setStoredValue] = useState(() => {
-        if (typeof window === "undefined") {
-            return initialValue;
-        }
-        try {
-            const item = window.localStorage.getItem(key);
-            return item ? JSON.parse(item) : initialValue;
-        } catch (error) {
-            return initialValue;
-        }
-    });
+   const [storedValue, setStoredValue] = useState(() => {
+      if (typeof window === "undefined") {
+         return initialValue;
+      }
+      try {
+         const item = window.localStorage.getItem(key);
+         return item ? JSON.parse(item) : initialValue;
+      } catch (error) {
+         return initialValue;
+      }
+   });
 
-    LocalStorageObserver.subscribe(key, setStoredValue);
+   LocalStorageObserver.subscribe(key, setStoredValue);
 
-    const setValue = (value: T) => {
-        try {
-            const valueToStore =
-                value instanceof Function ? value(storedValue) : value;
-            setStoredValue(valueToStore);
-            LocalStorageObserver.publish(key, valueToStore);
-            if (typeof window !== "undefined") {
-                window.localStorage.setItem(key, JSON.stringify(valueToStore));
-            }
-        } catch (error) {
-            console.error(error);
-        }
-    };
-    return [storedValue, setValue];
+   const setValue = (value: T) => {
+      try {
+         const valueToStore =
+                 value instanceof Function ? value(storedValue) : value;
+         setStoredValue(valueToStore);
+         LocalStorageObserver.publish(key, valueToStore);
+         if (typeof window !== "undefined") {
+            window.localStorage.setItem(key, JSON.stringify(valueToStore));
+         }
+      } catch (error) {
+         console.error(error);
+      }
+   };
+   return [storedValue, setValue];
 }
 ```
 
@@ -256,23 +256,23 @@ export function useLocalStorage<T>(key: LOCAL_STORAGE_KEYS, initialValue: T) {
 ```typescript
 // handlers for the request launch and for catching request launch error
 axios.interceptors.request.use(
-    (config) => {
-        console.log('We are now preparing to launch the request!')
-        return config;
-    },
-    (error) => Promise.reject(error),
+        (config) => {
+           console.log('We are now preparing to launch the request!')
+           return config;
+        },
+        (error) => Promise.reject(error),
 );
 
 // handlers for response interceptor and error response interceptor
 axios.interceptors.response.use(
-    (response) => {
-        console.log('We received the response!');
-        return response;
-    },
-    (error) => {
-        if (error.response.status === 403)
-            return Promise.reject(error);
-    }
+        (response) => {
+           console.log('We received the response!');
+           return response;
+        },
+        (error) => {
+           if (error.response.status === 403)
+              return Promise.reject(error);
+        }
 },
 ```
 
@@ -283,23 +283,23 @@ axios.interceptors.response.use(
 
 ```typescript
 export const createAxiosWithInterceptors = (
-    requestConfig: AxiosRequestConfig = {},
-    requestInterceptorHandlers: Partial<RequestInterceptorHandlers> = DefaultRequestInterceptor,
-    responseInterceptorHandlers: Partial<ResponseInterceptorHandlers> = DefaultResponseInterceptor,
+        requestConfig: AxiosRequestConfig = {},
+        requestInterceptorHandlers: Partial<RequestInterceptorHandlers> = DefaultRequestInterceptor,
+        responseInterceptorHandlers: Partial<ResponseInterceptorHandlers> = DefaultResponseInterceptor,
 ) => {
-    const axiosInstance = axios.create(requestConfig);
+   const axiosInstance = axios.create(requestConfig);
 
-    axiosInstance.interceptors.request.use(
-        requestInterceptorHandlers.requestConfigHandler,
-        requestInterceptorHandlers.requestErrorHandler,
-    );
+   axiosInstance.interceptors.request.use(
+           requestInterceptorHandlers.requestConfigHandler,
+           requestInterceptorHandlers.requestErrorHandler,
+   );
 
-    axiosInstance.interceptors.response.use(
-        responseInterceptorHandlers.responseHandler,
-        responseInterceptorHandlers.responseErrorHandler,
-    );
+   axiosInstance.interceptors.response.use(
+           responseInterceptorHandlers.responseHandler,
+           responseInterceptorHandlers.responseErrorHandler,
+   );
 
-    return axiosInstance;
+   return axiosInstance;
 };
 ```
 
@@ -309,26 +309,26 @@ export const createAxiosWithInterceptors = (
 type RequestConfigHandler = (config: AxiosRequestConfig) => AxiosRequestConfig;
 type RequestErrorHandler = (error: AxiosError) => Promise<AxiosError>;
 type RequestInterceptorHandlers = {
-    requestConfigHandler: RequestConfigHandler;
-    requestErrorHandler: RequestErrorHandler;
+   requestConfigHandler: RequestConfigHandler;
+   requestErrorHandler: RequestErrorHandler;
 };
 
 type ResponseHandler = (response: AxiosResponse) => AxiosResponse;
 type ResponseErrorHandler = (error: AxiosError) => Promise<AxiosError>;
 
 type ResponseInterceptorHandlers = {
-    responseHandler: ResponseHandler;
-    responseErrorHandler: ResponseErrorHandler;
+   responseHandler: ResponseHandler;
+   responseErrorHandler: ResponseErrorHandler;
 };
 
 const DefaultResponseInterceptor = {
-    responseHandler: (response: AxiosResponse) => response,
-    responseErrorHandler: (error: AxiosError) => Promise.reject(error),
+   responseHandler: (response: AxiosResponse) => response,
+   responseErrorHandler: (error: AxiosError) => Promise.reject(error),
 };
 
 const DefaultRequestInterceptor = {
-    requestConfigHandler: (config: AxiosRequestConfig) => config,
-    requestErrorHandler: (error: AxiosError) => Promise.reject(error),
+   requestConfigHandler: (config: AxiosRequestConfig) => config,
+   requestErrorHandler: (error: AxiosError) => Promise.reject(error),
 };
 ```
 
@@ -337,10 +337,123 @@ const DefaultRequestInterceptor = {
 ```typescript
 // axios instance with custom request config received through constructor, custom request interceptor and default response interceptor
 protected
+;
 http: AxiosInstance = createAxiosWithInterceptors(this.requestConfig, {
-    requestConfigHandler: (config) => {
-        console.log();
-        return config;
-    },
+   requestConfigHandler: (config) => {
+      console.log();
+      return config;
+   },
 });
+```
+
+# How to declare path aliases in Typescript
+
+> Defining path aliases using webpack can save you a lot of headache when it comes to imports, but you must also let Typescript know about them.
+
+> Following my [previous post](https://graffino.com/til/FRXaL59FzW-folder-aliases-using-webpack) on declaring path aliases using webpack, you can configure your **`tsconfig.json`** file to in order to
+> be able to use those aliases in Typescript like so:
+
+```json
+{
+   ...
+   "paths": {
+      "@/*": [
+         "./src/*"
+      ],
+      "images/*": [
+         "./assets/images/*"
+      ]
+   },
+   "include": [
+      ...
+   ]
+}
+```
+
+> Of course, all paths for defined aliases must be reachable by Typescript. You can check [this post](https://graffino.com/til/hEvDjQa4au-how-to-import-images-in-typescript) out if you are not sure
+> how to do that.
+
+> Otherwise, we are going to get this error:
+
+```shell
+Cannot find module 'images/[your module]' or its corresponding type declarations.
+```
+
+# How to import images in Typescript
+
+> Normally, when Typescript cannot find something, we get this error:
+
+```shell
+Cannot find module [your module] or its corresponding type declarations ts(2307)
+```
+
+> Now let's see how we can fix this, with a simple example.
+> Given the following folder structure:
+
+```
+│── src
+│   ├── resources
+│   │   ├── ts
+│   │   │   ├── **/*.ts
+│   │   ├── images
+│   │   │   ├── logo.svg
+├── ...
+├── tsconfig.json
+
+```
+
+> To be able to achieve something like this:
+
+```typescript
+import Logo from "[path]/images/logo.svg";
+```
+
+> without any `**` Typescript errors\*\*, we need to follow these steps:
+
+### 1. Make sure that the `images` folder is "reachable" by Typescript.
+
+> Adding this inside **`tsconfig.json`** will do the trick:
+
+```json
+{
+   "include": [
+      ...
+      "resources/**/*.ts"
+   ]
+}
+
+```
+
+> A configuration like this one **will not do**:
+
+```json
+{
+   "include": [
+      "resources/ts/**/*.ts"
+   ]
+}
+```
+
+> Because **images/** is not included in **ts/** and we don't have any other folders declared, so Typescript can't "reach" it.
+
+### 2. Let Typescript know about the `.svg` type in that folder.
+
+> In the root of the images folder create a file called **`index.d.ts`**:
+
+```
+├── resources
+│   ├── ts
+│   │   ├── **/*.ts
+│   ├── images
+│   │   ├── logo.svg
+│   │   ├── index.d.ts
+```
+
+> With the following contents:
+
+```typescript
+declare module "*.svg" {
+   const value: any;
+   export = value;
+}
 ```
