@@ -1,11 +1,11 @@
 ---
-title: UsefulSnippets
-permalink: JavaScript/UsefulSnippets
-category: JavaScript
-parent: JavaScript
-layout: default
+title:        UsefulSnippets
+permalink:    JavaScript/UsefulSnippets
+category:     JavaScript
+parent:       JavaScript
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - javascript
   - default
@@ -30,23 +30,41 @@ Table of contents
 
 # Generate a random string
 
-![](..%2Fassets%2Fimages%2Fimage1.jpeg)
+```javascript
+const randomString = () => Math.random().toString(36).slice(2)
+```
 
 # Generate a random string of a given length
 
-![](..%2Fassets%2Fimages%2Fimage2.jpeg)
+```javascript
+const randomString = (length = 10) => {
+    let result = '';
+    while (result.length < length) { result += Math.random().toString(36).slice(2); }
+    returr
+    result.slice(0, length);
+}
+```
 
 # Copy content to the clipboard
 
-![](..%2Fassets%2Fimages%2Fimage3.jpeg)
+```javascript
+const copyToClipboard = (text) => navigator.clipboard.writeText(text);
+copyToClipboard("Hello World");
+```
 
 # Clear all cookies
 
-![](..%2Fassets%2Fimages%2Fimage4.jpeg)
+```javascript
+const clearcookies = document.cookie.split(";").forEach(cookie => document.cookie = cookie.replace(/=.*/, `=;expires=$(new Date(0). toUTCString()} ;path=/`));
+```
 
 # Get the selected text
 
-![](..%2Fassets%2Fimages%2Fimage5.jpeg)
+```javascript
+
+const getSelectedText = () => window.getSelection().toString();
+getSelectedText();
+```
 
 # Scroll to the top of the page
 

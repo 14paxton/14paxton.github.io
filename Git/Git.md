@@ -1,10 +1,10 @@
 ---
-title: Git
-layout: default
-permalink: Git
-category: Git
+title:        Git
+layout:       default
+permalink:    Git
+category:     Git
 has_children: true
-share: true
+share:        true
 shortRepo:
   - git
   - default
@@ -76,16 +76,16 @@ jobs:
 
     steps:
       - name: Print
-        run: env | sort
+        run:  env | sort
 ```
 
 ---
 
 # Cheat Sheets
 
-![GitCheatSheet.png](..%2Fassets%2Fimages%2FGitCheatSheet.png)
+![GitCheatSheet.png](../assets/images/GitCheatSheet.png)
 
-![GitDetailedCheat.png](..%2Fassets%2Fimages%2FGitDetailedCheat.png)
+![GitDetailedCheat.png](../assets/images/GitDetailedCheat.png)
 
 ---
 
