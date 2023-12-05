@@ -3,7 +3,7 @@ title: ReactNotes
 layout: default
 permalink: JavaScript/ReactNotes
 category: JavaScript/ReactNotes
-parent:   JavaScript
+parent: JavaScript
 has_children: true
 share: true
 shortRepo:

@@ -1,7 +1,7 @@
 ---
 title: MUI
 permalink: ReactNotes/MUI
-category:  JavaScript/ReactNotes
+category: JavaScript/ReactNotes
 parent: ReactNotes
 grand_parent: JavaScript
 layout: default

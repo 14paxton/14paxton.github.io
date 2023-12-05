@@ -29,6 +29,14 @@ Table of contents
 
 <br/>
 
+# Gists
+
+## [DynamicToolTip.js](https://gist.github.com/14paxton/9c745874ec384add89c1908c73832594)
+
+## [PrintPresetPage.js](https://gist.github.com/14paxton/8bf4b0df10a7c4add52c9d4d2da88879)
+
+## [DynamicInternationalizedComponent.js](https://gist.github.com/14paxton/bd94c13e40f4faa41d65442d015b2a1f)
+
 # Print separate page from current page
 
 [ print pre-defined page](https://gist.github.com/14paxton/8bf4b0df10a7c4add52c9d4d2da88879)
@@ -435,10 +443,64 @@ useEffect(() => {
 ]);
 ```
 
-# Gists
+# Custom hook for form state management
 
-## [DynamicToolTip.js](https://gist.github.com/14paxton/9c745874ec384add89c1908c73832594)
+> <em>Goal:</em> defining a custom useForm hook for managing the state of our forms.
+> This can have some initial state, mainly used for precompleting update forms, but can also provide empty form
+> fields.> Problem: when we want to operate on a precompleted form, altough we pass all the data for our fields, the form is not being precompleted and its fields are empty.
 
-## [PrintPresetPage.js](https://gist.github.com/14paxton/8bf4b0df10a7c4add52c9d4d2da88879)
+```jsx
+export default function useForm(initial = {}) {
+   const [inputs, setInputs] = useState(initial);
+   const handleChange = (e) => {
+      let {value, name, type} = e.target;
 
-## [DynamicInternationalizedComponent.js](https://gist.github.com/14paxton/bd94c13e40f4faa41d65442d015b2a1f)
+      if (type === "number") {
+         value = parseInt(value);
+      }
+      if (type === "file") {
+         [value] = e.target.files;
+      }
+
+      setInputs({
+         ...inputs, [name]: value,
+      });
+   };
+
+   const resetForm = () => {
+      setInputs(initial);
+   };
+
+   const clearForm = () => {
+      const blankState = Object.fromEntries(Object.entries(inputs).map(([key, value]) => [key, ""]),);
+
+      setInputs(blankState);
+   };
+
+   return {
+      inputs, clearForm, resetForm, handleChange,
+   };
+}
+```
+
+> This is what happens:
+
+1. We pass an initial state object which is undefined (server-side rendered) until the GQL query loads.
+2. This initial object (which is undefined) populates the form fields making them empty.
+3. After the query loads, the initial state object is repassed to the useForm hook, but the DOM is not rerendered => a possible solution is to make use of the useEffect() hook for forcing rerendering.
+4. We cannot watch for changes directly on the initial object and reassign it using setInputs, because it triggers the useEffect callback once again and again and again when altering its value,
+   causing an infinite loop.
+5. The solution is to watch for changes on a string joined by the values of the initial object.
+   When that changes from undefined to the GraphQL query results, the useEffect callback is called and it
+   initializes and rerenders the fields correspondingly.
+
+> An example implementation could be:
+
+```javascript
+const initialValues = Object.values(initial).join("");
+useEffect(() => {
+   setInputs(initial);
+}, [initialValues]);
+```
+
+> Now the form precompletion works fine using our custom useForm() hook.
