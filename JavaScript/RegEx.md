@@ -157,7 +157,7 @@ const strippedFName = onlyAlpha.replaceAll(replaceSpace, "_");
 
 - the rules below can be concatenated
 
-```regexp
+```regex
 ^(?=.*?[^a-zA-ZÄÖÜäöüß0-9])(?=.*?[0-9])(?=.*?[a-zäöüß])(?=.*?[A-ZÄÖÜ])(?!.*\d{2,}).{8,}$
 ```
 
@@ -165,7 +165,7 @@ const strippedFName = onlyAlpha.replaceAll(replaceSpace, "_");
 
 - Matches (operator is `?=`) any string that has at least a special character e.g.: `sadsds@asdasd`
 
-```regexp
+```regex
 (?=.*?[^a-zA-ZÄÖÜäöüß0-9])
 ```
 
@@ -173,7 +173,7 @@ const strippedFName = onlyAlpha.replaceAll(replaceSpace, "_");
 
 - Matches (operator is `?=`) any string that has at least a number: e.g.: `s1adsdsasdasd`
 
-```regexp
+```regex
 (?=.*?[0-9])
 ```
 
@@ -181,7 +181,7 @@ const strippedFName = onlyAlpha.replaceAll(replaceSpace, "_");
 
 - Matches (operator is `?=`) any string that has at least a small letter: e.g.: `SADSa`
 
-```regexp
+```regex
 (?=.*?[a-zäöüß])
 ```
 
@@ -189,7 +189,7 @@ const strippedFName = onlyAlpha.replaceAll(replaceSpace, "_");
 
 - Matches (operator is `?=`) any string that has at least a big letter: e.g.: `SADSa`
 
-```regexp
+```regex
 (?=.*?[A-ZÄÖÜ])
 ```
 
@@ -197,7 +197,7 @@ const strippedFName = onlyAlpha.replaceAll(replaceSpace, "_");
 
 - Doesn't match (operator is `?!`) strings that have consecutive numbers in them: e.g.: asdasd42dada
 
-```regexp
+```regex
 (?!.*\d{2,})
 ```
 
@@ -207,7 +207,7 @@ const strippedFName = onlyAlpha.replaceAll(replaceSpace, "_");
 - It will allow numbers that are separated by other letters e.g.: adasd1asd2asd3
 - It will allow consecutive numbers e.g.: ahadADS22dhsg44
 
-```regexp
+```reg
 (?!.*((12)|(23)|(34)|(45)|(56)|(67)|(78)|(90)|(01)))
 ```
 
@@ -215,6 +215,6 @@ const strippedFName = onlyAlpha.replaceAll(replaceSpace, "_");
 
 - This will match any string that is less than 8 characters
 
-```regexp
+```jsregexp
 .{8,}
 ```
