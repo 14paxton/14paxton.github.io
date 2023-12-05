@@ -1,11 +1,11 @@
 ---
-title:        UsefulSnippets
-permalink:    JavaScript/UsefulSnippets
-category:     JavaScript
-parent:       JavaScript
-layout:       default
+title: UsefulSnippets
+permalink: JavaScript/UsefulSnippets
+category: JavaScript
+parent: JavaScript
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - javascript
   - default
@@ -31,18 +31,20 @@ Table of contents
 # Generate a random string
 
 ```javascript
-const randomString = () => Math.random().toString(36).slice(2)
+const randomString = () => Math.random().toString(36).slice(2);
 ```
 
 # Generate a random string of a given length
 
 ```javascript
 const randomString = (length = 10) => {
-    let result = '';
-    while (result.length < length) { result += Math.random().toString(36).slice(2); }
-    returr
-    result.slice(0, length);
-}
+  let result = "";
+  while (result.length < length) {
+    result += Math.random().toString(36).slice(2);
+  }
+  returr;
+  result.slice(0, length);
+};
 ```
 
 # Copy content to the clipboard
@@ -55,13 +57,20 @@ copyToClipboard("Hello World");
 # Clear all cookies
 
 ```javascript
-const clearcookies = document.cookie.split(";").forEach(cookie => document.cookie = cookie.replace(/=.*/, `=;expires=$(new Date(0). toUTCString()} ;path=/`));
+const clearcookies = document.cookie
+  .split(";")
+  .forEach(
+    (cookie) =>
+      (document.cookie = cookie.replace(
+        /=.*/,
+        `=;expires=$(new Date(0). toUTCString()} ;path=/`,
+      )),
+  );
 ```
 
 # Get the selected text
 
 ```javascript
-
 const getSelectedText = () => window.getSelection().toString();
 getSelectedText();
 ```

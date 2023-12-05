@@ -28,6 +28,26 @@ Table of contents
 
 <br/>
 
+# Gists
+
+## [AddToCustomFeed.js](https://gist.github.com/14paxton/63944ec7e8bcd0e7ee9b97e3dc6fd48e)
+
+## [FormFillScript.js](https://gist.github.com/14paxton/fedc95a9b660e1625373bea6f92e4648)
+
+## [GetCSSFromElement.js](https://gist.github.com/14paxton/70018ca1b4b990db4fbf4edfd1907af8)
+
+## [JsEnumUnion.js](https://gist.github.com/14paxton/685637fd8c513c7539a10f66b2386cfe)
+
+## [NewDocumentAndWindow.js](https://gist.github.com/14paxton/fb7f33fd6f5fa7a15077b6ebf18fca44)
+
+## [ReadHTMLToNewDocument.js](https://gist.github.com/14paxton/a5a6b17131a2791b757973f866e3eb98)
+
+## [SeeFormChange.js](https://gist.github.com/14paxton/f7f177713ec7e8effcdeec086c22e43a)
+
+## [SendFormWithFileInput.js](https://gist.github.com/14paxton/eeeb29357613698bd877eb35dcf0ad89)
+
+## [groupArrayOfObjectsByKey.js](https://gist.github.com/14paxton/a87f5d47aaf678e89a1dfeffa51b46d9)
+
 # Custom Ready / Load / onLoad
 
 ```javascript
@@ -199,22 +219,49 @@ if (conditional === true) {
 }
 ```
 
-# Gists
+# Currying
 
-## [AddToCustomFeed.js](https://gist.github.com/14paxton/63944ec7e8bcd0e7ee9b97e3dc6fd48e)
+> Basically, it allows you to transform a function like `f(a, b, c)` into something like `f(a)(b)(c)`.
+> What that means is that you can split up a function with multiple arguments into a
+> sequence of functions with one argument each.
 
-## [FormFillScript.js](https://gist.github.com/14paxton/fedc95a9b660e1625373bea6f92e4648)
+```javascript
+const newUser = function (name, age, skill) {
+  return {
+    name, age, skill,
+  };
+};
 
-## [GetCSSFromElement.js](https://gist.github.com/14paxton/70018ca1b4b990db4fbf4edfd1907af8)
+newUser("John", 27, "JS");
+```
 
-## [JsEnumUnion.js](https://gist.github.com/14paxton/685637fd8c513c7539a10f66b2386cfe)
+- > Now to the curry part:
 
-## [NewDocumentAndWindow.js](https://gist.github.com/14paxton/fb7f33fd6f5fa7a15077b6ebf18fca44)
+  ```javascript
+  const newUser = function (name) {
+    return function (age) {
+      return function (skill) {
+        return {
+          name,
+          age,
+          skill,
+        };
+      };
+    };
+  };
 
-## [ReadHTMLToNewDocument.js](https://gist.github.com/14paxton/a5a6b17131a2791b757973f866e3eb98)
+  newUser("John")(27)("JS");
+  ```
 
-## [SeeFormChange.js](https://gist.github.com/14paxton/f7f177713ec7e8effcdeec086c22e43a)
+- > Add in some arrow functions and voila:
 
-## [SendFormWithFileInput.js](https://gist.github.com/14paxton/eeeb29357613698bd877eb35dcf0ad89)
+  ```javascript
+  const newUser = (name) => (age) => (skill) => {
+    name, age, skill;
+  };
+  ```
 
-## [groupArrayOfObjectsByKey.js](https://gist.github.com/14paxton/a87f5d47aaf678e89a1dfeffa51b46d9)
+> The purpose of all this you might ask?
+
+> Think about situations when you don't have the complete data available in the beginning and you still need your function to gradually pass through your app and receive its arguments step by step as
+> more and more data is arriving, until you add the final argument and receive the output.

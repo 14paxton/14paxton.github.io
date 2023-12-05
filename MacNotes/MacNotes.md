@@ -27,7 +27,8 @@ Table of contents
 
 # Remove a nonremovable MDM profile from macos, without a wipe
 
-> Non-removable MDM profiles cannot officially removed without doing a full system wipe. This is a problem when you restore a system from Time Machine after you enrolled it into the MDM, as the MDM
+> Non-removable MDM profiles cannot officially removed without doing a full system wipe.
+> This is a problem when you restore a system from Time Machine after you enrolled it into the MDM, as the MDM
 > will break, leaving you unable to re-enroll the machine.
 
 1. Boot the Mac into Recovery Mode (hold down command+R during startup).
@@ -46,3 +47,29 @@ Table of contents
 8. Reboot into the OS.
 
 > The profile will be now removed and you will be able to re-enroll the Mac to your MDM.
+
+# System Preferences
+
+## CLI
+
+### Open Pane In System Preferences
+
+- > #### most effective:
+
+  ```shell
+      open "x-apple.systempreferences:com.apple.preference.security"
+  ```
+
+- > #### but this works as well:
+
+  ```shell
+     open -b com.apple.systempreferences /System/Library/PreferencePanes/Security.prefPane
+    (to find more preference panes, look at /System/Library/PreferencePanes)
+  ```
+
+> The first one, though, offers the ability to open a specific tab on given pane as well.
+> This, for example, opens `"System Preferences" ` `-> ` `Security & Privacy` and then activates the `Privacy` tab:
+
+```shell
+   open "x-apple.systempreferences:com.apple.preference.security?Privacy"
+```

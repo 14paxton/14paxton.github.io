@@ -28,6 +28,41 @@ Table of contents
 
 <br/>
 
+# Regex simplicity vs normal
+
+> There are some cases when making use of regular expressions (regex) can exempt a lot of fuss from a programmers head.
+> For example, let's compare the complexity between traditional logic and regex,
+> in a function that excludes the vowels from a given string:
+
+- > ## Traditional way:
+
+  ```javascript
+  function removeVowel(str) {
+    let strList = str.split("");
+    for (let i = 0; i < str.length; i++) {
+      let char = str[i].toLowerCase();
+      if (
+        char == "a" ||
+        char == "e" ||
+        char == "i" ||
+        char == "o" ||
+        char == "u"
+      ) {
+        strList[i] = "";
+      }
+    }
+    return strList.join("");
+  }
+  ```
+
+- > ## Regex Way:
+
+  ```javascript
+  function removeVowel(str) {
+    return str.replace(/[aeiou]/gi, "");
+  }
+  ```
+
 # Flags
 
 > - `g` is used for global search which means the search will not return after the first match.
@@ -114,4 +149,72 @@ const onlyAlpha = (fileName ? fileName : title).replaceAll(
   "",
 );
 const strippedFName = onlyAlpha.replaceAll(replaceSpace, "_");
+```
+
+# Validate your password with regex
+
+## Example password validation regex
+
+- the rules below can be concatenated
+
+```regexp
+^(?=.*?[^a-zA-ZÄÖÜäöüß0-9])(?=.*?[0-9])(?=.*?[a-zäöüß])(?=.*?[A-ZÄÖÜ])(?!.*\d{2,}).{8,}$
+```
+
+### Special character matching
+
+- Matches (operator is `?=`) any string that has at least a special character e.g.: `sadsds@asdasd`
+
+```regexp
+(?=.*?[^a-zA-ZÄÖÜäöüß0-9])
+```
+
+### Number matching
+
+- Matches (operator is `?=`) any string that has at least a number: e.g.: `s1adsdsasdasd`
+
+```regexp
+(?=.*?[0-9])
+```
+
+### Small letter matching
+
+- Matches (operator is `?=`) any string that has at least a small letter: e.g.: `SADSa`
+
+```regexp
+(?=.*?[a-zäöüß])
+```
+
+### Big letter matching
+
+- Matches (operator is `?=`) any string that has at least a big letter: e.g.: `SADSa`
+
+```regexp
+(?=.*?[A-ZÄÖÜ])
+```
+
+### Consecutive numbers matching
+
+- Doesn't match (operator is `?!`) strings that have consecutive numbers in them: e.g.: asdasd42dada
+
+```regexp
+(?!.*\d{2,})
+```
+
+### Sequential numbers matching (cannot be used at the same time with previous rule)
+
+- Doesn't match (operator is `?!`) strings that have sequential numbers in them: e.g.: 12asdasd42dada
+- It will allow numbers that are separated by other letters e.g.: adasd1asd2asd3
+- It will allow consecutive numbers e.g.: ahadADS22dhsg44
+
+```regexp
+(?!.*((12)|(23)|(34)|(45)|(56)|(67)|(78)|(90)|(01)))
+```
+
+### Length of string matching (should be placed last)
+
+- This will match any string that is less than 8 characters
+
+```regexp
+.{8,}
 ```

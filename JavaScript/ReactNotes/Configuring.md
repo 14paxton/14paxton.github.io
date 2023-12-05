@@ -1,7 +1,7 @@
 ---
 title: Configuring
 permalink: ReactNotes/Configuring.md
-category:  JavaScript/ReactNotes
+category: JavaScript/ReactNotes
 parent: ReactNotes
 grand_parent: JavaScript
 layout: default
