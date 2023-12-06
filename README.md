@@ -15,6 +15,10 @@ bundle config set cache_all true
 ```
 
 ```shell
+bundle lock --add-platform x86_64-linux
+```
+
+```shell
 bundle cache --all-platforms
 ```
 
