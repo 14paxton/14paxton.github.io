@@ -62,7 +62,7 @@ window.open(
 The table shows the features and the string tokens you can use:
 
 | token       | def                                                                        |
-|-------------|----------------------------------------------------------------------------|
+| ----------- | -------------------------------------------------------------------------- |
 | status      | The status bar at the bottom of the window.                                |
 | toolbar     | The standard browser toolbar, with buttons such as Back and Forward.       |
 | location    | The Location entry field where you enter the URL.                          |

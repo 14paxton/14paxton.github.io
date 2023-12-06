@@ -1,19 +1,25 @@
 # [Link for Site: www.paxtonb.com](https://www.paxtonb.com)
 
-# Run Locally
+# Install and Cache
 
 ```shell
-bundle cache --all-platforms --all
+bundle install --full-index
 ```
 
 ```shell
-bundle install --full-index --binstubs
+bundle binstubs --all
 ```
 
-> make standalone to not rely on bundler , saves to bundle folder
+```shell
+bundle config set cache_all true
+```
 
 ```shell
-bundle install --full-index --standalone --prefer-local
+bundle cache --all-platforms
+```
+
+```shell
+bundle config set --local system 'true'
 ```
 
 # Run Site Locally
@@ -35,20 +41,27 @@ only re-builds posts and pages that have changed
 
 </div>
 
+- > ***make standalone to not rely on bundler , saves to bundle folder***
+
+    ```shell
+    bundle install --full-index --standalone --prefer-local
+    ```   
+
 # Adding images data uri
 
 ```html
-<link rel="modulepreload" href="/assets/js/imageLoader.js" />
+
+<link rel="modulepreload" href="/assets/js/imageLoader.js"/>
 <script type="module" async src="/assets/js/imageLoader.js"></script>
 
 ***
 
 <div
-  id="imageContainer"
-  data-key-as-header="true"
-  data-zoom-on-hover="true"
-  data-img-loader="linuxImages.js"
-  style="width: auto; height: auto;"
+        id="imageContainer"
+        data-key-as-header="true"
+        data-zoom-on-hover="true"
+        data-img-loader="linuxImages.js"
+        style="width: auto; height: auto;"
 ></div>
 ```
 
