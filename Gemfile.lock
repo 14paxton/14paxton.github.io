@@ -18,11 +18,8 @@ GEM
     faraday-retry (2.2.0)
       faraday (~> 2.0)
     ffi (1.16.3)
-    ffi (1.16.3-x64-mingw-ucrt)
     forwardable-extended (2.6.0)
     google-protobuf (3.25.1-arm64-darwin)
-    google-protobuf (3.25.1-x64-mingw-ucrt)
-    google-protobuf (3.25.1-x86_64-linux)
     http_parser.rb (0.8.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
@@ -86,10 +83,6 @@ GEM
     safe_yaml (1.0.5)
     sass-embedded (1.69.5-arm64-darwin)
       google-protobuf (~> 3.23)
-    sass-embedded (1.69.5-x64-mingw-ucrt)
-      google-protobuf (~> 3.23)
-    sass-embedded (1.69.5-x86_64-linux-gnu)
-      google-protobuf (~> 3.23)
     sawyer (0.9.2)
       addressable (>= 2.3.5)
       faraday (>= 0.17.3, < 3)
@@ -100,21 +93,20 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
-  x64-mingw-ucrt
-  x86_64-linux
 
 DEPENDENCIES
-  faraday-retry (~> 2.2)
+  faraday-retry
   jekyll
   jekyll-default-layout
   jekyll-github-metadata
   jekyll-watch
-  json (~> 2.6, >= 2.6.3)
+  json
   just-the-docs
   kramdown
   kramdown-parser-gfm
+  liquid
   rouge
-  webrick (~> 1.8, >= 1.8.1)
+  webrick
 
 BUNDLED WITH
-   2.4.21
+   2.4.22
