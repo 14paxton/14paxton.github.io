@@ -1,10 +1,10 @@
 ---
-title:        Git
-layout:       default
-permalink:    Git
-category:     Git
+title: Git
+layout: default
+permalink: Git
+category: Git
 has_children: true
-share:        true
+share: true
 shortRepo:
   - git
   - default
@@ -76,7 +76,7 @@ jobs:
 
     steps:
       - name: Print
-        run:  env | sort
+        run: env | sort
 ```
 
 ---

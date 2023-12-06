@@ -228,7 +228,9 @@ if (conditional === true) {
 ```javascript
 const newUser = function (name, age, skill) {
   return {
-    name, age, skill,
+    name,
+    age,
+    skill,
   };
 };
 

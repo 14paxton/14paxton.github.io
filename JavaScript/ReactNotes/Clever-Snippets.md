@@ -1,7 +1,7 @@
 ---
 title: Clever-Snippets
 permalink: ReactNotes/Clever-Snippets
-category:  JavaScript/ReactNotes
+category: JavaScript/ReactNotes
 parent: ReactNotes
 grand_parent: JavaScript
 layout: default
@@ -451,35 +451,41 @@ useEffect(() => {
 
 ```jsx
 export default function useForm(initial = {}) {
-   const [inputs, setInputs] = useState(initial);
-   const handleChange = (e) => {
-      let {value, name, type} = e.target;
+  const [inputs, setInputs] = useState(initial);
+  const handleChange = (e) => {
+    let { value, name, type } = e.target;
 
-      if (type === "number") {
-         value = parseInt(value);
-      }
-      if (type === "file") {
-         [value] = e.target.files;
-      }
+    if (type === "number") {
+      value = parseInt(value);
+    }
+    if (type === "file") {
+      [value] = e.target.files;
+    }
 
-      setInputs({
-         ...inputs, [name]: value,
-      });
-   };
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
+  };
 
-   const resetForm = () => {
-      setInputs(initial);
-   };
+  const resetForm = () => {
+    setInputs(initial);
+  };
 
-   const clearForm = () => {
-      const blankState = Object.fromEntries(Object.entries(inputs).map(([key, value]) => [key, ""]),);
+  const clearForm = () => {
+    const blankState = Object.fromEntries(
+      Object.entries(inputs).map(([key, value]) => [key, ""]),
+    );
 
-      setInputs(blankState);
-   };
+    setInputs(blankState);
+  };
 
-   return {
-      inputs, clearForm, resetForm, handleChange,
-   };
+  return {
+    inputs,
+    clearForm,
+    resetForm,
+    handleChange,
+  };
 }
 ```
 
@@ -499,7 +505,7 @@ export default function useForm(initial = {}) {
 ```javascript
 const initialValues = Object.values(initial).join("");
 useEffect(() => {
-   setInputs(initial);
+  setInputs(initial);
 }, [initialValues]);
 ```
 

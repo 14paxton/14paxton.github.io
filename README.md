@@ -16,8 +16,10 @@ bundle install --full-index --binstubs
 bundle install --full-index --standalone --prefer-local
 ```
 
+# Run Site Locally
+
 ```shell
-bundle exec jekyll serve --incremental
+bundle exec jekyll serve --incremental --watch --verbose --profile --trace
 ```
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">            
