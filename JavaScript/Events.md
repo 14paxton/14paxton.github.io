@@ -195,3 +195,101 @@ trigger(el, new PointerEvent("pointerover"));
   ```javascript
   $(el).trigger("focus");
   ```
+
+# [Keyboard Event / keydown / keyup / keypress](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent#events)
+
+## Detect Barcode Scanner input
+
+> [Javascript for detecting usb connected - hand held - barcode scanner input](https://gist.github.com/neelbhanushali/8b77171ae7b775f2b25325760f2b5191)
+
+### BarcodeScanner Class
+
+```javascript
+const events = mitt();
+
+class BarcodeScaner {
+  initialize = () => {
+    document.addEventListener("keypress", this.keyup);
+    if (this.timeoutHandler) {
+      clearTimeout(this.timeoutHandler);
+    }
+    this.timeoutHandler = setTimeout(() => {
+      this.inputString = "";
+    }, 10);
+  };
+
+  close = () => {
+    document.removeEventListener("keypress", this.keyup);
+  };
+
+  timeoutHandler = 0;
+
+  inputString = "";
+
+  keyup = (e) => {
+    if (this.timeoutHandler) {
+      clearTimeout(this.timeoutHandler);
+      this.inputString += String.fromCharCode(e.keyCode);
+    }
+
+    this.timeoutHandler = setTimeout(() => {
+      if (this.inputString.length <= 3) {
+        this.inputString = "";
+        return;
+      }
+      events.emit("onbarcodescaned", this.inputString);
+
+      this.inputString = "";
+    }, 10);
+  };
+}
+```
+
+### BarcodeScanner Event Listener and Function
+
+```javascript
+let code = "";
+let reading = false;
+
+document.addEventListener("keypress", (e) => {
+  //usually scanners throw an 'Enter' key at the end of read
+  if (e.keyCode === 13) {
+    if (code.length > 10) {
+      console.log(code);
+      /// code ready to use
+      code = "";
+    }
+  }
+  else {
+    code += e.key; //while this is not an 'enter' it stores the every key
+  }
+
+  //run a timeout of 200ms at the first read and clear everything
+  if (!reading) {
+    reading = true;
+    setTimeout(() => {
+      code = "";
+      reading = false;
+    }, 200); //200 works fine for me but you can adjust it
+  }
+});
+```
+
+## Detect keyboard input manually
+
+```javascript
+document.addEventListener("keydown", (ev) => {
+  if (ev.ctrlKey || ev.altKey) return; // Ignore command-like keys
+  if (ev.key == "Enter") {
+    // ...submit the content here...
+  }
+  else if (ev.key == "Space") {
+    // I think IE needs this
+    document.getElementById("barcode-input").value += " ";
+  }
+  else if (ev.key.length == 1) {
+    // A character not a key like F12 or Backspace
+    document.getElementById("barcode-input").value += ev.key;
+  }
+});
+```

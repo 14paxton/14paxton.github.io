@@ -72,3 +72,145 @@ Table of contents
      }
    }, [tableRef?.current]);
    ```
+
+# window.onkeypress / Keypress
+
+## Scanner
+
+### Component Example
+
+#### Use Invisible TextInput for focus
+
+```jsx
+import React, { useEffect } from "react";
+import { StyleSheet, Text, TextInput, View } from "react-native";
+
+export default function App() {
+  const invisibleRef = React.useRef(null);
+
+  useEffect(() => {
+    invisibleRef.current.focus();
+  }, []);
+
+  const focusInvisibleInput = (e) => {
+    e.preventDefault();
+    if (invisibleRef.current) {
+      invisibleRef.current.focus();
+    }
+  };
+
+  return (
+    <View style={styles.container} onTouchStart={focusInvisibleInput}>
+      <TextInput
+        ref={invisibleRef}
+        autoFocus={true}
+        autoCorrect={false}
+        autoComplete={false}
+        style={{ opacity: 0 }}
+        onChangeText={(text) => console.log("hidden", text)}
+      />
+
+      <TextInput
+        style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
+        placeholder="Type something here"
+        onChangeText={(text) => console.log("visible", text)}
+      />
+
+      <Text>A nice react native app!</Text>
+
+      <TextInput
+        style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
+        placeholder="Type some thing else here!"
+        onChangeText={(text) => console.log("visible", text)}
+      />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
+```
+
+> And after this, you may want to add a generic input handler that times the speed of the input of the text, to figure out if it's a scan, rather than manual text input.
+> (If you get 20 characters
+> within 50ms, you can be pretty sure it's a scan, right?)
+
+#### Use Form Input and Catch Submission event, and Retrieve value
+
+```jsx
+mport;
+{
+  useState;
+}
+from;
+("react");
+
+export default function Modal() {
+  const [repairArticles, setRepairArticles] = useState([]);
+
+  function handleBarcodeInput(e) {
+    e.preventDefault();
+    const input = e.target.querySelector("input");
+    const value = input.value;
+    setRepairArticles((prev) => {
+      return (prev = [...prev, value]);
+    });
+    input.value = "";
+  }
+
+  return (
+    <div>
+      <form onSubmit={(e) => handleBarcodeInput(e)}>
+        <input id="barcode-input" />
+        <button type="submit" className="hidden" />
+      </form>
+      <div className="mt-3">
+        {repairArticles.map((el, index) => {
+          return <p key={index}>{el}</p>;
+        })}
+      </div>
+    </div>
+  );
+}
+```
+
+### React Hook using Js Function
+
+> [Detect when input box filled by keyboard and when by barcode scanner](https://www.paxtonb.com/JavaScript/Events#Detect-Barcode-Scanner-input)
+
+```jsx
+const ScanComponent = (props) => {
+  const [scanned, setScanned] = useState("");
+  useEffect(() => {
+    const barcode = new BarcodeScaner();
+    barcode.initialize();
+    return () => {
+      barcode.close();
+    };
+  }, []);
+
+  useEffect(
+    () => {
+      const scanHandler = (code) => {
+        console.log(code);
+        setScanned(code);
+      };
+
+      events.on("onbarcodescaned", scanHandler);
+      return () => {
+        events.off("onbarcodescaned", scanHandler);
+      };
+    },
+    [
+      /* here put dependencies for your scanHandler ;) */
+    ],
+  );
+  return <div>{scanned}</div>;
+};
+```

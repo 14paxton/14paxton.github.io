@@ -276,8 +276,10 @@ axios.interceptors.response.use(
 },
 ```
 
-> Each Axios Instance can have its custom configuration and request and response interceptors. This can be very useful when the architecture of our application enforces/allows each of our services to
-> use their own Axios Instance. This way, each service can have an Axios Instance with custom configuration and custom request/response interceptors.
+> Each Axios Instance can have its custom configuration and request and response interceptors.
+> This can be very useful when the architecture of our application enforces/allows each of our services to
+> use their own Axios Instance.
+> This way, each service can have an Axios Instance with custom configuration and custom request/response interceptors.
 
 > This is what an Axios Instance factory utility function could look like in TypeScript:
 
@@ -369,7 +371,8 @@ http: AxiosInstance = createAxiosWithInterceptors(this.requestConfig, {
 }
 ```
 
-> Of course, all paths for defined aliases must be reachable by Typescript. You can check [this post](https://graffino.com/til/hEvDjQa4au-how-to-import-images-in-typescript) out if you are not sure
+> Of course, all paths for defined aliases must be reachable by Typescript.
+> You can check [this post](https://graffino.com/til/hEvDjQa4au-how-to-import-images-in-typescript) out if you are not sure
 > how to do that.
 
 > Otherwise, we are going to get this error:
