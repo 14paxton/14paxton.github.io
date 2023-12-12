@@ -34,38 +34,31 @@ Table of contents
 ## Read Barcode Scanner Input Event
 
 ```typescript
-public
-Scan(evt
-:
-Event
-):
-void {
+const CheckInPCF = {};
 
-    const e
-:
-KeyboardEvent = evt as KeyboardEvent;
-const timeDiff = e.timeStamp - CheckInPCF.LastTimeStamp;
-CheckInPCF.LastTimeStamp = e.timeStamp; //"global"
+function Scan(evt: Event): void {
+    const e: KeyboardEvent = evt as KeyboardEvent;
+    const timeDiff = e.timeStamp - CheckInPCF.LastTimeStamp;
+    CheckInPCF.LastTimeStamp = e.timeStamp; //"global"
 
-//console.log(e.key + ': ' + timeDiff);
+    //console.log(e.key + ': ' + timeDiff);
 
-if (timeDiff < 100) {
+    if (timeDiff < 100) {
+        if (e.key == "Enter") {
+            //Assemble complete scan text
+            CheckInPCF.ScanText =
+                CheckInPCF.FirstCharacterCandidate + CheckInPCF.ScanText; //.replace('\u000D','');
 
-    if (e.key == 'Enter') {
-
-        //Assemble complete scan text
-        CheckInPCF.ScanText = CheckInPCF.FirstCharacterCandidate + CheckInPCF.ScanText; //.replace('\u000D','');
-
-        //console.log('finished: ' + CheckInPCF.ScanText);
-
-        CheckInPCF._this._notifyOutputChanged(); //Power Apps related
-
-    } else {
-        CheckInPCF.ScanText += e.key;
+            //console.log('finished: ' + CheckInPCF.ScanText);
+            CheckInPCF._this._notifyOutputChanged(); //Power Apps related
+        }
+        else {
+            CheckInPCF.ScanText += e.key;
+        }
     }
-} else {
-    CheckInPCF.ScanText = '';
-    CheckInPCF.FirstCharacterCandidate = e.key;
-}
+    else {
+        CheckInPCF.ScanText = "";
+        CheckInPCF.FirstCharacterCandidate = e.key;
+    }
 }
 ```
