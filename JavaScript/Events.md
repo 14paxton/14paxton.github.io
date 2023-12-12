@@ -59,6 +59,18 @@ Table of contents
 # List All Event Handlers
 
 ```javascript
+Object.keys(window).forEach(key => {
+            if(/./.test(key)){
+                window.addEventListener(key.slice(2), event => {
+                    console.log(key, event)
+                })
+            }
+        })
+```
+
+## In Chrome Dev Console
+
+```javascript
 window.getEventListeners(window);
 // or for a specific element
 window.getEventListeners(document.body);
