@@ -59,13 +59,13 @@ Table of contents
 # List All Event Handlers
 
 ```javascript
-Object.keys(window).forEach(key => {
-            if(/./.test(key)){
-                window.addEventListener(key.slice(2), event => {
-                    console.log(key, event)
-                })
-            }
-        })
+Object.keys(window).forEach((key) => {
+  if (/./.test(key)) {
+    window.addEventListener(key.slice(2), (event) => {
+      console.log(key, event);
+    });
+  }
+});
 ```
 
 ## In Chrome Dev Console
@@ -259,8 +259,7 @@ document.addEventListener("keypress", (e) => {
       /// code ready to use
       code = "";
     }
-  }
-  else {
+  } else {
     code += e.key; //while this is not an 'enter' it stores the every key
   }
 
@@ -282,12 +281,10 @@ document.addEventListener("keydown", (ev) => {
   if (ev.ctrlKey || ev.altKey) return; // Ignore command-like keys
   if (ev.key == "Enter") {
     // ...submit the content here...
-  }
-  else if (ev.key == "Space") {
+  } else if (ev.key == "Space") {
     // I think IE needs this
     document.getElementById("barcode-input").value += " ";
-  }
-  else if (ev.key.length == 1) {
+  } else if (ev.key.length == 1) {
     // A character not a key like F12 or Backspace
     document.getElementById("barcode-input").value += ev.key;
   }
