@@ -39,7 +39,7 @@ Table of contents
    }, []);
    ```
 
-2. and in other componenet
+2. and in another component
 
    ```jsx
    useEffect(() => {
@@ -144,12 +144,7 @@ const styles = StyleSheet.create({
 #### Use Form Input and Catch Submission event, and Retrieve value
 
 ```jsx
-mport;
-{
-  useState;
-}
-from;
-("react");
+import {useState} from "react";
 
 export default function Modal() {
   const [repairArticles, setRepairArticles] = useState([]);
