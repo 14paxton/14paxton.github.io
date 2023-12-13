@@ -1,6 +1,6 @@
 ---
 title: Configuring
-permalink: ReactNotes/Configuring.md
+permalink: Javascript/ReactNotes/Configuring
 category: JavaScript/ReactNotes
 parent: ReactNotes
 grand_parent: JavaScript
