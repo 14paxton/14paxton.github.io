@@ -1,12 +1,12 @@
 ---
-title:     Events
+title: Events
 permalink: JavaScript/TypeScript/Events
-category:  JavaScript/TypeScript
-parent:    TypeScript
+category: JavaScript/TypeScript
+parent: TypeScript
 grand_parent: JavaScript
-layout:    default
+layout: default
 has_children: false
-share:     true
+share: true
 shortRepo:
   - javascript
   - default
