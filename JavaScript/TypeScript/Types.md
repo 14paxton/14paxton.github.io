@@ -1,12 +1,12 @@
 ---
-title:        Types
-permalink:    JavaScript/TypeScript/Types
-category:     JavaScript/TypeScript
-parent:       TypeScript
+title: Types
+permalink: JavaScript/TypeScript/Types
+category: JavaScript/TypeScript
+parent: TypeScript
 grand_parent: JavaScript
-layout:       default
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - javascript
   - default
@@ -46,7 +46,7 @@ Table of contents
 
 ```typescript
 let callback: CallbackFunctionVariadic = function (...args: any[]) {
-    // do some stuff
+  // do some stuff
 };
 ```
 
