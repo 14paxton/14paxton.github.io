@@ -12,6 +12,18 @@ shortRepo:
 
 # [REPO](https://github.com/14paxton/javascript)
 
+# [Primitive Types and Data Structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+
+|   Type    | typeof return value | Object wrapper |
+|:---------:|:-------------------:|:--------------:|
+|   Null    |      "object"       |      N/A       |
+| Undefined |     "undefined"     |      N/A       |
+|  Boolean  |      "boolean"      |    Boolean     |
+|  Number   |      "number"       |     Number     |
+|  BigInt   |      "bigint"       |     BigInt     |
+|  String   |      "string"       |     String     |
+|  Symbol   |      "symbol"       |     Symbol     |
+
 # Cheat Sheet
 
 ![javascriptCheatSheet.png](..%2Fassets%2Fimages%2FjavascriptCheatSheet.png)  
