@@ -1,12 +1,12 @@
 ---
-title: HandleEvents
-permalink: ReactNotes/HandleEvents
-category: JavaScript/ReactNotes
-parent: ReactNotes
+title:        HandleEvents
+permalink:    ReactNotes/HandleEvents
+category:     JavaScript/ReactNotes
+parent:       ReactNotes
 grand_parent: JavaScript
-layout: default
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - reactnotes
   - default
@@ -82,58 +82,53 @@ Table of contents
 #### Use Invisible TextInput for focus
 
 ```jsx
-import React, { useEffect } from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import React, {useEffect}                  from "react";
+import {StyleSheet, Text, TextInput, View} from "react-native";
 
 export default function App() {
-  const invisibleRef = React.useRef(null);
+    const invisibleRef = React.useRef(null);
 
-  useEffect(() => {
-    invisibleRef.current.focus();
-  }, []);
+    useEffect(() => {
+        invisibleRef.current.focus();
+    }, []);
 
-  const focusInvisibleInput = (e) => {
-    e.preventDefault();
-    if (invisibleRef.current) {
-      invisibleRef.current.focus();
-    }
-  };
+    const focusInvisibleInput = (e) => {
+        e.preventDefault();
+        if (invisibleRef.current) {
+            invisibleRef.current.focus();
+        }
+    };
 
-  return (
-    <View style={styles.container} onTouchStart={focusInvisibleInput}>
-      <TextInput
-        ref={invisibleRef}
-        autoFocus={true}
-        autoCorrect={false}
-        autoComplete={false}
-        style={{ opacity: 0 }}
-        onChangeText={(text) => console.log("hidden", text)}
-      />
+    return (<View style={styles.container} onTouchStart={focusInvisibleInput}>
+            <TextInput
+                ref={invisibleRef}
+                autoFocus={true}
+                autoCorrect={false}
+                autoComplete={false}
+                style={{opacity: 0}}
+                onChangeText={(text) => console.log("hidden", text)}
+            />
 
-      <TextInput
-        style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
-        placeholder="Type something here"
-        onChangeText={(text) => console.log("visible", text)}
-      />
+            <TextInput
+                style={{height: 40, borderColor: "gray", borderWidth: 1}}
+                placeholder="Type something here"
+                onChangeText={(text) => console.log("visible", text)}
+            />
 
-      <Text>A nice react native app!</Text>
+            <Text>A nice react native app!</Text>
 
-      <TextInput
-        style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
-        placeholder="Type some thing else here!"
-        onChangeText={(text) => console.log("visible", text)}
-      />
-    </View>
-  );
+            <TextInput
+                style={{height: 40, borderColor: "gray", borderWidth: 1}}
+                placeholder="Type some thing else here!"
+                onChangeText={(text) => console.log("visible", text)}
+            />
+        </View>);
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
+    container: {
+        flex: 1, backgroundColor: "#fff", alignItems: "center", justifyContent: "center",
+    },
 });
 ```
 
@@ -144,34 +139,32 @@ const styles = StyleSheet.create({
 #### Use Form Input and Catch Submission event, and Retrieve value
 
 ```jsx
-import { useState } from "react";
+import {useState} from "react";
 
 export default function Modal() {
-  const [repairArticles, setRepairArticles] = useState([]);
+    const [repairArticles, setRepairArticles] = useState([]);
 
-  function handleBarcodeInput(e) {
-    e.preventDefault();
-    const input = e.target.querySelector("input");
-    const value = input.value;
-    setRepairArticles((prev) => {
-      return (prev = [...prev, value]);
-    });
-    input.value = "";
-  }
+    function handleBarcodeInput(e) {
+        e.preventDefault();
+        const input = e.target.querySelector("input");
+        const value = input.value;
+        setRepairArticles((prev) => {
+            return (prev = [...prev, value]);
+        });
+        input.value = "";
+    }
 
-  return (
-    <div>
-      <form onSubmit={(e) => handleBarcodeInput(e)}>
-        <input id="barcode-input" />
-        <button type="submit" className="hidden" />
-      </form>
-      <div className="mt-3">
-        {repairArticles.map((el, index) => {
-          return <p key={index}>{el}</p>;
-        })}
-      </div>
-    </div>
-  );
+    return (<div>
+            <form onSubmit={(e) => handleBarcodeInput(e)}>
+                <input id="barcode-input"/>
+                <button type="submit" className="hidden"/>
+            </form>
+            <div className="mt-3">
+                {repairArticles.map((el, index) => {
+                    return <p key={index}>{el}</p>;
+                })}
+            </div>
+        </div>);
 }
 ```
 
@@ -181,31 +174,26 @@ export default function Modal() {
 
 ```jsx
 const ScanComponent = (props) => {
-  const [scanned, setScanned] = useState("");
-  useEffect(() => {
-    const barcode = new BarcodeScaner();
-    barcode.initialize();
-    return () => {
-      barcode.close();
-    };
-  }, []);
+    const [scanned, setScanned] = useState("");
+    useEffect(() => {
+        const barcode = new BarcodeScaner();
+        barcode.initialize();
+        return () => {
+            barcode.close();
+        };
+    }, []);
 
-  useEffect(
-    () => {
-      const scanHandler = (code) => {
-        console.log(code);
-        setScanned(code);
-      };
+    useEffect(() => {
+        const scanHandler = (code) => {
+            console.log(code);
+            setScanned(code);
+        };
 
-      events.on("onbarcodescaned", scanHandler);
-      return () => {
-        events.off("onbarcodescaned", scanHandler);
-      };
-    },
-    [
-      /* here put dependencies for your scanHandler ;) */
-    ],
-  );
-  return <div>{scanned}</div>;
+        events.on("onbarcodescaned", scanHandler);
+        return () => {
+            events.off("onbarcodescaned", scanHandler);
+        };
+    }, [/* here put dependencies for your scanHandler ;) */],);
+    return <div>{scanned}</div>;
 };
 ```
