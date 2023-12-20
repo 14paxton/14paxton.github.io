@@ -1,11 +1,11 @@
 ---
-title: Events
-permalink: JavaScript/Events
-category: JavaScript
-parent: JavaScript
-layout: default
+title:        Events
+permalink:    JavaScript/Events
+category:     JavaScript
+parent:       JavaScript
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - javascript
   - default
@@ -60,11 +60,11 @@ Table of contents
 
 ```javascript
 Object.keys(window).forEach((key) => {
-  if (/./.test(key)) {
-    window.addEventListener(key.slice(2), (event) => {
-      console.log(key, event);
-    });
-  }
+    if (/./.test(key)) {
+        window.addEventListener(key.slice(2), (event) => {
+            console.log(key, event);
+        });
+    }
 });
 ```
 
@@ -80,11 +80,12 @@ window.getEventListeners(document.body);
 
 ```javascript
 function ready(fn) {
-  if (document.readyState !== "loading") {
-    fn();
-  } else {
-    document.addEventListener("DOMContentLoaded", fn);
-  }
+    if (document.readyState !== "loading") {
+        fn();
+    }
+    else {
+        document.addEventListener("DOMContentLoaded", fn);
+    }
 }
 ```
 
@@ -100,7 +101,7 @@ function ready(fn) {
 
 ```javascript
 function getArgs() {
-  const argList = arguments;
+    const argList = arguments;
 }
 ```
 
@@ -108,9 +109,9 @@ function getArgs() {
 
 ```javascript
 document.addEventListener(eventName, (event) => {
-  if (event.target.closest(elementSelector)) {
-    handler.call(event.target, event);
-  }
+    if (event.target.closest(elementSelector)) {
+        handler.call(event.target, event);
+    }
 });
 ```
 
@@ -124,23 +125,24 @@ document.addEventListener(eventName, (event) => {
 
 ```javascript
 function addEventListener(el, eventName, eventHandler, selector) {
-  if (selector) {
-    const wrappedHandler = (e) => {
-      if (!e.target) return;
-      const el = e.target.closest(selector);
-      if (el) {
-        eventHandler.call(el, e);
-      }
-    };
-    el.addEventListener(eventName, wrappedHandler);
-    return wrappedHandler;
-  } else {
-    const wrappedHandler = (e) => {
-      eventHandler.call(el, e);
-    };
-    el.addEventListener(eventName, wrappedHandler);
-    return wrappedHandler;
-  }
+    if (selector) {
+        const wrappedHandler = (e) => {
+            if (!e.target) return;
+            const el = e.target.closest(selector);
+            if (el) {
+                eventHandler.call(el, e);
+            }
+        };
+        el.addEventListener(eventName, wrappedHandler);
+        return wrappedHandler;
+    }
+    else {
+        const wrappedHandler = (e) => {
+            eventHandler.call(el, e);
+        };
+        el.addEventListener(eventName, wrappedHandler);
+        return wrappedHandler;
+    }
 }
 
 // Use the return value to remove that event listener, see #off
@@ -160,7 +162,7 @@ addEventListener(el, eventName, eventHandler, selector);
 # Trigger Custom Events
 
 ```javascript
-const event = new CustomEvent("my-event", { detail: { some: "data" } });
+const event = new CustomEvent("my-event", {detail: {some: "data"}});
 el.dispatchEvent(event);
 ```
 
@@ -174,15 +176,15 @@ el.dispatchEvent(event);
 
 ```javascript
 function trigger(el, eventType) {
-  if (typeof eventType === "string" && typeof el[eventType] === "function") {
-    el[eventType]();
-  } else {
-    const event =
-      typeof eventType === "string"
-        ? new Event(eventType, { bubbles: true })
-        : eventType;
-    el.dispatchEvent(event);
-  }
+    if (typeof eventType === "string" && typeof el[eventType] === "function") {
+        el[eventType]();
+    }
+    else {
+        const event = typeof eventType === "string"
+                      ? new Event(eventType, {bubbles: true})
+                      : eventType;
+        el.dispatchEvent(event);
+    }
 }
 
 trigger(el, "focus");
@@ -208,40 +210,40 @@ trigger(el, new PointerEvent("pointerover"));
 const events = mitt();
 
 class BarcodeScaner {
-  initialize = () => {
-    document.addEventListener("keypress", this.keyup);
-    if (this.timeoutHandler) {
-      clearTimeout(this.timeoutHandler);
-    }
-    this.timeoutHandler = setTimeout(() => {
-      this.inputString = "";
-    }, 10);
-  };
+    initialize = () => {
+        document.addEventListener("keypress", this.keyup);
+        if (this.timeoutHandler) {
+            clearTimeout(this.timeoutHandler);
+        }
+        this.timeoutHandler = setTimeout(() => {
+            this.inputString = "";
+        }, 10);
+    };
 
-  close = () => {
-    document.removeEventListener("keypress", this.keyup);
-  };
+    close = () => {
+        document.removeEventListener("keypress", this.keyup);
+    };
 
-  timeoutHandler = 0;
+    timeoutHandler = 0;
 
-  inputString = "";
+    inputString = "";
 
-  keyup = (e) => {
-    if (this.timeoutHandler) {
-      clearTimeout(this.timeoutHandler);
-      this.inputString += String.fromCharCode(e.keyCode);
-    }
+    keyup = (e) => {
+        if (this.timeoutHandler) {
+            clearTimeout(this.timeoutHandler);
+            this.inputString += String.fromCharCode(e.keyCode);
+        }
 
-    this.timeoutHandler = setTimeout(() => {
-      if (this.inputString.length <= 3) {
-        this.inputString = "";
-        return;
-      }
-      events.emit("onbarcodescaned", this.inputString);
+        this.timeoutHandler = setTimeout(() => {
+            if (this.inputString.length <= 3) {
+                this.inputString = "";
+                return;
+            }
+            events.emit("onbarcodescaned", this.inputString);
 
-      this.inputString = "";
-    }, 10);
-  };
+            this.inputString = "";
+        }, 10);
+    };
 }
 ```
 
@@ -249,52 +251,52 @@ class BarcodeScaner {
 
 ```javascript
 export class BarcodeScanner extends EventTarget {
-  constructor(options = {}) {
-    super();
+    constructor(options = {}) {
+        super();
 
-    options = Object.assign({
-      timeOut: 130, characterCount: 13,
-    }, options,);
+        options = Object.assign({
+            timeOut: 130, characterCount: 13,
+        }, options,);
 
-    this.timeOut = options.timeOut;
-    this.characterCount = options.characterCount;
-    this.timer = Date.now();
-    this.capture = "";
-    this.target = new EventTarget();
-    document.addEventListener("keypress", this.keypress.bind(this));
-  }
-
-  keypress(e) {
-    // Set current time
-    let now = Date.now();
-
-    // If out timer is out, we need to reset because it was not a barcode
-    if (now - this.timer > this.timeOut) {
-      this.reset();
+        this.timeOut = options.timeOut;
+        this.characterCount = options.characterCount;
+        this.timer = Date.now();
+        this.capture = "";
+        this.target = new EventTarget();
+        document.addEventListener("keypress", this.keypress.bind(this));
     }
 
-    // It seems we are still fast enough to be a barcode, so add to capture
-    let sinceFirst = now - this.timer;
-    if (sinceFirst < this.timeOut) {
-      this.capture += e.key;
+    keypress(e) {
+        // Set current time
+        let now = Date.now();
 
-      // It seems we managed to get enough characters within the time out, send scan!
-      if (this.capture.length === this.characterCount) {
-        this.dispatchScanEvent();
-      }
+        // If out timer is out, we need to reset because it was not a barcode
+        if (now - this.timer > this.timeOut) {
+            this.reset();
+        }
+
+        // It seems we are still fast enough to be a barcode, so add to capture
+        let sinceFirst = now - this.timer;
+        if (sinceFirst < this.timeOut) {
+            this.capture += e.key;
+
+            // It seems we managed to get enough characters within the time out, send scan!
+            if (this.capture.length === this.characterCount) {
+                this.dispatchScanEvent();
+            }
+        }
     }
-  }
 
-  dispatchScanEvent() {
-    let event = new CustomEvent("scan", {detail: this.capture});
-    this.dispatchEvent(event);
-    this.reset();
-  }
+    dispatchScanEvent() {
+        let event = new CustomEvent("scan", {detail: this.capture});
+        this.dispatchEvent(event);
+        this.reset();
+    }
 
-  reset() {
-    this.timer = Date.now();
-    this.capture = "";
-  }
+    reset() {
+        this.timer = Date.now();
+        this.capture = "";
+    }
 }
 ```
 
@@ -305,25 +307,26 @@ let code = "";
 let reading = false;
 
 document.addEventListener("keypress", (e) => {
-  //usually scanners throw an 'Enter' key at the end of read
-  if (e.keyCode === 13) {
-    if (code.length > 10) {
-      console.log(code);
-      /// code ready to use
-      code = "";
+    //usually scanners throw an 'Enter' key at the end of read
+    if (e.keyCode === 13) {
+        if (code.length > 10) {
+            console.log(code);
+            /// code ready to use
+            code = "";
+        }
     }
-  } else {
-    code += e.key; //while this is not an 'enter' it stores the every key
-  }
+    else {
+        code += e.key; //while this is not an 'enter' it stores the every key
+    }
 
-  //run a timeout of 200ms at the first read and clear everything
-  if (!reading) {
-    reading = true;
-    setTimeout(() => {
-      code = "";
-      reading = false;
-    }, 200); //200 works fine for me but you can adjust it
-  }
+    //run a timeout of 200ms at the first read and clear everything
+    if (!reading) {
+        reading = true;
+        setTimeout(() => {
+            code = "";
+            reading = false;
+        }, 200); //200 works fine for me but you can adjust it
+    }
 });
 ```
 
@@ -331,15 +334,17 @@ document.addEventListener("keypress", (e) => {
 
 ```javascript
 document.addEventListener("keydown", (ev) => {
-  if (ev.ctrlKey || ev.altKey) return; // Ignore command-like keys
-  if (ev.key == "Enter") {
-    // ...submit the content here...
-  } else if (ev.key == "Space") {
-    // I think IE needs this
-    document.getElementById("barcode-input").value += " ";
-  } else if (ev.key.length == 1) {
-    // A character not a key like F12 or Backspace
-    document.getElementById("barcode-input").value += ev.key;
-  }
+    if (ev.ctrlKey || ev.altKey) return; // Ignore command-like keys
+    if (ev.key == "Enter") {
+        // ...submit the content here...
+    }
+    else if (ev.key == "Space") {
+        // I think IE needs this
+        document.getElementById("barcode-input").value += " ";
+    }
+    else if (ev.key.length == 1) {
+        // A character not a key like F12 or Backspace
+        document.getElementById("barcode-input").value += ev.key;
+    }
 });
 ```

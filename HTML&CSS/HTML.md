@@ -1,11 +1,11 @@
 ---
-title: HTML
-permalink: HTML&CSS/HTML
-category: HTML&CSS
-parent: HTML&CSS
-layout: default
+title:        HTML
+permalink:    HTML&CSS/HTML
+category:     HTML&CSS
+parent:       HTML&CSS
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - default
 ---
@@ -30,17 +30,20 @@ Table of contents
 ## embed or load html file into html using object tag
 
 ```html
+
 <object data="css.html" height="10000" type="text/html" width="1000"></object>
 ```
 
 ```html
-<embed src="./HTMLSnippets/Nav.html" style="width:400px; height: 400px;" />
+
+<embed src="./HTMLSnippets/Nav.html" style="width:400px; height: 400px;"/>
 ```
 
 ```html
+
 <iframe
-  src="./HTMLSnippets/Nav.html"
-  style="width:400px; height: 400px;"
+        src="./HTMLSnippets/Nav.html"
+        style="width:400px; height: 400px;"
 ></iframe>
 ```
 
@@ -62,54 +65,57 @@ document.querySelector("#some.selector").innerHTML = body;
 > HTML
 
 ```html
+
 <div w3-include-html="content.html"></div>
 ```
 
 > call includeHTML
 
 ```html
+
 <script>
-  function includeHTML() {
-    let z, i, elmnt, file, xhttp;
-    /* Loop through a collection of all HTML elements: */
-    z = document.getElementsByTagName("*");
-    for (i = 0; i < z.length; i++) {
-      elmnt = z[i];
-      /*search for elements with a certain atrribute:*/
-      file = elmnt.getAttribute("w3-include-html");
-      if (file) {
-        /* Make an HTTP request using the attribute value as the file name: */
-        xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-          if (this.readyState == 4) {
-            if (this.status == 200) {
-              elmnt.innerHTML = this.responseText;
+    function includeHTML() {
+        let z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+                /* Make an HTTP request using the attribute value as the file name: */
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState === 4) {
+                        if (this.status === 200) {
+                            elmnt.innerHTML = this.responseText;
+                        }
+                        if (this.status === 404) {
+                            elmnt.innerHTML = "Page not found.";
+                        }
+                        /* Remove the attribute, and call this function once more: */
+                        elmnt.removeAttribute("w3-include-html");
+                        includeHTML();
+                    }
+                };
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /* Exit the function: */
+                return;
             }
-            if (this.status == 404) {
-              elmnt.innerHTML = "Page not found.";
-            }
-            /* Remove the attribute, and call this function once more: */
-            elmnt.removeAttribute("w3-include-html");
-            includeHTML();
-          }
-        };
-        xhttp.open("GET", file, true);
-        xhttp.send();
-        /* Exit the function: */
-        return;
-      }
+        }
     }
-  }
 
-  function ready(fn) {
-    if (document.readyState !== "loading") {
-      fn();
-    } else {
-      document.addEventListener("DOMContentLoaded", fn);
+    function ready(fn) {
+        if (document.readyState !== "loading") {
+            fn();
+        }
+        else {
+            document.addEventListener("DOMContentLoaded", fn);
+        }
     }
-  }
 
-  ready(includeHTML);
+    ready(includeHTML);
 </script>
 ```
 
@@ -126,16 +132,17 @@ document.querySelector("#some.selector").innerHTML = body;
 ```
 
 ```html
+
 <button>
-  <span class="fa fa-tweet" aria-hidden="true"></span>
-  <span class="label"> Tweet </span>
+    <span class="fa fa-tweet" aria-hidden="true"></span>
+    <span class="label"> Tweet </span>
 </button>
 ```
 
 > in the case of form data, input type = "hidden"
 
 ```html
-<input type="hidden" id="postId" name="postId" value="34657" />
+<input type="hidden" id="postId" name="postId" value="34657"/>
 ```
 
 ## [JS Events As Attributes](https://developer.mozilla.org/en-US/docs/Web/Events)
@@ -143,25 +150,28 @@ document.querySelector("#some.selector").innerHTML = body;
 > inline event in html tag
 
 ```html
+
 <div onMouseover="this.style.transform='scale(2)';">//content</div>
 ```
 
 > or
 
 ```html
+
 <div onmouseover="this.childNodes[1].childNodes[1].style.background='green';">
-  //content
+    //content
 </div>
 ```
 
 > or
 
 ```html
+
 <div
-  class="pdf-icon-box"
-  onmouseout="this.getElementsByClassName('name')[0].style.backgroundColor = 'green';"
-  onmouseover="this.getElementsByClassName('name')[0].style.backgroundColor = 'yellow'"
-  style="position:relative;"
+        class="pdf-icon-box"
+        onmouseout="this.getElementsByClassName('name')[0].style.backgroundColor = 'green';"
+        onmouseover="this.getElementsByClassName('name')[0].style.backgroundColor = 'yellow'"
+        style="position:relative;"
 >
   <span class="pdf-style">
     <span class="name" style="display:inline-block;background-color:orange;">
@@ -176,23 +186,25 @@ document.querySelector("#some.selector").innerHTML = body;
 ```html
 <!doctype html>
 <html>
-  <body onload="myFunction()">
-    <h1>HTML DOM Events</h1>
-    <h2>The onload Event</h2>
+<body onload="myFunction()">
+<h1>HTML DOM Events</h1>
+<h2>The onload Event</h2>
 
-    <script>
-      function myFunction() {
+<script>
+    function myFunction() {
         alert("Page is loaded");
-      }
-    </script>
-  </body>
+    }
+</script>
+</body>
 </html>
 ```
 
 > or use an element and js
 
 ```javascript
-div.onload = Promise.resolve(addPadding(div, keyAsHeader ? 60 : 71, 0));
+div.onload = Promise.resolve(addPadding(div, keyAsHeader
+                                             ? 60
+                                             : 71, 0));
 ```
 
 ### [mouseover](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event)
