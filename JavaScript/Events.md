@@ -28,30 +28,6 @@ Table of contents
 
 <br/>
 
-# [Monitor Events](https://stackoverflow.com/questions/10213703/how-do-i-view-events-fired-on-an-element-in-chrome-devtools)
-
-## Browser Dev Console
-
-> Just inspect your element (right mouse click → Inspect on a visible element or go to Elements tab in Chrome Developer Tools and select wanted element) then go to Console tab and write:
-
-```shell
- monitorEvents($0)
-```
-
-> Now when you move mouse over this element, focus or click it, the name of the fired event will be displayed with its data.
-
-> To stop getting this data, just write this to console:
-
-```shell
- unmonitorEvents($0)
-```
-
-> `$0` is just the last DOM element selected by Chrome Developer Tools.
->
-> > You can pass any other DOM object there (for example result of getElementById or querySelector).
-
-> You can also specify event "type" as second parameter to narrow monitored events to some predefined set
-
 ```shell
  monitorEvents(document.body, 'mouse')
 ```

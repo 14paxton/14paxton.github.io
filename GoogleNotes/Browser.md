@@ -1,11 +1,11 @@
 ---
-title: Browser
+title:    Browser
 permalink: GoogleNotes/Browser
 category: GoogleNotes
-parent: GoogleNotes
-layout: default
+parent:   GoogleNotes
+layout:   default
 has_children: false
-share: true
+share:    true
 shortRepo:
   - googlenotes
   - default
@@ -108,7 +108,7 @@ To install
 
 1. Open Chrome and go to `chrome://extensions`
 2. Make sure Developer Mode is checked.
-3. Click Load Unpacked Extension....
+3. Click Load Unpacked Extension…
 4. Find your copied directory and click Open.
 
 # [CLI](https://www.chromium.org/developers/how-tos/run-chromium-with-flags/)
