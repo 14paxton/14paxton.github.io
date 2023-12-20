@@ -1,27 +1,7 @@
-#-------------------------------------------------------------------------------#
-#               Qodana analysis is configured by qodana.yaml file               #
-#             https://www.jetbrains.com/help/qodana/qodana-yaml.html            #
-#-------------------------------------------------------------------------------#
 version: "1.0"
-
-#Specify inspection profile for code analysis
+linter: jetbrains/qodana-js
 profile:
-  name: qodana.recommended.full
-
-#Enable inspections
-#include:
-#  - name: <SomeEnabledInspectionId>
-include:
-  - name: Eslint
-  - name: GrazieInspection
-  - name: IdentifierGrammar
-  - name: LanguageDetectionInspection
-
-#Disable inspections
-#exclude:
-#  - name: <SomeDisabledInspectionId>
-#    paths:
-#      - <path/where/not/run/inspection>
+  name: qodana.recommended
 exclude:
   - name: All
     paths:
@@ -36,15 +16,8 @@ exclude:
       - scan/__tests__
       - vsts/lib
       - vsts/QodanaScan
-
-#Execute shell command before Qodana execution (Applied in CI/CD pipeline)
-#bootstrap: sh ./prepare-qodana.sh
-#bootstrap: yarn install
-
-
-#Install IDE plugins before Qodana execution (Applied in CI/CD pipeline)
-#plugins:
-#  - id: <plugin.id> #(plugin id can be found at https://plugins.jetbrains.com)
-
-#Specify Qodana linter for analysis (Applied in CI/CD pipeline)
-linter: jetbrains/qodana-jvm:latest
+include:
+  - name: Eslint
+  - name: GrazieInspection
+  - name: IdentifierGrammar
+  - name: LanguageDetectionInspection

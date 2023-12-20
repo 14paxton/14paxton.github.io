@@ -102,6 +102,19 @@ Table of contents
 
 `$0` is just the last DOM element selected by Chrome Developer Tools.
 
+- > monitor all events
+  ```shell
+    monitorEvents(document.body, 'mouse')
+    ```
+
+## Get All Events with window
+
+```javascript
+window.getEventListeners(window);
+// or for a specific element
+window.getEventListeners(document.body);
+```
+
 # [Re-Enable Right click](https://stackoverflow.com/questions/21335136/how-to-re-enable-right-click-so-that-i-can-inspect-html-elements-in-chrome)
 
 ```javascript
