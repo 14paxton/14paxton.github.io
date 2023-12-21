@@ -21,10 +21,6 @@ Table of contents
 
 <br/>
 
----
-
-<br/>
-
 # Adding to HTML
 
 ## Inline

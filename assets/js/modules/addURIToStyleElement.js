@@ -1,7 +1,7 @@
 async function createStyleElement(key, jsonImageURI) {
     return new Promise((resolve) => {
-        const stylesheet = document.createElement("style");
-        stylesheet.type = "text/css";
+        // const stylesheet = document.createElement("style");
+        // stylesheet.type = "text/css";
 
         //first use at TPlus
         // stylesheet.innerText = `#${key} { background: url('${javaOOPImages[key]}'); background-size: cover; background-repeat: no-repeat;
@@ -15,7 +15,7 @@ async function createStyleElement(key, jsonImageURI) {
         // stylesheet.innerText.concat(` #${key}:hover{transform: scale(2)}`)
 
         const imageStyles = new CSSStyleSheet();
-        imageStyles.insertRule(`#${key} { background: url('${jsonImageURI[key]}') no-repeat; background-position: center; background-size: 100% auto; }`,);
+        imageStyles.insertRule(`#${key} { background: url('${jsonImageURI[key]}') no-repeat; background-position: center; background-size: 100% auto; }`);
 
         document.adoptedStyleSheets = [...document.adoptedStyleSheets, imageStyles];
         // document.head.appendChild(stylesheet);

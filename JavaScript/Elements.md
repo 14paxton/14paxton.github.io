@@ -1,11 +1,11 @@
 ---
-title: Elements
-permalink: JavaScript/Elements
-category: JavaScript
-parent: JavaScript
-layout: default
+title:        Elements
+permalink:    JavaScript/Elements
+category:     JavaScript
+parent:       JavaScript
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - javascript
   - default
@@ -86,10 +86,7 @@ document.body.contains(document.getElementById("test"));
 ## jQuery
 
 ```javascript
-$("input[type='radio'][name='scheduleType']:not(:checked)").attr(
-  "disabled",
-  true,
-);
+$("input[type='radio'][name='scheduleType']:not(:checked)").attr("disabled", true,);
 ```
 
 > find by text jQuery `:contains(text)`
@@ -119,8 +116,8 @@ Attributes can also be set and read using bracket syntax: <code>element.dataset[
 
 ```javascript
 document
-  .getElementById("groupsWrapper-" + id)
-  .getAttribute("data-saved-assessment-count");
+    .getElementById("groupsWrapper-" + id)
+    .getAttribute("data-saved-assessment-count");
 ```
 
 > or
@@ -140,8 +137,8 @@ To remove an attribute, you can use the <code>delete</code> operator: <code>dele
 
 ```javascript
 document
-  .getElementById("groupsWrapper-" + id)
-  .setAttribute("data-saved-assessment-count", "my text value");
+    .getElementById("groupsWrapper-" + id)
+    .setAttribute("data-saved-assessment-count", "my text value");
 ```
 
 > or
@@ -157,8 +154,8 @@ el.dataset.dateOfBirth = "1960-10-03";
 
 ```javascript
 document
-  .getElementById("groupsWrapper-" + id)
-  .removeAttribute("data-saved-assessment-count");
+    .getElementById("groupsWrapper-" + id)
+    .removeAttribute("data-saved-assessment-count");
 ```
 
 > or
@@ -173,9 +170,9 @@ delete el.dataset.dateOfBirth;
 
 ```javascript
 if (!("someDataAttr" in el.dataset)) {
-  el.dataset.someDataAttr = "mydata";
-  // Result on JS: 'someDataAttr' in el.dataset === true
-  // Result on HTML: <div id="user" data-id="1234567890" data-user="carinaanand" data-some-data-attr="mydata">Carina Anand</div>
+    el.dataset.someDataAttr = "mydata";
+    // Result on JS: 'someDataAttr' in el.dataset === true
+    // Result on HTML: <div id="user" data-id="1234567890" data-user="carinaanand" data-some-data-attr="mydata">Carina Anand</div>
 }
 ```
 
@@ -257,6 +254,7 @@ if (node?.nodeType) {
 - HTML:
 
 ```html
+
 <div class="a">a</div>
 ```
 
@@ -289,14 +287,14 @@ only use tagName for nodeType === 1
 
 ```javascript
 function addBlankSelectOption(selectBox) {
-  const { nodeName, tagName } = selectBox;
-  if (nodeName === "SELECT" || tagName === "SELECT") {
-    const blankOption = document.createElement("option");
-    blankOption.setAttribute("selected", true);
-    blankOption.setAttribute("disabled", true);
-    blankOption.setAttribute("hidden", true);
-    selectBox.prepend(blankOption);
-  }
+    const {nodeName, tagName} = selectBox;
+    if (nodeName === "SELECT" || tagName === "SELECT") {
+        const blankOption = document.createElement("option");
+        blankOption.setAttribute("selected", true);
+        blankOption.setAttribute("disabled", true);
+        blankOption.setAttribute("hidden", true);
+        selectBox.prepend(blankOption);
+    }
 }
 ```
 
@@ -304,42 +302,43 @@ function addBlankSelectOption(selectBox) {
 
 ```javascript
 Object.prototype.toString
-  .call(obj)
-  .replace(/^\[object (.+)\]$/, "$1")
-  .toLowerCase();
+      .call(obj)
+      .replace(/^\[object (.+)\]$/, "$1")
+      .toLowerCase();
 ```
 
 # create clone
 
 ```javascript
 function createClone(element, setCSS, width, height) {
-  const newElement = element.cloneNode(true);
+    const newElement = element.cloneNode(true);
 
-  const createStyles = new Promise((resolve) => {
-    if (!setCSS) {
-      resolve(true);
-    } else {
-      generateRulesAll(element)
-        .then((css) => {
-          newElement.setAttribute("style", css);
-        })
-        .then(resolve);
-    }
-  });
+    const createStyles = new Promise((resolve) => {
+        if (!setCSS) {
+            resolve(true);
+        }
+        else {
+            generateRulesAll(element)
+                .then((css) => {
+                    newElement.setAttribute("style", css);
+                })
+                .then(resolve);
+        }
+    });
 
-  createStyles.then((css) => {
-    if (width) {
-      newElement.width = width;
-      newElement.style.width = `${width}`;
-    }
+    createStyles.then((css) => {
+        if (width) {
+            newElement.width = width;
+            newElement.style.width = `${width}`;
+        }
 
-    if (height) {
-      newElement.height = height;
-      newElement.style.height = `${height}`;
-    }
-  });
+        if (height) {
+            newElement.height = height;
+            newElement.style.height = `${height}`;
+        }
+    });
 
-  return newElement;
+    return newElement;
 }
 ```
 
@@ -347,157 +346,130 @@ function createClone(element, setCSS, width, height) {
 
 ```javascript
 function svgToDataURL(svg) {
-  return Promise.resolve()
-    .then(() => new XMLSerializer().serializeToString(svg))
-    .then(encodeURIComponent)
-    .then((html) => `data:image/svg+xml;charset=utf-8,${html}`);
+    return Promise.resolve()
+                  .then(() => new XMLSerializer().serializeToString(svg))
+                  .then(encodeURIComponent)
+                  .then((html) => `data:image/svg+xml;charset=utf-8,${html}`);
 }
 
 function nodeToDataURL(node, width, height) {
-  return new Promise((resolve) => {
-    const xmlns = "http://www.w3.org/2000/svg";
+    return new Promise((resolve) => {
+        const xmlns = "http://www.w3.org/2000/svg";
 
-    const foreignObject = document.createElementNS(xmlns, "foreignObject");
-    foreignObject.setAttribute("width", "100%");
-    foreignObject.setAttribute("height", "100%");
-    foreignObject.setAttribute("x", "0");
-    foreignObject.setAttribute("y", "0");
-    foreignObject.setAttribute("externalResourcesRequired", "true");
+        const foreignObject = document.createElementNS(xmlns, "foreignObject");
+        foreignObject.setAttribute("width", "100%");
+        foreignObject.setAttribute("height", "100%");
+        foreignObject.setAttribute("x", "0");
+        foreignObject.setAttribute("y", "0");
+        foreignObject.setAttribute("externalResourcesRequired", "true");
 
-    const svg = document.createElementNS(xmlns, "svg");
-    svg.setAttribute("width", `${width}`);
-    svg.setAttribute("height", `${height}`);
-    svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+        const svg = document.createElementNS(xmlns, "svg");
+        svg.setAttribute("width", `${width}`);
+        svg.setAttribute("height", `${height}`);
+        svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
 
-    svg.appendChild(foreignObject);
-    foreignObject.appendChild(node);
-    resolve(svgToDataURL(svg));
-  });
+        svg.appendChild(foreignObject);
+        foreignObject.appendChild(node);
+        resolve(svgToDataURL(svg));
+    });
 }
 
 function createImage(url) {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = () => resolve(img);
-    img.onerror = reject;
-    img.crossOrigin = "anonymous";
-    img.decoding = "sync";
-    img.src = url;
-  });
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.crossOrigin = "anonymous";
+        img.decoding = "sync";
+        img.src = url;
+    });
 }
 
 function buildCanvas(img) {
-  return new Promise((resolveCanvas) => {
-    const canvas = document.createElement("canvas");
-    const context = canvas.getContext("2d");
-    const canvasHeight = img.height + 50;
-    const canvasWidth = img.width + 50;
-    canvas.width = canvasWidth;
-    canvas.height = canvasHeight;
-    canvas.style.width = `${canvasWidth}`;
-    canvas.style.height = `${canvasHeight}`;
-    context.drawImage(img, 0, 0, canvas.width, canvas.height);
+    return new Promise((resolveCanvas) => {
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+        const canvasHeight = img.height + 50;
+        const canvasWidth = img.width + 50;
+        canvas.width = canvasWidth;
+        canvas.height = canvasHeight;
+        canvas.style.width = `${canvasWidth}`;
+        canvas.style.height = `${canvasHeight}`;
+        context.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-    resolveCanvas(
-      defaultSlideObject(canvas.toDataURL(), canvas.width, canvas.height),
-    );
-  });
+        resolveCanvas(defaultSlideObject(canvas.toDataURL(), canvas.width, canvas.height),);
+    });
 }
 
 //this is similar to how html2canvas and html-to-image libraries work
 // take element -> get generated css -> create ans svg(needed to paint canvas element) ->
 // use svg to create xml then uri then uri data string -> use data uri to create image element by adding uri to src attribute ->
 // create a canvas element inserting/drawing image in -> get dataURL to use
-export function createElementToPNGBase64(
-  arrayOfElementObjects,
-  dimensionsObj,
-  addIndividualElementCSS,
-) {
-  if (arrayOfElementObjects) {
-    return new Promise((resolve) => {
-      elementsToNewDocument(
-        arrayOfElementObjects,
-        dimensionsObj,
-        addIndividualElementCSS,
-      )
-        .then(({ clonedDocument, width, height, newElementArray }) =>
-          nodeToDataURL(clonedDocument.documentElement, width, height),
-        )
-        .then(createImage)
-        .then(buildCanvas)
-        .then(resolve);
-    });
-  }
+export function createElementToPNGBase64(arrayOfElementObjects, dimensionsObj, addIndividualElementCSS,) {
+    if (arrayOfElementObjects) {
+        return new Promise((resolve) => {
+            elementsToNewDocument(arrayOfElementObjects, dimensionsObj, addIndividualElementCSS,)
+                .then(({clonedDocument, width, height, newElementArray}) => nodeToDataURL(clonedDocument.documentElement, width, height),)
+                .then(createImage)
+                .then(buildCanvas)
+                .then(resolve);
+        });
+    }
 }
 
-export function cloneNodeToDocument(
-  node,
-  elementToAppend,
-  idToSet,
-  width,
-  height,
-  addIndividualElementCSS,
-) {
-  if (node) {
-    const w = width ? width : node.scrollWidth;
-    const h = height ? height : node.scrollHeight;
-    const newNode = createClone(node, !!addIndividualElementCSS, w, h);
-    newNode.id = idToSet;
-    elementToAppend.appendChild(newNode);
-    return newNode;
-  }
+export function cloneNodeToDocument(node, elementToAppend, idToSet, width, height, addIndividualElementCSS,) {
+    if (node) {
+        const w = width
+                  ? width
+                  : node.scrollWidth;
+        const h = height
+                  ? height
+                  : node.scrollHeight;
+        const newNode = createClone(node, !!addIndividualElementCSS, w, h);
+        newNode.id = idToSet;
+        elementToAppend.appendChild(newNode);
+        return newNode;
+    }
 }
 
 //array of element objects example: [{key: element}]
 // dimension object key should match element if custom dimension needed
 // example: {key:{height: number, width: number}}
-export function elementsToNewDocument(
-  arrayOfElementObjects,
-  dimensionsObj,
-  addIndividualElementCSS,
-) {
-  return new Promise((resolveNewDocument) => {
-    const usableArray = Array.isArray(arrayOfElementObjects)
-      ? arrayOfElementObjects
-      : [arrayOfElementObjects];
+export function elementsToNewDocument(arrayOfElementObjects, dimensionsObj, addIndividualElementCSS,) {
+    return new Promise((resolveNewDocument) => {
+        const usableArray = Array.isArray(arrayOfElementObjects)
+                            ? arrayOfElementObjects
+                            : [arrayOfElementObjects];
 
-    const clonedDocument = document.cloneNode(true);
-    // documentElement.querySelectorAll("noscript").forEach(el => el.remove())
-    const body = clonedDocument.body;
-    body.innerHTML = "";
+        const clonedDocument = document.cloneNode(true);
+        // documentElement.querySelectorAll("noscript").forEach(el => el.remove())
+        const body = clonedDocument.body;
+        body.innerHTML = "";
 
-    let totalWidth = 0;
-    let totalHeight = 0;
+        let totalWidth = 0;
+        let totalHeight = 0;
 
-    const clonedElementArray = usableArray.map((elementObj) => {
-      const key = Object.keys(elementObj)[0];
-      const element = elementObj[key];
-      const width = Object.hasOwn(dimensionsObj, key)
-        ? dimensionsObj[key]?.width
-        : element.scrollWidth;
-      const height = Object.hasOwn(dimensionsObj, key)
-        ? dimensionsObj[key]?.height
-        : element.scrollHeight;
+        const clonedElementArray = usableArray.map((elementObj) => {
+            const key = Object.keys(elementObj)[0];
+            const element = elementObj[key];
+            const width = Object.hasOwn(dimensionsObj, key)
+                          ? dimensionsObj[key]?.width
+                          : element.scrollWidth;
+            const height = Object.hasOwn(dimensionsObj, key)
+                           ? dimensionsObj[key]?.height
+                           : element.scrollHeight;
 
-      totalWidth = totalWidth > width ? totalWidth : width;
-      totalHeight += height;
-      cloneNodeToDocument(
-        element,
-        body,
-        key,
-        width,
-        height,
-        addIndividualElementCSS,
-      );
+            totalWidth = totalWidth > width
+                         ? totalWidth
+                         : width;
+            totalHeight += height;
+            cloneNodeToDocument(element, body, key, width, height, addIndividualElementCSS,);
+        });
+
+        resolveNewDocument({
+            clonedDocument: clonedDocument, width: totalWidth, height: totalHeight, newElementArray: clonedElementArray,
+        });
     });
-
-    resolveNewDocument({
-      clonedDocument: clonedDocument,
-      width: totalWidth,
-      height: totalHeight,
-      newElementArray: clonedElementArray,
-    });
-  });
 }
 ```
 
@@ -505,63 +477,44 @@ export function elementsToNewDocument(
 
 ```javascript
 export const createRow = async (row, index, newBody) => {
-  const newRow = newBody.insertRow(index);
-  newRow.innerHTML = row.innerHTML;
-  return newRow;
+    const newRow = newBody.insertRow(index);
+    newRow.innerHTML = row.innerHTML;
+    return newRow;
 };
 
-export const createTable = async (
-  tableRows,
-  rowIndex,
-  elementsObject,
-  divToAppend,
-) => {
-  if (elementsObject && elementsObject?.body?.nodeName === "TABLE") {
-    const table = elementsObject.body;
-    const tableId = `clone_table_${rowIndex + 1}`;
-    const {
-      nodeClone: newTable,
-      widthToSet,
-      heightToSet,
-    } = buildNewNodeClone(table, tableId, null, null, true, true);
-    newTable.tBodies[0].remove();
-    const tBody = newTable.createTBody();
-    const tFoot = newTable.createTFoot();
-    const tHead = newTable.createTHead();
-    tHead.innerHTML = table.tHead.innerHTML;
-    tFoot.innerHTML = table.tFoot.innerHTML;
+export const createTable = async (tableRows, rowIndex, elementsObject, divToAppend,) => {
+    if (elementsObject && elementsObject?.body?.nodeName === "TABLE") {
+        const table = elementsObject.body;
+        const tableId = `clone_table_${rowIndex + 1}`;
+        const {
+                  nodeClone: newTable, widthToSet, heightToSet,
+              } = buildNewNodeClone(table, tableId, null, null, true, true);
+        newTable.tBodies[0].remove();
+        const tBody = newTable.createTBody();
+        const tFoot = newTable.createTFoot();
+        const tHead = newTable.createTHead();
+        tHead.innerHTML = table.tHead.innerHTML;
+        tFoot.innerHTML = table.tFoot.innerHTML;
 
-    const rowPromises = tableRows.map(
-      (row, index) =>
-        new Promise((resolve) => resolve(createRow(row, index, tBody))),
-    );
-    await Promise.all(rowPromises).then((resolved) => {
-      console.log(`rows for table ${tableId} added`);
-    });
+        const rowPromises = tableRows.map((row, index) => new Promise((resolve) => resolve(createRow(row, index, tBody))),);
+        await Promise.all(rowPromises).then((resolved) => {
+            console.log(`rows for table ${tableId} added`);
+        });
 
-    const tableWrapper = document.createElement("div");
-    tableWrapper.id = `clone_table_wrapper_${rowIndex + 1}`;
-    if (elementsObject?.header) {
-      const {
-        nodeClone: newHeader,
-        widthToSet,
-        heightToSet,
-      } = buildNewNodeClone(
-        elementsObject?.header,
-        null,
-        null,
-        null,
-        true,
-        true,
-      );
-      tableWrapper.appendChild(newHeader);
+        const tableWrapper = document.createElement("div");
+        tableWrapper.id = `clone_table_wrapper_${rowIndex + 1}`;
+        if (elementsObject?.header) {
+            const {
+                      nodeClone: newHeader, widthToSet, heightToSet,
+                  } = buildNewNodeClone(elementsObject?.header, null, null, null, true, true,);
+            tableWrapper.appendChild(newHeader);
+        }
+
+        tableWrapper.appendChild(newTable);
+        if (divToAppend) divToAppend.appendChild(tableWrapper);
+
+        return tableWrapper;
     }
-
-    tableWrapper.appendChild(newTable);
-    if (divToAppend) divToAppend.appendChild(tableWrapper);
-
-    return tableWrapper;
-  }
 };
 ```
 
@@ -569,17 +522,17 @@ export const createTable = async (
 
 ```javascript
 export const getChildren = (element) => {
-  let childArray = [];
-  childArray.push(element);
+    let childArray = [];
+    childArray.push(element);
 
-  const children = element?.children;
-  if (children) {
-    for (let child of children) {
-      childArray.push.apply(childArray, getChildren(child));
+    const children = element?.children;
+    if (children) {
+        for (let child of children) {
+            childArray.push.apply(childArray, getChildren(child));
+        }
     }
-  }
 
-  return childArray;
+    return childArray;
 };
 ```
 
@@ -587,57 +540,40 @@ export const getChildren = (element) => {
 
 ```javascript
 function getWidthAndHeight(node) {
-  const width =
-    node.scrollWidth || node.offsetWidth || measure(node, "scrollWidth");
-  const height =
-    node.scrollHeight || node.offsetHeight || measure(node, "scrollHeight");
-  return { width, height };
+    const width = node.scrollWidth || node.offsetWidth || measure(node, "scrollWidth");
+    const height = node.scrollHeight || node.offsetHeight || measure(node, "scrollHeight");
+    return {width, height};
 }
 
 function measure(element, returnValue, parentNode) {
-  parentNode = parentNode || window.document.documentElement.lastElementChild;
-  const display = element.style.display;
-  const zIndex = element.style.zIndex;
-  const visibility = element.style.visibility;
+    parentNode = parentNode || window.document.documentElement.lastElementChild;
+    const display = element.style.display;
+    const zIndex = element.style.zIndex;
+    const visibility = element.style.visibility;
 
-  element.style.display = "block";
-  element.style.visibility = "hidden";
-  element.style.zIndex = -1;
-  parentNode.appendChild(element);
-  const {
-    clientWidth,
-    clientHeight,
-    offsetWidth,
-    offsetHeight,
-    scrollWidth,
-    scrollHeight,
-  } = element;
-  parentNode.removeChild(element);
-  element.style.display = display;
-  element.style.visibility = visibility;
-  element.style.zIndex = zIndex;
+    element.style.display = "block";
+    element.style.visibility = "hidden";
+    element.style.zIndex = -1;
+    parentNode.appendChild(element);
+    const {
+              clientWidth, clientHeight, offsetWidth, offsetHeight, scrollWidth, scrollHeight,
+          } = element;
+    parentNode.removeChild(element);
+    element.style.display = display;
+    element.style.visibility = visibility;
+    element.style.zIndex = zIndex;
 
-  const returnObj = {
-    clientWidth: clientWidth,
-    clientHeight: clientHeight,
-    offsetWidth: offsetWidth,
-    offsetHeight: offsetHeight,
-    scrollWidth: scrollWidth,
-    scrollHeight: scrollHeight,
-  };
+    const returnObj = {
+        clientWidth: clientWidth, clientHeight: clientHeight, offsetWidth: offsetWidth, offsetHeight: offsetHeight, scrollWidth: scrollWidth, scrollHeight: scrollHeight,
+    };
 
-  if (returnObj.hasOwnProperty(returnValue)) {
-    return returnObj[returnValue];
-  }
+    if (returnObj.hasOwnProperty(returnValue)) {
+        return returnObj[returnValue];
+    }
 
-  return {
-    clientWidth,
-    clientHeight,
-    offsetWidth,
-    offsetHeight,
-    scrollWidth,
-    scrollHeight,
-  };
+    return {
+        clientWidth, clientHeight, offsetWidth, offsetHeight, scrollWidth, scrollHeight,
+    };
 }
 ```
 
