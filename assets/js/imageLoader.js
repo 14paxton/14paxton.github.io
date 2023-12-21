@@ -18,5 +18,5 @@
         }),);
     });
 
-    Promise.all(createContainerPromiseList);
+    await Promise.all(createContainerPromiseList);
 })();
