@@ -77,15 +77,21 @@ getSelectedText();
 
 # Scroll to the top of the page
 
-![](..%2Fassets%2Fimages%2Fimage6.jpeg)
+```javascript
+const goToTop = () => window.scrollTo(0, 0);
+goToTop();
+```
 
 # Check whether the user has scrolled to the bottom of a page
 
-![](..%2Fassets%2Fimages%2Fimage7.jpeg)
-
+```javascript
+const scrolledToBottom = () => document.documentElement.clientHeight + window.scrollY >= document.documentElement.scrollHeight
+```
 # Find out whether the current tab is active
 
-![](..%2Fassets%2Fimages%2Fimage8.jpeg)
+```javascript
+const isTabInView = () => !document.hidden
+```
 
 # Redirect the user to a URL
 

@@ -11,12 +11,12 @@ async function createCSSImageContainers(keyValuePair, callingFile) {
         const {keyAsHeader, zoomOnHover, ...rest} = imgDiv.dataset;
         const {clientWidth, clientHeight, offsetWidth, offsetHeight, scrollWidth, scrollHeight} = imgDiv;
         console.log("create div dimensions: ", `keyAsHeader: ${keyAsHeader} ,clientWidth: ${clientWidth}, clientHeight: ${clientHeight}, offsetWidth: ${offsetWidth}, offsetHeight: ${offsetHeight}, scrollWidth: ${scrollWidth}, scrollHeight: ${scrollHeight}`);
-        const image = new Image(clientWidth, clientHeight)
+        const image = new Image(clientWidth)
 
         image.id = id;
         image.src = uri;
         image.style.width = `${clientWidth}`;
-        image.style.height = `auto`
+        image.style.height = '100%'
         image.onload = Promise.resolve(addPadding(image, (Boolean(keyAsHeader)
                                                           ? 10
                                                           : 0), 0));
