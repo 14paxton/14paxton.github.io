@@ -55,16 +55,13 @@ only re-builds posts and pages that have changed
 
 ```html
 
-<link rel="modulepreload" href="/assets/js/imageLoader.js"/>
-<script type="module" async src="/assets/js/imageLoader.js"></script>
-
-***
-
+<link href="/assets/js/imageLoader.js" rel="modulepreload"/>
+<script async src="/assets/js/imageLoader.js" type="module"></script>
 <div
-        id="imageContainer"
+        data-img-loader="linuxImages.js"
         data-key-as-header="true"
         data-zoom-on-hover="true"
-        data-img-loader="linuxImages.js"
+        id="imageContainer"
         style="width: auto; height: auto;"
 ></div>
 ```
