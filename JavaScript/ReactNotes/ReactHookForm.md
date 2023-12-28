@@ -77,12 +77,11 @@ describe("BasicSearch", () => {
     );
   });
 });
+```
 
--fire;
-submit;
-from;
-parent;
+# fire submit from parent
 
+```
 const submitMyForm = (data) => {
   formRef.current.dispatchEvent(
     new Event("submit", {
