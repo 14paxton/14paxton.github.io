@@ -477,22 +477,22 @@ export function renderWithReactHookForm(ui, {defaultValues = {}, toPassBack = []
         });
     });
     
-    ...
-    
-    // And what the input being tested may look like...
-    <input
-        type="text"
-        name={`${itemName}.url`}
-        className={`input ${errors[name] && errors[name][index].url
-                            ? "is-danger"
-                            : ""}`}
-        ref={register({
-            required: "Related URL is required", validate: (value) => isUrlValid(value) || "Please enter a valid URL",
-        })}
-        defaultValue=""
-        data-testid={`related-url-url-input`}
-    />
     ```
+  - > And what the input being tested may look like.
+      ```jsx 
+      <input
+          type="text"
+          name={`${itemName}.url`}
+          className={`input ${errors[name] && errors[name][index].url
+                              ? "is-danger"
+                              : ""}`}
+          ref={register({
+              required: "Related URL is required", validate: (value) => isUrlValid(value) || "Please enter a valid URL",
+          })}
+          defaultValue=""
+          data-testid={`related-url-url-input`}
+      />
+      ```
 
 - > #### used in app
 
