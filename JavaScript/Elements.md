@@ -208,8 +208,8 @@ If using <code>.data()</code> to modify, you need to retrieve by <code>.data()</
 
 # [Node Types](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType)
 
-- ## Node.ELEMENT_NODE (1)
-    - > An Element node
+- > ## Node.ELEMENT_NODE (1)
+    - An Element node
 
        ```html
        <p>
@@ -221,45 +221,45 @@ If using <code>.data()</code> to modify, you need to retrieve by <code>.data()</
       <div>
       ```
 
-- ## Node.ATTRIBUTE_NODE (2)
-    - > An Attribute of an Element
+- > ## Node.ATTRIBUTE_NODE (2)
+    - An Attribute of an Element
 
-- ## Node.TEXT_NODE (3)
-    - > The actual Text inside an Element or Attr.
+- > ## Node.TEXT_NODE (3)
+    - The actual Text inside an Element or Attr.
 
-- ## Node.CDATA_SECTION_NODE(4)
-    - > A CDATASection,
+- > ## Node.CDATA_SECTION_NODE(4)
+    - A CDATASection,
 
-      ```html
-          <!CDATA[ … ](%E2%80%A6.md#)>
+      ```xml
+        <!CDATA[ … ](%E2%80%A6.md#)>
       ```
 
-- ## Node.PROCESSING_INSTRUCTION_NODE (7)
-    - > A ProcessingInstruction of an XML document,
+- > ## Node.PROCESSING_INSTRUCTION_NODE (7)
+    - A ProcessingInstruction of an XML document,
 
       ```html
         <?xml-stylesheet … ?>
       ```
 
-- ## Node.COMMENT_NODE (8)
-    - > A Comment node,
+- > ## Node.COMMENT_NODE (8)
+    - A Comment node,
 
       ```html
         <!-- … -->
       ```
 
-- ## Node.DOCUMENT_NODE (9)
-    - > A Document node
+- > ## Node.DOCUMENT_NODE (9)
+    - A Document node
 
-- ## Node.DOCUMENT_TYPE_NODE (10)
-    - > A DocumentType node,
+- > ## Node.DOCUMENT_TYPE_NODE (10)
+    - A DocumentType node,
 
        ```html
             <!DOCTYPE html>
        ```
 
-- ## Node.DOCUMENT_FRAGMENT_NODE (11)
-    - > A DocumentFragment node
+- > ## Node.DOCUMENT_FRAGMENT_NODE (11)
+    - A DocumentFragment node
 
        ```html
          <div class="a">a</div>

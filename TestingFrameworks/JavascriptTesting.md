@@ -162,7 +162,7 @@ it("test with enzyme", () => {
 
 ## MUTATION OBSERVER
 
-```javascript
+```js
 global.MutationObserver = class {
     constructor(callback) {}
 
@@ -338,6 +338,39 @@ it('should render as div when the "as" attribute is passed with a value of "div"
 })
 ```
 
+## React-Hook-Forms
+
+### FormProvider Wrapper
+
+```tsx
+import {render, renderHook}      from '@testing-library/react';
+import {ReactElement, ReactNode} from 'react';
+import {FormProvider, useForm}   from 'react-hook-form';
+
+
+interface IWrapperProps {
+  children?: ReactNode;
+  props?: object;
+}
+
+const renderReactHookForm = (ui: ReactElement, {defaultValues = {}} = {}) => {
+  const {result} = renderHook(() => {
+    return useForm(defaultValues);
+  });
+
+  const Wrapper = ({children}: IWrapperProps) => {
+
+    return (<FormProvider {...result.current}>{children}</FormProvider>);
+  };
+
+  return {
+    ...render(ui, {wrapper: Wrapper})
+  };
+};
+
+export default renderReactHookForm;
+```
+
 ## Workarounds
 
 ### tooltip calling document.createRange
@@ -371,37 +404,4 @@ expect(wrapper.find('[href="tyler"]').text()).toBe("WelcometoReact");
 
 expect(wrapper.find('[href="tyler ~.clark"]').text()).toBe("Welcome to React");
 expect(wrapper.find('[text="Sometitle"]').text()).toBe("Welcome to React");
-```
-
-# React-Hook-Forms
-
-## FormProvider Wrapper
-
-```tsx
-import {render, renderHook}      from '@testing-library/react';
-import {ReactElement, ReactNode} from 'react';
-import {FormProvider, useForm}   from 'react-hook-form';
-
-
-interface IWrapperProps {
-    children?: ReactNode;
-    props?: object;
-}
-
-const renderReactHookForm = (ui: ReactElement, {defaultValues = {}} = {}) => {
-    const {result} = renderHook(() => {
-        return useForm(defaultValues);
-    });
-
-    const Wrapper = ({children}: IWrapperProps) => {
-
-        return (<FormProvider {...result.current}>{children}</FormProvider>);
-    };
-
-    return {
-        ...render(ui, {wrapper: Wrapper})
-    };
-};
-
-export default renderReactHookForm;
 ```
