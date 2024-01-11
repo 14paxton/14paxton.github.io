@@ -93,9 +93,9 @@ $("input[type='radio'][name='scheduleType']:not(:checked)").attr("disabled", tru
 
 # Attribute Value
 
-> dataset returns DOMStringMap
+- > [Using Custom data- attributes](https://html5doctor.com/html5-custom-data-attributes/)
 
-> [Using Custom data- attributes](https://html5doctor.com/html5-custom-data-attributes/)
+> dataset returns DOMStringMap
 
 > Attribute must be camel cased `Element.dataset.attributeNameCamelCased`
 
@@ -146,8 +146,14 @@ document
 ```javascript
 // set a data attribute
 el.dataset.dateOfBirth = "1960-10-03";
-// Result on JS: el.dataset.dateOfBirth === '1960-10-03'
-// Result on HTML: <div id="user" data-id="1234567890" data-user="carinaanand" data-date-of-birth="1960-10-03">Carina Anand</div>
+
+// Result on JS: 
+el.dataset.dateOfBirth === '1960-10-03'
+```
+
+```html
+<!--Result on HTML: -->
+<div data-date-of-birth="1960-10-03" data-id="1234567890" data-user="carinaanand" id="user">Carina Anand</div>
 ```
 
 ## Remove
@@ -162,8 +168,14 @@ document
 
 ```javascript
 delete el.dataset.dateOfBirth;
-// Result on JS: el.dataset.dateOfBirth === undefined
-// Result on HTML: <div id="user" data-id="1234567890" data-user="carinaanand">Carina Anand</div>
+
+// Result on JS: 
+el.dataset.dateOfBirth === undefined
+```
+
+```html
+<!--Result on HTML: -->
+<div data-id="1234567890" data-user="carinaanand" id="user">Carina Anand</div>
 ```
 
 ## null check
@@ -171,9 +183,15 @@ delete el.dataset.dateOfBirth;
 ```javascript
 if (!("someDataAttr" in el.dataset)) {
     el.dataset.someDataAttr = "mydata";
-    // Result on JS: 'someDataAttr' in el.dataset === true
-    // Result on HTML: <div id="user" data-id="1234567890" data-user="carinaanand" data-some-data-attr="mydata">Carina Anand</div>
+
+    // Result on JS: 
+    'someDataAttr' in el.dataset === true
 }
+```
+
+```html
+<!--Result on HTML: -->
+<div data-id="1234567890" data-some-data-attr="mydata" data-user="carinaanand" id="user">Carina Anand</div>
 ```
 
 ## jQuery
@@ -188,11 +206,66 @@ If using <code>.data()</code> to modify, you need to retrieve by <code>.data()</
 </p>      
 </div>
 
-[You Can pass arguments to functions that do no accept parameters]{.underline}
+# [Node Types](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType)
 
-[call arguments in method to see what has been passed]{.underline} Properties
+- ## Node.ELEMENT_NODE (1)
+    - > An Element node
 
-# Check Type
+       ```html
+       <p>
+       ```
+
+      <strong><b><em> ~~ OR ~~  </em></b></strong>
+
+      ```html
+      <div>
+      ```
+
+- ## Node.ATTRIBUTE_NODE (2)
+    - > An Attribute of an Element
+
+- ## Node.TEXT_NODE (3)
+    - > The actual Text inside an Element or Attr.
+
+- ## Node.CDATA_SECTION_NODE(4)
+    - > A CDATASection,
+
+      ```html
+          <!CDATA[ … ](%E2%80%A6.md#)>
+      ```
+
+- ## Node.PROCESSING_INSTRUCTION_NODE (7)
+    - > A ProcessingInstruction of an XML document,
+
+      ```html
+        <?xml-stylesheet … ?>
+      ```
+
+- ## Node.COMMENT_NODE (8)
+    - > A Comment node,
+
+      ```html
+        <!-- … -->
+      ```
+
+- ## Node.DOCUMENT_NODE (9)
+    - > A Document node
+
+- ## Node.DOCUMENT_TYPE_NODE (10)
+    - > A DocumentType node,
+
+       ```html
+            <!DOCTYPE html>
+       ```
+
+- ## Node.DOCUMENT_FRAGMENT_NODE (11)
+    - > A DocumentFragment node
+
+       ```html
+         <div class="a">a</div>
+       ```
+
+## Check Type
 
 ```javascript
 if (element.tagName === "OL") {
@@ -208,82 +281,39 @@ if (elementsObject && elementsObject?.body?.nodeName === "TABLE") {
 const tagName = el.tagName || el.nodeName;
 ```
 
-> [Node Types](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType)
-
 ```javascript
 if (node?.nodeType) {
 }
 ```
 
-## Node.ELEMENT_NODE (1)
+- > ### JavaScript check type on node element
 
-> An Element node like `<p>` or `<div>`.
-
-## Node.ATTRIBUTE_NODE (2)
-
-> An Attribute of an Element.
-
-## Node.TEXT_NODE (3)
-
-> The actual Text inside an Element or Attr.
-
-## Node.CDATA_SECTION_NODE(4)
-
-> A CDATASection, such as `<!CDATA[ … ](%E2%80%A6.md#)>`
-
-## Node.PROCESSING_INSTRUCTION_NODE (7)
-
-> A ProcessingInstruction of an XML document, such as `<?xml-stylesheet … ?>`
-
-## Node.COMMENT_NODE (8)
-
-> A Comment node, such as `<!-- … -->`.
-
-## Node.DOCUMENT_NODE (9)
-
-> A Document node.
-
-## Node.DOCUMENT_TYPE_NODE (10)
-
-> A DocumentType node, such as `<!DOCTYPE html>`.
-
-## Node.DOCUMENT_FRAGMENT_NODE (11)
-
-> A DocumentFragment node.
-
-- HTML:
-
-```html
-
-<div class="a">a</div>
-```
-
-- Js:
-
-```javascript
-node = e;
-node.nodeType === 1;
-node.nodeName === "DIV";
-node.tagName === "DIV";
-
-node = e.getAttributeNode("class");
-node.nodeType === 2;
-node.nodeName === "class";
-node.tagName === undefined;
-
-node = e.childNodes[0];
-node.nodeType === 3;
-node.nodeName === "#text";
-node.tagName === undefined;
-```
+    ```javascript
+    node = e;
+    node.nodeType === 1;
+    node.nodeName === "DIV";
+    node.tagName === "DIV";
+    
+    node = e.getAttributeNode("class");
+    node.nodeType === 2;
+    node.nodeName === "class";
+    node.tagName === undefined;
+    
+    node = e.childNodes[0];
+    node.nodeType === 3;
+    node.nodeName === "#text";
+    node.tagName === undefined;
+    ```
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
-only use nodeType to get the node type: nodeName breaks for nodeType === 1
+only use nodeType to get the node type.
+<br/>
+nodeName breaks for nodeType === 1
  <br>
 only use tagName for nodeType === 1   
 </div>
 
-## Deconstruct element to get names
+## Deconstruct element to get node names and tag names / NodeName TagName
 
 ```javascript
 function addBlankSelectOption(selectBox) {
@@ -298,7 +328,7 @@ function addBlankSelectOption(selectBox) {
 }
 ```
 
-## Get Type
+## Get Element Type
 
 ```javascript
 Object.prototype.toString

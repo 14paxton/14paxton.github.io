@@ -49,13 +49,13 @@ Table of contents
 
 ## Modify existing object in test
 
-```jsx
+```javascript
 const modifiedProps = JSON.parse(JSON.stringify(defaultProps));
 ```
 
 ## fire button example
 
-```jsx
+```javascript
 import React from "react";
 
 import {render, fireEvent} from "react-testing-library";
@@ -81,13 +81,14 @@ test("counter increments the count", () => {
 
 > To test a component (with Jest) that contains<Route>and withRouter you need to import Router in you test
 
-```jsx
+```javascript
 import {BrowserRouter as Router} from "react-router-dom";
 
 it("containts stuff", () => {
     const wrapper = mount(<Router>
         {" "}
-        <Footer/>{" "}
+      <Footer/>
+      {" "}
     </Router>,);
     console.log(wrapper.find("FooterContainer").html());
 
@@ -103,13 +104,13 @@ it("containts stuff", () => {
 
 > by passing in an object that matches the property of a node as a selectoin
 
-```jsx
+```javascript
 expect(wrapper.find({alt: "logo"}).text()).toBe("Welcome to React");
 ```
 
 - > [Shallow Wrapper](https://enzymejs.github.io/enzyme/docs/api/ShallowWrapper/setProps.html)
 
-```jsx
+```javascript
 it("test with enzyme", () => {
     const container = shallow(<GoalCreationForm
         {...defaultProps}
@@ -183,7 +184,7 @@ HTMLCanvasElement.prototype.getContext = jest.fn();
 
 ## use test-id in material-ui text-field
 
-```jsx
+```javascript
 import "@testing-library/jest-dom";
 import React         from "react";
 import {createMount} from "@material-ui/core/test-utils";
@@ -256,27 +257,27 @@ describe("<EditProfileForm/>", () => {
 });
 ```
 
-> And then passing data - testid as an input prop on text field like this
+- > ### And then passing data - testid as an input prop on text field like this
 
-```jsx
-<TextField
-    id="outlined-name"
-    className="bio-test"
-    style={{
-        width: "100%",
-    }}
-    name="bio"
-    inputProps={{
-        "data-testid": "bio",
-    }}
-    multiline={true}
-    rows="3"
-    defaultValue={props.bio}
-    onChange={props.handleBio}
-    margin="normal"
-    variant="outlined"
-/>
-```
+    ```jsx
+    <TextField
+        id="outlined-name"
+        className="bio-test"
+        style={{
+            width: "100%",
+        }}
+        name="bio"
+        inputProps={{
+            "data-testid": "bio",
+        }}
+        multiline={true}
+        rows="3"
+        defaultValue={props.bio}
+        onChange={props.handleBio}
+        margin="normal"
+        variant="outlined"
+    />
+    ```
 
 ## Use queryBy to test if something should be null
 
@@ -295,7 +296,7 @@ it("ellipsis should not appear for shared result viewer role", async () => {
 });
 ```
 
-### Firing events
+## Firing events
 
 ```jsx
 import userEvent from "@testing-library/user-event";
@@ -309,20 +310,39 @@ fireEvent.change(input, {
 userEvent.type(input, "GroupA");
 ```
 
-### Getting component
+## Getting component
 
 ```jsx
 const {getByTestId, queryByTestId} = render(<CreateGroupForm groups={groupNames}/>,);
 ```
 
-### Testing component
+- > ### Testing component
 
-```jsx
-expect(input).toHaveValue("GROUP");
+    ```jsx
+    expect(input).toHaveValue("GROUP");
+    ```
+
+## Get by TagName / Element Type / NodeName
+
+```javascript
+screen.getByText((_content, element) => element?.tagName.toLowerCase() === 'svg');
 ```
 
-> needed due to tooltip calling document.createRange  
-> otherwise will get error: `Uncaught [TypeError: document.createRange is not a function]`
+## Check TagName / Element Type / NodeName
+
+```javascript
+it('should render as div when the "as" attribute is passed with a value of "div"', () => {
+  render(<Button label={testText} as='div' data-testid='test-button'/>)
+
+  expect(screen.getByTestId('test-button').nodeName.toLowerCase()).toBe('div')
+})
+```
+
+## Workarounds
+
+### tooltip calling document.createRange
+
+- > otherwise will get error: `Uncaught [TypeError: document.createRange is not a function]`
 
 ```jsx
 global.document.createRange = () => ({
@@ -334,9 +354,9 @@ global.document.createRange = () => ({
 
 # Enzyme
 
-<https://enzymejs.github.io/enzyme/docs/api/selector.html>
+- [selector](https://enzymejs.github.io/enzyme/docs/api/selector.html)
 
-<https://enzymejs.github.io/enzyme/docs/api/ReactWrapper/find.html>
+- [selector](https://enzymejs.github.io/enzyme/docs/api/ReactWrapper/find.html)
 
 ```jsx
 expect(wrapper.find(".App-intro").exists()).toBe(true);
