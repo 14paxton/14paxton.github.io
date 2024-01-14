@@ -46,7 +46,7 @@ const moduleVersion2 = await import(getPath("v2.0"));
 
 ## Import and run in script tag
 
-```javascript
+```html
 <script>
     import("/assets/js/modules/createCSSImageContainers.js").then(async (module) => {const {addCSSImageContainers} = module;
     await addCSSImageContainers();});

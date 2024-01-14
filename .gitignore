@@ -29,3 +29,5 @@ Temporary Items
 # Jekyl
 /_site
 /bundle
+
+*/sonarlint
