@@ -31,10 +31,18 @@ Table of contents
 # Create Event Listeners
 
 ```javascript
-element.addEventListener('click', function () {…});
-element.onclick = function () {…};
-element.addEventListener('load', function () {…});
-element.onload = function () {…};
+element.addEventListener('click', function () {
+
+});
+element.onclick = function () {
+
+};
+element.addEventListener('load', function () {
+
+});
+element.onload = function () {
+    
+};
 ```
 
 - > In HTML

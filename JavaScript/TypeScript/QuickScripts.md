@@ -29,6 +29,10 @@ Table of contents
 
 <br/>
 
+# GISTs
+
+## [Keyboard input/ barcode scanner react typescript hook](https://gist.github.com/14paxton/09adce350289bdcc1df92ed425c1d548)
+
 # How to dynamically infer TypeScript single object types from tRPC query outputs
 
 > This is how you can dynamically infer a single object type from a tRPC Query returning an array of elements of that specific type:

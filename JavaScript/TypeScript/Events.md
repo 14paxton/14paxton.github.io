@@ -60,3 +60,5 @@ function Scan(evt: Event): void {
   }
 }
 ```
+
+### [React Typescript Example](https://gist.github.com/14paxton/09adce350289bdcc1df92ed425c1d548)
