@@ -38,8 +38,9 @@ element.onload = function () {…};
 ```
 
 - > In HTML
+
   ```html
-  <div id="col-left" ondragstart="function(e){this.style.opacity=0.6; e.dataTransfer.dropEffect='move';}">
+    <div id="col-left" ondragstart="function(e){this.style.opacity=0.6; e.dataTransfer.dropEffect='move';}">
   ```
 
 # Find and List Active Events and Event Listeners
@@ -265,9 +266,9 @@ function ready(fn) {
 - > ## JQuery
 
   ```javascript
-  $(document).ready(function () {
-    Console.log("ready");
-  });
+    $(document).ready(function () {
+      Console.log("ready");
+    });
   ```
 
 # use `arguments` keyword in function to get arguments passed or available
