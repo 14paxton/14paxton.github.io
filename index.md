@@ -11,7 +11,7 @@ shortRepo: ghpages
 
 # My Personal Documents and Other Stuff
 
-- > <a href="/JobPrep/assets/documents/Resume.docx" download target="_blank">Resume</a>
+- > <a href="/JobPrep/assets/documents/bpaxtonresume.docx" download target="_blank">Resume</a>
 - > <a href="/JobPrep/assets/documents/CoverLetter.rtf" download>CoverLetter</a>
 - > [Tod Wyrick Letter Of Recommendation](/GitHubPages/LetterOfRecommendation)
 

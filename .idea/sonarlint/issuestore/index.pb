@@ -15,3 +15,5 @@ O
 JavaScript/TypeScript/Events.md,3/1/319d105bd2721a0bb5bd9966745e606793a2f658
 U
 %JavaScript/TypeScript/QuickScripts.md,7/9/79a175e7a1325a8c7e77f5d7ecb2afd3dc803dd0
+8
+index.md,b/8/b8d322cca13b7303167b216a3efe71db4e1687a1
