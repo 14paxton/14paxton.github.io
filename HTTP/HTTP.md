@@ -1,10 +1,10 @@
 ---
-title: HTTP
-layout: default
+title:     HTTP
+layout:    default
 permalink: HTTP
-category: HTTP
+category:  HTTP
 has_children: true
-share: true
+share:     true
 shortRepo:
   - http
   - default
@@ -29,6 +29,8 @@ Table of contents
 <script type="module" async src="/assets/js/imageLoader.js"></script>
 
 ---
+
+# [API Qick Referencs ](https://www.paxtonb.com/GitHubPages/InterviewQ&A#http_verbs)
 
 <div id="imageContainer" data-key-as-header="true" data-zoom-on-hover="true" data-img-loader="httpImages.js" style="width: auto; height: auto;"></div>
 
