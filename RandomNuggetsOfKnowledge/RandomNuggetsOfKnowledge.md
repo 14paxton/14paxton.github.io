@@ -16,6 +16,8 @@ shortRepo:
 
 # SMS
 
+- > [Verizon SMS API](https://thingspace.verizon.com/documentation/apis/sms.html)
+
 ## sms with email
 
 <div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
