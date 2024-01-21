@@ -1,11 +1,11 @@
 ---
-title: MyPersonalDocsAndStuff
-name: index.md
+title:     MyPersonalDocsAndStuff
+name:      index.md
 permalink: index
-layout: default
+layout:    default
 nav_order: 1
 has_children: true
-share: true
+share:     true
 shortRepo: ghpages
 ---
 
@@ -22,33 +22,28 @@ shortRepo: ghpages
 - [LinkedIn](https://www.linkedin.com/in/paxtonbrandon/)
 
 # Site Map
-
 <div id="insertion"></div>
-<!--
-//http path
-//const pathToHTML = "https://raw.githubusercontent.com/14paxton/14paxton.github.io/master/assets/HTMLSnippets/Nav.html";
--->
 <script>
-const pathToHTML = '/assets/HTMLSnippets/Nav.html';
-async function fetchHTMLFile(path) {
-return await fetch(path);
-}
-async function loadHTML() {
-console.log(navigator.userAgent);
-if (/(iphone|android|blackberry|webos)/i.test(navigator.userAgent)){
-      const promise = await fetchHTMLFile(pathToHTML);
-    document.querySelector('#insertion').innerHTML = await promise.text();
-}
-}
-function ready(fn) {
-if (document.readyState !== 'loading') {
-fn();
-}
-else {
-document.addEventListener('DOMContentLoaded', fn);
-}
-}
-ready(loadHTML);
+    const pathToHTML = '/assets/HTMLSnippets/Nav.html';
+    async function fetchHTMLFile(path) {
+        return await fetch(path);
+    }
+    async function loadHTML() {
+        console.log(navigator.userAgent);
+        if (/(iphone|android|blackberry|webos)/i.test(navigator.userAgent)) {
+            const promise = await fetchHTMLFile(pathToHTML);
+            document.querySelector('#insertion').innerHTML = await promise.text();
+        }
+    }
+    function ready(fn) {
+        if (document.readyState !== 'loading') {
+            fn();
+        }
+        else {
+            document.addEventListener('DOMContentLoaded', fn);
+        }
+    }
+    ready(loadHTML);
 </script>
 
 ---

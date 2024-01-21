@@ -1,11 +1,11 @@
 ---
-title: Clever-Algos
+title:     Clever-Algos
 permalink: JavaScript/Clever-Algos
-category: JavaScript
-parent: JavaScript
-layout: default
+category:  JavaScript
+parent:    JavaScript
+layout:    default
 has_children: false
-share: true
+share:     true
 shortRepo:
   - javascript
   - default
@@ -51,14 +51,10 @@ Table of contents
 # Custom Ready / Load / onLoad
 
 ```javascript
-window.addEventListener(
-  "load",
-  async function () {
+window.addEventListener("load", async function () {
     const promise = await fetchHTMLFile(pathToHTML);
     document.querySelector("#insertion").innerHTML = await promise.text();
-  },
-  false,
-);
+}, false,);
 ```
 
 > or
@@ -67,7 +63,8 @@ window.addEventListener(
 function ready(fn) {
   if (document.readyState !== "loading") {
     fn();
-  } else {
+  }
+  else {
     document.addEventListener("DOMContentLoaded", fn);
   }
 }
@@ -79,9 +76,12 @@ ready(loadHTML);
 
 ```javascript
 function sortOptions(a, b) {
-  var at = a.textContent,
-    bt = b.textContent;
-  return at > bt ? 1 : at < bt ? -1 : 0;
+  var at = a.textContent, bt = b.textContent;
+  return at > bt
+         ? 1
+         : at < bt
+           ? -1
+           : 0;
 }
 
 if (selectBox) {
@@ -121,13 +121,42 @@ if (selectBox) {
 
 > [recursive css](https://gist.github.com/14paxton/70018ca1b4b990db4fbf4edfd1907af8)
 
-# Create new document and open in new window
+# embed, inject, or load an HTML file into HTML document
 
-> [Paint New Window](https://contest-server.cs.uchicago.edu/ref/JavaScript/developer.mozilla.org/en-US/docs/Web/API/Window/open.html)
+## fetch and insert html into onload
 
-- alt
+```javascript
+const pathToHTML = '/assets/HTMLSnippets/Nav.html';
 
-> [paint new window](https://gist.github.com/14paxton/fb7f33fd6f5fa7a15077b6ebf18fca44)
+async function fetchHTMLFile(path) {
+  return await fetch(path);
+}
+
+async function loadHTML() {
+  console.log(navigator.userAgent);
+  if (/(iphone|android|blackberry|webos)/i.test(navigator.userAgent)) {
+    const promise = await fetchHTMLFile(pathToHTML);
+    document.querySelector('#insertion').innerHTML = await promise.text();
+  }
+}
+
+function ready(fn) {
+  if (document.readyState !== 'loading') {
+    fn();
+  }
+  else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+
+ready(loadHTML);
+```
+
+## Create a new document and open in a new window using ReadableStream
+
+> using readable stream takes html file and inserts it into a current window document
+
+> [inject html file into the current window](https://gist.github.com/14paxton/fb7f33fd6f5fa7a15077b6ebf18fca44)
 
 # [Add to Reddit Custom Feed](https://gist.github.com/14paxton/63944ec7e8bcd0e7ee9b97e3dc6fd48e)
 
@@ -140,7 +169,7 @@ const x = window.innerWidth / 2;
 const y = window.innerHeight / 2;
 
 const eye = document.documentElement;
-const { left, top, width, height } = eye.getBoundingClientRect();
+const {left, top, width, height} = eye.getBoundingClientRect();
 const centerX = left + width / 2;
 const centerY = top + height / 2;
 ```
@@ -149,13 +178,7 @@ const centerY = top + height / 2;
 
 ```javascript
 (async () => {
-  await createDataUrls(
-    clonedTableArray,
-    dimensionsObj,
-    additionalSlides,
-    resolveURLCreation,
-    rejectURL,
-  );
+  await createDataUrls(clonedTableArray, dimensionsObj, additionalSlides, resolveURLCreation, rejectURL,);
 })();
 ```
 
@@ -178,15 +201,11 @@ cssLink.type = "text/css";
 cssLink.href = cssFilePath;
 document.querySelector("head").appendChild(cssLink);
 
-window.addEventListener(
-  "load",
-  async function () {
+window.addEventListener("load", async function () {
     const promise = await fetchHTMLFile(pathToHTML);
     const html = await promise.text();
     document.querySelector("body").innerHTML = html;
-  },
-  false,
-);
+}, false,);
 
 async function fetchHTMLFile(path) {
   return await fetch(path);
@@ -228,9 +247,7 @@ if (conditional === true) {
 ```javascript
 const newUser = function (name, age, skill) {
   return {
-    name,
-    age,
-    skill,
+    name, age, skill,
   };
 };
 

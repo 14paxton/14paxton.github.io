@@ -27,7 +27,7 @@ Table of contents
 
 # TidBits
 
-## embed or load html file into html using object tag
+## embed, inject, or load an HTML file into HTML document using object tag
 
 ```html
 
