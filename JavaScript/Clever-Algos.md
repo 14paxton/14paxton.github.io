@@ -121,7 +121,7 @@ if (selectBox) {
 
 > [recursive css](https://gist.github.com/14paxton/70018ca1b4b990db4fbf4edfd1907af8)
 
-# embed, inject, or load an HTML file into HTML document
+# embed, inject, or load an HTML file into an HTML document
 
 ## fetch and insert html into onload
 
@@ -152,6 +152,36 @@ function ready(fn) {
 ready(loadHTML);
 ```
 
+## load html and css file into html doc
+
+```javascript
+//************** Add path to files to test **********************//
+//path to html file you want to use
+const pathToHTML = "/Yuma_Regional/yuma_regional_launch.html";
+//path to html file you want to use
+
+//path to css file
+const cssFilePath = "01Launch_Page_Default_Template.css";
+//path to css file
+//************** Add path to files to test **********************//
+
+const cssLink = document.createElement("link");
+cssLink.rel = "stylesheet";
+cssLink.type = "text/css";
+cssLink.href = cssFilePath;
+document.querySelector("head").appendChild(cssLink);
+
+window.addEventListener("load", async function () {
+    const promise = await fetchHTMLFile(pathToHTML);
+    const html = await promise.text();
+    document.querySelector("body").innerHTML = html;
+}, false,);
+
+async function fetchHTMLFile(path) {
+  return await fetch(path);
+}
+```
+
 ## Create a new document and open in a new window using ReadableStream
 
 > using readable stream takes html file and inserts it into a current window document
@@ -180,36 +210,6 @@ const centerY = top + height / 2;
 (async () => {
   await createDataUrls(clonedTableArray, dimensionsObj, additionalSlides, resolveURLCreation, rejectURL,);
 })();
-```
-
-# load html into html doc
-
-```javascript
-//************** Add path to files to test **********************//
-//path to html file you want to use
-const pathToHTML = "/Yuma_Regional/yuma_regional_launch.html";
-//path to html file you want to use
-
-//path to css file
-const cssFilePath = "01Launch_Page_Default_Template.css";
-//path to css file
-//************** Add path to files to test **********************//
-
-const cssLink = document.createElement("link");
-cssLink.rel = "stylesheet";
-cssLink.type = "text/css";
-cssLink.href = cssFilePath;
-document.querySelector("head").appendChild(cssLink);
-
-window.addEventListener("load", async function () {
-    const promise = await fetchHTMLFile(pathToHTML);
-    const html = await promise.text();
-    document.querySelector("body").innerHTML = html;
-}, false,);
-
-async function fetchHTMLFile(path) {
-  return await fetch(path);
-}
 ```
 
 # Conditional load scripts included in HTML by manipulating the type attribute

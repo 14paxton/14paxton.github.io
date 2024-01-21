@@ -28,6 +28,8 @@ Table of contents
 
 <br/>
 
+# [HTMLElement Interface](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)
+
 # Hide/Show
 
 ## CSS Style Hide
@@ -373,6 +375,8 @@ function createClone(element, setCSS, width, height) {
 ```
 
 # clone element to base64 png
+
+> using XMLSerializer
 
 ```javascript
 function svgToDataURL(svg) {

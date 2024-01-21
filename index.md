@@ -21,7 +21,7 @@ shortRepo: ghpages
 - [GISTs](https://gist.github.com/14paxton)
 - [LinkedIn](https://www.linkedin.com/in/paxtonbrandon/)
 
-# Site Map
+[//]: # (site map for mobile)
 <div id="insertion"></div>
 <script>
     const pathToHTML = '/assets/HTMLSnippets/Nav.html';
@@ -29,10 +29,14 @@ shortRepo: ghpages
         return await fetch(path);
     }
     async function loadHTML() {
-        console.log(navigator.userAgent);
         if (/(iphone|android|blackberry|webos)/i.test(navigator.userAgent)) {
+        console.log(navigator.userAgent);
             const promise = await fetchHTMLFile(pathToHTML);
-            document.querySelector('#insertion').innerHTML = await promise.text();
+            const el = document.querySelector('#insertion');
+            const h1 = document.createElement('h1' );
+            h1.innerText = 'site map';
+            el.innerHTML = await promise.text();
+            el.prepend(h1);
         }
     }
     function ready(fn) {
@@ -44,6 +48,7 @@ shortRepo: ghpages
         }
     }
     ready(loadHTML);
+
 </script>
 
 ---
