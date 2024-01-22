@@ -1,11 +1,11 @@
 ---
-title: HTTP
+title:     HTTP
 permalink: JavaScript/HTTP
-category: JavaScript
-parent: JavaScript
-layout: default
+category:  JavaScript
+parent:    JavaScript
+layout:    default
 has_children: false
-share: true
+share:     true
 shortRepo:
   - javascript
   - default
@@ -39,24 +39,23 @@ Fetch also integrates advanced HTTP concepts such as CORS and other extensions t
 ```javascript
 // Example POST method implementation:
 async function postData(url = "", data = {}) {
-  // Default options are marked with *
-  const response = await fetch(url, {
-    method: "POST", // *GET, POST, PUT, DELETE, etc.
-    mode: "cors", // no-cors, *cors, same-origin
-    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: "same-origin", // include, *same-origin, omit
-    headers: {
-      "Content-Type": "application/json", // 'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    redirect: "follow", // manual, *follow, error
-    referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-    body: JSON.stringify(data), // body data type must match "Content-Type" header
-  });
-  return response.json(); // parses JSON response into native JavaScript objects
+    // Default options are marked with *
+    const response = await fetch(url, {
+        method:         "POST", // *GET, POST, PUT, DELETE, etc.
+        mode:           "cors", // no-cors, *cors, same-origin
+        cache:          "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials:    "same-origin", // include, *same-origin, omit
+        headers:        {
+            "Content-Type": "application/json", // 'Content-Type': 'application/x-www-form-urlencoded',
+        }, redirect:    "follow", // manual, *follow, error
+        referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body:           JSON.stringify(data), // body data type must match "Content-Type" header
+    });
+    return response.json(); // parses JSON response into native JavaScript objects
 }
 
-postData("https://example.com/answer", { answer: 42 }).then((data) => {
-  console.log(data); // JSON data parsed by `data.json()` call
+postData("https://example.com/answer", {answer: 42}).then((data) => {
+    console.log(data); // JSON data parsed by `data.json()` call
 });
 ```
 
@@ -85,13 +84,31 @@ postData("https://example.com/answer", { answer: 42 }).then((data) => {
 
 ```javascript
 function reqListener() {
-  console.log(this.responseText);
+    console.log(this.responseText);
 }
 
 const req = new XMLHttpRequest();
 req.addEventListener("load", reqListener);
-req.open("GET", "http://www.example.org/example.txt");
+req.open("GET", "https://www.example.org/example.txt");
 req.send();
+```
+
+```javascript
+const xhttpr = new XMLHttpRequest();
+
+xhttpr.open('GET', 'Api_address', true);
+
+xhttpr.send();
+
+xhttpr.onload = () => {
+    if (xhttpr.status === 200) {
+        const response = JSON.parse(xhttpr.response);
+// Process the response data here
+    }
+    else {
+// Handle error
+    }
+};
 ```
 
 ## Types of requests
@@ -108,3 +125,32 @@ req.send();
     The constructor XMLHttpRequest isn't limited to only XML documents.
 It starts with "XML" because when it was created the main format that was originally used for asynchronous data exchange was XML.       
 </div>
+
+# Axios
+
+```javascript
+import axios from 'axios';
+
+axios.get('APIURL')
+     .then(response => {
+         const responsedata = response.data; // Access
+// Process the response data here
+     })
+     .catch(error => {
+// Handle any errors
+     )
+     };
+```
+
+# JQuery Ajax
+
+```javascript
+$.ajax({
+    url:      'APIURL'
+    method:   'GET', success: function (response) {
+        const parsedData = JSON.parse(response);
+// Process the parsed data here
+    }, error: function (xhr, status, error) {
+// Handle any errors
+    });
+```

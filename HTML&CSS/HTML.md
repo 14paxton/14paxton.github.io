@@ -27,7 +27,7 @@ Table of contents
 
 # TidBits
 
-## embed or load html file into html using object tag
+## embed, inject, or load an HTML file into HTML document using object tag
 
 ```html
 
@@ -56,7 +56,7 @@ const body = await response.text();
 document.querySelector("#some.selector").innerHTML = body;
 ```
 
-- [JS Code Reference](https://www.paxtonb.com/JavaScript/Clever-Algos#load-html-into-html-doc)
+- [JS Code Reference](https://www.paxtonb.com/JavaScript/Clever-Algos#load-html-and-css-file-into-html-doc)
 
 - [Read HTML Doc with scripst and css into HTML page](https://gist.github.com/14paxton/a5a6b17131a2791b757973f866e3eb98)
 
@@ -69,7 +69,7 @@ document.querySelector("#some.selector").innerHTML = body;
 <div w3-include-html="content.html"></div>
 ```
 
-> call includeHTML
+> using XMLHttpRequest
 
 ```html
 
