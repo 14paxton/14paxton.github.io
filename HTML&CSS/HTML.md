@@ -69,7 +69,7 @@ document.querySelector("#some.selector").innerHTML = body;
 <div w3-include-html="content.html"></div>
 ```
 
-> call includeHTML
+> using XMLHttpRequest
 
 ```html
 
