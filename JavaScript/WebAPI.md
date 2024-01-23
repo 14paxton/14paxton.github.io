@@ -133,7 +133,7 @@ request.onsuccess(() = {});
 
 > Manipulate files, access metadata.
 
-```javascript
+```html
 <input type="file" id="imageInput" accept="image/*">
     <button onclick="uploadPost ()">Upload Post</button>
     <script>
