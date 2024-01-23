@@ -134,13 +134,12 @@ request.onsuccess(() = {});
 > Manipulate files, access metadata.
 
 ```html
-<input type="file" id="imageInput" accept="image/*">
-    <button onclick="uploadPost ()">Upload Post</button>
+<input type="file" id="imageInput" accept="image/*" >
+    <button onclick="uploadPost ()" >Upload Post</button>
     <script>
-        function uploadPost() {const file = document.getElementById( 'imageInput'). files[0];
+        function uploadPost() {const file = document.getElementById( 'imageInput').files[0];
         console.log( 'Selected file:', file);}
     </script>
-</input>
 ```
 
 # Notification
@@ -158,7 +157,7 @@ Notification.requestPermission()
 
 ```javascript
 const worker = new Worker('worker.js');
-worker - postMessage('Hello from main script!');
+worker = postMessage('Hello from main script!');
 ```
 
 # Intersection Observer
