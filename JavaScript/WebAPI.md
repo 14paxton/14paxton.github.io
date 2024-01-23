@@ -72,6 +72,8 @@ fetch('http://example.com/movies.json')
 
 # Geolocation
 
+> Using Navigator
+
 ```javascript
 navigator.geolocation.getCurrentPosition(position => {
     console.log(`Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`);
