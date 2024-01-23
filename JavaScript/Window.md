@@ -27,6 +27,14 @@ Table of contents
 ---
 
 <br/>      
+
+# BOM
+
+> The Browser Object Model (BOM) in
+> JavaScript includes the properties and
+> methods for JavaScript to interact with
+> the web browser.
+
 # [window.open MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window/open)
 
 > The syntax of the `window.open` method is given below: open (URL, windowName[, windowFeatures])
@@ -42,7 +50,7 @@ Table of contents
 window.open("http://jsc.simfatic-solutions.com", "mywindow");
 ```
 
-- Changing the features of the Popup  
+- Changing the features of the Popup,  
   You can control the features of the popup using the last argument to the window.open method.  
   The following code opens a window with a status bar and no extra features.
 
@@ -240,3 +248,119 @@ setTimeout(() => {
 # window.opener
 
 > A newly created window can reference back to the window that opened it via the window.opener property. This allows you to exchange data between the two windows.
+
+# BOM
+
+## popups
+
+```javascript
+//can be written without window
+window.alert()
+alert()
+confirm()
+prompt()
+```
+
+```javascript
+const myPopup = window.open("https://example.com", "myPopup", "width=400, height=300");
+if (myPopup) {
+// Pop-up was opened successfully
+  const result = myPopup.confirm
+  "Do you want to submit this form?"
+)
+  ;
+  if (result) {
+// User clicked OK
+    const input = myPopup.prompt("Enter your name:");
+    if (input) {
+// User entered a name
+      myPopup.alert("Hello, " + input + "!");
+    }
+  }
+  else {
+// User clicked Cancel
+// Do nothing
+  }
+}
+else {
+// Pop-up was blocked by the browser
+// Do something else
+}
+```
+
+## Location
+
+> The window web page Location and provides methods object Loaded in represents the browser for the navigating URL of
+> to other URLS.
+
+```javascript
+// href (URL) of the current page
+window.location.href
+// domain name of the web host
+window.location.hostname
+// path and filename of the current page.
+window.location.pathname
+// the web protocol used (http: or https:)
+window.location.protocol
+// loads a new document
+window.location.assign()
+```
+
+## Navigator
+
+> The window web page Location and provides methods object Loaded in represents the browser for the navigating URL of
+> to other URLS.
+
+```javascript
+// This line logs the code name of the browser
+console.log("Browser code name:", navigator.appCodeName);
+// logs the name of the browser
+console.log("Browser name:", navigator.appName);
+// logs the version of the browser
+console.log("Browser version:", navigator.appVersion);
+// logs the platform or operating system where browser is running
+console.log("Platform:", navigator.platform);
+// it logs the user agent string for the browser, which detects type
+//and version of the browsee + the platform and other information
+console.log("User agent:", navigator.userAgent);
+```
+
+## History
+
+> The BOM provides a history object,
+> which contains methods and properties
+> related to the user's browsing history.
+
+```javascript
+console.Log("Number of pages in history:", history.length);
+// Go back one page
+history.back();
+// Go forward one page
+history.forward();
+// Go back two pages
+history.go(-2);
+```
+
+## Screen
+
+> about The screen object provides the user's screen, such information as its size
+> and resolution.
+
+```javascript
+//This line logs the width of the user's screen
+console.log("Screen width:", screen.width);
+
+// This line logs the height of the user's screen
+console.log("Screen height:", screen.height);
+
+// logs the available width of the users screen, after subtracting the space taken up
+//by the operating system's taskbar or dock 
+console.log("Available screen width:", screen.availWidth);
+
+//taken up by the operating system's taskbar or dock 
+// logs the available height of the user's screen in pixels, after subtracting the space
+console.log("Available screen height:", screen.availHeight);
+
+// This line logs the number of bits used to represent each color on the user's screen
+console.log("Color depth:", screen.colorDepth);
+```
