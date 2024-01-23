@@ -72,6 +72,8 @@ fetch('http://example.com/movies.json')
 
 # Geolocation
 
+> Using Navigator
+
 ```javascript
 navigator.geolocation.getCurrentPosition(position => {
     console.log(`Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`);
@@ -133,11 +135,11 @@ request.onsuccess(() = {});
 
 > Manipulate files, access metadata.
 
-```javascript
-<input type="file" id="imageInput" accept="image/*">
-    <button onclick="uploadPost ()">Upload Post</button>
+```html
+<input type="file" id="imageInput" accept="image/*" >
+    <button onclick="uploadPost ()" >Upload Post</button>
     <script>
-        function uploadPost() {const file = document.getElementById( 'imageInput'). files[0];
+        function uploadPost() {const file = document.getElementById( 'imageInput').files[0];
         console.log( 'Selected file:', file);}
     </script>
 ```
@@ -157,7 +159,7 @@ Notification.requestPermission()
 
 ```javascript
 const worker = new Worker('worker.js');
-worker - postMessage('Hello from main script!');
+worker = postMessage('Hello from main script!');
 ```
 
 # Intersection Observer
