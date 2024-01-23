@@ -140,6 +140,7 @@ request.onsuccess(() = {});
         function uploadPost() {const file = document.getElementById( 'imageInput'). files[0];
         console.log( 'Selected file:', file);}
     </script>
+</input>
 ```
 
 # Notification
