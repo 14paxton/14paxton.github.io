@@ -28,6 +28,23 @@ Table of contents
 
 <br/>
 
+# check if java is arm64
+
+```shell
+cat `which java` | file -
+```
+
+> output
+
+```
+/dev/stdin: Mach-O 64-bit executable arm64
+```
+
+- or
+  ```
+  /dev/stdin: Mach-O 64-bit executable x86_64
+  ```
+  
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
 <em>On Mac OS X 10.5 or later, we can use: </em>
 <br/>
