@@ -1,5 +1,15 @@
 # [Link for Site: www.paxtonb.com](https://www.paxtonb.com)
 
+# setup
+```shell
+brew install ruby;
+brew update;
+
+gem install bundler;
+bundle update --bundler;
+bundle install jekyll;
+bundle update;
+```
 # Install and Cache
 
 ```shell
