@@ -46,7 +46,7 @@ Keep in mind that it reads first from the system-wide file (i.e. /etc/zshenv) th
 
 </div>            
 
-.zshenv → .zprofile → .zshrc → .zlogin → .zlogout
+> ```.zshenv``` → ```.zprofile``` → ```.zshrc``` → ```.zlogin``` → ```.zlogout```
 
 ## .zprofile
 
