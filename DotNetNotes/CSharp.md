@@ -1,11 +1,11 @@
 ---
-title: CSharp
-permalink: DotNetNotes/csharp
-category: DotNetNotes
-parent: DotNetNotes
-layout: default
+title:        CSharp
+permalink:    DotNetNotes/csharp
+category:     DotNetNotes
+parent:       DotNetNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - dotnetnotes
   - default
@@ -265,75 +265,4 @@ namespace ConsoleApplication
 string currentDir = Directory.GetCurrentDirectory();
 string path = Path.Combine(new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName,"vcu-chat-bot");
 FileStream stream = new(path, FileMode.Open, FileAccess.Read);
-```
-
-# Email
-
-## use GMail as SMTP Server
-
-> GMail accounts can actually be used as an SMTP server, in a manner of speaking.
-> That’s exactly what we need – a way of sending an email to the mobile phone carrier, so they can in turn send a text
-> message to the mobile phone.
-> We send the email to GMail, GMail passes it on to the mobile phone carrier, which turns it into a text message and sends it to our cell phone.
-> Yes, it does involve a few
-> steps, but you can’t argue against the price (free!).
-
-> The SMTP server functionality isn’t exactly available for anyone to get access to – you have to have a GMail account (which is free).
-> Because of this, we will need to do a few special things.
-> More on
-> that later though.
-> Let’s see how it’s done.
-
-> Here’s a code snippet on how to do it. First of all, in our Windows App, we need to include the following “using” statements:
-
-```csharp
-using System.Net;
-using System.Net.Mail;
-```
-
-> Somewhere in the body of the program, we need to create a new MailMessage, give it some details, like so:
-
-```csharp
-MailMessage message = new MailMessage();
-message.To.Add("1234567890@txt.bell.ca");
-message.From = new MailAddress("yourgmailaccount@gmail.com", "App"); //See the note afterwards...
-message.Body = "This is your cell phone. How was your day?";
-```
-
-> At this point, the email address that the message comes from really doesn’t matter – it won’t show up as GMail will override it when it gets passed on to the mobile phone carrier.  
-> The important one to get right is the email address that it is going to be sent to.  
-> This depends on your phone number and your mobile carrier.  
-> In this case, the phone number is (123)456-7890 and the carrier is Bell.  
-> Check out the previously mentioned wikipedia link to see what your carrier-specific email address is.  
-> If you don’t get this right, the message will most certainly not get through.
-
-> Next, we need to create an SMTP client, and set it up:
-
-```csharp
-SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-smtp.EnableSsl = true;
-smtp.Port = 587;
-smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-smtp.Credentials = new NetworkCredential("yourgmailaddress@gmail.com", "yourgmailpassword");
-```
-
-> Here we create a new SMTP Client that will connect to the GMail SMTP server.
-> Because we are connecting to a GMail secured server we need to enable SSL, as well as use a particular port – port 587.
-> (
-> There is apparently another port that can be used, but I haven’t heard of anyone getting it to work – port 465).
-> Next, you need to put your own GMail email address where “yourgmailaddress.gmail.com”
-> is, as well as replace “yourgmailpassword” with your actual GMail password.
-
-> After this, there isn’t much you need to do – send the email, like so:
-
-```csharp
-try
-{
-smtp.Send(message);
-
-}
-catch (Exception ex)
-{
-MessageBox.Show(ex.Message);
-}
 ```
