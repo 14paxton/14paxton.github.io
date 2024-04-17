@@ -1,8 +1,8 @@
 ---
 title:        Email
-permalink:    /Users/lamont/GitHub/14paxton.github.io/DotNetNotes/Email
-category:     Users
-parent:       Users
+permalink:    DotNetNotes/CSharp/Email
+category:     DotNetNotes
+parent:       CSharp
 layout:       default
 has_children: false
 share:        true

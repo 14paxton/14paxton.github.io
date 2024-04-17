@@ -1,10 +1,10 @@
 ---
 title:        CSharp
-permalink:    DotNetNotes/csharp
+permalink:    DotNetNotes/Csharp
 category:     DotNetNotes
 parent:       DotNetNotes
 layout:       default
-has_children: false
+has_children: true
 share:        true
 shortRepo:
   - dotnetnotes
