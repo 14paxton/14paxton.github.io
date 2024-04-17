@@ -4,6 +4,7 @@ permalink:    DotNetNotes/CSharp/Email
 category:     DotNetNotes
 parent:       CSharp
 layout:       default
+grand_parent: DotNetNotes
 has_children: false
 share:        true
 shortRepo:
@@ -72,6 +73,8 @@ Table of contents
 
 > ### ex 2
 
+> [MailMessage Class ](https://learn.microsoft.com/en-us/dotnet/api/system.net.mail.mailmessage?redirectedfrom=MSDN&view=net-9.0)
+
 ```csharp
 using (var client = new System.Net.Mail.SmtpClient())
 {
@@ -129,6 +132,8 @@ I just wanted to let you know that Monica and I were going to go play some paint
 ```
 
 ## Mailkit
+
+> [MailKit Github](https://github.com/jstedfast/MailKit)
 
 ```csharp
 using MailKit.Net.Smtp.SmtpClient client = new MailKit.Net.Smtp.SmtpClient();
