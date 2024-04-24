@@ -153,7 +153,7 @@ string currentDir = Directory.GetCurrentDirectory();
 
 Console.WriteLine(currentDir);
 // We may also want to attach a calendar event for Monica's party...
-// builder.Attachments.Add ($@"{currentDir}/../mveikFiles.zip");
+// builder.Attachments.Add ($@"{currentDir}/../Files.zip");
 
 // Now we just need to set the message body and we're done
 message.Body = builder.ToMessageBody ();
