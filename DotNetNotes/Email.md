@@ -32,170 +32,174 @@ Table of contents
 
 # Email Packages
 
-## System.Net.Mail.SmtpClient
+## Body
 
-> ### ex 1
-
-```csharp
- string body = "<head>" +
-               "Here comes some logo" +
-               "</head>" +
-               "<body>" +
-               "<h1>Account confirmation reqest.</h1>" + Environment.NewLine +
-               "<a>Dear User, </a>" + Environment.NewLine +
-               "<a>In order to be able to use musicshop app properly, we require You to confirm Your email address.</a>" + Environment.NewLine +
-               "<a>This is the last step towards using our app.</a>" + Environment.NewLine +
-               "<a>Pleas follow this hyperlink to confirm your address.</a>" + Environment.NewLine +
-               "<a>[Callback url]</a>" +
-               "</body>";
- try
- {
-     using (var smtpClient = new System.Net.Mail.SmtpClient("smtp-relay.brevo.com", 587))
-     {
-         smtpClient.UseDefaultCredentials = false;
-         smtpClient.Credentials = new System.Net.NetworkCredential()
-         {
-             UserName = "email",
-             Password = "password",
-         };
-         smtpClient.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
-         smtpClient.EnableSsl = true;
-
-         smtpClient.Send("14paxton@gmail.com", "14paxton@gmail.com", "Account verification", body);
-     }
- }
- catch (Exception e)
- {
-     Console.Error.WriteLine("{0}: {1}", e.ToString(), e.Message);
- }
-
-```
-
-> ### ex 2
-
-> [MailMessage Class ](https://learn.microsoft.com/en-us/dotnet/api/system.net.mail.mailmessage?redirectedfrom=MSDN&view=net-9.0)
+### MimeKit
 
 ```csharp
-using (var client = new System.Net.Mail.SmtpClient())
-{
-
-    client.Host = "smtp.office365.com";
-    client.Port = 587;
-
-    // client.Host = "smtp.elasticemail.com";
-    // client.Port = 2525;#1#
-
-    // client.Host = "smtp.gmail.com";
-    // client.Port = 587;
-
-    client.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
-    client.UseDefaultCredentials = false;
-    client.EnableSsl = true;
-
-    client.Credentials = new System.Net.NetworkCredential("email", "password");
-
-
-    var bpaxton = new System.Net.Mail.MailAddress("14paxton@gmail.com", "Bpaxton");
-    var megs = new System.Net.Mail.MailAddress("megs@gmail.com", "Megan");
-    using (var message = new System.Net.Mail.MailMessage(
-               from: megs,
-               to: bpaxton
-           ))
+    using MimeKit;
+    
+    MimeMessage message = new MimeMessage();
+    message.From.Add(new MailboxAddress("brandon paxton", "14paxton@gmail.com"));
+    message.To.Add(new MailboxAddress("cunt bigalow", "14paxton@gmail.com"));
+    message.Subject = "How you doin'?";
+    
+    message.Body = new TextPart("plain")
     {
-
-        message.Subject = "Hello from code!";
-        message.Body = "Loremn ipsum dolor sit amet ...";
-
-        client.Send(message);
-    }
-}
-```
-
-## MimeKit
-
-```csharp
-using MimeKit;
-
-MimeMessage message = new MimeMessage();
-message.From.Add(new MailboxAddress("brandon paxton", "14paxton@gmail.com"));
-message.To.Add(new MailboxAddress("cunt bigalow", "14paxton@gmail.com"));
-message.Subject = "How you doin'?";
-
-message.Body = new TextPart("plain")
-{
-Text = @"Hey Chandler,
-
-I just wanted to let you know that Monica and I were going to go play some paintball, you in?
-
--- Joey"
-};
+    Text = @"Hey Chandler,
+    
+    I just wanted to let you know that Monica and I were going to go play some paintball, you in?
+    
+    -- Joey"
+    };
 ```
 
 ### BodyBuilder
 
+> adding attachments too
+
 ```csharp
-var builder = new BodyBuilder
-{
-    // Set the plain-text version of the message text
-    TextBody = @"Hey Alice,
-
-What are you up to this weekend? Monica is throwing one of her parties on
-Saturday. I was hoping you could make it.
-
-Will you be my +1?
-
--- Joey
-"
-};
-
-string currentDir = Directory.GetCurrentDirectory();
-// string path = Path.Combine(new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName,"vcu-chat-bot");
-
-Console.WriteLine(currentDir);
-// We may also want to attach a calendar event for Monica's party...
-// builder.Attachments.Add ($@"{currentDir}/../Files.zip");
-
-// Now we just need to set the message body and we're done
-message.Body = builder.ToMessageBody ();
+    var builder = new BodyBuilder
+    {
+        // Set the plain-text version of the message text
+        TextBody = @"Hey Alice,
+    
+    What are you up to this weekend? Monica is throwing one of her parties on
+    Saturday. I was hoping you could make it.
+    
+    Will you be my +1?
+    
+    -- Joey
+    "
+    };
+    
+    string currentDir = Directory.GetCurrentDirectory();
+    // string path = Path.Combine(new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName,"vcu-chat-bot");
+    
+    Console.WriteLine(currentDir);
+    builder.Attachments.Add ($@"{currentDir}/../Files.zip");
+    
+    // Now we just need to set the message body and we're done
+    message.Body = builder.ToMessageBody ();
 ```
 
-## Mailkit
+## SMTP sending
+
+### System.Net.Mail.SmtpClient
+
+> #### ex 1
+
+   ```csharp
+     string body = "<head>" +
+                   "Here comes some logo" +
+                   "</head>" +
+                   "<body>" +
+                   "<h1>Account confirmation reqest.</h1>" + Environment.NewLine +
+                   "<a>Dear User, </a>" + Environment.NewLine +
+                   "<a>In order to be able to use musicshop app properly, we require You to confirm Your email address.</a>" + Environment.NewLine +
+                   "<a>This is the last step towards using our app.</a>" + Environment.NewLine +
+                   "<a>Pleas follow this hyperlink to confirm your address.</a>" + Environment.NewLine +
+                   "<a>[Callback url]</a>" +
+                   "</body>";
+     try
+     {
+         using (var smtpClient = new System.Net.Mail.SmtpClient("smtp-relay.brevo.com", 587))
+         {
+             smtpClient.UseDefaultCredentials = false;
+             smtpClient.Credentials = new System.Net.NetworkCredential()
+             {
+                 UserName = "email",
+                 Password = "password",
+             };
+             smtpClient.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+             smtpClient.EnableSsl = true;
+    
+             smtpClient.Send("14paxton@gmail.com", "14paxton@gmail.com", "Account verification", body);
+         }
+     }
+     catch (Exception e)
+     {
+         Console.Error.WriteLine("{0}: {1}", e.ToString(), e.Message);
+     }
+   ```
+
+> #### ex 2
+
+> [MailMessage Class ](https://learn.microsoft.com/en-us/dotnet/api/system.net.mail.mailmessage?redirectedfrom=MSDN&view=net-9.0)
+
+   ```csharp
+    using (var client = new System.Net.Mail.SmtpClient())
+    {
+    
+        client.Host = "smtp.office365.com";
+        client.Port = 587;
+    
+        // client.Host = "smtp.elasticemail.com";
+        // client.Port = 2525;#1#
+    
+        // client.Host = "smtp.gmail.com";
+        // client.Port = 587;
+    
+        client.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+        client.UseDefaultCredentials = false;
+        client.EnableSsl = true;
+    
+        client.Credentials = new System.Net.NetworkCredential("email", "password");
+    
+    
+        var bpaxton = new System.Net.Mail.MailAddress("14paxton@gmail.com", "Bpaxton");
+        var megs = new System.Net.Mail.MailAddress("megs@gmail.com", "Megan");
+        using (var message = new System.Net.Mail.MailMessage(
+                   from: megs,
+                   to: bpaxton
+               ))
+        {
+    
+            message.Subject = "Hello from code!";
+            message.Body = "Loremn ipsum dolor sit amet ...";
+    
+            client.Send(message);
+        }
+    }
+   ```
+
+### Mailkit
 
 > [MailKit Github](https://github.com/jstedfast/MailKit)
 
-```csharp
-using MailKit.Net.Smtp.SmtpClient client = new MailKit.Net.Smtp.SmtpClient();
+   ```csharp
+    using MailKit.Net.Smtp.SmtpClient client = new MailKit.Net.Smtp.SmtpClient();
+    
+    client.Connect("smtp.add.org", 587, false);
+    // client.Connect("smtp.office365.com", 587, false);
+    // client.Connect("smtp.gmail.com", 587, false);
+    // client.Connect("smtp-relay.brevo.com", 587, false);
+    
+    // Note: only needed if the SMTP server requires authentication
+    
+    client.Authenticate("admin", "pw");
+    
+    client.Send(message);
+    client.Disconnect(true);
+   ```
 
-client.Connect("smtp.add.org", 587, false);
-// client.Connect("smtp.office365.com", 587, false);
-// client.Connect("smtp.gmail.com", 587, false);
-// client.Connect("smtp-relay.brevo.com", 587, false);
+> #### MailKitSimplified
 
-// Note: only needed if the SMTP server requires authentication
-
-client.Authenticate("admin", "pw");
-
-client.Send(message);
-client.Disconnect(true);
-```
-
-> MailKitSimplified
-
-```csharp
-using (var smtpSender = MailKitSimplified.Sender.Services.SmtpSender.Create("smtp.gmail.com").SetCredential("email", "password"))
-{
-smtpSender.WriteEmail
-.From("my.name@example.com")
-.To("14paxton@gmail.com")
-.Subject("Hello World")
-.BodyHtml("<p>Hi</p>")
-.Send();
-
-smtpSender.Dispose();
-}
-
-Console.WriteLine("resp");
-```
+   ```csharp
+        using (var smtpSender = MailKitSimplified.Sender.Services.SmtpSender.Create("smtp.gmail.com").SetCredential("email", "password"))
+        {
+        smtpSender.WriteEmail
+        .From("my.name@example.com")
+        .To("14paxton@gmail.com")
+        .Subject("Hello World")
+        .BodyHtml("<p>Hi</p>")
+        .Send();
+        
+        smtpSender.Dispose();
+        }
+        
+        Console.WriteLine("resp");
+   ```
 
 # use GMail as SMTP Server
 
