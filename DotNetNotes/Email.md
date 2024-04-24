@@ -131,6 +131,34 @@ I just wanted to let you know that Monica and I were going to go play some paint
 };
 ```
 
+### BodyBuilder
+
+```csharp
+var builder = new BodyBuilder
+{
+    // Set the plain-text version of the message text
+    TextBody = @"Hey Alice,
+
+What are you up to this weekend? Monica is throwing one of her parties on
+Saturday. I was hoping you could make it.
+
+Will you be my +1?
+
+-- Joey
+"
+};
+
+string currentDir = Directory.GetCurrentDirectory();
+// string path = Path.Combine(new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName,"vcu-chat-bot");
+
+Console.WriteLine(currentDir);
+// We may also want to attach a calendar event for Monica's party...
+// builder.Attachments.Add ($@"{currentDir}/../mveikFiles.zip");
+
+// Now we just need to set the message body and we're done
+message.Body = builder.ToMessageBody ();
+```
+
 ## Mailkit
 
 > [MailKit Github](https://github.com/jstedfast/MailKit)
@@ -138,14 +166,14 @@ I just wanted to let you know that Monica and I were going to go play some paint
 ```csharp
 using MailKit.Net.Smtp.SmtpClient client = new MailKit.Net.Smtp.SmtpClient();
 
-client.Connect("smtp.mailgun.org", 587, false);
+client.Connect("smtp.add.org", 587, false);
 // client.Connect("smtp.office365.com", 587, false);
 // client.Connect("smtp.gmail.com", 587, false);
 // client.Connect("smtp-relay.brevo.com", 587, false);
 
 // Note: only needed if the SMTP server requires authentication
 
-client.Authenticate("postmaster@sandbox96b42e367269490bbf1200ad2556e67e.mailgun.org", "8d95cf2bc1394413506cd28ed659a68e-b7b36bc2-36567af6");
+client.Authenticate("admin", "pw");
 
 client.Send(message);
 client.Disconnect(true);
