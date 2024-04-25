@@ -1,11 +1,11 @@
 ---
-title: CLI
-permalink: DotNetNotes/CLI
-category: DotNetNotes
-parent: DotNetNotes
-layout: default
+title:        CLI
+permalink:    DotNetNotes/CLI
+category:     DotNetNotes
+parent:       DotNetNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - dotnetnotes
   - default
@@ -32,9 +32,7 @@ Table of contents
 
 # [Environment Variables](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-environment-variables#net-sdk-and-cli-environment-variables)
 
-# Install
-
-## [Install Scripts](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script)
+# [Install](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script)
 
 ## Windows PowerShell
 
@@ -50,26 +48,26 @@ Invoke-WebRequest -Uri https://dot.net/v1/dotnet-install.ps1 -OutFile "$env:temp
 
 ## Bash
 
-```sh
+```shell
 wget https://dot.net/v1/dotnet-install.sh && chmod +x ./dotnet-install.sh && sudo ./dotnet-install.sh
 ```
 
 ## Apt
 
-```sh
+```shell
 sudo apt update
 sudo apt install dotnet6
 ```
 
 # WinGet
 
-```bat
+```cmd
 winget install Microsoft.DotNet.SDK.6
 ```
 
 ## Chocolatey
 
-```bat
+```cmd
 choco upgrade dotnet-sdk
 ```
 
@@ -84,7 +82,7 @@ choco upgrade dotnet-sdk
 
 > Check if there are updates available for the template packs that are currently installed. Available since .NET Core 3.0 SDK.
 
-```bat
+```cmd
 dotnet new --update-check
 ```
 
@@ -92,7 +90,7 @@ dotnet new --update-check
 
 > Check if there are updates available for the template packs that are currently installed and installs them. Available since .NET Core 3.0 SDK.
 
-```bat
+```cmd
 dotnet new --update-apply
 ```
 
@@ -102,7 +100,7 @@ dotnet new --update-apply
 
 ### dotnet tool
 
-```bash
+```shell
 dotnet tool install --arch arm64
 ```
 
@@ -135,8 +133,86 @@ export DOTNET_ROOT_ARM64=/usr/local/share/dotnet
 export DOTNET_ROOT_X64=/usr/local/share/dotnet/x64
 ```
 
+# Run
+
+```shell
+dotnet run --urls=https://localhost:5101
+```
+
+# HttpRepl
+
+```shell
+ dotnet tool install;
+
+export PATH="$PATH:/Users/bp/.dotnet/tools";
+httprepl http://localhost:5001                  
+```
+
+- list and select controllers
+
+> ls , cd
+
+- post
+
+```shell
+post -c "{"name":"Hawaii", "isGlutenFree":false}"
+```
+
+# Entity Framework
+
+## add
+
+```shell
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite;
+dotnet add package Microsoft.EntityFrameworkCore.Design;
+dotnet tool install --global dotnet-ef;
+```
+
+## create db tables
+
+```shell
+using ContosoPizza.Data;
+```
+
+## apply create
+
+```shell
+dotnet ef database update --context PizzaContext
+```
+
+## revisions
+
+```shell
+dotnet ef migrations add ModelRevisions --context PizzaContext
+```
+
+## update
+
+```shell
+dotnet ef database update --context PizzaContext
+```
+
+## Build scafolding
+
+```shell
+dotnet ef dbcontext scaffold "Data Source=./Promotions/Promotions.db" Microsoft.EntityFrameworkCore.Sqlite --context-dir ./Data --output-dir .\Models
+```
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">            
+           The preceding command:
+
+- Scaffolds a DbContext and model classes using the provided connection string.
+- Specify the Microsoft.EntityFrameworkCore.Sqlite database provider should be used.
+- Specify directories for the resulting DbContext and model classes.
+
+</div>            
+
 # Resources
 
-## [dotnet 6 and ubuntu](https://devblogs.microsoft.com/dotnet/dotnet-6-is-now-in-ubuntu-2204/)
+- ## [dotnet 6 and ubuntu](https://devblogs.microsoft.com/dotnet/dotnet-6-is-now-in-ubuntu-2204/)
 
-### [Ubuntu Packages](https://packages.ubuntu.com/search?suite=default&section=all&arch=any&keywords=dotnet&searchon=names)
+    - ### [Ubuntu Packages](https://packages.ubuntu.com/search?suite=default&section=all&arch=any&keywords=dotnet&searchon=names)
+
+## - [Build Web API Tutorial](https://learn.microsoft.com/en-us/training/modules/build-web-api-aspnet-core/6-exercise-add-controller)
+
+## - [ASP.net Core](https://dotnet.microsoft.com/en-us/apps/aspnet)
