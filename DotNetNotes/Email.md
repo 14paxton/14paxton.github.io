@@ -85,9 +85,7 @@ Table of contents
 
 ## SMTP sending
 
-### System.Net.Mail.SmtpClient
-
-> #### ex 1
+> ### System.Net.Mail.SmtpClient
 
    ```csharp
      string body = "<head>" +
@@ -123,11 +121,9 @@ Table of contents
      }
    ```
 
-> #### ex 2
+> ### [MailMessage Class ](https://learn.microsoft.com/en-us/dotnet/api/system.net.mail.mailmessage?redirectedfrom=MSDN&view=net-9.0)
 
-> [MailMessage Class ](https://learn.microsoft.com/en-us/dotnet/api/system.net.mail.mailmessage?redirectedfrom=MSDN&view=net-9.0)
-
-   ```csharp
+  ```csharp
     using (var client = new System.Net.Mail.SmtpClient())
     {
     
@@ -163,9 +159,8 @@ Table of contents
     }
    ```
 
-### Mailkit
-
-> [MailKit Github](https://github.com/jstedfast/MailKit)
+> ### MailKit.Net.Smtp.SmtpClient
+>> [MailKit Github](https://github.com/jstedfast/MailKit)
 
    ```csharp
     using MailKit.Net.Smtp.SmtpClient client = new MailKit.Net.Smtp.SmtpClient();
@@ -267,3 +262,174 @@ catch (Exception ex)
     MessageBox.Show(ex.Message);
 }
 ```
+
+# Resources
+
+## Free SMTP Servers
+
+<table border="1" data-aura-rendered-by="148:474;a" style="width: 600px;">
+    <thead>
+    <tr valign="top">
+        <th colspan="1" rowspan="1" style="text-align: center;">Provider</th>
+        <th colspan="1" rowspan="1" style="text-align: center;">SMTP Server</th>
+        <th colspan="1" rowspan="1" style="text-align: center;">SMTP<br> Port</th>
+        <th colspan="1" rowspan="1" style="text-align: center;">SMTP Host Name</th>
+        <th colspan="1" rowspan="1" style="text-align: center;">Use<br> TLS</th>
+        <th colspan="1" rowspan="1" style="text-align: center;">Use<br> Start<br> TLS</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr valign="top">
+        <td colspan="1" rowspan="1" style="text-align: center;">Plasec Brinkster</td>
+        <td colspan="1" rowspan="1" style="text-align: center;"><a href="http://mymail.brinkster.com" rel="noopener" target="_blank">mymail.brinkster.com</a></td>
+        <td colspan="1" rowspan="1" style="text-align: center;">2525</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">leave blank/empty</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">no</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">no</td>
+    </tr>
+    <tr valign="top">
+        <td colspan="1" rowspan="1" style="text-align: center;">Yahoo Mail</td>
+        <td colspan="1" rowspan="1" style="text-align: center;"><a href="http://smtp.mail.yahoo.com" rel="noopener" target="_blank">smtp.mail.yahoo.com</a></td>
+        <td colspan="1" rowspan="1" style="text-align: center;">587</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">leave blank/empty</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">no</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">no</td>
+    </tr>
+    <tr valign="top">
+        <td colspan="1" rowspan="1" style="text-align: center;">Hotmail</td>
+        <td colspan="1" rowspan="1" style="text-align: center;"><a href="http://smtp.live.com" rel="noopener" target="_blank">smtp.live.com</a></td>
+        <td colspan="1" rowspan="1" style="text-align: center;">587</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">leave blank/empty</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">yes</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">yes</td>
+    </tr>
+    <tr valign="top">
+        <td colspan="1" rowspan="1" style="text-align: center;">Google Gmail</td>
+        <td colspan="1" rowspan="1" style="text-align: center;"><a href="http://smtp.gmail.com" rel="noopener" target="_blank">smtp.gmail.com</a>&nbsp;<br> [or&nbsp;<a
+                href="http://smtp-relay.gmail.com"
+                rel="noopener"
+                target="_blank"
+        >smtp-relay.gmail.com</a><br> if enabled&nbsp;within&nbsp;client's Gmail account]
+        </td>
+        <td colspan="1" rowspan="1" style="text-align: center;">587</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">leave blank/empty</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">no</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">yes</td>
+    </tr>
+    <tr valign="top">
+        <td colspan="1" rowspan="1" style="text-align: center;">Microsoft Office 365</td>
+        <td colspan="1" rowspan="1" style="text-align: center;"><a href="http://smtp.office365.com" rel="noopener" target="_blank">smtp.office365.com</a></td>
+        <td colspan="1" rowspan="1" style="text-align: center;">587</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">leave blank/empty</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">no</td>
+        <td colspan="1" rowspan="1" style="text-align: center;">yes</td>
+    </tr>
+    </tbody>
+</table>
+
+## Paid SMTP Servers
+
+<table class="has-black-color has-text-color">
+    <thead>
+    <tr>
+        <th class="has-text-align-left" data-align="left">Free SMTP Servers</th>
+        <th class="has-text-align-center" data-align="center"> Starting price</th>
+        <th class="has-text-align-center" data-align="center">Free email Daily limit</th>
+        <th class="has-text-align-center" data-align="center">Free Email<br>/Month</th>
+        <th class="has-text-align-center" data-align="center">Used for</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="has-text-align-left" data-align="left"><strong><a data-id="#1_Brevo" data-type="internal" href="#1_Brevo">Brevo</a></strong></td>
+        <td class="has-text-align-center" data-align="center">$25/month for <br>20K emails</td>
+        <td class="has-text-align-center" data-align="center">300</td>
+        <td class="has-text-align-center" data-align="center">9000</td>
+        <td class="has-text-align-center" data-align="center">SMTP, email marketing, SMS, and marketing automation</td>
+    </tr>
+    <tr>
+        <td class="has-text-align-left" data-align="left"><strong><a data-id="#3_Elastic_Emails" data-type="internal" href="#3_Elastic_Emails">Elastic Emails</a></strong></td>
+        <td class="has-text-align-center" data-align="center">No daily limit</td>
+        <td class="has-text-align-center" data-align="center">100</td>
+        <td class="has-text-align-center" data-align="center">3000</td>
+        <td class="has-text-align-center" data-align="center">Email campaigns</td>
+    </tr>
+    <tr>
+        <td class="has-text-align-left" data-align="left"><strong><a data-id="#4_SendPulse" data-type="internal" href="#4_SendPulse">Sendpulse</a></strong></td>
+        <td class="has-text-align-center" data-align="center">$6.40 for<br>Unlimited emails</td>
+        <td class="has-text-align-center" data-align="center">400</td>
+        <td class="has-text-align-center" data-align="center">15000</td>
+        <td class="has-text-align-center" data-align="center">Email marketing, WhatsApp campaigns, and SMS</td>
+    </tr>
+    <tr>
+        <td class="has-text-align-left" data-align="left"><strong><a data-id="#5_Amazon_SES" data-type="internal" href="#5_Amazon_SES">Amazon SES</a></strong></td>
+        <td class="has-text-align-center" data-align="center">$0.10 per<br>1000 emails</td>
+        <td class="has-text-align-center" data-align="center">NA</td>
+        <td class="has-text-align-center" data-align="center">62000</td>
+        <td class="has-text-align-center" data-align="center">Email marketing, notifications, and transactional emails</td>
+    </tr>
+    <tr>
+        <td class="has-text-align-left" data-align="left"><strong><a data-id="#6_Mailgun" data-type="internal" href="#6_Mailgun">Mailgun</a></strong></td>
+        <td class="has-text-align-center" data-align="center">$35/month for<br>50K emails</td>
+        <td class="has-text-align-center" data-align="center">200</td>
+        <td class="has-text-align-center" data-align="center">50000 for the First 30 days</td>
+        <td class="has-text-align-center" data-align="center">Transactional emails</td>
+    </tr>
+    <tr>
+        <td class="has-text-align-left" data-align="left"><strong><a data-id="#7_Google_SMTP_Server" data-type="internal" href="#7_Google_SMTP_Server">Google SMTP</a></strong></td>
+        <td class="has-text-align-center" data-align="center">$6/month for<br>2000 emails/day</td>
+        <td class="has-text-align-center" data-align="center">500mails/day <br>for 14 days</td>
+        <td class="has-text-align-center" data-align="center">Valid for 14 days</td>
+        <td class="has-text-align-center" data-align="center">For low email volumes</td>
+    </tr>
+    <tr>
+        <td class="has-text-align-left" data-align="left"><strong><a data-id="#8_SendGrid" data-type="internal" href="#8_SendGrid">Sendgrid</a></strong></td>
+        <td class="has-text-align-center" data-align="center">$19.95/month for<br>50K emails</td>
+        <td class="has-text-align-center" data-align="center">100</td>
+        <td class="has-text-align-center" data-align="center">3000</td>
+        <td class="has-text-align-center" data-align="center">Promotional emails, Newsletters, Password reset emails</td>
+    </tr>
+    <tr>
+        <td class="has-text-align-left" data-align="left"><strong><a data-id="#9_Moosend" data-type="internal" href="#9_Moosend">Moosend</a></strong></td>
+        <td class="has-text-align-center" data-align="center">$9/month for <br>Unlimited emails</td>
+        <td class="has-text-align-center" data-align="center">Unlimited</td>
+        <td class="has-text-align-center" data-align="center">Unlimited for the First 30 days</td>
+        <td class="has-text-align-center" data-align="center">Email marketing</td>
+    </tr>
+    <tr>
+        <td class="has-text-align-left" data-align="left"><strong><a data-id="#10_SMTP2GO" data-type="internal" href="#10_SMTP2GO">SMTP2GO</a></strong></td>
+        <td class="has-text-align-center" data-align="center">$10/month for<br>10K emails</td>
+        <td class="has-text-align-center" data-align="center">200</td>
+        <td class="has-text-align-center" data-align="center">1000</td>
+        <td class="has-text-align-center" data-align="center">Transactional <br>and Marketing emails</td>
+    </tr>
+    <tr>
+        <td class="has-text-align-left" data-align="left"><a data-id="#11_MailerSend" data-type="internal" href="#11_MailerSend">MailerSend</a></td>
+        <td class="has-text-align-center" data-align="center">$24/month for 50K emails</td>
+        <td class="has-text-align-center" data-align="center">NA</td>
+        <td class="has-text-align-center" data-align="center">3000</td>
+        <td class="has-text-align-center" data-align="center">Transactional emails, Email marekting ,SMTP</td>
+    </tr>
+    <tr>
+        <td class="has-text-align-left" data-align="left"><a data-id="#12_Mailtrap" data-type="internal" href="#12_Mailtrap">Mailtrap</a></td>
+        <td class="has-text-align-center" data-align="center">$10/month for 10k emails</td>
+        <td class="has-text-align-center" data-align="center">NA</td>
+        <td class="has-text-align-center" data-align="center">1000</td>
+        <td class="has-text-align-center" data-align="center">SMTP, Email marketing, QA automation</td>
+    </tr>
+    <tr>
+        <td class="has-text-align-left" data-align="left"><a data-id="#13_Postmark" data-type="internal" href="#13_Postmark">Postmark</a></td>
+        <td class="has-text-align-center" data-align="center">$15/month for 10,000 emails</td>
+        <td class="has-text-align-center" data-align="center">NA</td>
+        <td class="has-text-align-center" data-align="center">100 emails per month</td>
+        <td class="has-text-align-center" data-align="center">Free SMTP relay and transactional emails</td>
+    </tr>
+    <tr>
+        <td class="has-text-align-left" data-align="left">Sarbacane</td>
+        <td class="has-text-align-center" data-align="center">129€/month* for unlimited emails</td>
+        <td class="has-text-align-center" data-align="center">No daily limitF</td>
+        <td class="has-text-align-center" data-align="center">NA</td>
+        <td class="has-text-align-center" data-align="center">SMS marketing, SMTP, email marketing, Transactional emails</td>
+    </tr>
+    </tbody>
+</table>-
