@@ -74,20 +74,19 @@ Thread thread1 = Thread.ofVirtual().start(() -> {
 Thread thread2 = Thread.ofVirtual().start(() -> {
 //Task 2 code
 });
+
 ```
 
 ```java
+
 // Wait for both threads to finish using join()
-try{
+try {
         thread1.join();
-thread2.
-
-join();
-}catch(
-Exception e){
-
+        thread2.join();
+} catch(Exception e) {
 println("Thread Interrupted");
 }
+
 ```
 
 ```java
