@@ -432,4 +432,4 @@ catch (Exception ex)
         <td class="has-text-align-center" data-align="center">SMS marketing, SMTP, email marketing, Transactional emails</td>
     </tr>
     </tbody>
-</table>-
+</table>
