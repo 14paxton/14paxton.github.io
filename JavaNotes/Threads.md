@@ -1,6 +1,6 @@
 ---
 title:        Threads
-permalink:    JavaNotes/Threads
+permalink:    /JavaNotes/Threads
 category:     JavaNotes
 parent:       Java
 layout:       default
