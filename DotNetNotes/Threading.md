@@ -51,3 +51,32 @@ lock (lockobject)
 { // Ihread-safe code
 }
 ```
+
+# Async and Await
+
+```csharp
+public async Task<int> MyAsyncMethod()
+{
+// Asynchronous code
+return await SomeAsyncOperation();
+}
+```
+
+# Parallel
+
+```csharp
+Parallel. For(0, 10, 1 MyParallel Method(i));
+```
+
+# Thread Safety Limited Resource Pool
+
+```csharp
+// Creain Semaphore whith allow 5 sreads to enter sy
+private static Semaphore semaphore = new Semaphore(5, 5);
+ThreadPool.QueueUserWorkItem(_ =>
+{
+semaphore.WaitOne();
+//Critical section: Only five thruads can chocote this block simultaneously 
+semaphore.Release();
+}
+```
