@@ -32,14 +32,14 @@ Table of contents
 
 # Create Thread
 
-```c#
+```cs
 Thread newThread = new Thread(MyThreadMethod);
         newThread.Start();
 ```
 
 # Thread Pooling
 
-```csharp
+```cs
 ThreadPool.QueueUserWorkItem(MyThreadMethod);
 ```
 
