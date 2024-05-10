@@ -1,11 +1,11 @@
 ---
-title: Hibernate
-permalink: SpringNotes/Hibernate
-category: SpringNotes
-parent: SpringNotes
-layout: default
+title:        Hibernate
+permalink:    SpringNotes/Hibernate
+category:     SpringNotes
+parent:       SpringNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - springnotes
   - default
@@ -34,11 +34,17 @@ Table of contents
 
 ### getting session-
 
-`def sessionFactory`
+```groovy
+def sessionFactory
+```
 
-`def session = sessionFactory?.getCurrentSession()`
+```groovy
+def session = sessionFactory?.getCurrentSession()
+```
 
-`RequestContextHolder.currentRequestAttributes().getSession()`
+```groovy
+RequestContextHolder.currentRequestAttributes().getSession()
+```
 
 ## -get hibernate datastore in session-
 
@@ -48,18 +54,18 @@ Table of contents
 
 ```java
 public class HibernateExample {
-   @Autowired
-   HibernateDatastore hibernateDatastore;
+    @Autowired
+    HibernateDatastore hibernateDatastore;
 
-   @Autowired
-   DatabaseProvisioningService databaseProvisioningService;
+    @Autowired
+    DatabaseProvisioningService databaseProvisioningService;
 
-   @Listener(User)
-   void onUserPostInsertEvent(PostInsertEvent event) {
-      String username = event.getEntityAccess().getPropertyValue("username");
-      DatabaseConfiguration databaseConfiguration = databaseProvisioningService.findDatabaseConfigurationByUsername(username);
-      hibernateDatastore.getConnectionSources().addConnectionSource(databaseConfiguration.dataSourceName, databaseConfiguration.configuration);
-   }
+    @Listener(User)
+    void onUserPostInsertEvent(PostInsertEvent event) {
+        String username = event.getEntityAccess().getPropertyValue("username");
+        DatabaseConfiguration databaseConfiguration = databaseProvisioningService.findDatabaseConfigurationByUsername(username);
+        hibernateDatastore.getConnectionSources().addConnectionSource(databaseConfiguration.dataSourceName, databaseConfiguration.configuration);
+    }
 }
 ```
 
@@ -75,15 +81,21 @@ ctx.sessionFactory.getClassMetadata(Team).attributes.collect { it.name }
 
 ### -get data bindings/properties/class/domain table/declared fields-
 
-`def mapping = org.grails.orm.hibernate.cfg.GrailsDomainBinder.getMapping(UserGroup)`
+```groovy
+def mapping = org.grails.orm.hibernate.cfg.GrailsDomainBinder.getMapping(UserGroup)
+```
 
-`sessionFactory.getClassMetadata(Foo).tableName`
+```groovy
+def mapping = org.grails.orm.hibernate.cfg.GrailsDomainBinder.getMapping(UserGroup)
+```
 
-`org.grails.orm.hibernate.cfg.GrailsDomainBinder.getMapping(groupCompare.class).class.declaedFields`
+```groovy
+org.grails.orm.hibernate.cfg.GrailsDomainBinder.getMapping(groupCompare.class).class.declaedFields
+```
 
-### -get a service-
+### Get A Service
 
-1.  ```java
+1. ```java
         public class HibernateExample {
 
        @Autowired
@@ -96,15 +108,21 @@ ctx.sessionFactory.getClassMetadata(Team).attributes.collect { it.name }
     }
     ```
 
-````
+2. ```java
+    (YourService)Holders.grailsApplication.mainContext["yourService"]
+   ```
 
-2. ```(YourService)Holders.grailsApplication.mainContext["yourService"]```
-3. ```applicationContext."${yourServiceName}".serviceMethod()```
-4. ```ctx.getBean('userGroupService')```
-5. ```Holders.applicationContext.getBean("myService")```
-6.
+3. ```java
+    applicationContext."${yourServiceName}".serviceMethod()
+    ```
+4. ```java
+    ctx.getBean("userGroupService")
+    ```
+5. ```java
+    Holders.applicationContext.getBean("myService")
+    ```
 
- ```groovy
+```groovy
    class HibernateExample {
 
     ApplicationContext ctx = (ApplicationContext) ServletContextHolder
@@ -114,5 +132,4 @@ ctx.sessionFactory.getClassMetadata(Team).attributes.collect { it.name }
 
     def statisticsService = (StatisticsService).ctx.getBean("statisticsService ")
 }
-
-````
+```
