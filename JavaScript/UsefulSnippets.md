@@ -95,15 +95,25 @@ const isTabInView = () => !document.hidden
 
 # Redirect the user to a URL
 
-![](..%2Fassets%2Fimages%2Fimage9.jpeg)
+```javascript
+const redirect = url => location.href = url
+redirect("https://www.google.com/")
+```
 
 # Open the browser print box
 
-![](..%2Fassets%2Fimages%2Fimage10.jpeg)
+```javascript
+const showPrintDialog = ()
+window.print()
+```
 
 # Generate a random boolean value
 
-![](..%2Fassets%2Fimages%2Fimage11.jpeg)
+```javascript
+// Returns a random boolean value (true or false)
+const randomBoolean = () => Math.random() >= 0.5;
+randomBoolean();
+```
 
 # Generate a random number between two values
 

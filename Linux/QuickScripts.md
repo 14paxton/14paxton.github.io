@@ -1,11 +1,11 @@
 ---
-title: QuickScripts
-permalink: Linux/QuickScripts
-category: Linux
-parent: Linux
-layout: default
+title:        QuickScripts
+permalink:    Linux/QuickScripts
+category:     Linux
+parent:       Linux
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - linux
   - default
@@ -89,10 +89,23 @@ tar -cjvf file.tar.bz2 /home/vivek/data/
 zip -er last_resort.zip attachments;
 ```
 
-# find and remove files
+# Find
+
+## find and remove files
 
 ```bash
 for st in $(mdfind -name ultdata); do rm -rf "$st"; done
+```
+
+## Find and Delete Empty Directories
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">            
+           The -type d option searches for directories, -empty selects empty ones and -exec rmdir {} executes the rmdir command to delete them.
+</div>            
+
+```shell
+$ find . -type d -empty -exec rmdir -v {} +
+
 ```
 
 # find and kill by pid
