@@ -141,26 +141,96 @@ dotnet run --urls=https://localhost:5101
 
 # HttpRepl
 
-```shell
- dotnet tool install;
+# Create
 
-export PATH="$PATH:/Users/bp/.dotnet/tools";
-httprepl http://localhost:5001                  
+```shell
+dotnet new webapi -controllers -f net8.0.101
 ```
 
-- list and select controllers
-
-> ls , cd
-
-- post
+# Run
 
 ```shell
-post -c "{"name":"Hawaii", "isGlutenFree":false}"
+dotnet run --urls=https://localhost:5101
+```
+
+# HttpRepl
+
+```shell
+::install
+ dotnet tool install -g Microsoft.dotnet-httprepl;
+
+::set path to tools
+export PATH="$PATH:/Users/bp/.dotnet/tools";
+
+::test web api
+httprepl http://localhost:5001
+
+```
+
+## Set text editor for POST
+
+```shell
+pref set editor.command.default "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
+```
+
+> set default args
+
+   ```shell
+        pref set editor.command.default.arguments "--disable-extensions --new-window"
+   ```
+
+## list and select controllers
+
+```shell
+ls
+```
+
+```shell
+cd [controller]
+```
+
+## POST
+
+```shell
+post -h Content-Type=application/json
+```
+
+## GET
+
+```shell
+get Order
+```
+
+> return
+
+```json
+[
+  {
+    "date": "2024-05-14",
+    "summary": "order3"
+  },
+  {
+    "date": "2024-05-15",
+    "summary": "order5"
+  },
+  {
+    "date": "2024-05-16",
+    "summary": "order4"
+  },
+  {
+    "date": "2024-05-17",
+    "summary": "order4"
+  },
+  {
+    "date": "2024-05-18",
+    "summary": "order5"
+  }
+]
 ```
 
 # Entity Framework
 
-## add
+## install
 
 ```shell
 dotnet add package Microsoft.EntityFrameworkCore.Sqlite;
@@ -170,26 +240,38 @@ dotnet tool install --global dotnet-ef;
 
 ## create db tables
 
-```shell
-using ContosoPizza.Data;
+> in Program.cs add
+
+```csharp
+using RestfulOrderAPI.Data;
+
+///
+
+builder.Services.AddSqlite<OrderContext>("Data Source=RestfulOrderAPI.db");
+```
+
+> initial migrations
+
+```csharp
+dotnet ef migrations add InitialCreate --context OrderContext
 ```
 
 ## apply create
 
 ```shell
-dotnet ef database update --context PizzaContext
+dotnet ef database update --context OrderContext
 ```
 
 ## revisions
 
 ```shell
-dotnet ef migrations add ModelRevisions --context PizzaContext
+dotnet ef migrations add ModelRevisions --context OrderContext
 ```
 
 ## update
 
 ```shell
-dotnet ef database update --context PizzaContext
+dotnet ef database update --context OrderContext
 ```
 
 ## Build scafolding
