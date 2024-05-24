@@ -1,8 +1,8 @@
 ---
 title:        Email
 permalink:    /Linux/Email
-category:     Email
-parent:       Email
+category:     Linux
+parent:       Linux
 layout:       default
 has_children: false
 share:        true         
