@@ -1,11 +1,11 @@
 ---
-title: Microservice.md
-permalink: DotNetNotes/Microservice.md
-category: DotNetNotes
-parent: DotNetNotes
-layout: default
+title:        Microservice.md
+permalink:    /DotNetNotes/Microservice
+category:     DotNetNotes
+parent:       DotNetNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - dotnetnotes
   - default
