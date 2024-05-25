@@ -1,14 +1,20 @@
 ---
-title: Micronotes
-layout: default
-permalink: Micronotes/
-category: Micronotes
+title:        Micronotes
+layout:       default
+permalink:    Micronotes/
+category:     Micronotes
 has_children: true
-share: true
+share:        true
 shortRepo:
   - micronotes
   - default
 ---
+
+# Projects
+
+## [MicroMail](https://github.com/14paxton/MicroMail)
+
+> email microservice using sendgrid
 
 # [Install](https://micronaut-projects.github.io/micronaut-starter/latest/guide/#installation)
 
