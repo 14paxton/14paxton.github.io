@@ -32,7 +32,7 @@ gradlew server:run
 gradlew client:start
 ```
 
-## Create executable jar for multibuild
+## Create executable jar for multi build
 
 ```bash
 gradlew assembleServerAndClient
