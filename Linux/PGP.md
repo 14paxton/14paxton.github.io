@@ -28,6 +28,12 @@ Table of contents
 
 <br/>
 
+# Export Public PGP Key
+
+```shell
+gpg -a --export [pub id] > mypub.asc
+```
+
 # Updating expired GPG keys and their backup 🔑🔐💻
 
 I use a GPG key to sign my git commits.
