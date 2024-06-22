@@ -1,11 +1,11 @@
 ---
-title: Images
-permalink: HTML&CSS/Images
-category: HTML&CSS
-parent: HTML&CSS
-layout: default
+title:        Images
+permalink:    HTML&CSS/Images
+category:     HTML&CSS
+parent:       HTML&CSS
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - html&css
   - default
@@ -54,12 +54,12 @@ Table of contents
 
 ```css
 .logo {
-  display: block;
-  text-indent: -9999px;
-  width: 100px;
-  height: 82px;
-  background: url(kiwi.svg);
-  background-size: 100px 82px;
+    display: block;
+    text-indent: -9999px;
+    width: 100px;
+    height: 82px;
+    background: url(kiwi.svg);
+    background-size: 100px 82px;
 }
 ```
 
@@ -67,12 +67,12 @@ Table of contents
 
 ```css
 .main-header {
-  background: url(logo.svg) no-repeat top left;
-  background-size: contain;
+    background: url(logo.svg) no-repeat top left;
+    background-size: contain;
 }
 
 .no-svg .main-header {
-  background-image: url(logo.png);
+    background-image: url(logo.png);
 }
 ```
 
@@ -80,7 +80,7 @@ Table of contents
 
 ```css
 .illustration {
-  background-image: url("image.svg");
+    background-image: url("image.svg");
 }
 ```
 
@@ -88,7 +88,7 @@ And just like raster graphics, you can base64 encode them right into the stylesh
 
 ```css
 .illustration {
-  background-image: url("data:image/svg+xml;base64,[data]");
+    background-image: url("data:image/svg+xml;base64,[data]");
 }
 ```
 
@@ -96,7 +96,7 @@ To aid readability, you may even attempt such audacity as this:
 
 ```css
 .illustration {
-  background-image: url("data:image/svg+xml;charset=utf-8,<svg></svg>");
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg></svg>");
 }
 ```
 
@@ -105,62 +105,67 @@ To aid readability, you may even attempt such audacity as this:
 ### svg element
 
 ```html
+
 <svg
-  baseProfile="full"
-  height="200"
-  version="1.1"
-  width="300"
-  xmlns="http://www.w3.org/2000/svg"
+        baseProfile="full"
+        height="200"
+        version="1.1"
+        width="300"
+        xmlns="http://www.w3.org/2000/svg"
 >
-  <rect fill="black" height="100%" width="100%" />
-  <circle cx="150" cy="100" fill="blue" r="90" />
+    <rect fill="black" height="100%" width="100%"/>
+    <circle cx="150" cy="100" fill="blue" r="90"/>
 </svg>
 ```
 
 ### image element
 
 ```html
-<img src="image.svg" onerror="this.onerror=null; this.src='image.png'" />
+<img src="image.svg" onerror="this.onerror=null; this.src='image.png'"/>
 ```
 
 ### body element
 
 ```css
 body {
-  background: url(fallback.png);
-  background-image: url(image.svg), none;
+    background: url(fallback.png);
+    background-image: url(image.svg), none;
 }
 ```
 
 ## inline
 
 ```html
+
 <body>
-  <!-- paste in SVG code, image shows up!  -->
+<!-- paste in SVG code, image shows up!  -->
 </body>
 ```
 
 ### iframe element
 
 ```html
+
 <iframe height="500" sandbox src="triangle.svg" width="500">
-  <img alt="Triangle with three unequal sides" src="triangle.png" />
+    <img alt="Triangle with three unequal sides" src="triangle.png"/>
 </iframe>
 ```
 
 ### object element
 
 ```html
+
 <object type="image/svg+xml" data="image.svg">
-  <img src="fallback.png" />
+    <img src="fallback.png"/>
 </object>
 ```
 
 This is the oldest method we have. And of course, data URIs are possible here too:
 
 ```html
+
 <object type="image/svg+xml" data="data:image/svg+xml;base64,[data]">
-  <img src="fallback.png" />
+    <img src="fallback.png"/>
 </object>
 ```
 
@@ -172,16 +177,17 @@ The answer?
 Simply use CSS to apply the fallback image:
 
 ```html
+
 <object id="logo" type="image/svg+xml" data="logo.svg">
-  <div>logo description</div>
+    <div>logo description</div>
 </object>
 ```
 
 ```css
 #logo div {
-  width: 300px;
-  height: 50px;
-  background-image: url("logo.png");
+    width: 300px;
+    height: 50px;
+    background-image: url("logo.png");
 }
 ```
 
@@ -261,15 +267,14 @@ data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//...
 
 ```css
 .logo {
-  background: url("data:image/svg+xml;base64,[data]");
+    background: url("data:image/svg+xml;base64,[data]");
 }
 ```
 
 ```css
 li {
-  background: url(data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7)
-    no-repeat left center;
-  padding: 5px 0 5px 25px;
+    background: url(data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7) no-repeat left center;
+    padding: 5px 0 5px 25px;
 }
 ```
 
@@ -281,64 +286,132 @@ li {
 
 ```css
 html {
-  background-image: url(data:image/jpg;base64,/9j/4RkARXhpZgAATU0AKgAAAAgAB6f/9k=),
+    background-image: url(data:image/jpg;base64,/9j/4RkARXhpZgAATU0AKgAAAAgAB6f/9k=),
     url(/TBEX/resource/src/815-teams-north-gate-path.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
 }
 ```
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
+    <h1>What I have used to get data uri to work with using as background css</h1>       
+<h2> first use at TPlus</h2>
+
+<code>
+style = "
+background: url(); 
+<br>
+background-size: cover; 
+<br>
+background-repeat: no-repeat;
+<br>
+background-position: center; 
+<br>
+height: 100%; 
+<br>
+width: 90%;"
+</code>
+<h2>Option 2</h2>
+<code> 
+style="
+<br>
+background: url() no-repeat;
+<br>
+display: 100% auto; 
+<br>
+background-size: 100%; 
+<br>
+background-position: center; 
+<br>
+width: 100%; 
+<br>
+height: 100%; 
+<br>
+margin:0 auto;"
+</code>
+<h2>Option 3</h2>
+<code>
+style="
+<br>
+background: url() no-repeat; 
+<br>
+background-position: top; 
+<br>
+background-size: contain; 
+<br>
+width: auto; 
+<br>
+height: auto; 
+<br>
+margin: auto;"
+</code>
+<h2>Simple Option</h2>
+<code>
+style="
+<br>
+background: url() no-repeat; 
+<br>
+background-position: center; 
+<br>
+background-size: 100% auto; "
+</code>
+
+</div> 
 
 ### Preload Image with CSS and HTML
 
 ```css
 .masthead {
-  height: 100vh;
-  background-image: url("[masthead.jpg|<data URI>]");
-  background-size: cover;
+    height: 100vh;
+    background-image: url("[masthead.jpg|<data URI>]");
+    background-size: cover;
 }
 ```
 
 ```html
-<link rel="preload" href="masthead.jpg" as="image" />
+
+<link rel="preload" href="masthead.jpg" as="image"/>
 
 <title>Preloaded Image</title>
 
-<link rel="stylesheet" href="image.css" />
+<link rel="stylesheet" href="image.css"/>
 ```
 
 ## image
 
 ```html
-<img src="data:image/svg+xml;base64,[data]" />
+<img src="data:image/svg+xml;base64,[data]"/>
 ```
 
 ```html
 <img
-  alt="star"
-  height="16"
-  src="data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7"
-  width="16"
+        alt="star"
+        height="16"
+        src="data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7"
+        width="16"
 />
 ```
 
 ## iframe
 
 ```html
+
 <iframe
-  width="600"
-  height="200"
-  src="data:text/html;charset=utf-8;base64,PCFET0...C9odG1sPg=="
+        width="600"
+        height="200"
+        src="data:text/html;charset=utf-8;base64,PCFET0...C9odG1sPg=="
 ></iframe>
 ```
 
 ## object
 
 ```html
+
 <object type="image/svg+xml" data="data:image/svg+xml;base64,[data]">
-  fallback
+    fallback
 </object>
 ```
 
