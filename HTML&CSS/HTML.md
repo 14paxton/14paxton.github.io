@@ -139,10 +139,68 @@ document.querySelector("#some.selector").innerHTML = body;
 </button>
 ```
 
-> in the case of form data, input type = "hidden"
+> in the case of form data, an input type = "hidden"
 
 ```html
 <input type="hidden" id="postId" name="postId" value="34657"/>
+```
+
+## Capture attribute to open your device camera
+
+> Just as the input tag has attributes for email, text and password, there is also an attribute to open the camera of mobile devices to capture images.
+
+> This is done with the capture attribute which can take two values:
+
+- `user` for the front camera.
+- `environment` for the back camera.
+
+```html
+<input accept="image/*" capture="user" type="file">
+```
+
+## Automatic website refresh
+
+> You can set your website to refresh after a given amount of time from the head tag!
+
+```html
+
+<head>
+    <meta content="10" http-equiv="refresh">
+</head>
+```
+
+## Activate spellcheck
+
+> You can use the HTML spellcheck attribute and set it to true to activate it. Specify the language to be used the lang attribute.
+
+```html
+<input type="text" spellcheck="true" lang="en">
+```
+
+## Specify a file type to be uploaded
+
+> You can specify the file types users are permitted to upload in the input tag using the accepted attribute.
+
+```html
+<input type="file" accept=".jpeg,.png">
+```
+
+## Creating a poster (thumbnail) for your videos
+
+> With the poster attribute, you can create an image which is displayed while the video is downloaded, or until the user hits the play button.
+
+> If this is not included, the first frame of the video will be used instead
+
+```html
+
+<video poster="picture.png"></video>
+```
+
+## Automatically download on link Click
+> If you want a particular resource to be downloaded when a link to the target resource is clicked, add the download attribute
+
+```html
+<a download href="image.png">
 ```
 
 ## [JS Events As Attributes](https://developer.mozilla.org/en-US/docs/Web/Events)
