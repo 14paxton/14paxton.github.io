@@ -1,11 +1,11 @@
 ---
-title: Powershell
-permalink: Windows_Notes/Powershell
-category: Windows_Notes
-parent: Windows_Notes
-layout: default
+title:        Powershell
+permalink:    Windows_Notes/Powershell
+category:     Windows_Notes
+parent:       Windows_Notes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - windows_notes
   - default
@@ -575,16 +575,16 @@ foreach ($file in $files) {
 
 ```powershell
 ## Get a list of automatic services that are stopped.
-$services = Get-Service | Where-Object {$.StartType -eq 'Automatic' -and $.Status -ne 'Running'}
+$services = Get-Service | Where-Object { $_.StartType -eq "Automatic" -and $_.Status -ne "Running" }
 
 ## Pass each service object to the pipeline and process them with the Foreach-Object cmdlet
 $services | ForEach-Object {
     try {
-        Write-Host "Attempting to start '$($.DisplayName)'"
-        Start-Service -Name $.Name -ErrorAction STOP
-        Write-Host "SUCCESS: '$($.DisplayName)' has been started"
+        Write-Host "Attempting to start '$($_.DisplayName)'"
+        Start-Service -Name $_.Name -ErrorAction STOP
+        Write-Host "SUCCESS: '$($_.DisplayName)' has been started"
     } catch {
-        Write-output "FAILED: $($.exception.message)"
+        Write-output "FAILED: $($_.exception.message)"
     }
 }
 ```
@@ -599,30 +599,32 @@ Add-Type -AssemblyName System.Web
 
 # Process the list
 $newUsers.foreach(
-    {
-        # Generate a random password
-        $password = [System.Web.Security.Membership]::GeneratePassword((Get-Random -Minimum 20 -Maximum 32), 3)
-        $secPw = ConvertTo-SecureString -String $password -AsPlainText -Force
+        {
+            # Generate a random password
+            $password = [System.Web.Security.Membership]::GeneratePassword((Get-Random -Minimum 20 -Maximum 32), 3)
+            $secPw = ConvertTo-SecureString -String $password -AsPlainText -Force
 
-        # Formulate a username
-        $userName = '{0}{1}' -f $_.FirstName.Substring(0, 1), $_.LastName
+            # Formulate a username
+            $userName = '{0}{1}' -f $_.FirstName.Substring(0, 1), $_.LastName
 
-        # Build new user attributes
-        $NewUserParameters = @{
-            GivenName       = $_.FirstName
-            Surname         = $_.LastName
-            Name            = $userName
-            AccountPassword = $secPw
-        }
+            # Build new user attributes
+            $NewUserParameters = @{
+                GivenName = $_.FirsName
+                Surname = $_.LastName
+                Name = $userName
+                AccountPassword = $secPw
+            }
 
-        try {
-            New-AdUser @NewUserParameters -ErrorAction Stop
-            Write-Output "User '$($userName)' has been created."
+            try
+            {
+                New-AdUser @NewUserParameters -ErrorAction Stop
+                Write-Output "User '$( $userName )' has been created."
+            }
+            catch
+            {
+                Write-Output $_.Exception.Message
+            }
         }
-        catch {
-            Write-Output $_.Exception.Message
-        }
-    }
 )
 ```
 

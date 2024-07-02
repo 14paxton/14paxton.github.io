@@ -61,6 +61,8 @@ Table of contents
 
 ## [Docs](https://rouge-ruby.github.io/docs/)
 
+## [List Of Supported Languages and Lexers ](https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers)
+
 ## [Rouge Language Lexers GitHub Repo](https://github.com/rouge-ruby/rouge/tree/master/lib/rouge/lexers)
 
 ### [Rouge Syntax Highlighting Languages](https://rouge-ruby.github.io/docs/file.Languages.html)
@@ -170,7 +172,7 @@ output:          true
 ## Handling Reading
 
 ```yaml
-safe:         false
+safe:                false
 include: [ ".htaccess" ]
 exclude: [ "Gemfile",
            "Gemfile.lock",
@@ -180,8 +182,8 @@ exclude: [ "Gemfile",
            "vendor/gems/",
            "vendor/ruby/", ]
 keep_files: [ ".git", ".svn" ]
-encoding:     "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+encoding:            "utf-8"
+markdown_ext:        "markdown,mkdown,mkdn,mkd,md"
 strict_front_matter: false
 ```
 
@@ -214,27 +216,27 @@ incremental:       false
 ## Serving
 
 ```yaml
-detach:  false
-port:    4000
-host:    127.0.0.1
-baseurl: "" # does not include hostname
+detach:           false
+port:             4000
+host:             127.0.0.1
+baseurl:          "" # does not include hostname
 show_dir_listing: false
 ```
 
 ## Outputting
 
 ```yaml
-permalink:      date
-paginate_path:  /page:num
-timezone:       null
+permalink:        date
+paginate_path:    /page:num
+timezone:         null
 
-quiet:          false
-verbose:        false
+quiet:            false
+verbose:          false
 defaults: [ ]
 
 liquid:
-error_mode:     warn
-strict_filters: false
+error_mode:       warn
+strict_filters:   false
 strict_variables: false
 ```
 
