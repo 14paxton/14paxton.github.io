@@ -1,11 +1,11 @@
 ---
-title: Shortcuts
-permalink: Windows_Notes/Shortcuts
-category: Windows_Notes
-parent: Windows_Notes
-layout: default
+title:        Shortcuts
+permalink:    Windows_Notes/Shortcuts
+category:     Windows_Notes
+parent:       Windows_Notes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - windows_notes
   - default
@@ -28,7 +28,9 @@ Table of contents
 
 <br/>
 
-# Keys - Operation
+# [Widows Shortcuts Doc](https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec)
+
+# Keys—Operation
 
 > `Win + Left` - Position a window on the left half of the screen
 

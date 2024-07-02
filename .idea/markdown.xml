@@ -2,7 +2,6 @@
 <project version="4">
   <component name="MarkdownSettings">
     <option name="fileGroupingEnabled" value="true" />
-    <option name="showProblemsInCodeBlocks" value="false" />
-    <option name="verticalSplit" value="false" />
+    <option name="splitLayout" value="SHOW_EDITOR" />
   </component>
 </project>
