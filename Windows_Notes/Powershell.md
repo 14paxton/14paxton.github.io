@@ -480,7 +480,7 @@ or <br/>
   > It
   > prompts you before running scripts from publishers that you haven't yet classified as trusted or untrusted.
   > However, verifying the signature of a script doesn't eliminate the possibility of that
-  > script being malicious.
+  > a script being malicious.
   > It simply provides an extra check that minimizes this possibility.
 - > `Default`: Sets the default execution policy, which is Restricted for Windows clients and RemoteSigned for Windows servers.
 - > `RemoteSigned`: This is the default execution policy for Windows server computers.
@@ -600,30 +600,30 @@ Add-Type -AssemblyName System.Web
 # Process the list
 $newUsers.foreach(
         {
-            # Generate a random password
-            $password = [System.Web.Security.Membership]::GeneratePassword((Get-Random -Minimum 20 -Maximum 32), 3)
-            $secPw = ConvertTo-SecureString -String $password -AsPlainText -Force
+          # Generate a random password
+          $password = [System.Web.Security.Membership]::GeneratePassword((Get-Random -Minimum 20 -Maximum 32), 3)
+          $secPw = ConvertTo-SecureString -String $password -AsPlainText -Force
 
-            # Formulate a username
-            $userName = '{0}{1}' -f $_.FirstName.Substring(0, 1), $_.LastName
+          # Formulate a username
+          $userName = '{0}{1}' -f $_.FirstName.Substring(0, 1), $_.LastName
 
+          try
+          {
             # Build new user attributes
-            $NewUserParameters = @{
-                GivenName = $_.FirsName
-                Surname = $_.LastName
-                Name = $userName
-                AccountPassword = $secPw
+            $newUser = @{
+              GivenName = "$( $_.FirsName )"
+              Surname = "$( $_.LastName )"
+              Name = $userName
+              AccountPassword = $secPw
             }
+            New-ADUser @newUser
 
-            try
-            {
-                New-AdUser @NewUserParameters -ErrorAction Stop
-                Write-Output "User '$( $userName )' has been created."
-            }
-            catch
-            {
-                Write-Output $_.Exception.Message
-            }
+            Write-Output "User '$( $userName )' has been created."
+          }
+          catch
+          {
+            Write-Output $_.Exception.Message
+          }
         }
 )
 ```
