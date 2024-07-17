@@ -83,7 +83,7 @@ tar -cjvf file.tar.bz2 /home/vivek/data/
   tar xjvf <.tar.bz2 file>
 ```
 
-# zip folder with pw
+# ZIP folder and add a password
 
 ```bash
 zip -er last_resort.zip attachments;
