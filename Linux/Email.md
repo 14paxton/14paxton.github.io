@@ -26,6 +26,8 @@ Table of contents
 
 <br/>
 
+# [Setup a Local Only SMTP Email Server (Linux, Unix, Mac)](https://gist.github.com/raelgc/6031274)
+
 # curl
 
 ```shell
@@ -187,13 +189,105 @@ MIME.
     --attach mysqldbbackup.sql
 ```
 
-# BASH and netcat
+# Telnet
+
+> First you need to find out the SMTP server address for the domain. Let's find out the SMTP server address for gmail.com
+
+> Goto MS Dos prompt and type ```nslookup``` command.
+
+```
+> set q=mx
+> gmail.com
+
+Non-authoritative answer:
+gmail.com       MX preference = 30, mail exchanger =     
+gmail.com       MX preference = 20, mail exchanger = alt2.gmail-smtp-in.l.google.com
+gmail.com       MX preference = 5, mail exchanger = gmail-smtp-in.l.google.com
+gmail.com       MX preference = 10, mail exchanger = alt1.gmail-smtp-in.l.google.com
+gmail.com       MX preference = 40, mail exchanger = alt4.gmail-smtp-in.l.google.com
+```
+
+> Now connect to gmail SMTP server with Telnet by typing the following command on the command prompt.
+
+```shell
+telnet alt3.gmail-smtp-in.l.google.com 25
+```
+
+```
+220 mx.google.com ESMTP t15si14936218ibf.58
+helo kathir
+250 mx.google.com at your service
+mail from: <kathirusa@yahoo.com>
+250 2.1.0 OK t15si14936218ibf.58
+rcpt to: <kathircpp@gmail.com>
+250 2.1.5 OK t15si14936218ibf.58
+data
+354  Go ahead t15si14936218ibf.58
+from: kathir
+to: kathir
+subject: hi from kathir
+
+This is for testing
+
+.
+250 2.0.0 OK 1287958967 t15si14936218ibf.58
+```
+
+# Bash Sendmail
+
+```shell
+to="any@email.com"
+from="your@email.com"
+boundary=$(uuidgen -t)
+body_boundary=$(uuidgen -t)
+now=$(date +"%a, %d %b %Y %T %z")
+
+sendmail -t << EOF2
+From: ${from}
+To: ${to}
+Date: ${now}
+Subject: This is a test multipart message
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="${boundary}"
+
+--${boundary}
+Content-Type: multipart/alternative; boundary="${body_boundary}"
+
+--${body_boundary}
+Content-type: text/plain; charset=ISO-8859-1
+
+This is a text message.     --> Here am going to incorporate text version
+--${body_boundary}
+Content-type: text/html; charset=utf-8
+Content-Disposition: inline
+
+<!DOCTYPE html>
+<body>
+<pre>
+Hello,
+ 
+This is a html version.     --> here am going to incorporate html version
+
+Regards...
+</pre>
+<body>
+--${body_boundary}--
+--${boundary}--
+EOF2
+
+sc=$?
+echo "sedmail rc=${rc}"
+
+```
+
+# Netcat
 
 # Install Debian/Ubuntu
 
+```shell
     apt-get install netcat
 
-# Script
+```
 
 ```shell
 
