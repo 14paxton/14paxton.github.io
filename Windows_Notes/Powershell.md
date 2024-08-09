@@ -435,6 +435,24 @@ net use /delete x:
 
 # Quick Scripts
 
+## Get Proxy Settings
+
+```powershell
+ netsh winhttp show proxy
+```
+
+```powershell
+ reg query "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings" | findstr "ProxyServer AutoConfigURL"
+```
+
+```powershell
+  (Get-ItemProperty -Path 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings')
+```
+
+```powershell
+(Get-ItemProperty -Path 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings').ProxyEnable
+```
+
 ## lock screen
 
 ```powershell
