@@ -154,7 +154,7 @@ open -a "Google Chrome"
      ```shell
      #!/bin/bash -eua
      profile_name=$1; shift
-     local_state=~/.config/google-chrome/Local\ State
+     local_state="~/Library/Application Support/Google/Chrome/Local State"
      profile_key=`< "$local_state" jq -r '
              .profile.info_cache | to_entries | .[] |
              select(.value.name == env.profile_name) | .key'`
@@ -165,7 +165,7 @@ open -a "Google Chrome"
 
   -   ##### chrome_profiles_list
          ```shell
-         < ~/.config/google-chrome/Local\ State \
+         < "~/Library/Application Support/Google/Chrome/Local State" \
          jq -r '.profile.info_cache | to_entries | map(.key + ": " + .value.name) | .[]' |
          sort -k1,1 -k2,2n
          ```
