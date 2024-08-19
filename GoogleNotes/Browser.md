@@ -1,11 +1,11 @@
 ---
-title:    Browser
-permalink: GoogleNotes/Browser
-category: GoogleNotes
-parent:   GoogleNotes
-layout:   default
+title:        Browser
+permalink:    GoogleNotes/Browser
+category:     GoogleNotes
+parent:       GoogleNotes
+layout:       default
 has_children: false
-share:    true
+share:        true
 shortRepo:
   - googlenotes
   - default
@@ -32,19 +32,25 @@ Table of contents
 
 ## [URIs of interest](chrome://chrome-urls/)
 
-- get profile info
+### get profile info
 
 ```
 chrome://version/
 ```
 
-- flags
+### get profile settings
+
+```
+chrome://profile-internals/
+```
+
+### flags
 
 ```
 chrome://flags/
 ```
 
-- url list
+### url list
 
 ```
 chrome://chrome-urls/
@@ -54,7 +60,7 @@ chrome://chrome-urls/
 chrome://about/
 ```
 
-- ?
+### ?
 
 ```
 chrome://proximity-auth
@@ -86,15 +92,21 @@ https://cursive.apps.chrome
 
 ## File Locations
 
-Windows XP: `C:\Documents and Settings\%USERNAME%\Local Settings\Application Data\Google\Chrome\User Data\Default\Extensions\<Extension ID>  `
+- Windows XP:
+    - `C:\Documents and Settings\%USERNAME%\Local Settings\Application Data\Google\Chrome\User Data\Default\Extensions\<Extension ID>  `
+- Windows 10/8/7/Vista:
+    - `C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Extensions\<Extension ID>    `
+- macOS:
+    - `~/Library/Application Support/Google/Chrome/Default/Extensions/<Extension ID>   `
+- Linux
+    - `~/.config/google-chrome`
+        <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">            
+            The ~/.config portion of the default location can be overridden by $CHROME_CONFIG_HOME (since M61) or by $XDG_CONFIG_HOME.
+        <br>
+            Note that $XDG_CONFIG_HOME affects all applications conforming to the XDG Base Directory Spec, while $CHROME_CONFIG_HOME is specific to Chrome and Chromium.
+        </div>            
 
-Windows 10/8/7/Vista: `C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Extensions\<Extension ID>    `
-
-macOS: `~/Library/Application Support/Google/Chrome/Default/Extensions/<Extension ID>   `
-
-Mac Path: `/Users/<username>/Library/Application Support/Google/Chrome/Default/Extensions/<Extension ID> `
-
-> Extension ID can be found at `chrome://extensions` (with Developer Mode enabled)
+### Extension ID can be found at `chrome://extensions` (with Developer Mode enabled)
 
 Linux: `~/.config/google-chrome/Default/Extensions/<Extension ID> `
 
@@ -115,22 +127,49 @@ To install
 
 ## MacOS
 
-To run Chrome from the terminal on Mac, you can use the following command:
+### Open Chrome from the terminal
 
 ```shell
 open -a "Google Chrome"
 ```
 
-This will open a new instance of Chrome.
+- #### open a specific URL in Chrome:
+    > This will open the Google homepage in Chrome.
 
-You can also use the following command to open a specific URL in Chrome:
+     ```shell
+        open -a "Google Chrome" "https://www.google.com"
+     ```
 
-```shell
-open -a "Google Chrome" "https://www.google.com"
-```
+- #### using specified UserProfile
+  ```shell
+  open -a "Google Chrome" --args --profile-directory=Default
+  ```
 
-This will open the Google homepage in Chrome.
+- #### open and create a new profile
+  ```shell
+  open -n -a "Google Chrome" --args --user-data-dir=$(mktemp -d)
+  ```
 
+- #### script to run Chrome with given profile, selected by the user-friendly profile name (rather than the profile directory name)
+     ```shell
+     #!/bin/bash -eua
+     profile_name=$1; shift
+     local_state=~/.config/google-chrome/Local\ State
+     profile_key=`< "$local_state" jq -r '
+             .profile.info_cache | to_entries | .[] |
+             select(.value.name == env.profile_name) | .key'`
+     [ -n "$profile_key" ]
+     google-chrome --profile-directory="$profile_key" "$@"
+     ```
+     > example usage: ```chrome_profile "Profile Name" https://google.com/```
+
+  -   ##### chrome_profiles_list
+         ```shell
+         < ~/.config/google-chrome/Local\ State \
+         jq -r '.profile.info_cache | to_entries | map(.key + ": " + .value.name) | .[]' |
+         sort -k1,1 -k2,2n
+         ```
+      
 ## Windows
 
 ### Open
