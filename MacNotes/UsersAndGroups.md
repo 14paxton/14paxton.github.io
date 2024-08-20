@@ -1,11 +1,11 @@
 ---
-title: UsersAndGroups
-permalink: MacNotes/UsersAndGroups
-category: MacNotes
-parent: MacNotes
-layout: default
+title:        UsersAndGroups
+permalink:    MacNotes/UsersAndGroups
+category:     MacNotes
+parent:       MacNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - macnotes
   - default
@@ -72,7 +72,7 @@ dscl . list /Users | grep -v "^_"
 ### Create the new group 'newgroup' and assign it an ID
 
 <div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
-    One thing you have to take care when choosing a group id is that the id is not already used by another group. In order to list the existing group ids in numerical order you can do:
+    One thing you have to take care when choosing a group id is that the id is not already used by another group. In order to list the existing group ids in numerical order, you can do:
 <p>
 <code>
 dscl . -list /groups PrimaryGroupID | awk '{print $2}' | sort -n
@@ -106,9 +106,9 @@ OS X conventionally uses different ID ranges for different types of accounts. He
 
 up to 100: Reserved for static system-defined (built in) groups
 
-101 - 199: Used by the OS for dynamically-created groups (e.g. share point access groups)
+101 - 199: Used by the OS for dynamically created groups (e.g., share point access groups)
 
-200 - ?: More static system groups (apparently 100 wasn't enough)
+200—?: More static system groups (apparently 100 wasn't enough)
 
 400 - 500: More dynamic system groups
 
@@ -167,13 +167,44 @@ UniqueID: 1000
 UserShell: /usr/bash
 ```
 
-## add user to SUDO
+## Root
+
+### Enable Root User
+
+#### Use Directory Utility
+
+> Use Spotlight to find and open Directory Utility, or follow these steps:
+
+1. From the menu bar in the Finder, choose Go > Go to Folder.
+2. Type or paste /System/Library/CoreServices/Applications/, then press Return.
+3. Open Directory Utility from the window that opens.
+
+##### To enable or disable the root user
+
+> In the Directory Utility window, click the lock icon, then enter an administrator name and password.
+
+- To enable the root user, choose Edit > Enable Root User from the menu bar. Then enter the password that you want to use. You can then log in as the root user.
+- To disable the root user, choose Edit > Disable Root User.
+
+##### To change the root password
+
+> In the Directory Utility window, click the lock icon, then enter an administrator name and password. From the menu bar, choose Edit > Change Root Password.
+
+##### Log in as the root user
+
+> When the root user is enabled, you have its privileges only while logged in as the root user.
+
+1. Choose an Apple menu  > Log Out to log out of your current user account.
+2. At the login window, log in with the username “root” and the password you created for the root user.
+
+- If the login window is a list of users, click Other, then log in.
+
+### add user to SUDO
 
 ```shell
 su AdminUser
 authentication, and then:
 ```
-
 > Now, as Adminuser, use the visudo command to edit the sudoers file:
 
 ```shell
