@@ -5,10 +5,6 @@ category:     DotNetNotes
 parent:       DotNetNotes
 layout:       default
 has_children: false
-share:        true
-shortRepo:
-  - dotnetnotes
-  - default
 ---
 
 <br/>

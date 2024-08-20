@@ -60,20 +60,20 @@ under the License.
 <!--
  | This is the configuration file for Maven. It can be specified at two levels:
  |
- |  1. User Level. This settings.xml file provides configuration for a single
- |                 user, and is normally provided in
+ | 1. User Level. These settings.xml files provide configuration for a single
+ | user, and are normally provided in
  |                 ${user.home}/.m2/settings.xml.
  |
  |                 NOTE: This location can be overridden with the CLI option:
  |
  |                 -s /path/to/user/settings.xml
  |
- |  2. Global Level. This settings.xml file provides configuration for all
- |                 Maven users on a machine (assuming they're all using the
- |                 same Maven installation). It's normally provided in
- |                 ${maven.home}/conf/settings.xml.
+ |  2. Global Level. These settings.xml files provide configuration for all
+ | Maven users on a machine (assuming they're all using the
+ | same Maven installation). It's normally provided in
+ | ${maven.home}/conf/settings.xml.
  |
- |                 NOTE: This location can be overridden with the CLI option:
+ | NOTE: This location can be overridden with the CLI option:
  |
  |                 -gs /path/to/global/settings.xml
  |
@@ -113,7 +113,7 @@ under the License.
 
     <!-- pluginGroups
      | This is a list of additional group identifiers that will be searched when
-     | resolving plugins by their prefix, i.e. when invoking a command line like
+     | resolving plugins by their prefix, i.e., when invoking a command line like
      | "mvn prefix:goal". Maven will automatically add the group identifiers
      | "org.apache.maven.plugins" and "org.codehaus.mojo" if these are not
      | already contained in the list.
@@ -160,7 +160,7 @@ under the License.
          | (referred to by the 'id' attribute below).
          |
          | NOTE: You should either specify username/password OR
-         |       privateKey/passphrase, since these pairings are used together.
+         | privateKey/passphrase, since these pairings are used together.
          |
         <server>
           <id>deploymentRepo</id>
@@ -195,7 +195,7 @@ under the License.
          | Specifies a repository mirror site to use instead of a given repository.
          | The repository that this mirror serves has an ID that matches the
          | mirrorOf element of this mirror. IDs are used for inheritance and direct
-         | lookup purposes, and must be unique across the set of mirrors.
+         | lookup purposes and must be unique across the set of mirrors.
          |
         <mirror>
           <id>mirrorId</id>
@@ -228,9 +228,9 @@ under the License.
      | active profiles can be specified directly from the command line.
      |
      | NOTE: For profiles defined in the settings.xml, you are restricted to
-     |       specifying only artifact repositories, plugin repositories, and
-     |       free-form properties to be used as configuration variables for
-     |       plugins in the POM.
+     | specifying only artifact repositories, plugin repositories, and
+     | free-form properties to be used as configuration variables for
+     | plugins in the POM.
      |
      |-->
 
@@ -252,11 +252,11 @@ under the License.
          | provides a JDK-specific repo.
         <profile>
           <id>jdk-1.4</id>
-    
+
           <activation>
             <jdk>1.4</jdk>
           </activation>
-    
+
           <repositories>
             <repository>
               <id>jdk14</id>
@@ -292,14 +292,14 @@ under the License.
          |
         <profile>
           <id>env-dev</id>
-    
+
           <activation>
             <property>
               <name>target-env</name>
               <value>dev</value>
             </property>
           </activation>
-    
+
           <properties>
             <tomcatPath>/path/to/tomcat/instance</tomcatPath>
           </properties>
@@ -363,7 +363,7 @@ under the License.
 ## Create project-specific Maven settings
 
 > After maven 3.3.1, use the project-settings-extension to load the project settings,
-> and put project specific mirrors into ${basedir}/.mvn/settings.xml in each project.
+> and put project-specific mirrors into ${basedir}/.mvn/settings.xml in each project.
 
 - ```${basedir}/.mvn/extensions.xml```
 
@@ -425,8 +425,8 @@ under the License.
 
 > Install the JAR into your local Maven repository (typically .m2 in your home folder) as follows:
 
-```shell script
-mvn install:install-file \
+```shell
+  mvn install:install-file \
    -Dfile=<path-to-file> \
    -DgroupId=<group-id> \
    -DartifactId=<artifact-id> \
@@ -503,7 +503,8 @@ mvn install:install-file \
 </dependency>
 ```
 
-> However this will only live on your machine (obviously), for sharing it usually makes sense to use a proper m2 archive (nexus/artifactory) or if you do not have any of these or don't want to set one
+> However, this will only live on your machine (obviously), for sharing it usually makes sense to use a proper m2 archive (nexus/artifactory) or if you do not have any of these or don't want to set
+> one
 > up a local maven structured archive and configure a "repository" in your pom:
 
 - local:
