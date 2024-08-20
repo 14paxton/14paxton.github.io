@@ -167,6 +167,12 @@ UniqueID: 1000
 UserShell: /usr/bash
 ```
 
+## Change Password
+
+```shell
+sudo dscl . -passwd /Users/username password
+```
+
 ## Root
 
 ### Enable Root User
@@ -205,6 +211,7 @@ UserShell: /usr/bash
 su AdminUser
 authentication, and then:
 ```
+
 > Now, as Adminuser, use the visudo command to edit the sudoers file:
 
 ```shell
@@ -217,10 +224,4 @@ username ALL = (ALL) ALL
 
 ```shell
 username        ALL = (ALL) NOPASSWD:ALL
-```
-
-## Change Password
-
-```shell
-sudo dscl . -passwd /Users/username password
 ```
