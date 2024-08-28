@@ -32,9 +32,31 @@ Table of contents
 
 ## [Sync Chrome Bookmarks ](https://gist.github.com/14paxton/c10cfd597e7e7b487e27d641cf964c59)
 
-> used to sync bookmarks file to a repo to update on both mac and windows using bash and powershell when an account cannot sync due to admin restrictions
+> used to sync a bookmark file to a repo to update on both Mac and windows using bash and PowerShell when an account cannot sync due to admin restrictions
 
 # [Tar File](https://www.cyberciti.biz/faq/how-to-tar-a-file-in-linux-using-command-line/)
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">            
+<div>
+<H2>Recognized Suffixes</H2>
+<span> - .gz : gzip</span><br>
+<span> - .tgz : gzip</span><br>
+<span> - .taz : gzip</span><br>
+<span> - .z : compress</span><br>
+<span> - .taZ : compress</span><br>
+<span> - .bz2 : bzip2</span><br>
+<span> - .tz2 : bzip2</span><br>
+<span> - .tbz2 : bzip2</span><br>
+<span> - .tbz : bzip2</span><br>
+<span> - .lz : lzip</span><br>
+<span> - .lzma : lzma</span><br>
+<span> - .tlz : lzma</span><br>
+<span> - .lzo : lzop</span><br>
+<span> - .xz : xz</span><br>
+<span> - .zst : zstd</span><br>
+<span> - .tzst : zstd</span><br>
+</div>
+</div>            
 
 - > Compress an entire directory `/home/vivek/data/`
 
@@ -99,7 +121,7 @@ for st in $(mdfind -name ultdata); do rm -rf "$st"; done
 
 ## Find and Delete Empty Directories
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">            
+<div style="padding: 15px; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">            
            The -type d option searches for directories, -empty selects empty ones and -exec rmdir {} executes the rmdir command to delete them.
 </div>            
 

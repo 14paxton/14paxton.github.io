@@ -28,11 +28,118 @@ Table of contents
 
 <br/>
 
+# Install
+
+```
+$ sudo apt install gnupg          [On Debian, Ubuntu and Mint]
+$ sudo yum install gnupg          [On RHEL/CentOS/Fedora and Rocky/AlmaLinux]
+$ sudo emerge -a app-crypt/gnupg  [On Gentoo Linux]
+$ sudo apk add gnupg              [On Alpine Linux]
+$ sudo pacman -S gnupg            [On Arch Linux]
+$ sudo zypper install gnupg       [On OpenSUSE]    
+```
+
+# Generating New GPG Key Pairs in Linux
+
+   ```shell
+   gpg --full-generate-key
+   ```
+
+# List GPG Key Pairs in Linux
+
+```
+$ gpg --list-public-keys
+OR
+$ gpg --list-public-keys --keyid-format=long
+```
+
+# list the secret GPG key
+
+```
+$ gpg --list-secret-keys
+OR
+$ gpg --list-secret-keys --keyid-format=long
+```
+
+# Encrypting Files Using GPG in Linux
+
+```shell
+#gpg -e -r aaronkilik@gmail.com secret.txt  
+```
+
+```shell
+gpg --encrypt --recipient aaronkilik@gmail.com secret.txt
+```
+
+# Decrypting Files Using GPG in Linux
+
+```shell
+gpg -d -o secrets.txt secrets.txt.gpg
+```
+
 # Export Public PGP Key
 
 ```shell
 gpg -a --export [pub id] > mypub.asc
 ```
+
+# Setup GPG on macOS
+
+## Install
+
+-------------------
+
+    brew install gpg
+
+Enter fullscreen mode Exit fullscreen mode
+
+## Create new key
+
+---------------------------------
+
+    # generate key
+    gpg --full-generate-key
+    
+    # get the public key using key ID
+    gpg --armor --export XXXXXX
+    
+    # set the key ID in git
+    git config --global user.signingkey XXXXXXX
+    
+    # always sign commits
+    git config commit.gpgsign true
+
+## Setup keychain
+
+---------------------------------
+
+gpg collects password from cli. This causes issues if using vscode to create a commit. So input can be taken from a popup or keychain.
+
+    brew install pinentry-mac
+
+Enter fullscreen mode Exit fullscreen mode
+
+The brew installation will print these caveats:
+
+    ==> Caveats
+    You can now set this as your pinentry program like
+    
+    ~/.gnupg/gpg-agent.conf
+        pinentry-program /opt/homebrew/bin/pinentry-mac
+
+Enter fullscreen mode Exit fullscreen mode
+
+So just create a `~/.gnupg/gpg-agent.conf` file if it doesn't exist and put the line `pinentry-program /opt/homebrew/bin/pinentry-mac` in it.
+
+Now, to check if it works.
+
+1.`gpg --list-keys` to print the existing keys.
+
+1. `pkill -TERM gpg-agent`.
+2. Restart the terminal.
+3. `echo test | gpg -e -r <PUT THE KEY ID HERE> | gpg -d`
+
+This should open a pin entry popup and make sure "save in keychain" option is selected.
 
 # Updating expired GPG keys and their backup 🔑🔐💻
 
