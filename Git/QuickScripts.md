@@ -25,7 +25,36 @@ Table of contents
 
 <br/>
 
-# SSL certificate problem: unable to get local issuer certificate
+# Remove all commit history
+
+1) Checkout/create orphan branch (this branch won't show in git branch command):
+      ```shell
+        git checkout --orphan latest_branch
+      ```
+2) Add all the files to the newly created branch:
+    ```shell
+        git add -A
+    ```
+3) Commit the changes:
+    ```shell
+      git commit -am "commit message"
+    ```
+4) Delete main (default) branch (this step is permanent):
+    ```shell
+      git branch -D main
+    ```
+5) Rename the current branch to main:
+    ```shell
+      git branch -m main
+    ```
+6) Finally, all changes are completed on your local repository, and force update your remote repository:
+    ```shell
+      git push -f origin main
+    ```
+
+# SSL certificate problem
+
+> unable to get local issuer certificate
 
 ```shell
 git config --global http.sslbackend schannel
