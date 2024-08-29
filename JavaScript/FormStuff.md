@@ -1,11 +1,11 @@
 ---
-title:     FormStuff
-permalink: JavaScript/FormStuff
-category:  JavaScript
-parent:    JavaScript
-layout:    default
+title:        FormStuff
+permalink:    JavaScript/FormStuff
+category:     JavaScript
+parent:       JavaScript
+layout:       default
 has_children: false
-share:     true
+share:        true
 shortRepo:
   - javascript
   - default
@@ -27,7 +27,8 @@ Table of contents
 ***                      
 
 <br/>      
-# get form data      
+
+# get form data
 
 ```javascript      
 const data = Object.fromEntries(new FormData(document.forms.requestForm).entries());
@@ -42,6 +43,8 @@ document.querySelector('form').addEventListener('submit', (e) => {
 ```      
 
 ```javascript      
+const formElem = document.getElementById("requestForm");
+
 formElem.onformdata = (e) => {
     console.log('formdata fired');
     console.log(e)
@@ -77,9 +80,7 @@ requestForm.addEventListener("submit", handleSubmit);
 
 ```      
 
-```javascript      
-
-
+```javascript
 function myFunction() {
     var elements = document.getElementById("myForm").elements;
     var obj = {};
@@ -95,12 +96,103 @@ function myFunction() {
 ```javascript      
 const formData = new FormData(document.querySelector('form'))
 for (var pair of formData.entries()) {
-    // console.log(pair[0] + ': ' + pair[1]);      
+    console.log(pair[0] + ': ' + pair[1]);
+}
+```      
+
+## JQuery
+
+```javascript
+$("form").serializeArray()
+```
+
+# Get POST payload
+
+```javascript
+const constantMock = window.fetch;
+window.fetch = function () {
+    if (arguments[0] === '/api/req' && arguments[1].method === 'post') {
+        bodyResults(arguments[1].body)
+    }
+    return constantMock.apply(this, arguments)
 }
 
-$("form").serializeArray()
 
-```      
+function bodyResults(reqBody) {
+    console.log(reqBody)
+}
+```
+
+## Catch responses as well
+
+```javascript
+const constMock = window.fetch;
+window.fetch = function () {
+    if (arguments[0] === '/api/req' && arguments[1].method === 'post') {
+        bodyResults(arguments[1].body)
+    }
+
+    return new Promise((resolve, reject) => {
+        constantMock.apply(this, arguments)
+                    .then((response) => {
+                        if (response.url.indexOf("/me") > -1 && response.type != "cors") {
+                            console.log(response);
+                            // do something for specificconditions
+                        }
+                        resolve(response);
+                    })
+                    .catch((error) => {
+                        reject(response);
+                    })
+    });
+}
+
+function bodyResults(reqBody) {
+    console.log(reqBody)
+}
+```
+
+## XMLHTTPRequest Intercept POST
+
+```javascript
+(function () {
+    var origOpen = XMLHttpRequest.prototype.send;
+    XMLHttpRequest.prototype.send = function () {
+        console.log('request started!');
+        console.log(arguments[0]);
+        this.addEventListener('load', function () {
+            console.log('request completed!');
+            console.log(this.status);
+        });
+        origOpen.apply(this, arguments);
+    };
+})();
+```
+
+## JQuery
+
+```javascript
+$(document).on("ajaxSend", function (e) {
+    console.log("before request is sent");
+}).on("ajaxComplete", function (e) {
+    console.log("after success or error");
+}).on("ajaxSuccess ", function (e) {
+    console.log("on success");
+}).on("ajaxError ", function (e) {
+    console.log("on error");
+});
+```
+
+# Intercept XHR Requests
+
+```javascript
+(function (open) {
+    XMLHttpRequest.prototype.open = function (method, url, async, user, pass) {
+        alert('Intercept');
+        open.call(this, method, url + ".ua", async, user, pass);
+    };
+})(XMLHttpRequest.prototype.open);
+```
 
 # manually set validity on form field
 
