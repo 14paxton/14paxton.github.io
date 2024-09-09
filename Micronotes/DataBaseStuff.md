@@ -1,11 +1,11 @@
 ---
-title: DataBaseStuff
-permalink: Micronotes/DataBaseStuff
-category: Micronotes
-parent: Micronotes
-layout: default
+title:        DataBaseStuff
+permalink:    Micronotes/DataBaseStuff
+category:     Micronotes
+parent:       Micronotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - micronotes
   - default
@@ -229,12 +229,12 @@ micronaut:
     name: backend
 datasources:
   default:
-    url: jdbc:h2:mem:devDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
-    username: sa
-    password: ""
+    url:             jdbc:h2:mem:devDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+    username:        sa
+    password:        ""
     driverClassName: org.h2.Driver
     schema-generate: CREATE_DROP
-    dialect: H2
+    dialect:         H2
 netty:
   default:
     allocator:
@@ -253,13 +253,13 @@ micronaut:
     name: crudData
 datasources:
   default:
-    url: jdbc:mysql://localhost:3306/micro_person
-    username: root
-    password: pw123
+    url:             jdbc:mysql://localhost:3306/micro_person
+    username:        root
+    password:        pw123
     driverClassName: com.mysql.cj.jdbc.Driver
-    db-type: mysql
+    db-type:         mysql
     schema-generate: CREATE_DROP
-    dialect: MYSQL
+    dialect:         MYSQL
 netty:
   default:
     allocator:
@@ -276,6 +276,51 @@ netty:
 ```
 
 # [Hibernate](https://micronaut-projects.github.io/micronaut-sql/latest/guide/index.html#hibernate)
+
+> Hibernate uses a proxy object to implement lazy loading with a default implementation generating a proxy during the runtime.
+> This has a few disadvantages:
+> Runtime class generation can affect startup and runtime performance
+> Environments like GraalVM don’t support it
+
+-- If you wish to use lazy entity associations and avoid runtime proxies you can enable compile-time proxies:
+
+```yml
+jpa:
+  default:
+    compile-time-hibernate-proxies: true
+ ```
+
+-- The entity Owner needs to be annotated with @GenerateProxy to have a proxy generated and the compile-time.
+
+```java
+
+@Entity
+@GenerateProxy
+public class Owner {
+    //...
+}
+```
+
+### [Joins](https://micronaut-projects.github.io/micronaut-data/latest/guide/#_jpa_2_1_entity_graphs)
+
+```java
+
+@Repository
+public interface ProductRepository extends CrudRepository<Product, Long>, JpaSpecificationExecutor<Product> {
+    @Join(value = "manufacturer", type = Join.Type.FETCH)
+        // 
+    List<Product> list();
+}
+```
+
+#### JPA Entity Graphs
+
+```java
+
+@EntityGraph(attributePaths = {"manufacturer", "title"})
+    // 
+List<Product> findAll();
+```
 
 ## [Reactive Hibernate](https://micronaut-projects.github.io/micronaut-data/latest/guide/#hibernateReactive)
 
@@ -299,7 +344,7 @@ micronaut:
 #    schema-generate: none
 jpa:
   default:
-    reactive: true
+    reactive:                       true
     compile-time-hibernate-proxies: true
     entity-scan:
       packages:
@@ -313,8 +358,8 @@ jpa:
         hbm2ddl:
           auto: update
         connection:
-          db-type: mysql
-          url: jdbc:mysql://localhost:3306/ssi
+          db-type:  mysql
+          url:      jdbc:mysql://localhost:3306/ssi
           username: root
           password: root
 netty:
@@ -333,7 +378,8 @@ netty:
 - `create` – This option instructs Hibernate to drop the database schema and recreate it afterward using the entity model as a reference.
 - `create-drop` – This option instructs Hibernate to drop the database schema and recreate it afterward using the entity model as a reference.
 - `validate` – This option instructs Hibernate to validate the underlying database schema against the entity mappings.
-- `update` – This option instructs Hibernate to update the database schema by comparing the existing schema with the entity mappings and generate the appropriate schema migration scripts.
+- `update` – This option instructs Hibernate to update the database schema by comparing the existing schema with the entity mappings and generate the
+  appropriate schema migration scripts.
 
 # DB Migration
 
@@ -349,7 +395,7 @@ liquibase:
       change-log: "classpath:db/liquibase-changelog.xml"
 endpoints:
   liquibase:
-    enabled: true
+    enabled:   true
     sensitive: false
 ```
 
