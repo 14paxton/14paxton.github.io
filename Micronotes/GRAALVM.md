@@ -1,11 +1,11 @@
 ---
-title: GRAALVM
-permalink: Micronotes/GRAALVM
-category: Micronotes
-parent: Micronotes
-layout: default
+title:        GRAALVM
+permalink:    Micronotes/GRAALVM
+category:     Micronotes
+parent:       Micronotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - micronotes
   - default
@@ -28,6 +28,19 @@ Table of contents
 
 <br/>
 
+# TidBits
+
+## Create Graal Native Image
+
+```shell
+./gradlew nativeCompile
+
+```
+
+## Run Native Image In Dev
+
+```shell
+./build/native/nativeCompile/graal-mail -Dmicronaut.environments=dev```
 # Reflective Access
 
 > add a `reflect-config.json ` so `Graal` recognizes imported classes that need to be reflective
@@ -109,17 +122,19 @@ Args = --report-unsupported-elements-at-runtime
 
 ## Method to check if GraalVM JDK Distribution
 
-> Method to check if you are running in GraalVM JDK distribution. I have used it often in Gradle build files to decide whether a Gradle task should be enabled.
+> Method to check if you are running in GraalVM JDK distribution. I have used it often in Gradle build files to decide whether a Gradle task should be
+> enabled.
 
 ```java
 public class GraalStuff {
     private static boolean isGraalVMJava() {
         return (System.getProperty("java.home") != null && java.nio.file.Files.exists(java.nio.file.Paths.get("${System.getProperty("java.home")}/lib/graalvm"))) || Arrays.asList("jvmci.Compiler", "java.vendor.version", "java.vendor")
-                .stream()
-                .anyMatch(propertyName -> {
-                    String value = System.getProperty(propertyName);
-                    return value != null && value.toLowerCase(Locale.ENGLISH).contains("graal");
-                });
+                                                                                                                                                                           .stream()
+                                                                                                                                                                           .anyMatch(propertyName -> {
+                                                                                                                                                                               String value = System.getProperty(propertyName);
+                                                                                                                                                                               return value != null && value.toLowerCase(Locale.ENGLISH)
+                                                                                                                                                                                                            .contains("graal");
+                                                                                                                                                                           });
     }
 }
 ```
