@@ -1,11 +1,11 @@
 ---
-title: Annotations
-permalink: Micronotes/Annotations
-category: Micronotes
-parent: Micronotes
-layout: default
+title:        Annotations
+permalink:    Micronotes/Annotations
+category:     Micronotes
+parent:       Micronotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - micronotes
   - default
@@ -43,9 +43,45 @@ public class MyObject {
 }
 ```
 
+# Key Annotations
+
+| **Annotation**                     | **Definition**                                                                                                                         |
+|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| `@Inject`                          | Used for dependency injection to indicate where Micronaut should inject dependencies (like `@Autowired` in Spring).                    |
+| `@Singleton`                       | Defines a class as a singleton bean, ensuring only one instance is created and used throughout the application.                        |
+| `@Introspected`                    | Optimizes a class for reflection by generating metadata at compile time for GraalVM or serialization use.                              |
+| `@Controller`                      | Marks a class as an HTTP controller, responsible for handling HTTP requests and responses in a REST API.                               |
+| `@Get`, `@Post`, `@Put`, `@Delete` | HTTP method-specific annotations to map requests to specific controller methods for handling HTTP GET, POST, PUT, or DELETE requests.  |
+| `@Client`                          | Used to define a declarative HTTP client interface for making HTTP requests to external services or other applications.                |
+| `@Requires`                        | Specifies that a bean should only be loaded if certain conditions (e.g., presence of a configuration or environment variable) are met. |
+| `@ConfigurationProperties`         | Maps external configuration properties (e.g., from `application.yml`) to a POJO.                                                       |
+| `@Value`                           | Injects a specific value from the application configuration (e.g., `application.yml`) into a field or method parameter.                |
+| `@Validated`                       | Enables method-level validation using JSR-380 Bean Validation API (Hibernate Validator).                                               |
+| `@NotNull`, `@Min`, `@Max`         | Common validation annotations used in conjunction with `@Validated` for validating method parameters and properties.                   |
+| `@QueryValue`                      | Used in a controller to bind query parameters in HTTP requests to method arguments.                                                    |
+| `@PathVariable`                    | Binds URI path variables to method parameters in controllers.                                                                          |
+| `@Body`                            | Binds the body of an HTTP request to a method argument in a controller, typically used for POST and PUT requests.                      |
+| `@Error`                           | Handles exceptions globally or locally within a controller, providing custom error responses.                                          |
+| `@Cacheable`                       | Caches the result of a method call to improve performance.                                                                             |
+| `@Scheduled`                       | Schedules the execution of a method at a fixed rate, useful for periodic tasks like cron jobs.                                         |
+| `@Filter`                          | Defines an HTTP filter to intercept and modify requests and responses for cross-cutting concerns (e.g., logging, authentication).      |
+| `@Retryable`                       | Enables automatic retries for methods that fail due to transient issues (e.g., network errors).                                        |
+| `@Secured`                         | Applies security rules to restrict access to methods or controllers based on roles or authorities.                                     |
+| `@Primary`                         | Marks a bean as the primary candidate for dependency injection when multiple beans of the same type exist.                             |
+| `@EventListener`                   | Listens for specific events and executes the annotated method when the event is published.                                             |
+| `@Header`                          | Allows you to bind HTTP headers in controllers or clients to method arguments.                                                         |
+| `@CircuitBreaker`                  | Applies a circuit breaker pattern to a method to handle failures gracefully by limiting requests and preventing cascading failures.    |
+| `@Factory`                         | Defines a factory class for producing custom beans.                                                                                    |
+| `@Prototype`                       | Defines a bean with a prototype scope, creating a new instance each time it is injected.                                               |
+| `@Configuration`                   | Marks a class as a configuration class, allowing it to provide application-specific beans or configurations.                           |
+| `@Transactional`                   | Defines a method or class as transactional, ensuring that database operations are wrapped in a transaction.                            |
+| `@Trace`                           | Enables distributed tracing for methods, allowing the application to track request flow across multiple services.                      |
+| `@Fallback`                        | Defines a fallback method that gets invoked when a `@Retryable` or `@CircuitBreaker` operation fails.                                  |
+| `@Requires(property)`              | Ensures that a bean is only loaded if the specified configuration property is present.                                                 |
+
 # Core
 
-## [io.micronaut.core.annotation](https://docs.micronaut.io/3.4.2/api/index.html?io/micronaut/core/annotation/package-summary.html)
+## [io.micronaut.core.annotation](https://docs.micronaut.io/latest/api/index.html?io/micronaut/core/annotation/package-summary.html)
 
 | Blocking                       | A marker annotation for methods that are blocking.                                                                                                                                       |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
