@@ -37,6 +37,16 @@ Table of contents
 
 ```
 
+# Reflective Acccess
+
+> add reflect-config.json for refelctive access
+
+```reflect-config.json to /src/main/resources/META-INF/native-image/[package]```
+
+- [Example](https://github.com/microstream-one/example-graalvm-native/tree/master/graalvm-native/src/main/resources/META-INF/native-image)
+
+
+
 ## Run Native Image In Dev
 
 ```shell
