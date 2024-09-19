@@ -1,11 +1,11 @@
 ---
-title: PastProjects
-permalink: GitHubPages/PastProjects
-category: JobPrep
-parent: MyPersonalDocsAndStuff
-layout: default
+title:        PastProjects
+permalink:    GitHubPages/PastProjects
+category:     JobPrep
+parent:       MyPersonalDocsAndStuff
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - jobprep
   - default
@@ -13,207 +13,168 @@ shortRepo:
 
 <details markdown="block">                    
 <summary>                    
-Table of contents                    
+Table of Contents                    
 </summary>                    
 {: .text-delta }                    
 1. TOC                    
 {:toc}                    
 </details>                    
-    
-<br/>                    
-    
+
 ***                    
-    
-<br/>                    
-    
-# Projects    
-    
-## Front End    
-    
-### 1. - [React Hook Form- ReactHookFormFields/SelectBox.js](https://github.com/14paxton/ReactHookFormDynamicComponents)    
-    
-a. -things I did-    
-    
-       i.  Learned and created a proof of concept with dynamic library                  
-           to create forms using react hook forms to replace Forminak                  
-                  
-       ii. Figured out some unconventional ways to make form and                  
-           components work the way the end user request (wanting submit                  
-           for the form to be submitted by a button from a modal                  
-           produced by a parent component, using materials controlled                  
-           fields in the form designed for uncontrolled fields.                  
-    
-### 2. - [Material Table -assessmentresultstable.js](https://github.com/14paxton/TableWithAsyncCall)    
-    
-a. Things I did    
-    
-       i.  Created custom search function component using react hook                  
-           forms                  
-                  
-       ii. Created an async search and load function that prevented                  
-           whole table from rerendering                  
-    
-b. Difficulties    
-    
-       i.  On table selection showing material ui chips with assessment                  
-           names under table                  
-                  
-       ii. Custom select all (select all will only select all                  
-           assessments shown on designated table page, if you select to                  
-           paginate over or select to show more rows in table, select                  
-           all resets still keeping previous selections select , but if                  
-           clicked again will select new records shown)                  
-    
-### 3. - [Dynamic Ellipsis Component -- ellipsismodifier.js](https://github.com/14paxton/DynamicEllipsis)    
-    
-a.              
-Adds an ellipsis by text count or if text count is not set will                  
-create ellipsis when text overfills div, will dynamically add                  
-ellipsis if page is resized    
-    
-### 4. [Date Range Picker -- presetdaterangepicker.js](https://github.com/14paxton/DateRangePicker)    
-    
-a. Things I did    
-    
-       i.  Found an existing react range picker, used it as a template                  
-           to create a customized date range picker that worked with                  
-           the advanced search form I created                  
-    
-b. Difficulties    
-    
-       i.  Finding an example of something using react close to what                  
-           the designer wanted, example they showed was an old jquery                  
-           data picker                  
-    
-### 5.- [ created dynamic tool tip ](https://gist.github.com/14paxton/9c745874ec384add89c1908c73832594)    
-    
-- tool tip will only be shown if size of screen is causing text to have an ellipsis    
-    
-### 6. - [created HOC to create custom powerpoint from table in js and react](https://github.com/14paxton/TableToPowerPoint)    
-    
-## Backend    
-    
-### 1. - [Pulling images and pdfs from an s3 bucket to attach to an email --](https://gist.github.com/14paxton/1fa8f703b708b9488408c9217a83b3a9)    
-    
-- [getting binary stream](https://gist.github.com/14paxton/58da1e0c108fa527c5ec1a770eefa683)    
-    - assesssmentresultservice.groovy and    
-    - resultsharingdetalsservice.groovy    
-    
-  a. Things I did    
-    
-       i.  I needed to get images from s3 bucket and attach them to an                  
-           email that was sending with post mark                  
-    
-  b. Difficulties    
-    
-       i.  I needed to get the files while I still had access to the                  
-           authorization token, but then send to jms que which was used                  
-           to send emails                  
-            
-           1.  Save authorization and download url to map, attached as                  
-               string to message being sent to que, when email service                  
-               read message it downloads and saves file to temp                  
-               directory, then encodes file as base64 to attach to                  
-               email                  
-    
-### 2. - [Find way to test gorm where/ detached criteria and hibernate queries](https://github.com/14paxton/PersonalGrailsNotes/blob/main/Testing.md#mocking-hibernate-used-to-test-methods-using-where-queriers--detached-criteria--criteria-builder)    
-    
--- catalogdetailservicespec.groovy    
-    
-a.              
-Dug through documentation for hibernate and how it works and                  
-came up with a way to mock and set hibernateDataStore and                  
-PlatformTransactionManager    
-    
-### 3. - [Found and configured plugin    
-    
-to create multiple fully qualified domain objects at once](https://github.com/14paxton/PersonalGrailsNotes/blob/main/Testing.md#using-test-data-from-buildtest-plugin)    
-    
-### 4. Integration with office 365 having scheduled assessments update both    
-    
-interviewer and interviewees outlook calendar    
-    
-### 5. - [created async service for processessing role changes for batch user updates](https://gist.github.com/14paxton/ef4f6e91fa7fa44015c41f26a1caf3ae)    
-    
-- [comparing role groups](https://gist.github.com/14paxton/b7ff93091f4db71beffb0a37140fa0f2)    
-    
-### 6. - [optimized search functionality by limiting db calls](https://gist.github.com/14paxton/b5a8d600dc4066010b4067bd8968f613)    
-    
-- [searching numerous columns](https://gist.github.com/14paxton/e72c14086f5d9a6a0c58dc8463b93561)    
-    
-### 7. - [Using elastic search created fuzzy search capability](https://github.com/14paxton/PersonalGrailsNotes/blob/main/ElasticSearch.md)    
-    
-### 8. - using micronaut created microservices    
-    
-- [with mySQL db](https://github.com/14paxton/micronaut_mysql_hibernate)    
-- [with microstream](https://github.com/14paxton/micronaut_microstream)    
-    
-### -Things I enjoy-    
-    
-                  
---- 
-    
-# What I enjoy about what I do!    
-    
-## Finding quirky unorthodox ways to use a language.    
-    
-a. Setting custom validity for a form field with javascript    
-    
-       i.  e.target.setCustomValidity(\'invalid\');                  
-    
-b. programmatically setting html in a string for react (although it                  
-is strongly discouraged)    
-    
-       i.  dangerouslySetInnerHTML- set html in a string                  
-    
-```jsx                  
-{__html: '<p>' + result?.themeSummary + '. <i>*Theme Of Significance.</i></p>'}      
-<Tooltip title={<div dangerouslySetInnerHTML={modifiedToolTip}/>} childrenDisplayStyle="inline">                  
-```                  
-    
-c. enums , to check a key we were using a try/catch and if it failed                  
-the key doesn't exist, I don't like making code purposefully fail ,                  
-made a util to replace    
-    
-- Custom check enums    
-    
-```java                  
-AssessmentPurpose.getEnumConstants().find{it.key.equalsIgnoreCase("extrn")}?.value                  
-```                  
-    
-- [GET By value]{.underline}**    
-    
-```java                  
-FitStatement.getEnumConstants().find{(it.value==member.result)}?.match?:member.result                  
-```                  
-    
-                  
---- 
-    
-# Dev Questions    
-    
-- What do you use to handle security?    
-    
-- Anything for database migrations?    
-    
-- What is your preferred environment?    
-    
-- What up coming features or new technology are you excited about    
-    
-- implementing.    
-    
-- Describe a recent serious outage and how it was resolved.    
-    
-- How does your expense policy & process work?    
-    
-- How much attrition has the team, and the wider department, had in the last 12-18 months?    
-    
-- What budget will I have for my continuing professional development? What restrictions are there on what I can spend it on?    
-    
-- What is best thing about working here? And what is the worst thing?
 
-- Describe a recent interpersonal conflict within the team, and how it was handled.
+# Projects
 
-- How much time does the team typically get for a) technical debt reduction & b) research projects per quarter?
+## Front End
 
-- Describe a recent prioritisation conflict - perhaps between the team & PM, or between different stakeholders. How was it resolved?
+### [React Hook Form - ReactHookFormFields/SelectBox.js](https://github.com/14paxton/ReactHookFormDynamicComponents)
+
+- **What I did**:
+    - Learned and created a proof of concept using a dynamic library to create forms with React Hook Forms, replacing Formik.
+    - Found unconventional ways to make forms and components work as per end-user requests (e.g., submitting a form via a button in a modal produced
+      by a parent component, using controlled Material UI fields in forms designed for uncontrolled fields).
+
+### [Material Table - assessmentresultstable.js](https://github.com/14paxton/TableWithAsyncCall)
+
+- **What I did**:
+    - Created a custom search function component using React Hook Forms.
+    - Developed an async search and load function that prevented the entire table from re-rendering.
+
+- **Challenges**:
+    - Displaying Material UI chips with assessment names under the table upon selection.
+    - Implemented a custom "select all" function that only selects items on the current page, preserving selections across pages but resetting on
+      further pagination.
+
+### [Dynamic Ellipsis Component - ellipsismodifier.js](https://github.com/14paxton/DynamicEllipsis)
+
+- **What it does**:
+    - Adds an ellipsis based on text length or dynamically adds one when text overflows a div. Adjusts ellipsis on page resize.
+
+### [Date Range Picker - presetdaterangepicker.js](https://github.com/14paxton/DateRangePicker)
+
+- **What I did**:
+    - Customized an existing React date range picker to work with the advanced search form I created.
+
+- **Challenges**:
+    - Found it difficult to match the designer’s expectations, as their example used an old jQuery date picker.
+
+### [Dynamic Tooltip](https://gist.github.com/14paxton/9c745874ec384add89c1908c73832594)
+
+- **What it does**:
+    - Displays a tooltip only when text is truncated due to the screen size.
+
+### [HOC for PowerPoint Creation](https://github.com/14paxton/TableToPowerPoint)
+
+- **What I did**:
+    - Created a higher-order component to generate a PowerPoint presentation from a table using JavaScript and React.
+
+### [Barcode Scanner for Web App Input](https://gist.github.com/14paxton/09adce350289bdcc1df92ed425c1d548)
+
+- **What I did**:
+    - Created a custom React TypeScript hook to listen for barcode input from a hand scanner.
+- **Challenges**:
+    - Differentiating between keyboard input and barcode scanner input.
+
+## Backend
+
+### [Pulling Images and PDFs from S3 Bucket for Email Attachment](https://gist.github.com/14paxton/1fa8f703b708b9488408c9217a83b3a9)
+
+- **What I did**:
+    - Retrieved images from an S3 bucket and attached them to an email sent using Postmark.
+- **Challenges**:
+    - Needed to access files while the authorization token was still valid, then send them to a JMS queue for email attachment processing.
+
+### [Testing GORM and Hibernate Queries](https://github.com/14paxton/PersonalGrailsNotes/blob/main/Testing.md#mocking-hibernate-used-to-test-methods-using-where-queriers--detached-criteria--criteria-builder)
+
+- **What I did**:
+    - Researched Hibernate and GORM documentation and came up with a method to mock Hibernate datastore and PlatformTransactionManager.
+
+### [Configuring a Plugin to Create Multiple Domain Objects](https://github.com/14paxton/PersonalGrailsNotes/blob/main/Testing.md#using-test-data-from-buildtest-plugin)
+
+- **What I did**:
+    - Configured a plugin to create multiple fully qualified domain objects simultaneously.
+
+### Integration with Office 365 for Assessment Scheduling
+
+- **What I did**:
+    - Integrated scheduled assessments with both interviewers' and interviewees' Outlook calendars.
+
+### [Async Service for Batch Role Changes](https://gist.github.com/14paxton/ef4f6e91fa7fa44015c41f26a1caf3ae)
+
+- **What I did**:
+    - Created an async service to process batch role changes for users.
+
+- **Role Comparison Example**:
+    - [Comparing role groups](https://gist.github.com/14paxton/b7ff93091f4db71beffb0a37140fa0f2)
+
+### [Optimized Search Functionality](https://gist.github.com/14paxton/b5a8d600dc4066010b4067bd8968f613)
+
+- **What I did**:
+    - Limited database calls to optimize search functionality across multiple columns.
+
+### [Elastic Search - Fuzzy Search Capability](https://github.com/14paxton/PersonalGrailsNotes/blob/main/ElasticSearch.md)
+
+- **What I did**:
+    - Implemented fuzzy search capabilities using ElasticSearch.
+
+### Using Micronaut to Create Microservices
+
+- [With MySQL](https://github.com/14paxton/micronaut_mysql_hibernate)
+- [With Microstream](https://github.com/14paxton/micronaut_microstream)
+
+---
+
+## Things I Enjoy
+
+### Finding Quirky, Unorthodox Ways to Use a Language
+
+- **Setting custom validity for a form field**:
+    ```javascript
+    e.target.setCustomValidity('invalid');
+    ```
+
+- **Programmatically setting HTML in a string for React**:
+    ```javascript
+    dangerouslySetInnerHTML
+    ```
+
+    ```jsx
+    {__html: '<p>' + result?.themeSummary + '. <i>*Theme Of Significance.</i></p>'}
+    <Tooltip title={<div dangerouslySetInnerHTML={modifiedToolTip}/>} childrenDisplayStyle="inline">
+    ```
+
+- **Custom Enum Checks**:
+    - Instead of using try/catch for key validation, created a utility:
+    ```groovy
+    AssessmentPurpose
+        .getEnumConstants()
+        .find { it.key.equalsIgnoreCase("extrn") }?.value
+    ```
+
+- **Get Enum by Value**:
+    ```groovy
+    FitStatement.getEnumConstants()
+        .find { (it.value == member.result) }?.match ?: member.result
+    ```
+
+- **Pad a string to a certain length with spaces in Java**:
+    ```java
+      String padded=String.format("%-20s",str);
+    ```
+
+---
+***
+
+## Dev Questions
+
+1. What do you use to handle security?
+2. Anything for database migrations?
+3. What is your preferred environment?
+4. What upcoming features or new technology are you excited about implementing?
+5. Describe a recent serious outage and how it was resolved.
+6. How does your expense policy & process work?
+7. How much attrition has the team, and the wider department, had in the last 12-18 months?
+8. What budget will I have for continuing professional development? Any restrictions?
+9. What is the best and worst thing about working here?
+10. Describe a recent interpersonal conflict within the team, and how it was handled.
+11. How much time does the team get for a) technical debt reduction and b) research projects per quarter?
+12. Describe a recent prioritization conflict (e.g., between the team & PM or different stakeholders). How was it resolved?
