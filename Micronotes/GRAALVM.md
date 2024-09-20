@@ -30,11 +30,20 @@ Table of contents
 
 # TidBits
 
+- [Microservices as GraalVM Micronaut Docs](https://docs.micronaut.io/latest/guide/index.html#graalServices)
+- [Handling Reflection Micronaut Guide](https://guides.micronaut.io/latest/micronaut-graalvm-reflection-gradle-java.html#handling-reflection)
+
 ## Create Graal Native Image
 
    ```shell
     ./gradlew nativeCompile
   ```
+
+## using the following to generate reflection meta-data
+
+   ```shell
+     java -agentlib:native-image-agent=config-output-dir=./META-INF/native-image -jar your-micronaut-app.jar
+   ```
 
 # Reflective Acccess
 
