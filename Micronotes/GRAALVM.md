@@ -32,25 +32,24 @@ Table of contents
 
 ## Create Graal Native Image
 
-```shell
-./gradlew nativeCompile
-
-```
+   ```shell
+    ./gradlew nativeCompile
+  ```
 
 # Reflective Acccess
 
-> add reflect-config.json for refelctive access
+> add a ```reflect-config.json ```for refelctive access
 
-```reflect-config.json to /src/main/resources/META-INF/native-image/[package]```
+> to ```/src/main/resources/META-INF/native-image/[package]```
 
 - [Example](https://github.com/microstream-one/example-graalvm-native/tree/master/graalvm-native/src/main/resources/META-INF/native-image)
 
-
-
 ## Run Native Image In Dev
 
-```shell
-./build/native/nativeCompile/graal-mail -Dmicronaut.environments=dev```
+   ```shell
+    ./build/native/nativeCompile/graal-mail -Dmicronaut.environments=dev
+   ```
+
 # Reflective Access
 
 > add a `reflect-config.json ` so `Graal` recognizes imported classes that need to be reflective
@@ -77,7 +76,7 @@ touch /src/main/resources/META-INF/native-image/com/ssi/reflect-config.json
 
 > gradle import
 
-```gradle
+```groovy
 annotationProcessor("io.micronaut:micronaut-graal")
 ```
 
@@ -138,13 +137,14 @@ Args = --report-unsupported-elements-at-runtime
 ```java
 public class GraalStuff {
     private static boolean isGraalVMJava() {
-        return (System.getProperty("java.home") != null && java.nio.file.Files.exists(java.nio.file.Paths.get("${System.getProperty("java.home")}/lib/graalvm"))) || Arrays.asList("jvmci.Compiler", "java.vendor.version", "java.vendor")
-                                                                                                                                                                           .stream()
-                                                                                                                                                                           .anyMatch(propertyName -> {
-                                                                                                                                                                               String value = System.getProperty(propertyName);
-                                                                                                                                                                               return value != null && value.toLowerCase(Locale.ENGLISH)
-                                                                                                                                                                                                            .contains("graal");
-                                                                                                                                                                           });
+        return (System.getProperty("java.home") != null && Files.exists(Paths.get("${System.getProperty("java.home")}/lib/graalvm")))
+                || Arrays.asList("jvmci.Compiler", "java.vendor.version", "java.vendor")
+                         .stream()
+                         .anyMatch(propertyName -> {
+                             String value = System.getProperty(propertyName);
+                             return value != null && value.toLowerCase(Locale.ENGLISH)
+                                                          .contains("graal");
+                         });
     }
 }
 ```
@@ -157,7 +157,7 @@ this application requires additional metadata: you need to provide it with a lis
 
 Instruct the plugin to automatically detect resources to be included in the native executable. Add this to your `build.gradle ` file:
 
-```gradle
+```groovy
 graalvmNative {
     binaries.all {
         resources.autodetect()
@@ -171,7 +171,7 @@ By default, the plugin selects a `Java 11 GraalVM Community Edition`
 If you want to use `GraalVM Enterprise`, or a particular version of `GraalVM` and `Java`, you need to explicitly tell in plugin’s configuration.  
 For example:
 
-```gradle
+```groovy
 graalvmNative {
     binaries {
         main(({
@@ -186,7 +186,7 @@ graalvmNative {
 
 > my working example
 
-```gradle
+```groovy
 graalvmNative {
     toolchainDetection = false
 
@@ -205,7 +205,7 @@ graalvmNative {
 
 > The workaround to this is to disable toolchain detection with this command
 
-```gradle
+```groovy
 toolchainDetection = false
 ```
 
