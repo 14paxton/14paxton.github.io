@@ -49,7 +49,7 @@ Table of contents
 
 ## Handler
 
-1) ### Custom ```example.micronaut.FunctionRequestHandler```
+### 1) Custom ```example.micronaut.FunctionRequestHandler```
 
     - Purpose: This is a custom class, likely created in a Micronaut-based AWS Lambda project to handle specific business logic or Lambda requests.
     - Use Case: Typically, this handler extends from a Micronaut AWS Lambda handler class, like
@@ -65,7 +65,7 @@ Table of contents
         }
        ```
 
-2) ### ```io.micronaut.function.aws.proxy.MicronautLambdaHandler```
+### 2) ```io.micronaut.function.aws.proxy.MicronautLambdaHandler```
 
     - Purpose: This is the primary handler for AWS Lambda requests in a Micronaut application. It integrates the Micronaut framework and makes it
       possible
@@ -86,7 +86,7 @@ Table of contents
           This
           handler automatically wires up the HTTP request/response handling via Micronaut controllers.
 
-3) ### ```io.micronaut.function.aws.proxy.payload1.ApiGatewayProxyRequestEventFunction```
+### 3) ```io.micronaut.function.aws.proxy.payload1.ApiGatewayProxyRequestEventFunction```
 
     - Purpose: This is a specialized handler provided by Micronaut for handling Payload Version 1.0 of AWS API Gateway requests. AWS API Gateway can
       use
@@ -130,9 +130,9 @@ public class FunctionRequestHandler extends MicronautRequestHandler<APIGatewayPr
 
 ## Runtime
 
-1) ### Custom ```example.micronaut.FunctionLambdaRuntime```
+### 1) Custom ```example.micronaut.FunctionLambdaRuntime```
 
-2) ### ```io.micronaut.function.aws.runtime.MicronautLambdaRuntime```
+### 2)  ```io.micronaut.function.aws.runtime.MicronautLambdaRuntime```
 
     - Purpose: This is the core Micronaut class for running AWS Lambda functions. It is a base class that integrates the Micronaut framework’s
       features into the AWS Lambda execution environment. This runtime provides automatic support for dependency injection, configuration, and other
@@ -158,7 +158,8 @@ public class FunctionRequestHandler extends MicronautRequestHandler<APIGatewayPr
         - When you want to deploy a Micronaut-based Lambda function that handles generic AWS events (e.g., API Gateway, SNS, SQS). The class allows
           you to create Lambda functions with Micronaut’s dependency injection, configuration, and HTTP routing capabilities.
 
-3) ### ```io.micronaut.function.aws.runtime.APIGatewayV2HTTPEventMicronautLambdaRuntime```
+### 3)  ```io.micronaut.function.aws.runtime.APIGatewayV2HTTPEventMicronautLambdaRuntime```
+
     - Purpose: This is a specialized runtime class designed specifically to handle AWS API Gateway Version 2.0 HTTP events. This runtime is built on
       top of MicronautLambdaRuntime, but it focuses on processing API Gateway requests that conform to the Payload Version 2.0 specification.
     - Use Case: You would use this class if your Lambda function is deployed behind AWS API Gateway, and you want to handle HTTP requests and
