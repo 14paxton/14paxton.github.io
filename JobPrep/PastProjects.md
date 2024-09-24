@@ -83,15 +83,15 @@ Table of Contents
 - **Challenges**:
     - Needed to access files while the authorization token was still valid, then send them to a JMS queue for email attachment processing.
 
-### [Testing GORM and Hibernate Queries](https://github.com/14paxton/PersonalGrailsNotes/blob/main/Testing.md#mocking-hibernate-used-to-test-methods-using-where-queriers--detached-criteria--criteria-builder)
+### [Testing GORM and Hibernate Queries](https://www.paxtonb.com/PersonalGrailsNotes/Testing#mocking-hibernate-used-to-test-methods-using-where-queriers--detached-criteria--criteria-builder)
 
 - **What I did**:
     - Researched Hibernate and GORM documentation and came up with a method to mock Hibernate datastore and PlatformTransactionManager.
 
-### [Configuring a Plugin to Create Multiple Domain Objects](https://github.com/14paxton/PersonalGrailsNotes/blob/main/Testing.md#using-test-data-from-buildtest-plugin)
+### [Configuring a Plugin to Create Multiple Domain Objects](https://www.paxtonb.com/PersonalGrailsNotes/Testing#using-test-data-from-buildtest-plugin)
 
 - **What I did**:
-    - Configured a plugin to create multiple fully qualified domain objects simultaneously.
+    - Configure a plugin to create multiple fully qualified domain objects simultaneously.
 
 ### Integration with Office 365 for Assessment Scheduling
 
@@ -111,10 +111,15 @@ Table of Contents
 - **What I did**:
     - Limited database calls to optimize search functionality across multiple columns.
 
-### [Elastic Search - Fuzzy Search Capability](https://github.com/14paxton/PersonalGrailsNotes/blob/main/ElasticSearch.md)
+### [Elastic Search - Fuzzy Search Capability](https://gist.github.com/14paxton/3a352d2824bde0e97960409056f682cc)
 
 - **What I did**:
     - Implemented fuzzy search capabilities using ElasticSearch.
+
+### [Optimized SQL Queries Using HQL](https://gist.github.com/14paxton/e72c14086f5d9a6a0c58dc8463b93561)
+
+- **What I did**:
+    - Using HQL and Gorm I created abstract classes to search multiple columns for data, and bind the return to an object
 
 ### Using Micronaut to Create Microservices
 

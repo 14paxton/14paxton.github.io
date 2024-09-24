@@ -1,11 +1,11 @@
 ---
-title: Domain_Stuff
-permalink: PersonalGrailsNotes/Domain_Stuff
-category: PersonalGrailsNotes
-parent: PersonalGrailsNotes
-layout: default
+title:        Domain_Stuff
+permalink:    PersonalGrailsNotes/Domain_Stuff
+category:     PersonalGrailsNotes
+parent:       PersonalGrailsNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - personalgrailsnotes
   - default
@@ -99,7 +99,7 @@ class Group {
                         type: 'string',
                         value: UserGroupType.GROUPDEFAULT.key
 
-                groupAssessmentOrders joinTable: ["user_group_assessment_order",
+                groupAssessmentOrders joinTable: ['user_group_assessment_order',
                                                   column: 'user_group_assessment_order_id',
                                                   key   : 'user_group_id'] //Custom Join Table name and Column
 

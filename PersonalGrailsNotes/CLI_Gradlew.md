@@ -1,18 +1,18 @@
 ---
-title: CLI_Gradlew
-permalink: PersonalGrailsNotes/CLI_Gradlew
-category: PersonalGrailsNotes
-parent: PersonalGrailsNotes
-layout: default
+title:        CLI_Gradlew
+permalink:    PersonalGrailsNotes/CLI_Gradlew
+category:     PersonalGrailsNotes
+parent:       PersonalGrailsNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - personalgrailsnotes
   - default
 ---
 
 <br/>    
-    
+
 <details markdown="block">    
 <summary>    
 Table of contents    
@@ -21,38 +21,37 @@ Table of contents
 1. TOC    
 {:toc}    
 </details>    
-    
+
 <br/>    
-    
+
 ***    
-    
+
 <br/>    
-  
-    
-# Run App    
-    
-## Run with jvm debug    
-    
+
+# Run App
+
+## Run with jvm debug
+
 ``` bash    
 ./gradlew bootRun --debug-jvm --full-stacktrace --daemon     
 ```    
-    
-# Testing    
-    
-## run with spaces in method name    
-    
+
+# Testing
+
+## run with spaces in method name
+
 ``` bash    
 ./gradlew test --tests "com.talentbank.core.UserServiceAPISearchSpec.search for name Dick with clientSetupIds"    
 ```    
-    
-## run jvm debug    
-    
+
+## run jvm debug
+
 ``` bash    
 ./gradlew test --debug-jvm --tests "com.talentbank.tbex.SelfServiceIntegration.SelfServiceIntegrationControllerSpec.test_rest_no_request_object"  --full-stacktrace    
 ```    
-    
-## Set system properties    
-    
+
+## Set system properties
+
 ``` bash    
  ./gradlew -Dsample.message=cool run    
 ```

@@ -1,11 +1,11 @@
 ---
-title: Text_Manipulation
-permalink: PersonalGrailsNotes/Text_Manipulation
-category: PersonalGrailsNotes
-parent: PersonalGrailsNotes
-layout: default
+title:        Text_Manipulation
+permalink:    PersonalGrailsNotes/Text_Manipulation
+category:     PersonalGrailsNotes
+parent:       PersonalGrailsNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - personalgrailsnotes
   - default
@@ -114,13 +114,16 @@ render g.select(from: languages, optionKey: "key", optionValue: "value", name: "
 ### Javascript manipulation
 
 ```html
+
 <script>
-  const catalogsByType = null;
+    const catalogsByType = null;
 </script>
 <g:applyCodec encodeAs="none">
-  catalogsByType = ${resultCatalogs.catalogsByType as grails.converters.JSON};
+    catalogsByType = ${resultCatalogs.catalogsByType as grails.converters.JSON};
 </g:applyCodec>
 <script>
-  let data = ${raw(data)};
+    let data = $
+    {raw(data)}
+    ;
 </script>
 ```
