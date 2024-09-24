@@ -1,14 +1,12 @@
 ---
 title:        CLI
 permalink:    AWS/CLI
-category:     CLI
-parent:       CLI
+category:     AWS
+parent:       AWS
 layout:       default
 has_children: false
 share:        true
-
 ---
-
 
 <br/>          
 
@@ -85,7 +83,7 @@ aws iam attach-group-policy --group-name Administrators --policy-arn $(aws iam l
 aws iam create-access-key --user-name Administrator
 ```
 
-# Create VPC, security group, subnets and subnet group (optional) with jq 
+# Create VPC, security group, subnets and subnet group (optional) with jq
 
 ```shell
 # VPC, internet gateway and route table
