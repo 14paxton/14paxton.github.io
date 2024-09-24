@@ -1,36 +1,37 @@
 ---
-title: AWS-CLI
-permalink: Linux/AWS-CLI
-category: Linux
-parent: Linux
-layout: default
+title:        CLI
+permalink:    AWS/CLI
+category:     CLI
+parent:       CLI
+layout:       default
 has_children: false
-share: true
-shortRepo:
-  - linux
-  - default
----
-
-<br/>
-
-<details markdown="block">    
-<summary>    
-Table of contents    
-</summary>    
-{: .text-delta }    
-1. TOC    
-{:toc}    
-</details>
-
-<br/>
+share:        true
 
 ---
+
+
+<br/>          
+
+<details markdown="block">                
+<summary>                
+Table of contents                
+</summary>                
+{: .text-delta }                
+1. TOC                
+{:toc}                
+</details>                
+
+<br/>                
+
+***                
 
 <br/>
 
 # Database Stuff
 
-> some scripts use jq for parsing json
+> some scripts use `jq` for parsing json
+
+> [jq](https://stedolan.github.io/jq/)
 
 ## get db instances
 
@@ -46,6 +47,34 @@ aws rds describe-db-instances \
 aws configure
 ```
 
+## create mysql db instance
+
+```shell
+aws rds create-db-instance \
+    --db-instance-identifier crud-data-aws-db-create-micro-person \
+    --db-instance-class db.t2.micro \
+    --engine mysql \
+    --master-username admin \
+    --master-user-password secret99 \
+    --allocated-storage 20 \
+    --publicly-accessible \
+#    --db-subnet-group-name crud-data-aws-db-create-micro-person-sng \
+#    --vpc-security-group-ids $SG_ID \
+```
+
+### wait for instance
+
+```shell
+aws rds wait db-instance-available --db-instance-identifier crud-data-aws-db-create-micro-person
+```
+
+### stop aws instance
+
+```shell
+aws rds delete-db-instance --db-instance-identifier crud-data-aws-db-create-micro-person --skip-final-snapshot
+aws rds wait db-instance-deleted --db-instance-identifier crud-data-aws-db-create-micro-person
+```
+
 # create IAM user
 
 ```shell
@@ -56,7 +85,7 @@ aws iam attach-group-policy --group-name Administrators --policy-arn $(aws iam l
 aws iam create-access-key --user-name Administrator
 ```
 
-# Create VPC, security group, subnets and subnet group (optional) with jq (https://stedolan.github.io/jq/)
+# Create VPC, security group, subnets and subnet group (optional) with jq 
 
 ```shell
 # VPC, internet gateway and route table
@@ -80,34 +109,6 @@ export SN1_ID=$(aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block 10.0.16.0/20
 aws ec2 modify-subnet-attribute --subnet-id $SN0_ID --map-public-ip-on-launch
 aws ec2 modify-subnet-attribute --subnet-id $SN1_ID --map-public-ip-on-launch
 aws rds create-db-subnet-group --db-subnet-group-name crud-data-aws-db-create-micro-person-sng --db-subnet-group-description "DB subnet group for the Micronaut MySQL guide" --subnet-ids "$SN0_ID" "$SN1_ID"
-```
-
-# create mysql db instance
-
-```shell
-aws rds create-db-instance \
-    --db-instance-identifier crud-data-aws-db-create-micro-person \
-    --db-instance-class db.t2.micro \
-    --engine mysql \
-    --master-username admin \
-    --master-user-password secret99 \
-    --allocated-storage 20 \
-    --publicly-accessible \
-#    --db-subnet-group-name crud-data-aws-db-create-micro-person-sng \
-#    --vpc-security-group-ids $SG_ID \
-```
-
-## wait for instance
-
-```shell
-aws rds wait db-instance-available --db-instance-identifier crud-data-aws-db-create-micro-person
-```
-
-## stop aws instance
-
-```shell
-aws rds delete-db-instance --db-instance-identifier crud-data-aws-db-create-micro-person --skip-final-snapshot
-aws rds wait db-instance-deleted --db-instance-identifier crud-data-aws-db-create-micro-person
 ```
 
 # remove security ec2 instances
