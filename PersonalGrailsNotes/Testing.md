@@ -1,11 +1,11 @@
 ---
-title: Testing
-permalink: PersonalGrailsNotes/Testing
-category: PersonalGrailsNotes
-parent: PersonalGrailsNotes
-layout: default
+title:        Testing
+permalink:    PersonalGrailsNotes/Testing
+category:     PersonalGrailsNotes
+parent:       PersonalGrailsNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - personalgrailsnotes
   - default

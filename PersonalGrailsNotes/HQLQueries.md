@@ -1,11 +1,11 @@
 ---
-title: HQLQueries
-permalink: PersonalGrailsNotes/HQLQueries
-category: PersonalGrailsNotes
-parent: PersonalGrailsNotes
-layout: default
+title:        HQLQueries
+permalink:    PersonalGrailsNotes/HQLQueries
+category:     PersonalGrailsNotes
+parent:       PersonalGrailsNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - personalgrailsnotes
   - default
@@ -154,10 +154,10 @@ Sql groovySql = new Sql(dataSource)
 
 ```groovy
 List fetchUsersByNameOrManagerName(String searchString, params) {
-   if (!params) return null
-   def (firstNameSearch, lastNameSearch, rest) = searchString?.tokenize()
+    if (!params) return null
+    def (firstNameSearch, lastNameSearch, rest) = searchString?.tokenize()
 
-   String query = """SELECT DISTINCT user.id, user.username, user.client_setup_id, user.email, user.first_name, user.last_name,
+    String query = """SELECT DISTINCT user.id, user.username, user.client_setup_id, user.email, user.first_name, user.last_name,
       user.user_metadata,
       user.last_login, user.picture_url,
                                   manager.first_name AS mgr_first_name, manager.last_name AS mgr_last_name
@@ -179,6 +179,6 @@ List fetchUsersByNameOrManagerName(String searchString, params) {
                              (manager.first_name LIKE '%${firstNameSearch}%' && manager.last_name LIKE '%${lastNameSearch}%'))
                            """
 
-   groovySql.rows(query, 0, 15)
+    groovySql.rows(query, 0, 15)
 }
 ```

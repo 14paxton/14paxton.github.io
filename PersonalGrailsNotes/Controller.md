@@ -1,11 +1,11 @@
 ---
-title: Controller
-permalink: PersonalGrailsNotes/Controller
-category: PersonalGrailsNotes
-parent: PersonalGrailsNotes
-layout: default
+title:        Controller
+permalink:    PersonalGrailsNotes/Controller
+category:     PersonalGrailsNotes
+parent:       PersonalGrailsNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - personalgrailsnotes
   - default
@@ -64,7 +64,10 @@ rest nullable: true, validator: { RESTCommand restCmd, WSConfigCommand obj ->
 ```groovy
 // void reject(String errorCode, Object[] errorArgs, String defaultMessage);
 
-"com.talentbank.tbex.SelfServiceIntegration.WSConfigCommand.rest" , Object { "rest" : "${WSConfigCommand.class}" } , "Property[{ 0 }] of class [ { 1 } ] with value [ { 2 } ] does not pass custom validation"
+"com.talentbank.tbex.SelfServiceIntegration.WSConfigCommand.rest" , Object {
+    "rest" :
+    "${WSConfigCommand.class}"
+} , "Property[{ 0 }] of class [ { 1 } ] with value [ { 2 } ] does not pass custom validation"
 ```
 
 ```groovy
@@ -132,6 +135,6 @@ void validateWSConfig() {
 
 ### JSON return bodies Spring/Jackson examples
 
-#### (jackson-json-view-annotation)[https://www.baeldung.com/jackson-json-view-annotation]
+#### [jackson-json-view-annotation](https://www.baeldung.com/jackson-json-view-annotation)
 
-#### (spring-mvc-ann-jackson)[https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-jackson]
+#### [spring-mvc-ann-jackson](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-jackson)
