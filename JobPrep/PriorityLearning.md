@@ -1,27 +1,14 @@
 ---
-title: PriorityLearning
-permalink: GitHubPages/PriorityLearning
-category: JobPrep
-parent: MyPersonalDocsAndStuff
-layout: default
+title:        PriorityLearning
+permalink:    GitHubPages/PriorityLearning
+category:     JobPrep
+parent:       MyPersonalDocsAndStuff
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - jobprep
   - default
----
-
-# Tutorials To Learn
-
-1. [Android](https://www.linkedin.com/learning/android-development-essential-training-1-your-first-app/your-first-android-app?u=103729738)
-2. [Maven](https://www.linkedin.com/learning/introducing-maven/building-java-the-maven-way?contextUrn=urn%3Ali%3AlearningCollection%3A7085095211655163904&u=103729738)
-3. [Spring Security , Secure a REST app](https://app.pluralsight.com/library/courses/spring-security-5-securing-rest-services/table-of-contents)
-4. [Install configure kubernetes](https://app.pluralsight.com/library/courses/kubernetes-installation-configuration-fundamentals/table-of-contents)
-5. [Micronaut fundamentals](https://app.pluralsight.com/library/courses/micronaut-fundamentals/table-of-contents)
-6. [MicroStream Lecture](https://www.youtube.com/watch?v=5W6oVj0h6rQ&t=602s) : [MicroStream Tutorial App](https://guides.micronaut.io/latest/micronaut-microstream-persistence-gradle-java.html)
-7. [GraalVM](https://www.graal.cloud/gcn/gcn-modules/database/micronaut-data-jdbc-repository/?buildTool=gradle&lang=java)
-8. [Java Concurrency](https://www.linkedin.com/learning/java-advanced-concepts-for-high-performance-development/introduction-to-concurrency-in-java?contextUrn=urn%3Ali%3AlearningCollection%3A7085095211655163904&resume=false&u=103729738)
-
 ---
 
 # Possibly Useful Software?
@@ -30,24 +17,6 @@ shortRepo:
 - [Qodana](https://www.jetbrains.com/qodana/)
 - [TeamCity](https://www.jetbrains.com/teamcity/)
 - [Space](https://www.jetbrains.com/space/)
-
----
-
-# YouTube Watch List
-
-# Brandon.Paxton.Aviture
-
-## Watch and Learn
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=alzEVtqKXk2YrnG8&amp;list=PLuwDc-r5PDTizNjLrq7IlT3KCDzZ4q2Ok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
----
-
-## Projects To Follow Along With
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=AsF69VqVhT-IA7NY&amp;list=PLuwDc-r5PDTgMgkPfnxP4IBNl9MgT0ms9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
----
 
 # Personal Proj
 

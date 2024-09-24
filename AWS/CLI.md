@@ -55,7 +55,7 @@ aws lambda update-function-code --function-name GraalVM-Mail --zip-file fileb://
 
 # Database
 
-> some scripts use `jq` for parsing json
+> some scripts use `jq` for parsing JSON
 
 > [jq](https://stedolan.github.io/jq/)
 
