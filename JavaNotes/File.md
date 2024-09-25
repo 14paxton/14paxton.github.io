@@ -5,7 +5,7 @@ category:     JavaNotes
 parent:       Java
 layout:       default
 has_children: false
-share:        true        
+share:        true
 ---
 
 

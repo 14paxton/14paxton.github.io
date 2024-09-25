@@ -6,8 +6,10 @@ category: TestingFrameworks
 has_children: true
 share: true
 shortRepo:
-  - testingframeworks
-  - default
+
+- testingframeworks
+- default
+
 ---
 
 # [REPO](https://github.com/14paxton/TestingFrameworks)

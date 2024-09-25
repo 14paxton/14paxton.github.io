@@ -7,8 +7,10 @@ layout:       default
 has_children: false
 share:        true
 shortRepo:
-  - linux
-  - default
+
+- linux
+- default
+
 ---
 
 <br/>
@@ -32,7 +34,8 @@ Table of contents
 
 ## [Sync Chrome Bookmarks ](https://gist.github.com/14paxton/c10cfd597e7e7b487e27d641cf964c59)
 
-> used to sync a bookmark file to a repo to update on both Mac and windows using bash and PowerShell when an account cannot sync due to admin restrictions
+> used to sync a bookmark file to a repo to update on both Mac and windows using bash and PowerShell when an account cannot sync due to admin
+> restrictions
 
 # [Tar File](https://www.cyberciti.biz/faq/how-to-tar-a-file-in-linux-using-command-line/)
 
@@ -211,7 +214,8 @@ cat << EOF
 > EOF
 ```
 
-> In this example, the << EOF notation indicates the start of the here doc, and the lines following it are treated as input until the EOF delimiter is encountered.
+> In this example, the << EOF notation indicates the start of the here doc, and the lines following it are treated as input until the EOF delimiter is
+> encountered.
 > The cat command will display the
 > content of the here doc, which in this case consists of three lines.
 

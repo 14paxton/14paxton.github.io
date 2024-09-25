@@ -8,11 +8,13 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - reactnotes
-  - default
+
+- reactnotes
+- default
+
 ---
 
-{% raw %}  
+{% raw %}
 <br/>
 
 <details markdown="block">                      
@@ -94,7 +96,8 @@ export default function App() {
 }
 ```
 
-> This approach flows with React Context/Provider patterns, and any child component in the ancestry tree can grab React Hook Form Context if it needs it.
+> This approach flows with React Context/Provider patterns, and any child component in the ancestry tree can grab React Hook Form Context if it needs
+> it.
 > Mid-level components which don’t care about
 > register or error are set free and liberated from baggage props.
 
@@ -478,21 +481,21 @@ export function renderWithReactHookForm(ui, {defaultValues = {}, toPassBack = []
     });
     
     ```
-  - > And what the input being tested may look like.
-      ```jsx 
-      <input
-          type="text"
-          name={`${itemName}.url`}
-          className={`input ${errors[name] && errors[name][index].url
-                              ? "is-danger"
-                              : ""}`}
-          ref={register({
-              required: "Related URL is required", validate: (value) => isUrlValid(value) || "Please enter a valid URL",
-          })}
-          defaultValue=""
-          data-testid={`related-url-url-input`}
-      />
-      ```
+    - > And what the input being tested may look like.
+        ```jsx 
+        <input
+            type="text"
+            name={`${itemName}.url`}
+            className={`input ${errors[name] && errors[name][index].url
+                                ? "is-danger"
+                                : ""}`}
+            ref={register({
+                required: "Related URL is required", validate: (value) => isUrlValid(value) || "Please enter a valid URL",
+            })}
+            defaultValue=""
+            data-testid={`related-url-url-input`}
+        />
+        ```
 
 - > #### used in app
 

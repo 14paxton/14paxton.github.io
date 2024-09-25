@@ -7,8 +7,10 @@ layout:       default
 has_children: false
 share:        true
 shortRepo:
-  - javascript
-  - default
+
+- javascript
+- default
+
 ---
 
 <br/>
@@ -163,7 +165,8 @@ console.table([document, window].concat([...document.querySelectorAll('*')]).map
 
 ## Override addEventListener prototype
 
-> The override consists in adding an object eventListenerList that will store added event listeners. The method that will retrieve the event listeners will return this object.
+> The override consists in adding an object eventListenerList that will store added event listeners. The method that will retrieve the event listeners
+> will return this object.
 
 ```javascript
 Window.prototype._addEventListener = Window.prototype.addEventListener;

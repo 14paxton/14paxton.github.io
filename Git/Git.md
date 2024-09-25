@@ -6,8 +6,10 @@ category:     Git
 has_children: true
 share:        true
 shortRepo:
-  - git
-  - default
+
+- git
+- default
+
 ---
 
 <br/>
@@ -171,7 +173,8 @@ Go to <https://github.com/settings/keys> and copy/paste your public key from the
 
 > Avoiding having to enter your SSH passphrase  
 > Note that you may be asked to enter your SSH passphrase when interacting with a repository.  
-> To avoid having to keep doing this, > you can add your passphrase to your running SSH authentication agent, like this (assuming here your key is called 'id_rsa'):
+> To avoid having to keep doing this, > you can add your passphrase to your running SSH authentication agent, like this (assuming here your key is
+> called 'id_rsa'):
 
 ```shell
  ssh-add ~/.ssh/id_rsa
@@ -183,9 +186,11 @@ Go to <https://github.com/settings/keys> and copy/paste your public key from the
  eval `ssh-agent -s
 ```
 
-> More details on using the SSH agent can be found [here](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+> More details on using the SSH agent can be
+> found [here](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
-> If you have a repository that is using HTTPS and you want to switch to SSH, you can run either of these invocations from within a > directory within your repository:
+> If you have a repository that is using HTTPS and you want to switch to SSH, you can run either of these invocations from within a > directory within
+> your repository:
 
 ```shell
  git config remote.origin.url git@github.com:ACCOUNT/REPO.git

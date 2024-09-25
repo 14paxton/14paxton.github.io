@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - intellijnotes
-  - default
+
+- intellijnotes
+- default
+
 ---
 
 <br/>
@@ -77,7 +79,8 @@ Table of contents
        ```
     7. Example for Java 7 using Ubuntu 14.04
 
-        1. Install a Docker - Docker CE free version is fine. See, for example, https://docs.docker.com/install/linux/docker-ce/ubuntu/ or use the docker.io package in recent Ubuntu versions shipped.
+        1. Install a Docker - Docker CE free version is fine. See, for example, https://docs.docker.com/install/linux/docker-ce/ubuntu/ or use the
+           docker.io package in recent Ubuntu versions shipped.
         2. In an empty folder, create a file Dockerfile:
            ```dockerfile
                FROM ubuntu:trusty
@@ -123,7 +126,8 @@ Table of contents
                  $@
               ```
 
-            - This will make the current working directory available inside the container—not your whole filesystem, and it will impersonate your local user account in the container namespace.
+            - This will make the current working directory available inside the container—not your whole filesystem, and it will impersonate your
+              local user account in the container namespace.
             - Mark it as executable:
               ```shell
                 sudo chmod +x /usr/local/bin/java7-in-docker

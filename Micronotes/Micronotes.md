@@ -6,8 +6,10 @@ category:     Micronotes
 has_children: true
 share:        true
 shortRepo:
-  - micronotes
-  - default
+
+- micronotes
+- default
+
 ---
 
 # Projects

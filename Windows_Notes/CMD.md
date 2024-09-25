@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - windows_notes
-  - default
+
+- windows_notes
+- default
+
 ---
 
 <br/>
@@ -107,7 +109,8 @@ Table of contents
 - ```bat
       ipconfig
   ```
-  > This is a classic command prompt parameter that releases information concerning network information. This information includes `MAC` addresses, `IP` addresses, and `sub-net masks`.
+  > This is a classic command prompt parameter that releases information concerning network information. This information includes `MAC` addresses,
+  `IP` addresses, and `sub-net masks`.
 
 ---
 
@@ -125,9 +128,10 @@ Table of contents
 - ```bat
   net use
   ```
-  > Connects a computer to or disconnects a computer from a shared resource, or displays information about computer connections. The command also controls persistent net connections. Used without
+  > Connects a computer to or disconnects a computer from a shared resource, or displays information about computer connections. The command also
+  controls persistent net connections. Used without
   > parameters, net use retrieves a list of network connections.
-  - > [Microsoft Docs](<https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/gg651155(v=ws.11)>)
+    - > [Microsoft Docs](<https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/gg651155(v=ws.11)>)
 
 ---
 
@@ -139,7 +143,8 @@ Table of contents
 > `/q` Suppresses the display of xcopy messages.  
 > `/s` Copies directories and subdirectories, unless they are empty.
 > If you omit /s, xcopy works within a single directory.  
-> `/i` If a source is a directory or contains wildcards and destination does not exist, xcopy assumes destination specifies a directory name and creates a new directory.
+> `/i` If a source is a directory or contains wildcards and destination does not exist, xcopy assumes destination specifies a directory name and
+> creates a new directory.
 > Then, xcopy copies all specified files into the new directory.
 > By default, xcopy prompts you to specify whether the destination is a file or a directory.  
 > `/r` Copies read-only files.  

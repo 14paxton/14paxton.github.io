@@ -7,8 +7,10 @@ layout:    default
 has_children: false
 share:     true
 shortRepo:
-  - javascript
-  - default
+
+- javascript
+- default
+
 ---
 
 <br/>
@@ -72,7 +74,8 @@ postData("https://example.com/answer", {answer: 42}).then((data) => {
 - `URLSearchParams`
 - `FormData`
 
-> The Request and Response interfaces share the following methods to extract a body. These all return a promise that is eventually resolved with the actual content.
+> The Request and Response interfaces share the following methods to extract a body. These all return a promise that is eventually resolved with the
+> actual content.
 
 - `Request.arrayBuffer() / Response.arrayBuffer()`
 - `Request.blob() / Response.blob()`

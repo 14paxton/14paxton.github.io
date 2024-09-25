@@ -7,12 +7,14 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - groovynotes
-  - default
+
+- groovynotes
+- default
+
 ---
 
 <br/>    
-    
+
 <details markdown="block">    
 <summary>    
 Table of contents    
@@ -21,31 +23,31 @@ Table of contents
 1. TOC    
 {:toc}    
 </details>    
-    
+
 <br/>    
-    
+
 ***    
-    
+
 <br/>    
-    
-## **[Creating and Formatting Dates]**    
-    
-### **[USE java LocalDate]**    
-    
+
+## **[Creating and Formatting Dates]**
+
+### **[USE java LocalDate]**
+
 <https://www.javatpoint.com/java-localdate>    
-    
-Groovy Time    
-    
+
+Groovy Time
+
 <http://docs.groovy-lang.org/latest/html/api/groovy/time/TimeCategory.html>    
-    
+
 ```groovy    
 use(TimeCategory) {    
     endDate = duration ? (endDate + duration.minutes) : (endDate + DEFAULTDURATION.minutes)    
 }    
 ```    
-    
+
 <https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html>    
-    
+
 ```groovy    
 def form = DateTimeFormatter.ofPattern("yyyy/MM/dd")    
 println LocalDate.parse("2020/12/07", form)    
@@ -64,27 +66,27 @@ println newDate
     
 println newDate.isBefore(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES))    
 ```    
-    
+
 ```groovy    
 Date scheduledDate = Date.parse(userDateFormat + 'hh:mm a', "${schedulingParams?.scheduledDate} ${schedulingParams?.scheduledTime}")    
     
 Date utcDate = new Date(scheduledDate.format('yyyy/MM/dd HH:mm:ss', TimeZone.getTimeZone("UTC")))    
 ```    
-    
-- HH for 24 hour    
-    
-- a is for am/pm    
-    
-- add :ss for seconds    
-    
-- use .format to change date    
-    
-- USING Calendar    
-    
-![img.png](assets/images/img.png)    
-    
-# Java8 Instant    
-    
+
+- HH for 24 hour
+
+- a is for am/pm
+
+- add :ss for seconds
+
+- use .format to change date
+
+- USING Calendar
+
+![img.png](assets/images/img.png)
+
+# Java8 Instant
+
 ```groovy    
 Instant nowUtc = Instant.now()    
 ZoneId asiaSingapore = ZoneId.of("Asia/Singapore")    

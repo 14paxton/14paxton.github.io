@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - dotnetnotes
-  - default
+
+- dotnetnotes
+- default
+
 ---
 
 <br/>
@@ -44,7 +46,8 @@ Table of contents
 
 ### Context
 
-> HttpContext exists on both the .NET Framework and .NET Core (both of which implement .NET Standard, by the way), but being specific to the Web, it does not exist on .NET Standard.
+> HttpContext exists on both the .NET Framework and .NET Core (both of which implement .NET Standard, by the way), but being specific to the Web, it
+> does not exist on .NET Standard.
 
 > So, you have three options:
 
@@ -93,7 +96,8 @@ public class Function : IHttpFunction {
 
 ##### HTTP context accessor
 
-> you can use the IHttpContextAccessor helper service to get the HTTP context in any class that is managed by the ASP.NET Core dependency injection system.
+> you can use the IHttpContextAccessor helper service to get the HTTP context in any class that is managed by the ASP.NET Core dependency injection
+> system.
 > This is useful when you have a common
 > service that is used by your controllers.
 
@@ -213,7 +217,8 @@ public IHttpActionResult GetSomething()
 
 ---
 
-> - For other future users who do not want to make their controllers asynchronous, or cannot access the HttpContext, or are using dotnet core (this answer is the first I found on Google trying to do
+> - For other future users who do not want to make their controllers asynchronous, or cannot access the HttpContext, or are using dotnet core (this
+    answer is the first I found on Google trying to do
 
     this), the following worked for me:
 

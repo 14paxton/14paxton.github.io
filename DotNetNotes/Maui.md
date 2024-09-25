@@ -7,8 +7,10 @@ layout:       default
 has_children: false
 share:        true
 shortRepo:
-  - dotnetnotes
-  - default          
+
+- dotnetnotes
+- default
+
 ---
 
 
@@ -32,8 +34,10 @@ Table of contents
 # Maui
 
 > ```MAUI```, short for Multi platform
-> Application User Interface, is the evolution and simplification of a multitude of solutions which were previously used to create cross-platform mobile and desktop applications with .NET
-> ( few of those being the various targets of Xamarin like Xamarin.Forms, Xamarin.Android, Xamarin.iOS; Windows UWP, Windows Presentation Foundation, Tizen.NET, etc.)
+> Application User Interface, is the evolution and simplification of a multitude of solutions which were previously used to create cross-platform
+> mobile and desktop applications with .NET
+> ( few of those being the various targets of Xamarin like Xamarin.Forms, Xamarin.Android, Xamarin.iOS; Windows UWP, Windows Presentation Foundation,
+> Tizen.NET, etc.)
 > You’ll find all the details here —
 
 [Learn Maui](https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui)

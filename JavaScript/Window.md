@@ -7,8 +7,10 @@ layout:    default
 has_children: false
 share:     true
 shortRepo:
-  - javascript
-  - default
+
+- javascript
+- default
+
 ---
 
 <br/>
@@ -43,7 +45,8 @@ Table of contents
 
 > `windowName` A name to be given to the new window. The name can be used to refer this window again.
 
-> `windowFeatures` A string that determines the various window features to be included in the popup window (like status bar, address bar etc) The following code opens a new browser window with
+> `windowFeatures` A string that determines the various window features to be included in the popup window (like status bar, address bar etc) The
+> following code opens a new browser window with
 > standard features.
 
 ```javascript
@@ -247,7 +250,8 @@ setTimeout(() => {
 
 # window.opener
 
-> A newly created window can reference back to the window that opened it via the window.opener property. This allows you to exchange data between the two windows.
+> A newly created window can reference back to the window that opened it via the window.opener property. This allows you to exchange data between the
+> two windows.
 
 # BOM
 

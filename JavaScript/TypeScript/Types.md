@@ -8,8 +8,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - javascript
-  - default
+
+- javascript
+- default
+
 ---
 
 <br/>
@@ -39,7 +41,8 @@ Table of contents
   type CallbackFunction = () => void;
   ```
 
-- > declares a function that takes no arguments and returns nothing. A function that takes zero or more arguments of any type and returns nothing would be:
+- > declares a function that takes no arguments and returns nothing. A function that takes zero or more arguments of any type and returns nothing
+  would be:
   ```typescript
   type CallbackFunctionVariadic = (...args: any[]) => void;
   ```
@@ -68,4 +71,5 @@ let callback: CallbackFunctionVariadic = function (...args: any[]) {
 
 > This can be useful for things like EventEmitter handlers.
 
-> Functions can be typed as strongly as you like in this fashion, although you can get carried away and run into combinatoric problems if you try to nail everything down with a type alias.
+> Functions can be typed as strongly as you like in this fashion, although you can get carried away and run into combinatoric problems if you try to
+> nail everything down with a type alias.

@@ -7,12 +7,14 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - googlenotes
-  - default
+
+- googlenotes
+- default
+
 ---
 
 <br/>              
-    
+
 <details markdown="block">                    
 <summary>                    
 Table of contents                    
@@ -21,51 +23,56 @@ Table of contents
 1. TOC                    
 {:toc}                    
 </details>                    
-    
+
 <br/>                    
-    
+
 ***                    
-    
+
 <br/>    
-    
-# GoogleDialogFlow    
-    
-repo for GoogleDialogFlow    
-    
-1.    
-    
-> Identify the roles, both the customers and your virtual agent, as well as all the potential use cases your virtual agent will need to address. Right personas, both    
-> for customers and virtual agents, so that conversations will take a natural shape. Model user agent interactions to help identify user requirements, handle all    
-> possible expected and don't forget unexpected user scenarios, that could occur for your business.    
-    
-2.    
-    
-> In order to understand why the customers reaching out to you, you'll need to be able to break down the individual parts of the conversation. The conversation will    
-> include representative words and phrases, and you can use these to dissect and interpret the customer's needs and how you respond. There are three important parts    
-> to a conversation. Intense, identifying what the customer needs or wants you to do for them. Entities, identifying a thing the customer is referring to, and      
-> parameters setting the variable of the thing the customer is referring to so that you can reference it later in the conversation.    
-    
-# Key Terms    
-    
-![](assets/images/Capture.PNG)    
-    
-# QUICK TID BITS    
-    
-## params    
-    
+
+# GoogleDialogFlow
+
+repo for GoogleDialogFlow
+
+1.
+
+> Identify the roles, both the customers and your virtual agent, as well as all the potential use cases your virtual agent will need to address. Right
+> personas, both    
+> for customers and virtual agents, so that conversations will take a natural shape. Model user agent interactions to help identify user requirements,
+> handle all    
+> possible expected and don't forget unexpected user scenarios, that could occur for your business.
+
+2.
+
+> In order to understand why the customers reaching out to you, you'll need to be able to break down the individual parts of the conversation. The
+> conversation will    
+> include representative words and phrases, and you can use these to dissect and interpret the customer's needs and how you respond. There are three
+> important parts    
+> to a conversation. Intense, identifying what the customer needs or wants you to do for them. Entities, identifying a thing the customer is referring
+> to, and      
+> parameters setting the variable of the thing the customer is referring to so that you can reference it later in the conversation.
+
+# Key Terms
+
+![](assets/images/Capture.PNG)
+
+# QUICK TID BITS
+
+## params
+
 ```    
  $intent.params.user-input,    
  $session.params.user-input,    
  $page.params.valid-input,    
 ```    
-    
+
 ```    
   $page.params.status = "FINAL"    
  $page.params.parameter-id.status = "UPDATED"    
 ```    
-    
-## [functions](https://cloud.google.com/dialogflow/cx/docs/reference/system-functions#func-append)    
-    
+
+## [functions](https://cloud.google.com/dialogflow/cx/docs/reference/system-functions#func-append)
+
 ```    
  $sys.func.CONCATENATE($session.params.user-authentication-map-key, $session.params.user-input)    
  $sys.func.JOIN(", ", $session.params.user-authentication-map)    
@@ -73,18 +80,18 @@ repo for GoogleDialogFlow
  $sys.func.SUBSTITUTE("$sys.func.TO_TEXT($session.params.user-authentication-map)" , " { ", "PP")    
  "$sys.func.ADD($session.params.verify-member-attempt, 1)"    
 ```    
-    
+
 ```    
 ($sys.func.GET_FIELD($session.params, phone-number) != null    
     OR $sys.func.GET_FIELD($session.params, last-4-ssn) != null)    
     AND $session.params.member-verified != true    
     AND $sys.func.GET_FIELD($session.params, security-code) = null    
 ```    
-    
-`$sys.func.ADD( $sys.func.TO_NUMBER( $session.params.total-questions-resolved) , $sys.func.TO_NUMBER(  $session.params.resolved))"`    
-    
-## when using func in parameter value be cognizant of quotation marks, they need to be there    
-    
+
+`$sys.func.ADD( $sys.func.TO_NUMBER( $session.params.total-questions-resolved) , $sys.func.TO_NUMBER(  $session.params.resolved))"`
+
+## when using func in parameter value be cognizant of quotation marks, they need to be there
+
 ```    
 $sys.func.IF("$session.params.account-found = null OR $session.params.account-found = false" , null , true)    
 $sys.func.IF("($session.params.current-flow = null AND $session.params.current-route = null)" , null, {name : $session.params.current-flow , route : $session.params.current-route} )    
@@ -92,14 +99,14 @@ $sys.func.IF("$session.params.current-flow = null" , null , "{name : $session.pa
 {name : $sys.func.TO_TEXT($session.params.current-flow) , route : $sys.func.TO_TEXT($session.params.current-route)}    
     
 ```    
-    
-## [get the json key file from DialogFlow](https://support.woztell.com/portal/en/kb/articles/how-to-get-the-json-key-file-from-dialogflow)    
-    
-1. Once in the Google Cloud Platform, go to IAM & admin > Service account > Create service account    
-2. Fill out the details of the service account and click on the button "create"    
-3. Select "DialogFlow API Admin" in the field "Role"    
-4. Now, once the creation of the service account is finalized, select it and click on "Create Key"    
-5. Select JSON as "key type"    
+
+## [get the json key file from DialogFlow](https://support.woztell.com/portal/en/kb/articles/how-to-get-the-json-key-file-from-dialogflow)
+
+1. Once in the Google Cloud Platform, go to IAM & admin > Service account > Create service account
+2. Fill out the details of the service account and click on the button "create"
+3. Select "DialogFlow API Admin" in the field "Role"
+4. Now, once the creation of the service account is finalized, select it and click on "Create Key"
+5. Select JSON as "key type"
 6. Download the new private key in JSON
 
 ---
@@ -123,9 +130,11 @@ $sys.func.IF("$session.params.current-flow = null" , null , "{name : $session.pa
 
 ## [Presets](https://cloud.google.com/dialogflow/cx/docs/concept/fulfillment#param-preset)
 
-You can use a fulfillment to provide presets that set or override current parameter values. These presets will be applied before resolving static response messages or calling a webhook.
+You can use a fulfillment to provide presets that set or override current parameter values. These presets will be applied before resolving static
+response messages or calling a webhook.
 
-You can also use [system functions](https://cloud.google.com/dialogflow/cx/docs/reference/system-functions) to preset the parameter to a dynamically generated value.
+You can also use [system functions](https://cloud.google.com/dialogflow/cx/docs/reference/system-functions) to preset the parameter to a dynamically
+generated value.
 
 | Parameter       | Value                                                                                                        |
 |-----------------|--------------------------------------------------------------------------------------------------------------|
@@ -155,7 +164,8 @@ You can also use [system functions](https://cloud.google.com/dialogflow/cx/docs/
 
 # [Detect Intent](https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Dialogflow.Cx.V3/latest/Google.Cloud.Dialogflow.Cx.V3.SessionsClient#Google_Cloud_Dialogflow_Cx_V3_SessionsClient_DetectIntent_Google_Cloud_Dialogflow_Cx_V3_DetectIntentRequest_Google_Api_Gax_Grpc_CallSettings_)
 
-> You can use [APIs or Client Libraries](https://cloud.google.com/dialogflow/cx/docs/reference) to set the queryParams.parameters and queryParams.currentPage in the detectIntent method.
+> You can use [APIs or Client Libraries](https://cloud.google.com/dialogflow/cx/docs/reference) to set the queryParams.parameters and
+> queryParams.currentPage in the detectIntent method.
 
 ## Detect Intent Request
 
@@ -207,7 +217,9 @@ You can also use [system functions](https://cloud.google.com/dialogflow/cx/docs/
 
 > Here’s a sample reference using [REST API](https://cloud.google.com/dialogflow/cx/docs/reference/rest) to set  
 > the [QueryParameters](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/QueryParameters) of  
-> the [detectIntent](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/projects.locations.agents.environments.sessions/detectIntent#request-body) method request body:
+>
+the [detectIntent](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/projects.locations.agents.environments.sessions/detectIntent#request-body)
+method request body:
 
 ```json
 {
@@ -551,14 +563,17 @@ You can also use [system functions](https://cloud.google.com/dialogflow/cx/docs/
 
 #### In the webhookResponse
 
-> you can set the fulfillment_response and target_page fields to send a fulfillment response as well as transition to another page respectively. Here’s an example below:
+> you can set the fulfillment_response and target_page fields to send a fulfillment response as well as transition to another page respectively.
+> Here’s an example below:
 
 ##### Here are possible ways to continue/resume a conversation by passing previously collected customer data from a previous conversation into a new conversation
 
 You can create a custom implementation using a [webhook](https://cloud.google.com/dialogflow/cx/docs/concept/webhook) wherein a function will store  
-the [parameter](https://cloud.google.com/dialogflow/cx/docs/basics#parm) and [forms](https://cloud.google.com/dialogflow/cx/docs/basics#form) you collected and use that to continue the chat from where  
+the [parameter](https://cloud.google.com/dialogflow/cx/docs/basics#parm) and [forms](https://cloud.google.com/dialogflow/cx/docs/basics#form) you
+collected and use that to continue the chat from where  
 the user left off during a conversation flow or a [session](https://cloud.google.com/dialogflow/cx/docs/concept/session). In  
-the [webhookResponse](https://cloud.google.com/dialogflow/cx/docs/reference/rpc/google.cloud.dialogflow.cx.v3#webhookresponse) you can set the fulfillment_response, target_page fields and session_info  
+the [webhookResponse](https://cloud.google.com/dialogflow/cx/docs/reference/rpc/google.cloud.dialogflow.cx.v3#webhookresponse) you can set the
+fulfillment_response, target_page fields and session_info  
 field to update and send back the stored parameters you collected from the previous conversation.
 
 > Here’s an example of how to pass the session parameter, target page and fulfillment response from your webhook response:
@@ -656,9 +671,11 @@ This will result in an area to provide a custom JSON message.
 
 Live agent handoff text field
 
-Every target live agent system is different. Refer to the system's documentation as to what message format will be necessary to add to provide the proper communication parameters.
+Every target live agent system is different. Refer to the system's documentation as to what message format will be necessary to add to provide the
+proper communication parameters.
 
-As an example, if you're using [Business Messages](https://developers.google.com/business-communications/business-messages), the format that you'd enter here would look something like this:
+As an example, if you're using [Business Messages](https://developers.google.com/business-communications/business-messages), the format that you'd
+enter here would look something like this:
 
 {  
 "userStatus": {  
@@ -708,7 +725,8 @@ for (let e of document.querySelectorAll("mat-option")) {
             - Name: '**getpostman**'
             - Authorized redirect URIs: \*\*<code>https://www.getpostman.com/oauth2/callback</code></strong>
     - Copy the generated <em>Client ID</em> and <em>Client secret</em> fields for later use
-3. From Postman, create a new Request and select the “<em>Authorization</em>” tab and choose Type "<em>OAuth 2.0</em>". Click '<em>Get New Access Token</em>'.
+3. From Postman, create a new Request and select the “<em>Authorization</em>” tab and choose Type "<em>OAuth 2.0</em>". Click '<em>Get New Access
+   Token</em>'.
     - Fill the GET NEW ACCESS TOKEN form as follows:
     - Token Name: '<strong>Google OAuth getpostman</strong>'
     - Grant Type: '<strong>Authorization Code</strong>'
@@ -724,8 +742,10 @@ for (let e of document.querySelectorAll("mat-option")) {
 
 <strong>Send GET request to Dialogflow API</strong>
 
-1. See the Dialogflow API Rest [reference](https://cloud.google.com/dialogflow/priv/docs/reference/rest/v2-overview) for the full list of APIs you can query.
-2. From Postman, enter the API you want to query in the GET field. In this example, we want to get a list of all the Intents for this Dialogflow Agent. _Be sure to replace this Project ID  
+1. See the Dialogflow API Rest [reference](https://cloud.google.com/dialogflow/priv/docs/reference/rest/v2-overview) for the full list of APIs you can
+   query.
+2. From Postman, enter the API you want to query in the GET field. In this example, we want to get a list of all the Intents for this Dialogflow
+   Agent. _Be sure to replace this Project ID  
    ‘ai-assisted-student’ with your Project ID._
 
 ![alt_text](images/postman-get-request.png "image_tooltip")
@@ -736,19 +756,24 @@ for (let e of document.querySelectorAll("mat-option")) {
 
 **Send POST request to Dialogflow API**
 
-1. Now let’s try a POST request. For this example, we want to use the detectIntent API by providing a query text in our request of what our intention is and the agent will “detect” our intention by  
+1. Now let’s try a POST request. For this example, we want to use the detectIntent API by providing a query text in our request of what our intention
+   is and the agent will “detect” our intention by  
    matching one of our agent Intents.
-2. From the drop down, change the request type to “POST” and enter the appropriate HTTP request. **Do not click the “Send” button just yet.** _Be sure to replace this Project ID  
+2. From the drop down, change the request type to “POST” and enter the appropriate HTTP request. **Do not click the “Send” button just yet.** _Be sure
+   to replace this Project ID  
    ‘ai-assisted-student’ with your Project ID._
 
 ![alt_text](images/postman-post-request.png "image_tooltip")
 
-3. Now we want to include a JSON payload with our query text as input*.* Under the POST field, select “Body->raw->Text” and from the drop down, choose “JSON”.
-4. Enter the appropriate JSON payload details from the Dialogflow API documentation (see this [example](https://cloud.google.com/dialogflow/es/docs/reference/rest/v2/QueryInput)).
+3. Now we want to include a JSON payload with our query text as input*.* Under the POST field, select “Body->raw->Text” and from the drop down, choose
+   “JSON”.
+4. Enter the appropriate JSON payload details from the Dialogflow API documentation (see
+   this [example](https://cloud.google.com/dialogflow/es/docs/reference/rest/v2/QueryInput)).
 
 ![alt_text](images/postman-post-body.png "image_tooltip")
 
-5. Now click the “Send” button. In the response body, you should see that your query input (in this example, “is the cafe open”), is matched with the appropriate Intent and the fulfillment text  
+5. Now click the “Send” button. In the response body, you should see that your query input (in this example, “is the cafe open”), is matched with the
+   appropriate Intent and the fulfillment text  
    response provides our agent answer to the question.
 
 ![alt_text](images/postman-post-response.png "image_tooltip")

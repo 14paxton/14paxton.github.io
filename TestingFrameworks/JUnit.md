@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - testingframeworks
-  - default
+
+- testingframeworks
+- default
+
 ---
 
 <br/>    
@@ -24,11 +26,11 @@ Table of contents
 ***    
 <br/>    
 # Maven    
-    
-## [configure](https://maven.apache.org/surefire/maven-surefire-plugin/examples/junit-platform.html)    
-    
-## [StatelessTestsetInfoReporter](https://maven.apache.org/surefire/surefire-extensions-api/apidocs/org/apache/maven/surefire/extensions/StatelessTestsetInfoReporter.html)    
-    
+
+## [configure](https://maven.apache.org/surefire/maven-surefire-plugin/examples/junit-platform.html)
+
+## [StatelessTestsetInfoReporter](https://maven.apache.org/surefire/surefire-extensions-api/apidocs/org/apache/maven/surefire/extensions/StatelessTestsetInfoReporter.html)
+
 ```xml    
 <plugin>    
     <groupId>org.apache.maven.plugins</groupId>    

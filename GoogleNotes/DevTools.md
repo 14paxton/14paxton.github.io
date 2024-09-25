@@ -7,8 +7,10 @@ layout:       default
 has_children: false
 share:        true
 shortRepo:
-  - googlenotes
-  - default
+
+- googlenotes
+- default
+
 ---
 
 <br/>              
@@ -89,7 +91,8 @@ Table of contents
 
 ## [Monitor Events](https://stackoverflow.com/questions/10213703/how-do-i-view-events-fired-on-an-element-in-chrome-devtools)
 
-1. > Inspect your element (right mouse click → Inspect on a visible element or go to Elements tab in Chrome Developer Tools and select wanted element) then go to Console tab and write:
+1. > Inspect your element (right mouse click → Inspect on a visible element or go to Elements tab in Chrome Developer Tools and select wanted element)
+   then go to Console tab and write:
    ```shell
        monitorEvents($0)
    ```

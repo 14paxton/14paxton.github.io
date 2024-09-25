@@ -6,12 +6,14 @@ permalink: JavaNotes/GCP
 category: JavaNotes
 share: true
 shortRepo:
-  - javanotes
-  - default
+
+- javanotes
+- default
+
 ---
 
 <br/>            
-    
+
 <details markdown="block">                  
 <summary>                  
 Table of contents                  
@@ -20,20 +22,20 @@ Table of contents
 1. TOC                  
 {:toc}                  
 </details>                  
-    
+
 <br/>                  
-    
+
 ***                  
-    
+
 <br/>                  
-    
-# [App Engine](https://cloud.google.com/appengine/docs/standard/java-gen2/runtime)    
-    
+
+# [App Engine](https://cloud.google.com/appengine/docs/standard/java-gen2/runtime)
+
             
 ---
-    
-# Resources    
-    
-- [API and Ref](https://cloud.google.com/appengine/docs/standard/apis)    
-- [Java Cloud Client Libraries](https://cloud.google.com/java/docs/reference)    
+
+# Resources
+
+- [API and Ref](https://cloud.google.com/appengine/docs/standard/apis)
+- [Java Cloud Client Libraries](https://cloud.google.com/java/docs/reference)
 - [appengine-apis overview (2.0.0)](https://cloud.google.com/appengine/docs/standard/java-gen2/reference/services/bundled/latest/overview)

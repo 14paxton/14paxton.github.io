@@ -67,10 +67,11 @@ Table of contents
 ## visible online
 
 ```html
+
 <div
-  style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;"
+        style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;"
 >
-  I am a success message
+    I am a success message
 </div>
 ```
 
@@ -81,10 +82,11 @@ I am a success message
 ---
 
 ```html
+
 <div
-  style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;"
+        style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #a94442; background-color: #f2dede; border-color: #ebccd1;"
 >
-  I am an error message
+    I am an error message
 </div>
 ```
 
@@ -95,10 +97,11 @@ I am an error message
 ---
 
 ```html
+
 <div
-  style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;"
+        style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;"
 >
-  I am an info message
+    I am an info message
 </div>
 ```
 
@@ -109,10 +112,11 @@ I am a info message
 ---
 
 ```html
+
 <div
-  style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;"
+        style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;"
 >
-  I am a warning message
+    I am a warning message
 </div>
 ```
 
@@ -132,8 +136,8 @@ I am a warning message
 
 ```html
 <img
-  src="https://github.com/14paxton/14paxton.github.io/blob/master/assets/images/kubernetes.gif?raw=true"
-  alt="kubernetes"
+        src="https://github.com/14paxton/14paxton.github.io/blob/master/assets/images/kubernetes.gif?raw=true"
+        alt="kubernetes"
 />
 ```
 

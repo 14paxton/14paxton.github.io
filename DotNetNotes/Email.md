@@ -8,8 +8,10 @@ grand_parent: DotNetNotes
 has_children: false
 share:        true
 shortRepo:
-  - users
-  - default          
+
+- users
+- default
+
 ---
 
 
@@ -227,7 +229,8 @@ message.From = new MailAddress("yourgmailaccount@gmail.com", "App"); //See the n
 message.Body = "This is your cell phone. How was your day?";
 ```
 
-> At this point, the email address that the message comes from really doesn’t matter – it won’t show up as GMail will override it when it gets passed on to the mobile phone carrier.  
+> At this point, the email address that the message comes from really doesn’t matter – it won’t show up as GMail will override it when it gets passed
+> on to the mobile phone carrier.  
 > The important one to get right is the email address that it is going to be sent to.  
 > This depends on your phone number and your mobile carrier.  
 > In this case, the phone number is (123)456-7890 and the carrier is Bell.  

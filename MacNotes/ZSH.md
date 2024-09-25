@@ -7,8 +7,10 @@ layout:       default
 has_children: false
 share:        true
 shortRepo:
-  - macnotes
-  - default          
+
+- macnotes
+- default
+
 ---
 
 
@@ -80,7 +82,8 @@ Keep in mind that it reads first from the system-wide file (i.e. /etc/zshenv) th
 
 ## .zlogout (Optional)
 
-> But beneficial! This is read when you log out of a session and is great for cleaning things up when you leave (like resetting the Terminal Window Title)
+> But beneficial! This is read when you log out of a session and is great for cleaning things up when you leave (like resetting the Terminal Window
+> Title)
 
 ## Caveats
 

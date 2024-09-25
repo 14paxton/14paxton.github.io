@@ -6,8 +6,10 @@ permalink: JavaNotes/Email
 category: JavaNotes
 share: true
 shortRepo:
-  - javanotes
-  - default
+
+- javanotes
+- default
+
 ---
 
 <br/>            
@@ -93,7 +95,8 @@ The latest version can be found[here](https://mvnrepository.com/artifact/org.ecl
 
 ## **3. Sending a Plain Text and an HTML Email**[](https://www.baeldung.com/java-email#sending-a-plain-text-and-an-html-email)
 
-First, we need to configure the library with our email service provider's credentials. Then we'll create a_Session_that'll be used in constructing our message for sending.
+First, we need to configure the library with our email service provider's credentials. Then we'll create a_Session_that'll be used in constructing our
+message for sending.
 
 The configuration is via a Java_Properties_object:
 
@@ -157,7 +160,8 @@ Next, we created an instance of_MimeMultipart_object that we can use to wrap the
 
 Finally, we set the_multipart_object as the content of our_message_and used the_send()_of_Transport_object to do the mail sending.
 
-**So, we can say that the_mimeBodyPart_is contained in the_multipart_that is contained in the_message_. This way, a_multipart_can contain more than one_mimeBodyPart_.**
+**So, we can say that the_mimeBodyPart_is contained in the_multipart_that is contained in the_message_. This way, a_multipart_can contain more than
+one_mimeBodyPart_.**
 
 This is going to be the focus of the next section.
 

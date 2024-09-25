@@ -29,7 +29,8 @@ shortRepo: ghpages
 
 # Multiple Cursors
 
-> Obsidian lets you edit text in multiple places at the same time using multiple cursors. You can add additional cursors by holding`Alt`(or`Option`on macOS) and selecting another position in the note.
+> Obsidian lets you edit text in multiple places at the same time using multiple cursors. You can add additional cursors by holding`Alt`(or`Option`on
+> macOS) and selecting another position in the note.
 
 # Templates
 
@@ -137,7 +138,8 @@ multipleRepo:
 
 It includes:
 
-- `Upload single current active note` _(also in the right-click menu)_ : Send only the single current active note. The repo can be changed using the [frontmatter](Per%20files%20settings.md#).
+- `Upload single current active note` _(also in the right-click menu)_ : Send only the single current active note. The repo can be changed using
+  the [frontmatter](Per%20files%20settings.md#).
 - `Upload all notes` : Send all shared notes to the configured repository.
 - `Upload unpublished notes` : Send only the shared note that is not present on the repository.
 
@@ -145,8 +147,10 @@ It includes:
 
 Refresh scans the repository and updates or send the notes based on some conditions.
 
-- `Refresh all published notes` : It only updates the content of the published notes. Here, the commit date and the last edited time (from Obsidian) are compared.
-- `Refresh published and upload new notes` : It uploads the note not present in the repository and also updates the note edited since the last push. Same as above, dates are compared.
+- `Refresh all published notes` : It only updates the content of the published notes. Here, the commit date and the last edited time (from Obsidian)
+  are compared.
+- `Refresh published and upload new notes` : It uploads the note not present in the repository and also updates the note edited since the last push.
+  Same as above, dates are compared.
 
 > [!tip] The refresh command uses the last edited time and the last commit date to determine if the note has been edited since the last push.  
 > As a data view table/list/task update don't edit the contents of a note, it won't be updated by the refresh command.  
@@ -168,9 +172,11 @@ It will check if the repository exists, and also the main branch you set. It als
 
 #### Check
 
-> The commands are `Check the rate limit of the GitHub API` It will show you the number of requests you have left, and the time when the limit will be reset.
+> The commands are `Check the rate limit of the GitHub API` It will show you the number of requests you have left, and the time when the limit will be
+> reset.
 
-> These commands are also run along the verification of the repository value, and check if you will reach the limit using the commands (upload, refresh and purge), based on the number of files you >
+> These commands are also run along the verification of the repository value, and check if you will reach the limit using the commands (upload,
+> refresh and purge), based on the number of files you >
 > will > send, update or delete.
 
 > The rate limit is 5000 requests per hour.  
@@ -180,7 +186,8 @@ It will check if the repository exists, and also the main branch you set. It als
 
 ### Copy path
 
-> You can choose to add a command to copy the path (from the blog) of the current note. This command is only available if you have enabled the copy link feature in [Plugin](Plugin.md#).
+> You can choose to add a command to copy the path (from the blog) of the current note. This command is only available if you have enabled the copy
+> link feature in [Plugin](Plugin.md#).
 
 ### `mkdoc.yml`
 

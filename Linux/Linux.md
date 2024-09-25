@@ -6,8 +6,10 @@ category: Linux
 has_children: true
 share: true
 shortRepo:
-  - linux
-  - default
+
+- linux
+- default
+
 ---
 
 <br/>

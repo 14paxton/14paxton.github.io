@@ -7,12 +7,14 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - springnotes
-  - default
+
+- springnotes
+- default
+
 ---
 
 <br/>    
-    
+
 <details markdown="block">    
 <summary>    
 Table of contents    
@@ -21,51 +23,51 @@ Table of contents
 1. TOC    
 {:toc}    
 </details>    
-    
+
 <br/>    
-    
+
 ***    
-    
+
 <br/>    
-    
-# Grails    
-    
-## Security Roles    
-    
-### Properties    
-    
+
+# Grails
+
+## Security Roles
+
+### Properties
+
 ```properties    
  application.groovy=[pattern: '/adminDashboard/**', access: ['ROLE_ADMIN']]    
  ```    
-    
-### controller above methods    
-    
+
+### controller above methods
+
 ```groovy     
 @Secured(['ROLE_USER', 'ROLE_ADMIN'])     
 ```    
-    
+
 ```groovy     
 @Secured("hasRole('ROLE_PERMISSION_ACCESS_ASSESSMENTS')")     
  ```    
-    
+
  ```groovy     
 @Secured("(hasRole('ROLE_ORDER_SHOW') or hasRole('ROLE_RESULT_SHOW') ) and hasRole('ROLE_PERMISSION_ACCESS_ASSESSMENTS')")     
  ```    
-    
+
  ```groovy     
 @Secured("hasAnyRole('ROLE_ORDER_SHOW', 'ROLE_RESULT_SHOW') and hasRole('ROLE_PERMISSION_ACCESS_ASSESSMENTS')")    
 ```    
-    
+
 ```groovy    
     @Secured(value = ['permitAll'], httpMethod = 'POST')    
 ```    
-    
+
 ```groovy    
     @Secured(value = ['IS_AUTHENTICATED_ANONYMOUSLY'], httpMethod = 'POST')    
 ```    
-    
-### controller body    
-    
+
+### controller body
+
 ```groovy    
 SpringSecurityUtils.ifAllGranted('ROLE_ADMIN')    
     
@@ -73,17 +75,17 @@ SpringSecurityUtils.ifNotGranted()
     
 SpringSecurityUtils.ifAnyGranted()     
 ```    
-    
-### views/gsp    
-    
+
+### views/gsp
+
 ```html    
     
 <sec:ifLoggedIn>    
     <sec:ifNotLoggedIn>     
 ```    
-    
-### Check user security roles    
-    
+
+### Check user security roles
+
 ```groovy    
 def user = springSecurityService?.authentication?.details    
     

@@ -4,7 +4,7 @@ permalink:    Git/QuickScripts
 category:     Git
 parent:       Git
 layout:       default
-has_children: false        
+has_children: false
 ---
 
 

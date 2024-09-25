@@ -93,7 +93,8 @@ done
 tr -cd '\11\12\15\40-\176' < file.txt
 ```
 
-> This is the basic command and will clean out those unprintable characters and output your new ASCII-clean text to stdout. To actually save this output as a file, just pipe the output to a file:
+> This is the basic command and will clean out those unprintable characters and output your new ASCII-clean text to stdout. To actually save this
+> output as a file, just pipe the output to a file:
 
 ```shell
 tr -cd '\11\12\15\40-\176' < file.txt > newfile.txt
@@ -101,7 +102,8 @@ tr -cd '\11\12\15\40-\176' < file.txt > newfile.txt
 
 > Now `newfile.txt `is your text file on which you can run dos2unix.
 
-> The complement `(ie, -c)` of string `'\11\12\15\40-\176' ` means that the `tr` command strips out everything but the characters defined in that string, which are:
+> The complement `(ie, -c)` of string `'\11\12\15\40-\176' ` means that the `tr` command strips out everything but the characters defined in that
+> string, which are:
 
 - > `octal \11` : `tab`
 - > `octal \12` : `new line`

@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - javascript
-  - default
+
+- javascript
+- default
+
 ---
 
 <br/>
@@ -87,6 +89,7 @@ goToTop();
 ```javascript
 const scrolledToBottom = () => document.documentElement.clientHeight + window.scrollY >= document.documentElement.scrollHeight
 ```
+
 # Find out whether the current tab is active
 
 ```javascript

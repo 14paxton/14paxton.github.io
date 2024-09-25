@@ -6,8 +6,10 @@ category: SystemDesign&Architecture
 has_children: true
 share: true
 shortRepo:
-  - systemdesign&architecture
-  - default
+
+- systemdesign&architecture
+- default
+
 ---
 
 # Software Development Process

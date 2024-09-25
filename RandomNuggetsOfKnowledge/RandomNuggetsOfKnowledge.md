@@ -6,8 +6,10 @@ category: RandomNuggetsOfKnowledge
 has_children: true
 share: true
 shortRepo:
-  - randomnuggetsofknowledge
-  - default
+
+- randomnuggetsofknowledge
+- default
+
 ---
 
 <br/>

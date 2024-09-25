@@ -6,8 +6,10 @@ category: MacNotes
 has_children: true
 share: true
 shortRepo:
-  - macnotes
-  - default
+
+- macnotes
+- default
+
 ---
 
 <details markdown="block">              

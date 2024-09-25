@@ -7,8 +7,10 @@ layout:    default
 has_children: false
 share:     true
 shortRepo:
-  - testingframeworks
-  - default
+
+- testingframeworks
+- default
+
 ---
 
 <br/>
@@ -32,7 +34,8 @@ Table of contents
 
 ## config in package.json
 
-> this is transformIgnorePatterns for jest, defaultPhrases used for dateRangePicker needed to be ignored for jest and adding a workaround for using a webworker
+> this is transformIgnorePatterns for jest, defaultPhrases used for dateRangePicker needed to be ignored for jest and adding a workaround for using a
+> webworker
 
 ```json
 {

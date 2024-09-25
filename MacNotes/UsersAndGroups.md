@@ -7,8 +7,10 @@ layout:       default
 has_children: false
 share:        true
 shortRepo:
-  - macnotes
-  - default
+
+- macnotes
+- default
+
 ---
 
 <br/>
@@ -189,12 +191,14 @@ sudo dscl . -passwd /Users/username password
 
 > In the Directory Utility window, click the lock icon, then enter an administrator name and password.
 
-- To enable the root user, choose Edit > Enable Root User from the menu bar. Then enter the password that you want to use. You can then log in as the root user.
+- To enable the root user, choose Edit > Enable Root User from the menu bar. Then enter the password that you want to use. You can then log in as the
+  root user.
 - To disable the root user, choose Edit > Disable Root User.
 
 ##### To change the root password
 
-> In the Directory Utility window, click the lock icon, then enter an administrator name and password. From the menu bar, choose Edit > Change Root Password.
+> In the Directory Utility window, click the lock icon, then enter an administrator name and password. From the menu bar, choose Edit > Change Root
+> Password.
 
 ##### Log in as the root user
 

@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - micronotes
-  - default
+
+- micronotes
+- default
+
 ---
 
 <br/>
@@ -92,6 +94,6 @@ Listening for transport debug_socket at address: 9099
 > `Configuration` -> `Remote Java Application`
 
 - set these fields:
-  1. project
-  2. host (here its localhost)
-  3. port (in this example it will be 9099)
+    1. project
+    2. host (here its localhost)
+    3. port (in this example it will be 9099)

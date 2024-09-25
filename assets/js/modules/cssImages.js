@@ -1,4 +1,4 @@
-import {default as CSSImages}  from "/assets/js/Objects/CSSImages.js";
+import {default as CSSImages} from "/assets/js/Objects/CSSImages.js";
 import {addCSSImageContainers} from "/assets/js/modules/createCSSImageContainers.js";
 
 export default async function () {

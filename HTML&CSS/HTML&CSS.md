@@ -6,7 +6,9 @@ category: HTML&CSS
 has_children: true
 share: true
 shortRepo:
-  - default
+
+- default
+
 ---
 
 <br/>

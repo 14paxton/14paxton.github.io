@@ -6,8 +6,10 @@ permalink: JavaNotes/LooseNotes
 category: JavaNotes
 share: true
 shortRepo:
-  - javanotes
-  - default
+
+- javanotes
+- default
+
 ---
 
 <br/>

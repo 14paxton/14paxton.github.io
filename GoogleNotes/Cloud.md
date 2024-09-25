@@ -7,12 +7,14 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - googlenotes
-  - default
+
+- googlenotes
+- default
+
 ---
 
 <br/>              
-    
+
 <details markdown="block">                    
 <summary>                    
 Table of contents                    
@@ -21,70 +23,71 @@ Table of contents
 1. TOC                    
 {:toc}                    
 </details>                    
-    
+
 <br/>                    
-    
+
 ***                    
-    
+
 <br/>    
-    
-# [CLI](https://cloud.google.com/sdk/gcloud)    
-    
-# [CheatSheet](https://cloud.google.com/sdk/docs/cheatsheet)    
-    
-# [Properties](https://cloud.google.com/sdk/docs/properties)    
-    
-# [Script Commands](https://cloud.google.com/sdk/docs/scripting-gcloud)    
-    
-## [Automated Scripting](https://cloud.google.com/blog/products/management-tools/scripting-with-gcloud-a-beginners-guide-to-automating-gcp-tasks)    
-    
-## QUICK SCRIPTS    
-    
->    
-> If you want to logout from all the accounts run the following command    
-    
+
+# [CLI](https://cloud.google.com/sdk/gcloud)
+
+# [CheatSheet](https://cloud.google.com/sdk/docs/cheatsheet)
+
+# [Properties](https://cloud.google.com/sdk/docs/properties)
+
+# [Script Commands](https://cloud.google.com/sdk/docs/scripting-gcloud)
+
+## [Automated Scripting](https://cloud.google.com/blog/products/management-tools/scripting-with-gcloud-a-beginners-guide-to-automating-gcp-tasks)
+
+## QUICK SCRIPTS
+
+>
+> If you want to logout from all the accounts run the following command
+
 ```bash    
 gcloud auth revoke --all    
 ```    
-    
-> If you want to logout from a specific account then run the following command    
-    
+
+> If you want to logout from a specific account then run the following command
+
 ```bash    
 gcloud auth revoke <your_account>    
 ```    
-    
-> If you want to login with a different account, you can run the following command    
-    
+
+> If you want to login with a different account, you can run the following command
+
 ```bash    
 gcloud auth login    
 ```    
-    
+
 ***    
-    
-```gcloud init```    
-    
-If you called gcloud auth login, this stores credentials in your user directory on your computer. You may want to delete these credentials by calling:    
-    
-```gcloud auth revoke```    
-    
-If you called gcloud auth application-default login, this stores credentials in your user directory on your computer. You may want to delete these credentials by calling:    
-    
-```gcloud auth application-default revoke```    
-    
-## - [List Available Cloud Components](https://cloud.google.com/sdk/gcloud/reference/components/list)    
-    
-## [Logging](./Logging.md#)    
-    
+
+```gcloud init```
+
+If you called gcloud auth login, this stores credentials in your user directory on your computer. You may want to delete these credentials by calling:
+
+```gcloud auth revoke```
+
+If you called gcloud auth application-default login, this stores credentials in your user directory on your computer. You may want to delete these
+credentials by calling:
+
+```gcloud auth application-default revoke```
+
+## - [List Available Cloud Components](https://cloud.google.com/sdk/gcloud/reference/components/list)
+
+## [Logging](./Logging.md#)
+
 ***    
-    
-### - Permissions    
-    
+
+### - Permissions
+
 ```    
 gcloud logging commands are controlled by Identity and Access Management (IAM) permissions.    
     
 To use any of the gcloud logging commands, you must have the serviceusage.services.use permission. You must also have the IAM role that corresponds to the log's location, and to your use case:    
 ```    
-    
+
 [Access Control](https://cloud.google.com/logging/docs/access-control)    
 | Use case | IAM role |    
 | --------------------------- | --------------------------------- |    
@@ -102,12 +105,12 @@ To use any of the gcloud logging commands, you must have the serviceusage.servic
 | Create basic metrics | Logging/Logs Configuration Writer |    
 | Create advanced metrics | Logging/Logs Configuration Writer |    
 | Update metrics | Logging/Logs Configuration Writer |    
-| Delete metrics | Logging/Logs Configuration Writer |    
+| Delete metrics | Logging/Logs Configuration Writer |
     
 ----------------------------------------------------------
-    
-## Audits    
-    
+
+## Audits
+
 As part of monitoring the health of your contact center, you’ll want to perform routine    
 audits in some key areas: anything that affects efficiency, helps manage costs and the    
 workforce, or helps keep customers happy.    

@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - sqlnotes
-  - default
+
+- sqlnotes
+- default
+
 ---
 
 <br/>
@@ -52,9 +54,11 @@ jdbc:h2:~/siris;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIG
 
 ## Using H2
 
-- > [H2](https://h2database.com/)is[open source](https://github.com/h2database/h2database),[free to use and distribute](http://www.h2database.com/html/license.html).
+- > [H2](https://h2database.com/)
+  is[open source](https://github.com/h2database/h2database),[free to use and distribute](http://www.h2database.com/html/license.html).
 - > [Download](https://h2database.com/html/download.html):[jar](https://repo1.maven.org/maven2/com/h2database/h2/2.2.220/h2-2.2.220.jar),[installer (Windows)](https://github.com/h2database/h2database/releases/download/version-2.2.220/h2-setup-2023-07-04.exe),[zip](https://github.com/h2database/h2database/releases/download/version-2.2.220/h2-2023-07-04.zip).
-- > To start the[H2 Console tool](http://www.h2database.com/html/quickstart.html#h2_console), double click the jar file, or run`java -jar h2*.jar`,`h2.bat`, or`h2.sh`.
+- > To start the[H2 Console tool](http://www.h2database.com/html/quickstart.html#h2_console), double click the jar file, or run`java -jar h2*.jar`,
+  `h2.bat`, or`h2.sh`.
 - > [A new database is automatically created](http://www.h2database.com/html/tutorial.html#creating_new_databases)[by default
   > if an embedded URL is used](http://www.h2database.com/html/features.html#database_only_if_exists).
 - > [Closing the last connection closes the database](http://www.h2database.com/html/features.html#closing_a_database).
@@ -78,7 +82,8 @@ Reference:[SQL grammar](http://www.h2database.com/html/grammar.html),[functions]
 
 #### `jdbc:h2:mem:test` multiple connections in one process, database is removed when all connections are closed
 
-#### `jdbc:h2:mem:test;DB_CLOSE_DELAY=-1` multiple connections in one process, database in not removed when all connections are closed ([may create a memory leak](http://www.h2database.com/html/features.html#in_memory_databases))
+####
+`jdbc:h2:mem:test;DB_CLOSE_DELAY=-1` multiple connections in one process, database in not removed when all connections are closed ([may create a memory leak](http://www.h2database.com/html/features.html#in_memory_databases))
 
 #### `jdbc:h2:mem:`unnamed private; one connection
 
@@ -205,10 +210,10 @@ public class ConnPool {
 
    > To connect to an `H2` embedded database, you need to use one of the following `JDBC` `URLs`:
 
-   - > `_jdbc:h2:~/test_` the ‘test’ database in the user home directory
-   - > `_jdbc:h2:./test_` the ‘test’ database in the current directory
-   - > `_jdbc:h2:/data/test_` the ‘test’ database in the `/data `directory (`Unix`)
-   - > `_jdbc:h2:D:/data/test_` the ‘test’ database in the `D:/data` directory (`Windows`)
+    - > `_jdbc:h2:~/test_` the ‘test’ database in the user home directory
+    - > `_jdbc:h2:./test_` the ‘test’ database in the current directory
+    - > `_jdbc:h2:/data/test_` the ‘test’ database in the `/data `directory (`Unix`)
+    - > `_jdbc:h2:D:/data/test_` the ‘test’ database in the `D:/data` directory (`Windows`)
 
 3. Mixed mode `jdbc:h2:/data/test;AUTO_SERVER=TRUE`
 
@@ -219,15 +224,16 @@ public class ConnPool {
 
 4. In-Memory Mode
 
-   > You can use an H2 database in in-memory mode, which means the database is created in memory when the first connection is established, and is removed when all connections are closed.  
+   > You can use an H2 database in in-memory mode, which means the database is created in memory when the first connection is established, and is
+   removed when all connections are closed.  
    > The database engine runs in the same process of the application.
 
    > Using `H2` `in-memory` database is preferred for quick testing in which data is not needed to be stored permanently on disk.
 
    > To connect to an `H2` `in-memory `database, you need to use `JDBC` `URLs`
 
-   - > > multiple connections in one process `jdbc:h2:mem:test`
-   - > > unnamed private; one connection `jdbc:h2:mem:`
+    - > > multiple connections in one process `jdbc:h2:mem:test`
+    - > > unnamed private; one connection `jdbc:h2:mem:`
 
 ## execute sql scripts
 

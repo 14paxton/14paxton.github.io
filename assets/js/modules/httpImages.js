@@ -3,6 +3,6 @@ import {addCSSImageContainers} from "/assets/js/modules/createCSSImageContainers
 
 export default async function () {
     console.log("create images HTTPImages");
-        console.log("images added httpImages");
-        await addCSSImageContainers(HTTPImages, "httpImages.js");
+    console.log("images added httpImages");
+    await addCSSImageContainers(HTTPImages, "httpImages.js");
 }

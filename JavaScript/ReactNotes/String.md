@@ -8,8 +8,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - reactnotes
-  - default
+
+- reactnotes
+- default
+
 ---
 
 <br/>

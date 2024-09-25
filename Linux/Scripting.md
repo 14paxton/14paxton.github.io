@@ -7,8 +7,10 @@ layout:       default
 has_children: false
 share:        true
 shortRepo:
-  - linux
-  - default
+
+- linux
+- default
+
 ---
 
 <br/>

@@ -7,8 +7,10 @@ layout:       default
 has_children: false
 share:        true
 shortRepo:
-  - windows_notes
-  - default
+
+- windows_notes
+- default
+
 ---
 
 <br/>
@@ -35,7 +37,8 @@ Table of contents
 
 ## [Sync Chrome Bookmarks](https://gist.github.com/14paxton/c10cfd597e7e7b487e27d641cf964c59#powershell)
 
-> used to sync bookmarks file to a repo to update on both mac and windows using bash and powershell when account can not sync due to admin restrictions
+> used to sync bookmarks file to a repo to update on both mac and windows using bash and powershell when account can not sync due to admin
+> restrictions
 
 ---
 
@@ -505,7 +508,8 @@ or <br/>
   > Scripts can run, but the policy requires a digital signature from a trusted publisher on scripts and
   > configuration files that have been downloaded from the internet.
   > This setting doesn't require digital signatures on scripts that are written on the local computer.
-- > `Restricted`: This is the default execution policy for Windows client computers. It permits running individual commands, but it doesn't allow scripts.
+- > `Restricted`: This is the default execution policy for Windows client computers. It permits running individual commands, but it doesn't allow
+  scripts.
 - > `Unrestricted`: This is the default execution policy for non-Windows computers, which you can't change.
   > It allows unsigned scripts to run.
   > This policy warns the user before running scripts and
