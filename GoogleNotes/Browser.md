@@ -7,8 +7,10 @@ layout:       default
 has_children: false
 share:        true
 shortRepo:
-  - googlenotes
-  - default
+
+- googlenotes
+- default
+
 ---
 
 <br/>
@@ -134,7 +136,7 @@ open -a "Google Chrome"
 ```
 
 - #### open a specific URL in Chrome:
-    > This will open the Google homepage in Chrome.
+  > This will open the Google homepage in Chrome.
 
      ```shell
         open -a "Google Chrome" "https://www.google.com"
@@ -161,15 +163,15 @@ open -a "Google Chrome"
        [ -n "$profile_key" ]
        open -a "Google Chrome" --args --profile-directory="$profile_key" "$@"
      ```
-     > example usage: ```chrome_profile "Profile Name" https://google.com/```
+  > example usage: ```chrome_profile "Profile Name" https://google.com/```
 
-  -   ##### chrome_profiles_list
-         ```shell
-           < ~/Library/Application\ Support/Google/Chrome/Local\ State \
-           jq -r '.profile.info_cache | to_entries | map(.key + ": " + .value.name) | .[]' |
-           sort -k1,1 -k2,2n
-         ```
-      
+    -   ##### chrome_profiles_list
+           ```shell
+             < ~/Library/Application\ Support/Google/Chrome/Local\ State \
+             jq -r '.profile.info_cache | to_entries | map(.key + ": " + .value.name) | .[]' |
+             sort -k1,1 -k2,2n
+           ```
+
 ## Windows
 
 ### Open

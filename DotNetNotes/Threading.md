@@ -8,8 +8,10 @@ grand_parent: DotNetNotes
 has_children: false
 share:        true
 shortRepo:
-  - users
-  - default          
+
+- users
+- default
+
 ---
 
 

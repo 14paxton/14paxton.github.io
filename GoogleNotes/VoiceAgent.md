@@ -7,12 +7,14 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - googlenotes
-  - default
+
+- googlenotes
+- default
+
 ---
 
 <br/>              
-    
+
 <details markdown="block">                    
 <summary>                    
 Table of contents                    
@@ -21,13 +23,13 @@ Table of contents
 1. TOC                    
 {:toc}                    
 </details>                    
-    
+
 <br/>                    
-    
+
 ***                    
-    
+
 <br/>    
-    
-# [Best Practices](https://cloud.google.com/dialogflow/cx/docs/concept/voice-agent-design)    
-    
+
+# [Best Practices](https://cloud.google.com/dialogflow/cx/docs/concept/voice-agent-design)
+
 # [Speech Synthesis Markup Language](https://cloud.google.com/text-to-speech/docs/ssml)

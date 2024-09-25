@@ -7,12 +7,14 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - javascript
-  - default
+
+- javascript
+- default
+
 ---
 
 <br/>                
-    
+
 <details markdown="block">                      
 <summary>                      
 Table of contents                      
@@ -21,14 +23,14 @@ Table of contents
 1. TOC                      
 {:toc}                      
 </details>                      
-    
+
 <br/>                      
-    
+
 ***                      
-    
+
 <br/>      
 # Format date with local      
-    
+
 ```javascript      
     const userLocale = navigator.languages && navigator.languages.length    
                        ? navigator.languages[0]    

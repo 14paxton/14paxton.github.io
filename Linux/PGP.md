@@ -7,8 +7,10 @@ layout:       default
 has_children: false
 share:        true
 shortRepo:
-  - users
-  - default          
+
+- users
+- default
+
 ---
 
 <br/>          
@@ -245,7 +247,8 @@ gpg --output backupkeys.pgp --armor --export-secret-keys --export-options export
 ```
 
 - This will create a file `backupkeys.pgp` on your present working directory. Make sure to store it safely.
-- If this key is important to you, you may want to print out the key on paper using [paperkey](https://www.jabberwocky.com/software/paperkey/), and store it in a fireproof/waterproof safe.
+- If this key is important to you, you may want to print out the key on paper using [paperkey](https://www.jabberwocky.com/software/paperkey/), and
+  store it in a fireproof/waterproof safe.
 - Now export the trust database
 
 ```
@@ -256,7 +259,8 @@ gpg --export-ownertrust > ownertrust-gpg.txt
 
 ## 7. Importing the backed-up keys
 
-- You might have multiple machines where you need the key, or you might have a setup like me, where I use Ubuntu on WSL and Windows both for development.
+- You might have multiple machines where you need the key, or you might have a setup like me, where I use Ubuntu on WSL and Windows both for
+  development.
 - Transfer the keys to your machine, open a shell (or Git Bash), and type:
 
 ```
@@ -288,7 +292,8 @@ gpg> trust
 - [Github Docs - Generating a new GPG key](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-gpg-key)
 - [Github Docs - Adding a new GPG key to your GitHub account](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/adding-a-new-gpg-key-to-your-github-account)
 
-- [krisleech - Renew Expired GPG key (Github Gists)](https://gist.github.com/krisleech/760213ed287ea9da85521c7c9aac1df0s)(And shirohana, with the comment reminding to save your work)
+- [krisleech - Renew Expired GPG key (Github Gists)](https://gist.github.com/krisleech/760213ed287ea9da85521c7c9aac1df0s)(And shirohana, with the
+  comment reminding to save your work)
 - [Thomas Eisenbarth - GPG: Extract private key and import on different machine (on makandracards.com)](https://makandracards.com/makandra-orga/37763-gpg-extract-private-key-and-import-on-different-machine)
 - [Unix & Linux StackExchange - How to export a GPG private key and public key to a file (answered by RubberStamp and edited by Mitch Talmadge)](https://unix.stackexchange.com/questions/481939/how-to-export-a-gpg-private-key-and-public-key-to-a-file)
 - [chrisroos - Instructions for exporting/importing (backup/restore) GPG keys (on Github Gists)](https://gist.github.com/chrisroos/1205934)

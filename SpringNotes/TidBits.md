@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - springnotes
-  - default
+
+- springnotes
+- default
+
 ---
 
 <br/>
@@ -32,7 +34,8 @@ Table of contents
 
 =============================
 
-How to find annotated classes using**Spring Framework**and read metadata from them? Sometimes you may want to attach metadata to your classes using custom annotations. Here’s an example how you can leverage**Spring**’s classpath scanning mechanism to do that.
+How to find annotated classes using**Spring Framework**and read metadata from them? Sometimes you may want to attach metadata to your classes using
+custom annotations. Here’s an example how you can leverage**Spring**’s classpath scanning mechanism to do that.
 
 ## [The Spring Bean problem](https://farenda.com/spring-find-annotated-classes/#the-spring-bean-problem)
 
@@ -40,7 +43,9 @@ If you use Spring annotations like**@Component**,**@Repository**or**@Service**, 
 
 ## [Classpath Scanner customization](https://farenda.com/spring-find-annotated-classes/#classpath-scanner-customization)
 
-Good news is that Spring classpath scanning mechanism is configurable and available in any Spring application. To use custom annotations we have to create an instance of ClassPathScanningCandidateComponentProvider and set appropriate filter - here it is**AnnotationTypeFilter**. It returns**BeanDefinitions**that contains names of found class from which we can get detailed information. The following example will clarify that.
+Good news is that Spring classpath scanning mechanism is configurable and available in any Spring application. To use custom annotations we have to
+create an instance of ClassPathScanningCandidateComponentProvider and set appropriate filter - here it is**AnnotationTypeFilter**. It returns*
+*BeanDefinitions**that contains names of found class from which we can get detailed information. The following example will clarify that.
 
 ## [Own annotations](https://farenda.com/spring-find-annotated-classes/#own-annotations)
 
@@ -471,7 +476,8 @@ It works without any setter, because underneath Spring is using reflection to in
 
 # Constructor or field injection
 
-Although [constructor injection](https://farenda.com/spring/spring-constructor-injection) allows to create beans as immutable objects (fields can be marked using final modifier) and makes dependencies  
+Although [constructor injection](https://farenda.com/spring/spring-constructor-injection) allows to create beans as immutable objects (fields can be
+marked using final modifier) and makes dependencies  
 explicit it requires to write some boilerplate code.  
 Because of that, in practice, field injection is used.
 
@@ -517,7 +523,8 @@ Here we show what is it and how to fix it!
 
 Beans with circular reference  
 Bean A with constructor injected Bean B  
-Library is a Spring Bean that is using another bean - BookRepository - as a dependency [injected through constructor](https://farenda.com/spring/spring-constructor-injection):
+Library is a Spring Bean that is using another bean - BookRepository - as a
+dependency [injected through constructor](https://farenda.com/spring/spring-constructor-injection):
 
 ```java
 
@@ -608,7 +615,8 @@ public class InjectionConflict {
 }
 ```
 
-When we run the above code the application will fail during startup with UnsatisfiedDependencyException exception, which is caused by BeanCurrentlyInCreationException:
+When we run the above code the application will fail during startup with UnsatisfiedDependencyException exception, which is caused by
+BeanCurrentlyInCreationException:
 
 ```shell
 2016-08-09 23:29:01.530 INFO 11796 --- [           main] c.f.s.t.i.conflict.InjectionConflict     : Starting InjectionConflict on namek with PID 11796 (
@@ -681,7 +689,8 @@ public class Library {
 }
 ```
 
-Now Spring Framewokr can instantiate BookRepository, inject it through the constructor into the Library, and then inject it back to the BookRepository:
+Now Spring Framewokr can instantiate BookRepository, inject it through the constructor into the Library, and then inject it back to the
+BookRepository:
 
 ```shell
 2016-08-09 23:55:54.594 INFO 12472 --- [           main] c.f.s.t.i.conflict.InjectionConflict     : Started InjectionConflict in 1.553 seconds (JVM running for 2.679)

@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - dotnetnotes
-  - default
+
+- dotnetnotes
+- default
+
 ---
 
 <br/>
@@ -45,7 +47,9 @@ Some of those commands are also available in the `Edit` menu:
 ![Multiple Carets Menu][2]
 
 [1]: https://learn.microsoft.com/en-us/visualstudio/ide/finding-and-replacing-text#multi-caret-selection
+
 [2]: https://i.stack.imgur.com/J1WkX.png
+
 [3]: https://i.stack.imgur.com/OlNMI.png
 
 # Console

@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - sqlnotes
-  - default
+
+- sqlnotes
+- default
+
 ---
 
 ![CheatSheet.jpeg](..%2Fassets%2Fimages%2FCheatSheet.jpeg)

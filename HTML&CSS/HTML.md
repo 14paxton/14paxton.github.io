@@ -7,7 +7,9 @@ layout:       default
 has_children: false
 share:        true
 shortRepo:
-  - default
+
+- default
+
 ---
 
 <details markdown="block">              
@@ -147,7 +149,8 @@ document.querySelector("#some.selector").innerHTML = body;
 
 ## Capture attribute to open your device camera
 
-> Just as the input tag has attributes for email, text and password, there is also an attribute to open the camera of mobile devices to capture images.
+> Just as the input tag has attributes for email, text and password, there is also an attribute to open the camera of mobile devices to capture
+> images.
 
 > This is done with the capture attribute which can take two values:
 
@@ -197,6 +200,7 @@ document.querySelector("#some.selector").innerHTML = body;
 ```
 
 ## Automatically download on link Click
+
 > If you want a particular resource to be downloaded when a link to the target resource is clicked, add the download attribute
 
 ```html

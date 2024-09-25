@@ -7,8 +7,10 @@ layout:       default
 has_children: false
 share:        true
 shortRepo:
-  - personalgrailsnotes
-  - default
+
+- personalgrailsnotes
+- default
+
 ---
 
 <br/>
@@ -32,7 +34,8 @@ Table of contents
 
 > An instance of `TransactionStatus` is available by default in Grails transactional service methods.  
 > the keys in the Map must correspond to properties
-> of [org.springframework.transaction.support.DefaultTransactionDefinition](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/support/DefaultTransactionDefinition.html)
+>
+of [org.springframework.transaction.support.DefaultTransactionDefinition](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/transaction/support/DefaultTransactionDefinition.html)
 
 ```groovy
 Account.withTransaction([propagationBehavior: TransactionDefinition.PROPAGATION_REQUIRES_NEW, isolationLevel: TransactionDefinition.ISOLATION_REPEATABLE_READ]) {

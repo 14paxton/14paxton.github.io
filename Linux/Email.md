@@ -5,7 +5,7 @@ category:     Linux
 parent:       Linux
 layout:       default
 has_children: false
-share:        true         
+share:        true
 ---
 
 

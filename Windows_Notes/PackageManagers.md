@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - windows_notes
-  - default
+
+- windows_notes
+- default
+
 ---
 
 <br/>
@@ -78,7 +80,8 @@ Remove-Item winget.msixbundle
     Remove-Item xaml -Recurse
 ```
 
-> If you then get another error that the framework "Microsoft.VCLibs.140.00.UWPDesktop" could not be found, then you can additionally use the following commands to install it:
+> If you then get another error that the framework "Microsoft.VCLibs.140.00.UWPDesktop" could not be found, then you can additionally use the
+> following commands to install it:
 
 ```powershell
     Invoke-WebRequest `
@@ -100,7 +103,8 @@ Remove-Item winget.msixbundle
 
 ## PowerShell 7+
 
-> A prerelease version of the `Microsoft.WinGet.Client` `PowerShell` module has been published to the PowerShell Gallery and will no longer be included as a release asset.
+> A prerelease version of the `Microsoft.WinGet.Client` `PowerShell` module has been published to the PowerShell Gallery and will no longer be
+> included as a release asset.
 > To install the
 > latest version of the `PowerShell` module, run the following command in `PowerShell 7+`
 
@@ -108,7 +112,8 @@ Remove-Item winget.msixbundle
 Install-Module -Name Microsoft.WinGet.Client
 ```
 
-> The PowerShell module requires `App Installer (winget)` to be installed. The `Repair-WinGetPackageManager cmdlet` (work in progress) is designed to install or repair `App Installer`
+> The PowerShell module requires `App Installer (winget)` to be installed. The `Repair-WinGetPackageManager cmdlet` (work in progress) is designed to
+> install or repair `App Installer`
 
 ## Quick Scripts
 

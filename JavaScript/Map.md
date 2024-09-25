@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - javascript
-  - default
+
+- javascript
+- default
+
 ---
 
 <br/>
@@ -30,7 +32,8 @@ Table of contents
 
 # [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
 
-> The Map object holds key-value pairs and remembers the original insertion order of the keys. Any value (both objects and primitive values) may be used as either a key or a value.
+> The Map object holds key-value pairs and remembers the original insertion order of the keys. Any value (both objects and primitive values) may be
+> used as either a key or a value.
 
 - > Demo
 

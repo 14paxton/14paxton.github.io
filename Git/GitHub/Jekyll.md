@@ -148,7 +148,8 @@ Install all of the required gems from your specified sources:
 
 `$ bundle exec jekyll serve --config _config.yml,_config_dev.yml` - Serve site at `http://localhost:4000`
 
-`$ JEKYLL_GITHUB_TOKEN=abc123def456 [bundle exec] jekyll serve` - Serve site authenticating GitHub for [github-metadata](https://github.com/jekyll/github-metadata)
+`$ JEKYLL_GITHUB_TOKEN=abc123def456 [bundle exec] jekyll serve` - Serve site authenticating GitHub
+for [github-metadata](https://github.com/jekyll/github-metadata)
 
 # [YML Config](https://jekyllrb.com/docs/configuration/default/)
 

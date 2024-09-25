@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - macnotes
-  - default
+
+- macnotes
+- default
+
 ---
 
 <br/>
@@ -175,7 +177,8 @@ you’ll see:
 
 - `Usage`: `open [-e] [-t] [-f] [-W] [-R] [-n] [-g] [-h] [-b ] [-a ] [filenames] [--args arguments]`
 
-- `Help`: Open opens files from a shell. By default, open each file using the default application for that file. If the file is in the form of a URL, the file will be opened as a URL.
+- `Help`: Open opens files from a shell. By default, open each file using the default application for that file. If the file is in the form of a URL,
+  the file will be opened as a URL.
 
 - `Options`:  
   `-a ` : Opens with the specified application.  
@@ -192,7 +195,8 @@ you’ll see:
   `-g, --background ` : Does not bring the application to the foreground.  
   `-h, --header` : Searches header file locations for headers matching the given filenames, and opens them.
 
-In other words, example simple command syntax could look like the following, opening “ApplicationName” with the file located at the path `/file/to/open`:
+In other words, example simple command syntax could look like the following, opening “ApplicationName” with the file located at the path
+`/file/to/open`:
 
 ```shell
 open -a ApplicationName /file/to/open
@@ -200,9 +204,11 @@ open -a ApplicationName /file/to/open
 
 > You’ll note you don’t need the full path to the application name, but you would need the full path to a file name.
 
-> The usage is likely self-explanatory to those who have experience in the command line environment, but for those who are new to the Terminal, don’t be too confused, it is easy to use, and we’ll
+> The usage is likely self-explanatory to those who have experience in the command line environment, but for those who are new to the Terminal, don’t
+> be too confused, it is easy to use, and we’ll
 > explain.  
-> For example, if you want to edit `/etc/motd ` with `TextWrangler` to change your Message of the Day, but you hate the command line editors `nano` and `vi`, here is what you’d type:
+> For example, if you want to edit `/etc/motd ` with `TextWrangler` to change your Message of the Day, but you hate the command line editors `nano`
+> and `vi`, here is what you’d type:
 
 ```shell
 open -a TextWrangler /etc/motd

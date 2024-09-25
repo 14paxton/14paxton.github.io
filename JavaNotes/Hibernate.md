@@ -6,8 +6,10 @@ permalink: JavaNotes/Hibernate
 category: JavaNotes
 share: true
 shortRepo:
-  - javanotes
-  - default
+
+- javanotes
+- default
+
 ---
 
 <br/>
@@ -38,7 +40,8 @@ Table of contents
 
 # Collections
 
-> The persistent collections injected by `Hibernate` behave like `ArrayList`, `HashSet`, `TreeSet`, `HashMap` or `TreeMap`, depending on the interface type.
+> The persistent collections injected by `Hibernate` behave like `ArrayList`, `HashSet`, `TreeSet`, `HashMap` or `TreeMap`, depending on the interface
+> type.
 
 - `java.util.List`
 - `java.util.Set`

@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - macnotes
-  - default
+
+- macnotes
+- default
+
 ---
 
 <br/>
@@ -44,7 +46,7 @@ cat `which java` | file -
   ```
   /dev/stdin: Mach-O 64-bit executable x86_64
   ```
-  
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
 <em>On Mac OS X 10.5 or later, we can use: </em>
 <br/>

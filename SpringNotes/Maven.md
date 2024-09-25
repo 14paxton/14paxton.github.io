@@ -7,12 +7,14 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - springnotes
-  - default
+
+- springnotes
+- default
+
 ---
 
 <br/>    
-  
+
 <details markdown="block">    
 <summary>    
 Table of contents    
@@ -21,46 +23,46 @@ Table of contents
 1. TOC    
 {:toc}    
 </details>    
-  
+
 <br/>    
-  
+
 ***    
-  
+
 <br/>    
-  
-# CLI  
-  
+
+# CLI
+
 ```shell    
 mvn spring-boot:run -Dspring-boot.run.profiles=local    
 ```    
-  
-- you can provide commandline argument like this:  
-  
+
+- you can provide commandline argument like this:
+
 ```shell    
 mvn spring-boot:run -Dspring-boot.run.arguments="--spring.profiles.active=dev"    
     
 ```    
-  
-- You can provide JVM argument like this:  
-  
+
+- You can provide JVM argument like this:
+
 ```shell    
 mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=dev"    
 ```    
-  
-- java -jar  
-  
+
+- java -jar
+
 ```shell    
 java -Dspring.profiles.active=dev -jar app.jar (VM param)    
 ```    
-  
-or  
-  
+
+or
+
 ```shell    
 java -jar app.jar --spring.profiles.active=dev (program param)    
 ```    
-  
-# xml  
-  
+
+# xml
+
 ```xml    
   
 <build>  
@@ -77,30 +79,30 @@ java -jar app.jar --spring.profiles.active=dev (program param)
     </plugins>  
 </build>    
 ```    
-  
-# Skip Tests  
-  
-## skip compilation  
-  
+
+# Skip Tests
+
+## skip compilation
+
  ```shell    
 mvn -Dmaven.test.skip package    
 ```    
-  
-## skip running  
-  
+
+## skip running
+
 ```shell    
 mvn -DskipTests package    
 ```    
-  
-## xml  
-  
+
+## xml
+
 ```xml    
   
 <properties>  
     <maven.test.skip>true</maven.test.skip>  
 </properties>    
 ```    
-  
+
 ```xml    
   
 <properties>  

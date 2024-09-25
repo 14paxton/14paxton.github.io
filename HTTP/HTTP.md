@@ -6,8 +6,10 @@ category:  HTTP
 has_children: true
 share:     true
 shortRepo:
-  - http
-  - default
+
+- http
+- default
+
 ---
 
 <br/>

@@ -40,7 +40,8 @@ pbcopy < ~/.ssh/id_rsa.pub
 
 ## Create Config File
 
-> Still in the same terminal, try using ls to see if a file name config exists. If it does, use code config to open it up in your code editor. If it doesn’t exist, you can create it by using touch
+> Still in the same terminal, try using ls to see if a file name config exists. If it does, use code config to open it up in your code editor. If it
+> doesn’t exist, you can create it by using touch
 > config, then open it with code config. Copy and paste the following in your config:
 
 ### Example

@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - macnotes
-  - default
+
+- macnotes
+- default
+
 ---
 
 <br/>
@@ -296,15 +298,20 @@ end tell
 
 ## Setting Up System Preferences
 
-In order for the "System Events" application to use the key code or keystroke commands, you have to enable the macOS accessibility frameworks in System Preferences.
+In order for the "System Events" application to use the key code or keystroke commands, you have to enable the macOS accessibility frameworks in
+System Preferences.
 
 Mavericks and later. Access must now be set on a per-app basis. See this Apple support document for details.
 
-Pre-OS X 10.9/Mavericks operating systems: Click on the "Accessibility" pane (formerly "Universal Access") in "System Preferences". At the bottom left of the pane is a checkbox setting called "Enable access for assistive devices". Click on the checkbox so the setting is enabled. Close out of System Preferences.
+Pre-OS X 10.9/Mavericks operating systems: Click on the "Accessibility" pane (formerly "Universal Access") in "System Preferences". At the bottom left
+of the pane is a checkbox setting called "Enable access for assistive devices". Click on the checkbox so the setting is enabled. Close out of System
+Preferences.
 
 ## AppleScript Implementation
 
-"System Events" will send a key code or a keystroke to the frontmost application. So, you have to make sure that iTunes is frontmost—activate it, in AppleScript parlance. Here's an example script that should be self-explanatory. It will select the currently playing iTunes track using the keystroke command:
+"System Events" will send a key code or a keystroke to the frontmost application. So, you have to make sure that iTunes is frontmost—activate it, in
+AppleScript parlance. Here's an example script that should be self-explanatory. It will select the currently playing iTunes track using the keystroke
+command:
 
 ```shell
 tell application "iTunes"
@@ -316,7 +323,9 @@ end tell
 
 ```
 
-> I have emulated a key press for "Command-L" (the script makes sure iTunes is not stopped first) by providing the lowercase "l", the key you would press for the actual menu command. The using parameter tells the keystroke command to include a key press of the Command key. Here's the same action using the key code command:
+> I have emulated a key press for "Command-L" (the script makes sure iTunes is not stopped first) by providing the lowercase "l", the key you would
+> press for the actual menu command. The using parameter tells the keystroke command to include a key press of the Command key. Here's the same action
+> using the key code command:
 
 ```shell
 tell application "iTunes"
@@ -328,7 +337,8 @@ end tell
 
 ```
 
-> In the example above the number 37 refers to the key "l"—lowercase. As with the keystroke command, the using parameter tells the key code command to include a key press of the Command key.
+> In the example above the number 37 refers to the key "l"—lowercase. As with the keystroke command, the using parameter tells the key code command to
+> include a key press of the Command key.
 
 ### You can include multiple helper keys by setting the using parameter to a list. The following scripts each open the iTunes Store in the iTunes browser (Command-Shift-H), first with a keystroke command and then with the key code command. Note the list (stuff in {} brackets) following using:
 
@@ -348,7 +358,8 @@ end tell
 
 ```
 
-> The number 4 refers to the key "h". (For more info on how to construct a keystroke or key code command, check out the "System Events" sdef via AppleScript Editor's Window > Library.)
+> The number 4 refers to the key "h". (For more info on how to construct a keystroke or key code command, check out the "System Events" sdef via
+> AppleScript Editor's Window > Library.)
 
 ---
 
@@ -356,7 +367,8 @@ end tell
 
 ## How to Get Key Codes
 
-Using the keystroke command is fairly straight forward: just use the key's character as a string. To get the key code number for a key press, [Get KeyCodes Util ](https://manytricks.com/keycodes/)
+Using the keystroke command is fairly straight forward: just use the key's character as a string. To get the key code number for a key
+press, [Get KeyCodes Util ](https://manytricks.com/keycodes/)
 
 ## SendKeys
 

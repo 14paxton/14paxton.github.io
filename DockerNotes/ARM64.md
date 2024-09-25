@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - dockernotes
-  - default
+
+- dockernotes
+- default
+
 ---
 
 <br/>
@@ -91,7 +93,8 @@ services:
 DOCKER_DEFAULT_PLATFORM=linux/amd64 docker-compose build
 ```
 
-> Keep in mind that if you've already downloaded the image for a different platform, docker will keep using that image no matter what platform you specify as your default, you would delete the image
+> Keep in mind that if you've already downloaded the image for a different platform, docker will keep using that image no matter what platform you
+> specify as your default, you would delete the image
 > using docker image rm your_img first to fix that.
 
 # Alternatively - Adding in the Dockerfile

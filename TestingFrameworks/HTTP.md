@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - testingframeworks
-  - default
+
+- testingframeworks
+- default
+
 ---
 
 <br/>    
@@ -23,15 +25,15 @@ Table of contents
 <br/>    
 ***    
 <br/>    
-  
-# [IntelliJ HTTP Client](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html)  
-  
-## [Logging In Examples](https://gist.github.com/14paxton/decd67f8b59069f9505ba9ba0210d0ee)  
-  
-## Basic Calls  
-  
-### create GROUP_COMPARE  
-  
+
+# [IntelliJ HTTP Client](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html)
+
+## [Logging In Examples](https://gist.github.com/14paxton/decd67f8b59069f9505ba9ba0210d0ee)
+
+## Basic Calls
+
+### create GROUP_COMPARE
+
 ~~~http    
 POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json    
 {    
@@ -42,9 +44,9 @@ POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
   "assessmentOrderIds": null    
 }    
 ~~~    
-  
-### update GROUP_COMPARE  
-  
+
+### update GROUP_COMPARE
+
 ~~~http    
 POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json    
     
@@ -56,9 +58,9 @@ POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
   "assessmentOrderIds": []    
 }    
 ~~~    
-  
-### SHARE  
-  
+
+### SHARE
+
 ~~~http    
 POST http://192.168.12.26:8080/am/userGroups/v1/599/shareContent-Type: application/json    
     
@@ -67,15 +69,15 @@ POST http://192.168.12.26:8080/am/userGroups/v1/599/shareContent-Type: applicati
 }    
     
 ~~~    
-  
-### DELETE  
-  
+
+### DELETE
+
 ~~~http    
 DELETE http://192.168.12.26:8080/am/userGroups/v1/599    
 ~~~    
-  
-### create RESULT_SHARE  
-  
+
+### create RESULT_SHARE
+
 ~~~http    
 POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: application/json    
     
@@ -86,9 +88,9 @@ POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: appli
   "assessmentOrderIds": [35075, 45481]    
 }    
 ~~~    
-  
-### update RESULT_SHARE  
-  
+
+### update RESULT_SHARE
+
 ~~~http  
 POST http://192.168.12.26:8080/am/userGroups/v1/groupContent-Type: application/json    
     

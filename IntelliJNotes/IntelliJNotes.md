@@ -6,8 +6,10 @@ category: IntelliJNotes
 has_children: true
 share: true
 shortRepo:
-  - intellijnotes
-  - default
+
+- intellijnotes
+- default
+
 ---
 
 # [REPO](https://github.com/14paxton/IntelliJNotes)

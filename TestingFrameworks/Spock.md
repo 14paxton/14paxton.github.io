@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - testingframeworks
-  - default
+
+- testingframeworks
+- default
+
 ---
 
 <br/>    
@@ -23,125 +25,126 @@ Table of contents
 <br/>    
 ***    
 <br/>    
-    
-# Config    
-    
-## Gradle    
-    
-### [setup for both spock and junit](https://github.com/14paxton/TestingFrameworks/tree/master/Spock/RunSpockJUnitConcurrently)    
-    
-## Use db in memory to run tests    
-    
+
+# Config
+
+## Gradle
+
+### [setup for both spock and junit](https://github.com/14paxton/TestingFrameworks/tree/master/Spock/RunSpockJUnitConcurrently)
+
+## Use db in memory to run tests
+
 ```groovy    
     
 @shared Sql sql = Sql.newInstance(“ jdbc: h2 : mem: ”, “ org.h2.Driver ”)    
     
 ```    
-    
-## Maven    
-    
-### CLI    
-    
-#### Run all the unit test classes.    
-    
+
+## Maven
+
+### CLI
+
+#### Run all the unit test classes.
+
 ```shell    
 mvn test    
 ```    
-    
-#### Run a single test class.    
-    
+
+#### Run a single test class.
+
 ```shell    
 mvn -Dtest=TestApp1 test    
 ```    
-    
-#### Run multiple test classes.    
-    
+
+#### Run multiple test classes.
+
 ```shell    
 mvn -Dtest=TestApp1,TestApp2 test    
 ```    
-    
-#### Run a single test method from a test class.    
-    
+
+#### Run a single test method from a test class.
+
 ```shell    
 mvn -Dtest=TestApp1#methodname test    
 ```    
-    
-#### Run all test methods that match pattern 'testHello*' from a test class.    
-    
+
+#### Run all test methods that match pattern 'testHello*' from a test class.
+
 ```shell    
 mvn -Dtest=TestApp1#testHello* test    
 ```    
-    
-#### Run all test methods match pattern 'testHello*' and 'testMagic*' from a test class.    
-    
+
+#### Run all test methods match pattern 'testHello*' and 'testMagic*' from a test class.
+
 ```shell    
 mvn -Dtest=TestApp1#testHello*+testMagic* test    
 ```    
+
     
 ---
-    
-- Don’t run tests:    
-    
-> Note: the test classes in the project will be compiled!    
-    
+
+- Don’t run tests:
+
+> Note: the test classes in the project will be compiled!
+
 ```shell    
 mvn clean package -DskipTests    
 ```    
-    
-- Don’t compile and don’t run the tests:    
-    
-> maven.test.skip is honored by the Surefire, Failsafe and the Compiler Plugin    
-    
+
+- Don’t compile and don’t run the tests:
+
+> maven.test.skip is honored by the Surefire, Failsafe and the Compiler Plugin
+
 ```shell    
 maven clean package -Dmaven.test.skip=true    
 ```    
-    
-#### Run a single test:    
-    
-> Sometimes you would like to execute a single test instead of all your tests.    
-    
+
+#### Run a single test:
+
+> Sometimes you would like to execute a single test instead of all your tests.
+
 ```shell    
 mvn test -Dtest="NameOfYourTest"    
 Run build offline    
 ```    
-    
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">                
            Both -o and --offline are equivalent. Your local Maven repository will is used to resolve dependencies. No connection to the internet is made to download dependencies. Your build will fail in case dependencies are not found in your local repository!    
 </div>    
 ```shell    
 mvn clean package -o    
 ```    
-    
-### Dependencies    
-    
-#### Search for dependencies in your project    
-    
-> List all the dependencies    
-    
+
+### Dependencies
+
+#### Search for dependencies in your project
+
+> List all the dependencies
+
 ```shell    
 mvn dependency:list    
 ```    
-    
-#### Check whether or not you have specific dependencies in your project    
-    
+
+#### Check whether or not you have specific dependencies in your project
+
 ```shell    
 mvn dependency:list | grep log4j    
 ```    
-    
-#### Get a single dependency    
-    
+
+#### Get a single dependency
+
 ```shell    
 mvn dependency:get -Dartifact=org.springframework:spring-core:5.3.15    
 ```    
-    
-### Local repository    
-    
-The default location of your local repo is `~/.m2`    
-    
-#### Install a (3rd party) jar file into your local Maven repository    
-    
-> since it doesn’t exist in any public repository like [Maven Central](http://search.maven.org/).    
-    
+
+### Local repository
+
+The default location of your local repo is `~/.m2`
+
+#### Install a (3rd party) jar file into your local Maven repository
+
+> since it doesn’t exist in any public repository like [Maven Central](http://search.maven.org/).
+
 ```shell    
 mvn install:install-file    
 -Dfile=<path-to-file>    
@@ -151,21 +154,21 @@ mvn install:install-file
 -Dpackaging=<packaging>    
 -DgeneratePom=true    
 ```    
-    
-##### Where:    
-    
-```<path-to-file> ``` : the path to the file to load    
-    
-```<group-id> ``` : the group that the file should be registered under    
-    
-```<artifact-id> ``` : the artifact name for the file    
-    
-```<version> ``` : the version of the file    
-    
-```<packaging>``` :  the packaging of the file, e.g., jar    
-    
-> Example:    
-    
+
+##### Where:
+
+```<path-to-file> ``` : the path to the file to load
+
+```<group-id> ``` : the group that the file should be registered under
+
+```<artifact-id> ``` : the artifact name for the file
+
+```<version> ``` : the version of the file
+
+```<packaging>``` :  the packaging of the file, e.g., jar
+
+> Example:
+
 ```shell    
 mvn install:install-file -Dfile=lang-groovy-5.2.2.jar \    
 -DgroupId=org.elasticsearch.module \    
@@ -175,13 +178,14 @@ mvn install:install-file -Dfile=lang-groovy-5.2.2.jar \
 -DgeneratePom=true    
     
 ```    
+
     
 ---
-    
-### Pom for running both spock and junit    
-    
-- [Code For Reference ](https://github.com/SanderSmee/spock-jupiter/blob/master/pom.xml)    
-    
+
+### Pom for running both spock and junit
+
+- [Code For Reference ](https://github.com/SanderSmee/spock-jupiter/blob/master/pom.xml)
+
 ```xml    
     
 <build>    
@@ -354,13 +358,14 @@ mvn install:install-file -Dfile=lang-groovy-5.2.2.jar \
         <!-- add dependencies to enable JUnit 4 style tests -->    
     </dependencies>    
 ```    
+
     
 ---
-    
-# Testing    
-    
-## Test Controller    
-    
+
+# Testing
+
+## Test Controller
+
 ```groovy    
 import grails.testing.web.controllers.ControllerUnitTest    
 import spock.lang.Specification    
@@ -389,7 +394,7 @@ class StudentControllerSpec extends Specification implements ControllerUnitTest<
     }    
 }    
 ```    
-    
+
 ```groovy    
 class StudentControllerSpec extends Specification implements ControllerUnitTest<StudentController> {    
     
@@ -407,7 +412,7 @@ class StudentControllerSpec extends Specification implements ControllerUnitTest<
     
 }    
 ```    
-    
+
 ```groovy    
 import grails.testing.web.controllers.ControllerUnitTest    
 import spock.lang.Specification    
@@ -443,7 +448,7 @@ class StudentControllerSpec extends Specification implements ControllerUnitTest<
     
 }    
 ```    
-    
+
 ```groovy    
 import grails.testing.web.controllers.ControllerUnitTest    
 import spock.lang.Specification    
@@ -471,7 +476,7 @@ class StudentControllerSpec extends Specification implements ControllerUnitTest<
     
 }    
 ```    
-    
+
 ```groovy    
 import static javax.servlet.http.HttpServletResponse.SC_METHOD_NOT_ALLOWED    
 import static javax.servlet.http.HttpServletResponse.SC_OK    
@@ -505,18 +510,18 @@ class StudentControllerAllowedMethodsSpec extends Specification implements Contr
     }    
 }    
 ```    
-    
-> functional test    
-    
-- build.gradle    
-    
+
+> functional test
+
+- build.gradle
+
 ```groovy    
 dependencies {    
     ...    
     testImplementation "io.micronaut:micronaut-http-client"    
 }    
 ```    
-    
+
 ```groovy    
 import grails.testing.mixin.integration.Integration    
 import grails.testing.spock.OnceBefore    
@@ -576,9 +581,9 @@ class StudentControllerIntSpec extends Specification {
     }    
 }    
 ```    
-    
-## Testing Secured app    
-    
+
+## Testing Secured app
+
 ```groovy    
 import grails.testing.mixin.integration.Integration    
 import io.micronaut.core.type.Argument    
@@ -683,9 +688,9 @@ class ApiAnnouncementControllerSpec extends Specification {
     }    
 }    
 ```    
-    
-### with GEB    
-    
+
+### with GEB
+
 ```groovy    
 import geb.Page    
     
@@ -709,7 +714,7 @@ class LoginPage extends Page {
     }    
 }    
 ```    
-    
+
 ```groovy    
 import geb.Page    
     
@@ -721,7 +726,7 @@ class AnnouncementListingPage extends Page {
     }    
 }    
 ```    
-    
+
 ```groovy    
 import geb.spock.GebSpec    
 import grails.testing.mixin.integration.Integration    
@@ -761,17 +766,17 @@ class AnnouncementControllerSpec extends GebSpec {
     }    
 }    
 ```    
-    
-## Mocking service and then method call, setting dummy data for the return(put in test method)    
-    
+
+## Mocking service and then method call, setting dummy data for the return(put in test method)
+
 ```groovy    
    controller.openweathermapService = Mock(OpenweathermapService)    
     
 controller.openweathermapService.currentWeatherByGeoID(_) >> currentWeather    
 ```    
-    
-## Mocking Service used in a service you are testing(put at beginning of the test class)    
-    
+
+## Mocking Service used in a service you are testing(put at beginning of the test class)
+
 ```groovy    
     
 Closure doWithSpring() {    
@@ -782,9 +787,9 @@ Closure doWithSpring() {
     
 AssessmentOrderService assessmentOrderService    
 ```    
-    
-## Mocking Method in service you are testing    
-    
+
+## Mocking Method in service you are testing
+
 ```groovy    
  @Shared    
 GroupCompareJoinUserGroupService groupCompareJoinUserGroupService    
@@ -801,9 +806,9 @@ def "some test"() {
 }    
     
 ```    
-    
-## Testing a webpage with spock and geb    
-    
+
+## Testing a webpage with spock and geb
+
 ```groovy    
 import geb.Page    
 import geb.module.TextInput    
@@ -827,7 +832,7 @@ class SignUpPage extends Page {
     }    
 }    
 ```    
-    
+
 ```groovy    
 import geb.spock.GebSpec    
 import grails.gorm.transactions.Rollback    
@@ -865,9 +870,9 @@ class RegisterControllerSpec extends GebSpec {
     }    
 }    
 ```    
-    
-## Mocking method in domain    
-    
+
+## Mocking method in domain
+
 ```groovy    
     
 [service / controller / domain].metaclass.’ static ’.[method] = {    
@@ -876,31 +881,31 @@ class RegisterControllerSpec extends GebSpec {
 }    
     
 ```    
-    
-## Checking validity of constraints    
-    
+
+## Checking validity of constraints
+
 ```groovy    
 !newScheduledInterview2.validate(['scheduledBy', 'scheduledDate'])    
 !newScheduledInterview2.save(flush: true)    
 newScheduledInterview2.errors['scheduledDate']?.code == 'unique'    
 ```    
-    
-## check if method was called for another service    
-    
+
+## check if method was called for another service
+
 ```groovy    
 def called = false    
 service.notifierService = Mock(NotifierService)    
 service.notifierService.sendPostMarkEmail(_ as PostMarkEmail, _) >> { it -> called = true }    
 ```    
-    
-## check if method was called for same service    
-    
+
+## check if method was called for same service
+
 ```groovy    
 service.metaClass.sendReminderEmail = { assessmentOrderId, templateId, sender, newTemplateBody, jobId -> calls++ }    
 ```    
-    
-## create an exception    
-    
+
+## create an exception
+
 ```groovy    
 //create expando    
 def testDelete = new Expando()    
@@ -916,21 +921,21 @@ service.metaClass.[method_to_throw_exception] = { testDelete }
 //or    
 service.metaClass.[yourMethod] >> { throw exception }    
 ```    
-    
-## catch exception    
-    
+
+## catch exception
+
 ```groovy    
 def response = thrown(GraphServiceException)    
 ```    
-    
-## modify config during/for test    
-    
+
+## modify config during/for test
+
 ```groovy    
    Holders.grailsApplication.config.outlook.clientId = "GUUNAR5"    
 ```    
-    
-## create a custom manager for a test    
-    
+
+## create a custom manager for a test
+
 ```groovy    
     
 def managerMap = [:]    
@@ -948,9 +953,9 @@ service.userService.fetchDirectReportIds(_) >> { it ->
     managerMap.get(it[0])    
 }    
 ```    
-    
-## Mocking hibernate used to test methods using where queriers / detached criteria / criteria builder    
-    
+
+## Mocking hibernate used to test methods using where queriers / detached criteria / criteria builder
+
 ```groovy    
  @Shared    
 InterviewModelService interviewModelService    
@@ -978,27 +983,27 @@ void "test criteria builder for getting interview models should return all"() {
     //test    
 }    
 ```    
-    
-## Mock return value for service method used in the service you are testing    
-    
+
+## Mock return value for service method used in the service you are testing
+
 ```groovy    
 service.springSecurityService = [authentication: [details: currentUser]]    
 ```    
-    
-## Mock a static method call from a domain    
-    
+
+## Mock a static method call from a domain
+
 ```groovy    
 ClientSetup.metaClass.static.fetchSecurityGroupLabelsByClientSetupId = { Long id, String en -> [secGroupNameLabel: 'secGroupNameLabel', secGroupCodeLabel: 'secGroupCodeLabel'] }    
 ```    
-    
-### Grails3    
-    
-[Controller](https://gist.github.com/14paxton/0d64ab846b4691d8d6f1ccd5ccc63b58)    
-    
-### Grails4    
-    
-#### Ex. Integrations test for controller    
-    
+
+### Grails3
+
+[Controller](https://gist.github.com/14paxton/0d64ab846b4691d8d6f1ccd5ccc63b58)
+
+### Grails4
+
+#### Ex. Integrations test for controller
+
 ```groovy    
 package musicandcars    
     
@@ -1038,26 +1043,27 @@ class CarFunctionalSpec extends Specification {
     }    
 }    
 ```    
+
     
 ---
-    
-# BuildTest plugin    
-    
-## Snippet from spock test    
-    
-> Pluggin for using test data builder    
-    
-- [BuildTestData](http://plugins.grails.org/plugin/longwa/build-test-data)    
-    
+
+# BuildTest plugin
+
+## Snippet from spock test
+
+> Pluggin for using test data builder
+
+- [BuildTestData](http://plugins.grails.org/plugin/longwa/build-test-data)
+
 ```groovy    
     
 import grails.buildtestdata.mixin.Build    
 ```    
-    
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">                
             use- implements BuildDomanTest\< \> instead of DomainUnitTest \< \>    
 </div>                
-    
+
 ```groovy    
     
 @Build([Job, Tag, Type, Publisher])    
@@ -1104,9 +1110,9 @@ class StatisticsServiceSpec extends Specification implements AutowiredTest, Data
     
     }    
 ```    
-    
-- config file test/resources/TestDataConfig    
-    
+
+- config file test/resources/TestDataConfig
+
 ```java    
 import com.talentbank.core.ClientSetup    
     
@@ -1137,9 +1143,9 @@ testDataConfig{
         }    
         }    
 ```    
-    
-## Different ways to build    
-    
+
+## Different ways to build
+
 ```groovy    
     
 def intviewModel = TestData.build(InterviewModel)    

@@ -8,8 +8,10 @@ layout:    default
 has_children: false
 share:     true
 shortRepo:
-  - clever-snippets
-  - default
+
+- clever-snippets
+- default
+
 ---
 
 <br/>
@@ -494,8 +496,10 @@ export default function useForm(initial = {}) {
 
 1. We pass an initial state object which is undefined (server-side rendered) until the GQL query loads.
 2. This initial object (which is undefined) populates the form fields making them empty.
-3. After the query loads, the initial state object is repassed to the useForm hook, but the DOM is not rerendered => a possible solution is to make use of the useEffect() hook for forcing rerendering.
-4. We cannot watch for changes directly on the initial object and reassign it using setInputs, because it triggers the useEffect callback once again and again and again when altering its value,
+3. After the query loads, the initial state object is repassed to the useForm hook, but the DOM is not rerendered => a possible solution is to make
+   use of the useEffect() hook for forcing rerendering.
+4. We cannot watch for changes directly on the initial object and reassign it using setInputs, because it triggers the useEffect callback once again
+   and again and again when altering its value,
    causing an infinite loop.
 5. The solution is to watch for changes on a string joined by the values of the initial object.
    When that changes from undefined to the GraphQL query results, the useEffect callback is called and it

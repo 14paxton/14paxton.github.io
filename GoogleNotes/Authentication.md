@@ -4,8 +4,11 @@
 
 # TidBits
 
-When you use client libraries, you use [Application Default Credentials (ADC)](https://cloud.google.com/docs/authentication/application-default-credentials) to authenticate. For information about
-setting up ADC, see [Provide credentials for Application Default Credentials](https://cloud.google.com/docs/authentication/provide-credentials-adc). For information about using ADC with client
+When you use client libraries, you
+use [Application Default Credentials (ADC)](https://cloud.google.com/docs/authentication/application-default-credentials) to authenticate. For
+information about
+setting up ADC, see [Provide credentials for Application Default Credentials](https://cloud.google.com/docs/authentication/provide-credentials-adc).
+For information about using ADC with client
 libraries, see [Authenticate using client libraries](https://cloud.google.com/docs/authentication/client-libraries).
 
 ADC searches for credentials in the following locations:
@@ -20,7 +23,8 @@ ADC searches for credentials in the following locations:
 
 # Types of authentication
 
-Authentication is required to access most resources and applications. This documentation supports technical practitioners creating application code with one of the following goals:
+Authentication is required to access most resources and applications. This documentation supports technical practitioners creating application code
+with one of the following goals:
 
 [Authenticate to Google services and resources](https://cloud.google.com/docs/authentication/use-cases#google-apis)
 
@@ -34,8 +38,10 @@ It is possible to route and store logs elsewhere
 ---
 
 > To authenticate for REST command line calls, you use the gcloud CLI. The [gcloud auth login]
-> (https://cloud.google.com/sdk/gcloud/reference/auth/login) command logs you in to gcloud with your user account, which should be done before > calling the API.
-> The [gcloud auth print-access-token](https://cloud.google.com/sdk/gcloud/reference/auth/print-access-token) command is used > throughout the REST command line samples in this documentation to
+> (https://cloud.google.com/sdk/gcloud/reference/auth/login) command logs you in to gcloud with your user account, which should be done before >
+> calling the API.
+> The [gcloud auth print-access-token](https://cloud.google.com/sdk/gcloud/reference/auth/print-access-token) command is used > throughout the REST
+> command line samples in this documentation to
 > authenticate REST calls.
 
 > list service accounts
@@ -54,12 +60,16 @@ gcloud beta iam service-accounts keys get-public-key 37bfcecd9e659f3b8534748ccc8
 
 ### Client library user account authentication
 
-To authenticate for client library calls, you use the gcloud CLI. The [gcloud auth application-default login](https://cloud.google.com/sdk/gcloud/reference/auth/application-default/login) command logs
+To authenticate for client library calls, you use the gcloud CLI.
+The [gcloud auth application-default login](https://cloud.google.com/sdk/gcloud/reference/auth/application-default/login) command logs
 you in to gcloud for application default credentials with your user account, which should be done before calling the API.
-The [gcloud auth application-default set-quota-project](https://cloud.google.com/sdk/gcloud/reference/auth/application-default/set-quota-project) command must be used to set your project for billing
-and quotas related to API calls. Normally, this is the same project used by your agent, and you supply the project ID for the project you created in steps above.
+The [gcloud auth application-default set-quota-project](https://cloud.google.com/sdk/gcloud/reference/auth/application-default/set-quota-project)
+command must be used to set your project for billing
+and quotas related to API calls. Normally, this is the same project used by your agent, and you supply the project ID for the project you created in
+steps above.
 
-The `GOOGLE_APPLICATION_CREDENTIALS` environment variable must not be set in order for your application default credentials to be used by client libraries.
+The `GOOGLE_APPLICATION_CREDENTIALS` environment variable must not be set in order for your application default credentials to be used by client
+libraries.
 
 - To create application default credentials for your local environment:
 
@@ -74,7 +84,8 @@ To open a terminal, click Terminal > New Terminal.
 
 Create a service account to authenticate your API requests:
 
-Execute the [gcloud iam service-accounts keys create](https://cloud.google.com/sdk/gcloud/reference/iam/service-accounts/keys/create) command to create service account keys.
+Execute the [gcloud iam service-accounts keys create](https://cloud.google.com/sdk/gcloud/reference/iam/service-accounts/keys/create) command to
+create service account keys.
 
 Replace the following values:
 
@@ -114,7 +125,8 @@ created key [e44da1202f82f8f4bdd9d92bc412d1d8a837fa83] of type [json] as
 }
 ```
 
-Make sure to store the key file securely, because it can be used to authenticate as your service account. You can move and rename this file however you would like.
+Make sure to store the key file securely, because it can be used to authenticate as your service account. You can move and rename this file however
+you would like.
 
 #### You can use service account key files to [authenticate an application as a service account](https://cloud.google.com/docs/authentication/production).
 
@@ -131,7 +143,8 @@ dialogflowserviceaccount \
 `SERVICE_ACCOUNT_ID: the service account ID`
 `PROJECT_ID: the project ID`
 
-> To find these IDs, in Google Cloud, click the Navigation menu at the top-left of the screen, hold your pointer over IAM & Admin and click Service Accounts.
+> To find these IDs, in Google Cloud, click the Navigation menu at the top-left of the screen, hold your pointer over IAM & Admin and click Service
+> Accounts.
 
 The Email column shows the unique SERVICE_ACCOUNT_ID and PROJECT_ID for each of your service accounts in the following format:
 
@@ -142,7 +155,8 @@ For example: A service account email address of `my-service-account@my-project.i
 `SERVICE_ACCOUNT_ID: my-service-account`
 `PROJECT_ID: my-project`
 
-Grant your service account the appropriate role. The following sample command grants the Cloud Translation API User role. To determine the role to grant, see the documentation for the Cloud API you're
+Grant your service account the appropriate role. The following sample command grants the Cloud Translation API User role. To determine the role to
+grant, see the documentation for the Cloud API you're
 using.
 
 ```
@@ -169,7 +183,8 @@ export \
 
 ```
 
-Optional: To permit users to [impersonate the service account](https://cloud.google.com/iam/docs/impersonating-service-accounts), run the `gcloud iam service-accounts add-iam-policy-binding`
+Optional: To permit users to [impersonate the service account](https://cloud.google.com/iam/docs/impersonating-service-accounts), run the
+`gcloud iam service-accounts add-iam-policy-binding`
 command to grant a user the Service Account User role (roles/iam.serviceAccountUser) on the service account:
 
 ```
@@ -221,11 +236,12 @@ CloudTasksClient cloudTasksClient=CloudTasksClient.create();
 1. [Generate a JSON service account key](https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts).
 
 2. After downloading that key, you must do one of the following:
-   - Define the environment variable GOOGLE_APPLICATION_CREDENTIALS to be the location of the key. For example:
+    - Define the environment variable GOOGLE_APPLICATION_CREDENTIALS to be the location of the key. For example:
    ```bash
    export GOOGLE_APPLICATION_CREDENTIALS=/path/to/my/key.json
    ```
-   - Supply the JSON credentials file when building the service options. For example, this Storage object has the necessary permissions to interact with your Google Cloud Storage data:
+    - Supply the JSON credentials file when building the service options. For example, this Storage object has the necessary permissions to interact
+      with your Google Cloud Storage data:
    ```java
    Storage storage = StorageOptions.newBuilder()
        .setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream("/path/to/my/key.json")))

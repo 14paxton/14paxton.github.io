@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - dockernotes
-  - default
+
+- dockernotes
+- default
+
 ---
 
 <br/>

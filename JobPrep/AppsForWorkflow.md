@@ -7,7 +7,9 @@ layout: default
 has_children: false
 share: true
 shortRepo:
+
 # jobprep
+
 # default
 ---
 
@@ -90,7 +92,8 @@ Table of contents
           ```powershell
           Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
           ```
-            - > Now that everything is in place, please restart the server. After the restart, open up `Powershell` again and run `Ubuntu`. You will be asked to create a new `UNIX` user
+            - > Now that everything is in place, please restart the server. After the restart, open up `Powershell` again and run `Ubuntu`. You will
+              be asked to create a new `UNIX` user
               ```powershell
                cd Ubuntu
                ubuntu1604.exe

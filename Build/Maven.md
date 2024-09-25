@@ -503,7 +503,8 @@ under the License.
 </dependency>
 ```
 
-> However, this will only live on your machine (obviously), for sharing it usually makes sense to use a proper m2 archive (nexus/artifactory) or if you do not have any of these or don't want to set
+> However, this will only live on your machine (obviously), for sharing it usually makes sense to use a proper m2 archive (nexus/artifactory) or if
+> you do not have any of these or don't want to set
 > one
 > up a local maven structured archive and configure a "repository" in your pom:
 

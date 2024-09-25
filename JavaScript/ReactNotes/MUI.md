@@ -8,8 +8,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - reactnotes
-  - default
+
+- reactnotes
+- default
+
 ---
 
 <br/>
@@ -285,7 +287,8 @@ const Link = Button.withComponent("a");
 
 # Styling regular components
 
-> You can turn regular components into styled components by calling the styled() function with the component, then with the template literals containing the styling code.
+> You can turn regular components into styled components by calling the styled() function with the component, then with the template literals
+> containing the styling code.
 
 ```jsx
 function Button(props) {
@@ -308,7 +311,8 @@ Button = styled(Button)`
 `;
 ```
 
-> This will style the button element in the Button component with the CSS styling in the template literal. Button will render a button element with the following CSS code.
+> This will style the button element in the Button component with the CSS styling in the template literal. Button will render a button element with
+> the following CSS code.
 
 ```
 padding: 2px 5px;

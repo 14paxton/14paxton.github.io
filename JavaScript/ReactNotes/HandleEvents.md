@@ -8,8 +8,10 @@ layout:    default
 has_children: false
 share:     true
 shortRepo:
-  - reactnotes
-  - default
+
+- reactnotes
+- default
+
 ---
 
 <br/>
@@ -132,7 +134,8 @@ const styles = StyleSheet.create({
 });
 ```
 
-> And after this, you may want to add a generic input handler that times the speed of the input of the text, to figure out if it's a scan, rather than manual text input.
+> And after this, you may want to add a generic input handler that times the speed of the input of the text, to figure out if it's a scan, rather than
+> manual text input.
 > (If you get 20 characters
 > within 50ms, you can be pretty sure it's a scan, right?)
 

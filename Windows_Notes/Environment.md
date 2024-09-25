@@ -7,12 +7,14 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - windows_notes
-  - default
+
+- windows_notes
+- default
+
 ---
 
 <br/>    
-    
+
 <details markdown="block">    
 <summary>    
 Table of contents    
@@ -21,15 +23,15 @@ Table of contents
 1. TOC    
 {:toc}    
 </details>    
-    
+
 <br/>    
-    
+
 ***    
-    
+
 <br/>    
-    
-# Env Variables    
-    
+
+# Env Variables
+
 | VARIABLE                    | WINDOWS 10                                                                            |    
 |-----------------------------|---------------------------------------------------------------------------------------|    
 | %ALLUSERSPROFILE%           | C:\ProgramData                                                                        |    
@@ -75,9 +77,9 @@ Table of contents
 | %NUMBER_OF_PROCESSORS%      | Outputs the number of physical and virtual cores.                                     |    
 | %RANDOM%                    | Outputs random number from 0 through 32767.                                           |    
 | %OS%                        | Windows_NT                                                                            |    
-    
-## Server 2019    
-    
+
+## Server 2019
+
 | Name                           | Value                                                                                                                                                              |    
 |--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|    
 | ALLUSERSPROFILE                | C:\ProgramData                                                                                                                                                     |    

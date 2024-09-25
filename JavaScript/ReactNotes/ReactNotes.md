@@ -7,8 +7,10 @@ parent: JavaScript
 has_children: true
 share: true
 shortRepo:
-  - reactnotes
-  - default
+
+- reactnotes
+- default
+
 ---
 
 <br/>

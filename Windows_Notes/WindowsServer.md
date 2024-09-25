@@ -7,12 +7,14 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - windows_notes
-  - default
+
+- windows_notes
+- default
+
 ---
 
 <br/>    
-    
+
 <details markdown="block">    
 <summary>    
 Table of contents    
@@ -21,13 +23,13 @@ Table of contents
 1. TOC    
 {:toc}    
 </details>    
-    
+
 <br/>    
-    
+
 ***    
-    
+
 <br/>    
-    
-# CLI    
-    
+
+# CLI
+
 ## [Admin Tools](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/msiexec#repair-options)

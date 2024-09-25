@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - dockernotes
-  - default
+
+- dockernotes
+- default
+
 ---
 
 <br/>
@@ -282,7 +284,8 @@ docker run -v host_volume:container_volume image
 
 ## `USER`
 
-> Set the username (or UID) and optionally the user group (or GID) to use when running the image and for any RUN, CMD and ENTRYPOINT instructions that follow it in the Dockerfile.
+> Set the username (or UID) and optionally the user group (or GID) to use when running the image and for any RUN, CMD and ENTRYPOINT instructions that
+> follow it in the Dockerfile.
 
 ## `WORKDIR`
 

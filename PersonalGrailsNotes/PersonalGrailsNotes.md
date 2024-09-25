@@ -6,8 +6,10 @@ category: PersonalGrailsNotes
 has_children: true
 share: true
 shortRepo:
-  - personalgrailsnotes
-  - default
+
+- personalgrailsnotes
+- default
+
 ---
 
 # [REPO](https://github.com/14paxton/PersonalGrailsNotes)

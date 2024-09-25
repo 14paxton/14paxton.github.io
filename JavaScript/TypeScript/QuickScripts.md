@@ -8,8 +8,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - javascript
-  - default
+
+- javascript
+- default
+
 ---
 
 <br/>
@@ -101,7 +103,8 @@ export type QueryOutputObject = ArrayElement<QueryOutputArray>;
 
 ## The problem
 
-> When using Typescript and Firestore, we usually have to do a lot of manual casting when working with documents. One such example would be getting the data of a document:
+> When using Typescript and Firestore, we usually have to do a lot of manual casting when working with documents. One such example would be getting
+> the data of a document:
 
 ```typescript
 const thread = threadDocument.data(); // this will be of type any
@@ -129,7 +132,8 @@ const converter = {
 };
 ```
 
-> To take this one step further, we can store the "converted" collection reference so we won't have to apply the converters each time we query the collection:
+> To take this one step further, we can store the "converted" collection reference so we won't have to apply the converters each time we query the
+> collection:
 
 ```typescript
 const threadCollection = db.collection("threads").withConverter(converter);
@@ -144,15 +148,18 @@ const thread = threadDocument.data(); // this will be of type ThreadData
 
 # How to obtain reactivity in custom hooks while interacting with the local storage
 
-> This is how we can obtain reactivity in our custom React.js hooks while working with the local storage, using the Pub/Sub (Observer) design pattern (with TypeScript support).
+> This is how we can obtain reactivity in our custom React.js hooks while working with the local storage, using the Pub/Sub (Observer) design
+> pattern (with TypeScript support).
 
 > The goal is to implement a "useLocalStorage" custom hook, which will abstract away the complexity of reading from and writing to the local storage.
 > As we know, each custom hook instantiates its own
 > state.
-> That is a problem in our case because when one instance of the hook updates the local storage, the state copies held by all the other hook instances will be out of sync and will never be
+> That is a problem in our case because when one instance of the hook updates the local storage, the state copies held by all the other hook instances
+> will be out of sync and will never be
 > updated.
 
-> We can solve this issue using the following idea: we can mimic a centralized shared state between our custom hook instances by delegating the responsibility of holding these in sync with the local
+> We can solve this issue using the following idea: we can mimic a centralized shared state between our custom hook instances by delegating the
+> responsibility of holding these in sync with the local
 > storage to a custom "manager," the Observer object.
 
 > Our custom hook will work based on these ideas:
@@ -355,7 +362,8 @@ http: AxiosInstance = createAxiosWithInterceptors(this.requestConfig, {
 
 > Defining path aliases using webpack can save you a lot of headache when it comes to imports, but you must also let Typescript know about them.
 
-> Following my [previous post](https://graffino.com/til/FRXaL59FzW-folder-aliases-using-webpack) on declaring path aliases using webpack, you can configure your **`tsconfig.json`** file to in order to
+> Following my [previous post](https://graffino.com/til/FRXaL59FzW-folder-aliases-using-webpack) on declaring path aliases using webpack, you can
+> configure your **`tsconfig.json`** file to in order to
 > be able to use those aliases in Typescript like so:
 
 ```json

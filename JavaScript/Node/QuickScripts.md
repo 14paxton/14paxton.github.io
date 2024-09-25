@@ -8,8 +8,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - javascript
-  - default
+
+- javascript
+- default
+
 ---
 
 <br/>
@@ -31,7 +33,8 @@ Table of contents
 
 # How to install npm packages from your local machine
 
-> If you need to manually test a package you are developing and don't want to make a release each time you modify something, you can install it directly from your local machine.
+> If you need to manually test a package you are developing and don't want to make a release each time you modify something, you can install it
+> directly from your local machine.
 
 > You can achieve this by using the following commands, depending on the package manager you use:
 
@@ -80,7 +83,8 @@ const content = "Hello World!";
 fs.writeFile(filename, data, [options], [callback]);
 ```
 
-> Here I've given it the `a+` flag - _"Open file for reading and appending. The file is created if it does not exist."_. The encoding defaults to 'utf8' if none is given.
+> Here I've given it the `a+` flag - _"Open file for reading and appending. The file is created if it does not exist."_. The encoding defaults to '
+> utf8' if none is given.
 
 ```javascript
 fs.writeFile("file.txt", content, { flag: "a+" }, (err) => {

@@ -7,12 +7,14 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - groovynotes
-  - default
+
+- groovynotes
+- default
+
 ---
 
 <br/>    
-    
+
 <details markdown="block">    
 <summary>    
 Table of contents    
@@ -21,25 +23,25 @@ Table of contents
 1. TOC    
 {:toc}    
 </details>    
-    
+
 <br/>    
-    
+
 ***    
-    
+
 <br/>    
-    
-# Check Enum Availability    
-    
-## MY ENUM CHECK    
-    
+
+# Check Enum Availability
+
+## MY ENUM CHECK
+
  ```groovy    
 def assessmentType = AssessmentType.getEnumConstants().find { it.key.toLowerCase() == securityParamMap.get('assessmentType').toLowerCase() }    
 ```    
-    
-# Enum Example    
-    
-## Enum with EnumSet    
-    
+
+# Enum Example
+
+## Enum with EnumSet
+
 ```groovy    
 enum UserGroupType {    
     MYSAVEDGROUP('My Saved Group', 50, 1),    
@@ -81,9 +83,9 @@ enum UserGroupType {
     
 }    
 ```    
-    
-## Enum with static method    
-    
+
+## Enum with static method
+
 ```groovy    
 enum ColorEnum {    
     WHITE('white', 'White is mix of all colors'),    

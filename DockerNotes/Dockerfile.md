@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - dockernotes
-  - default
+
+- dockernotes
+- default
+
 ---
 
 # [Docker File for building Grails 2.0.3 app ](https://gist.github.com/14paxton/c9fba71cd90ec3716974a48e386b3e1f)

@@ -7,8 +7,10 @@ layout:    default
 has_children: false
 share:     true
 shortRepo:
-  - javascript
-  - default
+
+- javascript
+- default
+
 ---
 
 <br/>
@@ -282,5 +284,6 @@ newUser("John", 27, "JS");
 
 > The purpose of all this you might ask?
 
-> Think about situations when you don't have the complete data available in the beginning and you still need your function to gradually pass through your app and receive its arguments step by step as
+> Think about situations when you don't have the complete data available in the beginning and you still need your function to gradually pass through
+> your app and receive its arguments step by step as
 > more and more data is arriving, until you add the final argument and receive the output.

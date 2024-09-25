@@ -7,8 +7,10 @@ layout: default
 has_children: false
 share: true
 shortRepo:
-  - macnotes
-  - default
+
+- macnotes
+- default
+
 ---
 
 <br/>
@@ -76,7 +78,8 @@ mkdir -p ~/macOS-installer && cd ~/macOS-installer && curl https://raw.githubuse
 
 ### [create installer](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment)
 
-#### run `createinstallmedia` command provided by Apple (opens a new window). Note that the command is made for USB's formatted with the name MyVolume:
+#### run
+`createinstallmedia` command provided by Apple (opens a new window). Note that the command is made for USB's formatted with the name MyVolume:
 
 ```shell
 sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
@@ -170,13 +173,15 @@ diskutil eraseDisk JHFS+ CleanDrive /dev/disk1
 
 > > `APFS (Encrypted)`: Uses the APFS format and encrypts the volume.
 
-> > `APFS (Case-sensitive)`: Uses the APFS format and is case-sensitive to file and folder names. For example, folders named “Homework” and “HOMEWORK” are two different folders.
+> > `APFS (Case-sensitive)`: Uses the APFS format and is case-sensitive to file and folder names. For example, folders named “Homework” and “HOMEWORK”
+> > are two different folders.
 
 > > `APFS (Case-sensitive, Encrypted)`: Uses the APFS format, is case-sensitive to file and folder names, and encrypts the volume.
 > > For example, folders named “Homework” and “HOMEWORK” are two
 > > different folders.
 
-| File System | Abbreviation | | --------------------------- | ------------ | --- | ----- | ----- | | Mac OS Extended (Journaled) | JHFS+ | | Mac OS Extended | HFS+ | | MS-DOS fat32 | FAT32 | | ExFAT | ExFAT |
+| File System | Abbreviation | | --------------------------- | ------------ | --- | ----- | ----- | | Mac OS Extended (Journaled) | JHFS+ | | Mac OS
+Extended | HFS+ | | MS-DOS fat32 | FAT32 | | ExFAT | ExFAT |
 
 ## Diskutil SecureErase
 
