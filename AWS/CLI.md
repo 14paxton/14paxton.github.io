@@ -25,9 +25,37 @@ Table of contents
 
 <br/>
 
-# Database Stuff
+# Configure
 
-> some scripts use `jq` for parsing json
+## sign in
+
+```shell
+aws configure
+AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+Default region name [None]: us-west-2
+Default output format [None]: json
+```
+
+# Lambda
+
+## List Lambdas
+
+```shell
+aws lambda list-functions
+```
+
+## Update Code
+
+#### Update Code
+
+```shell
+aws lambda update-function-code --function-name GraalVM-Mail --zip-file fileb://./build/libs/micromail-0.1-optimized-lambda.zip
+```
+
+# Database
+
+> some scripts use `jq` for parsing JSON
 
 > [jq](https://stedolan.github.io/jq/)
 
