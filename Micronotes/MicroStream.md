@@ -30,7 +30,35 @@ Table of contents
 
 <br/>
 
+- # [Docs](https://micronaut-projects.github.io/micronaut-microstream/latest/guide/)
+
+# Project Examples
+
+- > [Personal Large Integration SSI ](https://github.com/14paxton/micronaut_microstream)
+
+- > [Personal CRUD app](https://github.com/14paxton/micronotes/tree/master/Projects/crud-data-microstream)
+
+- > [Personal ]
+
+- > [Sergio Video Walkthrough](https://www.youtube.com/watch?v=5W6oVj0h6rQ&t=602s)
+
+- > [Sergio AWS Walkthrough](https://www.youtube.com/watch?v=G5Uy8OODtEg&list=PLFeSAZzYdUofvGVIxNDEQ7lvRjXWdw0rw&index=7)
+
 # [Type Handlers](https://docs.microstream.one/manual/storage/addendum/specialized-type-handlers.html)
+
+# Tid-Bits
+
+## [Copy Object](https://docs.microstream.one/manual/storage/storing-data/deep-copy.html)
+
+```java
+public class Copy {
+    ObjectCopier objectCopier = ObjectCopier.New();
+
+    Customer customer = root.getCustomer(id);
+
+    Customer customerCopy = objectCopier.copy(customer);
+}
+```
 
 # Running
 
@@ -45,20 +73,6 @@ Table of contents
 ```gradle
  run {
     systemProperty('micronaut.environments', 'dev')
-}
-```
-
-# Tid-Bits
-
-## [Copy Object](https://docs.microstream.one/manual/storage/storing-data/deep-copy.html)
-
-```java
-public class Copy {
-    ObjectCopier objectCopier = ObjectCopier.New();
-
-    Customer customer = root.getCustomer(id);
-
-    Customer customerCopy = objectCopier.copy(customer);
 }
 ```
 
@@ -162,3 +176,41 @@ touch /src/main/resources/META-INF/native-image/com/ssi/reflect-config.json
 ## Security-JWT documentation
 
 ### [Micronaut Security JWT documentation](https://micronaut-projects.github.io/micronaut-security/latest/guide/index.html)
+
+## Resources
+
+### Micronaut Documentation
+
+- [API Reference](https://docs.micronaut.io/latest/api/index.html)
+- [Configuration Reference](https://docs.micronaut.io/latest/guide/configurationreference.html)
+- [Micronaut Guides](https://guides.micronaut.io/index.html)
+
+---
+
+- [Shadow Gradle Plugin](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow)
+
+### GraalVM
+
+- [Micronaut Docs: GraalVM ](https://docs.micronaut.io/latest/guide/index.html#graal)
+- [Gradle plugin for GraalVM Native Image building : Config Doc](https://graalvm.github.io/native-build-tools/0.9.13/gradle-plugin.html#configuration-options)
+- [Gradle Plugin for Micronaut : io.micronaut.graalvm](https://plugins.gradle.org/plugin/io.micronaut.graalvm)
+- [GraalVM Docs : Reflection](https://www.graalvm.org/22.2/reference-manual/native-image/metadata/)
+- [reflect-config.json Graal SourceCode](https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/Reflection.md)
+
+### Microstream documentation
+
+- [Micronaut MicroStream documentation](https://micronaut-projects.github.io/micronaut-microstream/latest/guide)
+- [https://microstream.one/](https://microstream.one/)
+
+#### Microstream-REST documentation
+
+- [Micronaut MicroStream REST documentation](https://micronaut-projects.github.io/micronaut-microstream/latest/guide/#rest)
+- [https://docs.microstream.one/manual/storage/rest-interface/index.html](https://docs.microstream.one/manual/storage/rest-interface/index.html)
+
+### HTTP-client documentation
+
+- [Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
+
+### Security-JWT documentation
+
+- [Micronaut Security JWT documentation](https://micronaut-projects.github.io/micronaut-security/latest/guide/index.html)
