@@ -122,15 +122,18 @@ const Div = styled.div`
 ```jsx
 const Button = styled.button`
   padding: 2px 5px;
-  color: ${(props) => (props.color ? props.color : "white")};
+  color: ${(props) => (props.color
+                       ? props.color
+                       : "white")};
   border-radius: 3px;
 `;
 
 const Div = styled.div`
   padding: 10px;
   color: palevioletred;
-  border: 1px solid ${(props) =>
-      props.borderColor ? props.borderColor : "palevioletred"};
+  border: 1px solid ${(props) => props.borderColor
+                                 ? props.borderColor
+                                 : "palevioletred"};
 `;
 ```
 
@@ -146,13 +149,11 @@ const Div = styled.div`
 > To do that, we'll use the ThemeProvider component.
 
 ```jsx
-import { ThemeProvider } from "styled-components";
+import {ThemeProvider} from "styled-components";
 
 // Let's set up a theme object to hold the CSS styling we want to apply to our styled components.
 const theme = {
-  boderColor: "green",
-  color: "green",
-  bgColor: "green",
+    boderColor: "green", color: "green", bgColor: "green",
 };
 ```
 
@@ -185,9 +186,9 @@ const Div = styled.div`
 
 ```jsx
 <ThemeProvider theme={theme}>
-  <Div>
-    <Button>Click Me</Button>
-  </Div>
+    <Div>
+        <Button>Click Me</Button>
+    </Div>
 </ThemeProvider>
 ```
 
@@ -208,7 +209,7 @@ const Div = styled.div`
 > First, import createGlobalStyle.
 
 ```jsx
-import { createGlobalStyle } from "styled-components/macro";
+import {createGlobalStyle} from "styled-components/macro";
 ```
 
 > Create a globalStyles.js file.
@@ -231,11 +232,9 @@ margin: 0;
 import GlobalStyle from "./globalStyles";
 
 function App() {
-  return (
-    <>
-      <GlobalStyle /> <AppTree />
-    </>
-  );
+    return (<>
+            <GlobalStyle/> <AppTree/>
+        </>);
 }
 ```
 
@@ -292,7 +291,7 @@ const Link = Button.withComponent("a");
 
 ```jsx
 function Button(props) {
-  return <button className={props.className}>{props.children}</button>;
+    return <button className={props.className}>{props.children}</button>;
 }
 ```
 
@@ -350,7 +349,7 @@ const Input = styled.input`
 
 ```jsx
 const Input = styled.input.attrs({
-  type: "text",
+    type: "text",
 })`
   font-size: 14px;
   padding: 2px 5px;
@@ -362,8 +361,7 @@ const Input = styled.input.attrs({
 
 ```jsx
 const Input = styled.input.attrs({
-  type: "text",
-  placeholder: "Type anything here...",
+    type: "text", placeholder: "Type anything here...",
 })`
   font-size: 14px;
   padding: 2px 5px;
@@ -371,8 +369,7 @@ const Input = styled.input.attrs({
 `;
 
 const PasswordInput = styled.input.attrs({
-  type: "password",
-  placeholder: "Type your password here...",
+    type: "password", placeholder: "Type your password here...",
 })`
   font-size: 14px;
   padding: 2px 5px;
@@ -386,7 +383,7 @@ const PasswordInput = styled.input.attrs({
 
 ```jsx
 const PrimaryButton = styled.button.attrs({
-  className: "btn btn-prmiary",
+    className: "btn btn-prmiary",
 })`
   outline: none;
 `;
@@ -401,7 +398,7 @@ const PrimaryButton = styled.button.attrs({
 
 ```jsx
 const MatButton = styled.button.attrs({
-  className: "mat-button",
+    className: "mat-button",
 })`
   outline: none;
 `;
@@ -415,85 +412,74 @@ const MatButton = styled.button.attrs({
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import { withStyles } from "@material-ui/core/styles";
+import {withStyles} from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
 
 const styles = (theme) => ({
-  container: {
-    display: "flex",
-    flexWrap: "wrap",
-  },
-  textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-    width: 200,
-  },
-
-  cssLabel: {
-    color: "green",
-  },
-
-  cssOutlinedInput: {
-    "&$cssFocused $notchedOutline": {
-      borderColor: `${theme.palette.primary.main} !important`,
+    container:    {
+        display: "flex", flexWrap: "wrap",
+    }, textField: {
+        marginLeft: theme.spacing.unit, marginRight: theme.spacing.unit, width: 200,
     },
-  },
 
-  cssFocused: {},
+    cssLabel: {
+        color: "green",
+    },
 
-  notchedOutline: {
-    borderWidth: "1px",
-    borderColor: "green !important",
-  },
+    cssOutlinedInput: {
+        "&$cssFocused $notchedOutline": {
+            borderColor: `${theme.palette.primary.main} !important`,
+        },
+    },
+
+    cssFocused: {},
+
+    notchedOutline: {
+        borderWidth: "1px", borderColor: "green !important",
+    },
 });
 
 class ValidField extends React.Component {
-  state = {
-    name: "InputMode",
-  };
+    state = {
+        name: "InputMode",
+    };
 
-  handleChange = (name) => (event) => {
-    this.setState({
-      [name]: event.target.value,
-    });
-  };
+    handleChange = (name) => (event) => {
+        this.setState({
+            [name]: event.target.value,
+        });
+    };
 
-  render() {
-    const { classes } = this.props;
+    render() {
+        const {classes} = this.props;
 
-    return (
-      <form className={classes.container} noValidate autoComplete="off">
-        <TextField
-          id="standard-name"
-          label="Name"
-          className={classes.textField}
-          value={this.state.name}
-          onChange={this.handleChange("name")}
-          margin="normal"
-          variant="outlined"
-          InputLabelProps={{
-            classes: {
-              root: classes.cssLabel,
-              focused: classes.cssFocused,
-            },
-          }}
-          InputProps={{
-            classes: {
-              root: classes.cssOutlinedInput,
-              focused: classes.cssFocused,
-              notchedOutline: classes.notchedOutline,
-            },
-            inputMode: "numeric",
-          }}
-        />
-      </form>
-    );
-  }
+        return (<form className={classes.container} noValidate autoComplete="off">
+                <TextField
+                    id="standard-name"
+                    label="Name"
+                    className={classes.textField}
+                    value={this.state.name}
+                    onChange={this.handleChange("name")}
+                    margin="normal"
+                    variant="outlined"
+                    InputLabelProps={{
+                        classes: {
+                            root: classes.cssLabel, focused: classes.cssFocused,
+                        },
+                    }}
+                    InputProps={{
+                        classes:      {
+                            root: classes.cssOutlinedInput, focused: classes.cssFocused, notchedOutline: classes.notchedOutline,
+                        }, inputMode: "numeric",
+                    }}
+                />
+            </form>);
+    }
 }
 
 ValidField.propTypes = {
-  classes: PropTypes.object.isRequired,
+    classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(ValidField);

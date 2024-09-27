@@ -34,7 +34,7 @@ Table of contents
 
 ```java
 Thread platformThread = Thread.ofPlatform().start(() -> {
-// Code to run in the platform thread 
+    // Code to run in the platform thread 
 });
 ```
 
@@ -58,11 +58,11 @@ Thread virtualThread = Thread.ofVirtual().start(() -> {
 
 ```java
 Thread thread = Thread.ofPlatform()
-        .name("MyCustom Thread")
-        .daemon(true)
-        .start(() -> {
-            // Code to run in the thread
-        });
+                      .name("MyCustom Thread")
+                      .daemon(true)
+                      .start(() -> {
+                          // Code to run in the thread
+                      });
 ```
 
 # Waiting for threads
@@ -70,11 +70,11 @@ Thread thread = Thread.ofPlatform()
 ```java
 // Create virtual threads (or use ThreadcofPlatform() for platform threads)
 Thread thread1 = Thread.ofVirtual().start(() -> {
-//Task 1 code
-});
+            //Task 1 code
+        });
 
 Thread thread2 = Thread.ofVirtual().start(() -> {
-//Task 2 code
+    //Task 2 code
 });
 
 ```
@@ -82,10 +82,14 @@ Thread thread2 = Thread.ofVirtual().start(() -> {
 ```java
 
 // Wait for both threads to finish using join()
-try {
+try{
         thread1.join();
-        thread2.join();
-} catch(Exception e) {
+        thread2.
+
+join();
+}catch(
+Exception e){
+
 println("Thread Interrupted");
 }
 

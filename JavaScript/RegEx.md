@@ -135,8 +135,8 @@ const begginingWhiteSpace = new RegExp(/^((\r\n)+|\r+|\n+|\t+|\s+)*/, "m");
 const controlCharacterRegExp = new RegExp(/(\r\n)+|\r+|\n+|\t+/, "g");
 
 return stringToParse
-  .replace(begginingWhiteSpace, "")
-  .replace(controlCharacterRegExp, " , ");
+    .replace(begginingWhiteSpace, "")
+    .replace(controlCharacterRegExp, " , ");
 ```
 
 ## ReplaceAll
@@ -146,10 +146,9 @@ return stringToParse
 ```javascript
 const removeSpecialChar = /[^a-zA-Z\d ]/g;
 const replaceSpace = /\s/g;
-const onlyAlpha = (fileName ? fileName : title).replaceAll(
-  removeSpecialChar,
-  "",
-);
+const onlyAlpha = (fileName
+                   ? fileName
+                   : title).replaceAll(removeSpecialChar, "",);
 const strippedFName = onlyAlpha.replaceAll(replaceSpace, "_");
 ```
 

@@ -58,28 +58,19 @@ console.log(number.toLocaleString("de-DE"));
 ```javascript
 const number = 12345.6789;
 
-console.log(
-  number.toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD",
-  }),
-);
+console.log(number.toLocaleString("en-US", {
+    style: "currency", currency: "USD",
+}),);
 // $12,345.68
 
-console.log(
-  number.toLocaleString("de-DE", {
-    style: "currency",
-    currency: "EUR",
-  }),
-);
+console.log(number.toLocaleString("de-DE", {
+    style: "currency", currency: "EUR",
+}),);
 // 12.345,68 €
 
-console.log(
-  number.toLocaleString("ja-JP", {
-    style: "currency",
-    currency: "JPY",
-  }),
-);
+console.log(number.toLocaleString("ja-JP", {
+    style: "currency", currency: "JPY",
+}),);
 // ￥12,346
 ```
 
@@ -91,18 +82,14 @@ console.log(
 ```javascript
 const number = 12345.6789;
 
-console.log(
-  number.toLocaleString("en-US", {
+console.log(number.toLocaleString("en-US", {
     maximumSignificantDigits: 1,
-  }),
-);
+}),);
 // 10,000
 
-console.log(
-  number.toLocaleString("fr-FR", {
+console.log(number.toLocaleString("fr-FR", {
     maximumSignificantDigits: 3,
-  }),
-);
+}),);
 // 12 300
 ```
 
@@ -110,7 +97,8 @@ console.log(
 
 > Unit support is one of those things that I wouldn't have expected to be a feature, but is pretty cool to have. You can mix and match locales along
 > with units of measurement. You can find a full list of possible units from
-> the [ECMAScript specification](https://tc39.es/proposal-unified-intl-numberformat/section6/locales-currencies-tz_proposed_out.html#sec-issanctionedsimpleunitidentifier).
+>
+the [ECMAScript specification](https://tc39.es/proposal-unified-intl-numberformat/section6/locales-currencies-tz_proposed_out.html#sec-issanctionedsimpleunitidentifier).
 > You can also provide a `unitDisplay` of `long`, `short` (default), or `narrow` to control how verbose the unit is displayed.
 
 > NOTE: This is one of those features that is not supported by Safari. Also there is no default value for `unit`, so if `style` is set to `unit` then
@@ -119,21 +107,14 @@ console.log(
 ```javascript
 const number = 12345.6789;
 
-console.log(
-  number.toLocaleString("en-US", {
-    style: "unit",
-    unit: "mile-per-hour",
-  }),
-);
+console.log(number.toLocaleString("en-US", {
+    style: "unit", unit: "mile-per-hour",
+}),);
 // 12,345.679 mph
 
-console.log(
-  number.toLocaleString("fr-FR", {
-    style: "unit",
-    unit: "liter",
-    unitDisplay: "long",
-  }),
-);
+console.log(number.toLocaleString("fr-FR", {
+    style: "unit", unit: "liter", unitDisplay: "long",
+}),);
 // 12 345,679 litres
 ```
 
@@ -148,20 +129,14 @@ finding a snippet of code online to get the job done, but now I know I could hav
 ```javascript
 const number = 12345.6789;
 
-console.log(
-  number.toLocaleString("en-US", {
-    notation: "compact",
-    compactDisplay: "short",
-  }),
-);
+console.log(number.toLocaleString("en-US", {
+    notation: "compact", compactDisplay: "short",
+}),);
 // 12K
 
-console.log(
-  number.toLocaleString("en-US", {
-    notation: "compact",
-    compactDisplay: "long",
-  }),
-);
+console.log(number.toLocaleString("en-US", {
+    notation: "compact", compactDisplay: "long",
+}),);
 // 12 thousand
 ```
 
@@ -174,12 +149,9 @@ It gets a little bit nicer because you can also provide other options such as `m
 ```javascript
 const number = 0.1234;
 
-console.log(
-  number.toLocaleString("en-US", {
-    style: "percent",
-    minimumFractionDigits: 2,
-  }),
-);
+console.log(number.toLocaleString("en-US", {
+    style: "percent", minimumFractionDigits: 2,
+}),);
 // 12.34%
 ```
 
@@ -193,14 +165,9 @@ won't use this, but it's good to know that it's an option in case I ever do.
 ```javascript
 const number = -123.456;
 
-console.log(
-  number.toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD",
-    currencySign: "accounting",
-    signDisplay: "always",
-  }),
-);
+console.log(number.toLocaleString("en-US", {
+    style: "currency", currency: "USD", currencySign: "accounting", signDisplay: "always",
+}),);
 // ($123.46)
 ```
 
@@ -213,14 +180,15 @@ make you question which technique you should use. If you find yourself needing t
 same options, then using `Intl.NumberFormat` is preferable for performance reasons.
 
 > "When formatting large numbers of numbers, it is better to create
-> a[NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat)object and use the function provided by
+> a[NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat)object and use the function provided
+> by
 > its[NumberFormat.format](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat/format)
-> property." --[Number.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString)
+>
+property." --[Number.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString)
 
 ```javascript
 const numberFormat = new Intl.NumberFormat("en-US", {
-  style: "unit",
-  unit: "mile-per-hour",
+    style: "unit", unit: "mile-per-hour",
 });
 
 console.log(numberFormat.format(12345.6789));

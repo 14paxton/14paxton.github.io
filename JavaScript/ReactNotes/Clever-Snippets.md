@@ -60,18 +60,18 @@ const forceUpdate = React.useCallback(() => updateState({}), []);
 
 ```jsx
 const RecursiveWrapper = (props) => {
-   const wrappedChildren = React.Children.map(props.children, (child) => {
-      if (child.props && child.props.children) {
-         return <RecursiveWrapper>{child.props.children}</RecursiveWrapper>;
-      }
+    const wrappedChildren = React.Children.map(props.children, (child) => {
+        if (child.props && child.props.children) {
+            return <RecursiveWrapper>{child.props.children}</RecursiveWrapper>;
+        }
 
-      return <div>{"children: 0"}</div>;
-   });
+        return <div>{"children: 0"}</div>;
+    });
 
-   return (<React.Fragment>
-      {`children: ${wrappedChildren.length}`}
-      <div>{wrappedChildren}</div>
-   </React.Fragment>);
+    return (<React.Fragment>
+        {`children: ${wrappedChildren.length}`}
+        <div>{wrappedChildren}</div>
+    </React.Fragment>);
 };
 ```
 
@@ -79,8 +79,8 @@ const RecursiveWrapper = (props) => {
 
 ```jsx
 import React, {forwardRef, useCallback, useEffect, useState} from "react";
-import PropTypes                                             from "prop-types";
-import {styled}                                              from "@material-ui/styles";
+import PropTypes from "prop-types";
+import {styled} from "@material-ui/styles";
 
 const ChildContainer = styled("div")({});
 
@@ -91,19 +91,19 @@ const RecursiveComponent = forwardRef(({parentRefHandler, nodeNameOrIdArray, chi
     const [childrenObject, setChildrenObject] = useState({});
 
     //passing callback to ref will set a container reference
-   const setContainer = useCallback((element) => {
-      if (element && !elementRef?.current && (nodeNameOrIdArray.indexOf(elementRef?.current?.nodeName) === -1 || nodeNameOrIdArray.indexOf(elementRef?.current?.nodeName) === -1)) {
-         const innerContainer = element.firstElementChild;
-         innerContainer.id = `RecursiveComponent_Child_Container`;
-         setContainerRef(innerContainer);
+    const setContainer = useCallback((element) => {
+        if (element && !elementRef?.current && (nodeNameOrIdArray.indexOf(elementRef?.current?.nodeName) === -1 || nodeNameOrIdArray.indexOf(elementRef?.current?.nodeName) === -1)) {
+            const innerContainer = element.firstElementChild;
+            innerContainer.id = `RecursiveComponent_Child_Container`;
+            setContainerRef(innerContainer);
         }
-   }, [children],);
+    }, [children],);
 
     //once container ref is set, we know the element has mounted
     useEffect(() => {
-       if (containerRef) {
-          setElementMounted(true);
-       }
+        if (containerRef) {
+            setElementMounted(true);
+        }
     }, [containerRef]);
 
     //once the element has mounted we need to query the child elements for any ids or element names that were passed in
@@ -111,47 +111,47 @@ const RecursiveComponent = forwardRef(({parentRefHandler, nodeNameOrIdArray, chi
     //if the element is found it will be added to the object with the name in the array
     // all unspecified children will be put in an array
     useEffect(() => {
-       if (containerRef && elementMounted === true && containerRef.children) {
-          const children = {unnamedChildren: []};
+        if (containerRef && elementMounted === true && containerRef.children) {
+            const children = {unnamedChildren: []};
 
-          for (const el of containerRef.children) {
-             let foundElement;
+            for (const el of containerRef.children) {
+                let foundElement;
 
-             nodeNameOrIdArray.forEach((name, index) => {
-                foundElement = el.querySelector(name);
-                if (foundElement) {
-                   foundElement.id = `${name}_${index}`
-                                     ? `${name}_${index}`
-                                     : `nested_element_id_${index}`;
-                   children[name] = foundElement;
-                }
-             });
-             if (!foundElement) children.unnamedChildren.push(el);
-          }
+                nodeNameOrIdArray.forEach((name, index) => {
+                    foundElement = el.querySelector(name);
+                    if (foundElement) {
+                        foundElement.id = `${name}_${index}`
+                                          ? `${name}_${index}`
+                                          : `nested_element_id_${index}`;
+                        children[name] = foundElement;
+                    }
+                });
+                if (!foundElement) children.unnamedChildren.push(el);
+            }
 
-          setElementRef(ref);
-          setChildrenObject(children);
-       }
+            setElementRef(ref);
+            setChildrenObject(children);
+        }
     }, [elementMounted]);
 
     //after seting a reference to the needed element we can run the method/handler that was passed down
     useEffect(() => {
-       if (parentRefHandler && childrenObject) {
-          parentRefHandler(childrenObject);
-       }
+        if (parentRefHandler && childrenObject) {
+            parentRefHandler(childrenObject);
+        }
     }, [childrenObject]);
 
-   return (<ChildContainer ref={setContainer}>
+    return (<ChildContainer ref={setContainer}>
         {React.cloneElement(children, rest)}
-   </ChildContainer>);
+    </ChildContainer>);
 },);
 
 RecursiveComponent.propTypes = {
-   children: PropTypes.instanceOf(Object), nodeNameOrIdArray: PropTypes.array,
+    children: PropTypes.instanceOf(Object), nodeNameOrIdArray: PropTypes.array,
 };
 
 RecursiveComponent.defaultProps = {
-   nodeNameOrIdArray: [],
+    nodeNameOrIdArray: [],
 };
 export default RecursiveComponent;
 ```
@@ -160,12 +160,12 @@ export default RecursiveComponent;
 
 ```jsx
 const WebApp = (props) => {
-   return (<div>
-      {config.map((componentName) => {
-         componentMapping[componentName];
-         return <Component/>;
-      })}
-   </div>);
+    return (<div>
+        {config.map((componentName) => {
+            componentMapping[componentName];
+            return <Component/>;
+        })}
+    </div>);
 };
 ```
 
@@ -176,46 +176,46 @@ import React, {useState, useEffect} from "react";
 import "./style.css";
 
 export default function App() {
-   const [user, setUser] = useState(false);
-   const [scriptLoadingState, setScriptLoadingState] = useState("IDLE");
+    const [user, setUser] = useState(false);
+    const [scriptLoadingState, setScriptLoadingState] = useState("IDLE");
 
-   useEffect(() => {
-      if (user) {
-         var script = document.createElement("script");
-         script.type = "text/javascript";
-         script.src = "https://www.google-analytics.com/analytics.js";
-         script.onload = function () {
-            setScriptLoadingState("LOADED");
-         };
-         script.onerror = function () {
-            setScriptLoadingState("FAILED");
-         };
-         document.body.appendChild(script);
-      }
-   }, [user]);
+    useEffect(() => {
+        if (user) {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "https://www.google-analytics.com/analytics.js";
+            script.onload = function () {
+                setScriptLoadingState("LOADED");
+            };
+            script.onerror = function () {
+                setScriptLoadingState("FAILED");
+            };
+            document.body.appendChild(script);
+        }
+    }, [user]);
 
-   return (<div>
-      <button
-              onClick={() => setUser(true)}
-              style={{width: "200px", height: "30px", fontSize: "16px"}}
-      >
-         Login
-      </button>
-      <h2>
-         Script Loading State:{" "}
-         <span
-                 style={{
+    return (<div>
+        <button
+            onClick={() => setUser(true)}
+            style={{width: "200px", height: "30px", fontSize: "16px"}}
+        >
+            Login
+        </button>
+        <h2>
+            Script Loading State:{" "}
+            <span
+                style={{
                     color: scriptLoadingState === "IDLE"
                            ? "grey"
                            : scriptLoadingState === "LOADED"
                              ? "green"
                              : "red",
-                 }}
-         >
+                }}
+            >
           {scriptLoadingState}
         </span>
-      </h2>
-   </div>);
+        </h2>
+    </div>);
 }
 ```
 
@@ -241,20 +241,20 @@ Ul > li[(className = "test")];
 import {useRef} from "react";
 
 function MyInput(props) {
-   return <input {...props} />;
+    return <input {...props} />;
 }
 
 export default function MyForm() {
-   const inputRef = useRef(null);
+    const inputRef = useRef(null);
 
-   function handleClick() {
-      inputRef.current.focus();
-   }
+    function handleClick() {
+        inputRef.current.focus();
+    }
 
-   return (<>
-      <MyInput ref={inputRef}/>
-      <button onClick={handleClick}>Focus the input</button>
-   </>);
+    return (<>
+        <MyInput ref={inputRef}/>
+        <button onClick={handleClick}>Focus the input</button>
+    </>);
 }
 ```
 
@@ -275,14 +275,14 @@ ref.current; // DOM element
 
 ```jsx
 export default function Component(props) {
-   const nodeRef = useRef();
+    const nodeRef = useRef();
 
-   useEffect(() => {
-      console.log(nodeRef.current);
-   }, []);
+    useEffect(() => {
+        console.log(nodeRef.current);
+    }, []);
 
-   // Root Node
-   return <input ref={nodeRef}/>;
+    // Root Node
+    return <input ref={nodeRef}/>;
 }
 ```
 
@@ -299,20 +299,20 @@ export default function Component(props) {
 import type * as React from "react";
 
 export function mergeRefs<T = any>(refs: Array<React.MutableRefObject<T> | React.LegacyRef<T> | undefined | null>): React.RefCallback<T> {
-   return (value) => {
-      refs.forEach((ref) => {
-         if (typeof ref === "function") {
-            ref(value);
-         }
-         else if (ref != null) {
-            (ref
-            as
-            React.MutableRefObject < T | null >
-         ).
-            current = value;
-         }
-      });
-   };
+    return (value) => {
+        refs.forEach((ref) => {
+            if (typeof ref === "function") {
+                ref(value);
+            }
+            else if (ref != null) {
+                (ref
+                as
+                React.MutableRefObject < T | null >
+            ).
+                current = value;
+            }
+        });
+    };
 }
 ```
 
@@ -331,7 +331,7 @@ export function mergeRefs<T = any>(refs: Array<React.MutableRefObject<T> | React
 
 ```jsx
 {
-   error && <div className="alert alert-danger">{error}</div>;
+    error && <div className="alert alert-danger">{error}</div>;
 }
 ```
 
@@ -392,32 +392,32 @@ localStorage.setItem("token", response.headers["x-auth-token"]);
 
 ```jsx
 React.useEffect(() => {
-   // Will be invoked on the initial render
-   // and all subsequent re-renders.
+    // Will be invoked on the initial render
+    // and all subsequent re-renders.
 });
 ```
 
 ```jsx
 React.useEffect(() => {
-   // Will be invoked on the initial render
-   // and when "id" or "authed" changes.
+    // Will be invoked on the initial render
+    // and when "id" or "authed" changes.
 }, [id, authed]);
 ```
 
 ```jsx
 React.useEffect(() => {
-   // Will only be invoked on the initial render
+    // Will only be invoked on the initial render
 }, []);
 ```
 
 ```jsx
 React.useEffect(() => {
-   return () => {
-      // invoked right before invoking
-      // the new effect on a re-render AND
-      // right before removing the component
-      // from the DOM
-   };
+    return () => {
+        // invoked right before invoking
+        // the new effect on a re-render AND
+        // right before removing the component
+        // from the DOM
+    };
 });
 ```
 
@@ -425,7 +425,7 @@ React.useEffect(() => {
 
 ```jsx
 useEffect(() => {
-   return () => console.log("unmounting...");
+    return () => console.log("unmounting...");
 });
 ```
 
@@ -433,22 +433,22 @@ useEffect(() => {
 
 ```jsx
 useEffect(() => {
-   let isMounted = true;
-   register("interviewModelId");
+    let isMounted = true;
+    register("interviewModelId");
 
-   fetchInterviewModels().then((data) => {
-      if (isMounted) setAssessmentChoiceList(data);
-      setSelectedInterviewModel(data);
-   });
+    fetchInterviewModels().then((data) => {
+        if (isMounted) setAssessmentChoiceList(data);
+        setSelectedInterviewModel(data);
+    });
 
-   if (!groupDetails) {
-      register({name: "assessmentOrderIds"}, {
-         required: errorMessages.assIdsRequired, validate: (value) => value.length <= maxGroupMembers || errorMessages.maxGroupMembers,
-      },);
-   }
-   return () => {
-      isMounted = false;
-   };
+    if (!groupDetails) {
+        register({name: "assessmentOrderIds"}, {
+            required: errorMessages.assIdsRequired, validate: (value) => value.length <= maxGroupMembers || errorMessages.maxGroupMembers,
+        },);
+    }
+    return () => {
+        isMounted = false;
+    };
 }, [errorMessages.assIdsRequired, errorMessages.maxGroupMembers, groupDetails, maxGroupMembers, register, setSelectedInterviewModel,]);
 ```
 
@@ -460,35 +460,35 @@ useEffect(() => {
 
 ```jsx
 export default function useForm(initial = {}) {
-   const [inputs, setInputs] = useState(initial);
-   const handleChange = (e) => {
-      let {value, name, type} = e.target;
+    const [inputs, setInputs] = useState(initial);
+    const handleChange = (e) => {
+        let {value, name, type} = e.target;
 
-      if (type === "number") {
-         value = parseInt(value);
-      }
-      if (type === "file") {
-         [value] = e.target.files;
-      }
+        if (type === "number") {
+            value = parseInt(value);
+        }
+        if (type === "file") {
+            [value] = e.target.files;
+        }
 
-      setInputs({
-         ...inputs, [name]: value,
-      });
-   };
+        setInputs({
+            ...inputs, [name]: value,
+        });
+    };
 
-   const resetForm = () => {
-      setInputs(initial);
-   };
+    const resetForm = () => {
+        setInputs(initial);
+    };
 
-   const clearForm = () => {
-      const blankState = Object.fromEntries(Object.entries(inputs).map(([key, value]) => [key, ""]),);
+    const clearForm = () => {
+        const blankState = Object.fromEntries(Object.entries(inputs).map(([key, value]) => [key, ""]),);
 
-      setInputs(blankState);
-   };
+        setInputs(blankState);
+    };
 
-   return {
-      inputs, clearForm, resetForm, handleChange,
-   };
+    return {
+        inputs, clearForm, resetForm, handleChange,
+    };
 }
 ```
 
@@ -510,7 +510,7 @@ export default function useForm(initial = {}) {
 ```javascript
 const initialValues = Object.values(initial).join("");
 useEffect(() => {
-   setInputs(initial);
+    setInputs(initial);
 }, [initialValues]);
 ```
 

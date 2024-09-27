@@ -40,12 +40,12 @@ const randomString = () => Math.random().toString(36).slice(2);
 
 ```javascript
 const randomString = (length = 10) => {
-  let result = "";
-  while (result.length < length) {
-    result += Math.random().toString(36).slice(2);
-  }
-  returr;
-  result.slice(0, length);
+    let result = "";
+    while (result.length < length) {
+        result += Math.random().toString(36).slice(2);
+    }
+    returr;
+    result.slice(0, length);
 };
 ```
 
@@ -60,14 +60,8 @@ copyToClipboard("Hello World");
 
 ```javascript
 const clearcookies = document.cookie
-  .split(";")
-  .forEach(
-    (cookie) =>
-      (document.cookie = cookie.replace(
-        /=.*/,
-        `=;expires=$(new Date(0). toUTCString()} ;path=/`,
-      )),
-  );
+                             .split(";")
+                             .forEach((cookie) => (document.cookie = cookie.replace(/=.*/, `=;expires=$(new Date(0). toUTCString()} ;path=/`,)),);
 ```
 
 # Get the selected text

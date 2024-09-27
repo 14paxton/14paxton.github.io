@@ -113,14 +113,14 @@ FROM --platform=linux/amd64 python:3.7-alpine
 services:
   frontend:
     platform: linux/amd64
-    build: frontend
+    build:    frontend
     ports:
       - 80:80
     depends_on:
       - backend
   backend:
     platform: linux/amd64
-    build: backend
+    build:    backend
 ```
 
 # Debian ARM

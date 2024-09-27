@@ -47,13 +47,15 @@ Use FOREIGN_KEY_CHECKS
 **_Disable_**
 
 ```sql
-SET FOREIGN_KEY_CHECKS = 0;
+SET
+FOREIGN_KEY_CHECKS = 0;
 ```
 
 **_Enable_**
 
 ```sql
-SET FOREIGN_KEY_CHECKS = 1;
+SET
+FOREIGN_KEY_CHECKS = 1;
 ```
 
 <br/>
@@ -81,7 +83,7 @@ ALTER TABLE table_name
 ```sql
 ON
 DELETE
-    SET NULL
+SET NULL
 ```
 
 > If you don’t want to turn key checking `ON` and `off`, you can permanently modify it to `ON DELETE SET NULL`
@@ -90,8 +92,8 @@ DELETE
 
 ```sql
 ALTER TABLE table_name1
-    DROP
-        FOREIGN KEY fk_name1;
+DROP
+FOREIGN KEY fk_name1;
 ```
 
 > Then add the foreign key constraints back
@@ -253,7 +255,7 @@ WHERE rg.`name` = 'tbcore-rg-manager';
 
 ```sql
 CREATE
-    TEMPORARY TABLE temporary_tableBP2 AS
+TEMPORARY TABLE temporary_tableBP2 AS
 SELECT *
 FROM user_group_assessment_order
 WHERE id in (SELECT ugao.id
@@ -281,7 +283,7 @@ FROM temporary_tableBP2;
 
 ```sql
 DROP
-    TEMPORARY TABLE temporary_tableBP2;
+TEMPORARY TABLE temporary_tableBP2;
 ```
 
 ## FIND ASSESSMENTS WITH SAME CLIENT
@@ -305,25 +307,25 @@ WHERE ASSESSMENT_ORDER.ID NOT IN (SELECT ao.id
                                            JOIN ASSESSMENT_ORDER ao ON USER_GROUP.CLIENT_SETUP_ID = ao.client_setup_id
                                   WHERE USER_ID = 820
                                     AND TYPE
-                                      != 'MYSAVEDGROUP'
-                                    AND USER_GROUP.ID = 520
-                                    AND USER_GROUP.INTERVIEW_MODEL_ID = 35);
+    != 'MYSAVEDGROUP'
+  AND USER_GROUP.ID = 520
+  AND USER_GROUP.INTERVIEW_MODEL_ID = 35);
 ```
 
 ## UserGroupQueries
 
 ```sql
-SELECT ug.id                   AS id,
-       ug.interview_model_id   AS interviewModelId,
-       ugao.id                    ugaoid,
-       ug.last_updated         AS lastUpdated,
-       COUNT(DISTINCT ugao.id) AS assessmentCount,
-       COUNT(ugao.id)          AS assessmentCount2,
+SELECT ug.id                    AS id,
+       ug.interview_model_id    AS interviewModelId,
+       ugao.id                     ugaoid,
+       ug.last_updated          AS lastUpdated,
+       COUNT(DISTINCT ugao.id)  AS assessmentCount,
+       COUNT(ugao.id)           AS assessmentCount2,
        CONVERT(CASE
                    WHEN (SELECT count(*) FROM USER_GROUP_SHARE WHERE ug.id = USER_GROUP_SHARE.USER_GROUP_ID) < 1
                        THEN 0
                    ELSE 1
-           END, BINARY)        AS shared
+                   END, BINARY) AS shared
 FROM USER_GROUP ug
          LEFT JOIN USER_GROUP_ASSESSMENT_ORDER ugao ON ug.id = ugao.user_group_id
          JOIN INTERVIEW_MODEL im ON im.id = ug.interview_model_id
@@ -341,17 +343,17 @@ WHERE ug.user_id = 52
   AND ug.id = 454
 ORDER BY USER_GROUP_ASSESSMENT_ORDER.ID;
 
-SELECT ug.id                              AS id,
-       ug.NAME                            AS name,
-       ug.interviewModelId                AS interviewModelId,
-       im.NAME                            AS assessmentName,
-       im.sourceId                        AS sourceId,
-       im.source                          AS source,
-       im.subType                         AS subType,
-       ug.visibility                      AS visibility,
-       ug.lastUpdated                     AS lastUpdated,
-       COUNT(DISTINCT ugao.id)            AS assessmentCount,
-       ug.type                            AS type,
+SELECT ug.id                         AS id,
+       ug.NAME                       AS name,
+       ug.interviewModelId           AS interviewModelId,
+       im.NAME                       AS assessmentName,
+       im.sourceId                   AS sourceId,
+       im.source                     AS source,
+       im.subType                    AS subType,
+       ug.visibility                 AS visibility,
+       ug.lastUpdated                AS lastUpdated,
+       COUNT(DISTINCT ugao.id)       AS assessmentCount,
+       ug.type                       AS type,
        CAST(CASE
                 WHEN (SELECT count(*)
                       FROM USERGROUPSHARE AS ugs
@@ -359,7 +361,7 @@ SELECT ug.id                              AS id,
                         AND ugs.revoked = FALSE) < 1
                     THEN 0
                 ELSE 1
-                END AS JAVA.LANG.BOOLEAN) AS shared
+           END AS JAVA.LANG.BOOLEAN) AS shared
 FROM GROUP ug
          LEFT JOIN USERGROUPASSESSMENTORDER ugao ON ug.id = ugao.userGroupId
          LEFT JOIN INTERVIEWMODEL im ON im.id = ug.interviewModelId
@@ -471,7 +473,7 @@ WHERE id = 140;
 
 ```sql
 CREATE
-    TEMPORARY TABLE temporary_tableBP2 AS
+TEMPORARY TABLE temporary_tableBP2 AS
 SELECT *
 FROM user_group
 WHERE user_id LIKE 820;
@@ -496,5 +498,5 @@ WHERE user_id LIKE 820;
 
 ```sql
  DROP
-    TEMPORARY TABLE temporary_tableBP2;
+TEMPORARY TABLE temporary_tableBP2;
 ```

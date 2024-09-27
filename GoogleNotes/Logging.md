@@ -97,16 +97,16 @@ gcloud logging read "resource.type=global AND jsonPayload.queryResult.responseMe
 ### **__<span style="color:red">1) installed cli via PowerShell</span>__**
 
 ```powershell    
-   (New-Object Net.WebClient).DownloadFile("https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe", "$env:Temp\GoogleCloudSDKInstaller.exe")    
-    
-            & $env:Temp\GoogleCloudSDKInstaller.exe    
-        
+   (New-Object Net.WebClient).DownloadFile("https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe", "$env:Temp\GoogleCloudSDKInstaller.exe")
+
+   & $env:Temp\GoogleCloudSDKInstaller.exe
+
 ```    
 
 ### **__<span style="color:red"> 2) Set your default project so you don't have to supply the --project flag with each command:</span>__**
 
 ```powershell    
-gcloud config set project    
+gcloud config set project
 your-project-name    
 ```    
 
@@ -140,12 +140,12 @@ gcloud gcloud logging read --freshness="50d"
 > use request body
 
 ```json    
-   {    
-  "resourceNames": [    
-    "projects/your-project-name"    
-  ],    
-  "filter": "resource.type=global",    
-  "orderBy": "timestamp desc"    
+   {
+  "resourceNames": [
+    "projects/your-project-name"
+  ],
+  "filter": "resource.type=global",
+  "orderBy": "timestamp desc"
 }    
 ```    
 

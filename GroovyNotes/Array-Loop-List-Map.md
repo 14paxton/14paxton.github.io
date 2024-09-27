@@ -123,7 +123,7 @@ List.pop //remove last item
 ```
 
 ```groovy
-List.Getat(0..3)   //  range
+List.Getat(0..3) //  range
 ```
 
 ```groovy

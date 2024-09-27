@@ -71,16 +71,9 @@ new Map(Object.entries(advancedFields));
 ## From Mapped Array
 
 ```javascript
-new Map(
-  data.map((result) => [
-    result.id,
-    `${result.firstName}${
-      result?.middleName && result?.middleName.trim()
-        ? ` ${result?.middleName}`
-        : ""
-    } ${result.lastName}`,
-  ]),
-);
+new Map(data.map((result) => [result.id, `${result.firstName}${result?.middleName && result?.middleName.trim()
+                                                               ? ` ${result?.middleName}`
+                                                               : ""} ${result.lastName}`,]),);
 ```
 
 ## Combine 2 maps

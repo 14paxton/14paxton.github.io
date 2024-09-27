@@ -92,7 +92,7 @@ public class StringToNode {
             "location", Map.of("id", 54),
             "responsible", Set.of(Map.of("id", 405)),
             "sellers", List.of(Map.of("id", 605))
-    );
+                                          );
 
     ObjectNode agencyNode = new ObjectMapper().valueToTree(agencyMap);
 }
@@ -103,12 +103,12 @@ public class StringToNode {
 ```yml
 jackson:
   property-naming-strategy: LOWER_CAMEL_CASE
-  locale: en_US
-  date-format: yyyy-MM-dd'T'HH:mm:ss.SSS
+  locale:                  en_US
+  date-format:             yyyy-MM-dd'T'HH:mm:ss.SSS
   mapper:
     ACCEPT_CASE_INSENSITIVE_ENUMS: true
   serialization:
-    INDENT_OUTPUT: false
+    INDENT_OUTPUT:             false
     WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS: false
     WRITE_DATES_AS_TIMESTAMPS: false
   deserialization:

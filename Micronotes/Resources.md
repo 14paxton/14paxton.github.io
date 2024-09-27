@@ -57,7 +57,7 @@ sourceSets {
     main {
         resources {
             srcDirs = ['src/main/resources']
-            include '**/*.properties', '**/*.yml'  // Add any specific file patterns if needed
+            include '**/*.properties', '**/*.yml' // Add any specific file patterns if needed
         }
     }
 }

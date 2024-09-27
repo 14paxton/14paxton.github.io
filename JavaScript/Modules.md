@@ -49,24 +49,28 @@ const moduleVersion2 = await import(getPath("v2.0"));
 ## Import and run in script tag
 
 ```html
+
 <script>
-    import("/assets/js/modules/createCSSImageContainers.js").then(async (module) => {const {addCSSImageContainers} = module;
-    await addCSSImageContainers();});
+    import("/assets/js/modules/createCSSImageContainers.js").then(async (module) => {
+        const {addCSSImageContainers} = module;
+        await addCSSImageContainers();
+    });
 </script>
 ```
 
 ## Dynamic Import
 
 ```html
+
 <script type="module">
-  (async () => {
-    const moduleSpecifier = "./lib.mjs";
-    const { repeat, shout } = await import(moduleSpecifier);
-    repeat("hello");
-    // → 'hello hello'
-    shout("Dynamic import in action");
-    // → 'DYNAMIC IMPORT IN ACTION!'
-  })();
+    (async () => {
+        const moduleSpecifier = "./lib.mjs";
+        const {repeat, shout} = await import(moduleSpecifier);
+        repeat("hello");
+        // → 'hello hello'
+        shout("Dynamic import in action");
+        // → 'DYNAMIC IMPORT IN ACTION!'
+    })();
 </script>
 ```
 
@@ -74,9 +78,9 @@ const moduleVersion2 = await import(getPath("v2.0"));
 
 ```javascript
 async function loadMyModule() {
-  console.log("loadMyModule");
-  const { default: runFunc } = await import(moduleSpecifier(file));
-  await runFunc();
+    console.log("loadMyModule");
+    const {default: runFunc} = await import(moduleSpecifier(file));
+    await runFunc();
 }
 
 await loadMyModule();
@@ -92,8 +96,9 @@ await loadMyModule();
 ---
 
 ```html
-<link rel="modulepreload" href="lib.mjs" />
-<link rel="modulepreload" href="main.mjs" />
+
+<link rel="modulepreload" href="lib.mjs"/>
+<link rel="modulepreload" href="main.mjs"/>
 <script type="module" src="main.mjs"></script>
 <script nomodule src="fallback.js"></script>
 ```
@@ -112,10 +117,10 @@ await loadMyModule();
 
 ```javascript
 (async () => {
-  if (somethingIsTrue) {
-    // import module for side effects
-    await import("/modules/my-module.js");
-  }
+    if (somethingIsTrue) {
+        // import module for side effects
+        await import("/modules/my-module.js");
+    }
 })();
 ```
 
@@ -123,13 +128,11 @@ await loadMyModule();
 
 ```javascript
 (async () => {
-  if (somethingIsTrue) {
-    const {
-      default: myDefault,
-      foo,
-      bar,
-    } = await import("/modules/my-module.js");
-  }
+    if (somethingIsTrue) {
+        const {
+                  default: myDefault, foo, bar,
+              } = await import("/modules/my-module.js");
+    }
 })();
 ```
 
@@ -138,17 +141,17 @@ await loadMyModule();
 ```javascript
 const main = document.querySelector("main");
 for (const link of document.querySelectorAll("nav > a")) {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
 
-    import("/modules/my-module.js")
-      .then((module) => {
-        module.loadPageInto(main);
-      })
-      .catch((err) => {
-        main.textContent = err.message;
-      });
-  });
+        import("/modules/my-module.js")
+            .then((module) => {
+                module.loadPageInto(main);
+            })
+            .catch((err) => {
+                main.textContent = err.message;
+            });
+    });
 }
 ```
 
@@ -158,18 +161,16 @@ for (const link of document.querySelectorAll("nav > a")) {
 let myModule;
 
 if (typeof window === "undefined") {
-  myModule = await import("module-used-on-server");
-} else {
-  myModule = await import("module-used-in-browser");
+    myModule = await import("module-used-on-server");
+}
+else {
+    myModule = await import("module-used-in-browser");
 }
 ```
 
 ## With A non Literal
 
 ```javascript
-Promise.all(
-  Array.from({ length: 10 }).map(
-    (_, index) => import(`/modules/module-${index}.js`),
-  ),
-).then((modules) => modules.forEach((module) => module.load()));
+Promise.all(Array.from({length: 10}).map((_, index) => import(`/modules/module-${index}.js`),),)
+       .then((modules) => modules.forEach((module) => module.load()));
 ```

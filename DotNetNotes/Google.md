@@ -409,8 +409,12 @@ Console.WriteLine(response);
   "messages": [
     {
       "text": {
-        "text": ["Greetings! How can I assist?"],
-        "redactedText": ["Greetings! How can I assist?"]
+        "text": [
+          "Greetings! How can I assist?"
+        ],
+        "redactedText": [
+          "Greetings! How can I assist?"
+        ]
       },
       "responseType": "HANDLER_PROMPT",
       "source": "VIRTUAL_AGENT"

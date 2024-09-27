@@ -174,11 +174,15 @@ export async function addScriptsWithSRC(scriptSrcArray, documentElement) {
 
 ```javascript
 const jsDependents = [{
-    src:                                                   `https://cdn.jsdelivr.net/npm/pptxgenjs@3.10.0/dist/pptxgen.bundle.js`,
-    metaSrcContent: `https://cdn.jsdelivr.net`, integrity: `sha256-Wy9VBv6NL/AYHtNghEzGN525/yDwqqVoNXOScJYakwc=`, nonce: `cdn-${Math.floor(Math.random() * 35)}`,
+    src:            `https://cdn.jsdelivr.net/npm/pptxgenjs@3.10.0/dist/pptxgen.bundle.js`,
+    metaSrcContent: `https://cdn.jsdelivr.net`,
+    integrity:      `sha256-Wy9VBv6NL/AYHtNghEzGN525/yDwqqVoNXOScJYakwc=`,
+    nonce:          `cdn-${Math.floor(Math.random() * 35)}`,
 }, {
-    src:                                                   `https://cdn.jsdelivr.net/npm/jszip@3.10.0/dist/jszip.min.js`,
-    metaSrcContent: `https://cdn.jsdelivr.net`, integrity: `sha256-RJEp/lRYoP8E7Mlpwa0GG4iCrDTmCSa8jxO6NrYUrOQ=`, nonce: `cdn-${Math.floor(Math.random() * 35)}`,
+    src:            `https://cdn.jsdelivr.net/npm/jszip@3.10.0/dist/jszip.min.js`,
+    metaSrcContent: `https://cdn.jsdelivr.net`,
+    integrity:      `sha256-RJEp/lRYoP8E7Mlpwa0GG4iCrDTmCSa8jxO6NrYUrOQ=`,
+    nonce:          `cdn-${Math.floor(Math.random() * 35)}`,
 },];
 ```
 

@@ -105,7 +105,7 @@ querySelectorAll(`tbody td:nth-child(1), tfoot  tr:first-child > td`);
 # input
 
 ```javascript
-<input type="checkbox" id="c2" name="c2" value="DE039230952" />;
+<input type="checkbox" id="c2" name="c2" value="DE039230952"/>;
 //Replace $$ with document.querySelectorAll in the examples:
 
 const $$ = document.querySelectorAll.bind(document);

@@ -45,8 +45,8 @@ Table of contents
 
 ```powershell
 $API_URL = "https://api.github.com/repos/microsoft/winget-cli/releases/latest"
-$DOWNLOAD_URL = $(Invoke-RestMethod $API_URL).assets.browser_download_url |
-    Where-Object {$_.EndsWith(".msixbundle")}
+$DOWNLOAD_URL = $( Invoke-RestMethod $API_URL ).assets.browser_download_url |
+        Where-Object { $_.EndsWith(".msixbundle") }
 ```
 
 ### Download the installer:
@@ -128,7 +128,7 @@ winget install --id Logitech.UnifyingSoftware --force --accept-package-agreement
 > install multiple pieces of software
 
 ```powershell
-winget install Microsoft.AzureStorageExplorer; winget install Microsoft.VisualStudioCode;  winget install Microsoft.AzureCLI
+winget install Microsoft.AzureStorageExplorer; winget install Microsoft.VisualStudioCode; winget install Microsoft.AzureCLI
 ```
 
 #### Options

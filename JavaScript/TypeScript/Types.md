@@ -49,7 +49,7 @@ Table of contents
 
 ```typescript
 let callback: CallbackFunctionVariadic = function (...args: any[]) {
-  // do some stuff
+    // do some stuff
 };
 ```
 
