@@ -36,6 +36,8 @@ Table of contents
 
 ### POST with body
 
+{%raw%}
+
 ```HTTP
 POST http://ip:port/am/userGroups/v1/group/compare
 Content-Type: application/json
@@ -87,3 +89,5 @@ Authorization: Bearer {{access_token}}
   "organization": 1
  }
 ```
+
+{% endraw %}

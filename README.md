@@ -84,3 +84,13 @@ only re-builds posts and pages that have changed
 ```
 
 > use json object put header as key if you need header, data uri as value
+
+# Liquid Errors When Building
+
+> surround problem area with following
+
+{%raw%}
+//content//
+{% endraw %}
+
+> comes from using `%`
