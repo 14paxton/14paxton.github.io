@@ -38,7 +38,7 @@ Table of contents
 
 {%raw%}
 
-```HTTP
+```shell
 POST http://ip:port/am/userGroups/v1/group/compare
 Content-Type: application/json
 
@@ -54,7 +54,7 @@ Content-Type: application/json
 
 ### Log in and save tokens
 
-```HTTP
+```shell
 ### log in with auth0
 // @no-redirect
 // @no-log
@@ -66,16 +66,16 @@ Content-Type: application/x-www-form-urlencoded
     "password": "password"
 }
 > {%
-    client.global.set("access_token", response.body["access_token"]);
-    client.log(response.body["access_token"]);
-    client.log(client.global.get("access_token"));
+client.global.set("access_token", response.body["access_token"]);
+client.log(response.body["access_token"]);
+client.log(client.global.get("access_token"));
 
 %}
 ```
 
 #### Use Tokens
 
-```HTTP
+```shell
 // @no-log
 POST http://localhost:28080/TBEX/ssi/v1/create
 Content-Type: application/json

@@ -38,8 +38,6 @@ Table of contents
 
 - > [Personal CRUD app](https://github.com/14paxton/micronotes/tree/master/Projects/crud-data-microstream)
 
-- > [Personal ]
-
 - > [Sergio Video Walkthrough](https://www.youtube.com/watch?v=5W6oVj0h6rQ&t=602s)
 
 - > [Sergio AWS Walkthrough](https://www.youtube.com/watch?v=G5Uy8OODtEg&list=PLFeSAZzYdUofvGVIxNDEQ7lvRjXWdw0rw&index=7)
