@@ -63,12 +63,12 @@ window.addEventListener("load", async function () {
 
 ```javascript
 function ready(fn) {
-  if (document.readyState !== "loading") {
-    fn();
-  }
-  else {
-    document.addEventListener("DOMContentLoaded", fn);
-  }
+    if (document.readyState !== "loading") {
+        fn();
+    }
+    else {
+        document.addEventListener("DOMContentLoaded", fn);
+    }
 }
 
 ready(loadHTML);
@@ -78,18 +78,18 @@ ready(loadHTML);
 
 ```javascript
 function sortOptions(a, b) {
-  var at = a.textContent, bt = b.textContent;
-  return at > bt
-         ? 1
-         : at < bt
-           ? -1
-           : 0;
+    var at = a.textContent, bt = b.textContent;
+    return at > bt
+           ? 1
+           : at < bt
+             ? -1
+             : 0;
 }
 
 if (selectBox) {
-  let options = Array.from(selectBox.children).sort(sortOptions);
-  selectBox.append(...options);
-  addBlankSelectOption(selectBox);
+    let options = Array.from(selectBox.children).sort(sortOptions);
+    selectBox.append(...options);
+    addBlankSelectOption(selectBox);
 }
 ```
 
@@ -131,24 +131,24 @@ if (selectBox) {
 const pathToHTML = '/assets/HTMLSnippets/Nav.html';
 
 async function fetchHTMLFile(path) {
-  return await fetch(path);
+    return await fetch(path);
 }
 
 async function loadHTML() {
-  console.log(navigator.userAgent);
-  if (/(iphone|android|blackberry|webos)/i.test(navigator.userAgent)) {
-    const promise = await fetchHTMLFile(pathToHTML);
-    document.querySelector('#insertion').innerHTML = await promise.text();
-  }
+    console.log(navigator.userAgent);
+    if (/(iphone|android|blackberry|webos)/i.test(navigator.userAgent)) {
+        const promise = await fetchHTMLFile(pathToHTML);
+        document.querySelector('#insertion').innerHTML = await promise.text();
+    }
 }
 
 function ready(fn) {
-  if (document.readyState !== 'loading') {
-    fn();
-  }
-  else {
-    document.addEventListener('DOMContentLoaded', fn);
-  }
+    if (document.readyState !== 'loading') {
+        fn();
+    }
+    else {
+        document.addEventListener('DOMContentLoaded', fn);
+    }
 }
 
 ready(loadHTML);
@@ -180,7 +180,7 @@ window.addEventListener("load", async function () {
 }, false,);
 
 async function fetchHTMLFile(path) {
-  return await fetch(path);
+    return await fetch(path);
 }
 ```
 
@@ -210,7 +210,7 @@ const centerY = top + height / 2;
 
 ```javascript
 (async () => {
-  await createDataUrls(clonedTableArray, dimensionsObj, additionalSlides, resolveURLCreation, rejectURL,);
+    await createDataUrls(clonedTableArray, dimensionsObj, additionalSlides, resolveURLCreation, rejectURL,);
 })();
 ```
 
@@ -218,25 +218,25 @@ const centerY = top + height / 2;
 
 ```javascript
 if (conditional === true) {
-  const cScripts = document.querySelectorAll(".conditional");
+    const cScripts = document.querySelectorAll(".conditional");
 
-  cScripts.forEach((item) => {
-    const script = document.createElement("script");
+    cScripts.forEach((item) => {
+        const script = document.createElement("script");
 
-    const attrs = item.getAttributeNames();
+        const attrs = item.getAttributeNames();
 
-    attrs.forEach((attr) => {
-      script.setAttribute(attr, item.getAttribute(attr));
+        attrs.forEach((attr) => {
+            script.setAttribute(attr, item.getAttribute(attr));
+        });
+
+        script.type = "text/javascript";
+
+        script.async = false;
+
+        item.remove();
+
+        document.head.appendChild(script);
     });
-
-    script.type = "text/javascript";
-
-    script.async = false;
-
-    item.remove();
-
-    document.head.appendChild(script);
-  });
 }
 ```
 
@@ -248,9 +248,9 @@ if (conditional === true) {
 
 ```javascript
 const newUser = function (name, age, skill) {
-  return {
-    name, age, skill,
-  };
+    return {
+        name, age, skill,
+    };
 };
 
 newUser("John", 27, "JS");

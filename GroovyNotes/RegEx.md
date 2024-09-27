@@ -49,8 +49,8 @@ Table of contents
 ## Use groups
 
 ```groovy    
-def replacedTxt = txt.replaceAll(/.*(\d{2}-\d{2}-\d{4}).*(Gr.*)./) { all, date, lang ->    
-    def dateObj = Date.parse('dd-MM-yyyy', date)    
-    "The text '$all' was created with $lang on a ${dateObj.format('EEEE')}."    
+def replacedTxt = txt.replaceAll(/.*(\d{2}-\d{2}-\d{4}).*(Gr.*)./) { all, date, lang ->
+    def dateObj = Date.parse('dd-MM-yyyy', date)
+    "The text '$all' was created with $lang on a ${dateObj.format('EEEE')}."
 }    
 ```

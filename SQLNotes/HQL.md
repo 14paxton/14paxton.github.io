@@ -83,7 +83,9 @@ Reference:[SQL grammar](http://www.h2database.com/html/grammar.html),[functions]
 #### `jdbc:h2:mem:test` multiple connections in one process, database is removed when all connections are closed
 
 ####
-`jdbc:h2:mem:test;DB_CLOSE_DELAY=-1` multiple connections in one process, database in not removed when all connections are closed ([may create a memory leak](http://www.h2database.com/html/features.html#in_memory_databases))
+
+`jdbc:h2:mem:test;DB_CLOSE_DELAY=-1` multiple connections in one process, database in not removed when all connections are
+closed ([may create a memory leak](http://www.h2database.com/html/features.html#in_memory_databases))
 
 #### `jdbc:h2:mem:`unnamed private; one connection
 
@@ -601,8 +603,8 @@ List fetchUsersByNameOrManagerName(String searchString, params) {
 
    if (!params) return null
    def (firstNameSearch, lastNameSearch, rest) = searchString?.tokenize()
-//        DataSource dataSource = Holders.grailsApplication.mainContext.getBean('dataSource')
-//        Sql groovySql = new Sql(dataSource)
+   //        DataSource dataSource = Holders.grailsApplication.mainContext.getBean('dataSource')
+   //        Sql groovySql = new Sql(dataSource)
     String query = """select distinct user.id,
                     user.username,
                     user.client_setup_id,

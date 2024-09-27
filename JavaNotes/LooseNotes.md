@@ -60,7 +60,13 @@ public class MapExample {
 
 ```java
 public class LinkedListEx {
-    Map newMap = this.clientEntityMap.entrySet().stream().map(entry -> Map.entry(entry.getKey(), entry.getValue().stream().map(ClientEntityDetails::toMap).collect(Collectors.toCollection(LinkedList::new)))).collect(Collectors.toConcurrentMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> b, ConcurrentHashMap::new));
+    Map newMap = this.clientEntityMap.entrySet()
+                                     .stream()
+                                     .map(entry -> Map.entry(entry.getKey(), entry.getValue()
+                                                                                  .stream()
+                                                                                  .map(ClientEntityDetails::toMap)
+                                                                                  .collect(Collectors.toCollection(LinkedList::new))))
+                                     .collect(Collectors.toConcurrentMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> b, ConcurrentHashMap::new));
 
 }
 ```
@@ -69,7 +75,13 @@ public class LinkedListEx {
 
 ```java
 public class MapToString {
-    Map mapToString = this.clientEntityMap.entrySet().stream().map(entry -> Map.entry(entry.getKey(), entry.getValue().stream().map(ClientEntityDetails::toMap).collect(Collectors.toCollection(LinkedList::new)))).collect(Collectors.toConcurrentMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> b, ConcurrentHashMap::new));
+    Map mapToString = this.clientEntityMap.entrySet()
+                                          .stream()
+                                          .map(entry -> Map.entry(entry.getKey(), entry.getValue()
+                                                                                       .stream()
+                                                                                       .map(ClientEntityDetails::toMap)
+                                                                                       .collect(Collectors.toCollection(LinkedList::new))))
+                                          .collect(Collectors.toConcurrentMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> b, ConcurrentHashMap::new));
 
 }
 ```

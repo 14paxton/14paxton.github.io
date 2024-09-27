@@ -32,21 +32,22 @@ Table of contents
 ## [StatelessTestsetInfoReporter](https://maven.apache.org/surefire/surefire-extensions-api/apidocs/org/apache/maven/surefire/extensions/StatelessTestsetInfoReporter.html)
 
 ```xml    
-<plugin>    
-    <groupId>org.apache.maven.plugins</groupId>    
-    <artifactId>maven-surefire-plugin</artifactId>    
-    <version>3.0.0-M4</version>    
-    <configuration>    
-        <testFailureIgnore>true</testFailureIgnore>    
-        <statelessTestsetReporter    
-            implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">    
-            <disable>false</disable>    
-            <version>3.0</version>    
-            <usePhrasedFileName>true</usePhrasedFileName>    
-            <usePhrasedTestSuiteClassName>true</usePhrasedTestSuiteClassName>    
-            <usePhrasedTestCaseClassName>true</usePhrasedTestCaseClassName>    
-            <usePhrasedTestCaseMethodName>true</usePhrasedTestCaseMethodName>    
-        </statelessTestsetReporter>    
-    </configuration>    
- </plugin>    
+
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.0.0-M4</version>
+    <configuration>
+        <testFailureIgnore>true</testFailureIgnore>
+        <statelessTestsetReporter
+                implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">
+            <disable>false</disable>
+            <version>3.0</version>
+            <usePhrasedFileName>true</usePhrasedFileName>
+            <usePhrasedTestSuiteClassName>true</usePhrasedTestSuiteClassName>
+            <usePhrasedTestCaseClassName>true</usePhrasedTestCaseClassName>
+            <usePhrasedTestCaseMethodName>true</usePhrasedTestCaseMethodName>
+        </statelessTestsetReporter>
+    </configuration>
+</plugin>    
 ```

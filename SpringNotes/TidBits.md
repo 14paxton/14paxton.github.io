@@ -142,7 +142,8 @@ public class SpringClassScanner {
             Class<?> cl = Class.forName(beanDef.getBeanClassName());
             Findable findable = cl.getAnnotation(Findable.class);
             System.out.printf("Found class: %s, with meta name: %s%n", cl.getSimpleName(), findable.name());
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             System.err.println("Got exception: " + e.getMessage());
         }
     }
@@ -668,12 +669,12 @@ public class BookRepository {
     @Autowired
     private Library library;
 
-// @Autowired
-// public BookRepository(Library library) {
-// this.library = library;
-// }
+    // @Autowired
+    // public BookRepository(Library library) {
+    // this.library = library;
+    // }
 
-//...
+    //...
 }
 
 public class Library {
@@ -681,11 +682,11 @@ public class Library {
     @Autowired
     private BookRepository bookRepository;
 
-// public Library(BookRepository bookRepository) {
-// this.bookRepository = bookRepository;
-// }
+    // public Library(BookRepository bookRepository) {
+    // this.bookRepository = bookRepository;
+    // }
 
-//...
+    //...
 }
 ```
 

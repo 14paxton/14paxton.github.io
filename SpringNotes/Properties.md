@@ -34,10 +34,10 @@ Table of contents
 
 ```yaml    
 ---
-my.property: fromyamlfile    
+my.property: fromyamlfile
 ---
-spring.profiles: prod    
-spring.profiles.include:    
-  - proddb    
+spring.profiles: prod
+spring.profiles.include:
+  - proddb
   - prodmq    
 ```

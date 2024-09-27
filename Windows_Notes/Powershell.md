@@ -207,7 +207,7 @@ Get-ChildItem -Path 'Env:\
 ### Set ENV Persistently
 
 ```powershell
-[System.Environment]::SetEnvironmentVariable('ResourceGroup','AZ_Resource_Group')
+[System.Environment]::SetEnvironmentVariable('ResourceGroup', 'AZ_Resource_Group')
 ```
 
 # WSL
@@ -342,7 +342,8 @@ $xml.Save("C:\alkane\example.xml")
 ```powershell
 $content = get-content C:\alkane.txt -tail 3
 
-foreach($line in $content) {
+foreach ($line in $content)
+{
     write-host $line
 }
 ```
@@ -373,7 +374,7 @@ wget "http://www.contoso.com" -outfile "file"
 
 ```powershell
 $WebClient = New-Object System.Net.WebClient
-$WebClient.DownloadFile("https://www.contoso.com/file","C:\path\file")
+$WebClient.DownloadFile("https://www.contoso.com/file", "C:\path\file")
 ```
 
 # For Each / foreach / ForEach-Object
@@ -383,10 +384,11 @@ $WebClient.DownloadFile("https://www.contoso.com/file","C:\path\file")
 
 ```powershell
 # Create an array of folders
-$folders = @('C:\Folder','C:\Program Files\Folder2','C:\Folder3')
+$folders = @('C:\Folder', 'C:\Program Files\Folder2', 'C:\Folder3')
 
 # Perform iteration to create the same file in each folder
-foreach ($i in $folders) {
+foreach ($i in $folders)
+{
     Add-Content -Path "$i\SampleFile.txt" -Value "This is the content of the file"
 }
 ```
@@ -394,24 +396,24 @@ foreach ($i in $folders) {
 > or
 
 ```powershell
-$folders = @('C:\Folder','C:\Program Files\Folder2','C:\Folder3')
+$folders = @('C:\Folder', 'C:\Program Files\Folder2', 'C:\Folder3')
 $folders | ForEach-Object (Add-Content -Path "$_\SampleFile.txt" -Value "This is the content of the file")
 ```
 
 > or
 
 ```powershell
-$folders = @('C:\Folder','C:\Program Files\Folder2','C:\Folder3')
+$folders = @('C:\Folder', 'C:\Program Files\Folder2', 'C:\Folder3')
 $folders.ForEach({
-	Add-Content -Path "$_\SampleFile.txt" -Value "This is the content of the file"
+    Add-Content -Path "$_\SampleFile.txt" -Value "This is the content of the file"
 })
 ```
 
 # Run In Parallel / Async
 
 ```powershell
-powershell.exe Get-ChildItem C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default | ForEach-Object -Parallel {Remove-Item "$_" -Force -Recurse | Out-Null}
-powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" | Where-Object Name -NotIn @( 'Cache','Code Cache','databases','Extension State','File System' , 'IndexedDB', 'WebStorage', 'Sessions', 'Service Worker', 'Web Applications', 'Default') | ForEach-Object -Parallel {Copy-Item "$_" -Destination C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default -Recurse -Force}
+powershell.exe Get-ChildItem C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default | ForEach-Object -Parallel { Remove-Item "$_" -Force -Recurse | Out-Null }
+powershell.exe Get-ChildItem  "C:\Users\$env:UserName\AppData\Local\Google\Chrome\User Data\Default" | Where-Object Name -NotIn @( 'Cache', 'Code Cache', 'databases', 'Extension State', 'File System', 'IndexedDB', 'WebStorage', 'Sessions', 'Service Worker', 'Web Applications', 'Default') | ForEach-Object -Parallel { Copy-Item "$_" -Destination C:\Users\$env:UserName\source\repos\GitHub\Veridian\Google\Default -Recurse -Force }
 ```
 
 # Get-ChildItem cmdlet
@@ -459,7 +461,7 @@ net use /delete x:
 ## lock screen
 
 ```powershell
-$xCmdString = {rundll32.exe user32.dll,LockWorkStation}
+$xCmdString = { rundll32.exe user32.dll,LockWorkStation }
 
 Invoke-Command $xCmdString
 ```
@@ -474,8 +476,10 @@ $PSVersionTable
 
 ```powershell
 
-if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))
-{ Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`" `"$args`"" -Verb RunAs; exit }
+if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]"Administrator"))
+{
+    Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`" `"$args`"" -Verb RunAs; exit
+}
 Start-Process -FilePath 'C:\Users\Brandon003842\Downloads\ConnectUtility_2.30.9_Logitech.exe' -WorkingDirectory 'C:\Users\Brandon003842\LogiTech' -Verb RunAs
 
 ```
@@ -576,8 +580,9 @@ $TOP_FOLDER = "C:\ARCHIVE_VOLUMES"
 $Child_Folders = Get-ChildItem -Path $TOP_FOLDER -Recurse | Where-Object { $_.PSIsContainer -eq $true }
 
 # Create a text file in each sub-folder and add the current date/time as value.
-foreach ($foldername in $Child_Folders.FullName) {
-   (get-date -Format G) | Out-File -FilePath "$($foldername)\BackupState.txt" -Force
+foreach ($foldername in $Child_Folders.FullName)
+{
+    (get-date -Format G) | Out-File -FilePath "$( $foldername )\BackupState.txt" -Force
 }
 ```
 
@@ -588,8 +593,9 @@ foreach ($foldername in $Child_Folders.FullName) {
 $files = Get-ChildItem -Recurse -Path C:\ARCHIVE_VOLUMES -Include 'BackupState.txt' | Select-Object DirectoryName,FullName
 
 ## Read the contents of each file
-foreach ($file in $files) {
-    Write-Output ("$($file.DirectoryName) last backup time - " + (Get-Content $file.FullName))
+foreach ($file in $files)
+{
+    Write-Output ("$( $file.DirectoryName ) last backup time - " + (Get-Content $file.FullName))
 }
 ```
 
@@ -601,12 +607,15 @@ $services = Get-Service | Where-Object { $_.StartType -eq "Automatic" -and $_.St
 
 ## Pass each service object to the pipeline and process them with the Foreach-Object cmdlet
 $services | ForEach-Object {
-    try {
-        Write-Host "Attempting to start '$($_.DisplayName)'"
+    try
+    {
+        Write-Host "Attempting to start '$( $_.DisplayName )'"
         Start-Service -Name $_.Name -ErrorAction STOP
-        Write-Host "SUCCESS: '$($_.DisplayName)' has been started"
-    } catch {
-        Write-output "FAILED: $($_.exception.message)"
+        Write-Host "SUCCESS: '$( $_.DisplayName )' has been started"
+    }
+    catch
+    {
+        Write-output "FAILED: $( $_.exception.message )"
     }
 }
 ```
@@ -622,30 +631,30 @@ Add-Type -AssemblyName System.Web
 # Process the list
 $newUsers.foreach(
         {
-          # Generate a random password
-          $password = [System.Web.Security.Membership]::GeneratePassword((Get-Random -Minimum 20 -Maximum 32), 3)
-          $secPw = ConvertTo-SecureString -String $password -AsPlainText -Force
+            # Generate a random password
+            $password = [System.Web.Security.Membership]::GeneratePassword((Get-Random -Minimum 20 -Maximum 32), 3)
+            $secPw = ConvertTo-SecureString -String $password -AsPlainText -Force
 
-          # Formulate a username
-          $userName = '{0}{1}' -f $_.FirstName.Substring(0, 1), $_.LastName
+            # Formulate a username
+            $userName = '{0}{1}' -f $_.FirstName.Substring(0, 1), $_.LastName
 
-          try
-          {
-            # Build new user attributes
-            $newUser = @{
-              GivenName = "$( $_.FirsName )"
-              Surname = "$( $_.LastName )"
-              Name = $userName
-              AccountPassword = $secPw
+            try
+            {
+                # Build new user attributes
+                $newUser = @{
+                    GivenName = "$( $_.FirsName )"
+                    Surname = "$( $_.LastName )"
+                    Name = $userName
+                    AccountPassword = $secPw
+                }
+                New-ADUser @newUser
+
+                Write-Output "User '$( $userName )' has been created."
             }
-            New-ADUser @newUser
-
-            Write-Output "User '$( $userName )' has been created."
-          }
-          catch
-          {
-            Write-Output $_.Exception.Message
-          }
+            catch
+            {
+                Write-Output $_.Exception.Message
+            }
         }
 )
 ```
@@ -658,10 +667,10 @@ $newUsers.foreach(
  $start = 0
  echo $start
  for ($i = 0; $i -lt $minutes; $i++) {
-  $start += 1;
-  echo $start;
-  Start-Sleep -Seconds 30
-   $myShell.sendkeys(" ")
+     $start += 1;
+     echo $start;
+     Start-Sleep -Seconds 30
+     $myShell.sendkeys(" ")
  }
 ```
 
@@ -673,19 +682,22 @@ $newUsers.foreach(
  $start = 0
  while ($true)
  {
- $start += 1;
- echo $start;
-   $WShell.sendkeys("{SCROLLLOCK}")
-   Start-Sleep -Milliseconds 100
-   $WShell.sendkeys("{SCROLLLOCK}")
-   Start-Sleep -Seconds 100
+     $start += 1;
+     echo $start;
+     $WShell.sendkeys("{SCROLLLOCK}")
+     Start-Sleep -Milliseconds 100
+     $WShell.sendkeys("{SCROLLLOCK}")
+     Start-Sleep -Seconds 100
  }
 ```
 
 ## Answer / Reply to Yes(y) No(n) Prompt
 
 ```powershell
- foreach($i in $files) {'y' | powershell -c "Remove-Item $i -Force -ErrorAction silentlycontinue"}
+ foreach ($i in $files)
+ {
+     'y' | powershell -c "Remove-Item $i -Force -ErrorAction silentlycontinue"
+ }
 ```
 
 # Basic Commands

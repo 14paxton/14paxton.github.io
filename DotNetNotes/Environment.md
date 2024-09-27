@@ -36,7 +36,8 @@ Table of contents
 
 ```xml
 
-<aspNetCore processPath="%LAUNCHER_PATH%" arguments="%LAUNCHER_ARGS%" stdoutLogEnabled="false" stdoutLogFile=".\logs\stdout" forwardWindowsAuthToken="false">
+<aspNetCore processPath="%LAUNCHER_PATH%" arguments="%LAUNCHER_ARGS%" stdoutLogEnabled="false" stdoutLogFile=".\logs\stdout"
+            forwardWindowsAuthToken="false">
     <environmentVariables>
         <environmentVariable name="ASPNETCORE_ENVIRONMENT" value="QA"/>
         <environmentVariable name="AnotherVariable" value="My Value"/>

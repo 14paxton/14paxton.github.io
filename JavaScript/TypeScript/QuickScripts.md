@@ -41,12 +41,12 @@ Table of contents
 
 ```typescript
 export const exampleRouter = router({
-  exampleQuery: exampleQueryImplementation,
+    exampleQuery: exampleQueryImplementation,
 });
 
 // extracting a single object type from an array of that type
 export type ArrayElement<ArrayType extends unknown[] | null> =
-  ArrayType extends (infer ElementType)[] ? ElementType : never;
+    ArrayType extends (infer ElementType)[] ? ElementType : never;
 
 // the output types of a specific router, indexable by query identifiers
 type RouterOutput = inferRouterOutputs<typeof exampleRouter>;
@@ -126,9 +126,9 @@ const thread = <ThreadData>threadDocument.data();
 
 ```typescript
 const converter = {
-  toFirestore: (dataToBeWritten: ThreadData) => data,
-  fromFirestore: (document: QueryDocumentSnapshot) =>
-    <ThreadData>document.data(),
+    toFirestore: (dataToBeWritten: ThreadData) => data,
+    fromFirestore: (document: QueryDocumentSnapshot) =>
+        <ThreadData>document.data(),
 };
 ```
 
@@ -174,76 +174,76 @@ const thread = threadDocument.data(); // this will be of type ThreadData
 export type Listener<EventType> = (event: EventType) => void;
 
 export type ObserverReturnType<KeyType, EventType> = {
-  subscribe: (entryKey: KeyType, listener: Listener<EventType>) => () => void;
-  publish: (entryKey: KeyType, event: EventType) => void;
+    subscribe: (entryKey: KeyType, listener: Listener<EventType>) => () => void;
+    publish: (entryKey: KeyType, event: EventType) => void;
 };
 
 export default function createObserver<
-  KeyType extends string | number | symbol,
-  EventType,
+    KeyType extends string | number | symbol,
+    EventType,
 >(): ObserverReturnType<KeyType, EventType> {
-  const listeners: Record<KeyType, Listener<EventType>[]> = {} as Record<
-    KeyType,
-    Listener<EventType>[]
-  >;
+    const listeners: Record<KeyType, Listener<EventType>[]> = {} as Record<
+        KeyType,
+        Listener<EventType>[]
+    >;
 
-  return {
-    subscribe: (entryKey: KeyType, listener: Listener<EventType>) => {
-      if (!listeners[entryKey]) listeners[entryKey] = [];
-      listeners[entryKey].push(listener);
-      return () => {
-        listeners[entryKey].splice(listeners[entryKey].indexOf(listener), 1);
-      };
-    },
-    publish: (entryKey: KeyType, event: EventType) => {
-      if (!listeners[entryKey]) listeners[entryKey] = [];
-      listeners[entryKey].forEach((listener: Listener<EventType>) =>
-        listener(event),
-      );
-    },
-  };
+    return {
+        subscribe: (entryKey: KeyType, listener: Listener<EventType>) => {
+            if (!listeners[entryKey]) listeners[entryKey] = [];
+            listeners[entryKey].push(listener);
+            return () => {
+                listeners[entryKey].splice(listeners[entryKey].indexOf(listener), 1);
+            };
+        },
+        publish: (entryKey: KeyType, event: EventType) => {
+            if (!listeners[entryKey]) listeners[entryKey] = [];
+            listeners[entryKey].forEach((listener: Listener<EventType>) =>
+                listener(event),
+            );
+        },
+    };
 }
 
 export const LocalStorageObserver = createObserver<
-  LOCAL_STORAGE_KEYS,
-  string
+    LOCAL_STORAGE_KEYS,
+    string
 >();
 
-export const { subscribe, publish } = LocalStorageObserver;
+export const {subscribe, publish} = LocalStorageObserver;
 ```
 
 > The useLocalStorage custom hook (window checks are optional, depending on which environment this JavaScript will run on):
 
 ```typescript
 export function useLocalStorage<T>(key: LOCAL_STORAGE_KEYS, initialValue: T) {
-  const [storedValue, setStoredValue] = useState(() => {
-    if (typeof window === "undefined") {
-      return initialValue;
-    }
-    try {
-      const item = window.localStorage.getItem(key);
-      return item ? JSON.parse(item) : initialValue;
-    } catch (error) {
-      return initialValue;
-    }
-  });
+    const [storedValue, setStoredValue] = useState(() => {
+        if (typeof window === "undefined") {
+            return initialValue;
+        }
+        try {
+            const item = window.localStorage.getItem(key);
+            return item ? JSON.parse(item) : initialValue;
+        } catch (error) {
+            return initialValue;
+        }
+    });
 
-  LocalStorageObserver.subscribe(key, setStoredValue);
+    LocalStorageObserver.subscribe(key, setStoredValue);
 
-  const setValue = (value: T) => {
-    try {
-      const valueToStore =
-        value instanceof Function ? value(storedValue) : value;
-      setStoredValue(valueToStore);
-      LocalStorageObserver.publish(key, valueToStore);
-      if (typeof window !== "undefined") {
-        window.localStorage.setItem(key, JSON.stringify(valueToStore));
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  return [storedValue, setValue];
+    const setValue = (value: T) => {
+        try {
+            const valueToStore =
+                value instanceof Function ? value(storedValue) : value;
+            setStoredValue(valueToStore);
+            LocalStorageObserver.publish(key, valueToStore);
+            if (typeof window !== "undefined") {
+                window.localStorage.setItem(key, JSON.stringify(valueToStore));
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    };
+    return [storedValue, setValue];
 }
 ```
 
@@ -267,23 +267,23 @@ export function useLocalStorage<T>(key: LOCAL_STORAGE_KEYS, initialValue: T) {
 ```typescript
 // handlers for the request launch and for catching request launch error
 axios.interceptors.request.use(
-        (config) => {
-           console.log('We are now preparing to launch the request!')
-           return config;
-        },
-        (error) => Promise.reject(error),
+    (config) => {
+        console.log('We are now preparing to launch the request!')
+        return config;
+    },
+    (error) => Promise.reject(error),
 );
 
 // handlers for response interceptor and error response interceptor
 axios.interceptors.response.use(
-        (response) => {
-           console.log('We received the response!');
-           return response;
-        },
-        (error) => {
-           if (error.response.status === 403)
-              return Promise.reject(error);
-        }
+    (response) => {
+        console.log('We received the response!');
+        return response;
+    },
+    (error) => {
+        if (error.response.status === 403)
+            return Promise.reject(error);
+    }
 },
 ```
 
@@ -296,23 +296,23 @@ axios.interceptors.response.use(
 
 ```typescript
 export const createAxiosWithInterceptors = (
-  requestConfig: AxiosRequestConfig = {},
-  requestInterceptorHandlers: Partial<RequestInterceptorHandlers> = DefaultRequestInterceptor,
-  responseInterceptorHandlers: Partial<ResponseInterceptorHandlers> = DefaultResponseInterceptor,
+    requestConfig: AxiosRequestConfig = {},
+    requestInterceptorHandlers: Partial<RequestInterceptorHandlers> = DefaultRequestInterceptor,
+    responseInterceptorHandlers: Partial<ResponseInterceptorHandlers> = DefaultResponseInterceptor,
 ) => {
-  const axiosInstance = axios.create(requestConfig);
+    const axiosInstance = axios.create(requestConfig);
 
-  axiosInstance.interceptors.request.use(
-    requestInterceptorHandlers.requestConfigHandler,
-    requestInterceptorHandlers.requestErrorHandler,
-  );
+    axiosInstance.interceptors.request.use(
+        requestInterceptorHandlers.requestConfigHandler,
+        requestInterceptorHandlers.requestErrorHandler,
+    );
 
-  axiosInstance.interceptors.response.use(
-    responseInterceptorHandlers.responseHandler,
-    responseInterceptorHandlers.responseErrorHandler,
-  );
+    axiosInstance.interceptors.response.use(
+        responseInterceptorHandlers.responseHandler,
+        responseInterceptorHandlers.responseErrorHandler,
+    );
 
-  return axiosInstance;
+    return axiosInstance;
 };
 ```
 
@@ -322,26 +322,26 @@ export const createAxiosWithInterceptors = (
 type RequestConfigHandler = (config: AxiosRequestConfig) => AxiosRequestConfig;
 type RequestErrorHandler = (error: AxiosError) => Promise<AxiosError>;
 type RequestInterceptorHandlers = {
-  requestConfigHandler: RequestConfigHandler;
-  requestErrorHandler: RequestErrorHandler;
+    requestConfigHandler: RequestConfigHandler;
+    requestErrorHandler: RequestErrorHandler;
 };
 
 type ResponseHandler = (response: AxiosResponse) => AxiosResponse;
 type ResponseErrorHandler = (error: AxiosError) => Promise<AxiosError>;
 
 type ResponseInterceptorHandlers = {
-  responseHandler: ResponseHandler;
-  responseErrorHandler: ResponseErrorHandler;
+    responseHandler: ResponseHandler;
+    responseErrorHandler: ResponseErrorHandler;
 };
 
 const DefaultResponseInterceptor = {
-  responseHandler: (response: AxiosResponse) => response,
-  responseErrorHandler: (error: AxiosError) => Promise.reject(error),
+    responseHandler: (response: AxiosResponse) => response,
+    responseErrorHandler: (error: AxiosError) => Promise.reject(error),
 };
 
 const DefaultRequestInterceptor = {
-  requestConfigHandler: (config: AxiosRequestConfig) => config,
-  requestErrorHandler: (error: AxiosError) => Promise.reject(error),
+    requestConfigHandler: (config: AxiosRequestConfig) => config,
+    requestErrorHandler: (error: AxiosError) => Promise.reject(error),
 };
 ```
 
@@ -349,12 +349,13 @@ const DefaultRequestInterceptor = {
 
 ```typescript
 // axios instance with custom request config received through constructor, custom request interceptor and default response interceptor
-protected;
+protected
+;
 http: AxiosInstance = createAxiosWithInterceptors(this.requestConfig, {
-  requestConfigHandler: (config) => {
-    console.log();
-    return config;
-  },
+    requestConfigHandler: (config) => {
+        console.log();
+        return config;
+    },
 });
 ```
 
@@ -368,18 +369,18 @@ http: AxiosInstance = createAxiosWithInterceptors(this.requestConfig, {
 
 ```json
 {
-   ...
-   "paths": {
-      "@/*": [
-         "./src/*"
-      ],
-      "images/*": [
-         "./assets/images/*"
-      ]
-   },
-   "include": [
-      ...
-   ]
+  ...
+  "paths": {
+    "@/*": [
+      "./src/*"
+    ],
+    "images/*": [
+      "./assets/images/*"
+    ]
+  },
+  "include": [
+    ...
+  ]
 }
 ```
 
@@ -430,10 +431,10 @@ import Logo from "[path]/images/logo.svg";
 
 ```json
 {
-   "include": [
-      ...
-      "resources/**/*.ts"
-   ]
+  "include": [
+    ...
+    "resources/**/*.ts"
+  ]
 }
 
 ```
@@ -442,7 +443,9 @@ import Logo from "[path]/images/logo.svg";
 
 ```json
 {
-  "include": ["resources/ts/**/*.ts"]
+  "include": [
+    "resources/ts/**/*.ts"
+  ]
 }
 ```
 
@@ -465,7 +468,7 @@ import Logo from "[path]/images/logo.svg";
 
 ```typescript
 declare module "*.svg" {
-  const value: any;
-  export = value;
+    const value: any;
+    export = value;
 }
 ```

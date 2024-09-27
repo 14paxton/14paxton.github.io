@@ -37,9 +37,9 @@ Table of contents
 
 ```jsx
 const updatePrivateGroupsTable = () => {
-  if (privateGroupTableRef?.current) {
-    privateGroupTableRef.current.onQueryChange();
-  }
+    if (privateGroupTableRef?.current) {
+        privateGroupTableRef.current.onQueryChange();
+    }
 };
 ```
 
@@ -51,34 +51,31 @@ const updatePrivateGroupsTable = () => {
 
 ```jsx
 state = {
-  tableRef: React.createRef(),
+    tableRef: React.createRef(),
 };
 ```
 
 > Then add the tableRef prop to your Material Table
 
 ```jsx
-<MaterialTable tableRef={this.state.tableRef} />
+<MaterialTable tableRef={this.state.tableRef}/>
 ```
 
 > Then on the onRowClick prop/function use tableRef to access dataManager and onSelectionChange
 
 ```jsx
 <MaterialTable
-  tableRef={this.state.tableRef}
-  onRowClick={(event, rowData) => {
-    // Update the clicked rows checked state
-    rowData.tableData.checked = !rowData.tableData.checked;
+    tableRef={this.state.tableRef}
+    onRowClick={(event, rowData) => {
+        // Update the clicked rows checked state
+        rowData.tableData.checked = !rowData.tableData.checked;
 
-    // pass dataManager the current rows checked state and path/ID, the path/ID needs to be an array, ex: [1]
-    this.state.tableRef.current.dataManager.changeRowSelected(
-      rowData.tableData.checked,
-      [rowData.tableData.id],
-    );
+        // pass dataManager the current rows checked state and path/ID, the path/ID needs to be an array, ex: [1]
+        this.state.tableRef.current.dataManager.changeRowSelected(rowData.tableData.checked, [rowData.tableData.id],);
 
-    // call the onSelectionChange and pass it the row selected to ensure it updates your selection properly for any custom onSelectionChange functions.
-    this.state.tableRef.current.onSelectionChange(rowData);
-  }}
+        // call the onSelectionChange and pass it the row selected to ensure it updates your selection properly for any custom onSelectionChange functions.
+        this.state.tableRef.current.onSelectionChange(rowData);
+    }}
 />
 ```
 

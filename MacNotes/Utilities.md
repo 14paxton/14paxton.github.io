@@ -79,6 +79,7 @@ mkdir -p ~/macOS-installer && cd ~/macOS-installer && curl https://raw.githubuse
 ### [create installer](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment)
 
 #### run
+
 `createinstallmedia` command provided by Apple (opens a new window). Note that the command is made for USB's formatted with the name MyVolume:
 
 ```shell

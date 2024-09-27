@@ -58,7 +58,8 @@ public class BinarySearch {
             }
             if (numbers[pos] < target) {
                 min = pos + 1;
-            } else {
+            }
+            else {
                 max = pos - 1;
             }
         }
@@ -94,22 +95,22 @@ public class FilterString {
         AtomicInteger index = new AtomicInteger(0);
 
         List<Character> theList = str.chars()
-                .filter(w -> {
-                    boolean isDigit = (w >= 47 && w <= 57);
-                    boolean isQuestionMark = w == 63;
+                                     .filter(w -> {
+                                         boolean isDigit = (w >= 47 && w <= 57);
+                                         boolean isQuestionMark = w == 63;
 
-                    if (isDigit || isQuestionMark) {
-                        if (isDigit) {
-                            indexForNumberMap.put(index.get(), (char) w);
-                        }
+                                         if (isDigit || isQuestionMark) {
+                                             if (isDigit) {
+                                                 indexForNumberMap.put(index.get(), (char) w);
+                                             }
 
-                        index.getAndIncrement();
-                        return true;
-                    }
-                    return false;
-                })
-                .mapToObj(o -> (char) o)
-                .toList();
+                                             index.getAndIncrement();
+                                             return true;
+                                         }
+                                         return false;
+                                     })
+                                     .mapToObj(o -> (char) o)
+                                     .toList();
 
         if (theList.stream().anyMatch(Character::isDigit)) {
             Set<Integer> keys = indexForNumberMap.keySet();

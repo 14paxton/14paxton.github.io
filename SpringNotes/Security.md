@@ -69,32 +69,32 @@ Table of contents
 ### controller body
 
 ```groovy    
-SpringSecurityUtils.ifAllGranted('ROLE_ADMIN')    
-    
-SpringSecurityUtils.ifNotGranted()    
-    
+SpringSecurityUtils.ifAllGranted('ROLE_ADMIN')
+
+SpringSecurityUtils.ifNotGranted()
+
 SpringSecurityUtils.ifAnyGranted()     
 ```    
 
 ### views/gsp
 
 ```html    
-    
-<sec:ifLoggedIn>    
+
+<sec:ifLoggedIn>
     <sec:ifNotLoggedIn>     
 ```    
 
 ### Check user security roles
 
 ```groovy    
-def user = springSecurityService?.authentication?.details    
-    
+def user = springSecurityService?.authentication?.details
+
 //Check security context     
-def authentication = SecurityContextHolder.getContext().getAuthentication()    
-    
+def authentication = SecurityContextHolder.getContext().getAuthentication()
+
 //Checking variables in security notation in controller     
-@Secured(closure = {    
-    def status = ctx.templateService.getTemplate(request.getParameter('id')).status.name()    
-    (hasRole("ROLE_ADMIN_TP") && status != 'UNPUBLISH' || 'DRAFT')    
+@Secured(closure = {
+    def status = ctx.templateService.getTemplate(request.getParameter('id')).status.name()
+    (hasRole("ROLE_ADMIN_TP") && status != 'UNPUBLISH' || 'DRAFT')
 })     
 ```

@@ -39,27 +39,27 @@ Table of contents
 const CheckInPCF = {};
 
 function Scan(evt: Event): void {
-  const e: KeyboardEvent = evt as KeyboardEvent;
-  const timeDiff = e.timeStamp - CheckInPCF.LastTimeStamp;
-  CheckInPCF.LastTimeStamp = e.timeStamp; //"global"
+    const e: KeyboardEvent = evt as KeyboardEvent;
+    const timeDiff = e.timeStamp - CheckInPCF.LastTimeStamp;
+    CheckInPCF.LastTimeStamp = e.timeStamp; //"global"
 
-  //console.log(e.key + ': ' + timeDiff);
+    //console.log(e.key + ': ' + timeDiff);
 
-  if (timeDiff < 100) {
-    if (e.key == "Enter") {
-      //Assemble complete scan text
-      CheckInPCF.ScanText =
-        CheckInPCF.FirstCharacterCandidate + CheckInPCF.ScanText; //.replace('\u000D','');
+    if (timeDiff < 100) {
+        if (e.key == "Enter") {
+            //Assemble complete scan text
+            CheckInPCF.ScanText =
+                CheckInPCF.FirstCharacterCandidate + CheckInPCF.ScanText; //.replace('\u000D','');
 
-      //console.log('finished: ' + CheckInPCF.ScanText);
-      CheckInPCF._this._notifyOutputChanged(); //Power Apps related
+            //console.log('finished: ' + CheckInPCF.ScanText);
+            CheckInPCF._this._notifyOutputChanged(); //Power Apps related
+        } else {
+            CheckInPCF.ScanText += e.key;
+        }
     } else {
-      CheckInPCF.ScanText += e.key;
+        CheckInPCF.ScanText = "";
+        CheckInPCF.FirstCharacterCandidate = e.key;
     }
-  } else {
-    CheckInPCF.ScanText = "";
-    CheckInPCF.FirstCharacterCandidate = e.key;
-  }
 }
 ```
 

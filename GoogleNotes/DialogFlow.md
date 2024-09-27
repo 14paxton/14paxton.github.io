@@ -216,7 +216,7 @@ generated value.
 ### Set params and current page
 
 > Here’s a sample reference using [REST API](https://cloud.google.com/dialogflow/cx/docs/reference/rest) to set  
-> the [QueryParameters](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/QueryParameters) of  
+> the [QueryParameters](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/QueryParameters) of
 >
 the [detectIntent](https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/projects.locations.agents.environments.sessions/detectIntent#request-body)
 method request body:
@@ -423,8 +423,12 @@ method request body:
   "messages": [
     {
       "text": {
-        "text": ["Greetings! How can I assist?"],
-        "redactedText": ["Greetings! How can I assist?"]
+        "text": [
+          "Greetings! How can I assist?"
+        ],
+        "redactedText": [
+          "Greetings! How can I assist?"
+        ]
       },
       "responseType": "HANDLER_PROMPT",
       "source": "VIRTUAL_AGENT"
@@ -470,7 +474,9 @@ method request body:
     "messages": [
       {
         "text": {
-          "text": ["This is a sample response."]
+          "text": [
+            "This is a sample response."
+          ]
         }
       }
     ],
@@ -499,7 +505,9 @@ method request body:
     "messages": [
       {
         "text": {
-          "text": ["Please select anyone"]
+          "text": [
+            "Please select anyone"
+          ]
         },
         "payload": {
           "richContent": [
@@ -591,7 +599,9 @@ field to update and send back the stored parameters you collected from the previ
   "fulfillment_response": {
     "messages": [
       {
-        "text": ["This is where you left"]
+        "text": [
+          "This is where you left"
+        ]
       }
     ]
   }
@@ -704,7 +714,7 @@ see [Handoff from bot to live agent](https://developers.google.com/business-comm
 
 ```javascript
 for (let e of document.querySelectorAll("mat-option")) {
-  e.click();
+    e.click();
 }
 ```
 

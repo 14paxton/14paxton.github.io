@@ -43,12 +43,12 @@ public class White {
 > Use the StringUtils class, it also includes null check
 
 ```java
-StringUtils.leftPad(String str,int size);
+StringUtils.leftPad(String str, int size);
 
 ```
 
 ```java
- StringUtils.rightPad(String str,int size);
+ StringUtils.rightPad(String str, int size);
 ```
 
 ## [Format Codes](https://docs.oracle.com/javase/6/docs/api/java/util/Formatter.html#detail)
@@ -56,7 +56,7 @@ StringUtils.leftPad(String str,int size);
 > if you want to pad a string to a certain length with spaces, use something like this:
 
 ```java
-String padded=String.format("%-20s",str);
+String padded = String.format("%-20s", str);
 
 ```
 

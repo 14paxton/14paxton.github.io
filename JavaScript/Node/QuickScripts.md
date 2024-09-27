@@ -87,7 +87,7 @@ fs.writeFile(filename, data, [options], [callback]);
 > utf8' if none is given.
 
 ```javascript
-fs.writeFile("file.txt", content, { flag: "a+" }, (err) => {
-  if (err) throw err;
+fs.writeFile("file.txt", content, {flag: "a+"}, (err) => {
+    if (err) throw err;
 });
 ```

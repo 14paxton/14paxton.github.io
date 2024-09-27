@@ -58,8 +58,8 @@ stripMargin(‘char’) indicates what lines, or | by default
 Java char saved as int per ascii
 
 ```groovy    
-Def x = 'a'    
-    
+Def x = 'a'
+
 (int) x - 96 = 1    
 ```    
 

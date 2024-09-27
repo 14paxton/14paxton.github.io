@@ -36,12 +36,12 @@ Table of contents
 ## keep space
 
 ```jsx
-<FieldDescription style={{ whiteSpace: "pre-wrap" }}>
-  {`    -Choose one or more of these options      
+<FieldDescription style={{whiteSpace: "pre-wrap"}}>
+    {`    -Choose one or more of these options      
               CLIENT_ADMIN / RESULT_VIEWER / INTERVIEWER / REQUESTOR /      
               SCHEDULER / CLIENT_ADMIN / RESEARCH / COACH / ORDER_MANAGER /      
               TADMIN `}
-  <br />
+    <br/>
 </FieldDescription>
 ```
 
@@ -49,16 +49,14 @@ Table of contents
 
 ```jsx
 const createThemeToolTip = (themeSummary, significance) => {
-  return significance ? (
-    <>
-      {" "}
-      {themeSummary}.<i>
-        <FormattedMessage id="theme.significance.tooltip.label" />
-      </i>
-    </>
-  ) : (
-    themeSummary
-  );
+    return significance
+           ? (<>
+                {" "}
+                {themeSummary}.<i>
+                <FormattedMessage id="theme.significance.tooltip.label"/>
+            </i>
+            </>)
+           : (themeSummary);
 };
 ```
 

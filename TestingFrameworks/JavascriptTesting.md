@@ -90,8 +90,8 @@ import {BrowserRouter as Router} from "react-router-dom";
 it("containts stuff", () => {
     const wrapper = mount(<Router>
         {" "}
-      <Footer/>
-      {" "}
+        <Footer/>
+        {" "}
     </Router>,);
     console.log(wrapper.find("FooterContainer").html());
 
@@ -189,17 +189,22 @@ HTMLCanvasElement.prototype.getContext = jest.fn();
 
 ```javascript
 import "@testing-library/jest-dom";
-import React         from "react";
+import React from "react";
 import {createMount} from "@material-ui/core/test-utils";
-import Button        from "@material-ui/core/Button";
-import Typography    from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 import EditProfileForm from "./editForm";
 import {
     render as testRender, fireEvent, screen, getByText,
-}                    from "@testing-library/react";
+} from "@testing-library/react";
 
 const props = {
-    handleChange: jest.fn(), onSubmit: jest.fn(), bio: "test", gravatar: "https://i.pravatar.cc/150?img=3", handleBio: jest.fn(), handleGravatar: jest.fn(),
+    handleChange:   jest.fn(),
+    onSubmit:       jest.fn(),
+    bio:            "test",
+    gravatar:       "https://i.pravatar.cc/150?img=3",
+    handleBio:      jest.fn(),
+    handleGravatar: jest.fn(),
 };
 describe("<EditProfileForm/>", () => {
     let wrapper;
@@ -335,9 +340,9 @@ screen.getByText((_content, element) => element?.tagName.toLowerCase() === 'svg'
 
 ```javascript
 it('should render as div when the "as" attribute is passed with a value of "div"', () => {
-  render(<Button label={testText} as='div' data-testid='test-button'/>)
+    render(<Button label={testText} as='div' data-testid='test-button'/>)
 
-  expect(screen.getByTestId('test-button').nodeName.toLowerCase()).toBe('div')
+    expect(screen.getByTestId('test-button').nodeName.toLowerCase()).toBe('div')
 })
 ```
 
@@ -346,29 +351,29 @@ it('should render as div when the "as" attribute is passed with a value of "div"
 ### FormProvider Wrapper
 
 ```tsx
-import {render, renderHook}      from '@testing-library/react';
+import {render, renderHook} from '@testing-library/react';
 import {ReactElement, ReactNode} from 'react';
-import {FormProvider, useForm}   from 'react-hook-form';
+import {FormProvider, useForm} from 'react-hook-form';
 
 
 interface IWrapperProps {
-  children?: ReactNode;
-  props?: object;
+    children?: ReactNode;
+    props?: object;
 }
 
 const renderReactHookForm = (ui: ReactElement, {defaultValues = {}} = {}) => {
-  const {result} = renderHook(() => {
-    return useForm(defaultValues);
-  });
+    const {result} = renderHook(() => {
+        return useForm(defaultValues);
+    });
 
-  const Wrapper = ({children}: IWrapperProps) => {
+    const Wrapper = ({children}: IWrapperProps) => {
 
-    return (<FormProvider {...result.current}>{children}</FormProvider>);
-  };
+        return (<FormProvider {...result.current}>{children}</FormProvider>);
+    };
 
-  return {
-    ...render(ui, {wrapper: Wrapper})
-  };
+    return {
+        ...render(ui, {wrapper: Wrapper})
+    };
 };
 
 export default renderReactHookForm;

@@ -600,7 +600,12 @@ function measure(element, returnValue, parentNode) {
     element.style.zIndex = zIndex;
 
     const returnObj = {
-        clientWidth: clientWidth, clientHeight: clientHeight, offsetWidth: offsetWidth, offsetHeight: offsetHeight, scrollWidth: scrollWidth, scrollHeight: scrollHeight,
+        clientWidth:  clientWidth,
+        clientHeight: clientHeight,
+        offsetWidth:  offsetWidth,
+        offsetHeight: offsetHeight,
+        scrollWidth:  scrollWidth,
+        scrollHeight: scrollHeight,
     };
 
     if (returnObj.hasOwnProperty(returnValue)) {

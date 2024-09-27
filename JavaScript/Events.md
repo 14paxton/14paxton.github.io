@@ -43,7 +43,7 @@ element.addEventListener('load', function () {
 
 });
 element.onload = function () {
-    
+
 };
 ```
 

@@ -103,8 +103,8 @@ The code below shows positioning the popup at a desired location.
 
 ```javascript
 function mypopup() {
-  mywindow = window.open("http://jsc.simfatic-solutions.com", "mywindow", "location=1,status=1,scrollbars=1, width=100,height=100",);
-  mywindow.moveTo(0, 0);
+    mywindow = window.open("http://jsc.simfatic-solutions.com", "mywindow", "location=1,status=1,scrollbars=1, width=100,height=100",);
+    mywindow.moveTo(0, 0);
 }
 ```
 
@@ -122,8 +122,8 @@ The Code below opens a popup window when you enter the page:
 </head>
 <script type="text/javascript">
     function poponload() {
-      let testWindow = window.open("", "mywindow", "location=1,status=1,scrollbars=1,width=100,height=100",);
-      testwindow.moveTo(0, 0);
+        let testWindow = window.open("", "mywindow", "location=1,status=1,scrollbars=1,width=100,height=100",);
+        testwindow.moveTo(0, 0);
     }
 </script>
 <body onload="poponload()">
@@ -153,48 +153,48 @@ firstWindow.document.write("<p>This is 'firstwindow'. I am 200px wide and 100px 
 
 ```javascript
 function newWindowDimensions(width, height, x_axis, y_axis) {
-  const dualScreenLeft = window.screenLeft !== undefined
-                         ? window.screenLeft
-                         : window.screenX;
-  const dualScreenTop = window.screenTop !== undefined
-                        ? window.screenTop
-                        : window.screenY;
+    const dualScreenLeft = window.screenLeft !== undefined
+                           ? window.screenLeft
+                           : window.screenX;
+    const dualScreenTop = window.screenTop !== undefined
+                          ? window.screenTop
+                          : window.screenY;
 
-  const w = width
-            ? width
-            : DEFAULT_PPT_WIDTH.pixels;
-  const h = height
-            ? height
-            : DEFAULT_PPT_HEIGHT.pixels;
+    const w = width
+              ? width
+              : DEFAULT_PPT_WIDTH.pixels;
+    const h = height
+              ? height
+              : DEFAULT_PPT_HEIGHT.pixels;
 
-  function compute(screenPx, elementPx) {
-    return screenPx / 2 - elementPx / 2;
-  }
+    function compute(screenPx, elementPx) {
+        return screenPx / 2 - elementPx / 2;
+    }
 
-  const x = x_axis
-            ? x_axis
-            : Math.round(compute(window.screen.width, w) + dualScreenLeft);
+    const x = x_axis
+              ? x_axis
+              : Math.round(compute(window.screen.width, w) + dualScreenLeft);
 
-  const y = y_axis
-            ? y_axis
-            : Math.round(compute(window.screen.height, h) + dualScreenTop);
+    const y = y_axis
+              ? y_axis
+              : Math.round(compute(window.screen.height, h) + dualScreenTop);
 
-  return `width=${w},height=${h},screenX=${x},screenY=${y},status=0,dependent=0,minimizable=0,resizable=0,menubar=0,location=0,toolbar=0,status=0,scrollbars=0,titlebar=0,dialog=0`;
+    return `width=${w},height=${h},screenX=${x},screenY=${y},status=0,dependent=0,minimizable=0,resizable=0,menubar=0,location=0,toolbar=0,status=0,scrollbars=0,titlebar=0,dialog=0`;
 }
 
 function openWindowBuildPPTX(theDoc) {
-  return new Promise((resolve) => {
-    let srcNode = theDoc.documentElement;
-    const winUrl = URL.createObjectURL(new Blob([srcNode.outerHTML], {type: "text/html"}),);
+    return new Promise((resolve) => {
+        let srcNode = theDoc.documentElement;
+        const winUrl = URL.createObjectURL(new Blob([srcNode.outerHTML], {type: "text/html"}),);
 
-    // //inject in window and open
-    const windowFeatures = newWindowDimensions();
-    const pptWindow = window.open(winUrl, "", windowFeatures);
-    pptWindow.focus();
-    URL.revokeObjectURL(winUrl);
+        // //inject in window and open
+        const windowFeatures = newWindowDimensions();
+        const pptWindow = window.open(winUrl, "", windowFeatures);
+        pptWindow.focus();
+        URL.revokeObjectURL(winUrl);
 
-    resolve(pptWindow);
-  });
+        resolve(pptWindow);
+    });
 }
 ```
 
@@ -214,7 +214,7 @@ const height = window.innerHeight || document.documentElement.clientHeight || do
 let jsWindow = window.open("http://localhost/js/about.html", "about", "height=600,width=800",);
 
 setTimeout(() => {
-  jsWindow.resizeTo(600, 300);
+    jsWindow.resizeTo(600, 300);
 }, 3000);
 ```
 
@@ -224,7 +224,7 @@ setTimeout(() => {
 let jsWindow = window.open("http://localhost/js/about.html", "about", "height=600,width=600",);
 
 setTimeout(() => {
-  jsWindow.moveTo(500, 500);
+    jsWindow.moveTo(500, 500);
 }, 3000);
 ```
 
@@ -234,7 +234,7 @@ setTimeout(() => {
 let jsWindow = window.open("http://localhost/js/about.html", "about", "height=600,width=600",);
 
 setTimeout(() => {
-  jsWindow.moveBy(100, -100);
+    jsWindow.moveBy(100, -100);
 }, 3000);
 ```
 
@@ -244,7 +244,7 @@ setTimeout(() => {
 let jsWindow = window.open("http://localhost/js/about.html", "about", "height=600,width=600",);
 
 setTimeout(() => {
-  jsWindow.close();
+    jsWindow.close();
 }, 3000);
 ```
 
@@ -269,22 +269,22 @@ prompt()
 const myPopup = window.open("https://example.com", "myPopup", "width=400, height=300");
 if (myPopup) {
 // Pop-up was opened successfully
-  const result = myPopup.confirm
-  "Do you want to submit this form?"
+    const result = myPopup.confirm
+    "Do you want to submit this form?"
 )
-  ;
-  if (result) {
+    ;
+    if (result) {
 // User clicked OK
-    const input = myPopup.prompt("Enter your name:");
-    if (input) {
+        const input = myPopup.prompt("Enter your name:");
+        if (input) {
 // User entered a name
-      myPopup.alert("Hello, " + input + "!");
+            myPopup.alert("Hello, " + input + "!");
+        }
     }
-  }
-  else {
+    else {
 // User clicked Cancel
 // Do nothing
-  }
+    }
 }
 else {
 // Pop-up was blocked by the browser

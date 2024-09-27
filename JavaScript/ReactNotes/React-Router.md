@@ -82,12 +82,12 @@ Table of contents
 # An example React component which uses React Router's match object to grab a url parameter
 
 ```jsx
-import React         from "react";
-import {withRouter}  from "react-router";
-import ScreenHeader  from "../../components/UI/ScreenHeader";
-import Error         from "../../components/UI/Error";
-import Loading       from "../../components/UI/Loading";
-import {useQuery}    from "@apollo/react-hooks";
+import React from "react";
+import {withRouter} from "react-router";
+import ScreenHeader from "../../components/UI/ScreenHeader";
+import Error from "../../components/UI/Error";
+import Loading from "../../components/UI/Loading";
+import {useQuery} from "@apollo/react-hooks";
 import {GET_PROJECT} from "../../components/Project/project.query";
 
 const ScreensProject = ({match}) => {

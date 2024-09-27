@@ -242,7 +242,7 @@ def queryByManagerName(String searchString, List<Long> filteredUsers, sort, orde
             property('pictureUrl')
         }
     }
-    
+
     if (_clientSetupId) {
         detachedUserQuery.eq('clientSetupId', _clientSetupId)
     }
@@ -269,7 +269,7 @@ def queryByManagerName(String searchString, List<Long> filteredUsers, sort, orde
             }
         }
     }
-    
+
     detachedUserQuery.sort(sort, order)
             .collect {
                 [id                      : it[0], username: it[1], clientSetupId: it[2], email: it[3], firstName:

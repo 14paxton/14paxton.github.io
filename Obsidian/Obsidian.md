@@ -44,12 +44,12 @@ shortRepo: ghpages
 
 ```yml
 ---
-title: GHP
+title:    GHP
 category: GitHubPages/Pages
-share: true
+share:    true
 repo:
-  owner: 14paxton
-  repo: 14paxton.github.io
+  owner:  14paxton
+  repo:   14paxton.github.io
   branch: master
 ---
 ```
@@ -74,19 +74,19 @@ links:
   mdlinks: boolean #convert to markdownlinks
   convert: boolean #transform to simple string with keeping alt text or file name/ title (it removes the [](.md#) or []())
 embed:
-  send: boolean #prevent sending embed
+  send:   boolean #prevent sending embed
   remove: boolean #remove embed citation completely (replace to empty string the ![](.md#) or ![]())
 attachment:
-  send: boolean #prevent sending attachment
+  send:   boolean #prevent sending attachment
   folder: string #change default folder for attachment
-dataview: boolean #force/prevent dataview queries conversion
+dataview:  boolean #force/prevent dataview queries conversion
 hardbreak: boolean #same but for hardbreak
 repo:
-  branch: string #change default branch
-  repo: string #change default repository
-  owner: string #change a default owner (it's your GitHub Username)
+  branch:    string #change default branch
+  repo:      string #change default repository
+  owner:     string #change a default owner (it's your GitHub Username)
   autoclean: boolean #disable auto cleaning
-baselink: string #change base link for copylink settings
+baselink:  string #change base link for copylink settings
 ```
 
 ```yml
@@ -94,24 +94,24 @@ links:
   mdlinks: boolean #convert to markdownlinks
   convert: boolean #transform to simple string with keeping alt text or file name/ title (it removes the [](.md#) or []())
 embed:
-  send: boolean #prevent sending embed
+  send:   boolean #prevent sending embed
   remove: boolean #remove embed citation completely (replace to empty string the ![](.md#) or ![]())
 attachment:
-  send: boolean #prevent sending attachment
+  send:   boolean #prevent sending attachment
   folder: string #change default folder for attachment
-dataview: boolean #force/prevent dataview queries conversion
+dataview:  boolean #force/prevent dataview queries conversion
 hardbreak: boolean #same but for hardbreak
-baselink: string #change base link for copylink settings
+baselink:  string #change base link for copylink settings
 multipleRepo:
   - repo:
-      branch: string #change default branch
-      repo: string #change default repository
-      owner: string #change a default owner (it's your GitHub Username)
+      branch:    string #change default branch
+      repo:      string #change default repository
+      owner:     string #change a default owner (it's your GitHub Username)
       autoclean: boolean #enable auto cleaning
   - repo:
-      branch: string #change default branch
-      repo: string #change default repository
-      owner: string #change a default owner (it's your GitHub Username)
+      branch:    string #change default branch
+      repo:      string #change default repository
+      owner:     string #change a default owner (it's your GitHub Username)
       autoclean: boolean #enable auto cleaning
 ```
 
@@ -192,38 +192,37 @@ It will check if the repository exists, and also the main branch you set. It als
 ### `mkdoc.yml`
 
 ```yml
-site_name: Obsidian Mkdocs Publisher
+site_name:        Obsidian Mkdocs Publisher
 site_description: The documentation for Obsidian Mkdocs Publisher
-site_url: https://obsidian-publisher.netlify.app
+site_url:         https://obsidian-publisher.netlify.app
 
 theme:
-  name: "material"
+  name:        "material"
   highlightjs: true
   hljs_languages:
     - yaml
     - rust
-  logo: assets/meta/SEO.png
-  favicon: assets/meta/SEO.png
-  custom_dir: overrides
+  logo:        assets/meta/SEO.png
+  favicon:     assets/meta/SEO.png
+  custom_dir:  overrides
   font:
     text: Ubuntu
     code: Ubuntu Mono
-  language: en
-  palette:
-    # Light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+  language:    en
+  palette: # Light mode
+    - media:   "(prefers-color-scheme: light)"
+      scheme:  default
       primary: teal
-      accent: light blue
+      accent:  light blue
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
 
     # Dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - media:   "(prefers-color-scheme: dark)"
+      scheme:  slate
       primary: blue
-      accent: indigo
+      accent:  indigo
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
@@ -256,7 +255,7 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
   - pymdownx.highlight:
-      use_pygments: true
+      use_pygments:    true
       anchor_linenums: true
   - pymdownx.tasklist:
       custom_checkbox: true
@@ -270,7 +269,7 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
-        - name: mermaid
+        - name:  mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 plugins:
@@ -281,9 +280,9 @@ plugins:
   - awesome-pages:
       collapse_single_pages: true
   - embed_file:
-      callouts: true
+      callouts:          true
       custom-attributes: "assets/css/custom_attributes.css"
-      language_message: "ERROR 404 : NOT FOUND"
+      language_message:  "ERROR 404 : NOT FOUND"
   - callouts
   - custom-attributes:
       file: "assets/css/custom_attributes.css"
@@ -308,17 +307,17 @@ extra_css:
   - assets/css/custom_attributes.css
   - assets/css/customization.css
 extra:
-  comments: false
+  comments:       false
   generate_graph: false
-  SEO: "assets/meta/SEO.png"
-  attachments: "assets/img"
-  no-auto-h1: true
+  SEO:            "assets/meta/SEO.png"
+  attachments:    "assets/img"
+  no-auto-h1:     true
   blog_list:
-    pagination: false
-    pagination_message: false
+    pagination:             false
+    pagination_message:     false
     pagination_translation: ""
-    no_page_found: ""
+    no_page_found:          ""
   hooks:
     strip_comments: true
-    fix_heading: false
+    fix_heading:    false
 ```

@@ -51,9 +51,9 @@ Table of contents
 public class Application {
     public static void main(String[] args) {
         Micronaut.build(args)
-                .mainClass(Application.class)
-                .defaultEnvironments(Environment.DEVELOPMENT)
-                .start();
+                 .mainClass(Application.class)
+                 .defaultEnvironments(Environment.DEVELOPMENT)
+                 .start();
     }
 }
 ```

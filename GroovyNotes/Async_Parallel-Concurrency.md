@@ -38,35 +38,35 @@ Table of contents
 # ASYNC
 
 ```groovy    
- def resendRegistrationEmailAndLockUserAccount(def userList) {    
-    def emailsSent = []    
-    def emailsNotSent = []    
-    def nThreads = Runtime.getRuntime().availableProcessors()    
-    def size = (userList.size() / nThreads).intValue()    
-    def promises = []    
-    
-    withPool nThreads, {    
-        userList.collate(size).each { subList ->    
-            def promise = task {    
-                subList.each { userInstance ->    
-                    User.withTransaction {    
-                        def auth0Response = sendRegistrationEmail(userInstance)    
-                        if (auth0Response.type == "success") {    
-                            emailsSent << userInstance.email    
-                            userInstance.inAdminResetProcess = true    
-                            userInstance.save(flush: true)    
-                            userInstance.setActive(true)    
-                        } else {    
-                            emailsNotSent << userInstance.email    
-                        }    
-                    }    
-                }    
-            }    
-            promises.add(promise)    
-        }    
-        waitAll(promises)    
-    }    
-    
-    return ["emailsSent": emailsSent, "emailsNotSent": emailsNotSent]    
+ def resendRegistrationEmailAndLockUserAccount(def userList) {
+    def emailsSent = []
+    def emailsNotSent = []
+    def nThreads = Runtime.getRuntime().availableProcessors()
+    def size = (userList.size() / nThreads).intValue()
+    def promises = []
+
+    withPool nThreads, {
+        userList.collate(size).each { subList ->
+            def promise = task {
+                subList.each { userInstance ->
+                    User.withTransaction {
+                        def auth0Response = sendRegistrationEmail(userInstance)
+                        if (auth0Response.type == "success") {
+                            emailsSent << userInstance.email
+                            userInstance.inAdminResetProcess = true
+                            userInstance.save(flush: true)
+                            userInstance.setActive(true)
+                        } else {
+                            emailsNotSent << userInstance.email
+                        }
+                    }
+                }
+            }
+            promises.add(promise)
+        }
+        waitAll(promises)
+    }
+
+    return ["emailsSent": emailsSent, "emailsNotSent": emailsNotSent]
 }    
 ```

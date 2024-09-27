@@ -34,10 +34,11 @@ Table of contents
 
 ## Example Scripts
 
-### create GROUP_COMPARE
+### POST with body
 
-```shell
-POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
+```HTTP
+POST http://ip:port/am/userGroups/v1/group/compare
+Content-Type: application/json
 
 {
 "id"  :null ,
@@ -49,66 +50,40 @@ POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
 
 ```
 
-### update GROUP_COMPARE
+### Log in and save tokens
 
-```shell
-POST http://ip:port/am/userGroups/v1/group/compareContent-Type: application/json
-
-{
-"id" : 599,
-"name": "GETBETTER",
-"type": "GROUP_COMPARE",
-"groupIds": [520, 372, 518],
-"assessmentOrderIds": []
-}
-
-```
-
-### SHARE
-
-```shell
-POST http://192.168.12.26:8080/am/userGroups/v1/599/shareContent-Type: application/json
+```HTTP
+### log in with auth0
+// @no-redirect
+// @no-log
+POST https://core.talentbankonline.com/v2/loginWithAuth0
+Content-Type: application/x-www-form-urlencoded
 
 {
-"userIds" : [124554, 124555, 124556]
+    "username": "username",
+    "password": "password"
 }
+> {%
+    client.global.set("access_token", response.body["access_token"]);
+    client.log(response.body["access_token"]);
+    client.log(client.global.get("access_token"));
 
+%}
 ```
 
-### DELETE
+#### Use Tokens
 
-```shell
-DELETE http://192.168.12.26:8080/am/userGroups/v1/599
-```
-
-### create RESULT_SHARE
-
-```shell
-POST http://192.168.12.26:8080/am/userGroups/v1/group/compareContent-Type: application/json
+```HTTP
+// @no-log
+POST http://localhost:28080/TBEX/ssi/v1/create
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
 
 {
-"name": "IRONTOM",
-"type": "RESULT_COMPARE",
-"groupIds": [519],
-"assessmentOrderIds": [35075, 45481]
-}
-
-```
-
-### update RESULT_SHARE
-
-```shell
-POST http://192.168.12.26:8080/am/userGroups/v1/groupContent-Type: application/json
-
-{
-"id" : 564,
-"name": "KIDMIDNIGHT",
-"type": "RESULT_COMPARE",
-"groupIds": null,
-"assessmentOrderIds": [71539,
-71516,
-71496,
-71476,
-71456]
-}
+  "companyCode": "BPAXTON",
+  "tbeCompanyCode": null,
+  "externalClientId": null,
+  "tbexPassword": "T@@@@@@L",
+  "organization": 1
+ }
 ```
