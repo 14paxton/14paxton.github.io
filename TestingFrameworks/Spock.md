@@ -186,6 +186,9 @@ mvn install:install-file -Dfile=lang-groovy-5.2.2.jar \
 
 - [Code For Reference ](https://github.com/SanderSmee/spock-jupiter/blob/master/pom.xml)
 
+<details>
+<summary>XML Pom</summary>
+
 ```xml    
 
 <build>
@@ -356,8 +359,12 @@ mvn install:install-file -Dfile=lang-groovy-5.2.2.jar \
 
         <!-- add dependencies to enable JUnit 4 style tests -->
         <!-- add dependencies to enable JUnit 4 style tests -->
-    </dependencies>    
-```    
+    </dependencies>
+</build>
+``` 
+
+</details>
+
 
     
 ---

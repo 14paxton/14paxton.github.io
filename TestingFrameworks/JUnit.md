@@ -25,9 +25,14 @@ Table of contents
 <br/>    
 ***    
 <br/>    
+
 # Maven    
 
+---
+
 ## [configure](https://maven.apache.org/surefire/maven-surefire-plugin/examples/junit-platform.html)
+
+---
 
 ## [StatelessTestsetInfoReporter](https://maven.apache.org/surefire/surefire-extensions-api/apidocs/org/apache/maven/surefire/extensions/StatelessTestsetInfoReporter.html)
 
