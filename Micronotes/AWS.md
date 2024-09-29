@@ -1,7 +1,7 @@
 ---
 title:        AWS
 permalink:    Micronotes/AWS
-category:     Micronotes
+category: Micronotes
 parent:       Micronotes
 layout:       default
 has_children: false
@@ -53,63 +53,63 @@ Table of contents
 
 ### 1) Custom ```example.micronaut.FunctionRequestHandler```
 
-    - Purpose: This is a custom class, likely created in a Micronaut-based AWS Lambda project to handle specific business logic or Lambda requests.
-    - Use Case: Typically, this handler extends from a Micronaut AWS Lambda handler class, like
-      io.micronaut.function.aws.proxy.MicronautLambdaHandler. It
-      acts as the entry point for AWS Lambda invocations where the developer defines the specific handling of requests.
-    - Example: It is used when you want to define your own Lambda function logic. For instance, processing an API request, executing business logic,
-      and
-      returning a response.
+- Purpose: This is a custom class, likely created in a Micronaut-based AWS Lambda project to handle specific business logic or Lambda requests.
+- Use Case: Typically, this handler extends from a Micronaut AWS Lambda handler class, like
+  io.micronaut.function.aws.proxy.MicronautLambdaHandler. It
+  acts as the entry point for AWS Lambda invocations where the developer defines the specific handling of requests.
+- Example: It is used when you want to define your own Lambda function logic. For instance, processing an API request, executing business logic,
+  and
+  returning a response.
 
-       ```java
-        public class FunctionRequestHandler extends MicronautLambdaHandler {
-           // Custom logic for handling Lambda events
-        }
-       ```
+    ```java
+     public class FunctionRequestHandler extends MicronautLambdaHandler {
+        // Custom logic for handling Lambda events
+     }
+    ```
 
 ### 2) ```io.micronaut.function.aws.proxy.MicronautLambdaHandler```
 
-    - Purpose: This is the primary handler for AWS Lambda requests in a Micronaut application. It integrates the Micronaut framework and makes it
-      possible
-      to run Micronaut applications inside an AWS Lambda environment.
-    - Use Case: MicronautLambdaHandler is used when deploying a Micronaut-based REST API to AWS Lambda. It bridges AWS API Gateway requests with the
-      Micronaut framework, enabling the Lambda function to route HTTP requests to Micronaut controllers and services.
-    - Example: It acts as the core handler in API Gateway integrations where you want to use Micronaut’s dependency injection, HTTP routing, and other
-      framework features inside a Lambda function.
+- Purpose: This is the primary handler for AWS Lambda requests in a Micronaut application. It integrates the Micronaut framework and makes it
+  possible
+  to run Micronaut applications inside an AWS Lambda environment.
+- Use Case: MicronautLambdaHandler is used when deploying a Micronaut-based REST API to AWS Lambda. It bridges AWS API Gateway requests with the
+  Micronaut framework, enabling the Lambda function to route HTTP requests to Micronaut controllers and services.
+- Example: It acts as the core handler in API Gateway integrations where you want to use Micronaut’s dependency injection, HTTP routing, and other
+  framework features inside a Lambda function.
 
-      ```java
-        public class MyApiHandler extends MicronautLambdaHandler {
-           // Optional: Override methods or add custom behavior if needed
-       }
-      ```
-      > Use Case:
+   ```java
+     public class MyApiHandler extends MicronautLambdaHandler {
+        // Optional: Override methods or add custom behavior if needed
+    }
+   ```
+  > Use Case:
 
-        - When you want to run a full Micronaut application within AWS Lambda, especially for handling HTTP requests routed through AWS API Gateway.
-          This
-          handler automatically wires up the HTTP request/response handling via Micronaut controllers.
+    - When you want to run a full Micronaut application within AWS Lambda, especially for handling HTTP requests routed through AWS API Gateway.
+      This
+      handler automatically wires up the HTTP request/response handling via Micronaut controllers.
 
 ### 3) ```io.micronaut.function.aws.proxy.payload1.ApiGatewayProxyRequestEventFunction```
 
-    - Purpose: This is a specialized handler provided by Micronaut for handling Payload Version 1.0 of AWS API Gateway requests. AWS API Gateway can
-      use
-      different versions of request/response payloads, and this class is designed specifically for handling events that conform to the Payload Version
-      1.0
-      format.
-    - Use Case: ApiGatewayProxyRequestEventFunction is used when your API Gateway is configured to use the Payload 1.0 request/response format. It’s a
-      more specific use case than MicronautLambdaHandler and is typically used when the Lambda function receives an event in this format.
-    - Example: This handler is useful if your Lambda function needs to parse or handle API Gateway requests specifically using the Payload Version 1.0
-      format (as opposed to Version 2.0).
+- Purpose: This is a specialized handler provided by Micronaut for handling Payload Version 1.0 of AWS API Gateway requests. AWS API Gateway can
+  use
+  different versions of request/response payloads, and this class is designed specifically for handling events that conform to the Payload Version
+  1.0
+  format.
+- Use Case: ApiGatewayProxyRequestEventFunction is used when your API Gateway is configured to use the Payload 1.0 request/response format. It’s a
+  more specific use case than MicronautLambdaHandler and is typically used when the Lambda function receives an event in this format.
+- Example: This handler is useful if your Lambda function needs to parse or handle API Gateway requests specifically using the Payload Version 1.0
+  format (as opposed to Version 2.0).
 
-      ```java
-       public class MyApiHandler extends ApiGatewayProxyRequestEventFunction {
-        // Handles AWS API Gateway Payload v1.0 events
-       }
-      ```
-      > Use Case:
+   ```java
+    public class MyApiHandler extends ApiGatewayProxyRequestEventFunction {
+     // Handles AWS API Gateway Payload v1.0 events
+    }
+   ```
+  > Use Case:
 
-        - When you are working with an AWS API Gateway that is configured to use Payload Version 1.0, and you need your Lambda function to
-          specifically
-          process requests formatted in that version.
+    - When you are working with an AWS API Gateway that is configured to use Payload Version 1.0, and you need your Lambda function to
+      specifically
+      process requests formatted in that version.
 
 ### FunctionRequestHandler Example
 
@@ -136,54 +136,55 @@ public class FunctionRequestHandler extends MicronautRequestHandler<APIGatewayPr
 
 ### 2)  ```io.micronaut.function.aws.runtime.MicronautLambdaRuntime```
 
-    - Purpose: This is the core Micronaut class for running AWS Lambda functions. It is a base class that integrates the Micronaut framework’s
-      features into the AWS Lambda execution environment. This runtime provides automatic support for dependency injection, configuration, and other
-      Micronaut capabilities when running Lambda functions.
-    - Use Case: It is the default runtime you would use to handle Lambda function invocations. It is generic and can be adapted to different event
-      types (API Gateway, SNS, SQS, etc.). You would extend this class if you want to build a function handler that works with various AWS services or
-      APIs, leveraging the full power of the Micronaut framework.
-    - Example: This is typically used when you want to deploy a Micronaut-based Lambda function that will handle AWS events (like API Gateway HTTP
-      requests) or process data from other AWS services.
-      ```java
-       public class MyLambdaRuntime extends MicronautLambdaRuntime<APIGatewayV2HTTPEvent, APIGatewayV2HTTPResponse> {
-        public static void main(String[] args) {
-          try {
-               new MyLambdaRuntime().start();
-             } catch (Exception e) {
-                     e.printStackTrace();
-                 }
-             }
-         }
-      ```
-      > Use Case:
+- Purpose: This is the core Micronaut class for running AWS Lambda functions. It is a base class that integrates the Micronaut framework’s
+  features into the AWS Lambda execution environment. This runtime provides automatic support for dependency injection, configuration, and other
+  Micronaut capabilities when running Lambda functions.
+- Use Case: It is the default runtime you would use to handle Lambda function invocations. It is generic and can be adapted to different event
+  types (API Gateway, SNS, SQS, etc.). You would extend this class if you want to build a function handler that works with various AWS services or
+  APIs, leveraging the full power of the Micronaut framework.
+- Example: This is typically used when you want to deploy a Micronaut-based Lambda function that will handle AWS events (like API Gateway HTTP
+  requests) or process data from other AWS services.
 
-        - When you want to deploy a Micronaut-based Lambda function that handles generic AWS events (e.g., API Gateway, SNS, SQS). The class allows
-          you to create Lambda functions with Micronaut’s dependency injection, configuration, and HTTP routing capabilities.
+  ```java
+    public class MyLambdaRuntime extends MicronautLambdaRuntime<APIGatewayV2HTTPEvent, APIGatewayV2HTTPResponse> {
+     public static void main(String[] args) {
+       try {
+            new MyLambdaRuntime().start();
+          } catch (Exception e) {
+                  e.printStackTrace();
+              }
+          }
+      }
+   ```
+  > Use Case:
+
+    - When you want to deploy a Micronaut-based Lambda function that handles generic AWS events (e.g., API Gateway, SNS, SQS). The class allows
+      you to create Lambda functions with Micronaut’s dependency injection, configuration, and HTTP routing capabilities.
 
 ### 3)  ```io.micronaut.function.aws.runtime.APIGatewayV2HTTPEventMicronautLambdaRuntime```
 
-    - Purpose: This is a specialized runtime class designed specifically to handle AWS API Gateway Version 2.0 HTTP events. This runtime is built on
-      top of MicronautLambdaRuntime, but it focuses on processing API Gateway requests that conform to the Payload Version 2.0 specification.
-    - Use Case: You would use this class if your Lambda function is deployed behind AWS API Gateway, and you want to handle HTTP requests and
-      responses using the Payload Version 2.0 format (which supports richer HTTP features such as cookies, multi-value headers, and more).
-    - Example: This is particularly useful when you are deploying an HTTP-based API to AWS Lambda, and the API Gateway is configured to use the
-      Version 2.0 payload format.
-      ```java
-        public class MyAPIGatewayLambdaRuntime extends APIGatewayV2HTTPEventMicronautLambdaRuntime {
-            public static void main(String[] args) {
-                try {
-                    new MyAPIGatewayLambdaRuntime().start();
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-      ```
-      > Use Case:
+- Purpose: This is a specialized runtime class designed specifically to handle AWS API Gateway Version 2.0 HTTP events. This runtime is built on
+  top of MicronautLambdaRuntime, but it focuses on processing API Gateway requests that conform to the Payload Version 2.0 specification.
+- Use Case: You would use this class if your Lambda function is deployed behind AWS API Gateway, and you want to handle HTTP requests and
+  responses using the Payload Version 2.0 format (which supports richer HTTP features such as cookies, multi-value headers, and more).
+- Example: This is particularly useful when you are deploying an HTTP-based API to AWS Lambda, and the API Gateway is configured to use the
+  Version 2.0 payload format.
+   ```java
+     public class MyAPIGatewayLambdaRuntime extends APIGatewayV2HTTPEventMicronautLambdaRuntime {
+         public static void main(String[] args) {
+             try {
+                 new MyAPIGatewayLambdaRuntime().start();
+             }
+             catch (Exception e) {
+                 e.printStackTrace();
+             }
+         }
+     }
+   ```
+  > Use Case:
 
-        - When your Lambda function is designed to handle HTTP requests routed via AWS API Gateway using Payload Version 2.0. This runtime helps in
-          handling API requests and responses in a web-like manner, leveraging the features of the API Gateway 2.0 specification.
+    - When your Lambda function is designed to handle HTTP requests routed via AWS API Gateway using Payload Version 2.0. This runtime helps in
+      handling API requests and responses in a web-like manner, leveraging the features of the API Gateway 2.0 specification.
 
 ### FunctionLambdaRuntime Example
 
@@ -281,4 +282,83 @@ public class RequestFunction implements Function<APIGatewayProxyRequestEvent, AP
         //** logic **//
     }
 }
+```
+
+# Database
+
+## setup
+
+```shell
+export AWS_ACCESS_KEY_ID=AKIASC5Z6WSK4JAMKQ6S;
+export AWS_SECRET_ACCESS_KEY=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;
+```
+
+```shell
+export MYSQL_HOST=$(aws rds describe-db-instances --query 'DBInstances[?DBInstanceIdentifier==`crud-data-aws-db-create-micro-person`].Endpoint.Address' --output text)
+```
+
+### custom env variables add to .yml if choose
+
+```shell
+export JDBC_URL=jdbc:mysql://${MYSQL_HOST}:3306/micro_person
+export JDBC_USER=admin
+export JDBC_PASSWORD=secret99
+```
+
+### micronaut specific env variables
+
+- specific to micronaut
+- [connection pools](https://micronaut-projects.github.io/micronaut-sql/latest/guide/#jdbc-connection-pools)
+
+```shell
+export DATASOURCES_DEFAULT_URL=jdbc:mysql://${MYSQL_HOST}:3306/micro_person
+export DATASOURCES_DEFAULT_USERNAME=admin
+export DATASOURCES_DEFAULT_PASSWORD=secret99
+```
+
+> Micronaut Framework populates the properties `datasources.default.url`, `datasources.default.username` and `datasources.default.password `
+> with those environment variables' values.
+
+> You can run the application and test the API as it was described in the previous sections.
+> However, when you run the application, Micronaut Test Resources does not start a MySQL container because you have provided values for
+> `datasources.default.*properties`.
+
+## Start script to use amazon db
+
+```shell
+export AWS_ACCESS_KEY_ID=AKIASC5Z6WSK4JAMKQ6S;
+export AWS_SECRET_ACCESS_KEY=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;
+export MYSQL_HOST=$(aws rds describe-db-instances --query 'DBInstances[?DBInstanceIdentifier==`crud-data-aws-db-create-micro-person`].Endpoint.Address' --output text);
+export JDBC_URL=jdbc:mysql://${MYSQL_HOST}:3306/micronaut;
+export JDBC_USER=admin;
+export JDBC_PASSWORD=secret99;
+export DATASOURCES_DEFAULT_URL=jdbc:mysql://${MYSQL_HOST}:3306/micro_person;
+export DATASOURCES_DEFAULT_USERNAME=admin;
+export DATASOURCES_DEFAULT_PASSWORD=secret99;
+```
+
+## create db and user
+
+> Create the database. You can use any valid database name (e.g., micronaut):
+
+```shell
+CREATE DATABASE micronaut;
+```
+
+> Create a database user. You can use any valid MySQL username (e.g., guide_user) and any valid password:
+
+```shell
+CREATE USER 'guide_user' IDENTIFIED BY 'M1cr0n4ut!';
+```
+
+> Grant access to the database for the new user:
+
+```shell
+GRANT ALL ON micronaut.* TO 'guide_user';
+```
+
+## connecting to aws rds
+
+```shell
+mysql -h $MYSQL_HOST -P 3306 -u admin -p
 ```

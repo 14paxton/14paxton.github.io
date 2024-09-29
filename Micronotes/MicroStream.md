@@ -38,8 +38,6 @@ Table of contents
 
 - > [Personal CRUD app](https://github.com/14paxton/micronotes/tree/master/Projects/crud-data-microstream)
 
-- > [Personal ]
-
 - > [Sergio Video Walkthrough](https://www.youtube.com/watch?v=5W6oVj0h6rQ&t=602s)
 
 - > [Sergio AWS Walkthrough](https://www.youtube.com/watch?v=G5Uy8OODtEg&list=PLFeSAZzYdUofvGVIxNDEQ7lvRjXWdw0rw&index=7)
@@ -76,7 +74,9 @@ public class Copy {
 }
 ```
 
-# GUI
+# [GUI](https://docs.microstream.one/manual/storage/rest-interface/client-gui.html)
+
+> [Micronaut Enable Rest API](https://micronaut-projects.github.io/micronaut-microstream/snapshot/guide/#rest)
 
 > add to `build.gradle`
 
@@ -84,7 +84,23 @@ public class Copy {
 developmentOnly("io.micronaut.microstream:micronaut-microstream-rest")
 ```
 
-[and download client ](https://docs.microstream.one/manual/storage/rest-interface/client-gui.html)
+> add to `application.yml`
+
+```yaml
+microstream:
+  rest:
+    enabled: true
+```
+
+## Run downloadable jar
+
+[Direct Downlond](https://repo1.maven.org/maven2/one/microstream/microstream-storage-restclient-app/08.01.02-MS-GA/microstream-storage-restclient-app-08.01.02-MS-GA.jar)
+
+```shell
+java -jar microstream-storage-restclient-app-08.01.02-MS-GA.jar --server.port=8888
+```
+
+> Then just open http://localhost:8888 in your browser, select the base URL of the REST service and click connect.
 
 # Lombok
 
