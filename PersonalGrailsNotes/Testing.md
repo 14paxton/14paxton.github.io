@@ -157,7 +157,6 @@ class StatisticsServiceSpec extends Specification implements AutowiredTest, Data
 
 }
 
-}
 ```
 
 - config file test/resources/TestDataConfig
