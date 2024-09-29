@@ -74,7 +74,9 @@ public class Copy {
 }
 ```
 
-# GUI
+# [GUI](https://docs.microstream.one/manual/storage/rest-interface/client-gui.html)
+
+> [Micronaut Enable Rest API](https://micronaut-projects.github.io/micronaut-microstream/snapshot/guide/#rest)
 
 > add to `build.gradle`
 
@@ -82,7 +84,23 @@ public class Copy {
 developmentOnly("io.micronaut.microstream:micronaut-microstream-rest")
 ```
 
-[and download client ](https://docs.microstream.one/manual/storage/rest-interface/client-gui.html)
+> add to `application.yml`
+
+```yaml
+microstream:
+  rest:
+    enabled: true
+```
+
+## Run downloadable jar
+
+[Direct Downlond](https://repo1.maven.org/maven2/one/microstream/microstream-storage-restclient-app/08.01.02-MS-GA/microstream-storage-restclient-app-08.01.02-MS-GA.jar)
+
+```shell
+java -jar microstream-storage-restclient-app-08.01.02-MS-GA.jar --server.port=8888
+```
+
+> Then just open http://localhost:8888 in your browser, select the base URL of the REST service and click connect.
 
 # Lombok
 
