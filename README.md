@@ -85,7 +85,9 @@ only re-builds posts and pages that have changed
 
 > use json object put header as key if you need header, data uri as value
 
-# Liquid Errors When Building
+# Liquid
+
+## Errors When Building
 
 > surround problem area with following
 
@@ -94,3 +96,15 @@ only re-builds posts and pages that have changed
 {% endraw %}
 
 > comes from using `%`
+
+## code blocks
+
+```
+{% highlight ruby %}
+puts 'Expanded message'
+{% endhighlight %}
+```
+
+## in details
+
+`<details markdown="block">   `

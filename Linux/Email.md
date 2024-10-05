@@ -237,7 +237,8 @@ sudo apt-get -y install perl
 - Uses HTML file
 - Uses an inline Image for an HTML file and attachment
 
-<details>
+<details markdown="block">    
+
 <summary>Bash Script With Attachments</summary>
 
 ```shell
@@ -327,7 +328,8 @@ This is for testing
 
 ## Sendmail
 
-<details>
+<details markdown="block">    
+
 <summary>Example 1</summary>
 
 ```shell
@@ -379,7 +381,8 @@ echo "sedmail rc=${rc}"
 
 </details>
 
-<details>
+<details markdown="block">    
+
 <summary>Example With Attachment</summary>
 
 ```shell
@@ -425,7 +428,6 @@ BOUNDARY="ZZ_/afg6432dfgkl.94531q"
   echo "--$BOUNDARY--"
 } | sendmail -t
 ```
-
 </details>
 
 # Netcat
@@ -436,8 +438,8 @@ BOUNDARY="ZZ_/afg6432dfgkl.94531q"
     apt-get install netcat
 ```
 
-<details>
-<summary> Script for Netcat</summary>
+<details  markdown="block">
+<summary> Script for Netcat </summary>
 
 ```shell
 
@@ -556,5 +558,4 @@ BOUNDARY="ZZ_/afg6432dfgkl.94531q"
         rm $TMP;
     fi
 ```
-
 </details>
