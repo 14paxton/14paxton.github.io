@@ -14,7 +14,7 @@ jobs: # Build job
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.5.21" # Not needed with a .ruby-version file
+          ruby-version: "3.3.5" # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 7 # Increment this number if you need to re-download cached gems
       - name: Build with Jekyll

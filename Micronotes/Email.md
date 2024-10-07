@@ -59,7 +59,7 @@ public String execute() {
 
 ## Basic Send
 
-<details markdown="block">    
+<details>
 <summary>Basic Send From Controller</summary>
 
 ```java
@@ -94,8 +94,7 @@ public class HomeController {
 
 ## Use SengridSendingService build out with Composer
 
-<details markdown="block">    
-
+<details>
 <summary> Build Request With Composer</summary>
 
 ```java
@@ -172,7 +171,7 @@ public class RequestFunction implements Function<APIGatewayProxyRequestEvent, AP
 
 ## Build with JSON and Send
 
-<details markdown="block">    
+<details>
 <summary>Use JSON to build SendGrid Email and Send</summary>
 
 ```java

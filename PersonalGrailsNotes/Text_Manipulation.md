@@ -15,7 +15,7 @@ shortRepo:
 
 <br/>
 
-<details markdown="block">    
+<
 <summary>    
 Table of contents    
 </summary>    

@@ -186,8 +186,7 @@ mvn install:install-file -Dfile=lang-groovy-5.2.2.jar \
 
 - [Code For Reference ](https://github.com/SanderSmee/spock-jupiter/blob/master/pom.xml)
 
-<details markdown="block">    
-
+<details>
 <summary>XML Pom</summary>
 
 ```xml    
