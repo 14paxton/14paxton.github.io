@@ -8,8 +8,8 @@ has_children: false
 share:        true
 shortRepo:
 
-- users
-- default
+  - users
+  - default
 
 ---
 
@@ -59,7 +59,7 @@ public String execute() {
 
 ## Basic Send
 
-<details>
+<details markdown="block">
 <summary>Basic Send From Controller</summary>
 
 ```java
@@ -94,7 +94,7 @@ public class HomeController {
 
 ## Use SengridSendingService build out with Composer
 
-<details>
+<details markdown="block">
 <summary> Build Request With Composer</summary>
 
 ```java
@@ -171,7 +171,7 @@ public class RequestFunction implements Function<APIGatewayProxyRequestEvent, AP
 
 ## Build with JSON and Send
 
-<details>
+<details markdown="block">
 <summary>Use JSON to build SendGrid Email and Send</summary>
 
 ```java
