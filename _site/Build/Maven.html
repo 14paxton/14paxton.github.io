@@ -1,0 +1,408 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><link rel="stylesheet" href="/assets/css/just-the-docs-default.css"><link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet"><style id="jtd-nav-activation"> .site-nav > ul.nav-list:first-child > li > a, .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(2)) > a, .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a { background-image: none; } .site-nav > ul.nav-list:not(:first-child) a, .site-nav li.external a { background-image: none; } .site-nav > ul.nav-list:first-child > li:nth-child(3) > ul > li:nth-child(2) > a { font-weight: 600; text-decoration: none; }.site-nav > ul.nav-list:first-child > li:nth-child(3) > button svg, .site-nav > ul.nav-list:first-child > li:nth-child(3) > ul > li:nth-child(2) > button svg { transform: rotate(-90deg); }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list, .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list { display: block; }</style><script src="/assets/js/vendor/lunr.min.js"></script> <script src="/assets/js/just-the-docs.js"></script><meta name="viewport" content="width=device-width, initial-scale=1"><title>Maven | Paxton’s Notes</title><meta name="generator" content="Jekyll v4.3.4" /><meta property="og:title" content="Maven" /><meta property="og:locale" content="en_US" /><meta name="description" content="Coding Notes" /><meta property="og:description" content="Coding Notes" /><link rel="canonical" href="http://localhost:4000/Build/Maven" /><meta property="og:url" content="http://localhost:4000/Build/Maven" /><meta property="og:site_name" content="Paxton’s Notes" /><meta property="og:type" content="website" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Maven" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","description":"Coding Notes","headline":"Maven","url":"http://localhost:4000/Build/Maven"}</script><body> <a class="skip-to-main" href="#main-content">Skip to main content</a> <svg xmlns="http://www.w3.org/2000/svg" class="d-none"> <symbol id="svg-link" viewBox="0 0 24 24"><title>Link</title><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path> </svg> </symbol> <symbol id="svg-menu" viewBox="0 0 24 24"><title>Menu</title><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line> </svg> </symbol> <symbol id="svg-arrow-right" viewBox="0 0 24 24"><title>Expand</title><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline> </svg> </symbol> <symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol> <symbol id="svg-doc" viewBox="0 0 24 24"><title>Document</title><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline> </svg> </symbol> <symbol id="svg-search" viewBox="0 0 24 24"><title>Search</title><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"> <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line> </svg> </symbol> <symbol id="svg-copy" viewBox="0 0 16 16"><title>Copy</title><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg> </symbol> <symbol id="svg-copied" viewBox="0 0 16 16"><title>Copied</title><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"><path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg> </symbol> </svg><div class="side-bar"><div class="site-header" role="banner"> <a href="/" class="site-title lh-tight"> Paxton's Notes </a> <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false"> <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg> </button></div><nav aria-label="Main" id="site-nav" class="site-nav"><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in MyPersonalDocsAndStuff category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/index" class="nav-list-link">MyPersonalDocsAndStuff</a><ul class="nav-list"><li class="nav-list-item"><a href="/GitHubPages/AppsForWorkflow" class="nav-list-link">AppsForWorkflow</a><li class="nav-list-item"><a href="/GitHubPages/CloudServices" class="nav-list-link">CloudServices</a><li class="nav-list-item"><a href="/GitHubPages/InterviewQ&A" class="nav-list-link">InterviewQ&A</a><li class="nav-list-item"><a href="/GitHubPages/LetterOfRecommendation" class="nav-list-link">LetterOfRecommendation</a><li class="nav-list-item"><a href="/GitHubPages/PastProjects" class="nav-list-link">PastProjects</a><li class="nav-list-item"><a href="/GitHubPages/PriorityLearning" class="nav-list-link">PriorityLearning</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in AWS category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/AWS/" class="nav-list-link">AWS</a><ul class="nav-list"><li class="nav-list-item"><a href="/AWS/CLI" class="nav-list-link">CLI</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Build category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/Build/" class="nav-list-link">Build</a><ul class="nav-list"><li class="nav-list-item"><a href="/Build/Gradle" class="nav-list-link">Gradle</a><li class="nav-list-item"><a href="/Build/Maven" class="nav-list-link">Maven</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in DockerNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/DockerNotes/" class="nav-list-link">DockerNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/DockerNotes/ARM64" class="nav-list-link">ARM64</a><li class="nav-list-item"><a href="/DockerNotes/Basics" class="nav-list-link">Basics</a><li class="nav-list-item"><a href="/DockerNotes/Dockerfile" class="nav-list-link">Dockerfile</a><li class="nav-list-item"><a href="/DockerNotes/Install" class="nav-list-link">Install</a><li class="nav-list-item"><a href="/DockerNotes/Quick-TidBits" class="nav-list-link">Quick-TidBits</a><li class="nav-list-item"><a href="/DockerNotes/UsefulCommands" class="nav-list-link">UsefulCommands</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in DotNetNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/DotNetNotes/" class="nav-list-link">DotNetNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/DotNetNotes/CLI" class="nav-list-link">CLI</a><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in CSharp category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/DotNetNotes/Csharp" class="nav-list-link">CSharp</a><ul class="nav-list"><li class="nav-list-item"><a href="/DotNetNotes/CSharp/Email" class="nav-list-link">Email</a><li class="nav-list-item"><a href="/DotNetNotes/CSharp/Threading" class="nav-list-link">Threading</a></ul><li class="nav-list-item"><a href="/DotNetNotes/Controllers" class="nav-list-link">Controllers</a><li class="nav-list-item"><a href="/DotNetNotes/Database" class="nav-list-link">Database</a><li class="nav-list-item"><a href="/DotNetNotes/EntityFramework" class="nav-list-link">EntityFramework</a><li class="nav-list-item"><a href="/DotNetNotes/Environment" class="nav-list-link">Environment</a><li class="nav-list-item"><a href="/DotNetNotes/Google" class="nav-list-link">Google</a><li class="nav-list-item"><a href="/DotNetNotes/HTTP" class="nav-list-link">HTTP</a><li class="nav-list-item"><a href="/DotNetNotes/HttpRepl" class="nav-list-link">HttpRepl</a><li class="nav-list-item"><a href="/DotNetNotes/LINQ" class="nav-list-link">LINQ</a><li class="nav-list-item"><a href="/DotNetNotes/Maui" class="nav-list-link">Maui</a><li class="nav-list-item"><a href="/DotNetNotes/Microservice" class="nav-list-link">Microservice.md</a><li class="nav-list-item"><a href="/DotNetNotes/VisualStudio" class="nav-list-link">VisualStudio</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Git category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/Git" class="nav-list-link">Git</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in GitHub category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/Git/GitHub" class="nav-list-link">GitHub</a><ul class="nav-list"><li class="nav-list-item"><a href="/GitHub/GitHubPages" class="nav-list-link">GitHubPages</a><li class="nav-list-item"><a href="/GitHub/Jekyll" class="nav-list-link">Jekyll</a><li class="nav-list-item"><a href="/GitHub/MarkDown" class="nav-list-link">MarkDown</a></ul><li class="nav-list-item"><a href="/Git/QuickScripts" class="nav-list-link">QuickScripts</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in GoogleNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/GoogleNotes/" class="nav-list-link">GoogleNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/GoogleNotes/APIs" class="nav-list-link">APIs</a><li class="nav-list-item"><a href="/GoogleNotes/Browser" class="nav-list-link">Browser</a><li class="nav-list-item"><a href="/GoogleNotes/Cloud" class="nav-list-link">Cloud</a><li class="nav-list-item"><a href="/GoogleNotes/ComputeEngine" class="nav-list-link">ComputeEngine</a><li class="nav-list-item"><a href="/GoogleNotes/Deploy" class="nav-list-link">Deploy</a><li class="nav-list-item"><a href="/GoogleNotes/DevTools" class="nav-list-link">DevTools</a><li class="nav-list-item"><a href="/GoogleNotes/DialogFlow" class="nav-list-link">DialogFlow</a><li class="nav-list-item"><a href="/GoogleNotes/Functions" class="nav-list-link">Functions</a><li class="nav-list-item"><a href="/GoogleNotes/Logging" class="nav-list-link">Logging</a><li class="nav-list-item"><a href="/GoogleNotes/ServiceAccounts" class="nav-list-link">ServiceAccounts</a><li class="nav-list-item"><a href="/GoogleNotes/Storage" class="nav-list-link">Storage</a><li class="nav-list-item"><a href="/GoogleNotes/VoiceAgent" class="nav-list-link">VoiceAgent</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in GroovyNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/GroovyNotes/" class="nav-list-link">GroovyNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/GroovyNotes/Array-Loop-List-Map" class="nav-list-link">Array-Loop-List-Map</a><li class="nav-list-item"><a href="/GroovyNotes/Async_Parallel-Concurrency" class="nav-list-link">Async_Parallel-Concurrency</a><li class="nav-list-item"><a href="/GroovyNotes/Clever-Tid-bits" class="nav-list-link">Clever-Tid-bits</a><li class="nav-list-item"><a href="/GroovyNotes/DateAndTime" class="nav-list-link">DateAndTime</a><li class="nav-list-item"><a href="/GroovyNotes/Enum" class="nav-list-link">Enum</a><li class="nav-list-item"><a href="/GroovyNotes/MetaProgramming" class="nav-list-link">MetaProgramming</a><li class="nav-list-item"><a href="/GroovyNotes/RegEx" class="nav-list-link">RegEx</a><li class="nav-list-item"><a href="/GroovyNotes/String" class="nav-list-link">String</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in HTML&CSS category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/HTML&CSS/" class="nav-list-link">HTML&CSS</a><ul class="nav-list"><li class="nav-list-item"><a href="/HTML&CSS/CSS" class="nav-list-link">CSS</a><li class="nav-list-item"><a href="/HTML&CSS/HTML" class="nav-list-link">HTML</a><li class="nav-list-item"><a href="/HTML&CSS/Images" class="nav-list-link">Images</a></ul><li class="nav-list-item"><a href="/HTTP" class="nav-list-link">HTTP</a><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in IntelliJNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/IntelliJNotes/" class="nav-list-link">IntelliJNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/IntelliJNotes/CustomVM" class="nav-list-link">CustomVM</a><li class="nav-list-item"><a href="/IntelliJNotes/DebuggerConfig" class="nav-list-link">DebuggerConfig</a><li class="nav-list-item"><a href="/IntelliJNotes/HTTPExamples" class="nav-list-link">HTTPExamples</a><li class="nav-list-item"><a href="/IntelliJNotes/Spaces" class="nav-list-link">Spaces</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Java category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/JavaNotes/Java" class="nav-list-link">Java</a><ul class="nav-list"><li class="nav-list-item"><a href="/JavaNotes/Algorithms" class="nav-list-link">Algorithms</a><li class="nav-list-item"><a href="/JavaNotes/Annotations" class="nav-list-link">Annotations</a><li class="nav-list-item"><a href="/JavaNotes/CommandLineDiddys" class="nav-list-link">CommandLineDiddys</a><li class="nav-list-item"><a href="/JavaNotes/DataBase" class="nav-list-link">DataBase</a><li class="nav-list-item"><a href="/JavaNotes/Email" class="nav-list-link">Email</a><li class="nav-list-item"><a href="/JavaNotes/File" class="nav-list-link">File</a><li class="nav-list-item"><a href="/JavaNotes/GCP" class="nav-list-link">GCP</a><li class="nav-list-item"><a href="/JavaNotes/Hibernate" class="nav-list-link">Hibernate</a><li class="nav-list-item"><a href="/JavaNotes/LooseNotes" class="nav-list-link">LooseNotes</a><li class="nav-list-item"><a href="/JavaNotes/OOP" class="nav-list-link">OOP</a><li class="nav-list-item"><a href="/JavaNotes/String" class="nav-list-link">String</a><li class="nav-list-item"><a href="/JavaNotes/Threads" class="nav-list-link">Threads</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in JavaScript category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/JavaScript/" class="nav-list-link">JavaScript</a><ul class="nav-list"><li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a><li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a><li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a><li class="nav-list-item"><a href="/JavaScript/DateAndTime" class="nav-list-link">DateAndTime</a><li class="nav-list-item"><a href="/JavaScript/Document" class="nav-list-link">Document</a><li class="nav-list-item"><a href="/JavaScript/Elements" class="nav-list-link">Elements</a><li class="nav-list-item"><a href="/JavaScript/Events" class="nav-list-link">Events</a><li class="nav-list-item"><a href="/JavaScript/FormStuff" class="nav-list-link">FormStuff</a><li class="nav-list-item"><a href="/JavaScript/FunctionObject" class="nav-list-link">FunctionObject</a><li class="nav-list-item"><a href="/JavaScript/HTTP" class="nav-list-link">HTTP</a><li class="nav-list-item"><a href="/JavaScript/Map" class="nav-list-link">Map</a><li class="nav-list-item"><a href="/JavaScript/Modules" class="nav-list-link">Modules</a><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Node category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/JavaScript/Node/" class="nav-list-link">Node</a><ul class="nav-list"><li class="nav-list-item"><a href="/JavaScript/Node/QuickScripts" class="nav-list-link">QuickScripts</a></ul><li class="nav-list-item"><a href="/JavaScript/Number" class="nav-list-link">Number</a><li class="nav-list-item"><a href="/JavaScript/Object" class="nav-list-link">Object</a><li class="nav-list-item"><a href="/JavaScript/QuerySelector" class="nav-list-link">QuerySelector</a><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in ReactNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a><li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a><li class="nav-list-item"><a href="/JavaScript/ReactNotes/Context" class="nav-list-link">Context</a><li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a><li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a><li class="nav-list-item"><a href="/ReactNotes/Mat-Table" class="nav-list-link">Mat-Table</a><li class="nav-list-item"><a href="/ReactNotes/React-Router" class="nav-list-link">React-Router</a><li class="nav-list-item"><a href="/ReactNotes/ReactHookForm" class="nav-list-link">ReactHookForm</a><li class="nav-list-item"><a href="/ReactNotes/String" class="nav-list-link">String</a><li class="nav-list-item"><a href="/ReactNotes/WebWorker" class="nav-list-link">WebWorker</a></ul><li class="nav-list-item"><a href="/JavaScript/RegEx" class="nav-list-link">RegEx</a><li class="nav-list-item"><a href="/JavaScript/State" class="nav-list-link">State</a><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in TypeScript category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/JavaScript/TypeScript/" class="nav-list-link">TypeScript</a><ul class="nav-list"><li class="nav-list-item"><a href="/JavaScript/TypeScript/Events" class="nav-list-link">Events</a><li class="nav-list-item"><a href="/JavaScript/TypeScript/QuickScripts" class="nav-list-link">QuickScripts</a><li class="nav-list-item"><a href="/JavaScript/TypeScript/Types" class="nav-list-link">Types</a></ul><li class="nav-list-item"><a href="/JavaScript/UsefulSnippets" class="nav-list-link">UsefulSnippets</a><li class="nav-list-item"><a href="/JavaScript/WebAPI" class="nav-list-link">WebAPI</a><li class="nav-list-item"><a href="/JavaScript/Window" class="nav-list-link">Window</a><li class="nav-list-item"><a href="/JavaScript/WorkingWithFiles" class="nav-list-link">WorkingWithFiles</a></ul><li class="nav-list-item"><a href="/Kubernetes" class="nav-list-link">Kubernetes</a><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Linux category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/Linux/" class="nav-list-link">Linux</a><ul class="nav-list"><li class="nav-list-item"><a href="/Linux/ADMIN-ROOT" class="nav-list-link">ADMIN-ROOT</a><li class="nav-list-item"><a href="/Linux/Conditionals" class="nav-list-link">Conditionals</a><li class="nav-list-item"><a href="/Linux/Email" class="nav-list-link">Email</a><li class="nav-list-item"><a href="/Linux/Encoding" class="nav-list-link">Encoding</a><li class="nav-list-item"><a href="/Linux/JQ" class="nav-list-link">JQ</a><li class="nav-list-item"><a href="/Linux/MySQL" class="nav-list-link">MySQL</a><li class="nav-list-item"><a href="/Linux/PGP" class="nav-list-link">PGP</a><li class="nav-list-item"><a href="/Linux/QuickScripts" class="nav-list-link">QuickScripts</a><li class="nav-list-item"><a href="/Linux/SDKMan" class="nav-list-link">SDKMan</a><li class="nav-list-item"><a href="/Linux/Scripting" class="nav-list-link">Scripting</a><li class="nav-list-item"><a href="/Linux/VIM_QuickTips" class="nav-list-link">VIM_QuickTips</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in MacNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/MacNotes/" class="nav-list-link">MacNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/MacNotes/AppleScripts" class="nav-list-link">AppleScripts</a><li class="nav-list-item"><a href="/MacNotes/HomeBrew" class="nav-list-link">HomeBrew</a><li class="nav-list-item"><a href="/MacNotes/JavaOnMac" class="nav-list-link">JavaOnMac</a><li class="nav-list-item"><a href="/MacNotes/QuickScripts" class="nav-list-link">QuickScripts</a><li class="nav-list-item"><a href="/MacNotes/ShortCuts" class="nav-list-link">ShortCuts</a><li class="nav-list-item"><a href="/MacNotes/UsersAndGroups" class="nav-list-link">UsersAndGroups</a><li class="nav-list-item"><a href="/MacNotes/Utilities" class="nav-list-link">Utilities</a><li class="nav-list-item"><a href="/MacNotes/ZSH" class="nav-list-link">ZSH</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Micronotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/Micronotes/" class="nav-list-link">Micronotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a><li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a><li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a><li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a><li class="nav-list-item"><a href="/Micronotes/DataBaseStuff" class="nav-list-link">DataBaseStuff</a><li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a><li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a><li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a><li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a><li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a><li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a><li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a><li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a></ul><li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in PersonalGrailsNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/PersonalGrailsNotes/" class="nav-list-link">PersonalGrailsNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/PersonalGrailsNotes/AccessHibernateAndDataStoreAndSession" class="nav-list-link">AccessHibernateAndDataStoreAndSession</a><li class="nav-list-item"><a href="/PersonalGrailsNotes/CLI_Gradlew" class="nav-list-link">CLI_Gradlew</a><li class="nav-list-item"><a href="/PersonalGrailsNotes/CLI_Grailsw" class="nav-list-link">CLI_Grailsw</a><li class="nav-list-item"><a href="/PersonalGrailsNotes/CleverSnippets" class="nav-list-link">CleverSnippets</a><li class="nav-list-item"><a href="/PersonalGrailsNotes/Config" class="nav-list-link">Config</a><li class="nav-list-item"><a href="/PersonalGrailsNotes/Controller" class="nav-list-link">Controller</a><li class="nav-list-item"><a href="/PersonalGrailsNotes/DataServices" class="nav-list-link">DataServices</a><li class="nav-list-item"><a href="/PersonalGrailsNotes/Domain_Stuff" class="nav-list-link">Domain_Stuff</a><li class="nav-list-item"><a href="/PersonalGrailsNotes/Enviroment" class="nav-list-link">Enviroment</a><li class="nav-list-item"><a href="/PersonalGrailsNotes/GORM_WhereQueris" class="nav-list-link">GORM_WhereQueris</a><li class="nav-list-item"><a href="/PersonalGrailsNotes/HQLComplexQueries" class="nav-list-link">HQLComplexQueries</a><li class="nav-list-item"><a href="/PersonalGrailsNotes/HQLQueries" class="nav-list-link">HQLQueries</a><li class="nav-list-item"><a href="/PersonalGrailsNotes/RunningApp" class="nav-list-link">RunningApp</a><li class="nav-list-item"><a href="/PersonalGrailsNotes/Security" class="nav-list-link">Security</a><li class="nav-list-item"><a href="/PersonalGrailsNotes/Services" class="nav-list-link">Services</a><li class="nav-list-item"><a href="/PersonalGrailsNotes/Testing" class="nav-list-link">Testing</a><li class="nav-list-item"><a href="/PersonalGrailsNotes/Text_Manipulation" class="nav-list-link">Text_Manipulation</a></ul><li class="nav-list-item"><a href="/RandomNuggetsOfKnowledge" class="nav-list-link">RandomNuggetsOfKnowledge</a><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in SQLNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/SQLNotes/" class="nav-list-link">SQLNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/SQLNotes/Docker" class="nav-list-link">Docker</a><li class="nav-list-item"><a href="/SQLNotes/Functions" class="nav-list-link">Functions</a><li class="nav-list-item"><a href="/SQLNotes/HQL" class="nav-list-link">HQL</a><li class="nav-list-item"><a href="/SQLNotes/Liquibase" class="nav-list-link">Liquibase</a><li class="nav-list-item"><a href="/SQLNotes/Queries" class="nav-list-link">Queries</a><li class="nav-list-item"><a href="/SQLNotes/SQLCheatSheet" class="nav-list-link">SQLCheatSheet</a><li class="nav-list-item"><a href="/SQLNotes/TerminalCommands" class="nav-list-link">Terminal-Commands</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in SpringNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/SpringNotes/" class="nav-list-link">SpringNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/SpringNotes/Annotations" class="nav-list-link">Annotations</a><li class="nav-list-item"><a href="/SpringNotes/Hibernate" class="nav-list-link">Hibernate</a><li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a><li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a><li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a><li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a><li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a></ul><li class="nav-list-item"><a href="/SystemDesign&Architecture/" class="nav-list-link">SystemDesign&Architecture</a><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in TestingFrameworks category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/TestingFrameworks/" class="nav-list-link">TestingFrameworks</a><ul class="nav-list"><li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a><li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a><li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/Windows_Notes/" class="nav-list-link">Windows_Notes</a><ul class="nav-list"><li class="nav-list-item"><a href="/Windows_Notes/CMD" class="nav-list-link">CMD</a><li class="nav-list-item"><a href="/Windows_Notes/Environment" class="nav-list-link">Environment</a><li class="nav-list-item"><a href="/Windows_Notes/PackageManagers" class="nav-list-link">PackageManagers</a><li class="nav-list-item"><a href="/Windows_Notes/Powershell" class="nav-list-link">Powershell</a><li class="nav-list-item"><a href="/Windows_Notes/Run" class="nav-list-link">Run</a><li class="nav-list-item"><a href="/Windows_Notes/Shortcuts" class="nav-list-link">Shortcuts</a><li class="nav-list-item"><a href="/Windows_Notes/Terminal" class="nav-list-link">Terminal</a><li class="nav-list-item"><a href="/Windows_Notes/WSL" class="nav-list-link">WSL</a><li class="nav-list-item"><a href="/Windows_Notes/WindowsServer" class="nav-list-link">WindowsServer</a></ul></ul></nav><footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer></div><div class="main" id="top"><div id="main-header" class="main-header"><div class="search" role="search"><div class="search-input-wrap"> <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Paxton's Notes" aria-label="Search Paxton's Notes" autocomplete="off"> <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label></div><div id="search-results" class="search-results"></div></div><nav aria-label="Auxiliary" class="aux-nav"><ul class="aux-nav-list"><li class="aux-nav-list-item"> <a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer" > Template Repository </a></ul></nav></div><div class="main-content-wrap"><nav aria-label="Breadcrumb" class="breadcrumb-nav"><ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="/Build/">Build</a><li class="breadcrumb-nav-list-item"><span>Maven</span></ol></nav><div id="main-content" class="main-content"><main><p><br /></p><details> <summary class="text-delta"> Table of contents </summary><ol id="markdown-toc"><li><a href="#settings" id="markdown-toc-settings">Settings</a><ol><li><a href="#example-with-keys" id="markdown-toc-example-with-keys">Example with Keys</a><li><a href="#custom-repo" id="markdown-toc-custom-repo">Custom Repo</a><li><a href="#create-project-specific-maven-settings" id="markdown-toc-create-project-specific-maven-settings">Create project-specific Maven settings</a><ol><li><a href="#intellij" id="markdown-toc-intellij">IntelliJ</a></ol></ol><li><a href="#add-local-repo" id="markdown-toc-add-local-repo">Add Local Repo</a><ol><li><a href="#settings-1" id="markdown-toc-settings-1">Settings</a><li><a href="#jar-file" id="markdown-toc-jar-file">Jar file</a><li><a href="#pomxml" id="markdown-toc-pomxml">pom.xml</a><li><a href="#jar" id="markdown-toc-jar">jar</a></ol></ol></details><p><br /></p><hr /><p><br /></p><h1 id="settings"> <a href="#settings" class="anchor-heading" aria-labelledby="settings"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://maven.apache.org/settings.html">Settings</a></h1><blockquote><p>Remember that there are two locations where a settings.xml file may live:</p></blockquote><ul><li><p>Maven installation directory :<code class="language-plaintext highlighter-rouge">$M2_HOME/conf/settings.xml</code></p><li><p>User-specific settings file : <code class="language-plaintext highlighter-rouge">~/.m2/settings.xml</code></p></ul><h2 id="example-with-keys"> <a href="#example-with-keys" class="anchor-heading" aria-labelledby="example-with-keys"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Example with Keys</h2><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+
+<span class="c">&lt;!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+--&gt;</span>
+
+<span class="c">&lt;!--
+ | This is the configuration file for Maven. It can be specified at two levels:
+ |
+ | 1. User Level. These settings.xml files provide configuration for a single
+ | user, and are normally provided in
+ |                 ${user.home}/.m2/settings.xml.
+ |
+ |                 NOTE: This location can be overridden with the CLI option:
+ |
+ |                 -s /path/to/user/settings.xml
+ |
+ |  2. Global Level. These settings.xml files provide configuration for all
+ | Maven users on a machine (assuming they're all using the
+ | same Maven installation). It's normally provided in
+ | ${maven.home}/conf/settings.xml.
+ |
+ | NOTE: This location can be overridden with the CLI option:
+ |
+ |                 -gs /path/to/global/settings.xml
+ |
+ | The sections in this sample file are intended to give you a running start
+ | at getting the most out of your Maven installation. Where appropriate, the
+ | default values (values used when the setting is not specified) are provided.
+ |
+ |--&gt;</span>
+<span class="nt">&lt;settings</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/SETTINGS/1.0.0"</span>
+          <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+          <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd"</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- localRepository
+     | The path to the local repository maven will use to store artifacts.
+     |
+     | Default: ~/.m2/repository
+    &lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;
+    --&gt;</span>
+
+    <span class="c">&lt;!-- interactiveMode
+     | This will determine whether maven prompts you when it needs input. If set
+     | to false, maven will use a sensible default value, perhaps based on some
+     | other setting, for the parameter in question.
+     |
+     | Default: true
+    &lt;interactiveMode&gt;true&lt;/interactiveMode&gt;
+    --&gt;</span>
+
+    <span class="c">&lt;!-- offline
+     | Determines whether maven should attempt to connect to the network when
+     | executing a build. This will have an effect on artifact downloads,
+     | artifact deployment, and others.
+     |
+     | Default: false
+    &lt;offline&gt;false&lt;/offline&gt;
+    --&gt;</span>
+
+    <span class="c">&lt;!-- pluginGroups
+     | This is a list of additional group identifiers that will be searched when
+     | resolving plugins by their prefix, i.e., when invoking a command line like
+     | "mvn prefix:goal". Maven will automatically add the group identifiers
+     | "org.apache.maven.plugins" and "org.codehaus.mojo" if these are not
+     | already contained in the list.
+     |--&gt;</span>
+    <span class="nt">&lt;pluginGroups&gt;</span>
+        <span class="c">&lt;!-- pluginGroup
+         | Specifies a further group identifier to use for plugin lookup.
+        &lt;pluginGroup&gt;com.your.plugins&lt;/pluginGroup&gt;
+        --&gt;</span>
+    <span class="nt">&lt;/pluginGroups&gt;</span>
+
+    <span class="c">&lt;!-- proxies
+     | This is a list of proxies which can be used on this machine to connect to
+     | the network. Unless otherwise specified (by system property or command-
+     | line switch), the first proxy specification in this list marked as active
+     | will be used.
+     |--&gt;</span>
+    <span class="nt">&lt;proxies&gt;</span>
+        <span class="c">&lt;!-- proxy
+         | Specification for one proxy, to be used in connecting to the network.
+         |
+        &lt;proxy&gt;
+          &lt;id&gt;optional&lt;/id&gt;
+          &lt;active&gt;true&lt;/active&gt;
+          &lt;protocol&gt;http&lt;/protocol&gt;
+          &lt;username&gt;proxyuser&lt;/username&gt;
+          &lt;password&gt;proxypass&lt;/password&gt;
+          &lt;host&gt;proxy.host.net&lt;/host&gt;
+          &lt;port&gt;80&lt;/port&gt;
+          &lt;nonProxyHosts&gt;local.net|some.host.com&lt;/nonProxyHosts&gt;
+        &lt;/proxy&gt;
+        --&gt;</span>
+    <span class="nt">&lt;/proxies&gt;</span>
+
+    <span class="c">&lt;!-- servers
+     | This is a list of authentication profiles, keyed by the server-id used
+     | within the system. Authentication profiles can be used whenever maven must
+     | make a connection to a remote server.
+     |--&gt;</span>
+    <span class="nt">&lt;servers&gt;</span>
+        <span class="c">&lt;!-- server
+         | Specifies the authentication information to use when connecting to a
+         | particular server, identified by a unique name within the system
+         | (referred to by the 'id' attribute below).
+         |
+         | NOTE: You should either specify username/password OR
+         | privateKey/passphrase, since these pairings are used together.
+         |
+        &lt;server&gt;
+          &lt;id&gt;deploymentRepo&lt;/id&gt;
+          &lt;username&gt;repouser&lt;/username&gt;
+          &lt;password&gt;repopwd&lt;/password&gt;
+        &lt;/server&gt;
+        --&gt;</span>
+
+        <span class="c">&lt;!-- Another sample, using keys to authenticate.
+        &lt;server&gt;
+          &lt;id&gt;siteServer&lt;/id&gt;
+          &lt;privateKey&gt;/path/to/private/key&lt;/privateKey&gt;
+          &lt;passphrase&gt;optional; leave empty if not used.&lt;/passphrase&gt;
+        &lt;/server&gt;
+        --&gt;</span>
+    <span class="nt">&lt;/servers&gt;</span>
+
+    <span class="c">&lt;!-- mirrors
+     | This is a list of mirrors to be used in downloading artifacts from remote
+     | repositories.
+     |
+     | It works like this: a POM may declare a repository to use in resolving
+     | certain artifacts. However, this repository may have problems with heavy
+     | traffic at times, so people have mirrored it to several places.
+     |
+     | That repository definition will have a unique id, so we can create a
+     | mirror reference for that repository, to be used as an alternate download
+     | site. The mirror site will be the preferred server for that repository.
+     |--&gt;</span>
+    <span class="nt">&lt;mirrors&gt;</span>
+        <span class="c">&lt;!-- mirror
+         | Specifies a repository mirror site to use instead of a given repository.
+         | The repository that this mirror serves has an ID that matches the
+         | mirrorOf element of this mirror. IDs are used for inheritance and direct
+         | lookup purposes and must be unique across the set of mirrors.
+         |
+        &lt;mirror&gt;
+          &lt;id&gt;mirrorId&lt;/id&gt;
+          &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
+          &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+          &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
+        &lt;/mirror&gt;
+         --&gt;</span>
+    <span class="nt">&lt;/mirrors&gt;</span>
+
+    <span class="c">&lt;!-- profiles
+     | This is a list of profiles which can be activated in a variety of ways,
+     | and which can modify the build process. Profiles provided in the
+     | settings.xml are intended to provide local machine-specific paths and
+     | repository locations which allow the build to work in the local
+     | environment.
+     |
+     | For example, if you have an integration testing plugin - like cactus -
+     | that needs to know where your Tomcat instance is installed, you can
+     | provide a variable here such that the variable is dereferenced during the
+     | build process to configure the cactus plugin.
+     |
+     | As noted above, profiles can be activated in a variety of ways. One
+     | way - the activeProfiles section of this document (settings.xml) - will be
+     | discussed later. Another way essentially relies on the detection of a
+     | system property, either matching a particular value for the property, or
+     | merely testing its existence. Profiles can also be activated by JDK
+     | version prefix, where a value of '1.4' might activate a profile when the
+     | build is executed on a JDK version of '1.4.2_07'. Finally, the list of
+     | active profiles can be specified directly from the command line.
+     |
+     | NOTE: For profiles defined in the settings.xml, you are restricted to
+     | specifying only artifact repositories, plugin repositories, and
+     | free-form properties to be used as configuration variables for
+     | plugins in the POM.
+     |
+     |--&gt;</span>
+
+    <span class="nt">&lt;profiles&gt;</span>
+        <span class="c">&lt;!-- profile
+         | Specifies a set of introductions to the build process, to be activated
+         | using one or more of the mechanisms described above. For inheritance
+         | purposes, and to activate profiles via &lt;activatedProfiles/&gt; or the
+         | command line, profiles have to have an ID that is unique.
+         |
+         | An encouraged best practice for profile identification is to use a
+         | consistent naming convention for profiles, such as 'env-dev',
+         | 'env-test', 'env-production', 'user-jdcasey', 'user-brett', etc. This
+         | will make it more intuitive to understand what the set of introduced
+         | profiles is attempting to accomplish, particularly when you only have a
+         | list of profile id's for debug.
+         |
+         | This profile example uses the JDK version to trigger activation, and
+         | provides a JDK-specific repo.
+        &lt;profile&gt;
+          &lt;id&gt;jdk-1.4&lt;/id&gt;
+
+          &lt;activation&gt;
+            &lt;jdk&gt;1.4&lt;/jdk&gt;
+          &lt;/activation&gt;
+
+          &lt;repositories&gt;
+            &lt;repository&gt;
+              &lt;id&gt;jdk14&lt;/id&gt;
+              &lt;name&gt;Repository for JDK 1.4 builds&lt;/name&gt;
+              &lt;url&gt;http://www.myhost.com/maven/jdk14&lt;/url&gt;
+              &lt;layout&gt;default&lt;/layout&gt;
+              &lt;snapshotPolicy&gt;always&lt;/snapshotPolicy&gt;
+            &lt;/repository&gt;
+          &lt;/repositories&gt;
+        &lt;/profile&gt;
+        --&gt;</span>
+
+        <span class="c">&lt;!--
+         | Here is another profile, activated by the system property 'target-env'
+         | with a value of 'dev', which provides a specific path to the Tomcat
+         | instance. To use this, your plugin configuration might hypothetically
+         | look like:
+         |
+         | ...
+         | &lt;plugin&gt;
+         |   &lt;groupId&gt;org.myco.myplugins&lt;/groupId&gt;
+         |   &lt;artifactId&gt;myplugin&lt;/artifactId&gt;
+         |
+         |   &lt;configuration&gt;
+         |     &lt;tomcatLocation&gt;${tomcatPath}&lt;/tomcatLocation&gt;
+         |   &lt;/configuration&gt;
+         | &lt;/plugin&gt;
+         | ...
+         |
+         | NOTE: If you just wanted to inject this configuration whenever someone
+         |       set 'target-env' to anything, you could just leave off the
+         |       &lt;value/&gt; inside the activation-property.
+         |
+        &lt;profile&gt;
+          &lt;id&gt;env-dev&lt;/id&gt;
+
+          &lt;activation&gt;
+            &lt;property&gt;
+              &lt;name&gt;target-env&lt;/name&gt;
+              &lt;value&gt;dev&lt;/value&gt;
+            &lt;/property&gt;
+          &lt;/activation&gt;
+
+          &lt;properties&gt;
+            &lt;tomcatPath&gt;/path/to/tomcat/instance&lt;/tomcatPath&gt;
+          &lt;/properties&gt;
+        &lt;/profile&gt;
+        --&gt;</span>
+    <span class="nt">&lt;/profiles&gt;</span>
+
+    <span class="c">&lt;!-- activeProfiles
+     | List of profiles that are active for all builds.
+     |
+    &lt;activeProfiles&gt;
+      &lt;activeProfile&gt;alwaysActiveProfile&lt;/activeProfile&gt;
+      &lt;activeProfile&gt;anotherAlwaysActiveProfile&lt;/activeProfile&gt;
+    &lt;/activeProfiles&gt;
+    --&gt;</span>
+<span class="nt">&lt;/settings&gt;</span>
+</code></pre></div></div><h2 id="custom-repo"> <a href="#custom-repo" class="anchor-heading" aria-labelledby="custom-repo"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://maven.apache.org/settings.html#Repositories">Custom Repo</a></h2><blockquote><p><a href="https://maven.apache.org/settings.html#Servers">Maven Server Setting</a></p></blockquote><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;settings</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+          <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/SETTINGS/1.0.0"</span>
+          <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;activeProfiles&gt;</span>
+        <span class="nt">&lt;activeProfile&gt;</span>local-build<span class="nt">&lt;/activeProfile&gt;</span>
+    <span class="nt">&lt;/activeProfiles&gt;</span>
+    <span class="nt">&lt;servers&gt;</span>
+        <span class="nt">&lt;server&gt;</span>
+            <span class="nt">&lt;id&gt;</span>nexus-repository-group-local<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;username&gt;</span>${username}<span class="nt">&lt;/username&gt;</span>
+            <span class="nt">&lt;password&gt;</span>${password}<span class="nt">&lt;/password&gt;</span>
+        <span class="nt">&lt;/server&gt;</span>
+    <span class="nt">&lt;/servers&gt;</span>
+    <span class="nt">&lt;profiles&gt;</span>
+        <span class="nt">&lt;profile&gt;</span>
+            <span class="nt">&lt;id&gt;</span>local-build<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;repositories&gt;</span>
+                <span class="nt">&lt;repository&gt;</span>
+                    <span class="nt">&lt;id&gt;</span>nexus-repository-group-local<span class="nt">&lt;/id&gt;</span>
+                    <span class="nt">&lt;layout&gt;</span>default<span class="nt">&lt;/layout&gt;</span>
+                    <span class="nt">&lt;url&gt;</span>https://nexus.apps.dla.mil/repository/devsecops-local/<span class="nt">&lt;/url&gt;</span>
+                    <span class="nt">&lt;releases&gt;</span>
+                        <span class="nt">&lt;enabled&gt;</span>true<span class="nt">&lt;/enabled&gt;</span>
+                        <span class="nt">&lt;updatePolicy&gt;</span>never<span class="nt">&lt;/updatePolicy&gt;</span>
+                    <span class="nt">&lt;/releases&gt;</span>
+                    <span class="nt">&lt;snapshots&gt;</span>
+                        <span class="nt">&lt;enabled&gt;</span>true<span class="nt">&lt;/enabled&gt;</span>
+                        <span class="nt">&lt;updatePolicy&gt;</span>never<span class="nt">&lt;/updatePolicy&gt;</span>
+                    <span class="nt">&lt;/snapshots&gt;</span>
+                <span class="nt">&lt;/repository&gt;</span>
+            <span class="nt">&lt;/repositories&gt;</span>
+        <span class="nt">&lt;/profile&gt;</span>
+    <span class="nt">&lt;/profiles&gt;</span>
+<span class="nt">&lt;/settings&gt;</span>
+</code></pre></div></div><h2 id="create-project-specific-maven-settings"> <a href="#create-project-specific-maven-settings" class="anchor-heading" aria-labelledby="create-project-specific-maven-settings"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Create project-specific Maven settings</h2><blockquote><p>After maven 3.3.1, use the project-settings-extension to load the project settings,<br /> and put project-specific mirrors into ${basedir}/.mvn/settings.xml in each project.</p></blockquote><ul><li><code class="language-plaintext highlighter-rouge">${basedir}/.mvn/extensions.xml</code></ul><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;extensions</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/EXTENSIONS/1.0.0"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+            <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/EXTENSIONS/1.0.0 http://maven.apache.org/xsd/core-extensions-1.0.0.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;extension&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.github.gzm55.maven<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>project-settings-extension<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>0.3.5<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;/extension&gt;</span>
+<span class="nt">&lt;/extensions&gt;</span>
+</code></pre></div></div><ul><li><code class="language-plaintext highlighter-rouge">${basedir}/.mvn/settings.xml</code></ul><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;settings&gt;</span>
+
+    <span class="nt">&lt;mirrors&gt;</span>
+        <span class="nt">&lt;mirror&gt;</span>
+            <span class="nt">&lt;id&gt;</span>id<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;url&gt;</span>https://url-for-this-project/<span class="nt">&lt;/url&gt;</span>
+            <span class="nt">&lt;mirrorOf&gt;</span>central<span class="nt">&lt;/mirrorOf&gt;</span>
+        <span class="nt">&lt;/mirror&gt;</span>
+    <span class="nt">&lt;/mirrors&gt;</span>
+
+    <span class="nt">&lt;profiles&gt;</span>
+        <span class="c">&lt;!-- profiles for this project, such as corp internal repositories --&gt;</span>
+    <span class="nt">&lt;/profiles&gt;</span>
+
+<span class="nt">&lt;/settings&gt;</span>
+</code></pre></div></div><h3 id="intellij"> <a href="#intellij" class="anchor-heading" aria-labelledby="intellij"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> IntelliJ</h3><blockquote><p>you can set a different settings file for any project:</p></blockquote><ul><li>Go to <code class="language-plaintext highlighter-rouge">Settings</code> -&gt; <code class="language-plaintext highlighter-rouge">Build, Execution, Deployment</code> -&gt; <code class="language-plaintext highlighter-rouge">Build tools</code> -&gt; <code class="language-plaintext highlighter-rouge">Maven</code><li>Set the user settings file to <code class="language-plaintext highlighter-rouge">local-settings.xml</code></ul><h1 id="add-local-repo"> <a href="#add-local-repo" class="anchor-heading" aria-labelledby="add-local-repo"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Add Local Repo</h1><h2 id="settings-1"> <a href="#settings-1" class="anchor-heading" aria-labelledby="settings-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Settings</h2><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;settings</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/SETTINGS/1.0.0"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+          <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;localRepository&gt;</span>${user.home}/personal-wks/.m2/repository<span class="nt">&lt;/localRepository&gt;</span>
+    <span class="nt">&lt;interactiveMode&gt;</span>true<span class="nt">&lt;/interactiveMode&gt;</span>
+    <span class="nt">&lt;offline&gt;</span>false<span class="nt">&lt;/offline&gt;</span>
+<span class="nt">&lt;/settings&gt;</span>
+</code></pre></div></div><h2 id="jar-file"> <a href="#jar-file" class="anchor-heading" aria-labelledby="jar-file"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Jar file</h2><blockquote><p>Install the JAR into your local Maven repository (typically .m2 in your home folder) as follows:</p></blockquote><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  mvn <span class="nb">install</span>:install-file <span class="se">\</span>
+   <span class="nt">-Dfile</span><span class="o">=</span>&lt;path-to-file&gt; <span class="se">\</span>
+   <span class="nt">-DgroupId</span><span class="o">=</span>&lt;group-id&gt; <span class="se">\</span>
+   <span class="nt">-DartifactId</span><span class="o">=</span>&lt;artifact-id&gt; <span class="se">\</span>
+   <span class="nt">-Dversion</span><span class="o">=</span>&lt;version&gt; <span class="se">\</span>
+   <span class="nt">-Dpackaging</span><span class="o">=</span>&lt;packaging&gt; <span class="se">\</span>
+   <span class="nt">-DgeneratePom</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div></div><ul><li><p>Where each refers to:</p><p><code class="language-plaintext highlighter-rouge">&lt;path-to-file&gt;</code>: the path to the file to load e.g → <code class="language-plaintext highlighter-rouge">c:\kaptcha-2.3.jar</code></p><p><code class="language-plaintext highlighter-rouge">&lt;group-id&gt;</code>: the group that the file should be registered under e.g →<code class="language-plaintext highlighter-rouge">com.google.code</code></p><p><code class="language-plaintext highlighter-rouge">&lt;artifact-id&gt;</code>: the artifact name for the file e.g →<code class="language-plaintext highlighter-rouge">kaptcha</code></p><p><code class="language-plaintext highlighter-rouge">&lt;version&gt;</code>: the version of the file e.g →<code class="language-plaintext highlighter-rouge">2.3</code></p><p><code class="language-plaintext highlighter-rouge">&lt;packaging&gt;</code>: the packaging of the file e.g. → <code class="language-plaintext highlighter-rouge">jar</code></p></ul><h2 id="pomxml"> <a href="#pomxml" class="anchor-heading" aria-labelledby="pomxml"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> pom.xml</h2><blockquote><p>Step 1: Configure the maven-install-plugin with the goal install-file in your pom.xml</p></blockquote><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;plugin&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>maven-install-plugin<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;executions&gt;</span>
+        <span class="nt">&lt;execution&gt;</span>
+            <span class="nt">&lt;id&gt;</span>install-external-non-maven-jar-MWS-Client-into-local-maven-repo<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;phase&gt;</span>clean<span class="nt">&lt;/phase&gt;</span>
+            <span class="nt">&lt;configuration&gt;</span>
+                <span class="nt">&lt;repositoryLayout&gt;</span>default<span class="nt">&lt;/repositoryLayout&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>com.amazonservices.mws<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>mws-client<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+                <span class="nt">&lt;file&gt;</span>${project.basedir}/lib/MWSClientJavaRuntime-1.0.jar<span class="nt">&lt;/file&gt;</span>
+                <span class="nt">&lt;packaging&gt;</span>jar<span class="nt">&lt;/packaging&gt;</span>
+                <span class="nt">&lt;generatePom&gt;</span>true<span class="nt">&lt;/generatePom&gt;</span>
+            <span class="nt">&lt;/configuration&gt;</span>
+            <span class="nt">&lt;goals&gt;</span>
+                <span class="nt">&lt;goal&gt;</span>install-file<span class="nt">&lt;/goal&gt;</span>
+            <span class="nt">&lt;/goals&gt;</span>
+        <span class="nt">&lt;/execution&gt;</span>
+    <span class="nt">&lt;/executions&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+</code></pre></div></div><blockquote><p>Step 2: Once you have configured the maven-install-plugin as shown above in your pom.xml file, you have to use these jars in your pom.xml as usual:</p></blockquote><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>com.amazonservices.mws<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>mws-client<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div></div><h2 id="jar"> <a href="#jar" class="anchor-heading" aria-labelledby="jar"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> jar</h2><blockquote><p>The really quick and dirty way is to point to a local file, please note “system” is deprecated by now:</p></blockquote><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>com.sample<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>samplifact<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;scope&gt;</span>system<span class="nt">&lt;/scope&gt;</span>
+    <span class="nt">&lt;systemPath&gt;</span>C:\DEV\myfunnylib\yourJar.jar<span class="nt">&lt;/systemPath&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div></div><blockquote><p>However, this will only live on your machine (obviously), for sharing it usually makes sense to use a proper m2 archive (nexus/artifactory) or if<br /> you do not have any of these or don’t want to set<br /> one<br /> up a local maven structured archive and configure a “repository” in your pom:</p></blockquote><ul><li>local:</ul><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;repositories&gt;</span>
+    <span class="nt">&lt;repository&gt;</span>
+        <span class="nt">&lt;id&gt;</span>my-local-repo<span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;url&gt;</span>file://C:/DEV//mymvnrepo<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;/repository&gt;</span>
+<span class="nt">&lt;/repositories&gt;</span>
+</code></pre></div></div><ul><li>remote:</ul><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;repositories&gt;</span>
+    <span class="nt">&lt;repository&gt;</span>
+        <span class="nt">&lt;id&gt;</span>my-remote-repo<span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;url&gt;</span>http://192.168.0.1/whatever/mavenserver/youwant/repo<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;/repository&gt;</span>
+<span class="nt">&lt;/repositories&gt;</span>
+</code></pre></div></div><blockquote><p>for this solution, a relative path is also possible using the basedir variable:</p></blockquote><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;url&gt;</span>file:${basedir}<span class="nt">&lt;/url&gt;</span>
+</code></pre></div></div></main><hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"></p><div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"> <a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./Build/Maven.md" id="edit-this-page">Edit this page on GitHub</a></p></div></footer></div></div><button id="search-button" class="search-button btn-reset" aria-label="Focus on search"> <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg> </button><div class="search-overlay"></div></div>
