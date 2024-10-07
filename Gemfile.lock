@@ -110,7 +110,7 @@ PLATFORMS
 
 DEPENDENCIES
   faraday-retry
-  jekyll (~> 4.3, >= 4.3.3)
+  jekyll (~> 4.3)
   jekyll-default-layout
   jekyll-github-metadata
   jekyll-watch
