@@ -29,7 +29,178 @@ Run build offline
 <span class="nt">-Dpackaging</span><span class="o">=</span>jar <span class="se">\ </span>   
 <span class="nt">-DgeneratePom</span><span class="o">=</span><span class="nb">true</span>    
     
-</code></pre></div></div><hr /><h3 id="pom-for-running-both-spock-and-junit"> <a href="#pom-for-running-both-spock-and-junit" class="anchor-heading" aria-labelledby="pom-for-running-both-spock-and-junit"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Pom for running both spock and junit</h3><ul><li><a href="https://github.com/SanderSmee/spock-jupiter/blob/master/pom.xml">Code For Reference </a></ul><details> <summary>XML Pom</summary> ```xml <build> <build> <defaultGoal>verify</defaultGoal><plugins><plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> <version>3.10.1</version> </plugin><plugin> <groupId>org.codehaus.gmavenplus</groupId> <artifactId>gmavenplus-plugin</artifactId> <version>3.0.0</version> <executions> <execution> <goals> <goal>compile</goal> <goal>compileTests</goal> </goals> </execution> </executions> <configuration> <invokeDynamic>true</invokeDynamic> </configuration> </plugin><plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-plugin</artifactId> <version>3.0.0-M7</version> <dependencies> <dependency> <groupId>org.junit.jupiter</groupId> <artifactId>junit-jupiter-engine</artifactId> <version>5.9.3</version> </dependency> <dependency> <groupId>org.junit.vintage</groupId> <artifactId>junit-vintage-engine</artifactId> <version>5.9.3</version> </dependency> </dependencies> <configuration> <detail>true</detail> <includes> <include>%regex[.*]</include> </includes> </configuration> </plugin><plugin> <artifactId>maven-failsafe-plugin</artifactId> <version>3.0.0-M7</version> </plugin><plugin> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-maven-plugin</artifactId> </plugin> </plugins> </build> <repositories> <repository> <id>gitlab-maven</id> <url>https://gitlab.guardianportal.us/api/v4/groups/5/-/packages/maven</url> </repository> </repositories> <dependencyManagement> <dependencies> <dependency> <groupId>org.spockframework</groupId> <artifactId>spock-bom</artifactId> <version>2.1-groovy-3.0</version> <type>pom</type> <scope>import</scope> </dependency> <dependency> <groupId>org.junit</groupId> <artifactId>junit-bom</artifactId> <version>5.9.3</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> <dependencies> <dependency> <groupId>org.spockframework</groupId> <artifactId>spock-core</artifactId> <scope>test</scope> </dependency> <dependency> <groupId>org.apache.groovy</groupId> <artifactId>groovy</artifactId> <version>4.0.6</version> </dependency> <dependency> <groupId>org.apache.groovy</groupId> <artifactId>groovy-sql</artifactId> <version>4.0.13</version> </dependency> <dependency> <groupId>net.bytebuddy</groupId> <artifactId>byte-buddy</artifactId> <version>1.12.17</version> <scope>test</scope> </dependency> <dependency> <groupId>org.objenesis</groupId> <artifactId>objenesis</artifactId> <version>3.3</version> <scope>test</scope> </dependency> <dependency> <groupId>org.junit.jupiter</groupId> <artifactId>junit-jupiter</artifactId> <version>5.9.3</version> <scope>test</scope> </dependency> <dependency> <groupId>org.junit.jupiter</groupId> <artifactId>junit-jupiter-api</artifactId> <version>5.9.3</version> <scope>test</scope> </dependency> <dependency> <groupId>org.junit.jupiter</groupId> <artifactId>junit-jupiter-engine</artifactId> <version>5.9.3</version> <scope>test</scope> </dependency> <dependency> <groupId>org.junit.platform</groupId> <artifactId>junit-platform-launcher</artifactId> <version>1.9.3</version> <scope>test</scope> </dependency> <dependency> <groupId>org.junit.platform</groupId> <artifactId>junit-platform-engine</artifactId> </dependency> </dependencies> </build> ``` </details><hr /><h1 id="testing"> <a href="#testing" class="anchor-heading" aria-labelledby="testing"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Testing</h1><h2 id="test-controller"> <a href="#test-controller" class="anchor-heading" aria-labelledby="test-controller"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Test Controller</h2><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">grails.testing.web.controllers.ControllerUnitTest</span>
+</code></pre></div></div><hr /><h3 id="pom-for-running-both-spock-and-junit"> <a href="#pom-for-running-both-spock-and-junit" class="anchor-heading" aria-labelledby="pom-for-running-both-spock-and-junit"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Pom for running both spock and junit</h3><ul><li><a href="https://github.com/SanderSmee/spock-jupiter/blob/master/pom.xml">Code For Reference </a></ul><details> <summary>XML Pom</summary><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;build&gt;</span>
+    <span class="nt">&lt;build&gt;</span>
+        <span class="nt">&lt;defaultGoal&gt;</span>verify<span class="nt">&lt;/defaultGoal&gt;</span>
+        <span class="nt">&lt;plugins&gt;</span>
+            <span class="c">&lt;!-- Mandatory plugins for using Spock --&gt;</span>
+            <span class="nt">&lt;plugin&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>3.10.1<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;/plugin&gt;</span>
+            <span class="nt">&lt;plugin&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>org.codehaus.gmavenplus<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>gmavenplus-plugin<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>3.0.0<span class="nt">&lt;/version&gt;</span>
+                <span class="nt">&lt;executions&gt;</span>
+                    <span class="nt">&lt;execution&gt;</span>
+                        <span class="nt">&lt;goals&gt;</span>
+                            <span class="nt">&lt;goal&gt;</span>compile<span class="nt">&lt;/goal&gt;</span>
+                            <span class="nt">&lt;goal&gt;</span>compileTests<span class="nt">&lt;/goal&gt;</span>
+                            <span class="c">&lt;!--                            &lt;goal&gt;addSources&lt;/goal&gt;--&gt;</span>
+                            <span class="c">&lt;!--                            &lt;goal&gt;addTestSources&lt;/goal&gt;--&gt;</span>
+                            <span class="c">&lt;!--                            &lt;goal&gt;generateStubs&lt;/goal&gt;--&gt;</span>
+                            <span class="c">&lt;!--                            &lt;goal&gt;generateTestStubs&lt;/goal&gt;--&gt;</span>
+                            <span class="c">&lt;!--                            &lt;goal&gt;removeStubs&lt;/goal&gt;--&gt;</span>
+                            <span class="c">&lt;!--                            &lt;goal&gt;removeTestStubs&lt;/goal&gt;--&gt;</span>
+                        <span class="nt">&lt;/goals&gt;</span>
+                    <span class="nt">&lt;/execution&gt;</span>
+                <span class="nt">&lt;/executions&gt;</span>
+                <span class="nt">&lt;configuration&gt;</span>
+                    <span class="nt">&lt;invokeDynamic&gt;</span>true<span class="nt">&lt;/invokeDynamic&gt;</span>
+                <span class="nt">&lt;/configuration&gt;</span>
+            <span class="nt">&lt;/plugin&gt;</span>
+            <span class="nt">&lt;plugin&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>3.0.0-M7<span class="nt">&lt;/version&gt;</span>
+                <span class="nt">&lt;dependencies&gt;</span>
+                    <span class="nt">&lt;dependency&gt;</span>
+                        <span class="nt">&lt;groupId&gt;</span>org.junit.jupiter<span class="nt">&lt;/groupId&gt;</span>
+                        <span class="nt">&lt;artifactId&gt;</span>junit-jupiter-engine<span class="nt">&lt;/artifactId&gt;</span>
+                        <span class="nt">&lt;version&gt;</span>5.9.3<span class="nt">&lt;/version&gt;</span>
+                    <span class="nt">&lt;/dependency&gt;</span>
+                    <span class="nt">&lt;dependency&gt;</span>
+                        <span class="nt">&lt;groupId&gt;</span>org.junit.vintage<span class="nt">&lt;/groupId&gt;</span>
+                        <span class="nt">&lt;artifactId&gt;</span>junit-vintage-engine<span class="nt">&lt;/artifactId&gt;</span>
+                        <span class="nt">&lt;version&gt;</span>5.9.3<span class="nt">&lt;/version&gt;</span>
+                    <span class="nt">&lt;/dependency&gt;</span>
+                <span class="nt">&lt;/dependencies&gt;</span>
+                <span class="nt">&lt;configuration&gt;</span>
+                    <span class="nt">&lt;detail&gt;</span>true<span class="nt">&lt;/detail&gt;</span>
+                    <span class="nt">&lt;includes&gt;</span>
+                        <span class="nt">&lt;include&gt;</span>%regex[.*]<span class="nt">&lt;/include&gt;</span>
+                    <span class="nt">&lt;/includes&gt;</span>
+                    <span class="c">&lt;!--                    &lt;useModulePath&gt;false&lt;/useModulePath&gt; &amp;lt;!&amp;ndash; https://issues.apache.org/jira/browse/SUREFIRE-1809 &amp;ndash;&amp;gt;--&gt;</span>
+                    <span class="c">&lt;!--                    &lt;useFile&gt;false&lt;/useFile&gt;--&gt;</span>
+                    <span class="c">&lt;!--                    &lt;includes&gt;--&gt;</span>
+                    <span class="c">&lt;!--                        &lt;include&gt;**/*Spec.class&lt;/include&gt;--&gt;</span>
+                    <span class="c">&lt;!--                        &lt;include&gt;**/*Test.java&lt;/include&gt;--&gt;</span>
+                    <span class="c">&lt;!--                        &lt;include&gt;**/*Test.groovy&lt;/include&gt;--&gt;</span>
+                    <span class="c">&lt;!--                        &lt;include&gt;**/*Spec.groovy&lt;/include&gt;--&gt;</span>
+                    <span class="c">&lt;!--                    &lt;/includes&gt;--&gt;</span>
+                    <span class="c">&lt;!--                    &lt;statelessTestsetReporter implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter"&gt;--&gt;</span>
+                    <span class="c">&lt;!--                        &lt;disable&gt;false&lt;/disable&gt;--&gt;</span>
+                    <span class="c">&lt;!--                        &lt;version&gt;3.0&lt;/version&gt;--&gt;</span>
+                    <span class="c">&lt;!--                        &lt;usePhrasedFileName&gt;false&lt;/usePhrasedFileName&gt;--&gt;</span>
+                    <span class="c">&lt;!--                        &lt;usePhrasedTestSuiteClassName&gt;true&lt;/usePhrasedTestSuiteClassName&gt;--&gt;</span>
+                    <span class="c">&lt;!--                        &lt;usePhrasedTestCaseClassName&gt;true&lt;/usePhrasedTestCaseClassName&gt;--&gt;</span>
+                    <span class="c">&lt;!--                        &lt;usePhrasedTestCaseMethodName&gt;true&lt;/usePhrasedTestCaseMethodName&gt;--&gt;</span>
+                    <span class="c">&lt;!--                    &lt;/statelessTestsetReporter&gt;--&gt;</span>
+                <span class="nt">&lt;/configuration&gt;</span>
+            <span class="nt">&lt;/plugin&gt;</span>
+            <span class="nt">&lt;plugin&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>maven-failsafe-plugin<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>3.0.0-M7<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;/plugin&gt;</span>
+            <span class="nt">&lt;plugin&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;/plugin&gt;</span>
+        <span class="nt">&lt;/plugins&gt;</span>
+    <span class="nt">&lt;/build&gt;</span>
+
+    <span class="nt">&lt;repositories&gt;</span>
+        <span class="nt">&lt;repository&gt;</span>
+            <span class="nt">&lt;id&gt;</span>gitlab-maven<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;url&gt;</span>https://gitlab.guardianportal.us/api/v4/groups/5/-/packages/maven<span class="nt">&lt;/url&gt;</span>
+        <span class="nt">&lt;/repository&gt;</span>
+    <span class="nt">&lt;/repositories&gt;</span>
+    <span class="nt">&lt;dependencyManagement&gt;</span>
+        <span class="nt">&lt;dependencies&gt;</span>
+            <span class="nt">&lt;dependency&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>org.spockframework<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>spock-bom<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>2.1-groovy-3.0<span class="nt">&lt;/version&gt;</span>
+                <span class="c">&lt;!-- use below for Groovy 4 --&gt;</span>
+                <span class="c">&lt;!-- &lt;version&gt;2.2-M1-groovy-4.0&lt;/version&gt; --&gt;</span>
+                <span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span>
+                <span class="nt">&lt;scope&gt;</span>import<span class="nt">&lt;/scope&gt;</span>
+            <span class="nt">&lt;/dependency&gt;</span>
+            <span class="nt">&lt;dependency&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>org.junit<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>junit-bom<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>5.9.3<span class="nt">&lt;/version&gt;</span>
+                <span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span>
+                <span class="nt">&lt;scope&gt;</span>import<span class="nt">&lt;/scope&gt;</span>
+            <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;/dependencies&gt;</span>
+    <span class="nt">&lt;/dependencyManagement&gt;</span>
+    <span class="nt">&lt;dependencies&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.spockframework<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>spock-core<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.apache.groovy<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>groovy<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>4.0.6<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.apache.groovy<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>groovy-sql<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>4.0.13<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span> <span class="c">&lt;!-- enables mocking of classes (in addition to interfaces) --&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>net.bytebuddy<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>byte-buddy<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>1.12.17<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span> <span class="c">&lt;!-- enables mocking of classes without default constructor (together with CGLIB) --&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.objenesis<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>objenesis<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>3.3<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.junit.jupiter<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>junit-jupiter<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>5.9.3<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.junit.jupiter<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>junit-jupiter-api<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>5.9.3<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.junit.jupiter<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>junit-jupiter-engine<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>5.9.3<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.junit.platform<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>junit-platform-launcher<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>1.9.3<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.junit.platform<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>junit-platform-engine<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+
+
+        <span class="c">&lt;!-- add dependencies to enable JUnit 4 style tests --&gt;</span>
+        <span class="c">&lt;!-- add dependencies to enable JUnit 4 style tests --&gt;</span>
+    <span class="nt">&lt;/dependencies&gt;</span>
+<span class="nt">&lt;/build&gt;</span>
+</code></pre></div></div></details><hr /><h1 id="testing"> <a href="#testing" class="anchor-heading" aria-labelledby="testing"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Testing</h1><h2 id="test-controller"> <a href="#test-controller" class="anchor-heading" aria-labelledby="test-controller"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Test Controller</h2><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">grails.testing.web.controllers.ControllerUnitTest</span>
 <span class="kn">import</span> <span class="nn">spock.lang.Specification</span>
 
 <span class="kd">class</span> <span class="nc">StudentControllerSpec</span> <span class="kd">extends</span> <span class="n">Specification</span> <span class="kd">implements</span> <span class="n">ControllerUnitTest</span><span class="o">&lt;</span><span class="n">StudentController</span><span class="o">&gt;</span> <span class="o">{</span>
