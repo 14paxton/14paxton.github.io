@@ -44,7 +44,7 @@ Table of contents
 
 ---
 
-<details>
+<details markdown="block">
 <summary> Basic HTTPS test for Controller</summary>
 
 ```java
@@ -96,7 +96,7 @@ class UserValidationControllerTest {
 
 - > #### Testing FunctionRequestHandler
 
-  <details>
+  <details markdown="block">
   <summary> JUnit Test for Lambda Function Request Handling</summary>
 
     ```java
@@ -155,7 +155,7 @@ class UserValidationControllerTest {
 
 - > #### Testing a controller
 
-    <details>
+    <details markdown="block">
     <summary> JUnit Test For Lambda Controller </summary>
 
     <div>
@@ -270,7 +270,7 @@ class UserValidationControllerTest {
 
 ## Micronaut Controller
 
-<details>
+<details markdown="block">
 <summary> Micronaut Integration Test Controller </summary>
 
 ````groovy
