@@ -126,6 +126,6 @@ render g.select(from: languages, optionKey: "key", optionValue: "value", name: "
 <script>
     let data = $
     {raw(data)}
-    ;
+
 </script>
 ```
