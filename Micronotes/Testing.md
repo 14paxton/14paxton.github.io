@@ -158,8 +158,6 @@ class UserValidationControllerTest {
     <details markdown="block">
     <summary> JUnit Test For Lambda Controller </summary>
 
-    <div>
-
     ```java
     package example.micronaut;
     
@@ -257,9 +255,6 @@ class UserValidationControllerTest {
         }
     }
     ```
-
-    </div>
-
     </details>
 
 ---
