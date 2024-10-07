@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'json'
 gem 'webrick'
-gem 'jekyll', '~> 4.3', '>= 4.3.3'
+# gem 'jekyll', '~> 4.3', '>= 4.3.3'
 gem 'jekyll-default-layout'
 gem 'jekyll-github-metadata'
 gem 'jekyll-watch'
@@ -20,3 +20,4 @@ gem "faraday-retry"
 
 # gem "jekyll"
 gem "liquid"
+gem "jekyll", "~> 4.3"
