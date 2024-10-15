@@ -123,6 +123,13 @@ Table of Contents
 - **What I did**:
     - Using HQL and Gorm I created abstract classes to search multiple columns for data, and bind the return to an object
 
+### [Used Spring Tansactiona Status to create my own Rollback](https://gist.github.com/14paxton/a212d86552b05b95ef91ee444197fd4e)
+
+- **What I did**:
+  - Created a batch delete, for deleting a group associated with users
+- **Challenges**:
+  - Spring rollback was causing issues due to the nature of deleting, needed to manually trigger
+
 ### Using Micronaut to Create Microservices
 
 - [With MySQL](https://github.com/14paxton/micronaut_mysql_hibernate)
