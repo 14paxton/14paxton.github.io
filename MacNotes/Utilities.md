@@ -8,8 +8,8 @@ has_children: false
 share: true
 shortRepo:
 
-- macnotes
-- default
+  - macnotes
+  - default
 
 ---
 
@@ -80,14 +80,16 @@ mkdir -p ~/macOS-installer && cd ~/macOS-installer && curl https://raw.githubuse
 
 #### run
 
-`createinstallmedia` command provided by Apple (opens a new window). Note that the command is made for USB's formatted with the name MyVolume:
+`createinstallmedia` command provided by Apple (opens a new window). Note that the command is made for USB's formatted
+with the name MyVolume:
 
 ```shell
 sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
 ```
 
 > Note for users on Apple Silicon installing macOS older than Big Sur  
-> If the `createinstallmedia` fails with `zsh: killed ` or `Killed: 9` then it's most likely an issue with the installer's code signature.  
+> If the `createinstallmedia` fails with `zsh: killed ` or `Killed: 9` then it's most likely an issue with the
+> installer's code signature.  
 > To fix this, you can run the following command:
 
 ```shell
@@ -143,7 +145,9 @@ diskutil unmountDisk /force /dev/disk#
 diskutil eraseDisk
 ```
 
-`Usage: diskutil eraseDisk format name [APM[Format]|MBR[Format]|GPT[Format]]MountPoint|DiskIdentifier|DeviceNode`
+```shell
+diskutil eraseDisk format name [APM[Format]|MBR[Format]|GPT[Format]]MountPoint|DiskIdentifier|DeviceNode
+```
 
 > Completely erase an existing whole disk.  
 > All volumes on this disk will be destroyed.  
@@ -164,7 +168,8 @@ diskutil eraseDisk JHFS+ CleanDrive /dev/disk1
 > Formats
 
 > > `APFS`: Allocates disk space within a container (partition) on demand.
-> > When a single APFS container has multiple volumes, the container’s free space is shared and is automatically allocated
+> > When a single APFS container has multiple volumes, the container’s free space is shared and is automatically
+> > allocated
 > > to any of the individual volumes as needed.
 > > If desired, you can specify reserve and quota sizes for each volume.
 > > Each volume uses only part of the overall container, so the available space is the
@@ -174,19 +179,26 @@ diskutil eraseDisk JHFS+ CleanDrive /dev/disk1
 
 > > `APFS (Encrypted)`: Uses the APFS format and encrypts the volume.
 
-> > `APFS (Case-sensitive)`: Uses the APFS format and is case-sensitive to file and folder names. For example, folders named “Homework” and “HOMEWORK”
+> > `APFS (Case-sensitive)`: Uses the APFS format and is case-sensitive to file and folder names. For example, folders
+> > named “Homework” and “HOMEWORK”
 > > are two different folders.
 
-> > `APFS (Case-sensitive, Encrypted)`: Uses the APFS format, is case-sensitive to file and folder names, and encrypts the volume.
+> > `APFS (Case-sensitive, Encrypted)`: Uses the APFS format, is case-sensitive to file and folder names, and encrypts
+> > the volume.
 > > For example, folders named “Homework” and “HOMEWORK” are two
 > > different folders.
 
-| File System | Abbreviation | | --------------------------- | ------------ | --- | ----- | ----- | | Mac OS Extended (Journaled) | JHFS+ | | Mac OS
-Extended | HFS+ | | MS-DOS fat32 | FAT32 | | ExFAT | ExFAT |
+| File System                 | Abbreviation |
+|-----------------------------|--------------|
+| Mac OS Extended (Journaled) | JHFS+        |
+| Mac OS Extended             | HFS+         |
+| MS-DOS fat32                | FAT32        |
+| ExFAT                       | ExFAT        |
 
 ## Diskutil SecureErase
 
-> Now we need to select the level of secure erase we want. There are five levels of secure erasing you can use labeled from 0-4.
+> Now we need to select the level of secure erase we want. There are five levels of secure erasing you can use labeled
+> from 0-4.
 
 > `Level 0 `just erases the drive by writing the number zero across every sector of the drive.
 
@@ -194,9 +206,11 @@ Extended | HFS+ | | MS-DOS fat32 | FAT32 | | ExFAT | ExFAT |
 
 > `Level 2 `erases the drive 7 times with 1’s and 0’s except the last pass where it uses random data.
 
-> `Level 3` is a special algorithm that erases the drives with random data as well as data compiled from a special collection of 1’s and 0’s.
+> `Level 3` is a special algorithm that erases the drives with random data as well as data compiled from a special
+> collection of 1’s and 0’s.
 
-> `Level 4` is a little different and erases it three times, with random data on the first two passes and one set of zeroes on the last pass.
+> `Level 4` is a little different and erases it three times, with random data on the first two passes and one set of
+> zeroes on the last pass.
 
 ```shell
 diskutil secureErase 4 /dev/disk2
@@ -214,3 +228,40 @@ diskutil secureErase 4 /dev/disk2
 ```shell
 pwpolicy -setglobalpolicy minChars=0
 ```
+
+# [Supported File Systems](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemDetails/FileSystemDetails.html#//apple_ref/doc/uid/TP40010672-CH8-SW26)
+
+- > APFS
+  -
+  `The default file system for Apple platforms in macOS High Sierra and later, iOS 10.3 and later, watchOS 4.0 and later, and tvOS 10.2 and later.`
+- > HFS Plus
+  - `Mac OS Extended file system. The standard file system for prior versions of macOS, iOS, watchOS, and tvOS.`
+- > HFS
+  -
+  `Mac OS Standard file system. The standard file system for older versions of macOS. File systems of this type are treated as read only in macOS 10.6 and later.`
+- > WebDAV
+  - `Used for directly accessing files on the web. For example, iDisk uses WebDAV for accessing files.`
+- > UDF
+  -
+  `Universal Disk Format. The standard file system for all forms of DVD media (video, ROM, RAM and RW) and some writable CD formats.`
+- > FAT
+  - `The MS-DOS file system, with 16- and 32-bit variants. Fat 12-bit is not supported.`
+- > ExFAT
+  - `An interchange format used by digital cameras and other peripherals.`
+- > SMB/CIFS
+  - `Used for sharing files with Microsoft Windows SMB file servers and clients.`
+- > AFP
+  - `Apple Filing Protocol. The primary network file system for all versions of Mac OS.`
+- > NFS
+  -
+  `Network File System. A commonly-used UNIX file sharing standard. macOS supports NFSv2 and NFSv3 over TCP and UDP. macOS 10.7 and later also supports NFSv4 over TCP.`
+- > FTP
+  - `A file system wrapper for the standard Internet File Transfer Protocol.`
+- > Xsan
+  - `Apple’s 64-bit cluster file system used in storage area networks.`
+- > NTFS
+  - `A standard file system for computers running the Windows operating system.`
+- > CDDAFS
+  - `A file system used to mount audio CDs and present audio tracks on disc to users as AIFF-C encoded files.`
+- > ISO 9660
+  - `The file system format used by CD-ROMs.`

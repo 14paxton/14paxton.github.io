@@ -1,15 +1,15 @@
 ---
-title:        UsersAndGroups
-permalink:    MacNotes/UsersAndGroups
-category:     MacNotes
-parent:       MacNotes
-layout:       default
+title: UsersAndGroups
+permalink: MacNotes/UsersAndGroups
+category: MacNotes
+parent: MacNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
 
-- macnotes
-- default
+  - macnotes
+  - default
 
 ---
 
@@ -191,13 +191,15 @@ sudo dscl . -passwd /Users/username password
 
 > In the Directory Utility window, click the lock icon, then enter an administrator name and password.
 
-- To enable the root user, choose Edit > Enable Root User from the menu bar. Then enter the password that you want to use. You can then log in as the
+- To enable the root user, choose Edit > Enable Root User from the menu bar. Then enter the password that you want to
+  use. You can then log in as the
   root user.
 - To disable the root user, choose Edit > Disable Root User.
 
 ##### To change the root password
 
-> In the Directory Utility window, click the lock icon, then enter an administrator name and password. From the menu bar, choose Edit > Change Root
+> In the Directory Utility window, click the lock icon, then enter an administrator name and password. From the menu
+> bar, choose Edit > Change Root
 > Password.
 
 ##### Log in as the root user
@@ -229,3 +231,79 @@ username ALL = (ALL) ALL
 ```shell
 username        ALL = (ALL) NOPASSWD:ALL
 ```
+
+# Groups
+
+> get group permissions
+
+```shell
+dscacheutil -q group -a name wheel
+```
+
+- WHEEL:
+  `As previously mentioned, the wheel group has more permissions than any other group. I don't know a quick way to have the system show whether being a member of the wheel group provides ALL the permissions that the root user has, but I can tell you that on my mac, the only member of WHEEL is root.`
+
+- SYSTEM:
+  `My installation of macOS Sierra has no group and no user named system.`
+- ADMIN: `users in this group are:`
+- STAFF: `members of this group can do most but not all the things unix can do . members of the staff group are:`
+
+## Root user group
+
+> The root user is a member of the following groups (this information is listed as a result of typing this into the
+> command line:  groups root):
+
+- wheel
+- daemon
+- kmem
+- sys
+- tty
+- operator
+- procview
+- procmod
+- everyone
+- staff
+- certusers
+- localaccounts
+- admin
+- com.apple.sharepoint.group.2
+- _appstore
+- _lpadmin
+- _lpoperator
+- _developer
+- com.apple.access_ftp
+- com.apple.access_screensharing
+- com.apple.access_ssh
+- com.apple.sharepoint.group.1
+
+## Admin
+
+> administrator on a mac, the account setup when the is first setup, is in these groups this information is listed as a
+> result of typing this into the command line:  groups <my username>): This basically is the mac owner's account
+
+- staff
+- com.apple.sharepoint.group.2
+- everyone
+- localaccounts
+- _appserverusr
+- admin
+- _appserveradm
+- _lpadmin
+- _appstore
+- _lpoperator
+- _developer
+- com.apple.access_ftp
+- com.apple.access_screensharing
+- com.apple.access_ssh
+- com.apple.sharepoint.group.1
+
+> ### default admin account is not in these groups that root is in:
+
+- wheel
+- daemon
+- kmem
+- sys
+- tty
+- operator
+- procview
+- procmod
