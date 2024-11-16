@@ -9,8 +9,8 @@ has_children: false
 share:     true
 shortRepo:
 
-- clever-snippets
-- default
+   - clever-snippets
+   - default
 
 ---
 
@@ -295,7 +295,7 @@ export default function Component(props) {
 
 > Today a ref can be a function or an object, tomorrow it could be another thing, who knows. This utility handles compatibility for you.
 
-```jsx
+```tsx
 import type * as React from "react";
 
 export function mergeRefs<T = any>(refs: Array<React.MutableRefObject<T> | React.LegacyRef<T> | undefined | null>): React.RefCallback<T> {
@@ -303,13 +303,10 @@ export function mergeRefs<T = any>(refs: Array<React.MutableRefObject<T> | React
         refs.forEach((ref) => {
             if (typeof ref === "function") {
                 ref(value);
-            }
-            else if (ref != null) {
-                (ref
-                as
-                React.MutableRefObject < T | null >
-            ).
-                current = value;
+            } else if (ref != null) {
+               (ref as
+                               React.MutableRefObject<T | null>
+               ).current = value;
             }
         });
     };
@@ -456,7 +453,8 @@ useEffect(() => {
 
 > <em>Goal:</em> defining a custom useForm hook for managing the state of our forms.
 > This can have some initial state, mainly used for precompleting update forms, but can also provide empty form
-> fields.> Problem: when we want to operate on a precompleted form, altough we pass all the data for our fields, the form is not being precompleted and its fields are empty.
+> fields.> Problem: when we want to operate on a precompleted form, altough we pass all the data for our fields, the form is not being precompleted
+> and its fields are empty.
 
 ```jsx
 export default function useForm(initial = {}) {
