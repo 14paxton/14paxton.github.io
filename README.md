@@ -89,11 +89,13 @@ only re-builds posts and pages that have changed
 
 ## Errors When Building
 
-> surround problem area with following
+- surround problem area with following
 
-{%raw%}
-//content//
-{% endraw %}
+  ```
+  {%raw%}
+  //content//
+  {% endraw %}
+  ```
 
 > comes from using `%`
 
