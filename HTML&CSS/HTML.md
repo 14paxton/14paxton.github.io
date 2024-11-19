@@ -1,14 +1,14 @@
 ---
-title:        HTML
-permalink:    HTML&CSS/HTML
-category:     HTML&CSS
-parent:       HTML&CSS
-layout:       default
+title: HTML
+permalink: HTML&CSS/HTML
+category: HTML&CSS
+parent: HTML&CSS
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
 
-- default
+  - default
 
 ---
 
@@ -29,97 +29,97 @@ Table of contents
 
 # TidBits
 
-## embed, inject, or load an HTML file into HTML document using object tag
+## Embed an HTML file into document
 
-```html
+- ### Use Object Element
+   ```html
+    <object data="cssTricks.html" height="10000" type="text/html" width="1000"></object>
+   ```
 
-<object data="css.html" height="10000" type="text/html" width="1000"></object>
-```
+- ### Use Embed Element
+    ```html
+    
+    <embed src="./HTMLSnippets/Nav.html" style="width:400px; height: 400px;"/>
+    ```
 
-```html
+- ### Use IFrame
+    ```html
+    
+    <iframe
+            src="./HTMLSnippets/Nav.html"
+            style="width:400px; height: 400px;"
+    ></iframe>
+    ```
 
-<embed src="./HTMLSnippets/Nav.html" style="width:400px; height: 400px;"/>
-```
+- ### Use Javascript
 
-```html
+    ```javascript
+    const response = await fetch("/path/to/template.html");
+    const body = await response.text();
+    
+    document.querySelector("#some.selector").innerHTML = body;
+    ```
 
-<iframe
-        src="./HTMLSnippets/Nav.html"
-        style="width:400px; height: 400px;"
-></iframe>
-```
+  - [JS Code Reference](https://www.paxtonb.com/JavaScript/Clever-Algos#load-html-and-css-file-into-html-doc)
 
-### load html into page
+  - [Read HTML Doc with script and CSS into HTML page](https://gist.github.com/14paxton/a5a6b17131a2791b757973f866e3eb98)
 
-```javascript
-const response = await fetch("/path/to/template.html");
-const body = await response.text();
+- ### HTML Include
 
-document.querySelector("#some.selector").innerHTML = body;
-```
+  - > HTML
 
-- [JS Code Reference](https://www.paxtonb.com/JavaScript/Clever-Algos#load-html-and-css-file-into-html-doc)
+      ```html
+          <div w3-include-html="content.html"></div>
+      ```
+    - > HTML includes are done by JavaScript.
 
-- [Read HTML Doc with scripst and css into HTML page](https://gist.github.com/14paxton/a5a6b17131a2791b757973f866e3eb98)
+      - example using XMLHttpRequest
 
-### HTML Include
-
-> HTML
-
-```html
-
-<div w3-include-html="content.html"></div>
-```
-
-> using XMLHttpRequest
-
-```html
-
-<script>
-    function includeHTML() {
-        let z, i, elmnt, file, xhttp;
-        /* Loop through a collection of all HTML elements: */
-        z = document.getElementsByTagName("*");
-        for (i = 0; i < z.length; i++) {
-            elmnt = z[i];
-            /*search for elements with a certain atrribute:*/
-            file = elmnt.getAttribute("w3-include-html");
-            if (file) {
-                /* Make an HTTP request using the attribute value as the file name: */
-                xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState === 4) {
-                        if (this.status === 200) {
-                            elmnt.innerHTML = this.responseText;
-                        }
-                        if (this.status === 404) {
-                            elmnt.innerHTML = "Page not found.";
-                        }
-                        /* Remove the attribute, and call this function once more: */
-                        elmnt.removeAttribute("w3-include-html");
-                        includeHTML();
-                    }
-                };
-                xhttp.open("GET", file, true);
-                xhttp.send();
-                /* Exit the function: */
-                return;
-            }
-        }
-    }
-
-    function ready(fn) {
-        if (document.readyState !== "loading") {
-            fn();
-        }
-        else {
-            document.addEventListener("DOMContentLoaded", fn);
-        }
-    }
-
-    ready(includeHTML);
-</script>
-```
+        ```html
+          <script>
+              function includeHTML() {
+                  let z, i, elmnt, file, xhttp;
+                  /* Loop through a collection of all HTML elements: */
+                  z = document.getElementsByTagName("*");
+                  for (i = 0; i < z.length; i++) {
+                      elmnt = z[i];
+                      /*search for elements with a certain atrribute:*/
+                      file = elmnt.getAttribute("w3-include-html");
+                      if (file) {
+                          /* Make an HTTP request using the attribute value as the file name: */
+                          xhttp = new XMLHttpRequest();
+                          xhttp.onreadystatechange = function () {
+                              if (this.readyState === 4) {
+                                  if (this.status === 200) {
+                                      elmnt.innerHTML = this.responseText;
+                                  }
+                                  if (this.status === 404) {
+                                      elmnt.innerHTML = "Page not found.";
+                                  }
+                                  /* Remove the attribute, and call this function once more: */
+                                  elmnt.removeAttribute("w3-include-html");
+                                  includeHTML();
+                              }
+                          };
+                          xhttp.open("GET", file, true);
+                          xhttp.send();
+                          /* Exit the function: */
+                          return;
+                      }
+                  }
+              }
+        
+              function ready(fn) {
+                  if (document.readyState !== "loading") {
+                      fn();
+                  } else {
+                      document.addEventListener("DOMContentLoaded", fn);
+                  }
+              }
+        
+              ready(includeHTML);
+          </script>
+        ```
 
 # Attributes
 
@@ -149,7 +149,8 @@ document.querySelector("#some.selector").innerHTML = body;
 
 ## Capture attribute to open your device camera
 
-> Just as the input tag has attributes for email, text and password, there is also an attribute to open the camera of mobile devices to capture
+> Just as the input tag has attributes for email, text and password, there is also an attribute to open the camera of
+> mobile devices to capture
 > images.
 
 > This is done with the capture attribute which can take two values:
@@ -174,7 +175,8 @@ document.querySelector("#some.selector").innerHTML = body;
 
 ## Activate spellcheck
 
-> You can use the HTML spellcheck attribute and set it to true to activate it. Specify the language to be used the lang attribute.
+> You can use the HTML spellcheck attribute and set it to true to activate it. Specify the language to be used the lang
+> attribute.
 
 ```html
 <input type="text" spellcheck="true" lang="en">
@@ -190,7 +192,8 @@ document.querySelector("#some.selector").innerHTML = body;
 
 ## Creating a poster (thumbnail) for your videos
 
-> With the poster attribute, you can create an image which is displayed while the video is downloaded, or until the user hits the play button.
+> With the poster attribute, you can create an image which is displayed while the video is downloaded, or until the user
+> hits the play button.
 
 > If this is not included, the first frame of the video will be used instead
 
@@ -201,7 +204,8 @@ document.querySelector("#some.selector").innerHTML = body;
 
 ## Automatically download on link Click
 
-> If you want a particular resource to be downloaded when a link to the target resource is clicked, add the download attribute
+> If you want a particular resource to be downloaded when a link to the target resource is clicked, add the download
+> attribute
 
 ```html
 <a download href="image.png">
@@ -265,8 +269,8 @@ document.querySelector("#some.selector").innerHTML = body;
 
 ```javascript
 div.onload = Promise.resolve(addPadding(div, keyAsHeader
-                                             ? 60
-                                             : 71, 0));
+        ? 60
+        : 71, 0));
 ```
 
 ### [mouseover](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event)
@@ -281,8 +285,10 @@ div.onmouseout = (e) => (e.target.style.transform = "scale(1)");
 > pure js
 
 ```javascript
-addEventListener("mouseover", (event) => {});
-onmouseover = (event) => {};
+addEventListener("mouseover", (event) => {
+});
+onmouseover = (event) => {
+};
 ```
 
 # UI Elements

@@ -1,15 +1,15 @@
 ---
-title:        Images
-permalink:    HTML&CSS/Images
-category:     HTML&CSS
-parent:       HTML&CSS
-layout:       default
+title: Images
+permalink: HTML&CSS/Images
+category: HTML&CSS
+parent: HTML&CSS
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
 
-- html&css
-- default
+  - html&css
+  - default
 
 ---
 
@@ -171,7 +171,8 @@ This is the oldest method we have. And of course, data URIs are possible here to
 </object>
 ```
 
-If the browser doesn’t recognise the object element’s MIME type, it won’t download the SVG file, but the “fallback” image inside is always downloaded.
+If the browser doesn’t recognise the object element’s MIME type, it won’t download the SVG file, but the “fallback”
+image inside is always downloaded.
 Again, we’re not doing things quite right.
 There
 is a better solution and those crafty devils at ClearLeft are sporting it in their logo markup.
@@ -200,7 +201,8 @@ use SVG without any overhead.
 
 # [ Data URI](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)
 
-> The data URI format is pretty simple and is spelled out in RFC 2397 (which actually is short enough that you can read it all). The basic format is
+> The data URI format is pretty simple and is spelled out in RFC 2397 (which actually is short enough that you can read
+> it all). The basic format is
 > as follows:
 
 `data:[<mime type>][;charset=<charset>][;base64],<encoded data>`
@@ -215,7 +217,8 @@ use SVG without any overhead.
 > next section indicates the encoding used.
 > Contrary to popular belief, you do not have to use `base 64 encoding`.
 > If the content isn’t base 64 encoded, then the data is encoded using standard
-> URL-encoding (URL-safe `ASCII` characters represented as themselves, all others represented as a hex encoding in the format `%xx`).
+> URL-encoding (URL-safe `ASCII` characters represented as themselves, all others represented as a hex encoding in the
+> format `%xx`).
 > The encoded data may contain white space, which is not
 > considered significant.
 
@@ -301,70 +304,57 @@ html {
 }
 ```
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
-    <h1>What I have used to get data uri to work with using as background css</h1>       
-<h2> first use at TPlus</h2>
+## What I have used to get data uri to work with using as background css
 
-<code>
-style = "
-background: url(); 
-<br>
-background-size: cover; 
-<br>
-background-repeat: no-repeat;
-<br>
-background-position: center; 
-<br>
-height: 100%; 
-<br>
-width: 90%;"
-</code>
-<h2>Option 2</h2>
-<code> 
-style="
-<br>
-background: url() no-repeat;
-<br>
-display: 100% auto; 
-<br>
-background-size: 100%; 
-<br>
-background-position: center; 
-<br>
-width: 100%; 
-<br>
-height: 100%; 
-<br>
-margin:0 auto;"
-</code>
-<h2>Option 3</h2>
-<code>
-style="
-<br>
-background: url() no-repeat; 
-<br>
-background-position: top; 
-<br>
-background-size: contain; 
-<br>
-width: auto; 
-<br>
-height: auto; 
-<br>
-margin: auto;"
-</code>
-<h2>Simple Option</h2>
-<code>
-style="
-<br>
-background: url() no-repeat; 
-<br>
-background-position: center; 
-<br>
-background-size: 100% auto; "
-</code>
+- ### first use at TPlus
 
-</div> 
+    ```css
+    element {
+        background: url();
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100%;
+        width: 90%;
+    }
+    ```
+
+- ### Option 2
+
+    ```css
+    element {
+        background: url() no-repeat;
+        display: 100% auto;
+        background-size: 100%;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        margin:0 auto;
+    }
+    ```
+
+- ### Option 3
+
+    ```css
+    element {
+        background: url() no-repeat;
+        background-position: top;
+        background-size: contain;
+        width: auto;
+        height: auto;
+        margin: auto;
+    }
+    ```
+
+- ### Simple Option
+
+    ```css
+    element {
+        background: url() no-repeat;
+        background-position: center;
+        background-size: 100% auto;
+    }
+    ```
 
 ### Preload Image with CSS and HTML
 

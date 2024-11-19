@@ -8,7 +8,7 @@ has_children: false
 share: true
 shortRepo:
 
-- default
+  - default
 
 ---
 
@@ -102,7 +102,8 @@ div {
 
 # [Pseudo-classes / JS Events / Styles](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
 
-> A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s). For example, the pseudo-class :hover
+> A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s). For
+> example, the pseudo-class :hover
 > can be used to select a button when a user's
 > pointer hovers over the button and this selected button can then be styled.
 
@@ -283,4 +284,4 @@ html {
 
 # Tricks
 
-<object data="css.html" width="1000" height="10000" type="text/html"></object>
+<object data="cssTricks.html" width="1000" height="10000" type="text/html"></object>
