@@ -1,14 +1,14 @@
 ---
-title: Hibernate
-layout: default
-parent: Java
+title:     Hibernate
+layout:    default
+parent:    Java
 permalink: JavaNotes/Hibernate
-category: JavaNotes
-share: true
+category:  JavaNotes
+share:     true
 shortRepo:
 
-- javanotes
-- default
+  - javanotes
+  - default
 
 ---
 
@@ -31,7 +31,7 @@ Table of contents
 
 # Accessing
 
-- > If you use f`ield-based ` access, your JPA implementation uses `reflection` to read or write your entity attributes directly.
+- > If you use `field-based ` access, your JPA implementation uses `reflection` to read or write your entity attributes directly.
   > It also expects
   > that you place your mapping annotations on your entity attributes.
 
@@ -54,17 +54,14 @@ Table of contents
 
 ### [Mapping Annotations](https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#annotations)
 
-> types that I have used for mapping json or hashmap to mysql db
+- types that I have used for mapping JSON or hashmap to mysql db
+  - > `VARCHAR(16384) ` : must have a max length to survive `MariaDB DDL parser` + `hibernate validator`
 
-- > `VARCHAR(16384) `
-  >
-  > > must have a max length to survive `MariaDB DDL parser` + `hibernate validator`
-
-- > `LONGTEXT`
-- > `json`
-- > `longvarchar`
-- > `tinyblob`
-- > `longblob`
+  - > `LONGTEXT`
+  - > `json`
+  - > `longvarchar`
+  - > `tinyblob`
+  - > `longblob`
 
 ### map to blob
 

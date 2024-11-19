@@ -1,4 +1,3 @@
 ---
-BUNDLE_CACHE_ALL: true
-BUNDLE_BIN:       bin
-BUNDLE_SYSTEM:    true
+BUNDLE_BIN:       "bin"
+BUNDLE_CACHE_ALL: "true"
