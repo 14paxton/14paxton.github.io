@@ -30,26 +30,6 @@ Table of contents
 
 <br/>
 
-# Gists
-
-## [AddToCustomFeed.js](https://gist.github.com/14paxton/63944ec7e8bcd0e7ee9b97e3dc6fd48e)
-
-## [FormFillScript.js](https://gist.github.com/14paxton/fedc95a9b660e1625373bea6f92e4648)
-
-## [GetCSSFromElement.js](https://gist.github.com/14paxton/70018ca1b4b990db4fbf4edfd1907af8)
-
-## [JsEnumUnion.js](https://gist.github.com/14paxton/685637fd8c513c7539a10f66b2386cfe)
-
-## [NewDocumentAndWindow.js](https://gist.github.com/14paxton/fb7f33fd6f5fa7a15077b6ebf18fca44)
-
-## [ReadHTMLToNewDocument.js](https://gist.github.com/14paxton/a5a6b17131a2791b757973f866e3eb98)
-
-## [SeeFormChange.js](https://gist.github.com/14paxton/f7f177713ec7e8effcdeec086c22e43a)
-
-## [SendFormWithFileInput.js](https://gist.github.com/14paxton/eeeb29357613698bd877eb35dcf0ad89)
-
-## [groupArrayOfObjectsByKey.js](https://gist.github.com/14paxton/a87f5d47aaf678e89a1dfeffa51b46d9)
-
 # Custom Ready / Load / onLoad
 
 ```javascript
