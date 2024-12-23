@@ -8,8 +8,8 @@ has_children: false
 share:        true
 shortRepo:
 
-- javascript
-- default
+  - javascript
+  - default
 
 ---
 
@@ -32,22 +32,31 @@ Table of contents
 
 # Create Event Listeners
 
-```javascript
-element.addEventListener('click', function () {
+- ```javascript
+    element.addEventListener('click', function () {
+    
+    });
+  ```
 
-});
-element.onclick = function () {
+- ```javascript
+     element.onclick = function () {
+  
+     };
+   ```
 
-};
-element.addEventListener('load', function () {
+- ```javascript
+   element.addEventListener('load', function () {
 
-});
-element.onload = function () {
+    });
+  ```
 
-};
-```
+- ```javascript
+   element.onload = function () {
 
-- > In HTML
+    };
+  ```
+
+- ## In HTML
 
   ```html
     <div id="col-left" ondragstart="function(e){this.style.opacity=0.6; e.dataTransfer.dropEffect='move';}">
