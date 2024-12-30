@@ -131,7 +131,7 @@ class UserValidationControllerTest {
     
         @Test
         public void testHandler() {
-            Map<String, String> immutableMap = Map.of("email", "z3r0c00lcrashoverride@gmail.com");
+            Map<String, String> immutableMap = Map.of("email", "simon@gmail.com");
             APIGatewayProxyRequestEvent request = new APIGatewayProxyRequestEvent();
             request.setHttpMethod("GET");
             request.setPath("/");
