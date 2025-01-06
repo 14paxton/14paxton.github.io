@@ -63,9 +63,14 @@ Table of contents
         }
    ```
 
-### Context
+- ### Mock Session
+  ```java
+    MockHttpSession mockSession = new MockHttpSession();
+  ```
 
-- #### ApplicationContext
+## Context
+
+- ### ApplicationContext
     - > #### Use Constructor and ApplicationContext to set MockMVC
          ```java
             @Autowired
@@ -75,8 +80,8 @@ Table of contents
             }
          ```
 
-- #### WebApplicationContext
-    - > ##### Use Constructor and WebApplicationContext to set MockMVC
+- ### WebApplicationContext
+    - > #### Use Constructor and WebApplicationContext to set MockMVC
          ```java
           @Autowired
           public PersonnelUnitBulkAvailabilityManagerControllerTest(ApplicationContext applicationContext) {
@@ -115,13 +120,17 @@ Table of contents
 @ActiveProfiles("test")
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = Application.class)
-@WebMvcTest(controllers = MyController.class)
 
+@WebMvcTest(controllers = MyController.class)
+@AutoConfigureMockMvc
+
+@WebAppConfiguration
 @ContextConfiguration(
         classes = {PersonnelConfig.class},
         loader = AnnotationConfigContextLoader.class)
 @ContextConfiguration(classes = {PersonnelConfig.class}, loader = AnnotationConfigContextLoader.class)
 @ContextConfiguration(classes = {InMemoryDBConfig.class}, loader = AnnotationConfigWebContextLoader.class)
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 
 @AutoConfigureMockMvc
 @DataJpaTest
@@ -132,7 +141,6 @@ Table of contents
 @ExtendWith(SpringExtension.class)
 
 @TestPropertySource("classpath:/persistence-personnel.properties")
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 
 @Transactional
 @DirtiesContext
@@ -141,6 +149,8 @@ Table of contents
 @Import({FindBulkPersonnelAvailabilityManagerHandler.class})
 @ComponentScan(basePackages = "com.my.package")
 ```
+
+## Session
 
 ## Set Up In Memory DB
 
