@@ -319,15 +319,19 @@ Table of contents
 ## Serialization
 
 - > ### Annotations for class
-    ```java
+
+     ```java
         @JsonSerialize(using = DaySerializer.class)
-    
-        //or
-    
+    ```   
+
+    ```java
         @JsonComponent
+        public class Entity(){
+        }
     ```
 
 - > ### Test Inline In a test
+
      ```java
         @Test
         public void testDaySerialization() throws Exception {
