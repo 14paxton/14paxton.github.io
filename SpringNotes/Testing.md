@@ -319,16 +319,16 @@ Table of contents
 ## Serialization
 
 - > ### Annotations for class
-  ```java
-    @JsonSerialize(using = DaySerializer.class)
-
-    //or
-
-    @JsonComponent
-  ```
+    ```java
+        @JsonSerialize(using = DaySerializer.class)
+    
+        //or
+    
+        @JsonComponent
+    ```
 
 - > ### Test Inline In a test
-   ```java
+     ```java
         @Test
         public void testDaySerialization() throws Exception {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -341,7 +341,7 @@ Table of contents
     
             assertEquals("\"2025-01-04\"", json); // Expect serialized output as a string
         }
-  ```
+     ```
 
 - > ### MixIn
 
