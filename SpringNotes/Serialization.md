@@ -70,6 +70,7 @@ Table of contents
   ```
 
 - > ## Use Case
+
   ```java
      ObjectMapper mapper = new ObjectMapper();
       CollectionType propertiesListType = mapper.getTypeFactory().constructCollectionType(List.class, Property.class);
@@ -108,6 +109,7 @@ public class CollectionTypeJsonSerializer extends SimpleSerializers {
 ```
 
 - > ## Register Serializer
+
      ```java
         @Configuration
         public class JacksonConfig {
@@ -126,7 +128,7 @@ public class CollectionTypeJsonSerializer extends SimpleSerializers {
           }
         }
      ```
-  
+
 # Domain Serializer
 
 ```java
