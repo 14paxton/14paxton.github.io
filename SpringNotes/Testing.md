@@ -168,6 +168,7 @@ Table of contents
 ### .property Files
 
 - > /test/resources
+
    ```properties
      jdbc.driverClassName=org.h2.Driver
      jdbc.url=jdbc:h2:mem:testDB;DB_CLOSE_DELAY=-1;NON_KEYWORDS=KEY,VALUE
@@ -177,6 +178,7 @@ Table of contents
     ```
 
 - > /main/resources
+
     ```properties
       dbc.driverClassName=com.mysql.jdbc.Driver
       jdbc.url=jdbc:mysql://localhost:3306/testDB
@@ -188,6 +190,7 @@ Table of contents
    ```
 - > ### Use Annotation Properties For @SpringBootTest
     - > #### Annotation
+
          ```java
             @SpringBootTest(properties = {
               "spring.datasource.url=jdbc:h2:mem:testdb",
@@ -288,6 +291,7 @@ Table of contents
 
 - ### Spring Security
     - > #### Test Security Config file
+
         ```java
              package mil.usmc.mls2.tcpt.config;
              
