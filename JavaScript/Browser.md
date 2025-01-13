@@ -33,10 +33,21 @@ Table of contents
 
 # Bookmark
 
-## Add JS as a bookmark
+- ## Add JS as a bookmark
+    - > add bookmark
+        - > edit and add code for url
 
-- > add bookmark
-- > edit and add code for url
-     ```javascript 
-       javascript:alert("fuckyeah");
-     ``` 
+           ```javascript 
+             javascript:alert("fuckyeah");
+           ``` 
+
+# URL
+
+- ## Get Parameters from current URL / paramName
+
+  ```javascript
+    const url = new URL(window.location.href); 
+    const paramValue = url.searchParams.get("paramName"); 
+  
+   console.log(paramValue);
+  ```

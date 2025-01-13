@@ -310,7 +310,7 @@ window.location.protocol
 window.location.assign()
 ```
 
-## Navigator
+## Navigator / appCodeName / appName / platform / userAgent
 
 > The window web page Location and provides methods object Loaded in represents the browser for the navigating URL of
 > to other URLS.

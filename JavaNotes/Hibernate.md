@@ -55,13 +55,13 @@ Table of contents
 ### [Mapping Annotations](https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#annotations)
 
 - types that I have used for mapping JSON or hashmap to mysql db
-  - > `VARCHAR(16384) ` : must have a max length to survive `MariaDB DDL parser` + `hibernate validator`
+    - > `VARCHAR(16384) ` : must have a max length to survive `MariaDB DDL parser` + `hibernate validator`
 
-  - > `LONGTEXT`
-  - > `json`
-  - > `longvarchar`
-  - > `tinyblob`
-  - > `longblob`
+    - > `LONGTEXT`
+    - > `json`
+    - > `longvarchar`
+    - > `tinyblob`
+    - > `longblob`
 
 ### map to blob
 
@@ -223,6 +223,28 @@ public class Location implements Serializable {
     }
 }
 ```
+
+# EntityManager
+
+## Create Criteria
+
+- > ### Select into a Map
+
+  ```java
+  String hql = "select new Map(p.id as id, p.firstName as firstName)FROM Entity p";
+  var q =  entityManager.createQuery(hql, Map.class).getResultList()
+  ```
+
+> ### Using BlazeJPAQuery
+
+  ```java
+    public ArrayList searchEntity() {
+    BlazeJPAQuery<Object> q = new BlazeJPAQuery<>(entityManager, criteriaBuilderFactory);
+    q.select(QEntity.entity.id)
+     .from(QEntity.eEntity)
+     .fetch();
+}
+  ```
 
 # Type Comparison
 
