@@ -8,8 +8,8 @@ has_children: false
 share:        true
 shortRepo:
 
-- javascript
-- default
+  - javascript
+  - default
 
 ---
 
@@ -30,6 +30,43 @@ Table of contents
 ***                
 
 <br/>
+
+# [Navigator](https://developer.mozilla.org/en-US/docs/Web/API/Navigator)
+
+> The Navigator interface represents the state and the identity of the user agent. It allows scripts to query it and to register themselves to carry on some activities.
+
+- ## [userAgent](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/userAgent)
+    - > The Navigator.userAgent read-only property returns the user agent string for the current browser.
+
+        - ### Detect Device Type / Mobile / Desktop
+
+          ```javascript
+          const detectDeviceType = () => 
+              /Android|webOS | iPhone | iPad | iPod | BlackBerry | IEMobile Opera Mini/i.test(
+                  navigator.userAgent)
+              ? "Mobile" : "Desktop";
+        
+          console.log(detectDeviceType());
+          ```
+            - #### Use RegEx
+
+                 ```javascript
+                  function detectmob() { 
+                    if( navigator.userAgent.match(/Android/i)
+                    || navigator.userAgent.match(/webOS/i)
+                    || navigator.userAgent.match(/iPhone/i)
+                    || navigator.userAgent.match(/iPad/i)
+                    || navigator.userAgent.match(/iPod/i)
+                    || navigator.userAgent.match(/BlackBerry/i)
+                    || navigator.userAgent.match(/Windows Phone/i)
+                    ){
+                    return true;
+                    }
+                    else {
+                    return false;
+                    }
+                    }
+                 ```
 
 # Speech
 
