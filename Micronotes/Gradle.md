@@ -39,8 +39,9 @@ Table of contents
   </summary>
 
   {%raw%}
-  ```groovy
-  //buildscript {
+
+    ```groovy
+          //buildscript {
   //    dependencies {
   //        classpath("com.github.docker-java:docker-java-transport-httpclient5:3.4.0") {
   //            because("M1 macs need a later version of JNA")
@@ -179,7 +180,8 @@ Table of contents
               "-Dio.netty.allocator.numDirectArenas=0",
               "-Dio.netty.noPreferDirect=true")
   }
-  ```
+    ```
+
   {% endraw %}
 
   </details>

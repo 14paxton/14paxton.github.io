@@ -70,11 +70,11 @@ Table of contents
     - > ### Reflective Access For Using Sendgrid In A GraalVM AWS Lambda
 
       <details markdown="block">
-        <summary>
-        Example From SendGrid
-        </summary>
+      <summary>
+      Example From SendGrid
+      </summary>
 
-      {%raw%}
+      {% raw %}
 
           ```java
             package example.micronaut;
@@ -120,7 +120,7 @@ Table of contents
             class GraalConfig {
             }
           ```
-      {%raw%}
+      {% endraw %}
 
       </details>
 
