@@ -1,16 +1,24 @@
 ---
-title:        Micronotes
-layout:       default
-permalink:    Micronotes/
-category:     Micronotes
+title: Micronotes
+layout: default
+permalink: Micronotes/
+category: Micronotes
 has_children: true
-share:        true
+share: true
 shortRepo:
 
-- micronotes
-- default
+  - micronotes
+  - default
 
 ---
+
+# relevant docs
+
+[service discovery ](https://micronaut-projects.github.io/micronaut-discovery-client/latest/guide/)
+
+[built in endpoints ](https://docs.micronaut.io/latest/guide/#providedEndpoints)
+
+[grails use micronaut http ](https://guides.grails.org/grails-micronaut-http/guide/index.html)
 
 # Projects
 
