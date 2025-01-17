@@ -75,8 +75,7 @@ Table of contents
       </summary>
 
       {% raw %}
-
-          ```java
+        ```java
             package example.micronaut;
             
             import com.sendgrid.SendGrid;
@@ -119,7 +118,7 @@ Table of contents
             @ReflectionConfig(type = Email.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
             class GraalConfig {
             }
-          ```
+        ```
       {% endraw %}
 
       </details>
