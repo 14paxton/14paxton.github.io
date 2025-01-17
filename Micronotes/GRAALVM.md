@@ -1,15 +1,15 @@
 ---
-title:        GRAALVM
-permalink:    Micronotes/GRAALVM
-category:     Micronotes
-parent:       Micronotes
-layout:       default
+title: GRAALVM
+permalink: Micronotes/GRAALVM
+category: Micronotes
+parent: Micronotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
 
-- micronotes
-- default
+  - micronotes
+  - default
 
 ---
 
@@ -30,66 +30,129 @@ Table of contents
 
 <br/>
 
-# TidBits
+# [Micronaut GraalVM](https://docs.micronaut.io/latest/guide/index.html#graalServices)
 
-- [Microservices as GraalVM Micronaut Docs](https://docs.micronaut.io/latest/guide/index.html#graalServices)
-- [Handling Reflection Micronaut Guide](https://guides.micronaut.io/latest/micronaut-graalvm-reflection-gradle-java.html#handling-reflection)
+## CLI
 
-## Create Graal Native Image
+### Create Graal Native Image
 
    ```shell
     ./gradlew nativeCompile
   ```
 
-## using the following to generate reflection meta-data
+### using the following to generate reflection meta-data
 
    ```shell
      java -agentlib:native-image-agent=config-output-dir=./META-INF/native-image -jar your-micronaut-app.jar
    ```
 
-# Reflective Acccess
-
-> add a ```reflect-config.json ```for refelctive access
-
-> to ```/src/main/resources/META-INF/native-image/[package]```
-
-- [Example](https://github.com/microstream-one/example-graalvm-native/tree/master/graalvm-native/src/main/resources/META-INF/native-image)
-
-## Run Native Image In Dev
+### Run Native Image In Dev
 
    ```shell
     ./build/native/nativeCompile/graal-mail -Dmicronaut.environments=dev
    ```
 
-# Reflective Access
+### Build jar
 
-> add a `reflect-config.json ` so `Graal` recognizes imported classes that need to be reflective
+  ```shell
+  ./gradlew buildNativeLambda
+  ```
 
-```bash
-touch /src/main/resources/META-INF/native-image/com/ssi/reflect-config.json
-```
+- > Optimized
 
-[MicroStream Source Reference](https://gist.github.com/14paxton/d51cc2f493b8d8f4271c0cf55f2aefab)
+  ```shell
+    ./gradlew :optimizedBuildNativeLambda
+  ```
 
-```json
-{
-  "name": "fts.marketing.utils.deserializers.CampaignEmailStatusDeserializer",
-  "allDeclaredConstructors": true,
-  "allPublicConstructors": true,
-  "allDeclaredMethods": true,
-  "allPublicMethods": true,
-  "allDeclaredClasses": true,
-  "allPublicClasses": true
-}
-```
+# [Reflective Access](https://guides.micronaut.io/latest/micronaut-graalvm-reflection-gradle-java.html#handling-reflection)
+
+- > ## @ReflectionConfig
+    - > ### Reflective Access For Using Sendgrid In A GraalVM AWS Lambda
+
+      <details markdown="block">
+        <summary>
+        Example From SendGrid
+        </summary>
+
+      {%raw%}
+
+          ```java
+            package example.micronaut;
+            
+            import com.sendgrid.SendGrid;
+            import com.sendgrid.helpers.mail.Mail;
+            import com.sendgrid.helpers.mail.objects.Attachments;
+            import com.sendgrid.helpers.mail.objects.Content;
+            import com.sendgrid.helpers.mail.objects.Email;
+            import com.sendgrid.helpers.mail.objects.Personalization;
+            import io.micronaut.core.annotation.ReflectionConfig;
+            import io.micronaut.core.annotation.TypeHint;
+            import io.micronaut.email.Attachment;
+            import io.micronaut.email.MultipartBody;
+            
+            @ReflectionConfig(type = Attachment.Builder.class, accessType = TypeHint.AccessType.ALL_DECLARED_CONSTRUCTORS)
+            @ReflectionConfig(type = Attachment.Builder.class, accessType = TypeHint.AccessType.ALL_DECLARED_FIELDS)
+            @ReflectionConfig(type = Attachment.Builder.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = MultipartBody.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = MultipartBody.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = MultipartBody.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = Attachment.class, accessType = TypeHint.AccessType.ALL_DECLARED_CONSTRUCTORS)
+            @ReflectionConfig(type = Attachment.class, accessType = TypeHint.AccessType.ALL_DECLARED_FIELDS)
+            @ReflectionConfig(type = Attachment.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = SendGrid.class, accessType = TypeHint.AccessType.ALL_DECLARED_CONSTRUCTORS)
+            @ReflectionConfig(type = SendGrid.class, accessType = TypeHint.AccessType.ALL_DECLARED_FIELDS)
+            @ReflectionConfig(type = SendGrid.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = Content.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = Content.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = Content.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = Personalization.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = Personalization.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = Personalization.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = Mail.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = Mail.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = Mail.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = Attachments.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = Attachments.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = Attachments.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = Email.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = Email.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            @ReflectionConfig(type = Email.class, accessType = TypeHint.AccessType.ALL_DECLARED_METHODS)
+            class GraalConfig {
+            }
+          ```
+      {%raw%}
+
+      </details>
+
+- > ## `reflect-config.json`
+
+  > so `Graal` recognizes imported classes that need to be reflective
+
+     ```bash
+        touch /src/main/resources/META-INF/native-image/com/ssi/reflect-config.json
+     ```
+
+- > [MicroStream Source Reference](https://gist.github.com/14paxton/d51cc2f493b8d8f4271c0cf55f2aefab)
+
+  ```json
+    {
+    "name": "fts.marketing.utils.deserializers.CampaignEmailStatusDeserializer",
+    "allDeclaredConstructors": true,
+    "allPublicConstructors": true,
+    "allDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+    }
+  ```
 
 # GraalVM annotation processor
 
-> gradle import
+- > gradle import
 
-```groovy
-annotationProcessor("io.micronaut:micronaut-graal")
-```
+  ```groovy
+  annotationProcessor("io.micronaut:micronaut-graal")
+  ```
 
 <div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">            
     <p>This processor generates additional classes
