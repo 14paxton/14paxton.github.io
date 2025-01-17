@@ -35,7 +35,7 @@ Table of contents
 
   <details markdown="block">
   <summary>
-  Full XML Example
+  Example From AWS Lambda Project
   </summary>
 
   {%raw%}
