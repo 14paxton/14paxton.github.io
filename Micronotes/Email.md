@@ -1,11 +1,11 @@
 ---
-title:        Email
-permalink:    Micronotes/Email
-category:     Micronotes
-parent:       Micronotes
-layout:       default
+title: Email
+permalink: Micronotes/Email
+category: Micronotes
+parent: Micronotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
 
   - users
@@ -221,3 +221,202 @@ public class HomeController {
 ```
 
 </details>
+
+## Add Attachment
+
+### Inline
+
+> add a cid to src attribute and give it an id, i have had the best luck when using the file name
+
+```<img src="cid:InlineAttachment.png"/>```
+
+> your attachment builder, use the id, and I add disposition, content i do add it as bytes[] , but i have had it working when you just add the file
+
+```java
+public Attachment buildAttachment() {
+  Attachment.builder()
+            .filename("InlineAttachment.png")
+            .contentType("image/png")
+            .content(fileBytes)
+            .id("InlineAttachment.png")
+            .disposition("inline");
+}
+```
+
+> then add your attachent to the attachment property
+
+```java
+public Email buildEmail() {
+  Email.builder()
+       .to("toemail")
+       .from("fromemail")
+       .body("body")
+       .attachment(newInlineAttachment)
+       .build();
+}
+```
+
+### Add Attachment as bytes
+
+```java
+
+@NonNull
+public Attachment.Builder buildAttachment(@NonNull String path, @NonNull String name, @NonNull String disposition, @NonNull MimeType type) throws IOException {
+  byte[] fileBytes = getClasspathResourceAsBytes(path).orElseThrow(() -> new IllegalArgumentException("File not found! " + path));
+
+  Attachment.Builder attachmentBuilder = Attachment.builder()
+                                                   .filename(name)
+                                                   .contentType(type.getMimeType()).content(fileBytes);
+
+  if ("inline".equals(disposition)) {
+    attachmentBuilder.id(name).disposition(disposition);
+  }
+
+  return attachmentBuilder;
+}
+
+
+@NonNull
+public Optional<byte[]> getClasspathResourceAsBytes(@NonNull String path) {
+  return getClasspathResource(path).flatMap(url -> {
+    try (InputStream inputStream = url.openStream()) {
+      return Optional.of(inputStream.readAllBytes());
+    }
+    catch (IOException e) {
+      LOG.error("Error reading bytes from resource: {}", path, e);
+      return Optional.empty();
+    }
+  });
+}
+```
+
+### Add Attachment as Base64
+
+```java
+public Attachment buildAttachment(String path, String name, String disposition, MimeType type) throws IOException {
+  ClassLoader classLoader = getClass().getClassLoader();
+  InputStream imageStream = classLoader.getResourceAsStream(path);
+
+  String imageBase64 = Base64.getEncoder().encodeToString(imageStream.readAllBytes());
+  return Attachment.builder()
+                   .contentID(name)
+                   .filename(name)
+                   .contentType(type.getMimeType())
+                   .base64Content(imageBase64).build();
+}
+```
+
+### Add Attachment as ImageStream
+
+```java
+public @NonNull Attachment buildAttachment(String path, String name, String disposition, MimeType type) throws IOException {
+  ClassLoader classLoader = getClass().getClassLoader();
+  try (InputStream imageStream = classLoader.getResourceAsStream(path)) {
+    assert imageStream != null;
+
+    return Attachment.builder()
+                     .filename(name)
+                     .contentType(type.getMimeType())
+                     .content(imageStream.readAllBytes())
+                     .id(name)
+                     .disposition(disposition)
+                     .build();
+  }
+}
+```
+
+### Add Attachment as File
+
+```java
+public @NonNull Attachment buildAttachment(
+        String path, String name, String disposition, MimeType type) throws IOException {
+  ClassLoader classLoader = getClass().getClassLoader();
+
+  URL resource = classLoader.getResource(path);
+  if (resource == null) {
+    throw new IllegalArgumentException("File not found! " + path);
+  }
+
+  File resourceFile = new File(resource.getFile());
+
+  return Attachment.builder()
+                   .filename(name)
+                   .contentType(type.getMimeType())
+                   .content(resourceFile)
+                   .build();
+}
+```
+
+# MimeType / ContentType
+
+- > Enum Example
+
+  <details markdown="block">
+  <summary>
+  MimeType Enum
+  </summary>
+
+  {%raw%}
+
+    ```java
+    package example.micronaut.Util;
+    
+    import io.micronaut.serde.annotation.Serdeable;
+    
+    @Serdeable
+    public enum MimeType {
+        // Define common MIME types
+        TEXT_PLAIN("text/plain", ".txt"),
+        TEXT_HTML("text/html", ".html", ".htm"),
+        APPLICATION_JSON("application/json", ".json"),
+        APPLICATION_XML("application/xml", ".xml"),
+        IMAGE_PNG("image/png", ".png"),
+        IMAGE_JPEG("image/jpeg", ".jpeg", ".jpg"),
+        IMAGE_GIF("image/gif", ".gif"),
+        APPLICATION_PDF("application/pdf", ".pdf"),
+        APPLICATION_OCTET_STREAM("application/octet-stream", ""); // Fallback for unknown types
+    
+        private final String mimeType;
+        private final String[] extensions;
+    
+        MimeType(String mimeType, String... extensions) {
+            this.mimeType   = mimeType;
+            this.extensions = extensions;
+        }
+    
+        // Static method to get the MIME type string from an extension
+        public static String getMimeTypeFromExtension(String extension) {
+            return fromExtension(extension).getMimeType();
+        }
+    
+        // Get the MIME type as a string
+        public String getMimeType() {
+            return mimeType;
+        }
+    
+        // Static method to find a MIME type based on file extension
+        public static MimeType fromExtension(String extension) {
+            if (extension == null || extension.isEmpty()) {
+                return APPLICATION_OCTET_STREAM; // Default to binary stream for unknown types
+            }
+    
+            for (MimeType type : MimeType.values()) {
+                for (String ext : type.getExtensions()) {
+                    if (extension.equalsIgnoreCase(ext)) {
+                        return type;
+                    }
+                }
+            }
+            return APPLICATION_OCTET_STREAM; // Default if no match is found
+        }
+    
+        // Get the extensions associated with this MIME type
+        public String[] getExtensions() {
+            return extensions;
+        }
+    }
+    ```
+
+  {% endraw %}
+
+  </details>
