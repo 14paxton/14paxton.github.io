@@ -8,8 +8,8 @@ has_children: false
 share: true
 shortRepo:
 
-- javascript
-- default
+  - javascript
+  - default
 
 ---
 
@@ -29,6 +29,12 @@ Table of contents
 ---
 
 <br/>
+
+# MetaData
+
+   ```javascript
+    const scriptUrl = new URL(import.meta.url);
+   ```
 
 # Import
 
@@ -143,7 +149,7 @@ const main = document.querySelector("main");
 for (const link of document.querySelectorAll("nav > a")) {
     link.addEventListener("click", (e) => {
         e.preventDefault();
-
+        
         import("/modules/my-module.js")
             .then((module) => {
                 module.loadPageInto(main);
