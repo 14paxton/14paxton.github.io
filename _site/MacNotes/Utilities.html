@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Utilities | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="Utilities"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -366,6 +366,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -400,7 +401,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -475,7 +476,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -483,10 +483,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -546,6 +548,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -561,6 +565,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -582,9 +587,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -606,12 +609,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -629,38 +628,29 @@
                     <ol id="markdown-toc">
                         <li><a href="#software-update" id="markdown-toc-software-update">Software Update</a>
                             <ol>
-                                <li><a href="#how-do-i-apply-all-recommended-updates" id="markdown-toc-how-do-i-apply-all-recommended-updates">How do
-                                                                                                                                               I apply
-                                                                                                                                               all
-                                                                                                                                               recommended
+                                <li><a href="#how-do-i-apply-all-recommended-updates" id="markdown-toc-how-do-i-apply-all-recommended-updates">How do I apply all recommended
                                                                                                                                                updates?</a>
-                                <li><a href="#updating-mac-using-the-terminal-app" id="markdown-toc-updating-mac-using-the-terminal-app">Updating Mac
-                                                                                                                                         using the
-                                                                                                                                         Terminal
-                                                                                                                                         app</a>
-                                <li><a
-                                        href="#install-all-but-make-sure-you-ignore-javaforosx-updates"
-                                        id="markdown-toc-install-all-but-make-sure-you-ignore-javaforosx-updates"
-                                >Install all but make sure you ignore ‘JavaForOSX’ updates:</a>
-                                <li><a href="#to-clear-the-list-ignored-updates-enter" id="markdown-toc-to-clear-the-list-ignored-updates-enter">To
-                                                                                                                                                 clear
-                                                                                                                                                 the
-                                                                                                                                                 list,
-                                                                                                                                                 ignored
-                                                                                                                                                 updates,
+                                <li><a href="#updating-mac-using-the-terminal-app" id="markdown-toc-updating-mac-using-the-terminal-app">Updating Mac using the Terminal app</a>
+                                <li><a href="#install-all-but-make-sure-you-ignore-javaforosx-updates" id="markdown-toc-install-all-but-make-sure-you-ignore-javaforosx-updates">Install
+                                                                                                                                                                                 all
+                                                                                                                                                                                 but
+                                                                                                                                                                                 make
+                                                                                                                                                                                 sure
+                                                                                                                                                                                 you
+                                                                                                                                                                                 ignore
+                                                                                                                                                                                 ‘JavaForOSX’
+                                                                                                                                                                                 updates:</a>
+                                <li><a href="#to-clear-the-list-ignored-updates-enter" id="markdown-toc-to-clear-the-list-ignored-updates-enter">To clear the list, ignored updates,
                                                                                                                                                  enter:</a>
                                 <li><a href="#updateinstall-os" id="markdown-toc-updateinstall-os">Update/Install OS</a>
                                     <ol>
                                         <li><a
                                                 href="#this-gives-you-a-list-of-available-releases-you-can-choose-from-once-downloaded-it-will-be-saved-in-your-applications-folder"
                                                 id="markdown-toc-this-gives-you-a-list-of-available-releases-you-can-choose-from-once-downloaded-it-will-be-saved-in-your-applications-folder"
-                                        >This gives you a list of available releases you can choose from. Once downloaded it will be saved in your
-                                         Applications folder</a>
+                                        >This gives you a list of available releases you can choose from. Once downloaded it will be saved in your Applications folder</a>
                                             <ol>
-                                                <li><a
-                                                        href="#munkis-installinstallmacos-utility"
-                                                        id="markdown-toc-munkis-installinstallmacos-utility"
-                                                >Munki’s InstallInstallMacOS utility</a>
+                                                <li><a href="#munkis-installinstallmacos-utility" id="markdown-toc-munkis-installinstallmacos-utility">Munki’s InstallInstallMacOS
+                                                                                                                                                       utility</a>
                                             </ol>
                                         <li><a href="#create-installer" id="markdown-toc-create-installer">create installer</a>
                                             <ol>
@@ -732,36 +722,30 @@
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
-                </a>
-                    <a href="https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment">create
-                                                                                                                                                       installer</a>
-                </h3>
+                </a> <a href="https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment">create installer</a></h3>
                 <h4 id="run"><a href="#run" class="anchor-heading" aria-labelledby="run">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
                 </a> run
                 </h4>
-                <p><code class="language-plaintext highlighter-rouge">createinstallmedia</code> command provided by Apple (opens a new window). Note
-                                                                                                that the command is made for USB’s formatted<br/> with
-                                                                                                the name MyVolume:</p>
+                <p><code class="language-plaintext highlighter-rouge">createinstallmedia</code> command provided by Apple (opens a new window). Note that the command is made for
+                                                                                                USB’s formatted<br/> with the name MyVolume:</p>
                 <div class="language-shell highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> /Applications/Install<span class="se">\ </span>macOS<span
+                    <div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> /Applications/Install<span class="se">\ </span>macOS<span class="se">\ </span>Big<span
                             class="se"
-                    >\ </span>Big<span class="se">\ </span>Sur.app/Contents/Resources/createinstallmedia <span class="nt">--volume</span> /Volumes/MyVolume
+                    >\ </span>Sur.app/Contents/Resources/createinstallmedia <span class="nt">--volume</span> /Volumes/MyVolume
 </code></pre>
                     </div>
                 </div>
-                <blockquote><p>Note for users on Apple Silicon installing macOS older than Big Sur <br/> If the
-                    <code class="language-plaintext highlighter-rouge">createinstallmedia</code> fails with
-                    <code class="language-plaintext highlighter-rouge">zsh: killed </code> or <code class="language-plaintext highlighter-rouge">Killed:
-                                                                                                                                                 9</code>
-                               then it’s most likely an issue with the<br/> installer’s code signature. <br/> To fix this, you can run the following
-                               command:</p></blockquote>
+                <blockquote><p>Note for users on Apple Silicon installing macOS older than Big Sur <br/> If the <code class="language-plaintext highlighter-rouge">createinstallmedia</code>
+                               fails with <code class="language-plaintext highlighter-rouge">zsh: killed </code> or <code class="language-plaintext highlighter-rouge">Killed:
+                                                                                                                                                                       9</code> then
+                               it’s most likely an issue with the<br/> installer’s code signature. <br/> To fix this, you can run the following command:</p></blockquote>
                 <div class="language-shell highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /Applications/Install<span class="se">\ </span>macOS<span
+                    <div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /Applications/Install<span class="se">\ </span>macOS<span class="se">\ </span>Big<span
                             class="se"
-                    >\ </span>Big<span class="se">\ </span>Sur.app/Contents/Resources/
+                    >\ </span>Sur.app/Contents/Resources/
 codesign <span class="nt">-s</span> - <span class="nt">-f</span> <span class="nt">--deep</span> /Applications/Install<span class="se">\ </span>macOS<span class="se">\ </span>Big<span class="se">\ </span>Sur.app
 </code></pre></div></div><blockquote><p>You will need the command line tools for Xcode installed:</p></blockquote><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xcode-select <span class="nt">--install</span>
 </code></pre></div></div><h1 id="dscl"> <a href="#dscl" class="anchor-heading" aria-labelledby="dscl"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://ss64.com/osx/dscl.html">dscl</a></h1><h2 id="unhide-a-user-account"> <a href="#unhide-a-user-account" class="anchor-heading" aria-labelledby="unhide-a-user-account"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> unhide a user account</h2><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>dscl <span class="nb">.</span> create /Users/hiddenuser IsHidden 0
@@ -778,11 +762,10 @@ codesign <span class="nt">-s</span> - <span class="nt">-f</span> <span class="nt
 </code></pre>
                     </div>
                 </div>
-                <blockquote><p>Completely erase an existing whole disk. <br/> All volumes on this disk will be destroyed. <br/> Ownership of the
-                               affected disk is required. <br/> Format is the specific file system name you want to erase it as (HFS+, etc.). <br/>
-                               Name is the (new) volume name (subject to file system naming restrictions),<br/> or can be specified as
-                    <code class="language-plaintext highlighter-rouge">%noformat%</code> to skip initialization (newfs). <br/> You cannot erase the
-                               boot disk.</p></blockquote>
+                <blockquote><p>Completely erase an existing whole disk. <br/> All volumes on this disk will be destroyed. <br/> Ownership of the affected disk is required. <br/>
+                               Format is the specific file system name you want to erase it as (HFS+, etc.). <br/> Name is the (new) volume name (subject to file system naming
+                               restrictions),<br/> or can be specified as <code class="language-plaintext highlighter-rouge">%noformat%</code> to skip initialization (newfs). <br/>
+                               You cannot erase the boot disk.</p></blockquote>
                 <div class="language-shell highlighter-rouge">
                     <div class="highlight"><pre class="highlight"><code> diskutil eraseDisk JHFS+ UntitledUFS disk3
 </code></pre></div></div><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>diskutil eraseDisk JHFS+ CleanDrive /dev/disk1
@@ -791,44 +774,31 @@ codesign <span class="nt">-s</span> - <span class="nt">-f</span> <span class="nt
                 </div>
                 <blockquote><p>Formats</p></blockquote>
                 <blockquote>
-                    <blockquote><p><code class="language-plaintext highlighter-rouge">APFS</code>: Allocates disk space within a container (partition)
-                                                                                                 on demand.<br/> When a single APFS container has
-                                                                                                 multiple volumes, the container’s free space is
-                                                                                                 shared and is automatically<br/> allocated<br/> to
-                                                                                                 any of the individual volumes as needed.<br/> If
-                                                                                                 desired, you can specify reserve and quota sizes for
-                                                                                                 each volume.<br/> Each volume uses only part of the
-                                                                                                 overall container, so the available space is the<br/>
-                                                                                                 total size of the container, minus the size of all
-                                                                                                 the volumes in the container.</p></blockquote>
+                    <blockquote><p><code class="language-plaintext highlighter-rouge">APFS</code>: Allocates disk space within a container (partition) on demand.<br/> When a single
+                                                                                                 APFS container has multiple volumes, the container’s free space is shared and is
+                                                                                                 automatically<br/> allocated<br/> to any of the individual volumes as needed.<br/>
+                                                                                                 If desired, you can specify reserve and quota sizes for each volume.<br/> Each
+                                                                                                 volume uses only part of the overall container, so the available space is the<br/>
+                                                                                                 total size of the container, minus the size of all the volumes in the container.
+                    </p></blockquote>
                 </blockquote>
                 <blockquote>
-                    <blockquote><p><code class="language-plaintext highlighter-rouge">APFS</code>: Uses the APFS format. Choose this option if you
-                                                                                                 don’t need an encrypted or case-sensitive format.</p>
-                    </blockquote>
+                    <blockquote><p><code class="language-plaintext highlighter-rouge">APFS</code>: Uses the APFS format. Choose this option if you don’t need an encrypted or
+                                                                                                 case-sensitive format.</p></blockquote>
                 </blockquote>
                 <blockquote>
-                    <blockquote><p><code class="language-plaintext highlighter-rouge">APFS (Encrypted)</code>: Uses the APFS format and encrypts the
-                                                                                                             volume.</p></blockquote>
+                    <blockquote><p><code class="language-plaintext highlighter-rouge">APFS (Encrypted)</code>: Uses the APFS format and encrypts the volume.</p></blockquote>
                 </blockquote>
                 <blockquote>
-                    <blockquote><p><code class="language-plaintext highlighter-rouge">APFS (Case-sensitive)</code>: Uses the APFS format and is
-                                                                                                                  case-sensitive to file and folder
-                                                                                                                  names. For example, folders<br/>
-                                                                                                                  named “Homework” and “HOMEWORK”<br/>
-                                                                                                                  are two different folders.</p>
-                    </blockquote>
+                    <blockquote><p><code class="language-plaintext highlighter-rouge">APFS (Case-sensitive)</code>: Uses the APFS format and is case-sensitive to file and folder
+                                                                                                                  names. For example, folders<br/> named “Homework” and
+                                                                                                                  “HOMEWORK”<br/> are two different folders.</p></blockquote>
                 </blockquote>
                 <blockquote>
-                    <blockquote><p><code class="language-plaintext highlighter-rouge">APFS (Case-sensitive, Encrypted)</code>: Uses the APFS format,
-                                                                                                                             is case-sensitive to file
-                                                                                                                             and folder names, and
-                                                                                                                             encrypts<br/> the volume.<br/>
-                                                                                                                             For example, folders
-                                                                                                                             named “Homework” and
-                                                                                                                             “HOMEWORK” are two<br/>
-                                                                                                                             different folders.</p>
-                    </blockquote>
+                    <blockquote><p><code class="language-plaintext highlighter-rouge">APFS (Case-sensitive, Encrypted)</code>: Uses the APFS format, is case-sensitive to file and
+                                                                                                                             folder names, and encrypts<br/> the volume.<br/> For
+                                                                                                                             example, folders named “Homework” and “HOMEWORK” are
+                                                                                                                             two<br/> different folders.</p></blockquote>
                 </blockquote>
                 <div class="table-wrapper">
                     <table>
@@ -857,21 +827,16 @@ codesign <span class="nt">-s</span> - <span class="nt">-f</span> <span class="nt
                     </svg>
                 </a> Diskutil SecureErase
                 </h2>
-                <blockquote><p>Now we need to select the level of secure erase we want. There are five levels of secure erasing you can use
-                               labeled<br/> from 0-4.</p></blockquote>
-                <blockquote><p><code class="language-plaintext highlighter-rouge">Level 0 </code>just erases the drive by writing the number zero
-                                                                                                 across every sector of the drive.</p></blockquote>
-                <blockquote><p><code class="language-plaintext highlighter-rouge">Level 1</code> does the same but with random data, thus taking
-                                                                                                 longer.</p></blockquote>
-                <blockquote><p><code class="language-plaintext highlighter-rouge">Level 2 </code>erases the drive 7 times with 1’s and 0’s except the
-                                                                                                 last pass where it uses random data.</p></blockquote>
-                <blockquote><p><code class="language-plaintext highlighter-rouge">Level 3</code> is a special algorithm that erases the drives with
-                                                                                                 random data as well as data compiled from a
-                                                                                                 special<br/> collection of 1’s and 0’s.</p>
-                </blockquote>
-                <blockquote><p><code class="language-plaintext highlighter-rouge">Level 4</code> is a little different and erases it three times, with
-                                                                                                 random data on the first two passes and one set
-                                                                                                 of<br/> zeroes on the last pass.</p></blockquote>
+                <blockquote><p>Now we need to select the level of secure erase we want. There are five levels of secure erasing you can use labeled<br/> from 0-4.</p></blockquote>
+                <blockquote><p><code class="language-plaintext highlighter-rouge">Level 0 </code>just erases the drive by writing the number zero across every sector of the drive.
+                </p></blockquote>
+                <blockquote><p><code class="language-plaintext highlighter-rouge">Level 1</code> does the same but with random data, thus taking longer.</p></blockquote>
+                <blockquote><p><code class="language-plaintext highlighter-rouge">Level 2 </code>erases the drive 7 times with 1’s and 0’s except the last pass where it uses random
+                                                                                                 data.</p></blockquote>
+                <blockquote><p><code class="language-plaintext highlighter-rouge">Level 3</code> is a special algorithm that erases the drives with random data as well as data
+                                                                                                 compiled from a special<br/> collection of 1’s and 0’s.</p></blockquote>
+                <blockquote><p><code class="language-plaintext highlighter-rouge">Level 4</code> is a little different and erases it three times, with random data on the first two
+                                                                                                 passes and one set of<br/> zeroes on the last pass.</p></blockquote>
                 <div class="language-shell highlighter-rouge">
                     <div class="highlight"><pre class="highlight"><code>diskutil secureErase 4 /dev/disk2
 </code></pre></div></div><h1 id="csrutil"> <a href="#csrutil" class="anchor-heading" aria-labelledby="csrutil"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://ss64.com/osx/csrutil.html">csrutil</a></h1><h1 id="pwpolicy"> <a href="#pwpolicy" class="anchor-heading" aria-labelledby="pwpolicy"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://www.manpagez.com/man/8/pwpolicy/">pwpolicy</a></h1><ul><li><a href="https://www.unix.com/man-page/osx/8/pwpolicy/">alt man page</a><li><a href="https://mosen.github.io/profiledocs/macos/pwpolicy.html#macos-10-10">alt man page - config</a></ul><h2 id="set-global-policy"> <a href="#set-global-policy" class="anchor-heading" aria-labelledby="set-global-policy"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Set Global Policy</h2><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pwpolicy <span class="nt">-setglobalpolicy</span> <span class="nv">minChars</span><span class="o">=</span>0
@@ -896,14 +861,13 @@ codesign <span class="nt">-s</span> - <span class="nt">-f</span> <span class="nt
                                 </svg>
                             </a> APFS
                             </h2>
-                            <p><code class="language-plaintext highlighter-rouge">The default file system for Apple platforms in macOS High Sierra and
-                                                                                  later, iOS 10.3 and later, watchOS 4.0 and later, and tvOS 10.2 and
-                                                                                  later.</code></p></blockquote>
+                            <p><code class="language-plaintext highlighter-rouge">The default file system for Apple platforms in macOS High Sierra and later, iOS 10.3 and later,
+                                                                                  watchOS 4.0 and later, and tvOS 10.2 and later.</code></p></blockquote>
                     <li>
                         <blockquote><p>HFS Plus</p></blockquote>
                         <ul>
-                            <li><code class="language-plaintext highlighter-rouge">Mac OS Extended file system. The standard file system for prior
-                                                                                   versions of macOS, iOS, watchOS, and tvOS.</code>
+                            <li><code class="language-plaintext highlighter-rouge">Mac OS Extended file system. The standard file system for prior versions of macOS, iOS, watchOS,
+                                                                                   and tvOS.</code>
                         </ul>
                     <li>
                         <blockquote>
@@ -913,14 +877,13 @@ codesign <span class="nt">-s</span> - <span class="nt">-f</span> <span class="nt
                                 </svg>
                             </a> HFS
                             </h2>
-                            <p><code class="language-plaintext highlighter-rouge">Mac OS Standard file system. The standard file system for older
-                                                                                  versions of macOS. File systems of this type are treated as read
-                                                                                  only in macOS 10.6 and later.</code></p></blockquote>
+                            <p><code class="language-plaintext highlighter-rouge">Mac OS Standard file system. The standard file system for older versions of macOS. File systems of
+                                                                                  this type are treated as read only in macOS 10.6 and later.</code></p></blockquote>
                     <li>
                         <blockquote><p>WebDAV</p></blockquote>
                         <ul>
-                            <li><code class="language-plaintext highlighter-rouge">Used for directly accessing files on the web. For example, iDisk
-                                                                                   uses WebDAV for accessing files.</code>
+                            <li><code class="language-plaintext highlighter-rouge">Used for directly accessing files on the web. For example, iDisk uses WebDAV for accessing
+                                                                                   files.</code>
                         </ul>
                     <li>
                         <blockquote>
@@ -930,32 +893,27 @@ codesign <span class="nt">-s</span> - <span class="nt">-f</span> <span class="nt
                                 </svg>
                             </a> UDF
                             </h2>
-                            <p><code class="language-plaintext highlighter-rouge">Universal Disk Format. The standard file system for all forms of DVD
-                                                                                  media (video, ROM, RAM and RW) and some writable CD formats.</code>
-                            </p></blockquote>
+                            <p><code class="language-plaintext highlighter-rouge">Universal Disk Format. The standard file system for all forms of DVD media (video, ROM, RAM and
+                                                                                  RW) and some writable CD formats.</code></p></blockquote>
                     <li>
                         <blockquote><p>FAT</p></blockquote>
                         <ul>
-                            <li><code class="language-plaintext highlighter-rouge">The MS-DOS file system, with 16- and 32-bit variants. Fat 12-bit is
-                                                                                   not supported.</code>
+                            <li><code class="language-plaintext highlighter-rouge">The MS-DOS file system, with 16- and 32-bit variants. Fat 12-bit is not supported.</code>
                         </ul>
                     <li>
                         <blockquote><p>ExFAT</p></blockquote>
                         <ul>
-                            <li><code class="language-plaintext highlighter-rouge">An interchange format used by digital cameras and other
-                                                                                   peripherals.</code>
+                            <li><code class="language-plaintext highlighter-rouge">An interchange format used by digital cameras and other peripherals.</code>
                         </ul>
                     <li>
                         <blockquote><p>SMB/CIFS</p></blockquote>
                         <ul>
-                            <li><code class="language-plaintext highlighter-rouge">Used for sharing files with Microsoft Windows SMB file servers and
-                                                                                   clients.</code>
+                            <li><code class="language-plaintext highlighter-rouge">Used for sharing files with Microsoft Windows SMB file servers and clients.</code>
                         </ul>
                     <li>
                         <blockquote><p>AFP</p></blockquote>
                         <ul>
-                            <li><code class="language-plaintext highlighter-rouge">Apple Filing Protocol. The primary network file system for all
-                                                                                   versions of Mac OS.</code>
+                            <li><code class="language-plaintext highlighter-rouge">Apple Filing Protocol. The primary network file system for all versions of Mac OS.</code>
                         </ul>
                     <li>
                         <blockquote>
@@ -965,32 +923,28 @@ codesign <span class="nt">-s</span> - <span class="nt">-f</span> <span class="nt
                                 </svg>
                             </a> NFS
                             </h2>
-                            <p><code class="language-plaintext highlighter-rouge">Network File System. A commonly-used UNIX file sharing standard.
-                                                                                  macOS supports NFSv2 and NFSv3 over TCP and UDP. macOS 10.7 and
-                                                                                  later also supports NFSv4 over TCP.</code></p></blockquote>
+                            <p><code class="language-plaintext highlighter-rouge">Network File System. A commonly-used UNIX file sharing standard. macOS supports NFSv2 and NFSv3
+                                                                                  over TCP and UDP. macOS 10.7 and later also supports NFSv4 over TCP.</code></p></blockquote>
                     <li>
                         <blockquote><p>FTP</p></blockquote>
                         <ul>
-                            <li><code class="language-plaintext highlighter-rouge">A file system wrapper for the standard Internet File Transfer
-                                                                                   Protocol.</code>
+                            <li><code class="language-plaintext highlighter-rouge">A file system wrapper for the standard Internet File Transfer Protocol.</code>
                         </ul>
                     <li>
                         <blockquote><p>Xsan</p></blockquote>
                         <ul>
-                            <li><code class="language-plaintext highlighter-rouge">Apple’s 64-bit cluster file system used in storage area
-                                                                                   networks.</code>
+                            <li><code class="language-plaintext highlighter-rouge">Apple’s 64-bit cluster file system used in storage area networks.</code>
                         </ul>
                     <li>
                         <blockquote><p>NTFS</p></blockquote>
                         <ul>
-                            <li><code class="language-plaintext highlighter-rouge">A standard file system for computers running the Windows operating
-                                                                                   system.</code>
+                            <li><code class="language-plaintext highlighter-rouge">A standard file system for computers running the Windows operating system.</code>
                         </ul>
                     <li>
                         <blockquote><p>CDDAFS</p></blockquote>
                         <ul>
-                            <li><code class="language-plaintext highlighter-rouge">A file system used to mount audio CDs and present audio tracks on
-                                                                                   disc to users as AIFF-C encoded files.</code>
+                            <li><code class="language-plaintext highlighter-rouge">A file system used to mount audio CDs and present audio tracks on disc to users as AIFF-C encoded
+                                                                                   files.</code>
                         </ul>
                     <li>
                         <blockquote><p>ISO 9660</p></blockquote>
@@ -1002,10 +956,10 @@ codesign <span class="nt">-s</span> - <span class="nt">-f</span> <span class="nt
             <hr>
             <footer><p><a href="#top" id="back-to-top">Back to top</a></p>
                 <p class="text-small text-grey-dk-100 mb-0"></p>
-                <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0">
-                    <a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./MacNotes/Utilities.md" id="edit-this-page">Edit this page
-                                                                                                                                      on GitHub</a>
-                </p></div>
+                <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"><a
+                        href="https://github.com/14paxton/14paxton.github.io/edit/develop/./MacNotes/Utilities.md"
+                        id="edit-this-page"
+                >Edit this page on GitHub</a></p></div>
             </footer>
         </div>
     </div>

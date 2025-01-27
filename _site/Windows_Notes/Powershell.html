@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Powershell | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="Powershell"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -366,6 +366,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -400,7 +401,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -475,7 +476,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -483,10 +483,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -546,6 +548,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -561,6 +565,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -582,9 +587,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -606,12 +609,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -671,15 +670,10 @@
                             <ol>
                                 <li><a href="#convertfrom-json" id="markdown-toc-convertfrom-json">ConvertFrom-Json</a>
                                     <ol>
-                                        <li><a href="#using-powershell-to-write-json" id="markdown-toc-using-powershell-to-write-json">USING
-                                                                                                                                       POWERSHELL TO
-                                                                                                                                       WRITE JSON</a>
-                                        <li><a href="#using-powershell-to-read-json" id="markdown-toc-using-powershell-to-read-json">USING POWERSHELL
-                                                                                                                                     TO READ JSON</a>
-                                        <li><a
-                                                href="#using-powershell-to-iterate-through-json"
-                                                id="markdown-toc-using-powershell-to-iterate-through-json"
-                                        >USING POWERSHELL TO ITERATE THROUGH JSON</a>
+                                        <li><a href="#using-powershell-to-write-json" id="markdown-toc-using-powershell-to-write-json">USING POWERSHELL TO WRITE JSON</a>
+                                        <li><a href="#using-powershell-to-read-json" id="markdown-toc-using-powershell-to-read-json">USING POWERSHELL TO READ JSON</a>
+                                        <li><a href="#using-powershell-to-iterate-through-json" id="markdown-toc-using-powershell-to-iterate-through-json">USING POWERSHELL TO
+                                                                                                                                                           ITERATE THROUGH JSON</a>
                                     </ol>
                             </ol>
                         <li><a href="#xml" id="markdown-toc-xml">XML</a>
@@ -695,14 +689,12 @@
                                 <li><a href="#get-file-http" id="markdown-toc-get-file-http">get file http</a>
                                 <li><a href="#download-file-from-web" id="markdown-toc-download-file-from-web">Download File From Web</a>
                             </ol>
-                        <li><a href="#for-each--foreach--foreach-object" id="markdown-toc-for-each--foreach--foreach-object">For Each / foreach /
-                                                                                                                             ForEach-Object</a>
+                        <li><a href="#for-each--foreach--foreach-object" id="markdown-toc-for-each--foreach--foreach-object">For Each / foreach / ForEach-Object</a>
                         <li><a href="#run-in-parallel--async" id="markdown-toc-run-in-parallel--async">Run In Parallel / Async</a>
                         <li><a href="#get-childitem-cmdlet" id="markdown-toc-get-childitem-cmdlet">Get-ChildItem cmdlet</a>
-                        <li><a
-                                href="#map-network-drive--new-psdrive--remove-psdrive"
-                                id="markdown-toc-map-network-drive--new-psdrive--remove-psdrive"
-                        >Map Network Drive / New-PSDrive / Remove-PSDrive</a>
+                        <li><a href="#map-network-drive--new-psdrive--remove-psdrive" id="markdown-toc-map-network-drive--new-psdrive--remove-psdrive">Map Network Drive /
+                                                                                                                                                       New-PSDrive /
+                                                                                                                                                       Remove-PSDrive</a>
                             <ol>
                                 <li><a href="#cmd-net-use" id="markdown-toc-cmd-net-use">cmd Net Use</a>
                             </ol>
@@ -716,13 +708,7 @@
                                         <li><a href="#get-execution-policy" id="markdown-toc-get-execution-policy">Get Execution Policy</a>
                                     </ol>
                                 <li><a href="#rename-and-expand-zip" id="markdown-toc-rename-and-expand-zip">Rename and Expand .zip</a>
-                                <li><a href="#execute--start--run-process--application" id="markdown-toc-execute--start--run-process--application">Execute
-                                                                                                                                                   /
-                                                                                                                                                   Start
-                                                                                                                                                   /
-                                                                                                                                                   Run
-                                                                                                                                                   process
-                                                                                                                                                   /
+                                <li><a href="#execute--start--run-process--application" id="markdown-toc-execute--start--run-process--application">Execute / Start / Run process /
                                                                                                                                                    Application</a>
                                     <ol>
                                         <li><a href="#run-with-no-exit" id="markdown-toc-run-with-no-exit">Run with no exit</a>
@@ -743,14 +729,11 @@
                                         href="#getting-services-and-starting-them-using-the-foreach-object-cmdlet"
                                         id="markdown-toc-getting-services-and-starting-them-using-the-foreach-object-cmdlet"
                                 >Getting Services and Starting Them using the ForEach-Object CmdLet</a>
-                                <li><a
-                                        href="#reading-data-from-csv-using-the-foreach-method"
-                                        id="markdown-toc-reading-data-from-csv-using-the-foreach-method"
-                                >Reading Data from CSV using the ForEach() Method</a>
+                                <li><a href="#reading-data-from-csv-using-the-foreach-method" id="markdown-toc-reading-data-from-csv-using-the-foreach-method">Reading Data from CSV
+                                                                                                                                                               using the ForEach()
+                                                                                                                                                               Method</a>
                                 <li><a href="#dont-sleep" id="markdown-toc-dont-sleep">Don’t Sleep</a>
-                                <li><a href="#answer--reply-to-yesy-non-prompt" id="markdown-toc-answer--reply-to-yesy-non-prompt">Answer / Reply to
-                                                                                                                                   Yes(y) No(n)
-                                                                                                                                   Prompt</a>
+                                <li><a href="#answer--reply-to-yesy-non-prompt" id="markdown-toc-answer--reply-to-yesy-non-prompt">Answer / Reply to Yes(y) No(n) Prompt</a>
                             </ol>
                         <li><a href="#basic-commands" id="markdown-toc-basic-commands">Basic Commands</a>
                     </ol>
@@ -760,9 +743,7 @@
                 <p><br/></p>
                 <ul>
                     <li>
-                        <blockquote><p><a href="https://learn.microsoft.com/en-us/powershell/module/cimcmdlets/?view=powershell-7.3">Microsoft
-                                                                                                                                     Docs</a></p>
-                        </blockquote>
+                        <blockquote><p><a href="https://learn.microsoft.com/en-us/powershell/module/cimcmdlets/?view=powershell-7.3">Microsoft Docs</a></p></blockquote>
                     <li>
                         <blockquote><p><a href="https://github.com/PowerShell/PowerShell/releases">Releases</a></p></blockquote>
                 </ul>
@@ -777,67 +758,57 @@
                         <use xlink:href="#svg-link"></use>
                     </svg>
                 </a> <a href="https://gist.github.com/14paxton/c10cfd597e7e7b487e27d641cf964c59#powershell">Sync Chrome Bookmarks</a></h2>
-                <blockquote><p>used to sync bookmarks file to a repo to update on both mac and windows using bash and powershell when account can not
-                               sync due to admin<br/> restrictions</p></blockquote>
+                <blockquote><p>used to sync bookmarks file to a repo to update on both mac and windows using bash and powershell when account can not sync due to admin<br/>
+                               restrictions</p></blockquote>
                 <hr/>
                 <h1 id="installing"><a href="#installing" class="anchor-heading" aria-labelledby="installing">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
-                </a> <a href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-5.1">Installing</a>
-                </h1>
+                </a> <a href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-5.1">Installing</a></h1>
                 <blockquote><p>You can launch PowerShell 7 via the Start Menu or <code class="language-plaintext highlighter-rouge">$env:ProgramFiles\PowerShell\&lt;version&gt;\pwsh.exe</code><br/>
-                               You can launch PowerShell 5 via the Start Menu or <code class="language-plaintext highlighter-rouge">$env:WINDIR\System32\WindowsPowerShell\v1.0</code>
-                </p></blockquote>
+                               You can launch PowerShell 5 via the Start Menu or
+                    <code class="language-plaintext highlighter-rouge">$env:WINDIR\System32\WindowsPowerShell\v1.0</code></p></blockquote>
                 <h2 id="install-73"><a href="#install-73" class="anchor-heading" aria-labelledby="install-73">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
-                </a> <a href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3">Install
-                                                                                                                                                   7.3</a>
-                </h2>
+                </a> <a href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3">Install 7.3</a></h2>
                 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">
                     <p>PowerShell 7.3 installs to a new directory and runs side-by-side with Windows PowerShell 5.1.</p>
                     <p>PowerShell 7.3 is an in-place upgrade that replaces PowerShell 7.0 and lower.</p></div>
                 <ul>
                     <li>
-                        <blockquote><p>Separate installation path and executable name.<br/> Is installed in the
-                            <code class="language-plaintext highlighter-rouge">$env:WINDIR\System32\WindowsPowerShell\v1.0</code><br/> PowerShell 7 is
-                                       installed in the <code class="language-plaintext highlighter-rouge">$env:ProgramFiles\PowerShell\7</code><br/>
-                                       The new location is added to your <code class="language-plaintext highlighter-rouge">PATH</code>, which allows
-                                       you to run both <code class="language-plaintext highlighter-rouge">Windows PowerShell 5.1</code> and <code
-                                    class="language-plaintext highlighter-rouge"
-                            >PowerShell 7</code>.<br/> In <code class="language-plaintext highlighter-rouge">Windows PowerShell</code>, the PowerShell
-                                       executable is<br/> named <code class="language-plaintext highlighter-rouge">powershell.exe</code>.<br/> In
-                                       version 6 and newer, the executable is named <code class="language-plaintext highlighter-rouge">pwsh.exe</code>.<br/>
-                                       The new name makes it easy to support side-by-side execution of both versions</p></blockquote>
-                    <li>
-                        <blockquote><p>Separate PSModulePath.<br/> By default, Windows PowerShell and
-                            <code class="language-plaintext highlighter-rouge">PowerShell 7</code> store modules in different locations.<br/>
-                                       PowerShell 7 combines those locations in the <code class="language-plaintext highlighter-rouge">$Env:PSModulePath</code>
-                                       environment variable.<br/> When you import a module by name, PowerShell checks the location that
-                            <code class="language-plaintext highlighter-rouge">$Env:PSModulePath</code> specifies.<br/> This feature allows PowerShell
-                                       7 to load both Core and Desktop modules.</p></blockquote>
-                    <li>
-                        <blockquote><p>Separate profiles for each version.<br/> A PowerShell profile is a script that runs when PowerShell
-                                       starts.<br/> This script customizes the PowerShell environment by adding commands, aliases, functions,<br/>
-                                       variables, modules, and PowerShell drives.<br/> In <code class="language-plaintext highlighter-rouge">Windows
-                                                                                                                                             PowerShell
-                                                                                                                                             5.1</code>,
-                                       the profile’s location is
-                            <code class="language-plaintext highlighter-rouge">$HOME\Documents\WindowsPowerShell</code>.<br/> In
-                            <code class="language-plaintext highlighter-rouge">PowerShell 7</code>, the profile’s location is<br/>
-                            <code class="language-plaintext highlighter-rouge">$HOME\Documents\PowerShell</code>.</p></blockquote>
-                    <li>
-                        <blockquote><p>Separate event logs. <code class="language-plaintext highlighter-rouge">Windows PowerShell</code> and <code
-                                class="language-plaintext highlighter-rouge"
-                        >PowerShell 7</code> log events to separate Windows event logs.</p></blockquote>
-                    <li>
-                        <blockquote><p>When you’re reviewing a PowerShell session, it’s important to determine which version you’re using.<br/> To
-                                       determine the current version, enter <code class="language-plaintext highlighter-rouge">$PSVersionTable</code>
-                                       in the PowerShell console, and then<br/> select <code class="language-plaintext highlighter-rouge">Enter</code>.<br/>
-                                       PowerShell displays the version numbers for various components, including the main PowerShell version number.
+                        <blockquote><p>Separate installation path and executable name.<br/> Is installed in the <code class="language-plaintext highlighter-rouge">$env:WINDIR\System32\WindowsPowerShell\v1.0</code><br/>
+                                       PowerShell 7 is installed in the <code class="language-plaintext highlighter-rouge">$env:ProgramFiles\PowerShell\7</code><br/> The new
+                                       location is added to your <code class="language-plaintext highlighter-rouge">PATH</code>, which allows you to run both
+                            <code class="language-plaintext highlighter-rouge">Windows PowerShell 5.1</code> and <code class="language-plaintext highlighter-rouge">PowerShell
+                                                                                                                                                                    7</code>.<br/>
+                                       In <code class="language-plaintext highlighter-rouge">Windows PowerShell</code>, the PowerShell executable is<br/> named
+                            <code class="language-plaintext highlighter-rouge">powershell.exe</code>.<br/> In version 6 and newer, the executable is named
+                            <code class="language-plaintext highlighter-rouge">pwsh.exe</code>.<br/> The new name makes it easy to support side-by-side execution of both versions
                         </p></blockquote>
+                    <li>
+                        <blockquote><p>Separate PSModulePath.<br/> By default, Windows PowerShell and <code class="language-plaintext highlighter-rouge">PowerShell 7</code> store
+                                       modules in different locations.<br/> PowerShell 7 combines those locations in the <code class="language-plaintext highlighter-rouge">$Env:PSModulePath</code>
+                                       environment variable.<br/> When you import a module by name, PowerShell checks the location that
+                            <code class="language-plaintext highlighter-rouge">$Env:PSModulePath</code> specifies.<br/> This feature allows PowerShell 7 to load both Core and
+                                       Desktop modules.</p></blockquote>
+                    <li>
+                        <blockquote><p>Separate profiles for each version.<br/> A PowerShell profile is a script that runs when PowerShell starts.<br/> This script customizes the
+                                       PowerShell environment by adding commands, aliases, functions,<br/> variables, modules, and PowerShell drives.<br/> In
+                            <code class="language-plaintext highlighter-rouge">Windows PowerShell 5.1</code>, the profile’s location is
+                            <code class="language-plaintext highlighter-rouge">$HOME\Documents\WindowsPowerShell</code>.<br/> In <code class="language-plaintext highlighter-rouge">PowerShell
+                                                                                                                                                                                    7</code>,
+                                       the profile’s location is<br/> <code class="language-plaintext highlighter-rouge">$HOME\Documents\PowerShell</code>.</p></blockquote>
+                    <li>
+                        <blockquote><p>Separate event logs. <code class="language-plaintext highlighter-rouge">Windows PowerShell</code> and
+                            <code class="language-plaintext highlighter-rouge">PowerShell 7</code> log events to separate Windows event logs.</p></blockquote>
+                    <li>
+                        <blockquote><p>When you’re reviewing a PowerShell session, it’s important to determine which version you’re using.<br/> To determine the current version,
+                                       enter <code class="language-plaintext highlighter-rouge">$PSVersionTable</code> in the PowerShell console, and then<br/> select
+                            <code class="language-plaintext highlighter-rouge">Enter</code>.<br/> PowerShell displays the version numbers for various components, including the main
+                                       PowerShell version number.</p></blockquote>
                 </ul>
                 <hr/>
                 <h3 id="dotnet-cli"><a href="#dotnet-cli" class="anchor-heading" aria-labelledby="dotnet-cli">
@@ -847,11 +818,11 @@
                 </a> DotNet CLI
                 </h3>
                 <div class="language-powershell highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="n">dotnet</span><span class="w"> </span><span
-                            class="nx"
-                    >tool</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nt">--global</span><span
+                    <div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="n">dotnet</span><span class="w"> </span><span class="nx">tool</span><span
                             class="w"
-                    > </span><span class="nx">PowerShell</span><span class="w">
+                    > </span><span class="nx">install</span><span class="w"> </span><span class="nt">--global</span><span class="w"> </span><span class="nx">PowerShell</span><span
+                            class="w"
+                    >
 </span></code></pre></div></div><h3 id="msi"> <a href="#msi" class="anchor-heading" aria-labelledby="msi"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> MSI</h3><div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="n">msiexec.exe</span><span class="w"> </span><span class="nx">/package</span><span class="w"> </span><span class="nx">PowerShell-7.3.2-win-x64.msi</span><span class="w"> </span><span class="nx">/quiet</span><span class="w"> </span><span class="nx">ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="n">ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="n">ENABLE_PSREMOTING</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="n">REGISTER_MANIFEST</span><span class="o">=</span><span class="mi">1</span><span class="w">
  </span><span class="n">USE_MU</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="n">ENABLE_MU</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="n">ADD_PATH</span><span class="o">=</span><span class="mi">1</span><span class="w">
 </span></code></pre></div></div><h3 id="winget"> <a href="#winget" class="anchor-heading" aria-labelledby="winget"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Winget</h3><div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">winget</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">Microsoft.PowerShell</span><span class="w">

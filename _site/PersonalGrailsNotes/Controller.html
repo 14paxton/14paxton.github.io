@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Controller | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="Controller"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -370,6 +370,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -404,7 +405,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -479,7 +480,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -487,10 +487,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -550,6 +552,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -565,6 +569,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -586,9 +591,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -610,12 +613,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -632,32 +631,29 @@
                     <summary class="text-delta"> Table of contents</summary>
                     <ol id="markdown-toc">
                         <li><a href="#the-grails-parameter-map" id="markdown-toc-the-grails-parameter-map">The Grails Parameter Map</a>
-                        <li><a href="#command-object-with-validation-" id="markdown-toc-command-object-with-validation-">Command Object with
-                                                                                                                         Validation-*</a>
+                        <li><a href="#command-object-with-validation-" id="markdown-toc-command-object-with-validation-">Command Object with Validation-*</a>
                             <ol>
-                                <li><a
-                                        href="#command-object-allows-you-to-validate-with-services"
-                                        id="markdown-toc-command-object-allows-you-to-validate-with-services"
-                                >command object allows you to validate with services</a>
+                                <li><a href="#command-object-allows-you-to-validate-with-services" id="markdown-toc-command-object-allows-you-to-validate-with-services">command
+                                                                                                                                                                         object
+                                                                                                                                                                         allows you
+                                                                                                                                                                         to validate
+                                                                                                                                                                         with
+                                                                                                                                                                         services</a>
                                     <ol>
                                         <li><a
                                                 href="#custom-validator-for-nested-command-objects-in-a-list"
                                                 id="markdown-toc-custom-validator-for-nested-command-objects-in-a-list"
                                         >Custom Validator for Nested Command objects in a list</a>
-                                        <li><a
-                                                href="#import-and-excluding-other-domain-constrains"
-                                                id="markdown-toc-import-and-excluding-other-domain-constrains"
-                                        >Import and excluding other domain constrains</a>
-                                        <li><a
-                                                href="#json-return-bodies-springjackson-examples"
-                                                id="markdown-toc-json-return-bodies-springjackson-examples"
-                                        >JSON return bodies Spring/Jackson examples</a>
+                                        <li><a href="#import-and-excluding-other-domain-constrains" id="markdown-toc-import-and-excluding-other-domain-constrains">Import and
+                                                                                                                                                                   excluding other
+                                                                                                                                                                   domain
+                                                                                                                                                                   constrains</a>
+                                        <li><a href="#json-return-bodies-springjackson-examples" id="markdown-toc-json-return-bodies-springjackson-examples">JSON return bodies
+                                                                                                                                                             Spring/Jackson
+                                                                                                                                                             examples</a>
                                             <ol>
                                                 <li><a href="#jackson-json-view-annotation" id="markdown-toc-jackson-json-view-annotation">jackson-json-view-annotation</a>
-                                                <li><a
-                                                        href="#spring-mvc-ann-jackson"
-                                                        id="markdown-toc-spring-mvc-ann-jackson"
-                                                >spring-mvc-ann-jackson</a>
+                                                <li><a href="#spring-mvc-ann-jackson" id="markdown-toc-spring-mvc-ann-jackson">spring-mvc-ann-jackson</a>
                                             </ol>
                                     </ol>
                             </ol>
@@ -666,11 +662,7 @@
                 <p><br/></p>
                 <hr/>
                 <p><br/></p>
-                <h1 id="the-grails-parameter-map"><a
-                        href="#the-grails-parameter-map"
-                        class="anchor-heading"
-                        aria-labelledby="the-grails-parameter-map"
-                >
+                <h1 id="the-grails-parameter-map"><a href="#the-grails-parameter-map" class="anchor-heading" aria-labelledby="the-grails-parameter-map">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
@@ -678,15 +670,13 @@
                 </h1>
                 <blockquote><p><a href="https://gist.github.com/14paxton/42e595a1bf50e44031b6be6c034003d9">Using Param map Object</a></p></blockquote>
                 <div class="language-groovy highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code><span class="kt">def</span> <span class="n">paramMap</span> <span class="o">=</span> <span
-                            class="o"
-                    >[</span><span class="s2">"firstName"</span><span class="o">:</span> <span class="s2">"brandon"</span><span class="o">,</span> <span
+                    <div class="highlight"><pre class="highlight"><code><span class="kt">def</span> <span class="n">paramMap</span> <span class="o">=</span> <span class="o">[</span><span
                             class="s2"
-                    >"lastName"</span><span class="o">:</span> <span class="s2">"paxton"</span><span class="o">,</span> <span class="s2">"email"</span><span
-                            class="o"
-                    >:</span> <span class="s2">"bpaxton@talentplus.com"</span><span class="o">,</span> <span class="s2">"assessmentType"</span><span
-                            class="o"
-                    >:</span> <span class="s2">"AO6"</span><span class="o">]</span>
+                    >"firstName"</span><span class="o">:</span> <span class="s2">"brandon"</span><span class="o">,</span> <span class="s2">"lastName"</span><span class="o">:</span> <span
+                            class="s2"
+                    >"paxton"</span><span class="o">,</span> <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"bpaxton@talentplus.com"</span><span class="o">,</span> <span
+                            class="s2"
+                    >"assessmentType"</span><span class="o">:</span> <span class="s2">"AO6"</span><span class="o">]</span>
 <span class="kt">def</span> <span class="n">x</span> <span class="o">=</span> <span class="k">new</span> <span class="n">grails</span><span class="o">.</span><span class="na">web</span><span class="o">.</span><span class="na">servlet</span><span class="o">.</span><span class="na">mvc</span><span class="o">.</span><span class="na">GrailsParameterMap</span><span class="o">(</span><span class="n">paramMap</span><span class="o">,</span> <span class="n">request</span><span class="o">)</span>
 </code></pre></div></div><h1 id="command-object-with-validation-"> <a href="#command-object-with-validation-" class="anchor-heading" aria-labelledby="command-object-with-validation-"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Command Object with Validation-*</h1><h2 id="command-object-allows-you-to-validate-with-services"> <a href="#command-object-allows-you-to-validate-with-services" class="anchor-heading" aria-labelledby="command-object-allows-you-to-validate-with-services"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> command object allows you to validate with services</h2><p><a href="https://gist.github.com/14paxton/282d48ed20642c697315e15dffb7df2d"> GRAILSCommandObject </a></p><h3 id="custom-validator-for-nested-command-objects-in-a-list"> <a href="#custom-validator-for-nested-command-objects-in-a-list" class="anchor-heading" aria-labelledby="custom-validator-for-nested-command-objects-in-a-list"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Custom Validator for Nested Command objects in a list</h3><blockquote><p>creating error code</p></blockquote><blockquote><p>Error Object = package org.springframework.validation (Public Interface Errors)</p></blockquote><blockquote><p>Example com.talentbank.tbex.SelfServiceIntegration.WSConfigCommand.rest</p></blockquote><p>(Validator)[https://docs.grails.org/latest/ref/Constraints/validator.html]</p><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rest</span> <span class="nl">nullable:</span> <span class="kc">true</span><span class="o">,</span> <span class="nl">validator:</span> <span class="o">{</span> <span class="n">RESTCommand</span> <span class="n">restCmd</span><span class="o">,</span> <span class="n">WSConfigCommand</span> <span class="n">obj</span> <span class="o">-&gt;</span>
     <span class="k">return</span> <span class="o">(</span><span class="n">obj</span><span class="o">?.</span><span class="na">wSConfigTypes</span><span class="o">?.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">?</span> <span class="kc">null</span> <span class="o">:</span> <span class="s2">"error: must have config rest, ftp, or soap"</span>

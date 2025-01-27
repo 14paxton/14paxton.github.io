@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Testing | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="Testing"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -366,6 +366,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -400,7 +401,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -475,7 +476,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -483,10 +483,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -546,6 +548,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -561,6 +565,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -582,9 +587,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -606,12 +609,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -631,8 +630,7 @@
                             <ol>
                                 <li><a href="#modify-config" id="markdown-toc-modify-config">Modify config</a>
                                 <li><a href="#get-at-application" id="markdown-toc-get-at-application">Get at application</a>
-                                <li><a href="#use-db-in-memory-to-run-tests" id="markdown-toc-use-db-in-memory-to-run-tests">Use db in memory to run
-                                                                                                                             tests</a>
+                                <li><a href="#use-db-in-memory-to-run-tests" id="markdown-toc-use-db-in-memory-to-run-tests">Use db in memory to run tests</a>
                                 <li><a
                                         href="#mocking-service-and-then-method-call-setting-dummy-data-for-the-returnput-in-test-method"
                                         id="markdown-toc-mocking-service-and-then-method-call-setting-dummy-data-for-the-returnput-in-test-method"
@@ -641,46 +639,30 @@
                                         href="#mocking-service-used-in-a-service-you-are-testingput-at-beginning-of-the-test-class"
                                         id="markdown-toc-mocking-service-used-in-a-service-you-are-testingput-at-beginning-of-the-test-class"
                                 >Mocking Service used in a service you are testing(put at beginning of the test class)</a>
-                                <li><a href="#mocking-method-in-service-you-are-testing" id="markdown-toc-mocking-method-in-service-you-are-testing">Mocking
-                                                                                                                                                     Method
-                                                                                                                                                     in
-                                                                                                                                                     service
-                                                                                                                                                     you
-                                                                                                                                                     are
-                                                                                                                                                     testing</a>
+                                <li><a href="#mocking-method-in-service-you-are-testing" id="markdown-toc-mocking-method-in-service-you-are-testing">Mocking Method in service you
+                                                                                                                                                     are testing</a>
                                 <li><a href="#mocking-method-in-domain" id="markdown-toc-mocking-method-in-domain">Mocking method in domain</a>
-                                <li><a href="#using-test-data-from-buildtest-plugin" id="markdown-toc-using-test-data-from-buildtest-plugin">Using
-                                                                                                                                             Test Data
-                                                                                                                                             from
-                                                                                                                                             BuildTest
+                                <li><a href="#using-test-data-from-buildtest-plugin" id="markdown-toc-using-test-data-from-buildtest-plugin">Using Test Data from BuildTest
                                                                                                                                              plugin</a>
                                     <ol>
                                         <li><a href="#snippet-from-spock-test" id="markdown-toc-snippet-from-spock-test">Snippet from spock test</a>
                                             <ol>
-                                                <li><a href="#different-ways-to-build" id="markdown-toc-different-ways-to-build">Different ways to
-                                                                                                                                 build</a>
+                                                <li><a href="#different-ways-to-build" id="markdown-toc-different-ways-to-build">Different ways to build</a>
                                             </ol>
                                     </ol>
                             </ol>
                         <li><a href="#configurations" id="markdown-toc-configurations">Configurations</a>
                             <ol>
-                                <li><a href="#checking-validity-of-constraints" id="markdown-toc-checking-validity-of-constraints">Checking validity
-                                                                                                                                   of constraints</a>
-                                <li><a
-                                        href="#check-if-method-was-called-for-another-service"
-                                        id="markdown-toc-check-if-method-was-called-for-another-service"
-                                >check if method was called for another service</a>
-                                <li><a
-                                        href="#check-if-method-was-called-for-same-service"
-                                        id="markdown-toc-check-if-method-was-called-for-same-service"
-                                >check if method was called for same service</a>
+                                <li><a href="#checking-validity-of-constraints" id="markdown-toc-checking-validity-of-constraints">Checking validity of constraints</a>
+                                <li><a href="#check-if-method-was-called-for-another-service" id="markdown-toc-check-if-method-was-called-for-another-service">check if method was
+                                                                                                                                                               called for another
+                                                                                                                                                               service</a>
+                                <li><a href="#check-if-method-was-called-for-same-service" id="markdown-toc-check-if-method-was-called-for-same-service">check if method was called
+                                                                                                                                                         for same service</a>
                                 <li><a href="#create-an-exception" id="markdown-toc-create-an-exception">create an exception</a>
                                 <li><a href="#catch-exception" id="markdown-toc-catch-exception">catch exception</a>
-                                <li><a href="#modify-config-duringfor-test" id="markdown-toc-modify-config-duringfor-test">modify config during/for
-                                                                                                                           test</a>
-                                <li><a href="#create-a-custom-manager-for-a-test" id="markdown-toc-create-a-custom-manager-for-a-test">create a custom
-                                                                                                                                       manager for a
-                                                                                                                                       test</a>
+                                <li><a href="#modify-config-duringfor-test" id="markdown-toc-modify-config-duringfor-test">modify config during/for test</a>
+                                <li><a href="#create-a-custom-manager-for-a-test" id="markdown-toc-create-a-custom-manager-for-a-test">create a custom manager for a test</a>
                                 <li><a
                                         href="#mocking-hibernate-used-to-test-methods-using-where-queriers--detached-criteria--criteria-builder"
                                         id="markdown-toc-mocking-hibernate-used-to-test-methods-using-where-queriers--detached-criteria--criteria-builder"
@@ -689,13 +671,7 @@
                                         href="#mock-return-value-for-service-method-used-in-the-service-you-are-testing"
                                         id="markdown-toc-mock-return-value-for-service-method-used-in-the-service-you-are-testing"
                                 >Mock return value for service method used in the service you are testing</a>
-                                <li><a href="#mock-a-static-method-call-from-a-domain" id="markdown-toc-mock-a-static-method-call-from-a-domain">Mock
-                                                                                                                                                 a
-                                                                                                                                                 static
-                                                                                                                                                 method
-                                                                                                                                                 call
-                                                                                                                                                 from
-                                                                                                                                                 a
+                                <li><a href="#mock-a-static-method-call-from-a-domain" id="markdown-toc-mock-a-static-method-call-from-a-domain">Mock a static method call from a
                                                                                                                                                  domain</a>
                             </ol>
                         <li><a href="#test-snippets" id="markdown-toc-test-snippets">Test Snippets</a>
@@ -705,10 +681,8 @@
                                         <li><a href="#grails3" id="markdown-toc-grails3">Grails3</a>
                                         <li><a href="#grails4" id="markdown-toc-grails4">Grails4</a>
                                             <ol>
-                                                <li><a
-                                                        href="#ex-integrations-test-for-controller"
-                                                        id="markdown-toc-ex-integrations-test-for-controller"
-                                                >Ex. Integrations test for controller</a>
+                                                <li><a href="#ex-integrations-test-for-controller" id="markdown-toc-ex-integrations-test-for-controller">Ex. Integrations test for
+                                                                                                                                                         controller</a>
                                             </ol>
                                     </ol>
                             </ol>

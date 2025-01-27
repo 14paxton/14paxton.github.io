@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Email | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="Email"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -370,6 +370,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -404,7 +405,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -479,7 +480,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -487,10 +487,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -550,6 +552,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -565,6 +569,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -586,9 +591,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -610,12 +613,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -634,20 +633,13 @@
                         <li><a href="#javamail-api" id="markdown-toc-javamail-api">JavaMail API</a>
                         <li><a href="#spring" id="markdown-toc-spring">Spring</a>
                             <ol>
-                                <li><a href="#2-project-setup-and-dependency" id="markdown-toc-2-project-setup-and-dependency"><strong>2. Project
-                                                                                                                                       Setup and
-                                                                                                                                       Dependency</strong></a>
-                                <li><a
-                                        href="#3-sending-a-plain-text-and-an-html-email"
-                                        id="markdown-toc-3-sending-a-plain-text-and-an-html-email"
-                                ><strong>3. Sending a Plain Text and an HTML Email</strong></a>
-                                <li><a href="#4-sending-email-with-an-attachment" id="markdown-toc-4-sending-email-with-an-attachment"><strong>4.
-                                                                                                                                               Sending
-                                                                                                                                               Email
-                                                                                                                                               With an
+                                <li><a href="#2-project-setup-and-dependency" id="markdown-toc-2-project-setup-and-dependency"><strong>2. Project Setup and Dependency</strong></a>
+                                <li><a href="#3-sending-a-plain-text-and-an-html-email" id="markdown-toc-3-sending-a-plain-text-and-an-html-email"><strong>3. Sending a Plain Text
+                                                                                                                                                           and an HTML
+                                                                                                                                                           Email</strong></a>
+                                <li><a href="#4-sending-email-with-an-attachment" id="markdown-toc-4-sending-email-with-an-attachment"><strong>4. Sending Email With an
                                                                                                                                                Attachment</strong></a>
-                                <li><a href="#5-formatting-email-text" id="markdown-toc-5-formatting-email-text"><strong>5. Formatting Email
-                                                                                                                         Text</strong></a>
+                                <li><a href="#5-formatting-email-text" id="markdown-toc-5-formatting-email-text"><strong>5. Formatting Email Text</strong></a>
                             </ol>
                         <li><a href="#google-cloud-function" id="markdown-toc-google-cloud-function">Google Cloud Function</a>
                         <li><a href="#using-gcp-app-enging" id="markdown-toc-using-gcp-app-enging">Using GCP App Enging</a>
@@ -705,7 +697,26 @@
     <span class="nt">&lt;artifactId&gt;</span>angus-mail<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>2.0.1<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div></div><p>The latest version can be found<a href="https://mvnrepository.com/artifact/org.eclipse.angus/angus-mail">here</a>.</p><h2 id="3-sending-a-plain-text-and-an-html-email"> <a href="#3-sending-a-plain-text-and-an-html-email" class="anchor-heading" aria-labelledby="3-sending-a-plain-text-and-an-html-email"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>3. Sending a Plain Text and an HTML Email</strong><a href="https://www.baeldung.com/java-email#sending-a-plain-text-and-an-html-email"></a></h2><p>First, we need to configure the library with our email service provider’s credentials. Then we’ll create a_Session_that’ll be used in constructing our<br /> message for sending.</p><p>The configuration is via a Java_Properties_object:</p><div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Properties</span> <span class="n">prop</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Properties</span><span class="o">();</span>
+</code></pre>
+                </div>
+                </div>
+                <p>The latest version can be found<a href="https://mvnrepository.com/artifact/org.eclipse.angus/angus-mail">here</a>.</p>
+                <h2 id="3-sending-a-plain-text-and-an-html-email"><a
+                        href="#3-sending-a-plain-text-and-an-html-email"
+                        class="anchor-heading"
+                        aria-labelledby="3-sending-a-plain-text-and-an-html-email"
+                >
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> <strong>3. Sending a Plain Text and an HTML Email</strong><a href="https://www.baeldung.com/java-email#sending-a-plain-text-and-an-html-email"></a></h2>
+                <p>First, we need to configure the library with our email service provider’s credentials. Then we’ll create a_Session_that’ll be used in constructing our<br/>
+                   message for sending.</p>
+                <p>The configuration is via a Java_Properties_object:</p>
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code><span class="nc">Properties</span> <span class="n">prop</span> <span class="o">=</span> <span class="k">new</span> <span
+                            class="nc"
+                    >Properties</span><span class="o">();</span>
         <span class="n">prop</span><span class="o">.</span>
 
 <span class="nf">put</span><span class="o">(</span><span class="s">"mail.smtp.auth"</span><span class="o">,</span><span class="kc">true</span><span class="o">);</span>
@@ -732,7 +743,15 @@
     <span class="k">return</span> <span class="k">new</span> <span class="nf">PasswordAuthentication</span><span class="o">(</span><span class="n">username</span><span class="o">,</span> <span class="n">password</span><span class="o">);</span>
 <span class="o">}</span>
         <span class="o">});</span>
-</code></pre></div></div><p>The username and password are given by the mail service provider alongside the host and port parameters.</p><p>Now that we have a mail_Session_object, let’s create a_Mime__Message_for sending:</p><div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Message</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MimeMessage</span><span class="o">(</span><span class="n">session</span><span class="o">);</span>
+</code></pre>
+                </div>
+                </div>
+                <p>The username and password are given by the mail service provider alongside the host and port parameters.</p>
+                <p>Now that we have a mail_Session_object, let’s create a_Mime__Message_for sending:</p>
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code><span class="nc">Message</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span
+                            class="nc"
+                    >MimeMessage</span><span class="o">(</span><span class="n">session</span><span class="o">);</span>
         <span class="n">message</span><span class="o">.</span>
 
 <span class="nf">setFrom</span><span class="o">(</span><span class="k">new</span> <span class="nc">InternetAddress</span><span class="o">(</span><span class="s">"from@gmail.com"</span><span class="o">));</span>
@@ -763,11 +782,43 @@
         <span class="nc">Transport</span><span class="o">.</span>
 
 <span class="nf">send</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
-</code></pre></div></div><p>In the snippet above, we first created a_message_instance with the necessary properties — to, from and subject.<br /> This is followed by a_mimeBodyPart_that has an encoding of_text/html_since our<br /> message <br /> is styled in HTML.</p><p>Next, we created an instance of_MimeMultipart_object that we can use to wrap the_mimeBodyPart_we created.</p><p>Finally, we set the_multipart_object as the content of our_message_and used the_send()_of_Transport_object to do the mail sending.</p><p><strong>So, we can say that the_mimeBodyPart_is contained in the_multipart_that is contained in the_message_. This way, a_multipart_can contain more than<br /> one_mimeBodyPart_.</strong></p><p>This is going to be the focus of the next section.</p><h2 id="4-sending-email-with-an-attachment"> <a href="#4-sending-email-with-an-attachment" class="anchor-heading" aria-labelledby="4-sending-email-with-an-attachment"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>4. Sending Email With an Attachment</strong><a href="https://www.baeldung.com/java-email#sending-email-with-an-attachment"></a></h2><p>Next, to send an attachment, we only need to create another_MimeBodyPart_and attach the file(s) to it:</p><div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">MimeBodyPart</span> <span class="n">attachmentBodyPart</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MimeBodyPart</span><span class="o">();</span>
+</code></pre>
+                    </div>
+                </div>
+                <p>In the snippet above, we first created a_message_instance with the necessary properties — to, from and subject.<br/> This is followed by a_mimeBodyPart_that has
+                   an encoding of_text/html_since our<br/> message <br/> is styled in HTML.</p>
+                <p>Next, we created an instance of_MimeMultipart_object that we can use to wrap the_mimeBodyPart_we created.</p>
+                <p>Finally, we set the_multipart_object as the content of our_message_and used the_send()_of_Transport_object to do the mail sending.</p>
+                <p><strong>So, we can say that the_mimeBodyPart_is contained in the_multipart_that is contained in the_message_. This way, a_multipart_can contain more than<br/>
+                           one_mimeBodyPart_.</strong></p>
+                <p>This is going to be the focus of the next section.</p>
+                <h2 id="4-sending-email-with-an-attachment"><a
+                        href="#4-sending-email-with-an-attachment"
+                        class="anchor-heading"
+                        aria-labelledby="4-sending-email-with-an-attachment"
+                >
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> <strong>4. Sending Email With an Attachment</strong><a href="https://www.baeldung.com/java-email#sending-email-with-an-attachment"></a></h2>
+                <p>Next, to send an attachment, we only need to create another_MimeBodyPart_and attach the file(s) to it:</p>
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code><span class="nc">MimeBodyPart</span> <span class="n">attachmentBodyPart</span> <span class="o">=</span> <span
+                            class="k"
+                    >new</span> <span class="nc">MimeBodyPart</span><span class="o">();</span>
         <span class="n">attachmentBodyPart</span><span class="o">.</span>
 
-<span class="nf">attachFile</span><span class="o">(</span><span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="s">"path/to/file"</span><span class="o">));</span>
-</code></pre></div></div><p>We can then add the new body part to the_MimeMultipart_object we created earlier:</p><div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">multipart</span><span class="o">.</span><span class="na">addBodyPart</span><span class="o">(</span><span class="n">attachmentBodyPart</span><span class="o">);</span>
+<span class="nf">attachFile</span><span class="o">(</span><span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="s">"path/to/file"</span><span
+                                class="o"
+                        >));</span>
+</code></pre>
+                    </div>
+                </div>
+                <p>We can then add the new body part to the_MimeMultipart_object we created earlier:</p>
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code><span class="n">multipart</span><span class="o">.</span><span class="na">addBodyPart</span><span class="o">(</span><span
+                            class="n"
+                    >attachmentBodyPart</span><span class="o">);</span>
 </code></pre></div></div><p><strong>That’s all we need to do.</strong></p><p><strong>Once again, we set the_multipart_instance as the content of the_message_object, and finally we’ll use the_send()_to do the mail sending.</strong></p><h2 id="5-formatting-email-text"> <a href="#5-formatting-email-text" class="anchor-heading" aria-labelledby="5-formatting-email-text"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>5. Formatting Email Text</strong><a href="https://www.baeldung.com/java-email#formatting-email-text"></a></h2><p>To format and style our email text, we can use HTML and CSS tags.</p><p>For example, if we want our text to be bold, we will implement the_<b>_tag. For coloring the text, we can use the_style_tag.<strong>We can also combine HTML tags with CSS tags if we want to have additional properties, such as bold.</strong></b></p><p>Let’s create a_String_containing bold-red text:</p><div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nc">String</span> <span class="n">msgStyled</span> <span class="o">=</span> <span class="s">"This is my &lt;b style='color:red;'&gt;bold-red email&lt;/b&gt; using JavaMailer"</span><span class="o">;</span>
 
@@ -801,7 +852,18 @@
         <span class="n">response</span><span class="o">.</span><span class="na">setBody</span><span class="o">(</span><span class="s">"Email sent successfully."</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div></div><hr /><h1 id="using-gcp-app-enging"> <a href="#using-gcp-app-enging" class="anchor-heading" aria-labelledby="using-gcp-app-enging"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://cloud.google.com/appengine/docs/legacy/standard/java/mail/sending-mail-with-mail-api">Using GCP App Enging</a></h1><p><code class="language-plaintext highlighter-rouge">To send an email using Java and Google Cloud Platform, you can use the following steps:</code></p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Create a Google Cloud Platform project and enable the Cloud Messaging API.
+</code></pre>
+                </div>
+                </div>
+                <hr/>
+                <h1 id="using-gcp-app-enging"><a href="#using-gcp-app-enging" class="anchor-heading" aria-labelledby="using-gcp-app-enging">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> <a href="https://cloud.google.com/appengine/docs/legacy/standard/java/mail/sending-mail-with-mail-api">Using GCP App Enging</a></h1>
+                <p><code class="language-plaintext highlighter-rouge">To send an email using Java and Google Cloud Platform, you can use the following steps:</code></p>
+                <div class="language-plaintext highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>Create a Google Cloud Platform project and enable the Cloud Messaging API.
 Create a service account and download its JSON key file.
 Create a Java project and add the following dependencies to your pom.xml file:
 </code></pre></div></div><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -810,7 +872,11 @@ Create a Java project and add the following dependencies to your pom.xml file:
     <span class="nt">&lt;artifactId&gt;</span>google-cloud-messaging<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>1.2.0<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div></div><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Create a Java class that implements the GoogleCloudMessaging.MessageSender interface. The following is an example of a class that sends an email message:
+</code></pre>
+                </div>
+                </div>
+                <div class="language-plaintext highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>Create a Java class that implements the GoogleCloudMessaging.MessageSender interface. The following is an example of a class that sends an email message:
 </code></pre></div></div><div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">EmailSender</span> <span class="kd">implements</span> <span class="nc">GoogleCloudMessaging</span><span class="o">.</span><span class="na">MessageSender</span> <span class="o">{</span>
 
     <span class="nd">@Override</span>
@@ -825,7 +891,11 @@ Create a Java project and add the following dependencies to your pom.xml file:
         <span class="nc">GoogleCloudMessaging</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div></div><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>In your main method, create an instance of the EmailSender class and call the sendMessage() method to send the email message.
+</code></pre>
+                </div>
+                </div>
+                <div class="language-plaintext highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>In your main method, create an instance of the EmailSender class and call the sendMessage() method to send the email message.
 EmailSender sender = new EmailSender();
 sender.sendMessage("to@example.com", "Subject", "Body");
 </code></pre></div></div><hr /><h1 id="through-gmail-server"> <a href="#through-gmail-server" class="anchor-heading" aria-labelledby="through-gmail-server"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://developers.google.com/gmail/api/guides/sending">Through Gmail Server</a></h1><h2 id="to-send-an-email-using-google-app-script-you-can-use-the-following-code"> <a href="#to-send-an-email-using-google-app-script-you-can-use-the-following-code" class="anchor-heading" aria-labelledby="to-send-an-email-using-google-app-script-you-can-use-the-following-code"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> To send an email using Google App Script, you can use the following code:</h2><div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">function</span> <span class="nf">sendEmail</span><span class="o">(</span><span class="n">to</span><span class="o">,</span> <span class="n">subject</span><span class="o">,</span> <span class="n">body</span><span class="o">)</span> <span class="o">{</span>

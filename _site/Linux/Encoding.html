@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Encoding | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="Encoding"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -370,6 +370,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -404,7 +405,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -479,7 +480,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -487,10 +487,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -550,6 +552,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -565,6 +569,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -586,9 +591,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -610,12 +613,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -633,16 +632,9 @@
                     <ol id="markdown-toc">
                         <li><a href="#encode-to-utf-8-utf8" id="markdown-toc-encode-to-utf-8-utf8">Encode to UTF-8 /utf8</a>
                             <ol>
-                                <li><a href="#mac-roman-character-to-equivalent-utf-8" id="markdown-toc-mac-roman-character-to-equivalent-utf-8">Mac
-                                                                                                                                                 Roman
-                                                                                                                                                 character
-                                                                                                                                                 to
-                                                                                                                                                 equivalent
+                                <li><a href="#mac-roman-character-to-equivalent-utf-8" id="markdown-toc-mac-roman-character-to-equivalent-utf-8">Mac Roman character to equivalent
                                                                                                                                                  UTF-8</a>
-                                <li><a href="#nix-like-computers-including-mac-os-x" id="markdown-toc-nix-like-computers-including-mac-os-x">*nix like
-                                                                                                                                             computers
-                                                                                                                                             (including
-                                                                                                                                             Mac OS
+                                <li><a href="#nix-like-computers-including-mac-os-x" id="markdown-toc-nix-like-computers-including-mac-os-x">*nix like computers (including Mac OS
                                                                                                                                              X)</a>
                                 <li><a href="#script" id="markdown-toc-script">script</a>
                                 <li><a href="#emacs" id="markdown-toc-emacs">Emacs</a>
@@ -656,21 +648,17 @@
                 <p><br/></p>
                 <hr/>
                 <p><br/></p>
-                <blockquote><p>Preferred encoding is an overall preference and cannot be specified for individual servers.<br/> If you have a
-                               particular server that requires a different encoding from your usual setting, you can change<br/> the preferred
-                               encoding temporarily to work with that server, and then set it back once you are done with that connection.</p>
-                </blockquote>
+                <blockquote><p>Preferred encoding is an overall preference and cannot be specified for individual servers.<br/> If you have a particular server that requires a
+                               different encoding from your usual setting, you can change<br/> the preferred encoding temporarily to work with that server, and then set it back
+                               once you are done with that connection.</p></blockquote>
                 <ul>
                     <li>
-                        <blockquote><p>Western (ISO Latin 1) is the default preferred encoding because it is the most common and compatible character
-                                       set.<br/> While filenames may appear garbled, they will at least be displayed.<br/> (ISO Latin<br/> 1 is the
-                                       ISO 8859-1 character set.)</p></blockquote>
+                        <blockquote><p>Western (ISO Latin 1) is the default preferred encoding because it is the most common and compatible character set.<br/> While filenames may
+                                       appear garbled, they will at least be displayed.<br/> (ISO Latin<br/> 1 is the ISO 8859-1 character set.)</p></blockquote>
                     <li>
-                        <blockquote><p>Unicode (UTF-8) - Use this encoding when connecting to Mac OS X, Java, or newer Windows servers.</p>
-                        </blockquote>
+                        <blockquote><p>Unicode (UTF-8) - Use this encoding when connecting to Mac OS X, Java, or newer Windows servers.</p></blockquote>
                     <li>
-                        <blockquote><p>Western (macOS Roman) - Use this encoding when connecting to servers based on Mac OS 9 or earlier.</p>
-                        </blockquote>
+                        <blockquote><p>Western (macOS Roman) - Use this encoding when connecting to servers based on Mac OS 9 or earlier.</p></blockquote>
                     <li>
                         <blockquote><p>Western (Windows Latin 1) - Use this encoding for connecting to older Windows servers.</p></blockquote>
                 </ul>
@@ -680,8 +668,7 @@
                     </svg>
                 </a> Encode to UTF-8 /utf8
                 </h1>
-                <blockquote><p>Run : <code class="language-plaintext highlighter-rouge">iconv --list</code> to see a list of all supported encodings.
-                </p></blockquote>
+                <blockquote><p>Run : <code class="language-plaintext highlighter-rouge">iconv --list</code> to see a list of all supported encodings.</p></blockquote>
                 <h2 id="mac-roman-character-to-equivalent-utf-8"><a
                         href="#mac-roman-character-to-equivalent-utf-8"
                         class="anchor-heading"
@@ -693,9 +680,7 @@
                 </a> Mac Roman character to equivalent UTF-8
                 </h2>
                 <div class="language-shell highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code>iconv <span class="nt">-f</span> ISO-8859-1 <span class="nt">-t</span> UTF-8 &lt; input.latin1 <span
-                            class="o"
-                    >&gt;</span> output.utf8
+                    <div class="highlight"><pre class="highlight"><code>iconv <span class="nt">-f</span> ISO-8859-1 <span class="nt">-t</span> UTF-8 &lt; input.latin1 <span class="o">&gt;</span> output.utf8
 </code></pre></div></div><h2 id="nix-like-computers-including-mac-os-x"> <a href="#nix-like-computers-including-mac-os-x" class="anchor-heading" aria-labelledby="nix-like-computers-including-mac-os-x"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> *nix like computers (including Mac OS X)</h2><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iconv <span class="nt">-f</span> original_charset <span class="nt">-t</span> utf-8 originalfile <span class="o">&gt;</span> newfile
 </code></pre></div></div><h2 id="script"> <a href="#script" class="anchor-heading" aria-labelledby="script"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> script</h2><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
 <span class="nv">FROM</span><span class="o">=</span>iso-8859-1

@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>JavaScript | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="JavaScript"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -366,6 +366,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -400,7 +401,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -475,7 +476,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -483,10 +483,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -546,6 +548,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -561,6 +565,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -582,9 +587,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -606,12 +609,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -623,6 +622,68 @@
                         <use xlink:href="#svg-link"></use>
                     </svg>
                 </a> <a href="https://github.com/14paxton/javascript">REPO</a></h1>
+                <h1 id="gists"><a href="#gists" class="anchor-heading" aria-labelledby="gists">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Gists
+                </h1>
+                <ul>
+                    <li>
+                        <h2 id="addtocustomfeedjs"><a href="#addtocustomfeedjs" class="anchor-heading" aria-labelledby="addtocustomfeedjs">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> <a href="https://gist.github.com/14paxton/63944ec7e8bcd0e7ee9b97e3dc6fd48e">AddToCustomFeed.js</a></h2>
+                    <li>
+                        <h2 id="formfillscriptjs"><a href="#formfillscriptjs" class="anchor-heading" aria-labelledby="formfillscriptjs">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> <a href="https://gist.github.com/14paxton/fedc95a9b660e1625373bea6f92e4648">FormFillScript.js</a></h2>
+                    <li>
+                        <h2 id="getcssfromelementjs"><a href="#getcssfromelementjs" class="anchor-heading" aria-labelledby="getcssfromelementjs">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> <a href="https://gist.github.com/14paxton/70018ca1b4b990db4fbf4edfd1907af8">GetCSSFromElement.js</a></h2>
+                    <li>
+                        <h2 id="jsenumunionjs"><a href="#jsenumunionjs" class="anchor-heading" aria-labelledby="jsenumunionjs">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> <a href="https://gist.github.com/14paxton/685637fd8c513c7539a10f66b2386cfe">JsEnumUnion.js</a></h2>
+                    <li>
+                        <h2 id="newdocumentandwindowjs"><a href="#newdocumentandwindowjs" class="anchor-heading" aria-labelledby="newdocumentandwindowjs">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> <a href="https://gist.github.com/14paxton/fb7f33fd6f5fa7a15077b6ebf18fca44">NewDocumentAndWindow.js</a></h2>
+                    <li>
+                        <h2 id="readhtmltonewdocumentjs"><a href="#readhtmltonewdocumentjs" class="anchor-heading" aria-labelledby="readhtmltonewdocumentjs">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> <a href="https://gist.github.com/14paxton/a5a6b17131a2791b757973f866e3eb98">ReadHTMLToNewDocument.js</a></h2>
+                    <li>
+                        <h2 id="seeformchangejs"><a href="#seeformchangejs" class="anchor-heading" aria-labelledby="seeformchangejs">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> <a href="https://gist.github.com/14paxton/f7f177713ec7e8effcdeec086c22e43a">SeeFormChange.js</a></h2>
+                    <li>
+                        <h2 id="sendformwithfileinputjs"><a href="#sendformwithfileinputjs" class="anchor-heading" aria-labelledby="sendformwithfileinputjs">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> <a href="https://gist.github.com/14paxton/eeeb29357613698bd877eb35dcf0ad89">SendFormWithFileInput.js</a></h2>
+                    <li>
+                        <h2 id="grouparrayofobjectsbykeyjs"><a href="#grouparrayofobjectsbykeyjs" class="anchor-heading" aria-labelledby="grouparrayofobjectsbykeyjs">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> <a href="https://gist.github.com/14paxton/a87f5d47aaf678e89a1dfeffa51b46d9">groupArrayOfObjectsByKey.js</a></h2>
+                </ul>
                 <h1 id="primitive-types-and-data-structures"><a
                         href="#primitive-types-and-data-structures"
                         class="anchor-heading"
@@ -676,9 +737,10 @@
                     </svg>
                 </a> Cheat Sheet
                 </h1>
-                <p><img src="..%2Fassets%2Fimages%2FjavascriptCheatSheet.png" alt="javascriptCheatSheet.png"/> <br/>
-                    <img src="..%2Fassets%2Fimages%2FjavascriptCheatSheet2.png" alt="javascriptCheatSheet2.png"/> <br/>
-                    <img src="..%2Fassets%2Fimages%2FjavascriptCheatSheet3.png" alt="javascriptCheatSheet3.png"/> <br/>
+                <p><img src="..%2Fassets%2Fimages%2FjavascriptCheatSheet.png" alt="javascriptCheatSheet.png"/> <br/> <img
+                        src="..%2Fassets%2Fimages%2FjavascriptCheatSheet2.png"
+                        alt="javascriptCheatSheet2.png"
+                /> <br/> <img src="..%2Fassets%2Fimages%2FjavascriptCheatSheet3.png" alt="javascriptCheatSheet3.png"/> <br/>
                     <img src="..%2Fassets%2Fimages%2FjavascriptCheatSheet4.png" alt="javascriptCheatSheet4.png"/></p>
                 <h1 id="key-value-events--keyboard-events-name-and-code"><a
                         href="#key-value-events--keyboard-events-name-and-code"
@@ -1258,22 +1320,19 @@
                                 <td>173
                                 <td>AudioVolumeMute
                                 <td>
-                                <td> ⚠️ The <code>event.which</code> value is 181 in Firefox. Also FF provides the code value as,
-                                    <code>VolumeMute</code>
+                                <td> ⚠️ The <code>event.which</code> value is 181 in Firefox. Also FF provides the code value as, <code>VolumeMute</code>
                             <tr>
                                 <td>audio volume down
                                 <td>174
                                 <td>AudioVolumeDown
                                 <td>
-                                <td> ⚠️ The <code>event.which</code> value is 182 in Firefox. Also FF provides the code value as,
-                                    <code>VolumeDown</code>
+                                <td> ⚠️ The <code>event.which</code> value is 182 in Firefox. Also FF provides the code value as, <code>VolumeDown</code>
                             <tr>
                                 <td>audio volume up
                                 <td>175
                                 <td>AudioVolumeUp
                                 <td>
-                                <td> ⚠️ The <code>event.which</code> value is 183 in Firefox. Also FF provides the code value as,
-                                    <code>VolumeUp</code>
+                                <td> ⚠️ The <code>event.which</code> value is 183 in Firefox. Also FF provides the code value as, <code>VolumeUp</code>
                             <tr>
                                 <td>media player
                                 <td>181
@@ -1364,6 +1423,7 @@
                 <hr>
                 <h2 class="text-delta">Table of contents</h2>
                 <ul>
+                    <li><a href="/JavaScript/Browser">Browser</a>
                     <li><a href="/JavaScript/CDN">CDN</a>
                     <li><a href="/JavaScript/CSS">CSS</a>
                     <li><a href="/JavaScript/Clever-Algos">Clever-Algos</a>
@@ -1394,10 +1454,7 @@
             <footer><p><a href="#top" id="back-to-top">Back to top</a></p>
                 <p class="text-small text-grey-dk-100 mb-0"></p>
                 <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0">
-                    <a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./JavaScript/JavaScript.md" id="edit-this-page">Edit this
-                                                                                                                                         page on
-                                                                                                                                         GitHub</a>
-                </p></div>
+                    <a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./JavaScript/JavaScript.md" id="edit-this-page">Edit this page on GitHub</a></p></div>
             </footer>
         </div>
     </div>

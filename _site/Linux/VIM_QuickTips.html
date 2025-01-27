@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VIM_QuickTips | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="VIM_QuickTips"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -366,6 +366,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -400,7 +401,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -475,7 +476,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -483,10 +483,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -546,6 +548,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -561,6 +565,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -582,9 +587,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -606,12 +609,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -641,11 +640,9 @@
                 </a> Modes
                 </h1>
                 <ol>
-                    <li><code class="language-plaintext highlighter-rouge">Insert mode</code> : (Where you can just type like normal text editor.
-                                                                                              Press i for insert mode)
-                    <li><code class="language-plaintext highlighter-rouge">Command mode</code>: (Where you give commands to the editor to get things
-                                                                                              done . Press ESC for command mode) <br/> Most of them
-                                                                                              below are in command mode
+                    <li><code class="language-plaintext highlighter-rouge">Insert mode</code> : (Where you can just type like normal text editor. Press i for insert mode)
+                    <li><code class="language-plaintext highlighter-rouge">Command mode</code>: (Where you give commands to the editor to get things done . Press ESC for command
+                                                                                              mode) <br/> Most of them below are in command mode
                 </ol>
                 <h1 id="commands"><a href="#commands" class="anchor-heading" aria-labelledby="commands">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
@@ -657,8 +654,7 @@
                     <li>
                         <blockquote><p><code class="language-plaintext highlighter-rouge">x</code>: to delete the unwanted character</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">u</code>: to undo the last the command and U to undo the
-                                                                                                  whole line</p></blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">u</code>: to undo the last the command and U to undo the whole line</p></blockquote>
                     <li>
                         <blockquote><p><code class="language-plaintext highlighter-rouge">CTRL-R</code>: to redo</p></blockquote>
                     <li>
@@ -668,128 +664,101 @@
                     <li>
                         <blockquote><p><code class="language-plaintext highlighter-rouge">:q!</code>: to trash all changes</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">dw</code>: move the cursor to the beginning of the word to
-                                                                                                   delete that word</p></blockquote>
-                    <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">2w</code>: to move the cursor two words forward.</p>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">dw</code>: move the cursor to the beginning of the word to delete that word</p>
                         </blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">3e</code>: to move the cursor to the end of the third word
-                                                                                                   forward.</p></blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">2w</code>: to move the cursor two words forward.</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">0 (zero)</code>: to move to the start of the line.</p>
-                        </blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">3e</code>: to move the cursor to the end of the third word forward.</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">d2w</code>: which deletes two words. number can be changed
-                                                                                                    for deleting the number of consecutive words like
-                                                                                                    d3w</p></blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">0 (zero)</code>: to move to the start of the line.</p></blockquote>
+                    <li>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">d2w</code>: which deletes two words. number can be changed for deleting the number of
+                                                                                                    consecutive words like d3w</p></blockquote>
                     <li>
                         <blockquote><p><code class="language-plaintext highlighter-rouge">dd</code>: to delete the line</p></blockquote>
                         <ul>
                             <li>
-                                <blockquote><p><code class="language-plaintext highlighter-rouge">2dd</code>: to delete to line .number can be changed
-                                                                                                            for deleting the number of consecutive
-                                                                                                            words <br/> The format for a change
-                                                                                                            command is: operator
-                                    <code class="language-plaintext highlighter-rouge">[number]</code> motion-operator - is what to do, such as d for
-                                                                                                            delete</p></blockquote>
+                                <blockquote><p><code class="language-plaintext highlighter-rouge">2dd</code>: to delete to line .number can be changed for deleting the number of
+                                                                                                            consecutive words <br/> The format for a change command is: operator
+                                    <code class="language-plaintext highlighter-rouge">[number]</code> motion-operator - is what to do, such as d for delete</p></blockquote>
                                 <ul>
                                     <li><code class="language-plaintext highlighter-rouge">[number]</code> - is an optional count to repeat the motion
                                         <ul>
-                                            <li><code class="language-plaintext highlighter-rouge">motion</code>: moves over the text to operate on,
-                                                                                                                such as w (word), $ (to the end of
-                                                                                                                line), etc.
+                                            <li><code class="language-plaintext highlighter-rouge">motion</code>: moves over the text to operate on, such as w (word), $ (to the end
+                                                                                                                of line), etc.
                                         </ul>
                                 </ul>
                         </ul>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">p</code>: puts the previously deleted text after the cursor
-                                                                                                  (Type dd to delete the line and store it in a Vim
-                                                                                                  register. and p to put the line)</p></blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">p</code>: puts the previously deleted text after the cursor (Type dd to delete the line
+                                                                                                  and store it in a Vim register. and p to put the line)</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">r</code>: to replace the letter e.g press re to replace the
-                                                                                                  letter with e</p></blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">r</code>: to replace the letter e.g press re to replace the letter with e</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">ce</code>: to change until the end of a word (place the
-                                                                                                   cursor on the u in lubw it will delete ubw )</p>
-                        </blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">ce</code>: to change until the end of a word (place the cursor on the u in lubw it will
+                                                                                                   delete ubw )</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">ce</code>: deletes the word and places you in Insert mode
-                        </p></blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">ce</code>: deletes the word and places you in Insert mode</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">G</code>: to move you to the bottom of the file.</p>
-                        </blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">G</code>: to move you to the bottom of the file.</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">gg</code>: to move you to the start of the file.</p>
-                        </blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">gg</code>: to move you to the start of the file.</p></blockquote>
                     <li>
                         <blockquote><p>Type the number of the line you were on and then G</p></blockquote>
                     <li>
                         <blockquote><p><code class="language-plaintext highlighter-rouge">%</code>: to find a matching
-                            <code class="language-plaintext highlighter-rouge">)</code>,<code class="language-plaintext highlighter-rouge">]</code>,
-                                                                                                  or
+                            <code class="language-plaintext highlighter-rouge">)</code>,<code class="language-plaintext highlighter-rouge">]</code>, or
                             <code class="language-plaintext highlighter-rouge">}</code></p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">:s/old/new/g </code>: to substitute ‘new’ for ‘old’ where g
-                                                                                                              is global</p></blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">:s/old/new/g </code>: to substitute ‘new’ for ‘old’ where g is global</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">/ </code>: backward search n to find the next occurrence and
-                                                                                                   N to search in opposite direction</p></blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">/ </code>: backward search n to find the next occurrence and N to search in opposite
+                                                                                                   direction</p></blockquote>
                     <li>
                         <blockquote><p><code class="language-plaintext highlighter-rouge">? </code>: forward search</p></blockquote>
                     <li>
                         <blockquote><p><code class="language-plaintext highlighter-rouge">:!</code>: to run the shell commands like
-                            <code class="language-plaintext highlighter-rouge">:!dir</code>,
-                            <code class="language-plaintext highlighter-rouge">:!ls</code></p></blockquote>
+                            <code class="language-plaintext highlighter-rouge">:!dir</code>, <code class="language-plaintext highlighter-rouge">:!ls</code></p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">:w</code>: TEST (where TEST is the filename you chose.) .
-                                                                                                   Save the file</p></blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">:w</code>: TEST (where TEST is the filename you chose.) . Save the file</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">v</code>: starts visual mode for selecting the lines, and
-                                                                                                  you can perform operation on that like d delete</p>
-                        </blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">v</code>: starts visual mode for selecting the lines, and you can perform operation on
+                                                                                                  that like d delete</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">:r</code>: Filename will insert the content into the current
-                                                                                                   file</p></blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">:r</code>: Filename will insert the content into the current file</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">R</code>: to replace more than one character</p>
-                        </blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">R</code>: to replace more than one character</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">y</code>: operator to copy text using v visual mode and p to
-                                                                                                  paste it</p></blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">y</code>: operator to copy text using v visual mode and p to paste it</p></blockquote>
                     <li>
                         <blockquote><p><code class="language-plaintext highlighter-rouge">yw</code>: (copy)yanks one word</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">o</code>: opens a line below the cursor and start Insert
-                                                                                                  mode.</p></blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">o</code>: opens a line below the cursor and start Insert mode.</p></blockquote>
                     <li>
                         <blockquote><p><code class="language-plaintext highlighter-rouge">O</code>: opens a line above the cursor.</p></blockquote>
                     <li>
                         <blockquote><p><code class="language-plaintext highlighter-rouge">a</code>: inserts text after the cursor.</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">A</code>: inserts text after the end of the line.</p>
-                        </blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">A</code>: inserts text after the end of the line.</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">e</code>: command moves to the end of a word.</p>
-                        </blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">e</code>: command moves to the end of a word.</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">y</code>: operator yanks (copies) text, p puts (pastes) it.
-                        </p></blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">y</code>: operator yanks (copies) text, p puts (pastes) it.</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">R</code>: enters Replace mode until
-                            <code class="language-plaintext highlighter-rouge">&lt;ESC&gt;</code> is pressed.</p></blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">R</code>: enters Replace mode until <code class="language-plaintext highlighter-rouge">&lt;ESC&gt;</code>
+                                                                                                  is pressed.</p></blockquote>
                     <li>
-                        <blockquote><p><code class="language-plaintext highlighter-rouge">ctrl-w</code>: to jump from one window to another</p>
-                        </blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">ctrl-w</code>: to jump from one window to another</p></blockquote>
                 </ul>
             </main>
             <hr>
             <footer><p><a href="#top" id="back-to-top">Back to top</a></p>
                 <p class="text-small text-grey-dk-100 mb-0"></p>
-                <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0">
-                    <a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./Linux/VIM_QuickTips.md" id="edit-this-page">Edit this page
-                                                                                                                                       on GitHub</a>
-                </p></div>
+                <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"><a
+                        href="https://github.com/14paxton/14paxton.github.io/edit/develop/./Linux/VIM_QuickTips.md"
+                        id="edit-this-page"
+                >Edit this page on GitHub</a></p></div>
             </footer>
         </div>
     </div>

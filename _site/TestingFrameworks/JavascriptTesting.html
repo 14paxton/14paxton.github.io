@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Javascript | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="Javascript"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -366,6 +366,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -400,7 +401,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -475,7 +476,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -483,10 +483,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -546,6 +548,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -561,6 +565,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -582,9 +587,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -606,12 +609,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -630,22 +629,17 @@
                         <li><a href="#jest" id="markdown-toc-jest">Jest</a>
                             <ol>
                                 <li><a href="#config-in-packagejson" id="markdown-toc-config-in-packagejson">config in package.json</a>
-                                <li><a href="#modify-existing-object-in-test" id="markdown-toc-modify-existing-object-in-test">Modify existing object
-                                                                                                                               in test</a>
+                                <li><a href="#modify-existing-object-in-test" id="markdown-toc-modify-existing-object-in-test">Modify existing object in test</a>
                                 <li><a href="#fire-button-example" id="markdown-toc-fire-button-example">fire button example</a>
                                 <li><a href="#use-mount-to-fully-render" id="markdown-toc-use-mount-to-fully-render">use mount to fully render,</a>
-                                <li><a
-                                        href="#use-the-object-property-selector-to-find-nodes"
-                                        id="markdown-toc-use-the-object-property-selector-to-find-nodes"
-                                >Use the object property selector to find nodes</a>
+                                <li><a href="#use-the-object-property-selector-to-find-nodes" id="markdown-toc-use-the-object-property-selector-to-find-nodes">Use the object
+                                                                                                                                                               property selector to
+                                                                                                                                                               find nodes</a>
                             </ol>
                         <li><a href="#react-testing-lib" id="markdown-toc-react-testing-lib">REACT TESTING LIB</a>
                             <ol>
                                 <li><a href="#mutation-observer" id="markdown-toc-mutation-observer">MUTATION OBSERVER</a>
-                                <li><a href="#use-test-id-in-material-ui-text-field" id="markdown-toc-use-test-id-in-material-ui-text-field">use
-                                                                                                                                             test-id
-                                                                                                                                             in
-                                                                                                                                             material-ui
+                                <li><a href="#use-test-id-in-material-ui-text-field" id="markdown-toc-use-test-id-in-material-ui-text-field">use test-id in material-ui
                                                                                                                                              text-field</a>
                                     <ol>
                                         <li><a
@@ -653,25 +647,17 @@
                                                 id="markdown-toc-and-then-passing-data---testid-as-an-input-prop-on-text-field-like-this"
                                         >And then passing data - testid as an input prop on text field like this</a>
                                     </ol>
-                                <li><a
-                                        href="#use-queryby-to-test-if-something-should-be-null"
-                                        id="markdown-toc-use-queryby-to-test-if-something-should-be-null"
-                                >Use queryBy to test if something should be null</a>
+                                <li><a href="#use-queryby-to-test-if-something-should-be-null" id="markdown-toc-use-queryby-to-test-if-something-should-be-null">Use queryBy to test
+                                                                                                                                                                 if something should
+                                                                                                                                                                 be null</a>
                                 <li><a href="#firing-events" id="markdown-toc-firing-events">Firing events</a>
                                 <li><a href="#getting-component" id="markdown-toc-getting-component">Getting component</a>
                                     <ol>
                                         <li><a href="#testing-component" id="markdown-toc-testing-component">Testing component</a>
                                     </ol>
-                                <li><a href="#get-by-tagname--element-type--nodename" id="markdown-toc-get-by-tagname--element-type--nodename">Get by
-                                                                                                                                               TagName
-                                                                                                                                               /
-                                                                                                                                               Element
-                                                                                                                                               Type /
+                                <li><a href="#get-by-tagname--element-type--nodename" id="markdown-toc-get-by-tagname--element-type--nodename">Get by TagName / Element Type /
                                                                                                                                                NodeName</a>
-                                <li><a href="#check-tagname--element-type--nodename" id="markdown-toc-check-tagname--element-type--nodename">Check
-                                                                                                                                             TagName /
-                                                                                                                                             Element
-                                                                                                                                             Type /
+                                <li><a href="#check-tagname--element-type--nodename" id="markdown-toc-check-tagname--element-type--nodename">Check TagName / Element Type /
                                                                                                                                              NodeName</a>
                                 <li><a href="#react-hook-forms" id="markdown-toc-react-hook-forms">React-Hook-Forms</a>
                                     <ol>
@@ -679,8 +665,7 @@
                                     </ol>
                                 <li><a href="#workarounds" id="markdown-toc-workarounds">Workarounds</a>
                                     <ol>
-                                        <li><a href="#tooltip-calling-documentcreaterange" id="markdown-toc-tooltip-calling-documentcreaterange">tooltip
-                                                                                                                                                 calling
+                                        <li><a href="#tooltip-calling-documentcreaterange" id="markdown-toc-tooltip-calling-documentcreaterange">tooltip calling
                                                                                                                                                  document.createRange</a>
                                     </ol>
                             </ol>
@@ -702,8 +687,8 @@
                     </svg>
                 </a> config in package.json
                 </h2>
-                <blockquote><p>this is transformIgnorePatterns for jest, defaultPhrases used for dateRangePicker needed to be ignored for jest and
-                               adding a workaround for using a<br/> webworker</p></blockquote>
+                <blockquote><p>this is transformIgnorePatterns for jest, defaultPhrases used for dateRangePicker needed to be ignored for jest and adding a workaround for using
+                               a<br/> webworker</p></blockquote>
                 <div class="language-json highlighter-rouge">
                     <div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"jest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">

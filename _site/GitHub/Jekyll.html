@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jekyll | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="Jekyll"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -366,6 +366,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -400,7 +401,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -475,7 +476,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -483,10 +483,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -546,6 +548,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -561,6 +565,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -582,9 +587,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -606,12 +609,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -638,45 +637,22 @@
                                 <li><a href="#markdown-processor" id="markdown-toc-markdown-processor">Markdown Processor</a>
                                 <li><a href="#kramdown" id="markdown-toc-kramdown">Kramdown</a>
                                 <li><a href="#quickref" id="markdown-toc-quickref">QuickRef</a>
-                                <li><a href="#kramdown-markdown-cheat-sheet" id="markdown-toc-kramdown-markdown-cheat-sheet">Kramdown markdown cheat
-                                                                                                                             sheet</a>
-                                <li><a href="#rouge---jekylls-default-highlighter" id="markdown-toc-rouge---jekylls-default-highlighter">Rouge -
-                                                                                                                                         Jekyll’s
-                                                                                                                                         Default
-                                                                                                                                         Highlighter</a>
+                                <li><a href="#kramdown-markdown-cheat-sheet" id="markdown-toc-kramdown-markdown-cheat-sheet">Kramdown markdown cheat sheet</a>
+                                <li><a href="#rouge---jekylls-default-highlighter" id="markdown-toc-rouge---jekylls-default-highlighter">Rouge - Jekyll’s Default Highlighter</a>
                                 <li><a href="#github" id="markdown-toc-github">GitHub</a>
-                                <li><a href="#jekyll-docs-for-code-snippet-highlighting" id="markdown-toc-jekyll-docs-for-code-snippet-highlighting">Jekyll
-                                                                                                                                                     Docs
-                                                                                                                                                     For
-                                                                                                                                                     Code
-                                                                                                                                                     snippet
+                                <li><a href="#jekyll-docs-for-code-snippet-highlighting" id="markdown-toc-jekyll-docs-for-code-snippet-highlighting">Jekyll Docs For Code snippet
                                                                                                                                                      highlighting</a>
-                                <li><a href="#gfmgithub-flavored-markdown" id="markdown-toc-gfmgithub-flavored-markdown">GFM(GitHub Flavored
-                                                                                                                         Markdown)</a>
-                                <li><a href="#jekyll-github-metadata-configuration" id="markdown-toc-jekyll-github-metadata-configuration">Jekyll
-                                                                                                                                           GitHub
-                                                                                                                                           metadata
-                                                                                                                                           Configuration</a>
+                                <li><a href="#gfmgithub-flavored-markdown" id="markdown-toc-gfmgithub-flavored-markdown">GFM(GitHub Flavored Markdown)</a>
+                                <li><a href="#jekyll-github-metadata-configuration" id="markdown-toc-jekyll-github-metadata-configuration">Jekyll GitHub metadata Configuration</a>
                             </ol>
-                        <li><a href="#roge-syntax-highlighter-used-by-jekyll" id="markdown-toc-roge-syntax-highlighter-used-by-jekyll">Roge Syntax
-                                                                                                                                       Highlighter
-                                                                                                                                       used by
-                                                                                                                                       Jekyll</a>
+                        <li><a href="#roge-syntax-highlighter-used-by-jekyll" id="markdown-toc-roge-syntax-highlighter-used-by-jekyll">Roge Syntax Highlighter used by Jekyll</a>
                             <ol>
                                 <li><a href="#docs" id="markdown-toc-docs">Docs</a>
-                                <li><a href="#list-of-supported-languages-and-lexers-" id="markdown-toc-list-of-supported-languages-and-lexers-">List
-                                                                                                                                                 Of
-                                                                                                                                                 Supported
-                                                                                                                                                 Languages
-                                                                                                                                                 and
+                                <li><a href="#list-of-supported-languages-and-lexers-" id="markdown-toc-list-of-supported-languages-and-lexers-">List Of Supported Languages and
                                                                                                                                                  Lexers </a>
-                                <li><a href="#rouge-language-lexers-github-repo" id="markdown-toc-rouge-language-lexers-github-repo">Rouge Language
-                                                                                                                                     Lexers GitHub
-                                                                                                                                     Repo</a>
+                                <li><a href="#rouge-language-lexers-github-repo" id="markdown-toc-rouge-language-lexers-github-repo">Rouge Language Lexers GitHub Repo</a>
                                     <ol>
-                                        <li><a href="#rouge-syntax-highlighting-languages" id="markdown-toc-rouge-syntax-highlighting-languages">Rouge
-                                                                                                                                                 Syntax
-                                                                                                                                                 Highlighting
+                                        <li><a href="#rouge-syntax-highlighting-languages" id="markdown-toc-rouge-syntax-highlighting-languages">Rouge Syntax Highlighting
                                                                                                                                                  Languages</a>
                                     </ol>
                             </ol>
@@ -687,12 +663,15 @@
                                 <li><a href="#requirements" id="markdown-toc-requirements">Requirements</a>
                                 <li><a href="#installing-jekyll" id="markdown-toc-installing-jekyll">Installing Jekyll</a>
                                 <li><a href="#quickstart" id="markdown-toc-quickstart">Quickstart:</a>
-                                <li><a
-                                        href="#setting-up-your-github-pages-site-locally-with-jekyll"
-                                        id="markdown-toc-setting-up-your-github-pages-site-locally-with-jekyll"
-                                >Setting up your GitHub Pages site locally with Jekyll</a>
-                                <li><a href="#jekyll-basic-usage-with-bundler" id="markdown-toc-jekyll-basic-usage-with-bundler">Jekyll basic usage
-                                                                                                                                 with Bundler</a>
+                                <li><a href="#setting-up-your-github-pages-site-locally-with-jekyll" id="markdown-toc-setting-up-your-github-pages-site-locally-with-jekyll">Setting
+                                                                                                                                                                             up your
+                                                                                                                                                                             GitHub
+                                                                                                                                                                             Pages
+                                                                                                                                                                             site
+                                                                                                                                                                             locally
+                                                                                                                                                                             with
+                                                                                                                                                                             Jekyll</a>
+                                <li><a href="#jekyll-basic-usage-with-bundler" id="markdown-toc-jekyll-basic-usage-with-bundler">Jekyll basic usage with Bundler</a>
                             </ol>
                         <li><a href="#yml-config" id="markdown-toc-yml-config">YML Config</a>
                             <ol>
@@ -721,8 +700,7 @@
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
-                </a> <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll">Setup</a>
-                </h2>
+                </a> <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll">Setup</a></h2>
                 <h2 id="configuration"><a href="#configuration" class="anchor-heading" aria-labelledby="configuration">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
@@ -758,11 +736,7 @@
                         <use xlink:href="#svg-link"></use>
                     </svg>
                 </a> <a href="https://kramdown.gettalong.org/quickref.html">QuickRef</a></h2>
-                <h2 id="kramdown-markdown-cheat-sheet"><a
-                        href="#kramdown-markdown-cheat-sheet"
-                        class="anchor-heading"
-                        aria-labelledby="kramdown-markdown-cheat-sheet"
-                >
+                <h2 id="kramdown-markdown-cheat-sheet"><a href="#kramdown-markdown-cheat-sheet" class="anchor-heading" aria-labelledby="kramdown-markdown-cheat-sheet">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
@@ -790,11 +764,7 @@
                         <use xlink:href="#svg-link"></use>
                     </svg>
                 </a> <a href="https://jekyllrb.com/docs/liquid/tags/#code-snippet-highlighting">Jekyll Docs For Code snippet highlighting</a></h2>
-                <h2 id="gfmgithub-flavored-markdown"><a
-                        href="#gfmgithub-flavored-markdown"
-                        class="anchor-heading"
-                        aria-labelledby="gfmgithub-flavored-markdown"
-                >
+                <h2 id="gfmgithub-flavored-markdown"><a href="#gfmgithub-flavored-markdown" class="anchor-heading" aria-labelledby="gfmgithub-flavored-markdown">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
@@ -831,13 +801,8 @@
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
-                </a> <a href="https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers">List Of Supported Languages and
-                                                                                                               Lexers </a></h2>
-                <h2 id="rouge-language-lexers-github-repo"><a
-                        href="#rouge-language-lexers-github-repo"
-                        class="anchor-heading"
-                        aria-labelledby="rouge-language-lexers-github-repo"
-                >
+                </a> <a href="https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers">List Of Supported Languages and Lexers </a></h2>
+                <h2 id="rouge-language-lexers-github-repo"><a href="#rouge-language-lexers-github-repo" class="anchor-heading" aria-labelledby="rouge-language-lexers-github-repo">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
@@ -873,8 +838,7 @@
                 </h2>
                 <ul>
                     <li><a href="https://jekyllrb.com/">Jekyll official site</a>
-                    <li><a href="https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/">Build A Blog With Jekyll And GitHub
-                                                                                                           Pages</a>
+                    <li><a href="https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/">Build A Blog With Jekyll And GitHub Pages</a>
                     <li><a href="https://jekyllrb.com/docs/configuration/options/#build-command-options">Jekyll Build CLI Options</a>
                 </ul>
                 <h2 id="requirements"><a href="#requirements" class="anchor-heading" aria-labelledby="requirements">

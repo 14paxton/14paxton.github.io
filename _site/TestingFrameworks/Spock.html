@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Spock | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="Spock"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -366,6 +366,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -400,7 +401,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -475,7 +476,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -483,10 +483,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -546,6 +548,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -561,6 +565,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -582,9 +587,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -606,12 +609,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -631,28 +630,20 @@
                             <ol>
                                 <li><a href="#gradle" id="markdown-toc-gradle">Gradle</a>
                                     <ol>
-                                        <li><a href="#setup-for-both-spock-and-junit" id="markdown-toc-setup-for-both-spock-and-junit">setup for both
-                                                                                                                                       spock and
-                                                                                                                                       junit</a>
+                                        <li><a href="#setup-for-both-spock-and-junit" id="markdown-toc-setup-for-both-spock-and-junit">setup for both spock and junit</a>
                                     </ol>
-                                <li><a href="#use-db-in-memory-to-run-tests" id="markdown-toc-use-db-in-memory-to-run-tests">Use db in memory to run
-                                                                                                                             tests</a>
+                                <li><a href="#use-db-in-memory-to-run-tests" id="markdown-toc-use-db-in-memory-to-run-tests">Use db in memory to run tests</a>
                                 <li><a href="#maven" id="markdown-toc-maven">Maven</a>
                                     <ol>
                                         <li><a href="#cli" id="markdown-toc-cli">CLI</a>
                                             <ol>
-                                                <li><a href="#run-all-the-unit-test-classes" id="markdown-toc-run-all-the-unit-test-classes">Run all
-                                                                                                                                             the unit
-                                                                                                                                             test
-                                                                                                                                             classes.</a>
-                                                <li><a href="#run-a-single-test-class" id="markdown-toc-run-a-single-test-class">Run a single test
-                                                                                                                                 class.</a>
-                                                <li><a href="#run-multiple-test-classes" id="markdown-toc-run-multiple-test-classes">Run multiple test
-                                                                                                                                     classes.</a>
-                                                <li><a
-                                                        href="#run-a-single-test-method-from-a-test-class"
-                                                        id="markdown-toc-run-a-single-test-method-from-a-test-class"
-                                                >Run a single test method from a test class.</a>
+                                                <li><a href="#run-all-the-unit-test-classes" id="markdown-toc-run-all-the-unit-test-classes">Run all the unit test classes.</a>
+                                                <li><a href="#run-a-single-test-class" id="markdown-toc-run-a-single-test-class">Run a single test class.</a>
+                                                <li><a href="#run-multiple-test-classes" id="markdown-toc-run-multiple-test-classes">Run multiple test classes.</a>
+                                                <li><a href="#run-a-single-test-method-from-a-test-class" id="markdown-toc-run-a-single-test-method-from-a-test-class">Run a single
+                                                                                                                                                                       test method
+                                                                                                                                                                       from a test
+                                                                                                                                                                       class.</a>
                                                 <li><a
                                                         href="#run-all-test-methods-that-match-pattern-testhello-from-a-test-class"
                                                         id="markdown-toc-run-all-test-methods-that-match-pattern-testhello-from-a-test-class"
@@ -665,16 +656,14 @@
                                             </ol>
                                         <li><a href="#dependencies" id="markdown-toc-dependencies">Dependencies</a>
                                             <ol>
-                                                <li><a
-                                                        href="#search-for-dependencies-in-your-project"
-                                                        id="markdown-toc-search-for-dependencies-in-your-project"
-                                                >Search for dependencies in your project</a>
+                                                <li><a href="#search-for-dependencies-in-your-project" id="markdown-toc-search-for-dependencies-in-your-project">Search for
+                                                                                                                                                                 dependencies in
+                                                                                                                                                                 your project</a>
                                                 <li><a
                                                         href="#check-whether-or-not-you-have-specific-dependencies-in-your-project"
                                                         id="markdown-toc-check-whether-or-not-you-have-specific-dependencies-in-your-project"
                                                 >Check whether or not you have specific dependencies in your project</a>
-                                                <li><a href="#get-a-single-dependency" id="markdown-toc-get-a-single-dependency">Get a single
-                                                                                                                                 dependency</a>
+                                                <li><a href="#get-a-single-dependency" id="markdown-toc-get-a-single-dependency">Get a single dependency</a>
                                             </ol>
                                         <li><a href="#local-repository" id="markdown-toc-local-repository">Local repository</a>
                                             <ol>
@@ -686,12 +675,7 @@
                                                         <li><a href="#where" id="markdown-toc-where">Where:</a>
                                                     </ol>
                                             </ol>
-                                        <li><a href="#pom-for-running-both-spock-and-junit" id="markdown-toc-pom-for-running-both-spock-and-junit">Pom
-                                                                                                                                                   for
-                                                                                                                                                   running
-                                                                                                                                                   both
-                                                                                                                                                   spock
-                                                                                                                                                   and
+                                        <li><a href="#pom-for-running-both-spock-and-junit" id="markdown-toc-pom-for-running-both-spock-and-junit">Pom for running both spock and
                                                                                                                                                    junit</a>
                                     </ol>
                             </ol>
@@ -710,35 +694,20 @@
                                         href="#mocking-service-used-in-a-service-you-are-testingput-at-beginning-of-the-test-class"
                                         id="markdown-toc-mocking-service-used-in-a-service-you-are-testingput-at-beginning-of-the-test-class"
                                 >Mocking Service used in a service you are testing(put at beginning of the test class)</a>
-                                <li><a href="#mocking-method-in-service-you-are-testing" id="markdown-toc-mocking-method-in-service-you-are-testing">Mocking
-                                                                                                                                                     Method
-                                                                                                                                                     in
-                                                                                                                                                     service
-                                                                                                                                                     you
-                                                                                                                                                     are
-                                                                                                                                                     testing</a>
-                                <li><a href="#testing-a-webpage-with-spock-and-geb" id="markdown-toc-testing-a-webpage-with-spock-and-geb">Testing a
-                                                                                                                                           webpage
-                                                                                                                                           with spock
-                                                                                                                                           and geb</a>
+                                <li><a href="#mocking-method-in-service-you-are-testing" id="markdown-toc-mocking-method-in-service-you-are-testing">Mocking Method in service you
+                                                                                                                                                     are testing</a>
+                                <li><a href="#testing-a-webpage-with-spock-and-geb" id="markdown-toc-testing-a-webpage-with-spock-and-geb">Testing a webpage with spock and geb</a>
                                 <li><a href="#mocking-method-in-domain" id="markdown-toc-mocking-method-in-domain">Mocking method in domain</a>
-                                <li><a href="#checking-validity-of-constraints" id="markdown-toc-checking-validity-of-constraints">Checking validity
-                                                                                                                                   of constraints</a>
-                                <li><a
-                                        href="#check-if-method-was-called-for-another-service"
-                                        id="markdown-toc-check-if-method-was-called-for-another-service"
-                                >check if method was called for another service</a>
-                                <li><a
-                                        href="#check-if-method-was-called-for-same-service"
-                                        id="markdown-toc-check-if-method-was-called-for-same-service"
-                                >check if method was called for same service</a>
+                                <li><a href="#checking-validity-of-constraints" id="markdown-toc-checking-validity-of-constraints">Checking validity of constraints</a>
+                                <li><a href="#check-if-method-was-called-for-another-service" id="markdown-toc-check-if-method-was-called-for-another-service">check if method was
+                                                                                                                                                               called for another
+                                                                                                                                                               service</a>
+                                <li><a href="#check-if-method-was-called-for-same-service" id="markdown-toc-check-if-method-was-called-for-same-service">check if method was called
+                                                                                                                                                         for same service</a>
                                 <li><a href="#create-an-exception" id="markdown-toc-create-an-exception">create an exception</a>
                                 <li><a href="#catch-exception" id="markdown-toc-catch-exception">catch exception</a>
-                                <li><a href="#modify-config-duringfor-test" id="markdown-toc-modify-config-duringfor-test">modify config during/for
-                                                                                                                           test</a>
-                                <li><a href="#create-a-custom-manager-for-a-test" id="markdown-toc-create-a-custom-manager-for-a-test">create a custom
-                                                                                                                                       manager for a
-                                                                                                                                       test</a>
+                                <li><a href="#modify-config-duringfor-test" id="markdown-toc-modify-config-duringfor-test">modify config during/for test</a>
+                                <li><a href="#create-a-custom-manager-for-a-test" id="markdown-toc-create-a-custom-manager-for-a-test">create a custom manager for a test</a>
                                 <li><a
                                         href="#mocking-hibernate-used-to-test-methods-using-where-queriers--detached-criteria--criteria-builder"
                                         id="markdown-toc-mocking-hibernate-used-to-test-methods-using-where-queriers--detached-criteria--criteria-builder"
@@ -747,22 +716,14 @@
                                         href="#mock-return-value-for-service-method-used-in-the-service-you-are-testing"
                                         id="markdown-toc-mock-return-value-for-service-method-used-in-the-service-you-are-testing"
                                 >Mock return value for service method used in the service you are testing</a>
-                                <li><a href="#mock-a-static-method-call-from-a-domain" id="markdown-toc-mock-a-static-method-call-from-a-domain">Mock
-                                                                                                                                                 a
-                                                                                                                                                 static
-                                                                                                                                                 method
-                                                                                                                                                 call
-                                                                                                                                                 from
-                                                                                                                                                 a
+                                <li><a href="#mock-a-static-method-call-from-a-domain" id="markdown-toc-mock-a-static-method-call-from-a-domain">Mock a static method call from a
                                                                                                                                                  domain</a>
                                     <ol>
                                         <li><a href="#grails3" id="markdown-toc-grails3">Grails3</a>
                                         <li><a href="#grails4" id="markdown-toc-grails4">Grails4</a>
                                             <ol>
-                                                <li><a
-                                                        href="#ex-integrations-test-for-controller"
-                                                        id="markdown-toc-ex-integrations-test-for-controller"
-                                                >Ex. Integrations test for controller</a>
+                                                <li><a href="#ex-integrations-test-for-controller" id="markdown-toc-ex-integrations-test-for-controller">Ex. Integrations test for
+                                                                                                                                                         controller</a>
                                             </ol>
                                     </ol>
                             </ol>
@@ -786,21 +747,12 @@
                     </svg>
                 </a> Gradle
                 </h2>
-                <h3 id="setup-for-both-spock-and-junit"><a
-                        href="#setup-for-both-spock-and-junit"
-                        class="anchor-heading"
-                        aria-labelledby="setup-for-both-spock-and-junit"
-                >
+                <h3 id="setup-for-both-spock-and-junit"><a href="#setup-for-both-spock-and-junit" class="anchor-heading" aria-labelledby="setup-for-both-spock-and-junit">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
-                </a> <a href="https://github.com/14paxton/TestingFrameworks/tree/master/Spock/RunSpockJUnitConcurrently">setup for both spock and
-                                                                                                                         junit</a></h3>
-                <h2 id="use-db-in-memory-to-run-tests"><a
-                        href="#use-db-in-memory-to-run-tests"
-                        class="anchor-heading"
-                        aria-labelledby="use-db-in-memory-to-run-tests"
-                >
+                </a> <a href="https://github.com/14paxton/TestingFrameworks/tree/master/Spock/RunSpockJUnitConcurrently">setup for both spock and junit</a></h3>
+                <h2 id="use-db-in-memory-to-run-tests"><a href="#use-db-in-memory-to-run-tests" class="anchor-heading" aria-labelledby="use-db-in-memory-to-run-tests">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
@@ -810,28 +762,237 @@
                     <div class="highlight"><pre class="highlight"><code>
 <span class="nd">@shared</span> <span class="n">Sql</span> <span class="n">sql</span> <span class="o">=</span> <span class="n">Sql</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="err">“</span> <span class="nl">jdbc:</span> <span class="n">h2</span> <span class="o">:</span> <span class="nl">mem:</span> <span class="err">”</span><span class="o">,</span> <span class="err">“</span> <span class="n">org</span><span class="o">.</span><span class="na">h2</span><span class="o">.</span><span class="na">Driver</span> <span class="err">”</span><span class="o">)</span>
 
-</code></pre></div></div><h2 id="maven"> <a href="#maven" class="anchor-heading" aria-labelledby="maven"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Maven</h2><h3 id="cli"> <a href="#cli" class="anchor-heading" aria-labelledby="cli"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> CLI</h3><h4 id="run-all-the-unit-test-classes"> <a href="#run-all-the-unit-test-classes" class="anchor-heading" aria-labelledby="run-all-the-unit-test-classes"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Run all the unit test classes.</h4><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn <span class="nb">test</span>
-</code></pre></div></div><h4 id="run-a-single-test-class"> <a href="#run-a-single-test-class" class="anchor-heading" aria-labelledby="run-a-single-test-class"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Run a single test class.</h4><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn <span class="nt">-Dtest</span><span class="o">=</span>TestApp1 <span class="nb">test</span>
-</code></pre></div></div><h4 id="run-multiple-test-classes"> <a href="#run-multiple-test-classes" class="anchor-heading" aria-labelledby="run-multiple-test-classes"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Run multiple test classes.</h4><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn <span class="nt">-Dtest</span><span class="o">=</span>TestApp1,TestApp2 <span class="nb">test</span>
-</code></pre></div></div><h4 id="run-a-single-test-method-from-a-test-class"> <a href="#run-a-single-test-method-from-a-test-class" class="anchor-heading" aria-labelledby="run-a-single-test-method-from-a-test-class"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Run a single test method from a test class.</h4><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn <span class="nt">-Dtest</span><span class="o">=</span>TestApp1#methodname <span class="nb">test</span>
-</code></pre></div></div><h4 id="run-all-test-methods-that-match-pattern-testhello-from-a-test-class"> <a href="#run-all-test-methods-that-match-pattern-testhello-from-a-test-class" class="anchor-heading" aria-labelledby="run-all-test-methods-that-match-pattern-testhello-from-a-test-class"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Run all test methods that match pattern ‘testHello*’ from a test class.</h4><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn <span class="nt">-Dtest</span><span class="o">=</span>TestApp1#testHello<span class="k">*</span> <span class="nb">test</span>
-</code></pre></div></div><h4 id="run-all-test-methods-match-pattern-testhello-and-testmagic-from-a-test-class"> <a href="#run-all-test-methods-match-pattern-testhello-and-testmagic-from-a-test-class" class="anchor-heading" aria-labelledby="run-all-test-methods-match-pattern-testhello-and-testmagic-from-a-test-class"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Run all test methods match pattern ‘testHello<em>’ and ‘testMagic</em>’ from a test class.</h4><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn <span class="nt">-Dtest</span><span class="o">=</span>TestApp1#testHello<span class="k">*</span>+testMagic<span class="k">*</span> <span class="nb">test</span>
-</code></pre></div></div><hr /><ul><li>Don’t run tests:</ul><blockquote><p>Note: the test classes in the project will be compiled!</p></blockquote><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn clean package <span class="nt">-DskipTests</span>
-</code></pre></div></div><ul><li>Don’t compile and don’t run the tests:</ul><blockquote><p>maven.test.skip is honored by the Surefire, Failsafe and the Compiler Plugin</p></blockquote><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>maven clean package <span class="nt">-Dmaven</span>.test.skip<span class="o">=</span><span class="nb">true</span>
-</code></pre></div></div><h4 id="run-a-single-test"> <a href="#run-a-single-test" class="anchor-heading" aria-labelledby="run-a-single-test"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Run a single test:</h4><blockquote><p>Sometimes you would like to execute a single test instead of all your tests.</p></blockquote><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn <span class="nb">test</span> <span class="nt">-Dtest</span><span class="o">=</span><span class="s2">"NameOfYourTest"</span>
+</code></pre>
+                    </div>
+                </div>
+                <h2 id="maven"><a href="#maven" class="anchor-heading" aria-labelledby="maven">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Maven
+                </h2>
+                <h3 id="cli"><a href="#cli" class="anchor-heading" aria-labelledby="cli">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> CLI
+                </h3>
+                <h4 id="run-all-the-unit-test-classes"><a href="#run-all-the-unit-test-classes" class="anchor-heading" aria-labelledby="run-all-the-unit-test-classes">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Run all the unit test classes.
+                </h4>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>mvn <span class="nb">test</span>
+</code></pre>
+                    </div>
+                </div>
+                <h4 id="run-a-single-test-class"><a href="#run-a-single-test-class" class="anchor-heading" aria-labelledby="run-a-single-test-class">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Run a single test class.
+                </h4>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>mvn <span class="nt">-Dtest</span><span class="o">=</span>TestApp1 <span class="nb">test</span>
+</code></pre>
+                    </div>
+                </div>
+                <h4 id="run-multiple-test-classes"><a href="#run-multiple-test-classes" class="anchor-heading" aria-labelledby="run-multiple-test-classes">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Run multiple test classes.
+                </h4>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>mvn <span class="nt">-Dtest</span><span class="o">=</span>TestApp1,TestApp2 <span class="nb">test</span>
+</code></pre>
+                    </div>
+                </div>
+                <h4 id="run-a-single-test-method-from-a-test-class"><a
+                        href="#run-a-single-test-method-from-a-test-class"
+                        class="anchor-heading"
+                        aria-labelledby="run-a-single-test-method-from-a-test-class"
+                >
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Run a single test method from a test class.
+                </h4>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>mvn <span class="nt">-Dtest</span><span class="o">=</span>TestApp1#methodname <span class="nb">test</span>
+</code></pre>
+                    </div>
+                </div>
+                <h4 id="run-all-test-methods-that-match-pattern-testhello-from-a-test-class"><a
+                        href="#run-all-test-methods-that-match-pattern-testhello-from-a-test-class"
+                        class="anchor-heading"
+                        aria-labelledby="run-all-test-methods-that-match-pattern-testhello-from-a-test-class"
+                >
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Run all test methods that match pattern ‘testHello*’ from a test class.
+                </h4>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>mvn <span class="nt">-Dtest</span><span class="o">=</span>TestApp1#testHello<span class="k">*</span> <span
+                            class="nb"
+                    >test</span>
+</code></pre>
+                    </div>
+                </div>
+                <h4 id="run-all-test-methods-match-pattern-testhello-and-testmagic-from-a-test-class"><a
+                        href="#run-all-test-methods-match-pattern-testhello-and-testmagic-from-a-test-class"
+                        class="anchor-heading"
+                        aria-labelledby="run-all-test-methods-match-pattern-testhello-and-testmagic-from-a-test-class"
+                >
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Run all test methods match pattern ‘testHello<em>’ and ‘testMagic</em>’ from a test class.
+                </h4>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>mvn <span class="nt">-Dtest</span><span class="o">=</span>TestApp1#testHello<span class="k">*</span>+testMagic<span
+                            class="k"
+                    >*</span> <span class="nb">test</span>
+</code></pre>
+                    </div>
+                </div>
+                <hr/>
+                <ul>
+                    <li>Don’t run tests:
+                </ul>
+                <blockquote><p>Note: the test classes in the project will be compiled!</p></blockquote>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>mvn clean package <span class="nt">-DskipTests</span>
+</code></pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>Don’t compile and don’t run the tests:
+                </ul>
+                <blockquote><p>maven.test.skip is honored by the Surefire, Failsafe and the Compiler Plugin</p></blockquote>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>maven clean package <span class="nt">-Dmaven</span>.test.skip<span class="o">=</span><span class="nb">true</span>
+</code></pre>
+                    </div>
+                </div>
+                <h4 id="run-a-single-test"><a href="#run-a-single-test" class="anchor-heading" aria-labelledby="run-a-single-test">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Run a single test:
+                </h4>
+                <blockquote><p>Sometimes you would like to execute a single test instead of all your tests.</p></blockquote>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>mvn <span class="nb">test</span> <span class="nt">-Dtest</span><span class="o">=</span><span class="s2">"NameOfYourTest"</span>
 Run build offline
-</code></pre></div></div><div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;"> Both -o and --offline are equivalent. Your local Maven repository will is used to resolve dependencies. No connection to the internet is made to download dependencies. Your build will fail in case dependencies are not found in your local repository!</div><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn clean package <span class="nt">-o</span>
-</code></pre></div></div><h3 id="dependencies"> <a href="#dependencies" class="anchor-heading" aria-labelledby="dependencies"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Dependencies</h3><h4 id="search-for-dependencies-in-your-project"> <a href="#search-for-dependencies-in-your-project" class="anchor-heading" aria-labelledby="search-for-dependencies-in-your-project"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Search for dependencies in your project</h4><blockquote><p>List all the dependencies</p></blockquote><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn dependency:list
-</code></pre></div></div><h4 id="check-whether-or-not-you-have-specific-dependencies-in-your-project"> <a href="#check-whether-or-not-you-have-specific-dependencies-in-your-project" class="anchor-heading" aria-labelledby="check-whether-or-not-you-have-specific-dependencies-in-your-project"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Check whether or not you have specific dependencies in your project</h4><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn dependency:list | <span class="nb">grep </span>log4j
-</code></pre></div></div><h4 id="get-a-single-dependency"> <a href="#get-a-single-dependency" class="anchor-heading" aria-labelledby="get-a-single-dependency"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Get a single dependency</h4><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn dependency:get <span class="nt">-Dartifact</span><span class="o">=</span>org.springframework:spring-core:5.3.15
-</code></pre></div></div><h3 id="local-repository"> <a href="#local-repository" class="anchor-heading" aria-labelledby="local-repository"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Local repository</h3><p>The default location of your local repo is <code class="language-plaintext highlighter-rouge">~/.m2</code></p><h4 id="install-a-3rd-party-jar-file-into-your-local-maven-repository"> <a href="#install-a-3rd-party-jar-file-into-your-local-maven-repository" class="anchor-heading" aria-labelledby="install-a-3rd-party-jar-file-into-your-local-maven-repository"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Install a (3rd party) jar file into your local Maven repository</h4><blockquote><p>since it doesn’t exist in any public repository like <a href="http://search.maven.org/">Maven Central</a>.</p></blockquote><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn <span class="nb">install</span>:install-file
+</code></pre>
+                    </div>
+                </div>
+                <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+                    Both -o and --offline are equivalent. Your local Maven repository will is used to resolve dependencies. No connection to the internet is made to download
+                    dependencies. Your build will fail in case dependencies are not found in your local repository!
+                </div>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>mvn clean package <span class="nt">-o</span>
+</code></pre>
+                    </div>
+                </div>
+                <h3 id="dependencies"><a href="#dependencies" class="anchor-heading" aria-labelledby="dependencies">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Dependencies
+                </h3>
+                <h4 id="search-for-dependencies-in-your-project"><a
+                        href="#search-for-dependencies-in-your-project"
+                        class="anchor-heading"
+                        aria-labelledby="search-for-dependencies-in-your-project"
+                >
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Search for dependencies in your project
+                </h4>
+                <blockquote><p>List all the dependencies</p></blockquote>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>mvn dependency:list
+</code></pre>
+                    </div>
+                </div>
+                <h4 id="check-whether-or-not-you-have-specific-dependencies-in-your-project"><a
+                        href="#check-whether-or-not-you-have-specific-dependencies-in-your-project"
+                        class="anchor-heading"
+                        aria-labelledby="check-whether-or-not-you-have-specific-dependencies-in-your-project"
+                >
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Check whether or not you have specific dependencies in your project
+                </h4>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>mvn dependency:list | <span class="nb">grep </span>log4j
+</code></pre>
+                    </div>
+                </div>
+                <h4 id="get-a-single-dependency"><a href="#get-a-single-dependency" class="anchor-heading" aria-labelledby="get-a-single-dependency">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Get a single dependency
+                </h4>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>mvn dependency:get <span class="nt">-Dartifact</span><span class="o">=</span>org.springframework:spring-core:5.3.15
+</code></pre>
+                    </div>
+                </div>
+                <h3 id="local-repository"><a href="#local-repository" class="anchor-heading" aria-labelledby="local-repository">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Local repository
+                </h3>
+                <p>The default location of your local repo is <code class="language-plaintext highlighter-rouge">~/.m2</code></p>
+                <h4 id="install-a-3rd-party-jar-file-into-your-local-maven-repository"><a
+                        href="#install-a-3rd-party-jar-file-into-your-local-maven-repository"
+                        class="anchor-heading"
+                        aria-labelledby="install-a-3rd-party-jar-file-into-your-local-maven-repository"
+                >
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Install a (3rd party) jar file into your local Maven repository
+                </h4>
+                <blockquote><p>since it doesn’t exist in any public repository like <a href="http://search.maven.org/">Maven Central</a>.</p></blockquote>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>mvn <span class="nb">install</span>:install-file
 <span class="nt">-Dfile</span><span class="o">=</span>&lt;path-to-file&gt;
 <span class="nt">-DgroupId</span><span class="o">=</span>&lt;group-id&gt;
 <span class="nt">-DartifactId</span><span class="o">=</span>&lt;artifact-id&gt;
 <span class="nt">-Dversion</span><span class="o">=</span>&lt;version&gt;
 <span class="nt">-Dpackaging</span><span class="o">=</span>&lt;packaging&gt;
 <span class="nt">-DgeneratePom</span><span class="o">=</span><span class="nb">true</span>
-</code></pre></div></div><h5 id="where"> <a href="#where" class="anchor-heading" aria-labelledby="where"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Where:</h5><p><code class="language-plaintext highlighter-rouge">&lt;path-to-file&gt;</code> : the path to the file to load</p><p><code class="language-plaintext highlighter-rouge">&lt;group-id&gt;</code> : the group that the file should be registered under</p><p><code class="language-plaintext highlighter-rouge">&lt;artifact-id&gt;</code> : the artifact name for the file</p><p><code class="language-plaintext highlighter-rouge">&lt;version&gt;</code> : the version of the file</p><p><code class="language-plaintext highlighter-rouge">&lt;packaging&gt;</code> : the packaging of the file, e.g., jar</p><blockquote><p>Example:</p></blockquote><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn <span class="nb">install</span>:install-file <span class="nt">-Dfile</span><span class="o">=</span>lang-groovy-5.2.2.jar <span class="se">\ </span>
+</code></pre>
+                    </div>
+                </div>
+                <h5 id="where"><a href="#where" class="anchor-heading" aria-labelledby="where">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Where:
+                </h5>
+                <p><code class="language-plaintext highlighter-rouge">&lt;path-to-file&gt;</code> : the path to the file to load</p>
+                <p><code class="language-plaintext highlighter-rouge">&lt;group-id&gt;</code> : the group that the file should be registered under</p>
+                <p><code class="language-plaintext highlighter-rouge">&lt;artifact-id&gt;</code> : the artifact name for the file</p>
+                <p><code class="language-plaintext highlighter-rouge">&lt;version&gt;</code> : the version of the file</p>
+                <p><code class="language-plaintext highlighter-rouge">&lt;packaging&gt;</code> : the packaging of the file, e.g., jar</p>
+                <blockquote><p>Example:</p></blockquote>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>mvn <span class="nb">install</span>:install-file <span class="nt">-Dfile</span><span class="o">=</span>lang-groovy-5.2.2.jar <span
+                            class="se"
+                    >\ </span>
 <span class="nt">-DgroupId</span><span class="o">=</span>org.elasticsearch.module <span class="se">\ </span>
 <span class="nt">-DartifactId</span><span class="o">=</span>lang-groovy <span class="se">\ </span>
 <span class="nt">-Dversion</span><span class="o">=</span>5.2.2 <span class="se">\ </span>
@@ -1371,7 +1532,9 @@ Run build offline
 <span class="o">}</span>
 </code></pre></div></div><h2 id="mocking-service-and-then-method-call-setting-dummy-data-for-the-returnput-in-test-method"> <a href="#mocking-service-and-then-method-call-setting-dummy-data-for-the-returnput-in-test-method" class="anchor-heading" aria-labelledby="mocking-service-and-then-method-call-setting-dummy-data-for-the-returnput-in-test-method"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Mocking service and then method call, setting dummy data for the return(put in test method)</h2><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="n">controller</span><span class="o">.</span><span class="na">openweathermapService</span> <span class="o">=</span> <span class="n">Mock</span><span class="o">(</span><span class="n">OpenweathermapService</span><span class="o">)</span>
 
-<span class="n">controller</span><span class="o">.</span><span class="na">openweathermapService</span><span class="o">.</span><span class="na">currentWeatherByGeoID</span><span class="o">(</span><span class="n">_</span><span class="o">)</span> <span class="o">&gt;&gt;</span> <span class="n">currentWeather</span>
+<span class="n">controller</span><span class="o">.</span><span class="na">openweathermapService</span><span class="o">.</span><span class="na">currentWeatherByGeoID</span><span
+                            class="o"
+                    >(</span><span class="n">_</span><span class="o">)</span> <span class="o">&gt;&gt;</span> <span class="n">currentWeather</span>
 </code></pre></div></div><h2 id="mocking-service-used-in-a-service-you-are-testingput-at-beginning-of-the-test-class"> <a href="#mocking-service-used-in-a-service-you-are-testingput-at-beginning-of-the-test-class" class="anchor-heading" aria-labelledby="mocking-service-used-in-a-service-you-are-testingput-at-beginning-of-the-test-class"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Mocking Service used in a service you are testing(put at beginning of the test class)</h2><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="n">Closure</span> <span class="nf">doWithSpring</span><span class="o">()</span> <span class="o">{</span>
     <span class="o">{</span> <span class="o">-&gt;</span>
@@ -1458,11 +1621,37 @@ Run build offline
 
 </code></pre></div></div><h2 id="checking-validity-of-constraints"> <a href="#checking-validity-of-constraints" class="anchor-heading" aria-labelledby="checking-validity-of-constraints"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Checking validity of constraints</h2><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="n">newScheduledInterview2</span><span class="o">.</span><span class="na">validate</span><span class="o">([</span><span class="s1">'scheduledBy'</span><span class="o">,</span> <span class="s1">'scheduledDate'</span><span class="o">])</span>
 <span class="o">!</span><span class="n">newScheduledInterview2</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="nl">flush:</span> <span class="kc">true</span><span class="o">)</span>
-<span class="n">newScheduledInterview2</span><span class="o">.</span><span class="na">errors</span><span class="o">[</span><span class="s1">'scheduledDate'</span><span class="o">]?.</span><span class="na">code</span> <span class="o">==</span> <span class="s1">'unique'</span>
+<span class="n">newScheduledInterview2</span><span class="o">.</span><span class="na">errors</span><span class="o">[</span><span class="s1">'scheduledDate'</span><span class="o">]?.</span><span
+                            class="na"
+                    >code</span> <span class="o">==</span> <span class="s1">'unique'</span>
 </code></pre></div></div><h2 id="check-if-method-was-called-for-another-service"> <a href="#check-if-method-was-called-for-another-service" class="anchor-heading" aria-labelledby="check-if-method-was-called-for-another-service"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> check if method was called for another service</h2><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">def</span> <span class="n">called</span> <span class="o">=</span> <span class="kc">false</span>
 <span class="n">service</span><span class="o">.</span><span class="na">notifierService</span> <span class="o">=</span> <span class="n">Mock</span><span class="o">(</span><span class="n">NotifierService</span><span class="o">)</span>
-<span class="n">service</span><span class="o">.</span><span class="na">notifierService</span><span class="o">.</span><span class="na">sendPostMarkEmail</span><span class="o">(</span><span class="n">_</span> <span class="k">as</span> <span class="n">PostMarkEmail</span><span class="o">,</span> <span class="n">_</span><span class="o">)</span> <span class="o">&gt;&gt;</span> <span class="o">{</span> <span class="n">it</span> <span class="o">-&gt;</span> <span class="n">called</span> <span class="o">=</span> <span class="kc">true</span> <span class="o">}</span>
-</code></pre></div></div><h2 id="check-if-method-was-called-for-same-service"> <a href="#check-if-method-was-called-for-same-service" class="anchor-heading" aria-labelledby="check-if-method-was-called-for-same-service"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> check if method was called for same service</h2><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">service</span><span class="o">.</span><span class="na">metaClass</span><span class="o">.</span><span class="na">sendReminderEmail</span> <span class="o">=</span> <span class="o">{</span> <span class="n">assessmentOrderId</span><span class="o">,</span> <span class="n">templateId</span><span class="o">,</span> <span class="n">sender</span><span class="o">,</span> <span class="n">newTemplateBody</span><span class="o">,</span> <span class="n">jobId</span> <span class="o">-&gt;</span> <span class="n">calls</span><span class="o">++</span> <span class="o">}</span>
+<span class="n">service</span><span class="o">.</span><span class="na">notifierService</span><span class="o">.</span><span class="na">sendPostMarkEmail</span><span class="o">(</span><span
+                            class="n"
+                    >_</span> <span class="k">as</span> <span class="n">PostMarkEmail</span><span class="o">,</span> <span class="n">_</span><span class="o">)</span> <span class="o">&gt;&gt;</span> <span
+                            class="o"
+                    >{</span> <span class="n">it</span> <span class="o">-&gt;</span> <span class="n">called</span> <span class="o">=</span> <span class="kc">true</span> <span class="o">}</span>
+</code></pre>
+                </div>
+                </div>
+                <h2 id="check-if-method-was-called-for-same-service"><a
+                        href="#check-if-method-was-called-for-same-service"
+                        class="anchor-heading"
+                        aria-labelledby="check-if-method-was-called-for-same-service"
+                >
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> check if method was called for same service
+                </h2>
+                <div class="language-groovy highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code><span class="n">service</span><span class="o">.</span><span class="na">metaClass</span><span class="o">.</span><span
+                            class="na"
+                    >sendReminderEmail</span> <span class="o">=</span> <span class="o">{</span> <span class="n">assessmentOrderId</span><span class="o">,</span> <span class="n">templateId</span><span
+                            class="o"
+                    >,</span> <span class="n">sender</span><span class="o">,</span> <span class="n">newTemplateBody</span><span class="o">,</span> <span class="n">jobId</span> <span
+                            class="o"
+                    >-&gt;</span> <span class="n">calls</span><span class="o">++</span> <span class="o">}</span>
 </code></pre></div></div><h2 id="create-an-exception"> <a href="#create-an-exception" class="anchor-heading" aria-labelledby="create-an-exception"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> create an exception</h2><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//create expando    </span>
 <span class="kt">def</span> <span class="n">testDelete</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Expando</span><span class="o">()</span>
 
@@ -1475,9 +1664,37 @@ Run build offline
 
 <span class="c1">//example in CalenderServiceSpec.groovy / “test delete exception”    </span>
 <span class="c1">//or    </span>
-<span class="n">service</span><span class="o">.</span><span class="na">metaClass</span><span class="o">.[</span><span class="n">yourMethod</span><span class="o">]</span> <span class="o">&gt;&gt;</span> <span class="o">{</span> <span class="k">throw</span> <span class="n">exception</span> <span class="o">}</span>
-</code></pre></div></div><h2 id="catch-exception"> <a href="#catch-exception" class="anchor-heading" aria-labelledby="catch-exception"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> catch exception</h2><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">def</span> <span class="n">response</span> <span class="o">=</span> <span class="n">thrown</span><span class="o">(</span><span class="n">GraphServiceException</span><span class="o">)</span>
-</code></pre></div></div><h2 id="modify-config-duringfor-test"> <a href="#modify-config-duringfor-test" class="anchor-heading" aria-labelledby="modify-config-duringfor-test"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> modify config during/for test</h2><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="n">Holders</span><span class="o">.</span><span class="na">grailsApplication</span><span class="o">.</span><span class="na">config</span><span class="o">.</span><span class="na">outlook</span><span class="o">.</span><span class="na">clientId</span> <span class="o">=</span> <span class="s2">"GUUNAR5"</span>
+<span class="n">service</span><span class="o">.</span><span class="na">metaClass</span><span class="o">.[</span><span class="n">yourMethod</span><span class="o">]</span> <span
+                            class="o"
+                    >&gt;&gt;</span> <span class="o">{</span> <span class="k">throw</span> <span class="n">exception</span> <span class="o">}</span>
+</code></pre>
+                </div>
+                </div>
+                <h2 id="catch-exception"><a href="#catch-exception" class="anchor-heading" aria-labelledby="catch-exception">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> catch exception
+                </h2>
+                <div class="language-groovy highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code><span class="kt">def</span> <span class="n">response</span> <span class="o">=</span> <span class="n">thrown</span><span
+                            class="o"
+                    >(</span><span class="n">GraphServiceException</span><span class="o">)</span>
+</code></pre>
+                    </div>
+                </div>
+                <h2 id="modify-config-duringfor-test"><a href="#modify-config-duringfor-test" class="anchor-heading" aria-labelledby="modify-config-duringfor-test">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> modify config during/for test
+                </h2>
+                <div class="language-groovy highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>   <span class="n">Holders</span><span class="o">.</span><span class="na">grailsApplication</span><span
+                            class="o"
+                    >.</span><span class="na">config</span><span class="o">.</span><span class="na">outlook</span><span class="o">.</span><span class="na">clientId</span> <span
+                            class="o"
+                    >=</span> <span class="s2">"GUUNAR5"</span>
 </code></pre></div></div><h2 id="create-a-custom-manager-for-a-test"> <a href="#create-a-custom-manager-for-a-test" class="anchor-heading" aria-labelledby="create-a-custom-manager-for-a-test"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> create a custom manager for a test</h2><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kt">def</span> <span class="n">managerMap</span> <span class="o">=</span> <span class="o">[:]</span>
 <span class="n">RoleGroup</span><span class="o">.</span><span class="na">findAll</span><span class="o">().</span><span class="na">each</span> <span class="o">{</span>
@@ -1518,8 +1735,48 @@ Run build offline
 <span class="kt">void</span> <span class="s2">"test criteria builder for getting interview models should return all"</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">//test    </span>
 <span class="o">}</span>
-</code></pre></div></div><h2 id="mock-return-value-for-service-method-used-in-the-service-you-are-testing"> <a href="#mock-return-value-for-service-method-used-in-the-service-you-are-testing" class="anchor-heading" aria-labelledby="mock-return-value-for-service-method-used-in-the-service-you-are-testing"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Mock return value for service method used in the service you are testing</h2><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">service</span><span class="o">.</span><span class="na">springSecurityService</span> <span class="o">=</span> <span class="o">[</span><span class="nl">authentication:</span> <span class="o">[</span><span class="nl">details:</span> <span class="n">currentUser</span><span class="o">]]</span>
-</code></pre></div></div><h2 id="mock-a-static-method-call-from-a-domain"> <a href="#mock-a-static-method-call-from-a-domain" class="anchor-heading" aria-labelledby="mock-a-static-method-call-from-a-domain"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Mock a static method call from a domain</h2><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ClientSetup</span><span class="o">.</span><span class="na">metaClass</span><span class="o">.</span><span class="na">static</span><span class="o">.</span><span class="na">fetchSecurityGroupLabelsByClientSetupId</span> <span class="o">=</span> <span class="o">{</span> <span class="n">Long</span> <span class="n">id</span><span class="o">,</span> <span class="n">String</span> <span class="n">en</span> <span class="o">-&gt;</span> <span class="o">[</span><span class="nl">secGroupNameLabel:</span> <span class="s1">'secGroupNameLabel'</span><span class="o">,</span> <span class="nl">secGroupCodeLabel:</span> <span class="s1">'secGroupCodeLabel'</span><span class="o">]</span> <span class="o">}</span>
+</code></pre>
+                </div>
+                </div>
+                <h2 id="mock-return-value-for-service-method-used-in-the-service-you-are-testing"><a
+                        href="#mock-return-value-for-service-method-used-in-the-service-you-are-testing"
+                        class="anchor-heading"
+                        aria-labelledby="mock-return-value-for-service-method-used-in-the-service-you-are-testing"
+                >
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Mock return value for service method used in the service you are testing
+                </h2>
+                <div class="language-groovy highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code><span class="n">service</span><span class="o">.</span><span class="na">springSecurityService</span> <span
+                            class="o"
+                    >=</span> <span class="o">[</span><span class="nl">authentication:</span> <span class="o">[</span><span class="nl">details:</span> <span class="n">currentUser</span><span
+                            class="o"
+                    >]]</span>
+</code></pre>
+                    </div>
+                </div>
+                <h2 id="mock-a-static-method-call-from-a-domain"><a
+                        href="#mock-a-static-method-call-from-a-domain"
+                        class="anchor-heading"
+                        aria-labelledby="mock-a-static-method-call-from-a-domain"
+                >
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Mock a static method call from a domain
+                </h2>
+                <div class="language-groovy highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code><span class="n">ClientSetup</span><span class="o">.</span><span class="na">metaClass</span><span class="o">.</span><span
+                            class="na"
+                    >static</span><span class="o">.</span><span class="na">fetchSecurityGroupLabelsByClientSetupId</span> <span class="o">=</span> <span class="o">{</span> <span
+                            class="n"
+                    >Long</span> <span class="n">id</span><span class="o">,</span> <span class="n">String</span> <span class="n">en</span> <span class="o">-&gt;</span> <span class="o">[</span><span
+                            class="nl"
+                    >secGroupNameLabel:</span> <span class="s1">'secGroupNameLabel'</span><span class="o">,</span> <span class="nl">secGroupCodeLabel:</span> <span class="s1">'secGroupCodeLabel'</span><span
+                            class="o"
+                    >]</span> <span class="o">}</span>
 </code></pre></div></div><h3 id="grails3"> <a href="#grails3" class="anchor-heading" aria-labelledby="grails3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Grails3</h3><p><a href="https://gist.github.com/14paxton/0d64ab846b4691d8d6f1ccd5ccc63b58">Controller</a></p><h3 id="grails4"> <a href="#grails4" class="anchor-heading" aria-labelledby="grails4"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Grails4</h3><h4 id="ex-integrations-test-for-controller"> <a href="#ex-integrations-test-for-controller" class="anchor-heading" aria-labelledby="ex-integrations-test-for-controller"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Ex. Integrations test for controller</h4><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">musicandcars</span>
 
 <span class="kn">import</span> <span class="nn">grails.testing.mixin.integration.Integration</span>
@@ -1635,5 +1892,7 @@ Run build offline
 </code></pre></div></div><h2 id="different-ways-to-build"> <a href="#different-ways-to-build" class="anchor-heading" aria-labelledby="different-ways-to-build"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Different ways to build</h2><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kt">def</span> <span class="n">intviewModel</span> <span class="o">=</span> <span class="n">TestData</span><span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="n">InterviewModel</span><span class="o">)</span>
 <span class="kt">def</span> <span class="n">y</span> <span class="o">=</span> <span class="n">InterviewModel</span><span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="nl">source:</span> <span class="n">Source</span><span class="o">.</span><span class="na">TBSIX</span><span class="o">)</span>
-<span class="kt">def</span> <span class="n">z</span> <span class="o">=</span> <span class="n">build</span><span class="o">(</span><span class="n">InterviewModel</span><span class="o">,</span> <span class="nl">source:</span> <span class="n">Source</span><span class="o">.</span><span class="na">TBSIX</span><span class="o">)</span>
+<span class="kt">def</span> <span class="n">z</span> <span class="o">=</span> <span class="n">build</span><span class="o">(</span><span class="n">InterviewModel</span><span class="o">,</span> <span
+                        class="nl"
+                >source:</span> <span class="n">Source</span><span class="o">.</span><span class="na">TBSIX</span><span class="o">)</span>
 </code></pre></div></div></main><hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"></p><div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"> <a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./TestingFrameworks/Spock.md" id="edit-this-page">Edit this page on GitHub</a></p></div></footer></div></div><button id="search-button" class="search-button btn-reset" aria-label="Focus on search"> <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg> </button><div class="search-overlay"></div></div>
