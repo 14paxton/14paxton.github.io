@@ -1,11 +1,11 @@
 ---
-title:        Testing
-permalink:    SpringNotes/Testing
-category:     SpringNotes
-parent:       SpringNotes
-layout:       default
+title: Testing
+permalink: SpringNotes/Testing
+category: SpringNotes
+parent: SpringNotes
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
   - springnotes
   - default          
@@ -322,6 +322,88 @@ Table of contents
 
 ## Serialization
 
+- > ### Override field with converter
+
+    - add Converter class to test
+      ```java
+      @SpringTest    
+      public class FindPersonnelAvailabilitiesByDayHandlerTest {
+          
+          @BeforeEach
+          void setUp() {
+          //** Override AudtitMixin serialization, avoid error caused by H2 db **/
+          AuditMixinConverter.setSkipConversion(true);
+        }
+          
+          @Test
+          public void testStuff() {
+          //test stuff
+          }
+      
+          }
+          
+          
+          @Converter(autoApply = true)
+          class AuditMixinConverter implements AttributeConverter<AuditMixin, String> {
+          
+          private static boolean skipConversion = false;
+          
+          @Override
+          public String convertToDatabaseColumn(AuditMixin attribute) {
+          if (skipConversion) {
+          return null;
+          }
+          return JsonSerialization.toJson(attribute);
+          }
+          
+          @Override
+          public AuditMixin convertToEntityAttribute(String dbData) {
+          if (skipConversion) {
+          return null;
+          }
+          return JsonSerialization.fromJson(dbData, AuditMixin.class);
+          }
+          
+          public static void setSkipConversion(boolean skip) {
+          skipConversion = skip;
+          }
+          }
+      ```
+
+    - JsonSerialization class
+      ```java
+        package TestUtil;
+        
+        
+        import com.fasterxml.jackson.core.JsonProcessingException;
+        import com.fasterxml.jackson.databind.ObjectMapper;
+        
+        public class JsonSerialization {
+        
+        private static final ObjectMapper objectMapper = new ObjectMapper();
+        
+        public static <T> T fromJson(String json, Class<T> clazz) {
+        try {
+        return objectMapper.readValue(json, clazz);
+        }
+        catch (JsonProcessingException e) {
+        throw new RuntimeException("Error parsing JSON", e);
+        }
+        }
+        
+        public static String toJson(Object object) {
+        try {
+        return objectMapper.writeValueAsString(object);
+        }
+        catch (JsonProcessingException e) {
+        throw new RuntimeException("Error converting to JSON", e);
+        }
+        }
+        }
+      ```
+
+ ***
+
 - > ### Annotations for class
 
      ```java
@@ -333,6 +415,8 @@ Table of contents
         public class Entity(){
         }
     ```
+
+***
 
 - > ### Test Inline In a test
 
@@ -350,6 +434,8 @@ Table of contents
             assertEquals("\"2025-01-04\"", json); // Expect serialized output as a string
         }
      ```
+
+***
 
 - > ### MixIn
 
@@ -371,6 +457,8 @@ Table of contents
         mapper.addMixInAnnotations(WrapperModel .class,WrapperModelMixIn .class);
         }
    ```
+
+***
 
 - > ### Config File
 

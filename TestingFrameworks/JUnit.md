@@ -26,15 +26,38 @@ Table of contents
 ***    
 <br/>    
 
-# Maven    
+# [configure](https://maven.apache.org/surefire/maven-surefire-plugin/examples/junit-platform.html)
 
----
+ ***
 
-## [configure](https://maven.apache.org/surefire/maven-surefire-plugin/examples/junit-platform.html)
+# Maven
 
----
+## CLI
 
-## [StatelessTestsetInfoReporter](https://maven.apache.org/surefire/surefire-extensions-api/apidocs/org/apache/maven/surefire/extensions/StatelessTestsetInfoReporter.html)
+```shell
+//Run all tests
+ mvn test
+
+//Run a single test class
+ mvn -Dtest=TestClassOne test
+
+//Run multiple test classes
+mvn -Dtest=TestClassOne,TestClassTwo test
+
+//Run a single test method
+ mvn -Dtest=TestClassOne#methodname test
+
+//Run tests matching name 'testMethod' in all test classes
+ mvn -Dtest="*#testMethod" test
+
+//Run tests matching name 'test*' in a test class 
+ mvn -Dtest="TestClassOne#test*" test
+
+//Rerun failing tests 2 times
+mvn '-Dsurefire.rerunFailingTestsCount=2' -Dtest=ModuleTwoTests test
+```
+
+# [StatelessTestsetInfoReporter](https://maven.apache.org/surefire/surefire-extensions-api/apidocs/org/apache/maven/surefire/extensions/StatelessTestsetInfoReporter.html)
 
 ```xml    
 
