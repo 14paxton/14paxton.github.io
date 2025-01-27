@@ -166,6 +166,15 @@ public class OracleDatabaseContainerTest {
 - ### resources/init.sql
 
     ```sql
+      CREATE TABLE products
+        (
+        id   int          not null,
+        code varchar(255) not null,
+        name varchar(255) not null,
+        primary key (id),
+        unique (code)
+        );
+  
       INSERT ALL
         INTO products (id, code, name) VALUES (1, 'P001', 'Product A')
         INTO products (id, code, name) VALUES (2, 'P002', 'Product B')
