@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Micronotes | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="Micronotes"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -366,6 +366,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -400,7 +401,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -475,7 +476,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -483,10 +483,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -546,6 +548,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -561,6 +565,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -582,9 +587,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -606,18 +609,23 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
     <div class="main-content-wrap">
         <div id="main-content" class="main-content">
             <main>
+                <h1 id="relevant-docs"><a href="#relevant-docs" class="anchor-heading" aria-labelledby="relevant-docs">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> relevant docs
+                </h1>
+                <p><a href="https://micronaut-projects.github.io/micronaut-discovery-client/latest/guide/">service discovery </a></p>
+                <p><a href="https://docs.micronaut.io/latest/guide/#providedEndpoints">built in endpoints </a></p>
+                <p><a href="https://guides.grails.org/grails-micronaut-http/guide/index.html">grails use micronaut http </a></p>
                 <h1 id="projects"><a href="#projects" class="anchor-heading" aria-labelledby="projects">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
@@ -658,4 +666,40 @@
 </code></pre></div></div><blockquote><p>Start</p></blockquote><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">-jar</span>
 </code></pre></div></div><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">-jar</span> server/build/libs/server/[nameOfJar].jar
 </code></pre></div></div><h2 id="create-a-groovy-app"> <a href="#create-a-groovy-app" class="anchor-heading" aria-labelledby="create-a-groovy-app"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> create a groovy app</h2><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mn create-app example.micronaut.complete <span class="nt">--lang</span><span class="o">=</span>groovy
-</code></pre></div></div><hr><h2 class="text-delta">Table of contents</h2><ul><li> <a href="/Micronotes/202208_WorkshopNotes">202208_WorkshopNotes</a><li> <a href="/Micronotes/AWS">AWS</a><li> <a href="/Micronotes/Annotations">Annotations</a><li> <a href="/Micronotes/Configuration">Configuration</a><li> <a href="/Micronotes/DataBaseStuff">DataBaseStuff</a><li> <a href="/Micronotes/Email">Email</a><li> <a href="/Micronotes/EnviromentStuff">EnviromentStuff</a><li> <a href="/Micronotes/GRAALVM">GRAALVM</a><li> <a href="/Micronotes/Jackson">Jackson</a><li> <a href="/Micronotes/MicroStream">MicroStream</a><li> <a href="/Micronotes/Resources">Resources</a><li> <a href="/Micronotes/Testing">Testing</a><li> <a href="/Micronotes/cli_gradlew">cli_gradlew</a></ul></main><hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"></p><div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"> <a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./Micronotes/Micronotes.md" id="edit-this-page">Edit this page on GitHub</a></p></div></footer></div></div><button id="search-button" class="search-button btn-reset" aria-label="Focus on search"> <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg> </button><div class="search-overlay"></div></div>
+</code></pre>
+            </div>
+            </div>
+                <hr>
+                <h2 class="text-delta">Table of contents</h2>
+                <ul>
+                    <li><a href="/Micronotes/AWS">AWS</a>
+                    <li><a href="/Micronotes/Annotations">Annotations</a>
+                    <li><a href="/Micronotes/Configuration">Configuration</a>
+                    <li><a href="/Micronotes/DataBaseStuff">DataBaseStuff</a>
+                    <li><a href="/Micronotes/Email">Email</a>
+                    <li><a href="/Micronotes/EnviromentStuff">EnviromentStuff</a>
+                    <li><a href="/Micronotes/GRAALVM">GRAALVM</a>
+                    <li><a href="/Micronotes/Gradle">Gradle</a>
+                    <li><a href="/Micronotes/Jackson">Jackson</a>
+                    <li><a href="/Micronotes/MicroStream">MicroStream</a>
+                    <li><a href="/Micronotes/Resources">Resources</a>
+                    <li><a href="/Micronotes/Testing">Testing</a>
+                    <li><a href="/Micronotes/UsefuleSnippets">UsefuleSnippets</a>
+                    <li><a href="/Micronotes/cli_gradlew">cli_gradlew</a>
+                </ul>
+            </main>
+            <hr>
+            <footer><p><a href="#top" id="back-to-top">Back to top</a></p>
+                <p class="text-small text-grey-dk-100 mb-0"></p>
+                <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0">
+                    <a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./Micronotes/Micronotes.md" id="edit-this-page">Edit this page on GitHub</a></p></div>
+            </footer>
+        </div>
+    </div>
+    <button id="search-button" class="search-button btn-reset" aria-label="Focus on search">
+        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+            <use xlink:href="#svg-search"></use>
+        </svg>
+    </button>
+    <div class="search-overlay"></div>
+</div>

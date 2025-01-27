@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hibernate | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="Hibernate"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -370,6 +370,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -404,7 +405,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -479,7 +480,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -487,10 +487,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -550,6 +552,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -565,6 +569,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -586,9 +591,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -610,12 +613,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -634,18 +633,14 @@
                         <li><a href="#accessing" id="markdown-toc-accessing">Accessing</a>
                         <li><a href="#collections" id="markdown-toc-collections">Collections</a>
                             <ol>
-                                <li><a href="#mapping-to-database-examples" id="markdown-toc-mapping-to-database-examples">Mapping to database
-                                                                                                                           examples</a>
+                                <li><a href="#mapping-to-database-examples" id="markdown-toc-mapping-to-database-examples">Mapping to database examples</a>
                                     <ol>
                                         <li><a href="#mapping-annotations" id="markdown-toc-mapping-annotations">Mapping Annotations</a>
                                         <li><a href="#map-to-blob" id="markdown-toc-map-to-blob">map to blob</a>
                                         <li><a href="#use-collection-table" id="markdown-toc-use-collection-table">use collection table</a>
                                             <ol>
                                                 <li><a href="#with-join" id="markdown-toc-with-join">with join</a>
-                                                <li><a href="#with-more-hibernate-annotations" id="markdown-toc-with-more-hibernate-annotations">with
-                                                                                                                                                 more
-                                                                                                                                                 hibernate
-                                                                                                                                                 annotations</a>
+                                                <li><a href="#with-more-hibernate-annotations" id="markdown-toc-with-more-hibernate-annotations">with more hibernate annotations</a>
                                                 <li><a href="#with-mapkeycolumn" id="markdown-toc-with-mapkeycolumn">with mapkeycolumn</a>
                                                     <ol>
                                                         <li><a href="#field-access" id="markdown-toc-field-access">field access</a>
@@ -653,13 +648,25 @@
                                                     </ol>
                                             </ol>
                                         <li><a href="#use-json-type-class" id="markdown-toc-use-json-type-class">use json type class</a>
-                                        <li><a
-                                                href="#use-hibernate-types-to-map-as-blob-and-serializable"
-                                                id="markdown-toc-use-hibernate-types-to-map-as-blob-and-serializable"
-                                        >use hibernate types to map as blob and serializable</a>
-                                        <li><a href="#save-as-string--map-to-map" id="markdown-toc-save-as-string--map-to-map">save as string , map to
-                                                                                                                               map</a>
+                                        <li><a href="#use-hibernate-types-to-map-as-blob-and-serializable" id="markdown-toc-use-hibernate-types-to-map-as-blob-and-serializable">use
+                                                                                                                                                                                 hibernate
+                                                                                                                                                                                 types
+                                                                                                                                                                                 to
+                                                                                                                                                                                 map
+                                                                                                                                                                                 as
+                                                                                                                                                                                 blob
+                                                                                                                                                                                 and
+                                                                                                                                                                                 serializable</a>
+                                        <li><a href="#save-as-string--map-to-map" id="markdown-toc-save-as-string--map-to-map">save as string , map to map</a>
                                         <li><a href="#use-custom-map" id="markdown-toc-use-custom-map">use custom map</a>
+                                    </ol>
+                            </ol>
+                        <li><a href="#entitymanager" id="markdown-toc-entitymanager">EntityManager</a>
+                            <ol>
+                                <li><a href="#create-criteria" id="markdown-toc-create-criteria">Create Criteria</a>
+                                    <ol>
+                                        <li><a href="#select-into-a-map" id="markdown-toc-select-into-a-map">Select into a Map</a>
+                                        <li><a href="#using-blazejpaquery" id="markdown-toc-using-blazejpaquery">Using BlazeJPAQuery</a>
                                     </ol>
                             </ol>
                         <li><a href="#type-comparison" id="markdown-toc-type-comparison">Type Comparison</a>
@@ -676,15 +683,13 @@
                 </h1>
                 <ul>
                     <li>
-                        <blockquote><p>If you use <code class="language-plaintext highlighter-rouge">field-based </code> access, your JPA
-                                       implementation uses <code class="language-plaintext highlighter-rouge">reflection</code> to read or write your
-                                       entity attributes directly.<br/> It also expects<br/> that you place your mapping annotations on your entity
-                                       attributes.</p></blockquote>
+                        <blockquote><p>If you use <code class="language-plaintext highlighter-rouge">field-based </code> access, your JPA implementation uses
+                            <code class="language-plaintext highlighter-rouge">reflection</code> to read or write your entity attributes directly.<br/> It also expects<br/> that
+                                       you place your mapping annotations on your entity attributes.</p></blockquote>
                     <li>
-                        <blockquote><p>If you use <code class="language-plaintext highlighter-rouge">property-based</code> access, you need to
-                                       annotate the getter methods of your entity attributes with the required mapping annotations. <br/> Your <code
-                                    class="language-plaintext highlighter-rouge"
-                            >JPA</code> implementation then calls the getter and setter methods to access your entity attributes.</p></blockquote>
+                        <blockquote><p>If you use <code class="language-plaintext highlighter-rouge">property-based</code> access, you need to annotate the getter methods of your
+                                       entity attributes with the required mapping annotations. <br/> Your <code class="language-plaintext highlighter-rouge">JPA</code>
+                                       implementation then calls the getter and setter methods to access your entity attributes.</p></blockquote>
                 </ul>
                 <h1 id="collections"><a href="#collections" class="anchor-heading" aria-labelledby="collections">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
@@ -693,10 +698,8 @@
                 </a> Collections
                 </h1>
                 <blockquote><p>The persistent collections injected by <code class="language-plaintext highlighter-rouge">Hibernate</code> behave like
-                    <code class="language-plaintext highlighter-rouge">ArrayList</code>,
-                    <code class="language-plaintext highlighter-rouge">HashSet</code>,
-                    <code class="language-plaintext highlighter-rouge">TreeSet</code>,
-                    <code class="language-plaintext highlighter-rouge">HashMap</code> or
+                    <code class="language-plaintext highlighter-rouge">ArrayList</code>, <code class="language-plaintext highlighter-rouge">HashSet</code>,
+                    <code class="language-plaintext highlighter-rouge">TreeSet</code>, <code class="language-plaintext highlighter-rouge">HashMap</code> or
                     <code class="language-plaintext highlighter-rouge">TreeMap</code>, depending on the interface<br/> type.</p></blockquote>
                 <ul>
                     <li><code class="language-plaintext highlighter-rouge">java.util.List</code>
@@ -706,11 +709,7 @@
                     <li><code class="language-plaintext highlighter-rouge">java.util.SortedMap</code>
                     <li><code class="language-plaintext highlighter-rouge">java.util.Collection</code>
                 </ul>
-                <h2 id="mapping-to-database-examples"><a
-                        href="#mapping-to-database-examples"
-                        class="anchor-heading"
-                        aria-labelledby="mapping-to-database-examples"
-                >
+                <h2 id="mapping-to-database-examples"><a href="#mapping-to-database-examples" class="anchor-heading" aria-labelledby="mapping-to-database-examples">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
@@ -720,17 +719,15 @@
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
-                </a> <a href="https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#annotations">Mapping
-                                                                                                                                        Annotations</a>
-                </h3>
+                </a> <a href="https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#annotations">Mapping Annotations</a></h3>
                 <ul>
                     <li>types that I have used for mapping JSON or hashmap to mysql db
                         <ul>
                             <li>
-                                <blockquote><p><code class="language-plaintext highlighter-rouge">VARCHAR(16384) </code> : must have a max length to
-                                                                                                                         survive
-                                    <code class="language-plaintext highlighter-rouge">MariaDB DDL parser</code> +
-                                    <code class="language-plaintext highlighter-rouge">hibernate validator</code></p></blockquote>
+                                <blockquote><p><code class="language-plaintext highlighter-rouge">VARCHAR(16384) </code> : must have a max length to survive
+                                    <code class="language-plaintext highlighter-rouge">MariaDB DDL parser</code> + <code class="language-plaintext highlighter-rouge">hibernate
+                                                                                                                                                                      validator</code>
+                                </p></blockquote>
                             <li>
                                 <blockquote><p><code class="language-plaintext highlighter-rouge">LONGTEXT</code></p></blockquote>
                             <li>
@@ -750,9 +747,7 @@
                 </a> map to blob
                 </h3>
                 <div class="language-java highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MapBlob</span> <span
-                            class="o"
-                    >{</span>
+                    <div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MapBlob</span> <span class="o">{</span>
     <span class="nd">@ElementCollection</span>
     <span class="nd">@Column</span><span class="o">(</span><span class="n">columnDefinition</span> <span class="o">=</span> <span class="s">"BLOB NOT NULL"</span><span class="o">)</span>
     <span class="nd">@MapKeyColumn</span><span class="o">(</span><span class="n">columnDefinition</span> <span class="o">=</span> <span class="s">"BLOB NOT NULL"</span><span class="o">)</span>
@@ -855,5 +850,66 @@
                 <span class="s">", city='"</span> <span class="o">+</span> <span class="n">city</span> <span class="o">+</span> <span class="sc">' '</span> <span class="o">+</span>
                 <span class="sc">'}'</span><span class="o">;</span>
     <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+                </div>
+                </div>
+                <h1 id="entitymanager"><a href="#entitymanager" class="anchor-heading" aria-labelledby="entitymanager">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> EntityManager
+                </h1>
+                <h2 id="create-criteria"><a href="#create-criteria" class="anchor-heading" aria-labelledby="create-criteria">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Create Criteria
+                </h2>
+                <ul>
+                    <li>
+                        <blockquote>
+                            <h3 id="select-into-a-map"><a href="#select-into-a-map" class="anchor-heading" aria-labelledby="select-into-a-map">
+                                <svg viewBox="0 0 16 16" aria-hidden="true">
+                                    <use xlink:href="#svg-link"></use>
+                                </svg>
+                            </a> Select into a Map
+                            </h3>
+                        </blockquote>
+                        <div class="language-java highlighter-rouge">
+                            <div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">hql</span> <span class="o">=</span> <span class="s">"select new Map(p.id as id, p.firstName as firstName)FROM Entity p"</span><span
+                                    class="o"
+                            >;</span>
+<span class="kt">var</span> <span class="n">q</span> <span class="o">=</span>  <span class="n">entityManager</span><span class="o">.</span><span class="na">createQuery</span><span
+                                        class="o"
+                                >(</span><span class="n">hql</span><span class="o">,</span> <span class="nc">Map</span><span class="o">.</span><span class="na">class</span><span
+                                        class="o"
+                                >).</span><span class="na">getResultList</span><span class="o">()</span>
+</code></pre>
+                            </div>
+                        </div>
+                </ul>
+                <blockquote>
+                    <h3 id="using-blazejpaquery"><a href="#using-blazejpaquery" class="anchor-heading" aria-labelledby="using-blazejpaquery">
+                        <svg viewBox="0 0 16 16" aria-hidden="true">
+                            <use xlink:href="#svg-link"></use>
+                        </svg>
+                    </a> Using BlazeJPAQuery
+                    </h3>
+                </blockquote>
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="nc">ArrayList</span> <span class="nf">searchEntity</span><span
+                            class="o"
+                    >()</span> <span class="o">{</span>
+    <span class="nc">BlazeJPAQuery</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="n">q</span> <span class="o">=</span> <span
+                                class="k"
+                        >new</span> <span class="nc">BlazeJPAQuery</span><span class="o">&lt;&gt;(</span><span class="n">entityManager</span><span class="o">,</span> <span class="n">criteriaBuilderFactory</span><span
+                                class="o"
+                        >);</span>
+    <span class="n">q</span><span class="o">.</span><span class="na">select</span><span class="o">(</span><span class="nc">QEntity</span><span class="o">.</span><span class="na">entity</span><span
+                                class="o"
+                        >.</span><span class="na">id</span><span class="o">)</span>
+     <span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="nc">QEntity</span><span class="o">.</span><span class="na">eEntity</span><span class="o">)</span>
+     <span class="o">.</span><span class="na">fetch</span><span class="o">();</span>
 <span class="o">}</span>
 </code></pre></div></div><h1 id="type-comparison"> <a href="#type-comparison" class="anchor-heading" aria-labelledby="type-comparison"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Type Comparison</h1><div class="table-wrapper"><table><thead><tr><th>Hibernate Type<th>Database Type<th>JDBC Type<th>Type Registry<tbody><tr><td>org.hibernate.type.StringType<td>string<td>VARCHAR<td>string, java.lang.String<tr><td>org.hibernate.type.MaterializedClob<td>string<td>CLOB<td>materialized_clob<tr><td>org.hibernate.type.TextType<td>string<td>LONGVARCHAR<td>text<tr><td>org.hibernate.type.CharacterType<td>char, java.lang.Character<td>CHAR<td>char, java.lang.Character<tr><td>org.hibernate.type.BooleanType<td>boolean<td>BIT<td>boolean, java.lang.Boolean<tr><td>org.hibernate.type.NumericBooleanType<td>boolean<td>INTEGER, 0 is false, 1 is true<td>numeric_boolean<tr><td>org.hibernate.type.YesNoType<td>boolean<td>CHAR, ‘N’/’n’ is false, ‘Y’/’y’ is true. The uppercase value is written to the database.<td>yes_no<tr><td>org.hibernate.type.TrueFalseType<td>boolean<td>CHAR, ‘F’/’f’ is false, ‘T’/’t’ is true. The uppercase value is written to the database.<td>true_false<tr><td>org.hibernate.type.ByteType<td>byte, java.lang.Byte<td>TINYINT<td>byte, java.lang.Byte<tr><td>org.hibernate.type.ShortType<td>short, java.lang.Short<td>SMALLINT<td>short, java.lang.Short<tr><td>org.hibernate.type.IntegerTypes<td>int, java.lang.Integer<td>INTEGER<td>int, java.lang.Integer<tr><td>org.hibernate.type.LongType<td>long, java.lang.Long<td>BIGINT<td>long, java.lang.Long<tr><td>org.hibernate.type.FloatType<td>float, java.lang.Float<td>FLOAT<td>float, java.lang.Float<tr><td>org.hibernate.type.DoubleType<td>double, java.lang.Double<td>DOUBLE<td>double, java.lang.Double<tr><td>org.hibernate.type.BigIntegerType<td>java.math.BigInteger<td>NUMERIC<td>big_integer<tr><td>org.hibernate.type.BigDecimalType<td>java.math.BigDecimal<td>NUMERIC<td>big_decimal, java.math.bigDecimal<tr><td>org.hibernate.type.TimestampType<td>java.sql.Timestamp<td>TIMESTAMP<td>timestamp, java.sql.Timestamp<tr><td>org.hibernate.type.TimeType<td>java.sql.Time<td>TIME<td>time, java.sql.Time<tr><td>org.hibernate.type.DateType<td>java.sql.Date<td>DATE<td>date, java.sql.Date<tr><td>org.hibernate.type.CalendarType<td>java.util.Calendar<td>TIMESTAMP<td>calendar, java.util.Calendar<tr><td>org.hibernate.type.CalendarDateType<td>java.util.Calendar<td>DATE<td>calendar_date<tr><td>org.hibernate.type.CurrencyType<td>java.util.Currency<td>VARCHAR<td>currency, java.util.Currency<tr><td>org.hibernate.type.LocaleType<td>java.util.Locale<td>VARCHAR<td>locale, java.utility.locale<tr><td>org.hibernate.type.TimeZoneType<td>java.util.TimeZone<td>VARCHAR (Using the TimeZone ID)<td>timezone, java.util.TimeZone<tr><td>org.hibernate.type.UrlType<td>java.net.URL<td>VARCHAR<td>url, java.net.URL<tr><td>org.hibernate.type.ClassType<td>java.lang.Class<td>VARCHAR (Using the class name)<td>class, java.lang.Class<tr><td>org.hibernate.type.BlobType<td>java.sql.Blob<td>BLOB<td>blog, java.sql.Blob<tr><td>org.hibernate.type.ClobType<td>java.sql.Clob<td>CLOB<td>clob, java.sql.Clob<tr><td>org.hibernate.type.BinaryType<td>primitive byte[]<td>VARBINARY<td>binary, byte[]<tr><td>org.hibernate.type.MaterializedBlobType<td>primitive byte[]<td>BLOB<td>materized_blob<tr><td>org.hibernate.type.ImageType<td>primitive byte[]<td>LONGVARBINARY<td>image<tr><td>org.hibernate.type.BinaryType<td>java.lang.Byte[]<td>VARBINARY<td>wrapper-binary<tr><td>org.hibernate.type.CharArrayType<td>char[]<td>VARCHAR<td>characters, char[]<tr><td>org.hibernate.type.CharacterArrayType<td>java.lang.Character[]<td>VARCHAR<td>wrapper-characters, Character[], java.lang.Character[]<tr><td>org.hibernate.type.UUIDBinaryType<td>java.util.UUID<td>BINARY<td>uuid-binary, java.util.UUID<tr><td>org.hibernate.type.UUIDCharType<td>java.util.UUID<td>CHAR, VARCHAR<td>uuid-char<tr><td>org.hibernate.type.PostgresUUIDType<td>java.util.UUID<td>PostgreSQL UUID<td>pg-uuid<tr><td>org.hibernate.type.SerializableType<td>Implementors of java.lang.Serializable<td>VARBINARY<td>Unlike the other value types, multiple instances of this type are registered. It is registered once under java.io.Serializable and registered under the specific java.io.Serializable implementation class names</table></div></main><hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"></p><div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"> <a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./JavaNotes/Hibernate.md" id="edit-this-page">Edit this page on GitHub</a></p></div></footer></div></div><button id="search-button" class="search-button btn-reset" aria-label="Focus on search"> <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg> </button><div class="search-overlay"></div></div>

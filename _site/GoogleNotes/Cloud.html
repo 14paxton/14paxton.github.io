@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cloud | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="Cloud"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -370,6 +370,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -404,7 +405,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -479,7 +480,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -487,10 +487,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -550,6 +552,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -565,6 +569,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -586,9 +591,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -610,12 +613,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -638,9 +637,7 @@
                             <ol>
                                 <li><a href="#automated-scripting" id="markdown-toc-automated-scripting">Automated Scripting</a>
                                 <li><a href="#quick-scripts" id="markdown-toc-quick-scripts">QUICK SCRIPTS</a>
-                                <li><a href="#--list-available-cloud-components" id="markdown-toc---list-available-cloud-components">- List Available
-                                                                                                                                     Cloud
-                                                                                                                                     Components</a>
+                                <li><a href="#--list-available-cloud-components" id="markdown-toc---list-available-cloud-components">- List Available Cloud Components</a>
                                 <li><a href="#logging" id="markdown-toc-logging">Logging</a>
                                     <ol>
                                         <li><a href="#--permissions" id="markdown-toc---permissions">- Permissions</a>
@@ -676,10 +673,7 @@
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
-                </a>
-                    <a href="https://cloud.google.com/blog/products/management-tools/scripting-with-gcloud-a-beginners-guide-to-automating-gcp-tasks">Automated
-                                                                                                                                                      Scripting</a>
-                </h2>
+                </a> <a href="https://cloud.google.com/blog/products/management-tools/scripting-with-gcloud-a-beginners-guide-to-automating-gcp-tasks">Automated Scripting</a></h2>
                 <h2 id="quick-scripts"><a href="#quick-scripts" class="anchor-heading" aria-labelledby="quick-scripts">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
@@ -689,9 +683,47 @@
                 <blockquote><p>If you want to logout from all the accounts run the following command</p></blockquote>
                 <div class="language-bash highlighter-rouge">
                     <div class="highlight"><pre class="highlight"><code>gcloud auth revoke <span class="nt">--all</span>
-</code></pre></div></div><blockquote><p>If you want to logout from a specific account then run the following command</p></blockquote><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcloud auth revoke &lt;your_account&gt;
-</code></pre></div></div><blockquote><p>If you want to login with a different account, you can run the following command</p></blockquote><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcloud auth login
-</code></pre></div></div><hr /><p><code class="language-plaintext highlighter-rouge">gcloud init</code></p><p>If you called gcloud auth login, this stores credentials in your user directory on your computer. You may want to delete these credentials by calling:</p><p><code class="language-plaintext highlighter-rouge">gcloud auth revoke</code></p><p>If you called gcloud auth application-default login, this stores credentials in your user directory on your computer. You may want to delete these<br /> credentials by calling:</p><p><code class="language-plaintext highlighter-rouge">gcloud auth application-default revoke</code></p><h2 id="--list-available-cloud-components"> <a href="#--list-available-cloud-components" class="anchor-heading" aria-labelledby="--list-available-cloud-components"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> - <a href="https://cloud.google.com/sdk/gcloud/reference/components/list">List Available Cloud Components</a></h2><h2 id="logging"> <a href="#logging" class="anchor-heading" aria-labelledby="logging"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="./Logging.md#">Logging</a></h2><hr /><h3 id="--permissions"> <a href="#--permissions" class="anchor-heading" aria-labelledby="--permissions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> - Permissions</h3><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcloud logging commands are controlled by Identity and Access Management (IAM) permissions.
+</code></pre>
+                    </div>
+                </div>
+                <blockquote><p>If you want to logout from a specific account then run the following command</p></blockquote>
+                <div class="language-bash highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>gcloud auth revoke &lt;your_account&gt;
+</code></pre>
+                    </div>
+                </div>
+                <blockquote><p>If you want to login with a different account, you can run the following command</p></blockquote>
+                <div class="language-bash highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>gcloud auth login
+</code></pre>
+                    </div>
+                </div>
+                <hr/>
+                <p><code class="language-plaintext highlighter-rouge">gcloud init</code></p>
+                <p>If you called gcloud auth login, this stores credentials in your user directory on your computer. You may want to delete these credentials by calling:</p>
+                <p><code class="language-plaintext highlighter-rouge">gcloud auth revoke</code></p>
+                <p>If you called gcloud auth application-default login, this stores credentials in your user directory on your computer. You may want to delete these<br/>
+                   credentials by calling:</p>
+                <p><code class="language-plaintext highlighter-rouge">gcloud auth application-default revoke</code></p>
+                <h2 id="--list-available-cloud-components"><a href="#--list-available-cloud-components" class="anchor-heading" aria-labelledby="--list-available-cloud-components">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> - <a href="https://cloud.google.com/sdk/gcloud/reference/components/list">List Available Cloud Components</a></h2>
+                <h2 id="logging"><a href="#logging" class="anchor-heading" aria-labelledby="logging">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> <a href="./Logging.md#">Logging</a></h2>
+                <hr/>
+                <h3 id="--permissions"><a href="#--permissions" class="anchor-heading" aria-labelledby="--permissions">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> - Permissions
+                </h3>
+                <div class="language-plaintext highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>gcloud logging commands are controlled by Identity and Access Management (IAM) permissions.
 
 To use any of the gcloud logging commands, you must have the serviceusage.services.use permission. You must also have the IAM role that corresponds to the log's location, and to your use case:
 </code></pre></div></div><p><a href="https://cloud.google.com/logging/docs/access-control">Access Control</a> <br /> | Use case | IAM role | <br /> | ————————— | ——————————— | <br /> | List logs | Logging/Logs Viewer | <br /> | Tail logs | Logging/Logs Viewer | <br /> | Delete logs | Logging/Logging Admin | <br /> | Write logs | Logging/Logs Writer | <br /> | Read logs | Logging/Logs Viewer | <br /> | Read Data Access audit logs | Logging/Private Logs Viewer | <br /> | List sinks | Logging/Logs Viewer | <br /> | Create sinks | Logging/Logs Configuration Writer | <br /> | Update sinks | Logging/Logs Configuration Writer | <br /> | Delete sinks | Logging/Logs Configuration Writer | <br /> | List metrics | Logging/Logs Viewer | <br /> | Create basic metrics | Logging/Logs Configuration Writer | <br /> | Create advanced metrics | Logging/Logs Configuration Writer | <br /> | Update metrics | Logging/Logs Configuration Writer | <br /> | Delete metrics | Logging/Logs Configuration Writer |</p><hr /><h2 id="audits"> <a href="#audits" class="anchor-heading" aria-labelledby="audits"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Audits</h2><p>As part of monitoring the health of your contact center, you’ll want to perform routine <br /> audits in some key areas: anything that affects efficiency, helps manage costs and the <br /> workforce, or helps keep customers happy. <br /> Contact center metrics are provided by your telephony partner and can give you <br /> important insights. Which ones are important to your business varies by the purpose <br /> of the contact center, such as sales versus tech support. Some typical statistics <br /> include the following: <br /> ● Average Wait Time is the amount of time, on average, that customers have to <br /> wait in queue before getting to an agent. The better this number, likely the <br /> happier your customers are. <br /> ● Abandon Rate is often used with respect to voice interactions but can be used <br /> for other channels since the concept is that a customer is waiting in queue to <br /> speak with an agent. It reflects the percentage of callers that hung up while <br /> queued but before getting to an agent. <br /> There are three types of Cloud Logging Audit Logs for Google Cloud projects: <br /> ○ Admin Activity: for API calls or other administrative actions that modify <br /> the configuration or metadata of resources. <br /> ○ Data Access: for API calls that read the configuration or metadata of <br /> resources and for user-driven API calls that create, modify, or read <br /> user-provided resource data. <br /> ○ System Events: for administrative actions that modify the configuration <br /> ○ of resources. <br /> ■ System Event audit logs are generated by Google systems, not <br /> by direct user action. <br /> Cloud Audit Logs reside in highly protected storage, resulting in a secure, immutable, <br /> and highly durable audit trail. They are encrypted at rest using either AES256 or <br /> AES128, which is also used to help protect the rest of Google’s infrastructure. <br /> For more information on Google Cloud Audit logs, see the Encryption At Rest and <br /> Encryption in Transit whitepapers. <br /> The following is a list of common contact center metrics: <br /> ● Average Wait Time: The amount of time, on average, that customers have to <br /> wait in queue before getting to an agent. A better number usually results in <br /> happier customers and lower costs to your business. <br /> ● Average Speed of Answer (ASA): Across all agents and interactions, what was <br /> the average amount of time it took for a customer to get to an agent? Included <br /> in this number is any time they spent in an IVR, in queue, and waiting for an <br /> agent to pick up a ringing phone. To calculate ASA, a call center divides the <br /> total amount of waiting time by the number of calls they received in a set <br /> period. For instance, if there was a total of 20 minutes of waiting time for 10 <br /> calls, the ASA would be five minutes (20/10 = 2). A better number usually <br /> results in happier customers and lower costs to your business. <br /> ● Average After Call Work Time (ACW): The part of your agent’s time after <br /> they’ve finished an interaction with a customer but before they are ready in the <br /> system to be assigned the next customer interaction. This could be time the <br /> agent spends writing up their notes about the previous interaction, but it’s still <br /> time they are working and costing your business. <br /> ● Average Handle Time: This reflects the average amount of time it takes agents <br /> to answer the customer’s contact and end the interaction. This is one of your <br /> biggest costs, so you want it to be low, but don’t forget that there’s a balance <br /> between this metric and customer retention and satisfaction. <br /> ● Cost per contact: This includes all of your costs for running the contact center, <br /> including salary, hardware, electricity, and office expenses. It reflects an <br /> average of all of that across all customer interactions. This metric broken down <br /> by channel can be helpful in determining if one channel is more cost-effective <br /> than others. <br /> ● Service Level: This metric is often associated with a Service Level Agreement <br /> you have with your clients, such as 80% of interactions answered within 20 <br /> seconds. It reflects the percentage of interactions that meet the SLA. <br /> ● Abandon Rate: Often used with respect to voice interactions, but can be used <br /> for other channels. The concept is that a customer is waiting in queue to speak <br /> with an agent. It reflects the percentage of callers who hung up while queued <br /> but before getting to an agent. <br /> ● First Contact Resolution (FCR): Did the customer have to contact you again <br /> later to get their needs met? Calculated differently depending on the business, <br /> but in general it reflects the percentage of total cases where the customer’s <br /> ● need was met during a single contact. <br /> ● Agent Occupancy: The amount of time an agent is considered to be working <br /> (i.e., not on break, not sitting waiting for the next interaction, etc).</p></main><hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"></p><div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"> <a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./GoogleNotes/Cloud.md" id="edit-this-page">Edit this page on GitHub</a></p></div></footer></div></div><button id="search-button" class="search-button btn-reset" aria-label="Focus on search"> <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg> </button><div class="search-overlay"></div></div>

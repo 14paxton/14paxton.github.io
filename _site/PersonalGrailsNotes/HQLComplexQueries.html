@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HQLComplexQueries | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="HQLComplexQueries"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -370,6 +370,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -404,7 +405,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -479,7 +480,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -487,10 +487,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -550,6 +552,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -565,6 +569,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -586,9 +591,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -610,12 +613,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -633,48 +632,34 @@
                 <ol id="markdown-toc">
                     <li><a href="#intersect" id="markdown-toc-intersect">Intersect</a>
                         <ol>
-                            <li><a href="#join-same-object-to-query-against-2-lists" id="markdown-toc-join-same-object-to-query-against-2-lists">join
-                                                                                                                                                 same
-                                                                                                                                                 object
-                                                                                                                                                 to
-                                                                                                                                                 query
-                                                                                                                                                 against
-                                                                                                                                                 2
+                            <li><a href="#join-same-object-to-query-against-2-lists" id="markdown-toc-join-same-object-to-query-against-2-lists">join same object to query against 2
                                                                                                                                                  lists</a>
-                            <li><a href="#determine-length-diff-of-a-group-concat" id="markdown-toc-determine-length-diff-of-a-group-concat">determine
-                                                                                                                                             length
-                                                                                                                                             diff of a
-                                                                                                                                             group
+                            <li><a href="#determine-length-diff-of-a-group-concat" id="markdown-toc-determine-length-diff-of-a-group-concat">determine length diff of a group
                                                                                                                                              concat</a>
                         </ol>
-                    <li><a
-                            href="#example-large-query-with-teary--multi-join-and-json-extractor"
-                            id="markdown-toc-example-large-query-with-teary--multi-join-and-json-extractor"
-                    >EXAMPLE large query with teary / multi join/ and JSON extractor</a>
-                    <li><a href="#example-calling-method-in-hql-statement" id="markdown-toc-example-calling-method-in-hql-statement">EXAMPLE calling
-                                                                                                                                     method in HQL
-                                                                                                                                     statement</a>
-                    <li><a href="#example-case-in-where-statement" id="markdown-toc-example-case-in-where-statement">EXAMPLE case in where
-                                                                                                                     statement</a>
+                    <li><a href="#example-large-query-with-teary--multi-join-and-json-extractor" id="markdown-toc-example-large-query-with-teary--multi-join-and-json-extractor">EXAMPLE
+                                                                                                                                                                                 large
+                                                                                                                                                                                 query
+                                                                                                                                                                                 with
+                                                                                                                                                                                 teary
+                                                                                                                                                                                 /
+                                                                                                                                                                                 multi
+                                                                                                                                                                                 join/
+                                                                                                                                                                                 and
+                                                                                                                                                                                 JSON
+                                                                                                                                                                                 extractor</a>
+                    <li><a href="#example-calling-method-in-hql-statement" id="markdown-toc-example-calling-method-in-hql-statement">EXAMPLE calling method in HQL statement</a>
+                    <li><a href="#example-case-in-where-statement" id="markdown-toc-example-case-in-where-statement">EXAMPLE case in where statement</a>
                     <li><a href="#return-all-if-null-or-empty" id="markdown-toc-return-all-if-null-or-empty">return all if null or empty</a>
                     <li><a href="#subquery" id="markdown-toc-subquery">subquery</a>
                     <li><a href="#create-tuple" id="markdown-toc-create-tuple">create tuple</a>
                     <li><a href="#creative-count" id="markdown-toc-creative-count">creative count</a>
                         <ol>
                             <li><a href="#addconcat-chars-get-length" id="markdown-toc-addconcat-chars-get-length">add/concat chars get length</a>
-                            <li><a href="#get-groupings-where-there-may-be-nulls" id="markdown-toc-get-groupings-where-there-may-be-nulls">get
-                                                                                                                                           groupings
-                                                                                                                                           where there
-                                                                                                                                           may be
+                            <li><a href="#get-groupings-where-there-may-be-nulls" id="markdown-toc-get-groupings-where-there-may-be-nulls">get groupings where there may be
                                                                                                                                            nulls</a>
                             <li><a href="#get-list-of-digits" id="markdown-toc-get-list-of-digits">get list of digits</a>
-                            <li><a href="#get-correct-char-but-need-to-count-column" id="markdown-toc-get-correct-char-but-need-to-count-column">get
-                                                                                                                                                 correct
-                                                                                                                                                 char
-                                                                                                                                                 but
-                                                                                                                                                 need
-                                                                                                                                                 to
-                                                                                                                                                 count
+                            <li><a href="#get-correct-char-but-need-to-count-column" id="markdown-toc-get-correct-char-but-need-to-count-column">get correct char but need to count
                                                                                                                                                  column</a>
                                 <ol>
                                     <li><a
@@ -706,13 +691,39 @@
     <span class="p">(</span><span class="k">SELECT</span> <span class="n">ltl</span><span class="p">.</span><span class="n">inttestid</span>
      <span class="k">FROM</span> <span class="n">LAB_TEST_LOCATION</span> <span class="n">ltl</span>
      <span class="k">WHERE</span> <span class="n">ltl</span><span class="p">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">1</span>
-       <span class="k">AND</span> <span class="n">lts</span><span class="p">.</span><span class="n">inttestid</span> <span class="o">=</span> <span class="n">ltl</span><span class="p">.</span><span class="n">inttestid</span><span class="p">)</span>
+       <span class="k">AND</span> <span class="n">lts</span><span class="p">.</span><span class="n">inttestid</span> <span class="o">=</span> <span class="n">ltl</span><span class="p">.</span><span
+                                class="n"
+                        >inttestid</span><span class="p">)</span>
 </code></pre></div></div><h2 id="join-same-object-to-query-against-2-lists"> <a href="#join-same-object-to-query-against-2-lists" class="anchor-heading" aria-labelledby="join-same-object-to-query-against-2-lists"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> join same object to query against 2 lists</h2><div class="language-hql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="n">o</span>
 <span class="k">from</span> <span class="n">Object</span> <span class="k">as</span> <span class="n">o</span>
          <span class="k">join</span> <span class="n">o</span><span class="p">.</span><span class="n">otherObjects</span> <span class="k">as</span> <span class="n">otherObject</span>
 <span class="k">where</span> <span class="n">otherObject</span> <span class="k">in</span> <span class="p">:</span><span class="n">allowedotherobjects</span>
   <span class="k">and</span> <span class="n">otherObject</span> <span class="k">not</span> <span class="k">in</span> <span class="p">:</span><span class="n">excludedotherobjects</span>
-</code></pre></div></div><h2 id="determine-length-diff-of-a-group-concat"> <a href="#determine-length-diff-of-a-group-concat" class="anchor-heading" aria-labelledby="determine-length-diff-of-a-group-concat"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> determine length diff of a group concat</h2><div class="language-hql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">CHAR_LENGTH</span> <span class="p">(</span><span class="n">GROUP_CONCAT</span><span class="p">(</span><span class="k">CONCAT</span><span class="p">(</span><span class="k">user</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">manager</span><span class="p">.</span><span class="n">id</span><span class="p">)))</span> <span class="o">-</span> <span class="n">CHAR_LENGTH</span> <span class="p">(</span><span class="k">REPLACE</span><span class="p">(</span><span class="n">GROUP_CONCAT</span><span class="p">(</span><span class="k">CONCAT</span><span class="p">(</span><span class="k">user</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">manager</span><span class="p">.</span><span class="n">id</span><span class="p">)),</span> <span class="s1">','</span><span class="p">,</span> <span class="s1">''</span> <span class="p">)))</span>
+</code></pre>
+                </div>
+                </div>
+                <h2 id="determine-length-diff-of-a-group-concat"><a
+                        href="#determine-length-diff-of-a-group-concat"
+                        class="anchor-heading"
+                        aria-labelledby="determine-length-diff-of-a-group-concat"
+                >
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> determine length diff of a group concat
+                </h2>
+                <div class="language-hql highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">CHAR_LENGTH</span> <span class="p">(</span><span class="n">GROUP_CONCAT</span><span
+                            class="p"
+                    >(</span><span class="k">CONCAT</span><span class="p">(</span><span class="k">user</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span
+                            class="n"
+                    >manager</span><span class="p">.</span><span class="n">id</span><span class="p">)))</span> <span class="o">-</span> <span class="n">CHAR_LENGTH</span> <span
+                            class="p"
+                    >(</span><span class="k">REPLACE</span><span class="p">(</span><span class="n">GROUP_CONCAT</span><span class="p">(</span><span class="k">CONCAT</span><span
+                            class="p"
+                    >(</span><span class="k">user</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">manager</span><span class="p">.</span><span
+                            class="n"
+                    >id</span><span class="p">)),</span> <span class="s1">','</span><span class="p">,</span> <span class="s1">''</span> <span class="p">)))</span>
 </code></pre></div></div><h1 id="example-large-query-with-teary--multi-join-and-json-extractor"> <a href="#example-large-query-with-teary--multi-join-and-json-extractor" class="anchor-heading" aria-labelledby="example-large-query-with-teary--multi-join-and-json-extractor"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> EXAMPLE large query with teary / multi join/ and JSON extractor</h1><div class="language-hql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="k">USER</span><span class="p">.</span><span class="n">FIRSTNAME</span><span class="p">,</span>
        <span class="k">USER</span><span class="p">.</span><span class="n">LASTNAME</span><span class="p">,</span>
        <span class="k">USER</span><span class="p">.</span><span class="n">USERMETADATA</span><span class="p">,</span>
@@ -747,9 +758,54 @@
 <span class="k">WHERE</span> <span class="k">USER</span><span class="p">.</span><span class="n">clientSetupId</span> <span class="o">=</span> <span class="nv">${clientSetupId}</span>
   <span class="k">AND</span> <span class="k">USER</span><span class="p">.</span><span class="n">id</span> <span class="k">IN</span> <span class="p">(</span><span class="nv">${searchStrings?.lastName ? findAllIdsByFirstNameAndLastName(searchStrings.firstName.toString()
     , searchStrings.lastName.toString())*.getId().join(', ')
-</span></code></pre></div></div><blockquote><p>calling method</p></blockquote><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">findAllByFirstNameOrLastNameOrEmail</span><span class="o">(</span><span class="n">searchStrings</span><span class="o">.</span><span class="na">firstName</span><span class="o">.</span><span class="na">toString</span><span class="o">())*.</span><span class="na">getId</span><span class="o">().</span><span class="na">join</span><span class="o">(</span><span class="err">'</span>
-</code></pre></div></div><h1 id="example-calling-method-in-hql-statement"> <a href="#example-calling-method-in-hql-statement" class="anchor-heading" aria-labelledby="example-calling-method-in-hql-statement"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> EXAMPLE calling method in HQL statement</h1><div class="language-hql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">new</span> <span class="n">COM</span><span class="p">.</span><span class="n">TALENTBANK</span><span class="p">.</span><span class="n">CORE</span><span class="p">.</span><span class="n">DTO</span><span class="p">.</span><span class="n">USERTEAM</span><span class="p">.</span><span class="n">TEAMSEARCHDTOMAP</span><span class="p">(</span><span class="k">USER</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span> <span class="k">USER</span><span class="p">.</span><span class="n">USERNAME</span><span class="p">,</span> <span class="k">USER</span><span class="p">.</span><span class="n">CLIENTSETUPID</span><span class="p">,</span> <span class="k">USER</span><span class="p">.</span><span class="n">EMAIL</span><span class="p">,</span> <span class="k">USER</span><span class="p">.</span><span class="n">FIRSTNAME</span><span class="p">,</span> <span class="k">USER</span><span class="p">.</span><span class="n">LASTNAME</span><span class="p">,</span> <span class="k">USER</span><span class="p">.</span><span class="n">USERMETADATA</span><span class="p">,</span> <span class="k">USER</span><span class="p">.</span><span class="n">LASTLOGIN</span><span class="p">,</span> <span class="k">USER</span><span class="p">.</span><span class="n">PICTUREURL</span><span class="p">,</span>
-<span class="n">MANAGER</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span> <span class="n">MANAGER</span><span class="p">.</span><span class="n">EMAIL</span><span class="p">,</span> <span class="n">MANAGER</span><span class="p">.</span><span class="n">FIRSTNAME</span><span class="p">,</span> <span class="n">MANAGER</span><span class="p">.</span><span class="n">LASTNAME</span><span class="p">,</span> <span class="n">MANAGER</span><span class="p">.</span><span class="n">USERMETADATA</span><span class="p">,</span> <span class="n">MANAGER</span><span class="p">.</span><span class="n">LASTLOGIN</span><span class="p">,</span> <span class="n">MANAGER</span><span class="p">.</span><span class="n">PICTUREURL</span><span class="p">,</span>
+</span></code></pre>
+                </div>
+                </div>
+                <blockquote><p>calling method</p></blockquote>
+                <div class="language-groovy highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code><span class="n">findAllByFirstNameOrLastNameOrEmail</span><span class="o">(</span><span class="n">searchStrings</span><span
+                            class="o"
+                    >.</span><span class="na">firstName</span><span class="o">.</span><span class="na">toString</span><span class="o">())*.</span><span class="na">getId</span><span
+                            class="o"
+                    >().</span><span class="na">join</span><span class="o">(</span><span class="err">'</span>
+</code></pre>
+                    </div>
+                </div>
+                <h1 id="example-calling-method-in-hql-statement"><a
+                        href="#example-calling-method-in-hql-statement"
+                        class="anchor-heading"
+                        aria-labelledby="example-calling-method-in-hql-statement"
+                >
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> EXAMPLE calling method in HQL statement
+                </h1>
+                <div class="language-hql highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">new</span> <span class="n">COM</span><span
+                            class="p"
+                    >.</span><span class="n">TALENTBANK</span><span class="p">.</span><span class="n">CORE</span><span class="p">.</span><span class="n">DTO</span><span class="p">.</span><span
+                            class="n"
+                    >USERTEAM</span><span class="p">.</span><span class="n">TEAMSEARCHDTOMAP</span><span class="p">(</span><span class="k">USER</span><span class="p">.</span><span
+                            class="n"
+                    >ID</span><span class="p">,</span> <span class="k">USER</span><span class="p">.</span><span class="n">USERNAME</span><span class="p">,</span> <span class="k">USER</span><span
+                            class="p"
+                    >.</span><span class="n">CLIENTSETUPID</span><span class="p">,</span> <span class="k">USER</span><span class="p">.</span><span class="n">EMAIL</span><span class="p">,</span> <span
+                            class="k"
+                    >USER</span><span class="p">.</span><span class="n">FIRSTNAME</span><span class="p">,</span> <span class="k">USER</span><span class="p">.</span><span class="n">LASTNAME</span><span
+                            class="p"
+                    >,</span> <span class="k">USER</span><span class="p">.</span><span class="n">USERMETADATA</span><span class="p">,</span> <span class="k">USER</span><span class="p">.</span><span
+                            class="n"
+                    >LASTLOGIN</span><span class="p">,</span> <span class="k">USER</span><span class="p">.</span><span class="n">PICTUREURL</span><span class="p">,</span>
+<span class="n">MANAGER</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span> <span class="n">MANAGER</span><span class="p">.</span><span class="n">EMAIL</span><span
+                                class="p"
+                        >,</span> <span class="n">MANAGER</span><span class="p">.</span><span class="n">FIRSTNAME</span><span class="p">,</span> <span class="n">MANAGER</span><span
+                                class="p"
+                        >.</span><span class="n">LASTNAME</span><span class="p">,</span> <span class="n">MANAGER</span><span class="p">.</span><span class="n">USERMETADATA</span><span
+                                class="p"
+                        >,</span> <span class="n">MANAGER</span><span class="p">.</span><span class="n">LASTLOGIN</span><span class="p">,</span> <span class="n">MANAGER</span><span
+                                class="p"
+                        >.</span><span class="n">PICTUREURL</span><span class="p">,</span>
 <span class="n">MANAGER</span><span class="p">.</span><span class="n">EXTERNALEMPLOYEECODE</span><span class="p">)</span>
 <span class="k">FROM</span> <span class="k">USER</span> <span class="k">USER</span>
 <span class="k">LEFT</span> <span class="k">OUTER</span> <span class="k">JOIN</span> <span class="n">UserRelationship</span> <span class="n">ur</span>
@@ -757,7 +813,9 @@
     <span class="k">LEFT</span> <span class="k">OUTER</span> <span class="k">JOIN</span> <span class="k">USER</span> <span class="n">manager</span>
 <span class="k">ON</span> <span class="n">manager</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">ur</span><span class="p">.</span><span class="n">manager</span><span class="p">.</span><span class="n">id</span>
 <span class="k">WHERE</span> <span class="k">USER</span><span class="p">.</span><span class="n">clientSetupId</span> <span class="o">=</span> <span class="mi">2000</span>
-  <span class="k">AND</span> <span class="k">USER</span><span class="p">.</span><span class="n">id</span> <span class="k">IN</span> <span class="p">(</span><span class="nv">${ findAllByFirstNameOrLastNameOrEmail(searchStrings.firstName)*.getId().join(' , ')}</span><span class="p">))</span>
+  <span class="k">AND</span> <span class="k">USER</span><span class="p">.</span><span class="n">id</span> <span class="k">IN</span> <span class="p">(</span><span class="nv">${ findAllByFirstNameOrLastNameOrEmail(searchStrings.firstName)*.getId().join(' , ')}</span><span
+                                class="p"
+                        >))</span>
 </code></pre></div></div><h1 id="example-case-in-where-statement"> <a href="#example-case-in-where-statement" class="anchor-heading" aria-labelledby="example-case-in-where-statement"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> EXAMPLE case in where statement</h1><div class="language-hql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">new</span> <span class="nb">Map</span><span class="p">(</span> <span class="k">USER</span><span class="p">.</span><span class="n">ID</span> <span class="k">AS</span> <span class="k">USER</span><span class="p">,</span> <span class="n">MANAGER</span><span class="p">.</span><span class="n">ID</span> <span class="k">AS</span> <span class="n">manager</span> <span class="p">)</span>
 <span class="k">FROM</span> <span class="k">USER</span> <span class="k">USER</span>
   <span class="k">LEFT</span> <span class="k">OUTER</span> <span class="k">JOIN</span> <span class="n">UserRelationship</span> <span class="n">ur</span>
@@ -771,7 +829,13 @@
    <span class="k">OR</span>
     <span class="n">manager</span><span class="p">.</span><span class="n">firstName</span> <span class="k">LIKE</span> <span class="k">CASE</span> <span class="k">WHEN</span> <span class="nv">${searchManagerName}</span> <span class="o">=</span> <span class="k">TRUE</span> <span class="k">THEN</span> <span class="p">(</span><span class="s1">'%'</span><span class="o">||</span><span class="s1">'</span><span class="nv">${testSearch}</span><span class="s1">'</span><span class="o">||</span><span class="s1">'%'</span><span class="p">)</span> <span class="k">ELSE</span> <span class="s1">''</span> <span class="k">END</span>
    <span class="k">OR</span>
-    <span class="n">manager</span><span class="p">.</span><span class="n">lastName</span> <span class="k">LIKE</span> <span class="k">CASE</span> <span class="k">WHEN</span> <span class="nv">${searchManagerName}</span> <span class="o">=</span> <span class="k">TRUE</span> <span class="k">THEN</span> <span class="p">(</span><span class="s1">'%'</span><span class="o">||</span><span class="s1">'</span><span class="nv">${testSearch}</span><span class="s1">'</span><span class="o">||</span><span class="s1">'%'</span><span class="p">)</span> <span class="k">ELSE</span> <span class="s1">''</span> <span class="k">END</span> <span class="p">)</span>
+    <span class="n">manager</span><span class="p">.</span><span class="n">lastName</span> <span class="k">LIKE</span> <span class="k">CASE</span> <span class="k">WHEN</span> <span
+                            class="nv"
+                    >${searchManagerName}</span> <span class="o">=</span> <span class="k">TRUE</span> <span class="k">THEN</span> <span class="p">(</span><span class="s1">'%'</span><span
+                            class="o"
+                    >||</span><span class="s1">'</span><span class="nv">${testSearch}</span><span class="s1">'</span><span class="o">||</span><span class="s1">'%'</span><span class="p">)</span> <span
+                            class="k"
+                    >ELSE</span> <span class="s1">''</span> <span class="k">END</span> <span class="p">)</span>
 </code></pre></div></div><h1 id="return-all-if-null-or-empty"> <a href="#return-all-if-null-or-empty" class="anchor-heading" aria-labelledby="return-all-if-null-or-empty"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> return all if null or empty</h1><div class="language-hql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">new</span> <span class="nb">Map</span><span class="p">(</span> <span class="k">USER</span><span class="p">.</span><span class="n">ID</span> <span class="k">AS</span> <span class="k">USER</span><span class="p">,</span> <span class="n">MANAGER</span><span class="p">.</span><span class="n">ID</span> <span class="k">AS</span> <span class="n">manager</span> <span class="p">)</span>
 <span class="k">FROM</span> <span class="k">USER</span> <span class="k">USER</span>
   <span class="k">LEFT</span> <span class="k">OUTER</span> <span class="k">JOIN</span> <span class="n">UserRelationship</span> <span class="n">ur</span>
@@ -792,7 +856,9 @@
     <span class="k">LEFT</span> <span class="k">OUTER</span> <span class="k">JOIN</span> <span class="n">UserRelationship</span> <span class="n">UR</span> <span class="k">WITH</span> <span class="n">UR</span><span class="p">.</span><span class="k">USER</span><span class="p">.</span><span class="n">ID</span> <span class="o">=</span> <span class="k">USER</span><span class="p">.</span><span class="n">ID</span> <span class="k">OR</span> <span class="n">UR</span><span class="p">.</span><span class="n">MANAGER</span><span class="p">.</span><span class="n">ID</span> <span class="o">=</span> <span class="k">USER</span><span class="p">.</span><span class="n">ID</span>
     <span class="k">left</span> <span class="k">OUTER</span> <span class="k">JOIN</span> <span class="k">User</span> <span class="n">manager</span> <span class="k">WITH</span> <span class="n">MANAGER</span><span class="p">.</span><span class="n">ID</span> <span class="o">=</span> <span class="n">UR</span><span class="p">.</span><span class="n">MANAGER</span><span class="p">.</span><span class="n">ID</span>
     <span class="k">WHERE</span> <span class="k">user</span> <span class="o">=</span> <span class="n">u</span>
-        <span class="k">AND</span> <span class="k">USER</span><span class="p">.</span><span class="n">CLIENTSETUPID</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">)</span>
+        <span class="k">AND</span> <span class="k">USER</span><span class="p">.</span><span class="n">CLIENTSETUPID</span> <span class="o">=</span> <span class="mi">2000</span><span
+                            class="p"
+                    >)</span>
 </code></pre></div></div><h1 id="create-tuple"> <a href="#create-tuple" class="anchor-heading" aria-labelledby="create-tuple"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> create tuple</h1><div class="language-hql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="k">CONCAT</span><span class="p">(</span><span class="s1">'['</span><span class="p">,</span> <span class="k">USER</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span> <span class="s1">':'</span><span class="p">,</span> <span class="n">IFNULL</span><span class="p">(</span><span class="n">MANAGER</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span> <span class="s1">'null'</span><span class="p">),</span> <span class="s1">']'</span><span class="p">)</span>
 <span class="k">FROM</span> <span class="k">USER</span> <span class="k">USER</span>
 <span class="k">LEFT</span> <span class="k">OUTER</span> <span class="k">JOIN</span> <span class="n">UserRelationship</span> <span class="n">ur</span>
@@ -807,11 +873,47 @@
     <span class="k">left</span> <span class="k">OUTER</span> <span class="k">JOIN</span> <span class="k">User</span> <span class="n">manager</span>
 <span class="k">with</span> <span class="n">manager</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">ur</span><span class="p">.</span><span class="n">manager</span><span class="p">.</span><span class="n">id</span>
 <span class="k">where</span> <span class="k">user</span><span class="p">.</span><span class="n">clientSetupId</span> <span class="o">=</span> <span class="mi">2000</span>
-<span class="k">group</span> <span class="k">by</span> <span class="k">user</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">manager</span><span class="p">.</span><span class="n">id</span>
-</code></pre></div></div><h2 id="get-groupings-where-there-may-be-nulls"> <a href="#get-groupings-where-there-may-be-nulls" class="anchor-heading" aria-labelledby="get-groupings-where-there-may-be-nulls"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> get groupings where there may be nulls</h2><div class="language-hql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">NEW</span> <span class="nb">Map</span><span class="p">(</span> <span class="k">MAX</span><span class="p">(</span><span class="k">USER</span><span class="p">.</span><span class="n">ID</span><span class="p">)</span> <span class="k">AS</span> <span class="n">userId</span> <span class="p">,</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">CONCAT</span><span class="p">(</span><span class="s1">'{'</span><span class="p">,</span> <span class="n">GROUP_CONCAT</span><span class="p">(</span><span class="k">CONCAT</span><span class="p">(</span><span class="k">COALESCE</span><span class="p">(</span><span class="n">UR1</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span> <span class="s1">'noRelationship'</span><span class="p">),</span> <span class="s1">':[{'</span> <span class="p">,</span>
-                         <span class="k">USER</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span> <span class="s1">':'</span> <span class="p">,</span> <span class="k">COALESCE</span><span class="p">(</span><span class="n">MANAGER1</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span> <span class="s1">'null'</span><span class="p">),</span> <span class="s1">'}]'</span> <span class="p">))</span> <span class="p">,</span> <span class="s1">'}'</span><span class="p">)</span>
+<span class="k">group</span> <span class="k">by</span> <span class="k">user</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">manager</span><span
+                            class="p"
+                    >.</span><span class="n">id</span>
+</code></pre>
+                </div>
+                </div>
+                <h2 id="get-groupings-where-there-may-be-nulls"><a
+                        href="#get-groupings-where-there-may-be-nulls"
+                        class="anchor-heading"
+                        aria-labelledby="get-groupings-where-there-may-be-nulls"
+                >
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> get groupings where there may be nulls
+                </h2>
+                <div class="language-hql highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">NEW</span> <span class="nb">Map</span><span class="p">(</span> <span
+                            class="k"
+                    >MAX</span><span class="p">(</span><span class="k">USER</span><span class="p">.</span><span class="n">ID</span><span class="p">)</span> <span class="k">AS</span> <span
+                            class="n"
+                    >userId</span> <span class="p">,</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">CONCAT</span><span class="p">(</span><span class="s1">'{'</span><span
+                            class="p"
+                    >,</span> <span class="n">GROUP_CONCAT</span><span class="p">(</span><span class="k">CONCAT</span><span class="p">(</span><span class="k">COALESCE</span><span
+                            class="p"
+                    >(</span><span class="n">UR1</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span> <span class="s1">'noRelationship'</span><span class="p">),</span> <span
+                            class="s1"
+                    >':[{'</span> <span class="p">,</span>
+                         <span class="k">USER</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span> <span class="s1">':'</span> <span class="p">,</span> <span
+                                class="k"
+                        >COALESCE</span><span class="p">(</span><span class="n">MANAGER1</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span> <span class="s1">'null'</span><span
+                                class="p"
+                        >),</span> <span class="s1">'}]'</span> <span class="p">))</span> <span class="p">,</span> <span class="s1">'}'</span><span class="p">)</span>
                          <span class="k">FROM</span> <span class="k">USER</span> <span class="k">USER</span>
-                         <span class="k">JOIN</span> <span class="n">UserRelationship</span> <span class="n">ur1</span> <span class="k">WITH</span> <span class="n">ur1</span><span class="p">.</span><span class="k">user</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="k">USER</span><span class="p">.</span><span class="n">id</span> <span class="k">OR</span> <span class="n">ur1</span><span class="p">.</span><span class="n">manager</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="k">USER</span><span class="p">.</span><span class="n">id</span>
+                         <span class="k">JOIN</span> <span class="n">UserRelationship</span> <span class="n">ur1</span> <span class="k">WITH</span> <span class="n">ur1</span><span
+                                class="p"
+                        >.</span><span class="k">user</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="k">USER</span><span class="p">.</span><span
+                                class="n"
+                        >id</span> <span class="k">OR</span> <span class="n">ur1</span><span class="p">.</span><span class="n">manager</span><span class="p">.</span><span class="n">id</span> <span
+                                class="o"
+                        >=</span> <span class="k">USER</span><span class="p">.</span><span class="n">id</span>
                          <span class="k">JOIN</span> <span class="k">USER</span> <span class="n">manager1</span> <span class="k">WITH</span> <span class="n">manager1</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">ur1</span><span class="p">.</span><span class="n">manager</span><span class="p">.</span><span class="n">id</span><span class="p">)</span> <span class="k">AS</span> <span class="n">TUPLES</span> <span class="p">)</span>
 <span class="k">FROM</span> <span class="k">USER</span> <span class="k">USER</span>
     <span class="k">LEFT</span> <span class="k">OUTER</span> <span class="k">JOIN</span> <span class="n">UserRelationship</span> <span class="n">ur</span>
@@ -819,7 +921,9 @@
     <span class="k">LEFT</span> <span class="k">OUTER</span> <span class="k">JOIN</span> <span class="k">USER</span> <span class="n">manager</span>
 <span class="k">WITH</span> <span class="n">manager</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">ur</span><span class="p">.</span><span class="n">manager</span><span class="p">.</span><span class="n">id</span>
 <span class="k">WHERE</span> <span class="k">USER</span><span class="p">.</span><span class="n">clientSetupId</span> <span class="o">=</span> <span class="mi">2000</span>
-<span class="k">GROUP</span> <span class="k">BY</span> <span class="k">USER</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">manager</span><span class="p">.</span><span class="n">id</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="k">USER</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">manager</span><span
+                                class="p"
+                        >.</span><span class="n">id</span>
 </code></pre></div></div><h2 id="get-list-of-digits"> <a href="#get-list-of-digits" class="anchor-heading" aria-labelledby="get-list-of-digits"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> get list of digits</h2><div class="language-hql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="k">Max</span><span class="p">(</span><span class="k">USER</span><span class="p">.</span><span class="n">ID</span><span class="p">),</span>
        <span class="p">(</span><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="k">CONCAT</span><span class="p">(</span><span class="n">GROUP_CONCAT</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
         <span class="k">FROM</span> <span class="k">USER</span> <span class="n">u</span>

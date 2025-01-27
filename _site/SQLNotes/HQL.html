@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HQL | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="HQL"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -370,6 +370,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -404,7 +405,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -479,7 +480,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -487,10 +487,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -550,6 +552,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -565,6 +569,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -586,9 +591,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -610,12 +613,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -634,8 +633,7 @@
                     <ol id="markdown-toc">
                         <li><a href="#database-overview" id="markdown-toc-database-overview">Database Overview</a>
                         <li><a href="#run-in-postgres-mode" id="markdown-toc-run-in-postgres-mode">run in postgres mode</a>
-                        <li><a href="#h2-database-engine-cheat-sheet" id="markdown-toc-h2-database-engine-cheat-sheet">H2 Database Engine Cheat
-                                                                                                                       Sheet</a>
+                        <li><a href="#h2-database-engine-cheat-sheet" id="markdown-toc-h2-database-engine-cheat-sheet">H2 Database Engine Cheat Sheet</a>
                             <ol>
                                 <li><a href="#using-h2" id="markdown-toc-using-h2">Using H2</a>
                                 <li><a href="#documentation" id="markdown-toc-documentation">Documentation</a>
@@ -646,28 +644,23 @@
                                                 <li><a
                                                         href="#jdbch2test-test-in-the-user-home-directory"
                                                         id="markdown-toc-jdbch2test-test-in-the-user-home-directory"
-                                                ><code class="language-plaintext highlighter-rouge">jdbc:h2:~/test</code> ‘test’ in the user home
-                                                                                                                          directory</a>
+                                                ><code class="language-plaintext highlighter-rouge">jdbc:h2:~/test</code> ‘test’ in the user home directory</a>
                                                 <li><a
                                                         href="#jdbch2datatest-test-in-the-directory-data"
                                                         id="markdown-toc-jdbch2datatest-test-in-the-directory-data"
-                                                ><code class="language-plaintext highlighter-rouge">jdbc:h2:/data/test</code> ‘test’ in the directory
-                                                                                                                              /data</a>
+                                                ><code class="language-plaintext highlighter-rouge">jdbc:h2:/data/test</code> ‘test’ in the directory /data</a>
                                                 <li><a
                                                         href="#jdbch2test-test-in-the-current-working-directory"
                                                         id="markdown-toc-jdbch2test-test-in-the-current-working-directory"
-                                                ><code class="language-plaintext highlighter-rouge">jdbc:h2:./test</code> ‘test’ in the current(!)
-                                                                                                                          working directory</a>
+                                                ><code class="language-plaintext highlighter-rouge">jdbc:h2:./test</code> ‘test’ in the current(!) working directory</a>
                                             </ol>
                                         <li><a href="#in-memory" id="markdown-toc-in-memory"><strong>In-Memory</strong></a>
                                             <ol>
                                                 <li><a
                                                         href="#jdbch2memtest-multiple-connections-in-one-process-database-is-removed-when-all-connections-are-closed"
                                                         id="markdown-toc-jdbch2memtest-multiple-connections-in-one-process-database-is-removed-when-all-connections-are-closed"
-                                                ><code class="language-plaintext highlighter-rouge">jdbc:h2:mem:test</code> multiple connections in
-                                                                                                                            one process, database is
-                                                                                                                            removed when all
-                                                                                                                            connections are closed</a>
+                                                ><code class="language-plaintext highlighter-rouge">jdbc:h2:mem:test</code> multiple connections in one process, database is removed
+                                                                                                                            when all connections are closed</a>
                                                 <li><a
                                                         href="#jdbch2memunnamed-private-one-connection"
                                                         id="markdown-toc-jdbch2memunnamed-private-one-connection"
@@ -678,32 +671,25 @@
                                                 <li><a
                                                         href="#jdbch2tcplocalhosttest-user-home-dir"
                                                         id="markdown-toc-jdbch2tcplocalhosttest-user-home-dir"
-                                                ><code class="language-plaintext highlighter-rouge">jdbc:h2:tcp://localhost/~/test</code> user home
-                                                                                                                                          dir</a>
+                                                ><code class="language-plaintext highlighter-rouge">jdbc:h2:tcp://localhost/~/test</code> user home dir</a>
                                                 <li><a
                                                         href="#jdbch2tcplocalhostdatatest-or-jdbch2tcplocalhostddatatest-absolute-dir"
                                                         id="markdown-toc-jdbch2tcplocalhostdatatest-or-jdbch2tcplocalhostddatatest-absolute-dir"
-                                                ><code class="language-plaintext highlighter-rouge">jdbc:h2:tcp://localhost//data/test</code> or <code
-                                                        class="language-plaintext highlighter-rouge"
-                                                >jdbc:h2:tcp://localhost/D:/data/test</code> absolute dir</a>
-                                                <li><a
-                                                        href="#server-start-java--cp-jar-orgh2toolsserver"
-                                                        id="markdown-toc-server-start-java--cp-jar-orgh2toolsserver"
-                                                >Server start: <code class="language-plaintext highlighter-rouge">java -cp *.jar
-                                                                                                                  org.h2.tools.Server</code></a>
+                                                ><code class="language-plaintext highlighter-rouge">jdbc:h2:tcp://localhost//data/test</code> or
+                                                    <code class="language-plaintext highlighter-rouge">jdbc:h2:tcp://localhost/D:/data/test</code> absolute dir</a>
+                                                <li><a href="#server-start-java--cp-jar-orgh2toolsserver" id="markdown-toc-server-start-java--cp-jar-orgh2toolsserver">Server start:
+                                                    <code class="language-plaintext highlighter-rouge">java -cp *.jar org.h2.tools.Server</code></a>
                                             </ol>
                                         <li><a href="#settings" id="markdown-toc-settings"><strong>Settings</strong></a>
                                             <ol>
                                                 <li><a
                                                         href="#jdbch2modemysqldatabase_to_lowertrue-compatibility-or-hsqldb"
                                                         id="markdown-toc-jdbch2modemysqldatabase_to_lowertrue-compatibility-or-hsqldb"
-                                                ><code class="language-plaintext highlighter-rouge">jdbc:h2:..;MODE=MySQL;DATABASE_TO_LOWER=TRUE</code>
-                                                    compatibility (or HSQLDB,…)</a>
+                                                ><code class="language-plaintext highlighter-rouge">jdbc:h2:..;MODE=MySQL;DATABASE_TO_LOWER=TRUE</code> compatibility (or HSQLDB,…)</a>
                                                 <li><a
                                                         href="#jdbch2trace_level_file3-log-to-tracedb"
                                                         id="markdown-toc-jdbch2trace_level_file3-log-to-tracedb"
-                                                ><code class="language-plaintext highlighter-rouge">jdbc:h2:..;TRACE_LEVEL_FILE=3</code> log to
-                                                                                                                                         *.trace.db</a>
+                                                ><code class="language-plaintext highlighter-rouge">jdbc:h2:..;TRACE_LEVEL_FILE=3</code> log to *.trace.db</a>
                                             </ol>
                                     </ol>
                                 <li><a href="#using-the-jdbc-api" id="markdown-toc-using-the-jdbc-api">Using the JDBC API</a>
@@ -711,58 +697,40 @@
                                 <li><a href="#maven-2" id="markdown-toc-maven-2">Maven 2</a>
                                 <li><a href="#hibernate" id="markdown-toc-hibernate">Hibernate</a>
                                 <li><a href="#toplink-and-glassfish" id="markdown-toc-toplink-and-glassfish">TopLink and Glassfish</a>
-                                <li><a href="#run-h2-database-in-three-different-modes" id="markdown-toc-run-h2-database-in-three-different-modes">Run
-                                    <strong>H2 Database</strong> in three different modes:</a>
+                                <li><a href="#run-h2-database-in-three-different-modes" id="markdown-toc-run-h2-database-in-three-different-modes">Run <strong>H2 Database</strong>
+                                                                                                                                                   in three different modes:</a>
                                 <li><a href="#execute-sql-scripts" id="markdown-toc-execute-sql-scripts">execute sql scripts</a>
                                     <ol>
                                         <li><a href="#shutdown" id="markdown-toc-shutdown">shutdown</a>
-                                        <li><a href="#start-and-stop-from-maven" id="markdown-toc-start-and-stop-from-maven">start and stop from
-                                                                                                                             maven</a>
+                                        <li><a href="#start-and-stop-from-maven" id="markdown-toc-start-and-stop-from-maven">start and stop from maven</a>
                                     </ol>
                             </ol>
                         <li><a href="#queries" id="markdown-toc-queries">Queries</a>
                             <ol>
                                 <li><a href="#intersect" id="markdown-toc-intersect">Intersect</a>
-                                <li><a href="#join-same-object-to-query-against-2-lists" id="markdown-toc-join-same-object-to-query-against-2-lists">join
-                                                                                                                                                     same
-                                                                                                                                                     object
-                                                                                                                                                     to
-                                                                                                                                                     query
-                                                                                                                                                     against
-                                                                                                                                                     2
-                                                                                                                                                     lists</a>
-                                <li><a
-                                        href="#determine-the-length-diff-of-a-group-concat"
-                                        id="markdown-toc-determine-the-length-diff-of-a-group-concat"
-                                >determine the length diff of a group concat</a>
+                                <li><a href="#join-same-object-to-query-against-2-lists" id="markdown-toc-join-same-object-to-query-against-2-lists">join same object to query
+                                                                                                                                                     against 2 lists</a>
+                                <li><a href="#determine-the-length-diff-of-a-group-concat" id="markdown-toc-determine-the-length-diff-of-a-group-concat">determine the length diff
+                                                                                                                                                         of a group concat</a>
                                 <li><a
                                         href="#example-large-query-with-teary--multi-join-and-json-extractor"
                                         id="markdown-toc-example-large-query-with-teary--multi-join-and-json-extractor"
                                 >EXAMPLE large query with teary / multi join/ and JSON extractor</a>
-                                <li><a
-                                        href="#example-calling-method-in-an-hql-statement"
-                                        id="markdown-toc-example-calling-method-in-an-hql-statement"
-                                >EXAMPLE calling method in an HQL statement</a>
-                                <li><a href="#example-case-in-a-where-statement" id="markdown-toc-example-case-in-a-where-statement">EXAMPLE case in a
-                                                                                                                                     where
-                                                                                                                                     statement</a>
-                                <li><a href="#return-all-if-null-or-empty" id="markdown-toc-return-all-if-null-or-empty">return all if null or
-                                                                                                                         empty</a>
+                                <li><a href="#example-calling-method-in-an-hql-statement" id="markdown-toc-example-calling-method-in-an-hql-statement">EXAMPLE calling method in an
+                                                                                                                                                       HQL statement</a>
+                                <li><a href="#example-case-in-a-where-statement" id="markdown-toc-example-case-in-a-where-statement">EXAMPLE case in a where statement</a>
+                                <li><a href="#return-all-if-null-or-empty" id="markdown-toc-return-all-if-null-or-empty">return all if null or empty</a>
                                 <li><a href="#subquery" id="markdown-toc-subquery">subquery</a>
                                 <li><a href="#create-tuple" id="markdown-toc-create-tuple">create tuple</a>
                                 <li><a href="#creative-count" id="markdown-toc-creative-count">creative count</a>
                                     <ol>
-                                        <li><a href="#addconcat-chars-get-length" id="markdown-toc-addconcat-chars-get-length">add/concat chars get
-                                                                                                                               length</a>
-                                        <li><a
-                                                href="#get-groupings-where-there-may-be-nulls"
-                                                id="markdown-toc-get-groupings-where-there-may-be-nulls"
-                                        >get groupings where there may be nulls</a>
+                                        <li><a href="#addconcat-chars-get-length" id="markdown-toc-addconcat-chars-get-length">add/concat chars get length</a>
+                                        <li><a href="#get-groupings-where-there-may-be-nulls" id="markdown-toc-get-groupings-where-there-may-be-nulls">get groupings where there may
+                                                                                                                                                       be nulls</a>
                                         <li><a href="#get-list-of-digits" id="markdown-toc-get-list-of-digits">get list of digits</a>
-                                        <li><a
-                                                href="#get-correct-char-but-need-to-count-column"
-                                                id="markdown-toc-get-correct-char-but-need-to-count-column"
-                                        >get correct char but need to count column</a>
+                                        <li><a href="#get-correct-char-but-need-to-count-column" id="markdown-toc-get-correct-char-but-need-to-count-column">get correct char but
+                                                                                                                                                             need to count
+                                                                                                                                                             column</a>
                                             <ol>
                                                 <li><a
                                                         href="#not-working-need-to-show-one-number-find-way-to-count-column"
@@ -770,10 +738,7 @@
                                                 >Not working need to show one number, find way to count column</a>
                                             </ol>
                                     </ol>
-                                <li><a href="#select-distinct-mag-from-magazine-mag" id="markdown-toc-select-distinct-mag-from-magazine-mag">SELECT
-                                                                                                                                             DISTINCT
-                                                                                                                                             mag FROM
-                                                                                                                                             Magazine
+                                <li><a href="#select-distinct-mag-from-magazine-mag" id="markdown-toc-select-distinct-mag-from-magazine-mag">SELECT DISTINCT mag FROM Magazine
                                                                                                                                              mag</a>
                                     <ol>
                                         <li><a
@@ -781,21 +746,18 @@
                                                 id="markdown-toc-may-equivalently-be-expressed-as-follows-using-the-in-operator"
                                         >may equivalently be expressed as follows, using the IN operator:</a>
                                     </ol>
-                                <li><a
-                                        href="#using-hqlhibernate-query-language-in-findall"
-                                        id="markdown-toc-using-hqlhibernate-query-language-in-findall"
-                                >Using HQL(hibernate query language) in findall</a>
+                                <li><a href="#using-hqlhibernate-query-language-in-findall" id="markdown-toc-using-hqlhibernate-query-language-in-findall">Using HQL(hibernate query
+                                                                                                                                                           language) in findall</a>
                                     <ol>
-                                        <li><a href="#using-hql-for-execute-query" id="markdown-toc-using-hql-for-execute-query">USING HQL for execute
-                                                                                                                                 query</a>
+                                        <li><a href="#using-hql-for-execute-query" id="markdown-toc-using-hql-for-execute-query">USING HQL for execute query</a>
                                     </ol>
-                                <li><a href="#-hql-created-using-session-" id="markdown-toc--hql-created-using-session-">-HQL created using
-                                                                                                                         session-</a>
+                                <li><a href="#-hql-created-using-session-" id="markdown-toc--hql-created-using-session-">-HQL created using session-</a>
                                 <li><a href="#groovy-sql" id="markdown-toc-groovy-sql">Groovy SQL</a>
-                                <li><a
-                                        href="#pagination-server-side-with-pagedlistholder-object"
-                                        id="markdown-toc-pagination-server-side-with-pagedlistholder-object"
-                                >pagination server side with PagedListHolder Object</a>
+                                <li><a href="#pagination-server-side-with-pagedlistholder-object" id="markdown-toc-pagination-server-side-with-pagedlistholder-object">pagination
+                                                                                                                                                                       server side
+                                                                                                                                                                       with
+                                                                                                                                                                       PagedListHolder
+                                                                                                                                                                       Object</a>
                             </ol>
                     </ol>
                 </details>
@@ -816,9 +778,9 @@
                 </a> run in postgres mode
                 </h1>
                 <div class="language-shell highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code>jdbc:h2:mem:test<span class="p">;</span><span class="nv">MODE</span><span
-                            class="o"
-                    >=</span>PostgreSQL<span class="p">;</span><span class="nv">DATABASE_TO_LOWER</span><span class="o">=</span>TRUE
+                    <div class="highlight"><pre class="highlight"><code>jdbc:h2:mem:test<span class="p">;</span><span class="nv">MODE</span><span class="o">=</span>PostgreSQL<span
+                            class="p"
+                    >;</span><span class="nv">DATABASE_TO_LOWER</span><span class="o">=</span>TRUE
 </code></pre></div></div><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jdbc:h2:~/siris<span class="p">;</span><span class="nv">MODE</span><span class="o">=</span>PostgreSQL<span class="p">;</span><span class="nv">DATABASE_TO_LOWER</span><span class="o">=</span>TRUE<span class="p">;</span><span class="nv">DEFAULT_NULL_ORDERING</span><span class="o">=</span>HIGH
 </code></pre></div></div><hr /><h1 id="h2-database-engine-cheat-sheet"> <a href="#h2-database-engine-cheat-sheet" class="anchor-heading" aria-labelledby="h2-database-engine-cheat-sheet"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="http://www.h2database.com/html/cheatSheet.html">H2 Database Engine Cheat Sheet</a></h1><h2 id="using-h2"> <a href="#using-h2" class="anchor-heading" aria-labelledby="using-h2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Using H2</h2><ul><li><blockquote><p><a href="https://h2database.com/">H2</a><br /> is<a href="https://github.com/h2database/h2database">open source</a>,<a href="http://www.h2database.com/html/license.html">free to use and distribute</a>.</p></blockquote><li><blockquote><p><a href="https://h2database.com/html/download.html">Download</a>:<a href="https://repo1.maven.org/maven2/com/h2database/h2/2.2.220/h2-2.2.220.jar">jar</a>,<a href="https://github.com/h2database/h2database/releases/download/version-2.2.220/h2-setup-2023-07-04.exe">installer (Windows)</a>,<a href="https://github.com/h2database/h2database/releases/download/version-2.2.220/h2-2023-07-04.zip">zip</a>.</p></blockquote><li><blockquote><p>To start the<a href="http://www.h2database.com/html/quickstart.html#h2_console">H2 Console tool</a>, double click the jar file, or run<code class="language-plaintext highlighter-rouge">java -jar h2*.jar</code>,<br /> <code class="language-plaintext highlighter-rouge">h2.bat</code>, or<code class="language-plaintext highlighter-rouge">h2.sh</code>.</p></blockquote><li><blockquote><p><a href="http://www.h2database.com/html/tutorial.html#creating_new_databases">A new database is automatically created</a><a href="http://www.h2database.com/html/features.html#database_only_if_exists">by default<br /> if an embedded URL is used</a>.</p></blockquote><li><blockquote><p><a href="http://www.h2database.com/html/features.html#closing_a_database">Closing the last connection closes the database</a>.</p></blockquote></ul><h2 id="documentation"> <a href="#documentation" class="anchor-heading" aria-labelledby="documentation"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Documentation</h2><p>Reference:<a href="http://www.h2database.com/html/grammar.html">SQL grammar</a>,<a href="http://www.h2database.com/html/functions.html">functions</a>,<a href="http://www.h2database.com/html/datatypes.html">data types</a>,<a href="http://www.h2database.com/html/tutorial.html#command_line_tools">tools</a>,<a href="http://www.h2database.com/javadoc/index.html">API</a><br /> <a href="http://www.h2database.com/html/features.html">Features</a>:<a href="http://www.h2database.com/html/tutorial.html#fulltext">fulltext search</a>,<a href="http://www.h2database.com/html/features.html#file_encryption">encryption</a>,<a href="http://www.h2database.com/html/features.html#read_only">read-only</a><a href="http://www.h2database.com/html/features.html#database_in_zip">(zip/jar)</a>,<a href="http://www.h2database.com/html/tutorial.html#csv">CSV</a>,<a href="http://www.h2database.com/html/features.html#auto_reconnect">auto-reconnect</a>,<a href="http://www.h2database.com/html/features.html#triggers">triggers</a>,<a href="http://www.h2database.com/html/features.html#user_defined_functions">user functions</a></p><h2 id="database-urls"> <a href="#database-urls" class="anchor-heading" aria-labelledby="database-urls"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="http://www.h2database.com/html/features.html#database_url">Database URLs</a></h2><h3 id="embedded"> <a href="#embedded" class="anchor-heading" aria-labelledby="embedded"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong><a href="http://www.h2database.com/html/features.html#connection_modes">Embedded</a></strong></h3><h4 id="jdbch2test-test-in-the-user-home-directory"> <a href="#jdbch2test-test-in-the-user-home-directory" class="anchor-heading" aria-labelledby="jdbch2test-test-in-the-user-home-directory"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">jdbc:h2:~/test</code> ‘test’ in the user home directory</h4><h4 id="jdbch2datatest-test-in-the-directory-data"> <a href="#jdbch2datatest-test-in-the-directory-data" class="anchor-heading" aria-labelledby="jdbch2datatest-test-in-the-directory-data"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">jdbc:h2:/data/test</code> ‘test’ in the directory /data</h4><h4 id="jdbch2test-test-in-the-current-working-directory"> <a href="#jdbch2test-test-in-the-current-working-directory" class="anchor-heading" aria-labelledby="jdbch2test-test-in-the-current-working-directory"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">jdbc:h2:./test</code> ‘test’ in the current(!) working directory</h4><h3 id="in-memory"> <a href="#in-memory" class="anchor-heading" aria-labelledby="in-memory"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong><a href="http://www.h2database.com/html/features.html#in_memory_databases">In-Memory</a></strong></h3><h4 id="jdbch2memtest-multiple-connections-in-one-process-database-is-removed-when-all-connections-are-closed"> <a href="#jdbch2memtest-multiple-connections-in-one-process-database-is-removed-when-all-connections-are-closed" class="anchor-heading" aria-labelledby="jdbch2memtest-multiple-connections-in-one-process-database-is-removed-when-all-connections-are-closed"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">jdbc:h2:mem:test</code> multiple connections in one process, database is removed when all connections are closed</h4><p>####</p><p><code class="language-plaintext highlighter-rouge">jdbc:h2:mem:test;DB_CLOSE_DELAY=-1</code> multiple connections in one process, database in not removed when all connections are<br /> closed (<a href="http://www.h2database.com/html/features.html#in_memory_databases">may create a memory leak</a>)</p><h4 id="jdbch2memunnamed-private-one-connection"> <a href="#jdbch2memunnamed-private-one-connection" class="anchor-heading" aria-labelledby="jdbch2memunnamed-private-one-connection"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">jdbc:h2:mem:</code>unnamed private; one connection</h4><h3 id="server-mode"> <a href="#server-mode" class="anchor-heading" aria-labelledby="server-mode"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong><a href="http://www.h2database.com/html/tutorial.html#using_server">Server Mode</a></strong></h3><h4 id="jdbch2tcplocalhosttest-user-home-dir"> <a href="#jdbch2tcplocalhosttest-user-home-dir" class="anchor-heading" aria-labelledby="jdbch2tcplocalhosttest-user-home-dir"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">jdbc:h2:tcp://localhost/~/test</code> user home dir</h4><h4 id="jdbch2tcplocalhostdatatest-or-jdbch2tcplocalhostddatatest-absolute-dir"> <a href="#jdbch2tcplocalhostdatatest-or-jdbch2tcplocalhostddatatest-absolute-dir" class="anchor-heading" aria-labelledby="jdbch2tcplocalhostdatatest-or-jdbch2tcplocalhostddatatest-absolute-dir"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">jdbc:h2:tcp://localhost//data/test</code> or <code class="language-plaintext highlighter-rouge">jdbc:h2:tcp://localhost/D:/data/test</code> absolute dir</h4><h4 id="server-start-java--cp-jar-orgh2toolsserver"> <a href="#server-start-java--cp-jar-orgh2toolsserver" class="anchor-heading" aria-labelledby="server-start-java--cp-jar-orgh2toolsserver"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="http://www.h2database.com/html/tutorial.html#using_server">Server start</a>: <code class="language-plaintext highlighter-rouge">java -cp *.jar org.h2.tools.Server</code></h4><h3 id="settings"> <a href="#settings" class="anchor-heading" aria-labelledby="settings"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong><a href="http://www.h2database.com/html/features.html#database_url">Settings</a></strong></h3><h4 id="jdbch2modemysqldatabase_to_lowertrue-compatibility-or-hsqldb"> <a href="#jdbch2modemysqldatabase_to_lowertrue-compatibility-or-hsqldb" class="anchor-heading" aria-labelledby="jdbch2modemysqldatabase_to_lowertrue-compatibility-or-hsqldb"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">jdbc:h2:..;MODE=MySQL;DATABASE_TO_LOWER=TRUE</code> <a href="http://www.h2database.com/html/features.html#compatibility">compatibility (or HSQLDB,…)</a></h4><h4 id="jdbch2trace_level_file3-log-to-tracedb"> <a href="#jdbch2trace_level_file3-log-to-tracedb" class="anchor-heading" aria-labelledby="jdbch2trace_level_file3-log-to-tracedb"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">jdbc:h2:..;TRACE_LEVEL_FILE=3</code> <a href="http://www.h2database.com/html/features.html#trace_options">log to *.trace.db</a></h4><h2 id="using-the-jdbc-api"> <a href="#using-the-jdbc-api" class="anchor-heading" aria-labelledby="using-the-jdbc-api"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="http://www.h2database.com/html/tutorial.html#connecting_using_jdbc">Using the JDBC API</a></h2><div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">JDBC</span> <span class="o">{</span>
    <span class="kd">static</span> <span class="nf">closCon</span><span class="o">()</span> <span class="o">{</span>

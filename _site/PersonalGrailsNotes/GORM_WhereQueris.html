@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GORM_WhereQueris | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="GORM_WhereQueris"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -370,6 +370,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -404,7 +405,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -479,7 +480,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -487,10 +487,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -550,6 +552,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -565,6 +569,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -586,9 +591,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -610,12 +613,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -632,14 +631,9 @@
                     <summary class="text-delta"> Table of contents</summary>
                     <ol id="markdown-toc">
                         <li><a href="#altering-fetch" id="markdown-toc-altering-fetch">Altering fetch</a>
-                        <li><a href="#more-advanced-subqueries-in-gorm" id="markdown-toc-more-advanced-subqueries-in-gorm">More Advanced Subqueries in
-                                                                                                                           GORM</a>
+                        <li><a href="#more-advanced-subqueries-in-gorm" id="markdown-toc-more-advanced-subqueries-in-gorm">More Advanced Subqueries in GORM</a>
                             <ol>
-                                <li><a href="#subqueries-can-be-used-with-projections" id="markdown-toc-subqueries-can-be-used-with-projections">Subqueries
-                                                                                                                                                 can
-                                                                                                                                                 be
-                                                                                                                                                 used
-                                                                                                                                                 with
+                                <li><a href="#subqueries-can-be-used-with-projections" id="markdown-toc-subqueries-can-be-used-with-projections">Subqueries can be used with
                                                                                                                                                  projections:</a>
                                 <li><a
                                         href="#correlated-queries-that-span-two-domain-classes-can-be-used"
@@ -648,8 +642,7 @@
                                 <li><a
                                         href="#and-support-for-aliases-cross-query-references-using-simple-variable-declarations-has-been-added-to-where-queries"
                                         id="markdown-toc-and-support-for-aliases-cross-query-references-using-simple-variable-declarations-has-been-added-to-where-queries"
-                                >And support for aliases (cross query references) using simple variable declarations has been added to where
-                                 queries:</a>
+                                >And support for aliases (cross query references) using simple variable declarations has been added to where queries:</a>
                             </ol>
                         <li><a
                                 href="#args-map--list-of-args-that-can-be-passed-ie-findallsort--count-ect"
@@ -658,14 +651,10 @@
                         <li><a href="#criteriabuilder" id="markdown-toc-criteriabuilder">CriteriaBuilder</a>
                             <ol>
                                 <li><a href="#creating-criteria" id="markdown-toc-creating-criteria">Creating Criteria</a>
-                                <li><a href="#where-using-a-not-in-and-deleteall" id="markdown-toc-where-using-a-not-in-and-deleteall">Where using a
-                                                                                                                                       not in and
-                                                                                                                                       deleteAll()</a>
+                                <li><a href="#where-using-a-not-in-and-deleteall" id="markdown-toc-where-using-a-not-in-and-deleteall">Where using a not in and deleteAll()</a>
                                 <li><a href="#chain-where-query" id="markdown-toc-chain-where-query">Chain where query</a>
-                                <li><a
-                                        href="#creating-criteria-with-a-join-and-row-count"
-                                        id="markdown-toc-creating-criteria-with-a-join-and-row-count"
-                                >Creating criteria with a join and row count</a>
+                                <li><a href="#creating-criteria-with-a-join-and-row-count" id="markdown-toc-creating-criteria-with-a-join-and-row-count">Creating criteria with a
+                                                                                                                                                         join and row count</a>
                                 <li><a
                                         href="#where-query-with-detached-criteria-and-prop-projection-joins"
                                         id="markdown-toc-where-query-with-detached-criteria-and-prop-projection-joins"
@@ -673,10 +662,7 @@
                                     <ol>
                                         <li><a href="#example2" id="markdown-toc-example2">EXAMPLE2</a>
                                     </ol>
-                                <li><a href="#criteria-builder-with-bean-transformation" id="markdown-toc-criteria-builder-with-bean-transformation">Criteria
-                                                                                                                                                     Builder
-                                                                                                                                                     with
-                                                                                                                                                     bean
+                                <li><a href="#criteria-builder-with-bean-transformation" id="markdown-toc-criteria-builder-with-bean-transformation">Criteria Builder with bean
                                                                                                                                                      transformation</a>
                             </ol>
                     </ol>
@@ -748,7 +734,9 @@
 <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ARGUMENT_FETCH</span> <span class="o">=</span> <span class="s2">"fetch"</span>
 <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ARGUMENT_IGNORE_CASE</span> <span class="o">=</span> <span class="s2">"ignoreCase"</span>
 <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ARGUMENT_CACHE</span> <span class="o">=</span> <span class="s2">"cache"</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ARGUMENT_LOCK</span> <span class="o">=</span> <span class="s2">"lock"</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ARGUMENT_LOCK</span> <span class="o">=</span> <span
+                            class="s2"
+                    >"lock"</span>
 </code></pre></div></div><h1 id="criteriabuilder"> <a href="#criteriabuilder" class="anchor-heading" aria-labelledby="criteriabuilder"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> CriteriaBuilder</h1><h2 id="creating-criteria"> <a href="#creating-criteria" class="anchor-heading" aria-labelledby="creating-criteria"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Creating Criteria</h2><div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">static</span> <span class="nf">dropdownList</span><span class="o">(</span><span class="kt">def</span> <span class="n">getActive</span> <span class="o">=</span> <span class="kc">false</span><span class="o">,</span> <span class="kt">def</span> <span class="n">excludeClient</span> <span class="o">=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">def</span> <span class="n">clientSetupList</span> <span class="o">=</span> <span class="n">createCriteria</span><span class="o">().</span><span class="na">list</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">resultTransformer</span><span class="o">(</span><span class="n">CriteriaSpecification</span><span class="o">.</span><span class="na">ALIAS_TO_ENTITY_MAP</span><span class="o">)</span>

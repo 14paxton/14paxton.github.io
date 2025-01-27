@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ZSH | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="ZSH"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -366,6 +366,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -400,7 +401,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -475,7 +476,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -483,10 +483,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -546,6 +548,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -561,6 +565,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -582,9 +587,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -606,12 +609,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -642,10 +641,9 @@
                 <hr/>
                 <p><br/></p>
                 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">
-                    Zsh is a UNIX command interpreter (shell) usable as an interactive login shell and as a shell script command processor. Of the
-                    standard shells, zsh most closely resembles ksh but includes many enhancements. It does not provide compatibility with POSIX or
-                    other shells in its default operating mode. Zsh has command line editing, builtin spelling correction, programmable command
-                    completion, shell functions (with autoloading), a history mechanism, and a host of other features
+                    Zsh is a UNIX command interpreter (shell) usable as an interactive login shell and as a shell script command processor. Of the standard shells, zsh most closely
+                    resembles ksh but includes many enhancements. It does not provide compatibility with POSIX or other shells in its default operating mode. Zsh has command line
+                    editing, builtin spelling correction, programmable command completion, shell functions (with autoloading), a history mechanism, and a host of other features
                 </div>
                 <h1 id="files-to-note"><a href="#files-to-note" class="anchor-heading" aria-labelledby="files-to-note">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
@@ -660,31 +658,26 @@
                 </a> Order of Operations
                 </h2>
                 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
-                    This is the order in which these files get read. Keep in mind that it reads first from the system-wide file (i.e. /etc/zshenv)
-                    then from the file in your home directory (~/.zshenv) as it goes through the following order.
+                    This is the order in which these files get read. Keep in mind that it reads first from the system-wide file (i.e. /etc/zshenv) then from the file in your home
+                    directory (~/.zshenv) as it goes through the following order.
                 </div>
-                <blockquote><p><code class="language-plaintext highlighter-rouge">.zshenv</code> → <code class="language-plaintext highlighter-rouge">.zprofile</code>
-                                                                                                 → <code class="language-plaintext highlighter-rouge">.zshrc</code>
-                                                                                                 → <code class="language-plaintext highlighter-rouge">.zlogin</code>
-                                                                                                 → <code class="language-plaintext highlighter-rouge">.zlogout</code>
-                </p></blockquote>
+                <blockquote><p><code class="language-plaintext highlighter-rouge">.zshenv</code> → <code class="language-plaintext highlighter-rouge">.zprofile</code> →
+                    <code class="language-plaintext highlighter-rouge">.zshrc</code> → <code class="language-plaintext highlighter-rouge">.zlogin</code> →
+                    <code class="language-plaintext highlighter-rouge">.zlogout</code></p></blockquote>
                 <h2 id="zprofile"><a href="#zprofile" class="anchor-heading" aria-labelledby="zprofile">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
                 </a> .zprofile
                 </h2>
-                <blockquote><p><code class="language-plaintext highlighter-rouge">.zlogin</code> and
-                    <code class="language-plaintext highlighter-rouge">.zprofile</code> are basically the same thing—they set the environment for
-                                                                                                 login shells1;<br/> they just get loaded at different
-                                                                                                 times (see below).</p></blockquote>
-                <blockquote><p><code class="language-plaintext highlighter-rouge">.zprofile</code> is based on the Bash’s
-                    <code class="language-plaintext highlighter-rouge">.bash_profile</code><br/> <code class="language-plaintext highlighter-rouge">.zlogin</code>
-                                                                                                   is a derivative of CSH’s .login.<br/> Since <code
-                            class="language-plaintext highlighter-rouge"
-                    >Bash</code> was the default shell for everything up to <code class="language-plaintext highlighter-rouge">Mojave</code>, stick
-                                                                                                   with
-                    <code class="language-plaintext highlighter-rouge">.zprofile</code>.</p></blockquote>
+                <blockquote><p><code class="language-plaintext highlighter-rouge">.zlogin</code> and <code class="language-plaintext highlighter-rouge">.zprofile</code> are
+                                                                                                 basically the same thing—they set the environment for login shells1;<br/> they just
+                                                                                                 get loaded at different times (see below).</p></blockquote>
+                <blockquote><p><code class="language-plaintext highlighter-rouge">.zprofile</code> is based on the Bash’s <code class="language-plaintext highlighter-rouge">.bash_profile</code><br/>
+                    <code class="language-plaintext highlighter-rouge">.zlogin</code> is a derivative of CSH’s .login.<br/> Since
+                    <code class="language-plaintext highlighter-rouge">Bash</code> was the default shell for everything up to <code class="language-plaintext highlighter-rouge">Mojave</code>,
+                                                                                                   stick with <code class="language-plaintext highlighter-rouge">.zprofile</code>.
+                </p></blockquote>
                 <h2 id="zshrc"><a href="#zshrc" class="anchor-heading" aria-labelledby="zshrc">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
@@ -692,31 +685,29 @@
                 </a> .zshrc
                 </h2>
                 <blockquote><p>This sets the environment for interactive shells2.<br/> This gets loaded after
-                               .<code class="language-plaintext highlighter-rouge">zprofile</code>.<br/> It’s typically a place where you “set it and
-                               forget it” type of parameters like <code class="language-plaintext highlighter-rouge">$PATH</code>,
-                    <code class="language-plaintext highlighter-rouge">$PROMPT</code>,<br/> aliases, and<br/> functions you would like to have in both
-                               login and interactive shells.</p></blockquote>
+                               .<code class="language-plaintext highlighter-rouge">zprofile</code>.<br/> It’s typically a place where you “set it and forget it” type of parameters
+                               like <code class="language-plaintext highlighter-rouge">$PATH</code>, <code class="language-plaintext highlighter-rouge">$PROMPT</code>,<br/>
+                               aliases, and<br/> functions you would like to have in both login and interactive shells.</p></blockquote>
                 <h2 id="zshenv-optional"><a href="#zshenv-optional" class="anchor-heading" aria-labelledby="zshenv-optional">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
                 </a> .zshenv (Optional)
                 </h2>
-                <blockquote><p>This is read first and read every time.<br/> This is where you set environment variables.<br/> I say this is optional
-                               because it is geared more toward advanced users where having<br/> your
-                    <code class="language-plaintext highlighter-rouge">$PATH</code>, <code class="language-plaintext highlighter-rouge">$PAGER</code>,
-                               or <code class="language-plaintext highlighter-rouge">$EDITOR</code><br/> variables may be important for things like
-                               scripts that get called by launchd.<br/> Those run under a non-interactive shell 3 so anything in .<br/> or .zshrc
-                               won’t get loaded.<br/> Personally, I<br/> don’t use<br/> this one because I set the PATH variable in my script itself
-                               to ensure portability.</p></blockquote>
+                <blockquote><p>This is read first and read every time.<br/> This is where you set environment variables.<br/> I say this is optional because it is geared more
+                               toward advanced users where having<br/> your <code class="language-plaintext highlighter-rouge">$PATH</code>,
+                    <code class="language-plaintext highlighter-rouge">$PAGER</code>, or <code class="language-plaintext highlighter-rouge">$EDITOR</code><br/> variables may be
+                               important for things like scripts that get called by launchd.<br/> Those run under a non-interactive shell 3 so anything in .<br/> or .zshrc won’t
+                               get loaded.<br/> Personally, I<br/> don’t use<br/> this one because I set the PATH variable in my script itself to ensure portability.</p>
+                </blockquote>
                 <h2 id="zlogout-optional"><a href="#zlogout-optional" class="anchor-heading" aria-labelledby="zlogout-optional">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
                 </a> .zlogout (Optional)
                 </h2>
-                <blockquote><p>But beneficial! This is read when you log out of a session and is great for cleaning things up when you leave (like
-                               resetting the Terminal Window<br/> Title)</p></blockquote>
+                <blockquote><p>But beneficial! This is read when you log out of a session and is great for cleaning things up when you leave (like resetting the Terminal
+                               Window<br/> Title)</p></blockquote>
                 <h2 id="caveats"><a href="#caveats" class="anchor-heading" aria-labelledby="caveats">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
@@ -724,19 +715,19 @@
                 </a> Caveats
                 </h2>
                 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">
-                    Apple does things a little differently, so it's best to be aware of this. Specifically, Terminal initially opens both a login and
-                    interactive shell even though you don't authenticate (enter login credentials). However, any subsequent shells that are opened are
-                    only interactive. You can test this out by putting an alias or setting a variable in .zprofile, then opening Terminal and seeing
-                    if that variable/alias exists. Then open another shell (type zsh); that variable won't be accessible anymore. SSH sessions are
-                    login and interactive so they'll behave just like your initial Terminal session and read both .zprofile and .zshrc
+                    Apple does things a little differently, so it's best to be aware of this. Specifically, Terminal initially opens both a login and interactive shell even though
+                    you don't authenticate (enter login credentials). However, any subsequent shells that are opened are only interactive. You can test this out by putting an alias
+                    or setting a variable in .zprofile, then opening Terminal and seeing if that variable/alias exists. Then open another shell (type zsh); that variable won't be
+                    accessible anymore. SSH sessions are login and interactive so they'll behave just like your initial Terminal session and read both .zprofile and .zshrc
                 </div>
             </main>
             <hr>
             <footer><p><a href="#top" id="back-to-top">Back to top</a></p>
                 <p class="text-small text-grey-dk-100 mb-0"></p>
-                <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0">
-                    <a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./MacNotes/ZSH.md" id="edit-this-page">Edit this page on
-                                                                                                                                GitHub</a></p></div>
+                <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"><a
+                        href="https://github.com/14paxton/14paxton.github.io/edit/develop/./MacNotes/ZSH.md"
+                        id="edit-this-page"
+                >Edit this page on GitHub</a></p></div>
             </footer>
         </div>
     </div>

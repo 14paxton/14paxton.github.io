@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DialogFlow | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="DialogFlow"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -370,6 +370,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -404,7 +405,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -479,7 +480,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -487,10 +487,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -550,6 +552,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -565,6 +569,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -586,9 +591,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -610,12 +613,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -641,9 +640,7 @@
                                         href="#when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there"
                                         id="markdown-toc-when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there"
                                 >when using func in parameter value be cognizant of quotation marks, they need to be there</a>
-                                <li><a href="#get-the-json-key-file-from-dialogflow" id="markdown-toc-get-the-json-key-file-from-dialogflow">get the
-                                                                                                                                             json key
-                                                                                                                                             file from
+                                <li><a href="#get-the-json-key-file-from-dialogflow" id="markdown-toc-get-the-json-key-file-from-dialogflow">get the json key file from
                                                                                                                                              DialogFlow</a>
                             </ol>
                         <li><a href="#api-docs-c-client" id="markdown-toc-api-docs-c-client">API Docs C# Client</a>
@@ -662,8 +659,7 @@
                                     <ol>
                                         <li><a href="#trigger-intent" id="markdown-toc-trigger-intent">trigger intent</a>
                                         <li><a href="#trigger-event" id="markdown-toc-trigger-event">trigger event</a>
-                                        <li><a href="#set-params-and-current-page" id="markdown-toc-set-params-and-current-page">Set params and
-                                                                                                                                 current page</a>
+                                        <li><a href="#set-params-and-current-page" id="markdown-toc-set-params-and-current-page">Set params and current page</a>
                                     </ol>
                                 <li><a href="#detect-intent-response" id="markdown-toc-detect-intent-response">Detect Intent Response</a>
                             </ol>
@@ -680,65 +676,50 @@
                         <li><a href="#webhooks" id="markdown-toc-webhooks">Webhooks</a>
                             <ol>
                                 <li><a href="#request" id="markdown-toc-request">Request</a>
-                                <li><a href="#dialog-flow-simple-request-body" id="markdown-toc-dialog-flow-simple-request-body">dialog flow simple
-                                                                                                                                 request body</a>
+                                <li><a href="#dialog-flow-simple-request-body" id="markdown-toc-dialog-flow-simple-request-body">dialog flow simple request body</a>
                                 <li><a href="#post-request" id="markdown-toc-post-request">post request</a>
                                 <li><a href="#response-body-2" id="markdown-toc-response-body-2">Response Body</a>
                                     <ol>
-                                        <li><a
-                                                href="#custom-webhook-with-rich-text-and-chips"
-                                                id="markdown-toc-custom-webhook-with-rich-text-and-chips"
-                                        >custom Webhook with rich text and chips</a>
-                                        <li><a href="#--rich-text-custom-buttons" id="markdown-toc---rich-text-custom-buttons">- rich text custom
-                                                                                                                               buttons</a>
+                                        <li><a href="#custom-webhook-with-rich-text-and-chips" id="markdown-toc-custom-webhook-with-rich-text-and-chips">custom Webhook with rich
+                                                                                                                                                         text and chips</a>
+                                        <li><a href="#--rich-text-custom-buttons" id="markdown-toc---rich-text-custom-buttons">- rich text custom buttons</a>
                                             <ol>
-                                                <li><a href="#in-the-webhookresponse" id="markdown-toc-in-the-webhookresponse">In the
-                                                                                                                               webhookResponse</a>
+                                                <li><a href="#in-the-webhookresponse" id="markdown-toc-in-the-webhookresponse">In the webhookResponse</a>
                                                     <ol>
                                                         <li><a
                                                                 href="#here-are-possible-ways-to-continueresume-a-conversation-by-passing-previously-collected-customer-data-from-a-previous-conversation-into-a-new-conversation"
                                                                 id="markdown-toc-here-are-possible-ways-to-continueresume-a-conversation-by-passing-previously-collected-customer-data-from-a-previous-conversation-into-a-new-conversation"
-                                                        >Here are possible ways to continue/resume a conversation by passing previously collected
-                                                         customer data from a previous conversation into a new conversation</a>
+                                                        >Here are possible ways to continue/resume a conversation by passing previously collected customer data from a previous
+                                                         conversation into a new conversation</a>
                                                     </ol>
                                             </ol>
                                         <li><a href="#custom-web-hooks" id="markdown-toc-custom-web-hooks">Custom Web Hooks</a>
                                             <ol>
                                                 <li><a href="#resources" id="markdown-toc-resources">Resources</a>
                                                     <ol>
-                                                        <li><a
-                                                                href="#bot-for-front-end-calls-i-used"
-                                                                id="markdown-toc-bot-for-front-end-calls-i-used"
-                                                        >bot for front end calls i used</a>
-                                                        <li><a
-                                                                href="#bot-for-backendfunctioncli-calls-i-used"
-                                                                id="markdown-toc-bot-for-backendfunctioncli-calls-i-used"
-                                                        >bot for backend/function/cli calls i used</a>
-                                                        <li><a
-                                                                href="#format-for-detectintent-with-session-id"
-                                                                id="markdown-toc-format-for-detectintent-with-session-id"
-                                                        >format for detectintent with session id</a>
+                                                        <li><a href="#bot-for-front-end-calls-i-used" id="markdown-toc-bot-for-front-end-calls-i-used">bot for front end calls i
+                                                                                                                                                       used</a>
+                                                        <li><a href="#bot-for-backendfunctioncli-calls-i-used" id="markdown-toc-bot-for-backendfunctioncli-calls-i-used">bot for
+                                                                                                                                                                         backend/function/cli
+                                                                                                                                                                         calls i
+                                                                                                                                                                         used</a>
+                                                        <li><a href="#format-for-detectintent-with-session-id" id="markdown-toc-format-for-detectintent-with-session-id">format for
+                                                                                                                                                                         detectintent
+                                                                                                                                                                         with
+                                                                                                                                                                         session
+                                                                                                                                                                         id</a>
                                                     </ol>
                                             </ol>
                                     </ol>
                             </ol>
-                        <li><a href="#welcome-intent-default-start-call-intent" id="markdown-toc-welcome-intent-default-start-call-intent">WELCOME
-                                                                                                                                           intent/
-                                                                                                                                           Default
-                                                                                                                                           start call
+                        <li><a href="#welcome-intent-default-start-call-intent" id="markdown-toc-welcome-intent-default-start-call-intent">WELCOME intent/ Default start call
                                                                                                                                            intent</a>
                             <ol>
                                 <li><a href="#cli" id="markdown-toc-cli">CLI</a>
                                     <ol>
                                         <li><a href="#test-in-api-console" id="markdown-toc-test-in-api-console">test in API Console</a>
-                                        <li><a href="#curl-call--with-body-to-trigger-event" id="markdown-toc-curl-call--with-body-to-trigger-event">curl
-                                                                                                                                                     call
-                                                                                                                                                     ,
-                                                                                                                                                     with
-                                                                                                                                                     body
-                                                                                                                                                     to
-                                                                                                                                                     trigger
-                                                                                                                                                     event</a>
+                                        <li><a href="#curl-call--with-body-to-trigger-event" id="markdown-toc-curl-call--with-body-to-trigger-event">curl call , with body to
+                                                                                                                                                     trigger event</a>
                                         <li><a
                                                 href="#curl-call-to-trigger-welcome-event--or-default-start-card"
                                                 id="markdown-toc-curl-call-to-trigger-welcome-event--or-default-start-card"
@@ -758,16 +739,16 @@
                             </ol>
                         <li><a href="#testing" id="markdown-toc-testing">Testing</a>
                             <ol>
-                                <li><a
-                                        href="#select-all-test-checkboxes-for-environment-settings"
-                                        id="markdown-toc-select-all-test-checkboxes-for-environment-settings"
-                                >Select All Test checkboxes for Environment settings</a>
+                                <li><a href="#select-all-test-checkboxes-for-environment-settings" id="markdown-toc-select-all-test-checkboxes-for-environment-settings">Select All
+                                                                                                                                                                         Test
+                                                                                                                                                                         checkboxes
+                                                                                                                                                                         for
+                                                                                                                                                                         Environment
+                                                                                                                                                                         settings</a>
                             </ol>
                         <li><a href="#postman" id="markdown-toc-postman">PostMan</a>
                             <ol>
-                                <li><a href="#setup-oauth2-dialogflow-example" id="markdown-toc-setup-oauth2-dialogflow-example">Setup oauth2
-                                                                                                                                 DialogFlow
-                                                                                                                                 example</a>
+                                <li><a href="#setup-oauth2-dialogflow-example" id="markdown-toc-setup-oauth2-dialogflow-example">Setup oauth2 DialogFlow example</a>
                             </ol>
                         <li><a href="#quick-notesreferences" id="markdown-toc-quick-notesreferences">Quick Notes/References</a>
                     </ol>
@@ -783,16 +764,15 @@
                 </h1>
                 <p>repo for GoogleDialogFlow</p>
                 <p>1.</p>
-                <blockquote><p>Identify the roles, both the customers and your virtual agent, as well as all the potential use cases your virtual
-                               agent will need to address. Right<br/> personas, both <br/> for customers and virtual agents, so that conversations
-                               will take a natural shape. Model user agent interactions to help identify user requirements,<br/> handle all <br/>
-                               possible expected and don’t forget unexpected user scenarios, that could occur for your business.</p></blockquote>
+                <blockquote><p>Identify the roles, both the customers and your virtual agent, as well as all the potential use cases your virtual agent will need to address.
+                               Right<br/> personas, both <br/> for customers and virtual agents, so that conversations will take a natural shape. Model user agent interactions to
+                               help identify user requirements,<br/> handle all <br/> possible expected and don’t forget unexpected user scenarios, that could occur for your
+                               business.</p></blockquote>
                 <p>2.</p>
-                <blockquote><p>In order to understand why the customers reaching out to you, you’ll need to be able to break down the individual parts
-                               of the conversation. The<br/> conversation will <br/> include representative words and phrases, and you can use these
-                               to dissect and interpret the customer’s needs and how you respond. There are three<br/> important parts <br/> to a
-                               conversation. Intense, identifying what the customer needs or wants you to do for them. Entities, identifying a thing
-                               the customer is referring<br/> to, and <br/> parameters setting the variable of the thing the customer is referring to
+                <blockquote><p>In order to understand why the customers reaching out to you, you’ll need to be able to break down the individual parts of the conversation. The<br/>
+                               conversation will <br/> include representative words and phrases, and you can use these to dissect and interpret the customer’s needs and how you
+                               respond. There are three<br/> important parts <br/> to a conversation. Intense, identifying what the customer needs or wants you to do for them.
+                               Entities, identifying a thing the customer is referring<br/> to, and <br/> parameters setting the variable of the thing the customer is referring to
                                so that you can reference it later in the conversation.</p></blockquote>
                 <h1 id="key-terms"><a href="#key-terms" class="anchor-heading" aria-labelledby="key-terms">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
@@ -817,18 +797,51 @@
                     <div class="highlight"><pre class="highlight"><code> $intent.params.user-input,
  $session.params.user-input,
  $page.params.valid-input,
-</code></pre></div></div><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $page.params.status = "FINAL"
+</code></pre>
+                    </div>
+                </div>
+                <div class="language-plaintext highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>  $page.params.status = "FINAL"
  $page.params.parameter-id.status = "UPDATED"
-</code></pre></div></div><h2 id="functions"> <a href="#functions" class="anchor-heading" aria-labelledby="functions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://cloud.google.com/dialogflow/cx/docs/reference/system-functions#func-append">functions</a></h2><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $sys.func.CONCATENATE($session.params.user-authentication-map-key, $session.params.user-input)
+</code></pre>
+                    </div>
+                </div>
+                <h2 id="functions"><a href="#functions" class="anchor-heading" aria-labelledby="functions">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> <a href="https://cloud.google.com/dialogflow/cx/docs/reference/system-functions#func-append">functions</a></h2>
+                <div class="language-plaintext highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code> $sys.func.CONCATENATE($session.params.user-authentication-map-key, $session.params.user-input)
  $sys.func.JOIN(", ", $session.params.user-authentication-map)
  $sys.func.TO_TEXT($session.params.user-authentication-map)
  $sys.func.SUBSTITUTE("$sys.func.TO_TEXT($session.params.user-authentication-map)" , " { ", "PP")
  "$sys.func.ADD($session.params.verify-member-attempt, 1)"
-</code></pre></div></div><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>($sys.func.GET_FIELD($session.params, phone-number) != null
+</code></pre>
+                    </div>
+                </div>
+                <div class="language-plaintext highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>($sys.func.GET_FIELD($session.params, phone-number) != null
     OR $sys.func.GET_FIELD($session.params, last-4-ssn) != null)
     AND $session.params.member-verified != true
     AND $sys.func.GET_FIELD($session.params, security-code) = null
-</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">$sys.func.ADD( $sys.func.TO_NUMBER( $session.params.total-questions-resolved) , $sys.func.TO_NUMBER( $session.params.resolved))"</code></p><h2 id="when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there"> <a href="#when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there" class="anchor-heading" aria-labelledby="when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> when using func in parameter value be cognizant of quotation marks, they need to be there</h2><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$sys.func.IF("$session.params.account-found = null OR $session.params.account-found = false" , null , true)
+</code></pre>
+                    </div>
+                </div>
+                <p><code class="language-plaintext highlighter-rouge">$sys.func.ADD( $sys.func.TO_NUMBER( $session.params.total-questions-resolved) , $sys.func.TO_NUMBER(
+                                                                      $session.params.resolved))"</code></p>
+                <h2 id="when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there"><a
+                        href="#when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there"
+                        class="anchor-heading"
+                        aria-labelledby="when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there"
+                >
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> when using func in parameter value be cognizant of quotation marks, they need to be there
+                </h2>
+                <div class="language-plaintext highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>$sys.func.IF("$session.params.account-found = null OR $session.params.account-found = false" , null , true)
 $sys.func.IF("($session.params.current-flow = null AND $session.params.current-route = null)" , null, {name : $session.params.current-flow , route : $session.params.current-route} )
 $sys.func.IF("$session.params.current-flow = null" , null , "{name : $session.params.current-flow , route : $session.params.current-route}")
 {name : $sys.func.TO_TEXT($session.params.current-flow) , route : $sys.func.TO_TEXT($session.params.current-route)}

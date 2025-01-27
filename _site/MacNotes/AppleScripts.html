@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AppleScripts | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="AppleScripts"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -370,6 +370,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -404,7 +405,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -479,7 +480,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -487,10 +487,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -550,6 +552,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -565,6 +569,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -586,9 +591,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -610,12 +613,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -649,55 +648,25 @@
                                         href="#select-all-tracks-in-the-selected-playlist-and-make-a-new-untitled-playlist-from-them"
                                         id="markdown-toc-select-all-tracks-in-the-selected-playlist-and-make-a-new-untitled-playlist-from-them"
                                 >Select all tracks in the selected playlist and make a new “untitled” playlist from them:</a>
-                                <li><a
-                                        href="#select-all-tracks-of-front-playlist---command-a"
-                                        id="markdown-toc-select-all-tracks-of-front-playlist---command-a"
-                                >select all tracks of front playlist - Command-A</a>
-                                <li><a href="#toggle-browse-mode---command-b" id="markdown-toc-toggle-browse-mode---command-b">toggle browse mode -
-                                                                                                                               Command-B</a>
-                                <li><a href="#copy-selection-or-whatever---command-c" id="markdown-toc-copy-selection-or-whatever---command-c">copy
-                                                                                                                                               selection
-                                                                                                                                               (or
-                                                                                                                                               whatever)
-                                                                                                                                               -
+                                <li><a href="#select-all-tracks-of-front-playlist---command-a" id="markdown-toc-select-all-tracks-of-front-playlist---command-a">select all tracks
+                                                                                                                                                                 of front playlist -
+                                                                                                                                                                 Command-A</a>
+                                <li><a href="#toggle-browse-mode---command-b" id="markdown-toc-toggle-browse-mode---command-b">toggle browse mode - Command-B</a>
+                                <li><a href="#copy-selection-or-whatever---command-c" id="markdown-toc-copy-selection-or-whatever---command-c">copy selection (or whatever) -
                                                                                                                                                Command-C</a>
-                                <li><a href="#toggle-right-sidebar---shift-command-g" id="markdown-toc-toggle-right-sidebar---shift-command-g">toggle
-                                                                                                                                               Right
-                                                                                                                                               Sidebar
-                                                                                                                                               -
+                                <li><a href="#toggle-right-sidebar---shift-command-g" id="markdown-toc-toggle-right-sidebar---shift-command-g">toggle Right Sidebar -
                                                                                                                                                Shift-Command-G</a>
-                                <li><a href="#get-info-for-selected-tracks---command-i" id="markdown-toc-get-info-for-selected-tracks---command-i">Get
-                                                                                                                                                   Info
-                                                                                                                                                   for
-                                                                                                                                                   selected
-                                                                                                                                                   track(s)
-                                                                                                                                                   -
+                                <li><a href="#get-info-for-selected-tracks---command-i" id="markdown-toc-get-info-for-selected-tracks---command-i">Get Info for selected track(s) -
                                                                                                                                                    Command-I</a>
-                                <li><a href="#open-view-options-window---command-j" id="markdown-toc-open-view-options-window---command-j">open View
-                                                                                                                                           options
-                                                                                                                                           window -
-                                                                                                                                           Command-J</a>
-                                <li><a href="#select-current-track---command-l" id="markdown-toc-select-current-track---command-l">select current
-                                                                                                                                   track -
-                                                                                                                                   Command-L</a>
-                                <li><a href="#show-file-of-selected---shift-command-r" id="markdown-toc-show-file-of-selected---shift-command-r">Show
-                                                                                                                                                 File
-                                                                                                                                                 of
-                                                                                                                                                 selected
-                                                                                                                                                 -
+                                <li><a href="#open-view-options-window---command-j" id="markdown-toc-open-view-options-window---command-j">open View options window - Command-J</a>
+                                <li><a href="#select-current-track---command-l" id="markdown-toc-select-current-track---command-l">select current track - Command-L</a>
+                                <li><a href="#show-file-of-selected---shift-command-r" id="markdown-toc-show-file-of-selected---shift-command-r">Show File of selected -
                                                                                                                                                  Shift-Command-R</a>
-                                <li><a
-                                        href="#toggle-zoom-of-main-browser---control-command-z"
-                                        id="markdown-toc-toggle-zoom-of-main-browser---control-command-z"
-                                >toggle Zoom of Main Browser - Control-Command-Z</a>
-                                <li><a href="#close-a-window-with-cancel---escape-key" id="markdown-toc-close-a-window-with-cancel---escape-key">Close
-                                                                                                                                                 a
-                                                                                                                                                 window
-                                                                                                                                                 with
-                                                                                                                                                 “Cancel”
-                                                                                                                                                 -
-                                                                                                                                                 Escape
-                                                                                                                                                 key</a>
+                                <li><a href="#toggle-zoom-of-main-browser---control-command-z" id="markdown-toc-toggle-zoom-of-main-browser---control-command-z">toggle Zoom of Main
+                                                                                                                                                                 Browser -
+                                                                                                                                                                 Control-Command-Z</a>
+                                <li><a href="#close-a-window-with-cancel---escape-key" id="markdown-toc-close-a-window-with-cancel---escape-key">Close a window with “Cancel” -
+                                                                                                                                                 Escape key</a>
                                 <li><a
                                         href="#delete-the-selected-playlist-from-your-source-list-without-confirming-that-you-want-to-delete-it---command-delete"
                                         id="markdown-toc-delete-the-selected-playlist-from-your-source-list-without-confirming-that-you-want-to-delete-it---command-delete"
@@ -712,52 +681,41 @@
                                                 id="markdown-toc-delete-the-selected-song-from-your-library-and-all-playlists"
                                         >Delete the selected song from your library and all playlists</a>
                                         <li><a href="#option-delete" id="markdown-toc-option-delete">Option-Delete</a>
-                                        <li><a
-                                                href="#select-the-search-field---command-option-f"
-                                                id="markdown-toc-select-the-search-field---command-option-f"
-                                        >Select the search field - Command-Option-F</a>
+                                        <li><a href="#select-the-search-field---command-option-f" id="markdown-toc-select-the-search-field---command-option-f">Select the search
+                                                                                                                                                               field -
+                                                                                                                                                               Command-Option-F</a>
                                     </ol>
                                 <li><a href="#playlist-and-folder" id="markdown-toc-playlist-and-folder">playlist and folder</a>
                                     <ol>
-                                        <li><a href="#new-playlist---command-n" id="markdown-toc-new-playlist---command-n">new playlist -
-                                                                                                                           Command-N</a>
-                                        <li><a
-                                                href="#new-playlist-from-selection---command-shift-n"
-                                                id="markdown-toc-new-playlist-from-selection---command-shift-n"
-                                        >new playlist from selection - Command-Shift-N</a>
-                                        <li><a href="#new-smart-playlist---command-option-n" id="markdown-toc-new-smart-playlist---command-option-n">new
-                                                                                                                                                     Smart
-                                                                                                                                                     Playlist
-                                                                                                                                                     -
+                                        <li><a href="#new-playlist---command-n" id="markdown-toc-new-playlist---command-n">new playlist - Command-N</a>
+                                        <li><a href="#new-playlist-from-selection---command-shift-n" id="markdown-toc-new-playlist-from-selection---command-shift-n">new playlist
+                                                                                                                                                                     from selection
+                                                                                                                                                                     -
+                                                                                                                                                                     Command-Shift-N</a>
+                                        <li><a href="#new-smart-playlist---command-option-n" id="markdown-toc-new-smart-playlist---command-option-n">new Smart Playlist -
                                                                                                                                                      Command-Option-N</a>
-                                        <li><a
-                                                href="#new-playlist-folder---command-option-shift-n"
-                                                id="markdown-toc-new-playlist-folder---command-option-shift-n"
-                                        >new Playlist Folder - Command-Option-Shift-N</a>
+                                        <li><a href="#new-playlist-folder---command-option-shift-n" id="markdown-toc-new-playlist-folder---command-option-shift-n">new Playlist
+                                                                                                                                                                   Folder -
+                                                                                                                                                                   Command-Option-Shift-N</a>
                                     </ol>
-                                <li><a
-                                        href="#toggle-showhide-main-browser-window---command-1"
-                                        id="markdown-toc-toggle-showhide-main-browser-window---command-1"
-                                >toggle Show/Hide Main Browser window - Command-1</a>
-                                <li><a
-                                        href="#toggle-showhide-equalizer-window---command-2"
-                                        id="markdown-toc-toggle-showhide-equalizer-window---command-2"
-                                >toggle Show/Hide Equalizer window - Command-2</a>
+                                <li><a href="#toggle-showhide-main-browser-window---command-1" id="markdown-toc-toggle-showhide-main-browser-window---command-1">toggle Show/Hide
+                                                                                                                                                                 Main Browser window
+                                                                                                                                                                 - Command-1</a>
+                                <li><a href="#toggle-showhide-equalizer-window---command-2" id="markdown-toc-toggle-showhide-equalizer-window---command-2">toggle Show/Hide
+                                                                                                                                                           Equalizer window -
+                                                                                                                                                           Command-2</a>
                             </ol>
-                        <li><a href="#system-events-key-code-and-keystroke" id="markdown-toc-system-events-key-code-and-keystroke">System Events, Key
-                                                                                                                                   Code and
-                                                                                                                                   Keystroke</a>
+                        <li><a href="#system-events-key-code-and-keystroke" id="markdown-toc-system-events-key-code-and-keystroke">System Events, Key Code and Keystroke</a>
                             <ol>
-                                <li><a href="#setting-up-system-preferences" id="markdown-toc-setting-up-system-preferences">Setting Up System
-                                                                                                                             Preferences</a>
+                                <li><a href="#setting-up-system-preferences" id="markdown-toc-setting-up-system-preferences">Setting Up System Preferences</a>
                                 <li><a href="#applescript-implementation" id="markdown-toc-applescript-implementation">AppleScript Implementation</a>
                                     <ol>
                                         <li><a
                                                 href="#you-can-include-multiple-helper-keys-by-setting-the-using-parameter-to-a-list-the-following-scripts-each-open-the-itunes-store-in-the-itunes-browser-command-shift-h-first-with-a-keystroke-command-and-then-with-the-key-code-command-note-the-list-stuff-in--brackets-following-using"
                                                 id="markdown-toc-you-can-include-multiple-helper-keys-by-setting-the-using-parameter-to-a-list-the-following-scripts-each-open-the-itunes-store-in-the-itunes-browser-command-shift-h-first-with-a-keystroke-command-and-then-with-the-key-code-command-note-the-list-stuff-in--brackets-following-using"
-                                        >You can include multiple helper keys by setting the using parameter to a list. The following scripts each
-                                         open the iTunes Store in the iTunes browser (Command-Shift-H), first with a keystroke command and then with
-                                         the key code command. Note the list (stuff in {} brackets) following using:</a>
+                                        >You can include multiple helper keys by setting the using parameter to a list. The following scripts each open the iTunes Store in the
+                                         iTunes browser (Command-Shift-H), first with a keystroke command and then with the key code command. Note the list (stuff in {} brackets)
+                                         following using:</a>
                                     </ol>
                             </ol>
                         <li><a href="#keycodes" id="markdown-toc-keycodes">KeyCodes</a>

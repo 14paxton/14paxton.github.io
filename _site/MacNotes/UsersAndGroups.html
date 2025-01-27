@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UsersAndGroups | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="UsersAndGroups"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -366,6 +366,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -400,7 +401,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -475,7 +476,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -483,10 +483,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -546,6 +548,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -561,6 +565,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -582,9 +587,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -606,12 +609,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -632,10 +631,14 @@
                                 <li><a href="#get-user-list" id="markdown-toc-get-user-list">Get User List</a>
                                 <li><a href="#list-existing-group" id="markdown-toc-list-existing-group">List existing group</a>
                                     <ol>
-                                        <li><a
-                                                href="#create-the-new-group-newgroup-and-assign-it-an-id"
-                                                id="markdown-toc-create-the-new-group-newgroup-and-assign-it-an-id"
-                                        >Create the new group ‘newgroup’ and assign it an ID</a>
+                                        <li><a href="#create-the-new-group-newgroup-and-assign-it-an-id" id="markdown-toc-create-the-new-group-newgroup-and-assign-it-an-id">Create
+                                                                                                                                                                             the new
+                                                                                                                                                                             group
+                                                                                                                                                                             ‘newgroup’
+                                                                                                                                                                             and
+                                                                                                                                                                             assign
+                                                                                                                                                                             it an
+                                                                                                                                                                             ID</a>
                                             <ol>
                                                 <li><a href="#view-the-new-group" id="markdown-toc-view-the-new-group">View the new group</a>
                                             </ol>
@@ -652,17 +655,10 @@
                                             <ol>
                                                 <li><a href="#use-directory-utility" id="markdown-toc-use-directory-utility">Use Directory Utility</a>
                                                     <ol>
-                                                        <li><a
-                                                                href="#to-enable-or-disable-the-root-user"
-                                                                id="markdown-toc-to-enable-or-disable-the-root-user"
-                                                        >To enable or disable the root user</a>
-                                                        <li><a href="#to-change-the-root-password" id="markdown-toc-to-change-the-root-password">To
-                                                                                                                                                 change
-                                                                                                                                                 the
-                                                                                                                                                 root
-                                                                                                                                                 password</a>
-                                                        <li><a href="#log-in-as-the-root-user" id="markdown-toc-log-in-as-the-root-user">Log in as the
-                                                                                                                                         root user</a>
+                                                        <li><a href="#to-enable-or-disable-the-root-user" id="markdown-toc-to-enable-or-disable-the-root-user">To enable or disable
+                                                                                                                                                               the root user</a>
+                                                        <li><a href="#to-change-the-root-password" id="markdown-toc-to-change-the-root-password">To change the root password</a>
+                                                        <li><a href="#log-in-as-the-root-user" id="markdown-toc-log-in-as-the-root-user">Log in as the root user</a>
                                                     </ol>
                                             </ol>
                                         <li><a href="#add-user-to-sudo" id="markdown-toc-add-user-to-sudo">add user to SUDO</a>
@@ -697,9 +693,9 @@
                 </a> Get User List
                 </h2>
                 <div class="language-shell highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code>dscl <span class="nb">.</span> list /Users | <span class="nb">grep</span> <span
-                            class="nt"
-                    >-v</span> <span class="s2">"^_"</span>
+                    <div class="highlight"><pre class="highlight"><code>dscl <span class="nb">.</span> list /Users | <span class="nb">grep</span> <span class="nt">-v</span> <span
+                            class="s2"
+                    >"^_"</span>
 </code></pre></div></div><h2 id="list-existing-group"> <a href="#list-existing-group" class="anchor-heading" aria-labelledby="list-existing-group"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> List existing group</h2><ul><li><blockquote><p>IDs in numerical order</p><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  dscl <span class="nb">.</span> <span class="nt">-list</span> /Groups PrimaryGroupID | <span class="nb">awk</span> <span class="s1">'{print $2}'</span> | <span class="nb">sort</span> <span class="nt">-n</span>
 </code></pre></div></div></blockquote><li><blockquote><p>List sorted by group name:</p></blockquote><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> dscl <span class="nb">.</span> list /Groups PrimaryGroupID
 </code></pre></div></div><li><blockquote><p>List sorted by group gid</p></blockquote><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> dscl <span class="nb">.</span> list /Groups PrimaryGroupID | <span class="nb">tr</span> <span class="nt">-s</span> <span class="s1">' '</span> | <span class="nb">sort</span> <span class="nt">-n</span> <span class="nt">-t</span> <span class="s1">' '</span> <span class="nt">-k2</span>,2
@@ -773,22 +769,18 @@ UserShell: /usr/bash
                 </h5>
                 <blockquote><p>In the Directory Utility window, click the lock icon, then enter an administrator name and password.</p></blockquote>
                 <ul>
-                    <li>To enable the root user, choose Edit &gt; Enable Root User from the menu bar. Then enter the password that you want to<br/>
-                        use. You can then log in as the<br/> root user.
+                    <li>To enable the root user, choose Edit &gt; Enable Root User from the menu bar. Then enter the password that you want to<br/> use. You can then log in as
+                        the<br/> root user.
                     <li>To disable the root user, choose Edit &gt; Disable Root User.
                 </ul>
-                <h5 id="to-change-the-root-password"><a
-                        href="#to-change-the-root-password"
-                        class="anchor-heading"
-                        aria-labelledby="to-change-the-root-password"
-                >
+                <h5 id="to-change-the-root-password"><a href="#to-change-the-root-password" class="anchor-heading" aria-labelledby="to-change-the-root-password">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
                 </a> To change the root password
                 </h5>
-                <blockquote><p>In the Directory Utility window, click the lock icon, then enter an administrator name and password. From the menu<br/>
-                               bar, choose Edit &gt; Change Root<br/> Password.</p></blockquote>
+                <blockquote><p>In the Directory Utility window, click the lock icon, then enter an administrator name and password. From the menu<br/> bar, choose Edit &gt; Change
+                               Root<br/> Password.</p></blockquote>
                 <h5 id="log-in-as-the-root-user"><a href="#log-in-as-the-root-user" class="anchor-heading" aria-labelledby="log-in-as-the-root-user">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
@@ -832,17 +824,14 @@ username ALL <span class="o">=</span> <span class="o">(</span>ALL<span class="o"
                     </div>
                 </div>
                 <ul>
-                    <li><p>WHEEL:<br/> <code class="language-plaintext highlighter-rouge">As previously mentioned, the wheel group has more
-                                                                                          permissions than any other group. I don't know a quick way
-                                                                                          to have the system show whether being a member of the wheel
-                                                                                          group provides ALL the permissions that the root user has,
-                                                                                          but I can tell you that on my mac, the only member of WHEEL
-                                                                                          is root.</code></p>
-                    <li>SYSTEM:<br/> <code class="language-plaintext highlighter-rouge">My installation of macOS Sierra has no group and no user named
-                                                                                        system.</code>
+                    <li><p>WHEEL:<br/> <code class="language-plaintext highlighter-rouge">As previously mentioned, the wheel group has more permissions than any other group. I
+                                                                                          don't know a quick way to have the system show whether being a member of the wheel group
+                                                                                          provides ALL the permissions that the root user has, but I can tell you that on my mac,
+                                                                                          the only member of WHEEL is root.</code></p>
+                    <li>SYSTEM:<br/> <code class="language-plaintext highlighter-rouge">My installation of macOS Sierra has no group and no user named system.</code>
                     <li>ADMIN: <code class="language-plaintext highlighter-rouge">users in this group are:</code>
-                    <li>STAFF: <code class="language-plaintext highlighter-rouge">members of this group can do most but not all the things unix can do
-                                                                                  . members of the staff group are:</code>
+                    <li>STAFF: <code class="language-plaintext highlighter-rouge">members of this group can do most but not all the things unix can do . members of the staff group
+                                                                                  are:</code>
                 </ul>
                 <h2 id="root-user-group"><a href="#root-user-group" class="anchor-heading" aria-labelledby="root-user-group">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
@@ -850,8 +839,8 @@ username ALL <span class="o">=</span> <span class="o">(</span>ALL<span class="o"
                     </svg>
                 </a> Root user group
                 </h2>
-                <blockquote><p>The root user is a member of the following groups (this information is listed as a result of typing this into the<br/>
-                               command line: groups root):</p></blockquote>
+                <blockquote><p>The root user is a member of the following groups (this information is listed as a result of typing this into the<br/> command line: groups root):
+                </p></blockquote>
                 <ul>
                     <li>wheel
                     <li>daemon
@@ -883,8 +872,8 @@ username ALL <span class="o">=</span> <span class="o">(</span>ALL<span class="o"
                 </a> Admin
                 </h2>
                 <blockquote>
-                    <p>administrator on a mac, the account setup when the is first setup, is in these groups this information is listed as a<br/>
-                       result of typing this into the command line: groups
+                    <p>administrator on a mac, the account setup when the is first setup, is in these groups this information is listed as a<br/> result of typing this into the
+                       command line: groups
                         <my username="">): This basically is the mac owner's account</my>
                     </p>
                 </blockquote>
@@ -932,10 +921,7 @@ username ALL <span class="o">=</span> <span class="o">(</span>ALL<span class="o"
             <footer><p><a href="#top" id="back-to-top">Back to top</a></p>
                 <p class="text-small text-grey-dk-100 mb-0"></p>
                 <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0">
-                    <a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./MacNotes/UsersAndGroups.md" id="edit-this-page">Edit this
-                                                                                                                                           page on
-                                                                                                                                           GitHub</a>
-                </p></div>
+                    <a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./MacNotes/UsersAndGroups.md" id="edit-this-page">Edit this page on GitHub</a></p></div>
             </footer>
         </div>
     </div>

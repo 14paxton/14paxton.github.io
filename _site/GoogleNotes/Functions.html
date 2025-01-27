@@ -29,7 +29,7 @@
     <script src="/assets/js/just-the-docs.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Functions | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.3.4"/>
+    <meta name="generator" content="Jekyll v4.4.0"/>
     <meta property="og:title" content="Functions"/>
     <meta property="og:locale" content="en_US"/>
     <meta name="description" content="Coding Notes"/>
@@ -370,6 +370,7 @@
                 </button>
                 <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
                 <ul class="nav-list">
+                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
                     <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
                     <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
                     <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
@@ -404,7 +405,7 @@
                         <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
                         <ul class="nav-list">
                             <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/Javascript/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
                             <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
                             <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
                             <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
@@ -479,7 +480,6 @@
                 </button>
                 <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/202208_WorkshopNotes" class="nav-list-link">202208_WorkshopNotes</a>
                     <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
                     <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
                     <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
@@ -487,10 +487,12 @@
                     <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
                     <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
                     <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
                     <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
                     <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
                     <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
                     <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
                     <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
                 </ul>
             <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
@@ -550,6 +552,8 @@
                     <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
                     <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
                     <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
                 </ul>
@@ -565,6 +569,7 @@
                     <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
                     <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
                 </ul>
             <li class="nav-list-item">
                 <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
@@ -586,9 +591,7 @@
                 </ul>
         </ul>
     </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for
-                                 Jekyll.
-    </footer>
+    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
 </div>
 <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -610,12 +613,8 @@
         </div>
         <nav aria-label="Auxiliary" class="aux-nav">
             <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a
-                        href="https://github.com/14paxton/14paxton.github.io"
-                        class="site-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                > Template Repository </a>
+                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
+                                                                                                                                                                      Repository </a>
             </ul>
         </nav>
     </div>
@@ -634,11 +633,7 @@
                         <li><a href="#quick-scripts" id="markdown-toc-quick-scripts">Quick Scripts</a>
                             <ol>
                                 <li><a href="#tips-and-tricks" id="markdown-toc-tips-and-tricks">Tips and Tricks</a>
-                                <li><a href="#enable-apis-and-services-for-functions" id="markdown-toc-enable-apis-and-services-for-functions">Enable
-                                                                                                                                               APIs
-                                                                                                                                               and
-                                                                                                                                               services
-                                                                                                                                               for
+                                <li><a href="#enable-apis-and-services-for-functions" id="markdown-toc-enable-apis-and-services-for-functions">Enable APIs and services for
                                                                                                                                                functions</a>
                             </ol>
                         <li><a href="#write-function" id="markdown-toc-write-function">Write Function</a>
@@ -648,8 +643,7 @@
                             </ol>
                         <li><a href="#local-development" id="markdown-toc-local-development">Local Development</a>
                             <ol>
-                                <li><a href="#running-function-with-framework" id="markdown-toc-running-function-with-framework">Running Function with
-                                                                                                                                 Framework</a>
+                                <li><a href="#running-function-with-framework" id="markdown-toc-running-function-with-framework">Running Function with Framework</a>
                             </ol>
                         <li><a href="#triggers" id="markdown-toc-triggers">Triggers</a>
                             <ol>
@@ -681,10 +675,7 @@
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                         <use xlink:href="#svg-link"></use>
                     </svg>
-                </a>
-                    <a href="https://cloud.google.com/functions/docs/bestpractices/tips?_ga=2.165287036.-213526365.1679410207#functions-tips-scopes-csharp">Tips
-                                                                                                                                                            and
-                                                                                                                                                            Tricks</a>
+                </a> <a href="https://cloud.google.com/functions/docs/bestpractices/tips?_ga=2.165287036.-213526365.1679410207#functions-tips-scopes-csharp">Tips and Tricks</a>
                 </h2>
                 <h2 id="enable-apis-and-services-for-functions"><a
                         href="#enable-apis-and-services-for-functions"
@@ -701,7 +692,91 @@
   cloudfunctions <span class="se">\ </span>
   cloudbuild.googleapis.com <span class="se">\ </span>
   chat.googleapis.com
-</code></pre></div></div><hr /><h1 id="write-function"> <a href="#write-function" class="anchor-heading" aria-labelledby="write-function"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://cloud.google.com/functions/docs/writing#event-driven_functions">Write Function</a></h1><hr /><h1 id="client-libraries"> <a href="#client-libraries" class="anchor-heading" aria-labelledby="client-libraries"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Client Libraries</h1><h2 id="dotnet-functions-framework"> <a href="#dotnet-functions-framework" class="anchor-heading" aria-labelledby="dotnet-functions-framework"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://github.com/GoogleCloudPlatform/functions-framework-dotnet">DotNet Functions Framework</a></h2><hr /><h1 id="local-development"> <a href="#local-development" class="anchor-heading" aria-labelledby="local-development"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://cloud.google.com/functions/docs/running/overview">Local Development</a></h1><h2 id="running-function-with-framework"> <a href="#running-function-with-framework" class="anchor-heading" aria-labelledby="running-function-with-framework"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://cloud.google.com/functions/docs/running/function-frameworks">Running Function with Framework</a></h2><hr /><h1 id="triggers"> <a href="#triggers" class="anchor-heading" aria-labelledby="triggers"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://cloud.google.com/functions/docs/calling">Triggers</a></h1><h2 id="pubsub-1st-gen"> <a href="#pubsub-1st-gen" class="anchor-heading" aria-labelledby="pubsub-1st-gen"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://cloud.google.com/functions/docs/tutorials/pubsub-1st-gen#functions-prepare-environment-csharp">PubSub 1st Gen</a></h2><h2 id="pubsub-2nd-gen"> <a href="#pubsub-2nd-gen" class="anchor-heading" aria-labelledby="pubsub-2nd-gen"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://cloud.google.com/functions/docs/tutorials/pubsub">PubSub 2nd Gen</a></h2><hr /><h1 id="deploy"> <a href="#deploy" class="anchor-heading" aria-labelledby="deploy"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://cloud.google.com/functions/docs/deploy#console">Deploy</a></h1><h2 id="gen-1"> <a href="#gen-1" class="anchor-heading" aria-labelledby="gen-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://cloud.google.com/functions/docs/create-deploy-http-dotnet">Gen 1</a></h2><blockquote><p>where my-first-function is the registered name by which your function will be identified in the Google Cloud console, and –entry-point specifies<br /> your function’s fully qualified class name (FQN).</p></blockquote><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcloud functions deploy my-first-function <span class="nt">--entry-point</span> HelloWorld.Function <span class="nt">--runtime</span> dotnet6 <span class="nt">--trigger-http</span> <span class="nt">--allow-unauthenticated</span>
-</code></pre></div></div><h3 id="test"> <a href="#test" class="anchor-heading" aria-labelledby="test"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> test</h3><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcloud functions describe my-first-function
-</code></pre></div></div><h3 id="logs"> <a href="#logs" class="anchor-heading" aria-labelledby="logs"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> logs</h3><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcloud functions logs <span class="nb">read </span>my-first-function
+</code></pre>
+                    </div>
+                </div>
+                <hr/>
+                <h1 id="write-function"><a href="#write-function" class="anchor-heading" aria-labelledby="write-function">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> <a href="https://cloud.google.com/functions/docs/writing#event-driven_functions">Write Function</a></h1>
+                <hr/>
+                <h1 id="client-libraries"><a href="#client-libraries" class="anchor-heading" aria-labelledby="client-libraries">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> Client Libraries
+                </h1>
+                <h2 id="dotnet-functions-framework"><a href="#dotnet-functions-framework" class="anchor-heading" aria-labelledby="dotnet-functions-framework">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> <a href="https://github.com/GoogleCloudPlatform/functions-framework-dotnet">DotNet Functions Framework</a></h2>
+                <hr/>
+                <h1 id="local-development"><a href="#local-development" class="anchor-heading" aria-labelledby="local-development">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> <a href="https://cloud.google.com/functions/docs/running/overview">Local Development</a></h1>
+                <h2 id="running-function-with-framework"><a href="#running-function-with-framework" class="anchor-heading" aria-labelledby="running-function-with-framework">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> <a href="https://cloud.google.com/functions/docs/running/function-frameworks">Running Function with Framework</a></h2>
+                <hr/>
+                <h1 id="triggers"><a href="#triggers" class="anchor-heading" aria-labelledby="triggers">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> <a href="https://cloud.google.com/functions/docs/calling">Triggers</a></h1>
+                <h2 id="pubsub-1st-gen"><a href="#pubsub-1st-gen" class="anchor-heading" aria-labelledby="pubsub-1st-gen">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> <a href="https://cloud.google.com/functions/docs/tutorials/pubsub-1st-gen#functions-prepare-environment-csharp">PubSub 1st Gen</a></h2>
+                <h2 id="pubsub-2nd-gen"><a href="#pubsub-2nd-gen" class="anchor-heading" aria-labelledby="pubsub-2nd-gen">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> <a href="https://cloud.google.com/functions/docs/tutorials/pubsub">PubSub 2nd Gen</a></h2>
+                <hr/>
+                <h1 id="deploy"><a href="#deploy" class="anchor-heading" aria-labelledby="deploy">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> <a href="https://cloud.google.com/functions/docs/deploy#console">Deploy</a></h1>
+                <h2 id="gen-1"><a href="#gen-1" class="anchor-heading" aria-labelledby="gen-1">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> <a href="https://cloud.google.com/functions/docs/create-deploy-http-dotnet">Gen 1</a></h2>
+                <blockquote><p>where my-first-function is the registered name by which your function will be identified in the Google Cloud console, and –entry-point specifies<br/>
+                               your function’s fully qualified class name (FQN).</p></blockquote>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>gcloud functions deploy my-first-function <span class="nt">--entry-point</span> HelloWorld.Function <span
+                            class="nt"
+                    >--runtime</span> dotnet6 <span class="nt">--trigger-http</span> <span class="nt">--allow-unauthenticated</span>
+</code></pre>
+                    </div>
+                </div>
+                <h3 id="test"><a href="#test" class="anchor-heading" aria-labelledby="test">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> test
+                </h3>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>gcloud functions describe my-first-function
+</code></pre>
+                    </div>
+                </div>
+                <h3 id="logs"><a href="#logs" class="anchor-heading" aria-labelledby="logs">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <use xlink:href="#svg-link"></use>
+                    </svg>
+                </a> logs
+                </h3>
+                <div class="language-shell highlighter-rouge">
+                    <div class="highlight"><pre class="highlight"><code>gcloud functions logs <span class="nb">read </span>my-first-function
 </code></pre></div></div><hr /><h1 id="event-driven"> <a href="#event-driven" class="anchor-heading" aria-labelledby="event-driven"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://cloud.google.com/functions/docs/writing/write-event-driven-functions">Event Driven</a></h1><h1 id="resources"> <a href="#resources" class="anchor-heading" aria-labelledby="resources"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Resources</h1><ul><li><a href="https://cloud.google.com/functions/docs/samples">Code Samples</a></ul></main><hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"></p><div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"> <a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./GoogleNotes/Functions.md" id="edit-this-page">Edit this page on GitHub</a></p></div></footer></div></div><button id="search-button" class="search-button btn-reset" aria-label="Focus on search"> <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg> </button><div class="search-overlay"></div></div>
