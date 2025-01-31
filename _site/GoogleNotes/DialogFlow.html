@@ -1,847 +1,830 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <link rel="stylesheet" href="/assets/css/just-the-docs-default.css">
-    <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
-    <style id="jtd-nav-activation"> .site-nav > ul.nav-list:first-child > li > a, .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(7)) > a, .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
-        background-image: none;
-    }
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <link rel="stylesheet" href="/assets/css/just-the-docs-default.css">
+        <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+        <style id="jtd-nav-activation"> .site-nav > ul.nav-list:first-child > li > a, .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(7)) > a, .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+            background-image: none;
+        }
 
-    .site-nav > ul.nav-list:not(:first-child) a, .site-nav li.external a {
-        background-image: none;
-    }
+        .site-nav > ul.nav-list:not(:first-child) a, .site-nav li.external a {
+            background-image: none;
+        }
 
-    .site-nav > ul.nav-list:first-child > li:nth-child(7) > ul > li:nth-child(7) > a {
-        font-weight: 600;
-        text-decoration: none;
-    }
+        .site-nav > ul.nav-list:first-child > li:nth-child(7) > ul > li:nth-child(7) > a {
+            font-weight: 600;
+            text-decoration: none;
+        }
 
-    .site-nav > ul.nav-list:first-child > li:nth-child(7) > button svg, .site-nav > ul.nav-list:first-child > li:nth-child(7) > ul > li:nth-child(7) > button svg {
-        transform: rotate(-90deg);
-    }
+        .site-nav > ul.nav-list:first-child > li:nth-child(7) > button svg, .site-nav > ul.nav-list:first-child > li:nth-child(7) > ul > li:nth-child(7) > button svg {
+            transform: rotate(-90deg);
+        }
 
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(7) > ul.nav-list, .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(7) > ul.nav-list > li.nav-list-item:nth-child(7) > ul.nav-list {
-        display: block;
-    }</style>
-    <script src="/assets/js/vendor/lunr.min.js"></script>
-    <script src="/assets/js/just-the-docs.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DialogFlow | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.4.0"/>
-    <meta property="og:title" content="DialogFlow"/>
-    <meta property="og:locale" content="en_US"/>
-    <meta name="description" content="Coding Notes"/>
-    <meta property="og:description" content="Coding Notes"/>
-    <link rel="canonical" href="http://localhost:4000/GoogleNotes/DialogFlow"/>
-    <meta property="og:url" content="http://localhost:4000/GoogleNotes/DialogFlow"/>
-    <meta property="og:site_name" content="Paxton’s Notes"/>
-    <meta property="og:type" content="website"/>
-    <meta name="twitter:card" content="summary"/>
-    <meta property="twitter:title" content="DialogFlow"/>
-    <script type="application/ld+json"> {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "description": "Coding Notes",
-        "headline": "DialogFlow",
-        "url": "http://localhost:4000/GoogleNotes/DialogFlow"
-    }</script>
-<body><a class="skip-to-main" href="#main-content">Skip to main content</a>
-<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-    <symbol id="svg-link" viewBox="0 0 24 24"><title>Link</title>
-        <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-link"
-        >
-            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-    </symbol>
-    <symbol id="svg-menu" viewBox="0 0 24 24"><title>Menu</title>
-        <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-menu"
-        >
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-    </symbol>
-    <symbol id="svg-arrow-right" viewBox="0 0 24 24"><title>Expand</title>
-        <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-chevron-right"
-        >
-            <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
-    </symbol>
-    <symbol
-            id="svg-external-link"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-external-link"
-    ><title id="svg-external-link-title">(external link)</title>
-        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-        <polyline points="15 3 21 3 21 9"></polyline>
-        <line x1="10" y1="14" x2="21" y2="3"></line>
-    </symbol>
-    <symbol id="svg-doc" viewBox="0 0 24 24"><title>Document</title>
-        <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-file"
-        >
-            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-            <polyline points="13 2 13 9 20 9"></polyline>
-        </svg>
-    </symbol>
-    <symbol id="svg-search" viewBox="0 0 24 24"><title>Search</title>
-        <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-search"
-        >
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-    </symbol>
-    <symbol id="svg-copy" viewBox="0 0 16 16"><title>Copy</title>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
-            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
-            <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
-        </svg>
-    </symbol>
-    <symbol id="svg-copied" viewBox="0 0 16 16"><title>Copied</title>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
-            <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
-            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
-        </svg>
-    </symbol>
-</svg>
-<div class="side-bar">
-    <div class="site-header" role="banner"><a href="/" class="site-title lh-tight"> Paxton's Notes </a>
-        <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
-            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
-                <use xlink:href="#svg-menu"></use>
-            </svg>
-        </button>
-    </div>
-    <nav aria-label="Main" id="site-nav" class="site-nav">
-        <ul class="nav-list">
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in MyPersonalDocsAndStuff category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/index" class="nav-list-link">MyPersonalDocsAndStuff</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/GitHubPages/AppsForWorkflow" class="nav-list-link">AppsForWorkflow</a>
-                    <li class="nav-list-item"><a href="/GitHubPages/CloudServices" class="nav-list-link">CloudServices</a>
-                    <li class="nav-list-item"><a href="/GitHubPages/LetterOfRecommendation" class="nav-list-link">LetterOfRecommendation</a>
-                    <li class="nav-list-item"><a href="/GitHubPages/PastProjects" class="nav-list-link">PastProjects</a>
-                    <li class="nav-list-item"><a href="/GitHubPages/PriorityLearning" class="nav-list-link">PriorityLearning</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in AWS category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/AWS/" class="nav-list-link">AWS</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/AWS/CLI" class="nav-list-link">CLI</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in Build category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/Build/" class="nav-list-link">Build</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Build/Gradle" class="nav-list-link">Gradle</a>
-                    <li class="nav-list-item"><a href="/Build/Maven" class="nav-list-link">Maven</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in DockerNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/DockerNotes/" class="nav-list-link">DockerNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/DockerNotes/ARM64" class="nav-list-link">ARM64</a>
-                    <li class="nav-list-item"><a href="/DockerNotes/Basics" class="nav-list-link">Basics</a>
-                    <li class="nav-list-item"><a href="/DockerNotes/Dockerfile" class="nav-list-link">Dockerfile</a>
-                    <li class="nav-list-item"><a href="/DockerNotes/Install" class="nav-list-link">Install</a>
-                    <li class="nav-list-item"><a href="/DockerNotes/Quick-TidBits" class="nav-list-link">Quick-TidBits</a>
-                    <li class="nav-list-item"><a href="/DockerNotes/UsefulCommands" class="nav-list-link">UsefulCommands</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in DotNetNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/DotNetNotes/" class="nav-list-link">DotNetNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/DotNetNotes/CLI" class="nav-list-link">CLI</a>
-                    <li class="nav-list-item">
-                        <button class="nav-list-expander btn-reset" aria-label="toggle items in CSharp category" aria-pressed="false">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <use xlink:href="#svg-arrow-right"></use>
-                            </svg>
-                        </button>
-                        <a href="/DotNetNotes/Csharp" class="nav-list-link">CSharp</a>
-                        <ul class="nav-list">
-                            <li class="nav-list-item"><a href="/DotNetNotes/CSharp/Email" class="nav-list-link">Email</a>
-                            <li class="nav-list-item"><a href="/DotNetNotes/CSharp/Threading" class="nav-list-link">Threading</a>
-                        </ul>
-                    <li class="nav-list-item"><a href="/DotNetNotes/Controllers" class="nav-list-link">Controllers</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/Database" class="nav-list-link">Database</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/EntityFramework" class="nav-list-link">EntityFramework</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/Environment" class="nav-list-link">Environment</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/Google" class="nav-list-link">Google</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/HTTP" class="nav-list-link">HTTP</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/HttpRepl" class="nav-list-link">HttpRepl</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/LINQ" class="nav-list-link">LINQ</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/Maui" class="nav-list-link">Maui</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/Microservice" class="nav-list-link">Microservice.md</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/VisualStudio" class="nav-list-link">VisualStudio</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in Git category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/Git" class="nav-list-link">Git</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item">
-                        <button class="nav-list-expander btn-reset" aria-label="toggle items in GitHub category" aria-pressed="false">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <use xlink:href="#svg-arrow-right"></use>
-                            </svg>
-                        </button>
-                        <a href="/Git/GitHub" class="nav-list-link">GitHub</a>
-                        <ul class="nav-list">
-                            <li class="nav-list-item"><a href="/GitHub/GitHubPages" class="nav-list-link">GitHubPages</a>
-                            <li class="nav-list-item"><a href="/GitHub/Jekyll" class="nav-list-link">Jekyll</a>
-                            <li class="nav-list-item"><a href="/GitHub/MarkDown" class="nav-list-link">MarkDown</a>
-                        </ul>
-                    <li class="nav-list-item"><a href="/Git/QuickScripts" class="nav-list-link">QuickScripts</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in GoogleNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/GoogleNotes/" class="nav-list-link">GoogleNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/GoogleNotes/APIs" class="nav-list-link">APIs</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/Browser" class="nav-list-link">Browser</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/Cloud" class="nav-list-link">Cloud</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/ComputeEngine" class="nav-list-link">ComputeEngine</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/Deploy" class="nav-list-link">Deploy</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/DevTools" class="nav-list-link">DevTools</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/DialogFlow" class="nav-list-link">DialogFlow</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/Functions" class="nav-list-link">Functions</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/Logging" class="nav-list-link">Logging</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/ServiceAccounts" class="nav-list-link">ServiceAccounts</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/Storage" class="nav-list-link">Storage</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/VoiceAgent" class="nav-list-link">VoiceAgent</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in GroovyNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/GroovyNotes/" class="nav-list-link">GroovyNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/GroovyNotes/Array-Loop-List-Map" class="nav-list-link">Array-Loop-List-Map</a>
-                    <li class="nav-list-item"><a href="/GroovyNotes/Async_Parallel-Concurrency" class="nav-list-link">Async_Parallel-Concurrency</a>
-                    <li class="nav-list-item"><a href="/GroovyNotes/Clever-Tid-bits" class="nav-list-link">Clever-Tid-bits</a>
-                    <li class="nav-list-item"><a href="/GroovyNotes/DateAndTime" class="nav-list-link">DateAndTime</a>
-                    <li class="nav-list-item"><a href="/GroovyNotes/Enum" class="nav-list-link">Enum</a>
-                    <li class="nav-list-item"><a href="/GroovyNotes/MetaProgramming" class="nav-list-link">MetaProgramming</a>
-                    <li class="nav-list-item"><a href="/GroovyNotes/RegEx" class="nav-list-link">RegEx</a>
-                    <li class="nav-list-item"><a href="/GroovyNotes/String" class="nav-list-link">String</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in HTML&CSS category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/HTML&CSS/" class="nav-list-link">HTML&CSS</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/HTML&CSS/CSS" class="nav-list-link">CSS</a>
-                    <li class="nav-list-item"><a href="/HTML&CSS/HTML" class="nav-list-link">HTML</a>
-                    <li class="nav-list-item"><a href="/HTML&CSS/Images" class="nav-list-link">Images</a>
-                </ul>
-            <li class="nav-list-item"><a href="/HTTP" class="nav-list-link">HTTP</a>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in IntelliJNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/IntelliJNotes/" class="nav-list-link">IntelliJNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/IntelliJNotes/CustomVM" class="nav-list-link">CustomVM</a>
-                    <li class="nav-list-item"><a href="/IntelliJNotes/DebuggerConfig" class="nav-list-link">DebuggerConfig</a>
-                    <li class="nav-list-item"><a href="/IntelliJNotes/HTTPExamples" class="nav-list-link">HTTPExamples</a>
-                    <li class="nav-list-item"><a href="/IntelliJNotes/Spaces" class="nav-list-link">Spaces</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in Java category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/JavaNotes/Java" class="nav-list-link">Java</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/JavaNotes/Algorithms" class="nav-list-link">Algorithms</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/Annotations" class="nav-list-link">Annotations</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/CommandLineDiddys" class="nav-list-link">CommandLineDiddys</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/DataBase" class="nav-list-link">DataBase</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/Email" class="nav-list-link">Email</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/File" class="nav-list-link">File</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/GCP" class="nav-list-link">GCP</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/Hibernate" class="nav-list-link">Hibernate</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/LooseNotes" class="nav-list-link">LooseNotes</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/OOP" class="nav-list-link">OOP</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/String" class="nav-list-link">String</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/Threads" class="nav-list-link">Threads</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in JavaScript category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
-                    <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
-                    <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
-                    <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
-                    <li class="nav-list-item"><a href="/JavaScript/DateAndTime" class="nav-list-link">DateAndTime</a>
-                    <li class="nav-list-item"><a href="/JavaScript/Document" class="nav-list-link">Document</a>
-                    <li class="nav-list-item"><a href="/JavaScript/Elements" class="nav-list-link">Elements</a>
-                    <li class="nav-list-item"><a href="/JavaScript/Events" class="nav-list-link">Events</a>
-                    <li class="nav-list-item"><a href="/JavaScript/FormStuff" class="nav-list-link">FormStuff</a>
-                    <li class="nav-list-item"><a href="/JavaScript/FunctionObject" class="nav-list-link">FunctionObject</a>
-                    <li class="nav-list-item"><a href="/JavaScript/HTTP" class="nav-list-link">HTTP</a>
-                    <li class="nav-list-item"><a href="/JavaScript/Map" class="nav-list-link">Map</a>
-                    <li class="nav-list-item"><a href="/JavaScript/Modules" class="nav-list-link">Modules</a>
-                    <li class="nav-list-item">
-                        <button class="nav-list-expander btn-reset" aria-label="toggle items in Node category" aria-pressed="false">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <use xlink:href="#svg-arrow-right"></use>
-                            </svg>
-                        </button>
-                        <a href="/JavaScript/Node/" class="nav-list-link">Node</a>
-                        <ul class="nav-list">
-                            <li class="nav-list-item"><a href="/JavaScript/Node/QuickScripts" class="nav-list-link">QuickScripts</a>
-                        </ul>
-                    <li class="nav-list-item"><a href="/JavaScript/Number" class="nav-list-link">Number</a>
-                    <li class="nav-list-item"><a href="/JavaScript/Object" class="nav-list-link">Object</a>
-                    <li class="nav-list-item"><a href="/JavaScript/QuerySelector" class="nav-list-link">QuerySelector</a>
-                    <li class="nav-list-item">
-                        <button class="nav-list-expander btn-reset" aria-label="toggle items in ReactNotes category" aria-pressed="false">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <use xlink:href="#svg-arrow-right"></use>
-                            </svg>
-                        </button>
-                        <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
-                        <ul class="nav-list">
-                            <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
-                            <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
-                            <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
-                            <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
-                            <li class="nav-list-item"><a href="/ReactNotes/Mat-Table" class="nav-list-link">Mat-Table</a>
-                            <li class="nav-list-item"><a href="/ReactNotes/React-Router" class="nav-list-link">React-Router</a>
-                            <li class="nav-list-item"><a href="/ReactNotes/ReactHookForm" class="nav-list-link">ReactHookForm</a>
-                            <li class="nav-list-item"><a href="/ReactNotes/String" class="nav-list-link">String</a>
-                            <li class="nav-list-item"><a href="/ReactNotes/WebWorker" class="nav-list-link">WebWorker</a>
-                        </ul>
-                    <li class="nav-list-item"><a href="/JavaScript/RegEx" class="nav-list-link">RegEx</a>
-                    <li class="nav-list-item"><a href="/JavaScript/State" class="nav-list-link">State</a>
-                    <li class="nav-list-item">
-                        <button class="nav-list-expander btn-reset" aria-label="toggle items in TypeScript category" aria-pressed="false">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <use xlink:href="#svg-arrow-right"></use>
-                            </svg>
-                        </button>
-                        <a href="/JavaScript/TypeScript/" class="nav-list-link">TypeScript</a>
-                        <ul class="nav-list">
-                            <li class="nav-list-item"><a href="/JavaScript/TypeScript/Events" class="nav-list-link">Events</a>
-                            <li class="nav-list-item"><a href="/JavaScript/TypeScript/QuickScripts" class="nav-list-link">QuickScripts</a>
-                            <li class="nav-list-item"><a href="/JavaScript/TypeScript/Types" class="nav-list-link">Types</a>
-                        </ul>
-                    <li class="nav-list-item"><a href="/JavaScript/UsefulSnippets" class="nav-list-link">UsefulSnippets</a>
-                    <li class="nav-list-item"><a href="/JavaScript/WebAPI" class="nav-list-link">WebAPI</a>
-                    <li class="nav-list-item"><a href="/JavaScript/Window" class="nav-list-link">Window</a>
-                    <li class="nav-list-item"><a href="/JavaScript/WorkingWithFiles" class="nav-list-link">WorkingWithFiles</a>
-                </ul>
-            <li class="nav-list-item"><a href="/Kubernetes" class="nav-list-link">Kubernetes</a>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in Linux category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/Linux/" class="nav-list-link">Linux</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Linux/ADMIN-ROOT" class="nav-list-link">ADMIN-ROOT</a>
-                    <li class="nav-list-item"><a href="/Linux/Conditionals" class="nav-list-link">Conditionals</a>
-                    <li class="nav-list-item"><a href="/Linux/Email" class="nav-list-link">Email</a>
-                    <li class="nav-list-item"><a href="/Linux/Encoding" class="nav-list-link">Encoding</a>
-                    <li class="nav-list-item"><a href="/Linux/JQ" class="nav-list-link">JQ</a>
-                    <li class="nav-list-item"><a href="/Linux/MySQL" class="nav-list-link">MySQL</a>
-                    <li class="nav-list-item"><a href="/Linux/PGP" class="nav-list-link">PGP</a>
-                    <li class="nav-list-item"><a href="/Linux/QuickScripts" class="nav-list-link">QuickScripts</a>
-                    <li class="nav-list-item"><a href="/Linux/SDKMan" class="nav-list-link">SDKMan</a>
-                    <li class="nav-list-item"><a href="/Linux/Scripting" class="nav-list-link">Scripting</a>
-                    <li class="nav-list-item"><a href="/Linux/VIM_QuickTips" class="nav-list-link">VIM_QuickTips</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in MacNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/MacNotes/" class="nav-list-link">MacNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/MacNotes/AppleScripts" class="nav-list-link">AppleScripts</a>
-                    <li class="nav-list-item"><a href="/MacNotes/HomeBrew" class="nav-list-link">HomeBrew</a>
-                    <li class="nav-list-item"><a href="/MacNotes/JavaOnMac" class="nav-list-link">JavaOnMac</a>
-                    <li class="nav-list-item"><a href="/MacNotes/QuickScripts" class="nav-list-link">QuickScripts</a>
-                    <li class="nav-list-item"><a href="/MacNotes/ShortCuts" class="nav-list-link">ShortCuts</a>
-                    <li class="nav-list-item"><a href="/MacNotes/UsersAndGroups" class="nav-list-link">UsersAndGroups</a>
-                    <li class="nav-list-item"><a href="/MacNotes/Utilities" class="nav-list-link">Utilities</a>
-                    <li class="nav-list-item"><a href="/MacNotes/ZSH" class="nav-list-link">ZSH</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in Micronotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
-                    <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
-                    <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
-                    <li class="nav-list-item"><a href="/Micronotes/DataBaseStuff" class="nav-list-link">DataBaseStuff</a>
-                    <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
-                    <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
-                    <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
-                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
-                    <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
-                    <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
-                    <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
-                    <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
-                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
-                    <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
-                </ul>
-            <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in PersonalGrailsNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/PersonalGrailsNotes/" class="nav-list-link">PersonalGrailsNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/AccessHibernateAndDataStoreAndSession" class="nav-list-link">AccessHibernateAndDataStoreAndSession</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/CLI_Gradlew" class="nav-list-link">CLI_Gradlew</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/CLI_Grailsw" class="nav-list-link">CLI_Grailsw</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/CleverSnippets" class="nav-list-link">CleverSnippets</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/Config" class="nav-list-link">Config</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/Controller" class="nav-list-link">Controller</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/DataServices" class="nav-list-link">DataServices</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/Domain_Stuff" class="nav-list-link">Domain_Stuff</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/Enviroment" class="nav-list-link">Enviroment</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/GORM_WhereQueris" class="nav-list-link">GORM_WhereQueris</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/HQLComplexQueries" class="nav-list-link">HQLComplexQueries</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/HQLQueries" class="nav-list-link">HQLQueries</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/RunningApp" class="nav-list-link">RunningApp</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/Security" class="nav-list-link">Security</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/Services" class="nav-list-link">Services</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/Testing" class="nav-list-link">Testing</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/Text_Manipulation" class="nav-list-link">Text_Manipulation</a>
-                </ul>
-            <li class="nav-list-item"><a href="/RandomNuggetsOfKnowledge" class="nav-list-link">RandomNuggetsOfKnowledge</a>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in SQLNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/SQLNotes/" class="nav-list-link">SQLNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/SQLNotes/Docker" class="nav-list-link">Docker</a>
-                    <li class="nav-list-item"><a href="/SQLNotes/Functions" class="nav-list-link">Functions</a>
-                    <li class="nav-list-item"><a href="/SQLNotes/HQL" class="nav-list-link">HQL</a>
-                    <li class="nav-list-item"><a href="/SQLNotes/Liquibase" class="nav-list-link">Liquibase</a>
-                    <li class="nav-list-item"><a href="/SQLNotes/Queries" class="nav-list-link">Queries</a>
-                    <li class="nav-list-item"><a href="/SQLNotes/SQLCheatSheet" class="nav-list-link">SQLCheatSheet</a>
-                    <li class="nav-list-item"><a href="/SQLNotes/TerminalCommands" class="nav-list-link">Terminal-Commands</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in SpringNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/SpringNotes/" class="nav-list-link">SpringNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/SpringNotes/Annotations" class="nav-list-link">Annotations</a>
-                    <li class="nav-list-item"><a href="/SpringNotes/Hibernate" class="nav-list-link">Hibernate</a>
-                    <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
-                    <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
-                    <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
-                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
-                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
-                    <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
-                    <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
-                </ul>
-            <li class="nav-list-item"><a href="/SystemDesign&Architecture/" class="nav-list-link">SystemDesign&Architecture</a>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in TestingFrameworks category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/TestingFrameworks/" class="nav-list-link">TestingFrameworks</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
-                    <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
-                    <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
-                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/Windows_Notes/" class="nav-list-link">Windows_Notes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Windows_Notes/CMD" class="nav-list-link">CMD</a>
-                    <li class="nav-list-item"><a href="/Windows_Notes/Environment" class="nav-list-link">Environment</a>
-                    <li class="nav-list-item"><a href="/Windows_Notes/PackageManagers" class="nav-list-link">PackageManagers</a>
-                    <li class="nav-list-item"><a href="/Windows_Notes/Powershell" class="nav-list-link">Powershell</a>
-                    <li class="nav-list-item"><a href="/Windows_Notes/Run" class="nav-list-link">Run</a>
-                    <li class="nav-list-item"><a href="/Windows_Notes/Shortcuts" class="nav-list-link">Shortcuts</a>
-                    <li class="nav-list-item"><a href="/Windows_Notes/Terminal" class="nav-list-link">Terminal</a>
-                    <li class="nav-list-item"><a href="/Windows_Notes/WSL" class="nav-list-link">WSL</a>
-                    <li class="nav-list-item"><a href="/Windows_Notes/WindowsServer" class="nav-list-link">WindowsServer</a>
-                </ul>
-        </ul>
-    </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
-</div>
-<div class="main" id="top">
-    <div id="main-header" class="main-header">
-        <div class="search" role="search">
-            <div class="search-input-wrap"><input
-                    type="text"
-                    id="search-input"
-                    class="search-input"
-                    tabindex="0"
-                    placeholder="Search Paxton's Notes"
-                    aria-label="Search Paxton's Notes"
-                    autocomplete="off"
-            > <label for="search-input" class="search-label">
-                <svg viewBox="0 0 24 24" class="search-icon">
-                    <use xlink:href="#svg-search"></use>
+        .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(7) > ul.nav-list, .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(7) > ul.nav-list > li.nav-list-item:nth-child(7) > ul.nav-list {
+            display: block;
+        }</style>
+        <script src="/assets/js/vendor/lunr.min.js"></script>
+        <script src="/assets/js/just-the-docs.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DialogFlow | Paxton’s Notes</title>
+        <meta name="generator" content="Jekyll v4.4.0"/>
+        <meta property="og:title" content="DialogFlow"/>
+        <meta property="og:locale" content="en_US"/>
+        <meta name="description" content="Coding Notes"/>
+        <meta property="og:description" content="Coding Notes"/>
+        <link rel="canonical" href="http://localhost:4000/GoogleNotes/DialogFlow"/>
+        <meta property="og:url" content="http://localhost:4000/GoogleNotes/DialogFlow"/>
+        <meta property="og:site_name" content="Paxton’s Notes"/>
+        <meta property="og:type" content="website"/>
+        <meta name="twitter:card" content="summary"/>
+        <meta property="twitter:title" content="DialogFlow"/>
+        <script type="application/ld+json"> {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "description": "Coding Notes",
+            "headline": "DialogFlow",
+            "url": "http://localhost:4000/GoogleNotes/DialogFlow"
+        }
+        </script>
+    <body><a class="skip-to-main" href="#main-content">Skip to main content</a>
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+            <symbol id="svg-link" viewBox="0 0 24 24"><title>Link</title>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     class="feather feather-link">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
                 </svg>
-            </label></div>
-            <div id="search-results" class="search-results"></div>
+            </symbol>
+            <symbol id="svg-menu" viewBox="0 0 24 24"><title>Menu</title>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     class="feather feather-menu">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </symbol>
+            <symbol id="svg-arrow-right" viewBox="0 0 24 24"><title>Expand</title>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     class="feather feather-chevron-right">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </symbol>
+            <symbol id="svg-external-link"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title>
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+            </symbol>
+            <symbol id="svg-doc" viewBox="0 0 24 24"><title>Document</title>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     class="feather feather-file">
+                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                    <polyline points="13 2 13 9 20 9"></polyline>
+                </svg>
+            </symbol>
+            <symbol id="svg-search" viewBox="0 0 24 24"><title>Search</title>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     class="feather feather-search">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </symbol>
+            <symbol id="svg-copy" viewBox="0 0 16 16"><title>Copy</title>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                </svg>
+            </symbol>
+            <symbol id="svg-copied" viewBox="0 0 16 16"><title>Copied</title>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+                    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+                </svg>
+            </symbol>
+        </svg>
+        <div class="side-bar">
+            <div class="site-header" role="banner"><a href="/" class="site-title lh-tight"> Paxton's Notes </a>
+                <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+                        <use xlink:href="#svg-menu"></use>
+                    </svg>
+                </button>
+            </div>
+            <nav aria-label="Main" id="site-nav" class="site-nav">
+                <ul class="nav-list">
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in MyPersonalDocsAndStuff category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/index" class="nav-list-link">MyPersonalDocsAndStuff</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/GitHubPages/AppsForWorkflow" class="nav-list-link">AppsForWorkflow</a>
+                            <li class="nav-list-item"><a href="/GitHubPages/CloudServices" class="nav-list-link">CloudServices</a>
+                            <li class="nav-list-item"><a href="/GitHubPages/LetterOfRecommendation" class="nav-list-link">LetterOfRecommendation</a>
+                            <li class="nav-list-item"><a href="/GitHubPages/PastProjects" class="nav-list-link">PastProjects</a>
+                            <li class="nav-list-item"><a href="/GitHubPages/PriorityLearning" class="nav-list-link">PriorityLearning</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in AWS category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/AWS/" class="nav-list-link">AWS</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/AWS/CLI" class="nav-list-link">CLI</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in Build category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/Build/" class="nav-list-link">Build</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/Build/Gradle" class="nav-list-link">Gradle</a>
+                            <li class="nav-list-item"><a href="/Build/Maven" class="nav-list-link">Maven</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in DockerNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/DockerNotes/" class="nav-list-link">DockerNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/DockerNotes/ARM64" class="nav-list-link">ARM64</a>
+                            <li class="nav-list-item"><a href="/DockerNotes/Basics" class="nav-list-link">Basics</a>
+                            <li class="nav-list-item"><a href="/DockerNotes/Dockerfile" class="nav-list-link">Dockerfile</a>
+                            <li class="nav-list-item"><a href="/DockerNotes/Install" class="nav-list-link">Install</a>
+                            <li class="nav-list-item"><a href="/DockerNotes/Quick-TidBits" class="nav-list-link">Quick-TidBits</a>
+                            <li class="nav-list-item"><a href="/DockerNotes/UsefulCommands" class="nav-list-link">UsefulCommands</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in DotNetNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/DotNetNotes/" class="nav-list-link">DotNetNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/DotNetNotes/CLI" class="nav-list-link">CLI</a>
+                            <li class="nav-list-item">
+                                <button class="nav-list-expander btn-reset" aria-label="toggle items in CSharp category" aria-pressed="false">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <use xlink:href="#svg-arrow-right"></use>
+                                    </svg>
+                                </button>
+                                <a href="/DotNetNotes/Csharp" class="nav-list-link">CSharp</a>
+                                <ul class="nav-list">
+                                    <li class="nav-list-item"><a href="/DotNetNotes/CSharp/Email" class="nav-list-link">Email</a>
+                                    <li class="nav-list-item"><a href="/DotNetNotes/CSharp/Threading" class="nav-list-link">Threading</a>
+                                </ul>
+                            <li class="nav-list-item"><a href="/DotNetNotes/Controllers" class="nav-list-link">Controllers</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/Database" class="nav-list-link">Database</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/EntityFramework" class="nav-list-link">EntityFramework</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/Environment" class="nav-list-link">Environment</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/Google" class="nav-list-link">Google</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/HTTP" class="nav-list-link">HTTP</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/HttpRepl" class="nav-list-link">HttpRepl</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/LINQ" class="nav-list-link">LINQ</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/Maui" class="nav-list-link">Maui</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/Microservice" class="nav-list-link">Microservice.md</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/VisualStudio" class="nav-list-link">VisualStudio</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in Git category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/Git" class="nav-list-link">Git</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item">
+                                <button class="nav-list-expander btn-reset" aria-label="toggle items in GitHub category" aria-pressed="false">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <use xlink:href="#svg-arrow-right"></use>
+                                    </svg>
+                                </button>
+                                <a href="/Git/GitHub" class="nav-list-link">GitHub</a>
+                                <ul class="nav-list">
+                                    <li class="nav-list-item"><a href="/GitHub/GitHubPages" class="nav-list-link">GitHubPages</a>
+                                    <li class="nav-list-item"><a href="/GitHub/Jekyll" class="nav-list-link">Jekyll</a>
+                                    <li class="nav-list-item"><a href="/GitHub/MarkDown" class="nav-list-link">MarkDown</a>
+                                </ul>
+                            <li class="nav-list-item"><a href="/Git/QuickScripts" class="nav-list-link">QuickScripts</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in GoogleNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/GoogleNotes/" class="nav-list-link">GoogleNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/GoogleNotes/APIs" class="nav-list-link">APIs</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/Browser" class="nav-list-link">Browser</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/Cloud" class="nav-list-link">Cloud</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/ComputeEngine" class="nav-list-link">ComputeEngine</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/Deploy" class="nav-list-link">Deploy</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/DevTools" class="nav-list-link">DevTools</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/DialogFlow" class="nav-list-link">DialogFlow</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/Functions" class="nav-list-link">Functions</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/Logging" class="nav-list-link">Logging</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/ServiceAccounts" class="nav-list-link">ServiceAccounts</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/Storage" class="nav-list-link">Storage</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/VoiceAgent" class="nav-list-link">VoiceAgent</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in GrailsNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/GrailsNotes/" class="nav-list-link">GrailsNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/GrailsNotes/AccessHibernateAndDataStoreAndSession" class="nav-list-link">AccessHibernateAndDataStoreAndSession</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/CLI_Gradlew" class="nav-list-link">CLI_Gradlew</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/CLI_Grailsw" class="nav-list-link">CLI_Grailsw</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/CleverSnippets" class="nav-list-link">CleverSnippets</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/Config" class="nav-list-link">Config</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/Controller" class="nav-list-link">Controller</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/DataServices" class="nav-list-link">DataServices</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/Domain_Stuff" class="nav-list-link">Domain_Stuff</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/Enviroment" class="nav-list-link">Enviroment</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/GORM_WhereQueris" class="nav-list-link">GORM_WhereQueris</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/HQLComplexQueries" class="nav-list-link">HQLComplexQueries</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/HQLQueries" class="nav-list-link">HQLQueries</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/RunningApp" class="nav-list-link">RunningApp</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/Security" class="nav-list-link">Security</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/Services" class="nav-list-link">Services</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/Testing" class="nav-list-link">Testing</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in GroovyNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/GroovyNotes/" class="nav-list-link">GroovyNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/GroovyNotes/Array-Loop-List-Map" class="nav-list-link">Array-Loop-List-Map</a>
+                            <li class="nav-list-item"><a href="/GroovyNotes/Async_Parallel-Concurrency" class="nav-list-link">Async_Parallel-Concurrency</a>
+                            <li class="nav-list-item"><a href="/GroovyNotes/Clever-Tid-bits" class="nav-list-link">Clever-Tid-bits</a>
+                            <li class="nav-list-item"><a href="/GroovyNotes/DateAndTime" class="nav-list-link">DateAndTime</a>
+                            <li class="nav-list-item"><a href="/GroovyNotes/Enum" class="nav-list-link">Enum</a>
+                            <li class="nav-list-item"><a href="/GroovyNotes/MetaProgramming" class="nav-list-link">MetaProgramming</a>
+                            <li class="nav-list-item"><a href="/GroovyNotes/RegEx" class="nav-list-link">RegEx</a>
+                            <li class="nav-list-item"><a href="/GroovyNotes/String" class="nav-list-link">String</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in HTML&CSS category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/HTML&CSS/" class="nav-list-link">HTML&CSS</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/HTML&CSS/CSS" class="nav-list-link">CSS</a>
+                            <li class="nav-list-item"><a href="/HTML&CSS/HTML" class="nav-list-link">HTML</a>
+                            <li class="nav-list-item"><a href="/HTML&CSS/Images" class="nav-list-link">Images</a>
+                        </ul>
+                    <li class="nav-list-item"><a href="/HTTP" class="nav-list-link">HTTP</a>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in IntelliJNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/IntelliJNotes/" class="nav-list-link">IntelliJNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/IntelliJNotes/CustomVM" class="nav-list-link">CustomVM</a>
+                            <li class="nav-list-item"><a href="/IntelliJNotes/DebuggerConfig" class="nav-list-link">DebuggerConfig</a>
+                            <li class="nav-list-item"><a href="/IntelliJNotes/HTTPExamples" class="nav-list-link">HTTPExamples</a>
+                            <li class="nav-list-item"><a href="/IntelliJNotes/Spaces" class="nav-list-link">Spaces</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in Java category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/JavaNotes/Java" class="nav-list-link">Java</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/JavaNotes/Algorithms" class="nav-list-link">Algorithms</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/Annotations" class="nav-list-link">Annotations</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/CommandLineDiddys" class="nav-list-link">CommandLineDiddys</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/DataBase" class="nav-list-link">DataBase</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/Email" class="nav-list-link">Email</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/File" class="nav-list-link">File</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/GCP" class="nav-list-link">GCP</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/Hibernate" class="nav-list-link">Hibernate</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/LooseNotes" class="nav-list-link">LooseNotes</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/OOP" class="nav-list-link">OOP</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/String" class="nav-list-link">String</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/Threads" class="nav-list-link">Threads</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in JavaScript category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
+                            <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
+                            <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
+                            <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
+                            <li class="nav-list-item"><a href="/JavaScript/DateAndTime" class="nav-list-link">DateAndTime</a>
+                            <li class="nav-list-item"><a href="/JavaScript/Document" class="nav-list-link">Document</a>
+                            <li class="nav-list-item"><a href="/JavaScript/Elements" class="nav-list-link">Elements</a>
+                            <li class="nav-list-item"><a href="/JavaScript/Events" class="nav-list-link">Events</a>
+                            <li class="nav-list-item"><a href="/JavaScript/FormStuff" class="nav-list-link">FormStuff</a>
+                            <li class="nav-list-item"><a href="/JavaScript/FunctionObject" class="nav-list-link">FunctionObject</a>
+                            <li class="nav-list-item"><a href="/JavaScript/HTTP" class="nav-list-link">HTTP</a>
+                            <li class="nav-list-item"><a href="/JavaScript/Map" class="nav-list-link">Map</a>
+                            <li class="nav-list-item"><a href="/JavaScript/Modules" class="nav-list-link">Modules</a>
+                            <li class="nav-list-item">
+                                <button class="nav-list-expander btn-reset" aria-label="toggle items in Node category" aria-pressed="false">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <use xlink:href="#svg-arrow-right"></use>
+                                    </svg>
+                                </button>
+                                <a href="/JavaScript/Node/" class="nav-list-link">Node</a>
+                                <ul class="nav-list">
+                                    <li class="nav-list-item"><a href="/JavaScript/Node/QuickScripts" class="nav-list-link">QuickScripts</a>
+                                </ul>
+                            <li class="nav-list-item"><a href="/JavaScript/Number" class="nav-list-link">Number</a>
+                            <li class="nav-list-item"><a href="/JavaScript/Object" class="nav-list-link">Object</a>
+                            <li class="nav-list-item"><a href="/JavaScript/QuerySelector" class="nav-list-link">QuerySelector</a>
+                            <li class="nav-list-item">
+                                <button class="nav-list-expander btn-reset" aria-label="toggle items in ReactNotes category" aria-pressed="false">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <use xlink:href="#svg-arrow-right"></use>
+                                    </svg>
+                                </button>
+                                <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
+                                <ul class="nav-list">
+                                    <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
+                                    <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                                    <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
+                                    <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
+                                    <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
+                                    <li class="nav-list-item"><a href="/ReactNotes/Mat-Table" class="nav-list-link">Mat-Table</a>
+                                    <li class="nav-list-item"><a href="/ReactNotes/React-Router" class="nav-list-link">React-Router</a>
+                                    <li class="nav-list-item"><a href="/ReactNotes/ReactHookForm" class="nav-list-link">ReactHookForm</a>
+                                    <li class="nav-list-item"><a href="/ReactNotes/String" class="nav-list-link">String</a>
+                                    <li class="nav-list-item"><a href="/ReactNotes/WebWorker" class="nav-list-link">WebWorker</a>
+                                </ul>
+                            <li class="nav-list-item"><a href="/JavaScript/RegEx" class="nav-list-link">RegEx</a>
+                            <li class="nav-list-item"><a href="/JavaScript/State" class="nav-list-link">State</a>
+                            <li class="nav-list-item">
+                                <button class="nav-list-expander btn-reset" aria-label="toggle items in TypeScript category" aria-pressed="false">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <use xlink:href="#svg-arrow-right"></use>
+                                    </svg>
+                                </button>
+                                <a href="/JavaScript/TypeScript/" class="nav-list-link">TypeScript</a>
+                                <ul class="nav-list">
+                                    <li class="nav-list-item"><a href="/JavaScript/TypeScript/Events" class="nav-list-link">Events</a>
+                                    <li class="nav-list-item"><a href="/JavaScript/TypeScript/QuickScripts" class="nav-list-link">QuickScripts</a>
+                                    <li class="nav-list-item"><a href="/JavaScript/TypeScript/Types" class="nav-list-link">Types</a>
+                                </ul>
+                            <li class="nav-list-item"><a href="/JavaScript/UsefulSnippets" class="nav-list-link">UsefulSnippets</a>
+                            <li class="nav-list-item"><a href="/JavaScript/WebAPI" class="nav-list-link">WebAPI</a>
+                            <li class="nav-list-item"><a href="/JavaScript/Window" class="nav-list-link">Window</a>
+                            <li class="nav-list-item"><a href="/JavaScript/WorkingWithFiles" class="nav-list-link">WorkingWithFiles</a>
+                        </ul>
+                    <li class="nav-list-item"><a href="/Kubernetes" class="nav-list-link">Kubernetes</a>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in Linux category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/Linux/" class="nav-list-link">Linux</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/Linux/ADMIN-ROOT" class="nav-list-link">ADMIN-ROOT</a>
+                            <li class="nav-list-item"><a href="/Linux/Conditionals" class="nav-list-link">Conditionals</a>
+                            <li class="nav-list-item"><a href="/Linux/Email" class="nav-list-link">Email</a>
+                            <li class="nav-list-item"><a href="/Linux/Encoding" class="nav-list-link">Encoding</a>
+                            <li class="nav-list-item"><a href="/Linux/JQ" class="nav-list-link">JQ</a>
+                            <li class="nav-list-item"><a href="/Linux/MySQL" class="nav-list-link">MySQL</a>
+                            <li class="nav-list-item"><a href="/Linux/PGP" class="nav-list-link">PGP</a>
+                            <li class="nav-list-item"><a href="/Linux/QuickScripts" class="nav-list-link">QuickScripts</a>
+                            <li class="nav-list-item"><a href="/Linux/SDKMan" class="nav-list-link">SDKMan</a>
+                            <li class="nav-list-item"><a href="/Linux/Scripting" class="nav-list-link">Scripting</a>
+                            <li class="nav-list-item"><a href="/Linux/VIM_QuickTips" class="nav-list-link">VIM_QuickTips</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in MacNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/MacNotes/" class="nav-list-link">MacNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/MacNotes/AppleScripts" class="nav-list-link">AppleScripts</a>
+                            <li class="nav-list-item"><a href="/MacNotes/HomeBrew" class="nav-list-link">HomeBrew</a>
+                            <li class="nav-list-item"><a href="/MacNotes/JavaOnMac" class="nav-list-link">JavaOnMac</a>
+                            <li class="nav-list-item"><a href="/MacNotes/QuickScripts" class="nav-list-link">QuickScripts</a>
+                            <li class="nav-list-item"><a href="/MacNotes/ShortCuts" class="nav-list-link">ShortCuts</a>
+                            <li class="nav-list-item"><a href="/MacNotes/UsersAndGroups" class="nav-list-link">UsersAndGroups</a>
+                            <li class="nav-list-item"><a href="/MacNotes/Utilities" class="nav-list-link">Utilities</a>
+                            <li class="nav-list-item"><a href="/MacNotes/ZSH" class="nav-list-link">ZSH</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in Micronotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
+                            <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
+                            <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
+                            <li class="nav-list-item"><a href="/Micronotes/DataBaseStuff" class="nav-list-link">DataBaseStuff</a>
+                            <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
+                            <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
+                            <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                            <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
+                            <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
+                            <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
+                            <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
+                            <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                            <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
+                            <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
+                        </ul>
+                    <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
+                    <li class="nav-list-item"><a href="/RandomNuggetsOfKnowledge" class="nav-list-link">RandomNuggetsOfKnowledge</a>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in SQLNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/SQLNotes/" class="nav-list-link">SQLNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/SQLNotes/Docker" class="nav-list-link">Docker</a>
+                            <li class="nav-list-item"><a href="/SQLNotes/Functions" class="nav-list-link">Functions</a>
+                            <li class="nav-list-item"><a href="/SQLNotes/HQL" class="nav-list-link">HQL</a>
+                            <li class="nav-list-item"><a href="/SQLNotes/Liquibase" class="nav-list-link">Liquibase</a>
+                            <li class="nav-list-item"><a href="/SQLNotes/Queries" class="nav-list-link">Queries</a>
+                            <li class="nav-list-item"><a href="/SQLNotes/SQLCheatSheet" class="nav-list-link">SQLCheatSheet</a>
+                            <li class="nav-list-item"><a href="/SQLNotes/TerminalCommands" class="nav-list-link">Terminal-Commands</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in SpringNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/SpringNotes/" class="nav-list-link">SpringNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/SpringNotes/Annotations" class="nav-list-link">Annotations</a>
+                            <li class="nav-list-item"><a href="/SpringNotes/Hibernate" class="nav-list-link">Hibernate</a>
+                            <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
+                            <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
+                            <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                            <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                            <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
+                            <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
+                            <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
+                        </ul>
+                    <li class="nav-list-item"><a href="/SystemDesign&Architecture/" class="nav-list-link">SystemDesign&Architecture</a>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in TestingFrameworks category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/TestingFrameworks/" class="nav-list-link">TestingFrameworks</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
+                            <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
+                            <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                            <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in Thymeleaf category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/Thymeleaf/" class="nav-list-link">Thymeleaf</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/Thymeleaf/Fragments" class="nav-list-link">Fragments</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/Windows_Notes/" class="nav-list-link">Windows_Notes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/Windows_Notes/CMD" class="nav-list-link">CMD</a>
+                            <li class="nav-list-item"><a href="/Windows_Notes/Environment" class="nav-list-link">Environment</a>
+                            <li class="nav-list-item"><a href="/Windows_Notes/PackageManagers" class="nav-list-link">PackageManagers</a>
+                            <li class="nav-list-item"><a href="/Windows_Notes/Powershell" class="nav-list-link">Powershell</a>
+                            <li class="nav-list-item"><a href="/Windows_Notes/Run" class="nav-list-link">Run</a>
+                            <li class="nav-list-item"><a href="/Windows_Notes/Shortcuts" class="nav-list-link">Shortcuts</a>
+                            <li class="nav-list-item"><a href="/Windows_Notes/Terminal" class="nav-list-link">Terminal</a>
+                            <li class="nav-list-item"><a href="/Windows_Notes/WSL" class="nav-list-link">WSL</a>
+                            <li class="nav-list-item"><a href="/Windows_Notes/WindowsServer" class="nav-list-link">WindowsServer</a>
+                        </ul>
+                </ul>
+            </nav>
+            <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
         </div>
-        <nav aria-label="Auxiliary" class="aux-nav">
-            <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
-                                                                                                                                                                      Repository </a>
-            </ul>
-        </nav>
-    </div>
-    <div class="main-content-wrap">
-        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-            <ol class="breadcrumb-nav-list">
-                <li class="breadcrumb-nav-list-item"><a href="/GoogleNotes/">GoogleNotes</a>
-                <li class="breadcrumb-nav-list-item"><span>DialogFlow</span>
-            </ol>
-        </nav>
-        <div id="main-content" class="main-content">
-            <main><p><br/></p>
-                <details>
-                    <summary class="text-delta"> Table of contents</summary>
-                    <ol id="markdown-toc">
-                        <li><a href="#googledialogflow" id="markdown-toc-googledialogflow">GoogleDialogFlow</a>
-                        <li><a href="#key-terms" id="markdown-toc-key-terms">Key Terms</a>
-                        <li><a href="#quick-tid-bits" id="markdown-toc-quick-tid-bits">QUICK TID BITS</a>
-                            <ol>
-                                <li><a href="#params" id="markdown-toc-params">params</a>
-                                <li><a href="#functions" id="markdown-toc-functions">functions</a>
-                                <li><a
-                                        href="#when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there"
-                                        id="markdown-toc-when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there"
-                                >when using func in parameter value be cognizant of quotation marks, they need to be there</a>
-                                <li><a href="#get-the-json-key-file-from-dialogflow" id="markdown-toc-get-the-json-key-file-from-dialogflow">get the json key file from
-                                                                                                                                             DialogFlow</a>
-                            </ol>
-                        <li><a href="#api-docs-c-client" id="markdown-toc-api-docs-c-client">API Docs C# Client</a>
-                        <li><a href="#intents" id="markdown-toc-intents">Intents</a>
-                        <li><a href="#parameters" id="markdown-toc-parameters">Parameters</a>
-                            <ol>
-                                <li><a href="#presets" id="markdown-toc-presets">Presets</a>
-                            </ol>
-                        <li><a href="#github" id="markdown-toc-github">GitHub</a>
-                            <ol>
-                                <li><a href="#create-repo" id="markdown-toc-create-repo">Create Repo</a>
-                            </ol>
-                        <li><a href="#detect-intent" id="markdown-toc-detect-intent">Detect Intent</a>
-                            <ol>
-                                <li><a href="#detect-intent-request" id="markdown-toc-detect-intent-request">Detect Intent Request</a>
-                                    <ol>
-                                        <li><a href="#trigger-intent" id="markdown-toc-trigger-intent">trigger intent</a>
-                                        <li><a href="#trigger-event" id="markdown-toc-trigger-event">trigger event</a>
-                                        <li><a href="#set-params-and-current-page" id="markdown-toc-set-params-and-current-page">Set params and current page</a>
-                                    </ol>
-                                <li><a href="#detect-intent-response" id="markdown-toc-detect-intent-response">Detect Intent Response</a>
-                            </ol>
-                        <li><a href="#match-intent" id="markdown-toc-match-intent">Match Intent</a>
-                            <ol>
-                                <li><a href="#request-body" id="markdown-toc-request-body">Request Body</a>
-                                <li><a href="#response-body" id="markdown-toc-response-body">Response Body</a>
-                            </ol>
-                        <li><a href="#fulfill-intent" id="markdown-toc-fulfill-intent">Fulfill Intent</a>
-                            <ol>
-                                <li><a href="#request-body-1" id="markdown-toc-request-body-1">Request Body</a>
-                                <li><a href="#response-body-1" id="markdown-toc-response-body-1">Response Body</a>
-                            </ol>
-                        <li><a href="#webhooks" id="markdown-toc-webhooks">Webhooks</a>
-                            <ol>
-                                <li><a href="#request" id="markdown-toc-request">Request</a>
-                                <li><a href="#dialog-flow-simple-request-body" id="markdown-toc-dialog-flow-simple-request-body">dialog flow simple request body</a>
-                                <li><a href="#post-request" id="markdown-toc-post-request">post request</a>
-                                <li><a href="#response-body-2" id="markdown-toc-response-body-2">Response Body</a>
-                                    <ol>
-                                        <li><a href="#custom-webhook-with-rich-text-and-chips" id="markdown-toc-custom-webhook-with-rich-text-and-chips">custom Webhook with rich
-                                                                                                                                                         text and chips</a>
-                                        <li><a href="#--rich-text-custom-buttons" id="markdown-toc---rich-text-custom-buttons">- rich text custom buttons</a>
-                                            <ol>
-                                                <li><a href="#in-the-webhookresponse" id="markdown-toc-in-the-webhookresponse">In the webhookResponse</a>
-                                                    <ol>
-                                                        <li><a
-                                                                href="#here-are-possible-ways-to-continueresume-a-conversation-by-passing-previously-collected-customer-data-from-a-previous-conversation-into-a-new-conversation"
-                                                                id="markdown-toc-here-are-possible-ways-to-continueresume-a-conversation-by-passing-previously-collected-customer-data-from-a-previous-conversation-into-a-new-conversation"
-                                                        >Here are possible ways to continue/resume a conversation by passing previously collected customer data from a previous
-                                                         conversation into a new conversation</a>
-                                                    </ol>
-                                            </ol>
-                                        <li><a href="#custom-web-hooks" id="markdown-toc-custom-web-hooks">Custom Web Hooks</a>
-                                            <ol>
-                                                <li><a href="#resources" id="markdown-toc-resources">Resources</a>
-                                                    <ol>
-                                                        <li><a href="#bot-for-front-end-calls-i-used" id="markdown-toc-bot-for-front-end-calls-i-used">bot for front end calls i
-                                                                                                                                                       used</a>
-                                                        <li><a href="#bot-for-backendfunctioncli-calls-i-used" id="markdown-toc-bot-for-backendfunctioncli-calls-i-used">bot for
-                                                                                                                                                                         backend/function/cli
-                                                                                                                                                                         calls i
-                                                                                                                                                                         used</a>
-                                                        <li><a href="#format-for-detectintent-with-session-id" id="markdown-toc-format-for-detectintent-with-session-id">format for
-                                                                                                                                                                         detectintent
-                                                                                                                                                                         with
-                                                                                                                                                                         session
-                                                                                                                                                                         id</a>
-                                                    </ol>
-                                            </ol>
-                                    </ol>
-                            </ol>
-                        <li><a href="#welcome-intent-default-start-call-intent" id="markdown-toc-welcome-intent-default-start-call-intent">WELCOME intent/ Default start call
-                                                                                                                                           intent</a>
-                            <ol>
-                                <li><a href="#cli" id="markdown-toc-cli">CLI</a>
-                                    <ol>
-                                        <li><a href="#test-in-api-console" id="markdown-toc-test-in-api-console">test in API Console</a>
-                                        <li><a href="#curl-call--with-body-to-trigger-event" id="markdown-toc-curl-call--with-body-to-trigger-event">curl call , with body to
-                                                                                                                                                     trigger event</a>
-                                        <li><a
-                                                href="#curl-call-to-trigger-welcome-event--or-default-start-card"
-                                                id="markdown-toc-curl-call-to-trigger-welcome-event--or-default-start-card"
-                                        >curl, call to trigger “WELCOME” event , or default start card</a>
-                                    </ol>
-                            </ol>
-                        <li><a href="#events" id="markdown-toc-events">Events</a>
-                            <ol>
-                                <li><a href="#eventhandler" id="markdown-toc-eventhandler">EventHandler</a>
-                                <li><a href="#eventinput" id="markdown-toc-eventinput">EventInput</a>
-                            </ol>
-                        <li><a href="#agent-handoff" id="markdown-toc-agent-handoff">Agent Handoff</a>
-                        <li><a href="#agent-responses" id="markdown-toc-agent-responses">Agent Responses</a>
-                            <ol>
-                                <li><a href="#custom-payload" id="markdown-toc-custom-payload">Custom Payload</a>
-                                <li><a href="#dialogflow-cx-doc" id="markdown-toc-dialogflow-cx-doc">DialogFlow CX Doc</a>
-                            </ol>
-                        <li><a href="#testing" id="markdown-toc-testing">Testing</a>
-                            <ol>
-                                <li><a href="#select-all-test-checkboxes-for-environment-settings" id="markdown-toc-select-all-test-checkboxes-for-environment-settings">Select All
-                                                                                                                                                                         Test
-                                                                                                                                                                         checkboxes
-                                                                                                                                                                         for
-                                                                                                                                                                         Environment
-                                                                                                                                                                         settings</a>
-                            </ol>
-                        <li><a href="#postman" id="markdown-toc-postman">PostMan</a>
-                            <ol>
-                                <li><a href="#setup-oauth2-dialogflow-example" id="markdown-toc-setup-oauth2-dialogflow-example">Setup oauth2 DialogFlow example</a>
-                            </ol>
-                        <li><a href="#quick-notesreferences" id="markdown-toc-quick-notesreferences">Quick Notes/References</a>
+        <div class="main" id="top">
+            <div id="main-header" class="main-header">
+                <div class="search" role="search">
+                    <div class="search-input-wrap"><input type="text"
+                                                          id="search-input"
+                                                          class="search-input"
+                                                          tabindex="0"
+                                                          placeholder="Search Paxton's Notes"
+                                                          aria-label="Search Paxton's Notes"
+                                                          autocomplete="off"> <label for="search-input" class="search-label">
+                        <svg viewBox="0 0 24 24" class="search-icon">
+                            <use xlink:href="#svg-search"></use>
+                        </svg>
+                    </label></div>
+                    <div id="search-results" class="search-results"></div>
+                </div>
+                <nav aria-label="Auxiliary" class="aux-nav">
+                    <ul class="aux-nav-list">
+                        <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io"
+                                                         class="site-button"
+                                                         target="_blank"
+                                                         rel="noopener noreferrer"> Template Repository </a>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main-content-wrap">
+                <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+                    <ol class="breadcrumb-nav-list">
+                        <li class="breadcrumb-nav-list-item"><a href="/GoogleNotes/">GoogleNotes</a>
+                        <li class="breadcrumb-nav-list-item"><span>DialogFlow</span>
                     </ol>
-                </details>
-                <p><br/></p>
-                <hr/>
-                <p><br/></p>
-                <h1 id="googledialogflow"><a href="#googledialogflow" class="anchor-heading" aria-labelledby="googledialogflow">
-                    <svg viewBox="0 0 16 16" aria-hidden="true">
-                        <use xlink:href="#svg-link"></use>
-                    </svg>
-                </a> GoogleDialogFlow
-                </h1>
-                <p>repo for GoogleDialogFlow</p>
-                <p>1.</p>
-                <blockquote><p>Identify the roles, both the customers and your virtual agent, as well as all the potential use cases your virtual agent will need to address.
-                               Right<br/> personas, both <br/> for customers and virtual agents, so that conversations will take a natural shape. Model user agent interactions to
-                               help identify user requirements,<br/> handle all <br/> possible expected and don’t forget unexpected user scenarios, that could occur for your
-                               business.</p></blockquote>
-                <p>2.</p>
-                <blockquote><p>In order to understand why the customers reaching out to you, you’ll need to be able to break down the individual parts of the conversation. The<br/>
-                               conversation will <br/> include representative words and phrases, and you can use these to dissect and interpret the customer’s needs and how you
-                               respond. There are three<br/> important parts <br/> to a conversation. Intense, identifying what the customer needs or wants you to do for them.
-                               Entities, identifying a thing the customer is referring<br/> to, and <br/> parameters setting the variable of the thing the customer is referring to
-                               so that you can reference it later in the conversation.</p></blockquote>
-                <h1 id="key-terms"><a href="#key-terms" class="anchor-heading" aria-labelledby="key-terms">
-                    <svg viewBox="0 0 16 16" aria-hidden="true">
-                        <use xlink:href="#svg-link"></use>
-                    </svg>
-                </a> Key Terms
-                </h1>
-                <p><img src="assets/images/Capture.PNG" alt=""/></p>
-                <h1 id="quick-tid-bits"><a href="#quick-tid-bits" class="anchor-heading" aria-labelledby="quick-tid-bits">
-                    <svg viewBox="0 0 16 16" aria-hidden="true">
-                        <use xlink:href="#svg-link"></use>
-                    </svg>
-                </a> QUICK TID BITS
-                </h1>
-                <h2 id="params"><a href="#params" class="anchor-heading" aria-labelledby="params">
-                    <svg viewBox="0 0 16 16" aria-hidden="true">
-                        <use xlink:href="#svg-link"></use>
-                    </svg>
-                </a> params
-                </h2>
-                <div class="language-plaintext highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code> $intent.params.user-input,
+                </nav>
+                <div id="main-content" class="main-content">
+                    <main><p><br/></p>
+                        <details>
+                            <summary class="text-delta"> Table of contents</summary>
+                            <ol id="markdown-toc">
+                                <li><a href="#googledialogflow" id="markdown-toc-googledialogflow">GoogleDialogFlow</a>
+                                <li><a href="#key-terms" id="markdown-toc-key-terms">Key Terms</a>
+                                <li><a href="#quick-tid-bits" id="markdown-toc-quick-tid-bits">QUICK TID BITS</a>
+                                    <ol>
+                                        <li><a href="#params" id="markdown-toc-params">params</a>
+                                        <li><a href="#functions" id="markdown-toc-functions">functions</a>
+                                        <li><a href="#when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there"
+                                               id="markdown-toc-when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there">when using func in parameter value be cognizant of quotation marks, they need to be there</a>
+                                        <li><a href="#get-the-json-key-file-from-dialogflow"
+                                               id="markdown-toc-get-the-json-key-file-from-dialogflow">get the json key file from DialogFlow</a>
+                                    </ol>
+                                <li><a href="#api-docs-c-client" id="markdown-toc-api-docs-c-client">API Docs C# Client</a>
+                                <li><a href="#intents" id="markdown-toc-intents">Intents</a>
+                                <li><a href="#parameters" id="markdown-toc-parameters">Parameters</a>
+                                    <ol>
+                                        <li><a href="#presets" id="markdown-toc-presets">Presets</a>
+                                    </ol>
+                                <li><a href="#github" id="markdown-toc-github">GitHub</a>
+                                    <ol>
+                                        <li><a href="#create-repo" id="markdown-toc-create-repo">Create Repo</a>
+                                    </ol>
+                                <li><a href="#detect-intent" id="markdown-toc-detect-intent">Detect Intent</a>
+                                    <ol>
+                                        <li><a href="#detect-intent-request" id="markdown-toc-detect-intent-request">Detect Intent Request</a>
+                                            <ol>
+                                                <li><a href="#trigger-intent" id="markdown-toc-trigger-intent">trigger intent</a>
+                                                <li><a href="#trigger-event" id="markdown-toc-trigger-event">trigger event</a>
+                                                <li><a href="#set-params-and-current-page" id="markdown-toc-set-params-and-current-page">Set params and current page</a>
+                                            </ol>
+                                        <li><a href="#detect-intent-response" id="markdown-toc-detect-intent-response">Detect Intent Response</a>
+                                    </ol>
+                                <li><a href="#match-intent" id="markdown-toc-match-intent">Match Intent</a>
+                                    <ol>
+                                        <li><a href="#request-body" id="markdown-toc-request-body">Request Body</a>
+                                        <li><a href="#response-body" id="markdown-toc-response-body">Response Body</a>
+                                    </ol>
+                                <li><a href="#fulfill-intent" id="markdown-toc-fulfill-intent">Fulfill Intent</a>
+                                    <ol>
+                                        <li><a href="#request-body-1" id="markdown-toc-request-body-1">Request Body</a>
+                                        <li><a href="#response-body-1" id="markdown-toc-response-body-1">Response Body</a>
+                                    </ol>
+                                <li><a href="#webhooks" id="markdown-toc-webhooks">Webhooks</a>
+                                    <ol>
+                                        <li><a href="#request" id="markdown-toc-request">Request</a>
+                                        <li><a href="#dialog-flow-simple-request-body" id="markdown-toc-dialog-flow-simple-request-body">dialog flow simple request body</a>
+                                        <li><a href="#post-request" id="markdown-toc-post-request">post request</a>
+                                        <li><a href="#response-body-2" id="markdown-toc-response-body-2">Response Body</a>
+                                            <ol>
+                                                <li><a href="#custom-webhook-with-rich-text-and-chips"
+                                                       id="markdown-toc-custom-webhook-with-rich-text-and-chips">custom Webhook with rich text and chips</a>
+                                                <li><a href="#--rich-text-custom-buttons" id="markdown-toc---rich-text-custom-buttons">- rich text custom buttons</a>
+                                                    <ol>
+                                                        <li><a href="#in-the-webhookresponse" id="markdown-toc-in-the-webhookresponse">In the webhookResponse</a>
+                                                            <ol>
+                                                                <li>
+                                                                    <a href="#here-are-possible-ways-to-continueresume-a-conversation-by-passing-previously-collected-customer-data-from-a-previous-conversation-into-a-new-conversation"
+                                                                       id="markdown-toc-here-are-possible-ways-to-continueresume-a-conversation-by-passing-previously-collected-customer-data-from-a-previous-conversation-into-a-new-conversation">Here are possible ways to continue/resume a conversation by passing previously collected customer data from a previous conversation into a new conversation</a>
+                                                            </ol>
+                                                    </ol>
+                                                <li><a href="#custom-web-hooks" id="markdown-toc-custom-web-hooks">Custom Web Hooks</a>
+                                                    <ol>
+                                                        <li><a href="#resources" id="markdown-toc-resources">Resources</a>
+                                                            <ol>
+                                                                <li><a href="#bot-for-front-end-calls-i-used"
+                                                                       id="markdown-toc-bot-for-front-end-calls-i-used">bot for front end calls i used</a>
+                                                                <li><a href="#bot-for-backendfunctioncli-calls-i-used"
+                                                                       id="markdown-toc-bot-for-backendfunctioncli-calls-i-used">bot for backend/function/cli calls i used</a>
+                                                                <li><a href="#format-for-detectintent-with-session-id"
+                                                                       id="markdown-toc-format-for-detectintent-with-session-id">format for detectintent with session id</a>
+                                                            </ol>
+                                                    </ol>
+                                            </ol>
+                                    </ol>
+                                <li><a href="#welcome-intent-default-start-call-intent"
+                                       id="markdown-toc-welcome-intent-default-start-call-intent">WELCOME intent/ Default start call intent</a>
+                                    <ol>
+                                        <li><a href="#cli" id="markdown-toc-cli">CLI</a>
+                                            <ol>
+                                                <li><a href="#test-in-api-console" id="markdown-toc-test-in-api-console">test in API Console</a>
+                                                <li><a href="#curl-call--with-body-to-trigger-event"
+                                                       id="markdown-toc-curl-call--with-body-to-trigger-event">curl call , with body to trigger event</a>
+                                                <li><a href="#curl-call-to-trigger-welcome-event--or-default-start-card"
+                                                       id="markdown-toc-curl-call-to-trigger-welcome-event--or-default-start-card">curl, call to trigger “WELCOME” event , or default start card</a>
+                                            </ol>
+                                    </ol>
+                                <li><a href="#events" id="markdown-toc-events">Events</a>
+                                    <ol>
+                                        <li><a href="#eventhandler" id="markdown-toc-eventhandler">EventHandler</a>
+                                        <li><a href="#eventinput" id="markdown-toc-eventinput">EventInput</a>
+                                    </ol>
+                                <li><a href="#agent-handoff" id="markdown-toc-agent-handoff">Agent Handoff</a>
+                                <li><a href="#agent-responses" id="markdown-toc-agent-responses">Agent Responses</a>
+                                    <ol>
+                                        <li><a href="#custom-payload" id="markdown-toc-custom-payload">Custom Payload</a>
+                                        <li><a href="#dialogflow-cx-doc" id="markdown-toc-dialogflow-cx-doc">DialogFlow CX Doc</a>
+                                    </ol>
+                                <li><a href="#testing" id="markdown-toc-testing">Testing</a>
+                                    <ol>
+                                        <li><a href="#select-all-test-checkboxes-for-environment-settings"
+                                               id="markdown-toc-select-all-test-checkboxes-for-environment-settings">Select All Test checkboxes for Environment settings</a>
+                                    </ol>
+                                <li><a href="#postman" id="markdown-toc-postman">PostMan</a>
+                                    <ol>
+                                        <li><a href="#setup-oauth2-dialogflow-example" id="markdown-toc-setup-oauth2-dialogflow-example">Setup oauth2 DialogFlow example</a>
+                                    </ol>
+                                <li><a href="#quick-notesreferences" id="markdown-toc-quick-notesreferences">Quick Notes/References</a>
+                            </ol>
+                        </details>
+                        <p><br/></p>
+                        <hr/>
+                        <p><br/></p>
+                        <h1 id="googledialogflow"><a href="#googledialogflow" class="anchor-heading" aria-labelledby="googledialogflow">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> GoogleDialogFlow
+                        </h1>
+                        <p>repo for GoogleDialogFlow</p><p>1.</p>
+                        <blockquote>
+                            <p>Identify the roles, both the customers and your virtual agent, as well as all the potential use cases your virtual agent will need to address. Right<br/> personas, both
+                                <br/> for customers and virtual agents, so that conversations will take a natural shape. Model user agent interactions to help identify user requirements,<br/> handle all
+                                <br/> possible expected and don’t forget unexpected user scenarios, that could occur for your business.</p></blockquote>
+                        <p>2.</p>
+                        <blockquote>
+                            <p>In order to understand why the customers reaching out to you, you’ll need to be able to break down the individual parts of the conversation. The<br/> conversation will
+                                <br/> include representative words and phrases, and you can use these to dissect and interpret the customer’s needs and how you respond. There are three<br/> important parts
+                                <br/> to a conversation. Intense, identifying what the customer needs or wants you to do for them. Entities, identifying a thing the customer is referring<br/> to, and
+                                <br/> parameters setting the variable of the thing the customer is referring to so that you can reference it later in the conversation.</p>
+                        </blockquote>
+                        <h1 id="key-terms"><a href="#key-terms" class="anchor-heading" aria-labelledby="key-terms">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> Key Terms
+                        </h1>
+                        <p><img src="assets/images/Capture.PNG" alt=""/></p>
+                        <h1 id="quick-tid-bits"><a href="#quick-tid-bits" class="anchor-heading" aria-labelledby="quick-tid-bits">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> QUICK TID BITS
+                        </h1>
+                        <h2 id="params"><a href="#params" class="anchor-heading" aria-labelledby="params">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> params
+                        </h2>
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight"><pre class="highlight"><code> $intent.params.user-input,
  $session.params.user-input,
  $page.params.valid-input,
 </code></pre>
-                    </div>
-                </div>
-                <div class="language-plaintext highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code>  $page.params.status = "FINAL"
+                            </div>
+                        </div>
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight"><pre class="highlight"><code>  $page.params.status = "FINAL"
  $page.params.parameter-id.status = "UPDATED"
 </code></pre>
-                    </div>
-                </div>
-                <h2 id="functions"><a href="#functions" class="anchor-heading" aria-labelledby="functions">
-                    <svg viewBox="0 0 16 16" aria-hidden="true">
-                        <use xlink:href="#svg-link"></use>
-                    </svg>
-                </a> <a href="https://cloud.google.com/dialogflow/cx/docs/reference/system-functions#func-append">functions</a></h2>
-                <div class="language-plaintext highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code> $sys.func.CONCATENATE($session.params.user-authentication-map-key, $session.params.user-input)
+                            </div>
+                        </div>
+                        <h2 id="functions"><a href="#functions" class="anchor-heading" aria-labelledby="functions">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> <a href="https://cloud.google.com/dialogflow/cx/docs/reference/system-functions#func-append">functions</a></h2>
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight"><pre class="highlight"><code> $sys.func.CONCATENATE($session.params.user-authentication-map-key, $session.params.user-input)
  $sys.func.JOIN(", ", $session.params.user-authentication-map)
  $sys.func.TO_TEXT($session.params.user-authentication-map)
  $sys.func.SUBSTITUTE("$sys.func.TO_TEXT($session.params.user-authentication-map)" , " { ", "PP")
  "$sys.func.ADD($session.params.verify-member-attempt, 1)"
 </code></pre>
-                    </div>
-                </div>
-                <div class="language-plaintext highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code>($sys.func.GET_FIELD($session.params, phone-number) != null
+                            </div>
+                        </div>
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight"><pre class="highlight"><code>($sys.func.GET_FIELD($session.params, phone-number) != null
     OR $sys.func.GET_FIELD($session.params, last-4-ssn) != null)
     AND $session.params.member-verified != true
     AND $sys.func.GET_FIELD($session.params, security-code) = null
 </code></pre>
-                    </div>
-                </div>
-                <p><code class="language-plaintext highlighter-rouge">$sys.func.ADD( $sys.func.TO_NUMBER( $session.params.total-questions-resolved) , $sys.func.TO_NUMBER(
-                                                                      $session.params.resolved))"</code></p>
-                <h2 id="when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there"><a
-                        href="#when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there"
-                        class="anchor-heading"
-                        aria-labelledby="when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there"
-                >
-                    <svg viewBox="0 0 16 16" aria-hidden="true">
-                        <use xlink:href="#svg-link"></use>
-                    </svg>
-                </a> when using func in parameter value be cognizant of quotation marks, they need to be there
-                </h2>
-                <div class="language-plaintext highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code>$sys.func.IF("$session.params.account-found = null OR $session.params.account-found = false" , null , true)
+                            </div>
+                        </div>
+                        <p>
+                            <code class="language-plaintext highlighter-rouge">$sys.func.ADD( $sys.func.TO_NUMBER( $session.params.total-questions-resolved) , $sys.func.TO_NUMBER( $session.params.resolved))"</code>
+                        </p>
+                        <h2 id="when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there">
+                            <a href="#when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there"
+                               class="anchor-heading"
+                               aria-labelledby="when-using-func-in-parameter-value-be-cognizant-of-quotation-marks-they-need-to-be-there">
+                                <svg viewBox="0 0 16 16" aria-hidden="true">
+                                    <use xlink:href="#svg-link"></use>
+                                </svg>
+                            </a> when using func in parameter value be cognizant of quotation marks, they need to be there
+                        </h2>
+                        <div class="language-plaintext highlighter-rouge">
+                            <div class="highlight"><pre class="highlight"><code>$sys.func.IF("$session.params.account-found = null OR $session.params.account-found = false" , null , true)
 $sys.func.IF("($session.params.current-flow = null AND $session.params.current-route = null)" , null, {name : $session.params.current-flow , route : $session.params.current-route} )
 $sys.func.IF("$session.params.current-flow = null" , null , "{name : $session.params.current-flow , route : $session.params.current-route}")
 {name : $sys.func.TO_TEXT($session.params.current-flow) , route : $sys.func.TO_TEXT($session.params.current-route)}

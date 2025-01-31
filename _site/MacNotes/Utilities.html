@@ -1,751 +1,738 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <link rel="stylesheet" href="/assets/css/just-the-docs-default.css">
-    <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
-    <style id="jtd-nav-activation"> .site-nav > ul.nav-list:first-child > li > a, .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(7)) > a, .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
-        background-image: none;
-    }
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <link rel="stylesheet" href="/assets/css/just-the-docs-default.css">
+        <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+        <style id="jtd-nav-activation"> .site-nav > ul.nav-list:first-child > li > a, .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(7)) > a, .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+            background-image: none;
+        }
 
-    .site-nav > ul.nav-list:not(:first-child) a, .site-nav li.external a {
-        background-image: none;
-    }
+        .site-nav > ul.nav-list:not(:first-child) a, .site-nav li.external a {
+            background-image: none;
+        }
 
-    .site-nav > ul.nav-list:first-child > li:nth-child(16) > ul > li:nth-child(7) > a {
-        font-weight: 600;
-        text-decoration: none;
-    }
+        .site-nav > ul.nav-list:first-child > li:nth-child(17) > ul > li:nth-child(7) > a {
+            font-weight: 600;
+            text-decoration: none;
+        }
 
-    .site-nav > ul.nav-list:first-child > li:nth-child(16) > button svg, .site-nav > ul.nav-list:first-child > li:nth-child(16) > ul > li:nth-child(7) > button svg {
-        transform: rotate(-90deg);
-    }
+        .site-nav > ul.nav-list:first-child > li:nth-child(17) > button svg, .site-nav > ul.nav-list:first-child > li:nth-child(17) > ul > li:nth-child(7) > button svg {
+            transform: rotate(-90deg);
+        }
 
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(16) > ul.nav-list, .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(16) > ul.nav-list > li.nav-list-item:nth-child(7) > ul.nav-list {
-        display: block;
-    }</style>
-    <script src="/assets/js/vendor/lunr.min.js"></script>
-    <script src="/assets/js/just-the-docs.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Utilities | Paxton’s Notes</title>
-    <meta name="generator" content="Jekyll v4.4.0"/>
-    <meta property="og:title" content="Utilities"/>
-    <meta property="og:locale" content="en_US"/>
-    <meta name="description" content="Coding Notes"/>
-    <meta property="og:description" content="Coding Notes"/>
-    <link rel="canonical" href="http://localhost:4000/MacNotes/Utilities"/>
-    <meta property="og:url" content="http://localhost:4000/MacNotes/Utilities"/>
-    <meta property="og:site_name" content="Paxton’s Notes"/>
-    <meta property="og:type" content="website"/>
-    <meta name="twitter:card" content="summary"/>
-    <meta property="twitter:title" content="Utilities"/>
-    <script type="application/ld+json">
-         {"@context":"https://schema.org","@type":"WebPage","description":"Coding Notes","headline":"Utilities","url":"http://localhost:4000/MacNotes/Utilities"}
-    </script>
-<body><a class="skip-to-main" href="#main-content">Skip to main content</a>
-<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-    <symbol id="svg-link" viewBox="0 0 24 24"><title>Link</title>
-        <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-link"
-        >
-            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-    </symbol>
-    <symbol id="svg-menu" viewBox="0 0 24 24"><title>Menu</title>
-        <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-menu"
-        >
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-    </symbol>
-    <symbol id="svg-arrow-right" viewBox="0 0 24 24"><title>Expand</title>
-        <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-chevron-right"
-        >
-            <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
-    </symbol>
-    <symbol
-            id="svg-external-link"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-external-link"
-    ><title id="svg-external-link-title">(external link)</title>
-        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-        <polyline points="15 3 21 3 21 9"></polyline>
-        <line x1="10" y1="14" x2="21" y2="3"></line>
-    </symbol>
-    <symbol id="svg-doc" viewBox="0 0 24 24"><title>Document</title>
-        <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-file"
-        >
-            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-            <polyline points="13 2 13 9 20 9"></polyline>
-        </svg>
-    </symbol>
-    <symbol id="svg-search" viewBox="0 0 24 24"><title>Search</title>
-        <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-search"
-        >
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-    </symbol>
-    <symbol id="svg-copy" viewBox="0 0 16 16"><title>Copy</title>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
-            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
-            <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
-        </svg>
-    </symbol>
-    <symbol id="svg-copied" viewBox="0 0 16 16"><title>Copied</title>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
-            <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
-            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
-        </svg>
-    </symbol>
-</svg>
-<div class="side-bar">
-    <div class="site-header" role="banner"><a href="/" class="site-title lh-tight"> Paxton's Notes </a>
-        <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
-            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
-                <use xlink:href="#svg-menu"></use>
-            </svg>
-        </button>
-    </div>
-    <nav aria-label="Main" id="site-nav" class="site-nav">
-        <ul class="nav-list">
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in MyPersonalDocsAndStuff category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/index" class="nav-list-link">MyPersonalDocsAndStuff</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/GitHubPages/AppsForWorkflow" class="nav-list-link">AppsForWorkflow</a>
-                    <li class="nav-list-item"><a href="/GitHubPages/CloudServices" class="nav-list-link">CloudServices</a>
-                    <li class="nav-list-item"><a href="/GitHubPages/LetterOfRecommendation" class="nav-list-link">LetterOfRecommendation</a>
-                    <li class="nav-list-item"><a href="/GitHubPages/PastProjects" class="nav-list-link">PastProjects</a>
-                    <li class="nav-list-item"><a href="/GitHubPages/PriorityLearning" class="nav-list-link">PriorityLearning</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in AWS category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/AWS/" class="nav-list-link">AWS</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/AWS/CLI" class="nav-list-link">CLI</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in Build category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/Build/" class="nav-list-link">Build</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Build/Gradle" class="nav-list-link">Gradle</a>
-                    <li class="nav-list-item"><a href="/Build/Maven" class="nav-list-link">Maven</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in DockerNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/DockerNotes/" class="nav-list-link">DockerNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/DockerNotes/ARM64" class="nav-list-link">ARM64</a>
-                    <li class="nav-list-item"><a href="/DockerNotes/Basics" class="nav-list-link">Basics</a>
-                    <li class="nav-list-item"><a href="/DockerNotes/Dockerfile" class="nav-list-link">Dockerfile</a>
-                    <li class="nav-list-item"><a href="/DockerNotes/Install" class="nav-list-link">Install</a>
-                    <li class="nav-list-item"><a href="/DockerNotes/Quick-TidBits" class="nav-list-link">Quick-TidBits</a>
-                    <li class="nav-list-item"><a href="/DockerNotes/UsefulCommands" class="nav-list-link">UsefulCommands</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in DotNetNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/DotNetNotes/" class="nav-list-link">DotNetNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/DotNetNotes/CLI" class="nav-list-link">CLI</a>
-                    <li class="nav-list-item">
-                        <button class="nav-list-expander btn-reset" aria-label="toggle items in CSharp category" aria-pressed="false">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <use xlink:href="#svg-arrow-right"></use>
-                            </svg>
-                        </button>
-                        <a href="/DotNetNotes/Csharp" class="nav-list-link">CSharp</a>
-                        <ul class="nav-list">
-                            <li class="nav-list-item"><a href="/DotNetNotes/CSharp/Email" class="nav-list-link">Email</a>
-                            <li class="nav-list-item"><a href="/DotNetNotes/CSharp/Threading" class="nav-list-link">Threading</a>
-                        </ul>
-                    <li class="nav-list-item"><a href="/DotNetNotes/Controllers" class="nav-list-link">Controllers</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/Database" class="nav-list-link">Database</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/EntityFramework" class="nav-list-link">EntityFramework</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/Environment" class="nav-list-link">Environment</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/Google" class="nav-list-link">Google</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/HTTP" class="nav-list-link">HTTP</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/HttpRepl" class="nav-list-link">HttpRepl</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/LINQ" class="nav-list-link">LINQ</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/Maui" class="nav-list-link">Maui</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/Microservice" class="nav-list-link">Microservice.md</a>
-                    <li class="nav-list-item"><a href="/DotNetNotes/VisualStudio" class="nav-list-link">VisualStudio</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in Git category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/Git" class="nav-list-link">Git</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item">
-                        <button class="nav-list-expander btn-reset" aria-label="toggle items in GitHub category" aria-pressed="false">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <use xlink:href="#svg-arrow-right"></use>
-                            </svg>
-                        </button>
-                        <a href="/Git/GitHub" class="nav-list-link">GitHub</a>
-                        <ul class="nav-list">
-                            <li class="nav-list-item"><a href="/GitHub/GitHubPages" class="nav-list-link">GitHubPages</a>
-                            <li class="nav-list-item"><a href="/GitHub/Jekyll" class="nav-list-link">Jekyll</a>
-                            <li class="nav-list-item"><a href="/GitHub/MarkDown" class="nav-list-link">MarkDown</a>
-                        </ul>
-                    <li class="nav-list-item"><a href="/Git/QuickScripts" class="nav-list-link">QuickScripts</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in GoogleNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/GoogleNotes/" class="nav-list-link">GoogleNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/GoogleNotes/APIs" class="nav-list-link">APIs</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/Browser" class="nav-list-link">Browser</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/Cloud" class="nav-list-link">Cloud</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/ComputeEngine" class="nav-list-link">ComputeEngine</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/Deploy" class="nav-list-link">Deploy</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/DevTools" class="nav-list-link">DevTools</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/DialogFlow" class="nav-list-link">DialogFlow</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/Functions" class="nav-list-link">Functions</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/Logging" class="nav-list-link">Logging</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/ServiceAccounts" class="nav-list-link">ServiceAccounts</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/Storage" class="nav-list-link">Storage</a>
-                    <li class="nav-list-item"><a href="/GoogleNotes/VoiceAgent" class="nav-list-link">VoiceAgent</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in GroovyNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/GroovyNotes/" class="nav-list-link">GroovyNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/GroovyNotes/Array-Loop-List-Map" class="nav-list-link">Array-Loop-List-Map</a>
-                    <li class="nav-list-item"><a href="/GroovyNotes/Async_Parallel-Concurrency" class="nav-list-link">Async_Parallel-Concurrency</a>
-                    <li class="nav-list-item"><a href="/GroovyNotes/Clever-Tid-bits" class="nav-list-link">Clever-Tid-bits</a>
-                    <li class="nav-list-item"><a href="/GroovyNotes/DateAndTime" class="nav-list-link">DateAndTime</a>
-                    <li class="nav-list-item"><a href="/GroovyNotes/Enum" class="nav-list-link">Enum</a>
-                    <li class="nav-list-item"><a href="/GroovyNotes/MetaProgramming" class="nav-list-link">MetaProgramming</a>
-                    <li class="nav-list-item"><a href="/GroovyNotes/RegEx" class="nav-list-link">RegEx</a>
-                    <li class="nav-list-item"><a href="/GroovyNotes/String" class="nav-list-link">String</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in HTML&CSS category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/HTML&CSS/" class="nav-list-link">HTML&CSS</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/HTML&CSS/CSS" class="nav-list-link">CSS</a>
-                    <li class="nav-list-item"><a href="/HTML&CSS/HTML" class="nav-list-link">HTML</a>
-                    <li class="nav-list-item"><a href="/HTML&CSS/Images" class="nav-list-link">Images</a>
-                </ul>
-            <li class="nav-list-item"><a href="/HTTP" class="nav-list-link">HTTP</a>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in IntelliJNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/IntelliJNotes/" class="nav-list-link">IntelliJNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/IntelliJNotes/CustomVM" class="nav-list-link">CustomVM</a>
-                    <li class="nav-list-item"><a href="/IntelliJNotes/DebuggerConfig" class="nav-list-link">DebuggerConfig</a>
-                    <li class="nav-list-item"><a href="/IntelliJNotes/HTTPExamples" class="nav-list-link">HTTPExamples</a>
-                    <li class="nav-list-item"><a href="/IntelliJNotes/Spaces" class="nav-list-link">Spaces</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in Java category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/JavaNotes/Java" class="nav-list-link">Java</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/JavaNotes/Algorithms" class="nav-list-link">Algorithms</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/Annotations" class="nav-list-link">Annotations</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/CommandLineDiddys" class="nav-list-link">CommandLineDiddys</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/DataBase" class="nav-list-link">DataBase</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/Email" class="nav-list-link">Email</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/File" class="nav-list-link">File</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/GCP" class="nav-list-link">GCP</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/Hibernate" class="nav-list-link">Hibernate</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/LooseNotes" class="nav-list-link">LooseNotes</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/OOP" class="nav-list-link">OOP</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/String" class="nav-list-link">String</a>
-                    <li class="nav-list-item"><a href="/JavaNotes/Threads" class="nav-list-link">Threads</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in JavaScript category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
-                    <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
-                    <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
-                    <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
-                    <li class="nav-list-item"><a href="/JavaScript/DateAndTime" class="nav-list-link">DateAndTime</a>
-                    <li class="nav-list-item"><a href="/JavaScript/Document" class="nav-list-link">Document</a>
-                    <li class="nav-list-item"><a href="/JavaScript/Elements" class="nav-list-link">Elements</a>
-                    <li class="nav-list-item"><a href="/JavaScript/Events" class="nav-list-link">Events</a>
-                    <li class="nav-list-item"><a href="/JavaScript/FormStuff" class="nav-list-link">FormStuff</a>
-                    <li class="nav-list-item"><a href="/JavaScript/FunctionObject" class="nav-list-link">FunctionObject</a>
-                    <li class="nav-list-item"><a href="/JavaScript/HTTP" class="nav-list-link">HTTP</a>
-                    <li class="nav-list-item"><a href="/JavaScript/Map" class="nav-list-link">Map</a>
-                    <li class="nav-list-item"><a href="/JavaScript/Modules" class="nav-list-link">Modules</a>
-                    <li class="nav-list-item">
-                        <button class="nav-list-expander btn-reset" aria-label="toggle items in Node category" aria-pressed="false">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <use xlink:href="#svg-arrow-right"></use>
-                            </svg>
-                        </button>
-                        <a href="/JavaScript/Node/" class="nav-list-link">Node</a>
-                        <ul class="nav-list">
-                            <li class="nav-list-item"><a href="/JavaScript/Node/QuickScripts" class="nav-list-link">QuickScripts</a>
-                        </ul>
-                    <li class="nav-list-item"><a href="/JavaScript/Number" class="nav-list-link">Number</a>
-                    <li class="nav-list-item"><a href="/JavaScript/Object" class="nav-list-link">Object</a>
-                    <li class="nav-list-item"><a href="/JavaScript/QuerySelector" class="nav-list-link">QuerySelector</a>
-                    <li class="nav-list-item">
-                        <button class="nav-list-expander btn-reset" aria-label="toggle items in ReactNotes category" aria-pressed="false">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <use xlink:href="#svg-arrow-right"></use>
-                            </svg>
-                        </button>
-                        <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
-                        <ul class="nav-list">
-                            <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
-                            <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
-                            <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
-                            <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
-                            <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
-                            <li class="nav-list-item"><a href="/ReactNotes/Mat-Table" class="nav-list-link">Mat-Table</a>
-                            <li class="nav-list-item"><a href="/ReactNotes/React-Router" class="nav-list-link">React-Router</a>
-                            <li class="nav-list-item"><a href="/ReactNotes/ReactHookForm" class="nav-list-link">ReactHookForm</a>
-                            <li class="nav-list-item"><a href="/ReactNotes/String" class="nav-list-link">String</a>
-                            <li class="nav-list-item"><a href="/ReactNotes/WebWorker" class="nav-list-link">WebWorker</a>
-                        </ul>
-                    <li class="nav-list-item"><a href="/JavaScript/RegEx" class="nav-list-link">RegEx</a>
-                    <li class="nav-list-item"><a href="/JavaScript/State" class="nav-list-link">State</a>
-                    <li class="nav-list-item">
-                        <button class="nav-list-expander btn-reset" aria-label="toggle items in TypeScript category" aria-pressed="false">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <use xlink:href="#svg-arrow-right"></use>
-                            </svg>
-                        </button>
-                        <a href="/JavaScript/TypeScript/" class="nav-list-link">TypeScript</a>
-                        <ul class="nav-list">
-                            <li class="nav-list-item"><a href="/JavaScript/TypeScript/Events" class="nav-list-link">Events</a>
-                            <li class="nav-list-item"><a href="/JavaScript/TypeScript/QuickScripts" class="nav-list-link">QuickScripts</a>
-                            <li class="nav-list-item"><a href="/JavaScript/TypeScript/Types" class="nav-list-link">Types</a>
-                        </ul>
-                    <li class="nav-list-item"><a href="/JavaScript/UsefulSnippets" class="nav-list-link">UsefulSnippets</a>
-                    <li class="nav-list-item"><a href="/JavaScript/WebAPI" class="nav-list-link">WebAPI</a>
-                    <li class="nav-list-item"><a href="/JavaScript/Window" class="nav-list-link">Window</a>
-                    <li class="nav-list-item"><a href="/JavaScript/WorkingWithFiles" class="nav-list-link">WorkingWithFiles</a>
-                </ul>
-            <li class="nav-list-item"><a href="/Kubernetes" class="nav-list-link">Kubernetes</a>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in Linux category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/Linux/" class="nav-list-link">Linux</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Linux/ADMIN-ROOT" class="nav-list-link">ADMIN-ROOT</a>
-                    <li class="nav-list-item"><a href="/Linux/Conditionals" class="nav-list-link">Conditionals</a>
-                    <li class="nav-list-item"><a href="/Linux/Email" class="nav-list-link">Email</a>
-                    <li class="nav-list-item"><a href="/Linux/Encoding" class="nav-list-link">Encoding</a>
-                    <li class="nav-list-item"><a href="/Linux/JQ" class="nav-list-link">JQ</a>
-                    <li class="nav-list-item"><a href="/Linux/MySQL" class="nav-list-link">MySQL</a>
-                    <li class="nav-list-item"><a href="/Linux/PGP" class="nav-list-link">PGP</a>
-                    <li class="nav-list-item"><a href="/Linux/QuickScripts" class="nav-list-link">QuickScripts</a>
-                    <li class="nav-list-item"><a href="/Linux/SDKMan" class="nav-list-link">SDKMan</a>
-                    <li class="nav-list-item"><a href="/Linux/Scripting" class="nav-list-link">Scripting</a>
-                    <li class="nav-list-item"><a href="/Linux/VIM_QuickTips" class="nav-list-link">VIM_QuickTips</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in MacNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/MacNotes/" class="nav-list-link">MacNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/MacNotes/AppleScripts" class="nav-list-link">AppleScripts</a>
-                    <li class="nav-list-item"><a href="/MacNotes/HomeBrew" class="nav-list-link">HomeBrew</a>
-                    <li class="nav-list-item"><a href="/MacNotes/JavaOnMac" class="nav-list-link">JavaOnMac</a>
-                    <li class="nav-list-item"><a href="/MacNotes/QuickScripts" class="nav-list-link">QuickScripts</a>
-                    <li class="nav-list-item"><a href="/MacNotes/ShortCuts" class="nav-list-link">ShortCuts</a>
-                    <li class="nav-list-item"><a href="/MacNotes/UsersAndGroups" class="nav-list-link">UsersAndGroups</a>
-                    <li class="nav-list-item"><a href="/MacNotes/Utilities" class="nav-list-link">Utilities</a>
-                    <li class="nav-list-item"><a href="/MacNotes/ZSH" class="nav-list-link">ZSH</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in Micronotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
-                    <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
-                    <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
-                    <li class="nav-list-item"><a href="/Micronotes/DataBaseStuff" class="nav-list-link">DataBaseStuff</a>
-                    <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
-                    <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
-                    <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
-                    <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
-                    <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
-                    <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
-                    <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
-                    <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
-                    <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
-                    <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
-                </ul>
-            <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in PersonalGrailsNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/PersonalGrailsNotes/" class="nav-list-link">PersonalGrailsNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/AccessHibernateAndDataStoreAndSession" class="nav-list-link">AccessHibernateAndDataStoreAndSession</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/CLI_Gradlew" class="nav-list-link">CLI_Gradlew</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/CLI_Grailsw" class="nav-list-link">CLI_Grailsw</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/CleverSnippets" class="nav-list-link">CleverSnippets</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/Config" class="nav-list-link">Config</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/Controller" class="nav-list-link">Controller</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/DataServices" class="nav-list-link">DataServices</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/Domain_Stuff" class="nav-list-link">Domain_Stuff</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/Enviroment" class="nav-list-link">Enviroment</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/GORM_WhereQueris" class="nav-list-link">GORM_WhereQueris</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/HQLComplexQueries" class="nav-list-link">HQLComplexQueries</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/HQLQueries" class="nav-list-link">HQLQueries</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/RunningApp" class="nav-list-link">RunningApp</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/Security" class="nav-list-link">Security</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/Services" class="nav-list-link">Services</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/Testing" class="nav-list-link">Testing</a>
-                    <li class="nav-list-item"><a href="/PersonalGrailsNotes/Text_Manipulation" class="nav-list-link">Text_Manipulation</a>
-                </ul>
-            <li class="nav-list-item"><a href="/RandomNuggetsOfKnowledge" class="nav-list-link">RandomNuggetsOfKnowledge</a>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in SQLNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/SQLNotes/" class="nav-list-link">SQLNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/SQLNotes/Docker" class="nav-list-link">Docker</a>
-                    <li class="nav-list-item"><a href="/SQLNotes/Functions" class="nav-list-link">Functions</a>
-                    <li class="nav-list-item"><a href="/SQLNotes/HQL" class="nav-list-link">HQL</a>
-                    <li class="nav-list-item"><a href="/SQLNotes/Liquibase" class="nav-list-link">Liquibase</a>
-                    <li class="nav-list-item"><a href="/SQLNotes/Queries" class="nav-list-link">Queries</a>
-                    <li class="nav-list-item"><a href="/SQLNotes/SQLCheatSheet" class="nav-list-link">SQLCheatSheet</a>
-                    <li class="nav-list-item"><a href="/SQLNotes/TerminalCommands" class="nav-list-link">Terminal-Commands</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in SpringNotes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/SpringNotes/" class="nav-list-link">SpringNotes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/SpringNotes/Annotations" class="nav-list-link">Annotations</a>
-                    <li class="nav-list-item"><a href="/SpringNotes/Hibernate" class="nav-list-link">Hibernate</a>
-                    <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
-                    <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
-                    <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
-                    <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
-                    <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
-                    <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
-                    <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
-                </ul>
-            <li class="nav-list-item"><a href="/SystemDesign&Architecture/" class="nav-list-link">SystemDesign&Architecture</a>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in TestingFrameworks category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/TestingFrameworks/" class="nav-list-link">TestingFrameworks</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
-                    <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
-                    <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
-                    <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
-                </ul>
-            <li class="nav-list-item">
-                <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use xlink:href="#svg-arrow-right"></use>
-                    </svg>
-                </button>
-                <a href="/Windows_Notes/" class="nav-list-link">Windows_Notes</a>
-                <ul class="nav-list">
-                    <li class="nav-list-item"><a href="/Windows_Notes/CMD" class="nav-list-link">CMD</a>
-                    <li class="nav-list-item"><a href="/Windows_Notes/Environment" class="nav-list-link">Environment</a>
-                    <li class="nav-list-item"><a href="/Windows_Notes/PackageManagers" class="nav-list-link">PackageManagers</a>
-                    <li class="nav-list-item"><a href="/Windows_Notes/Powershell" class="nav-list-link">Powershell</a>
-                    <li class="nav-list-item"><a href="/Windows_Notes/Run" class="nav-list-link">Run</a>
-                    <li class="nav-list-item"><a href="/Windows_Notes/Shortcuts" class="nav-list-link">Shortcuts</a>
-                    <li class="nav-list-item"><a href="/Windows_Notes/Terminal" class="nav-list-link">Terminal</a>
-                    <li class="nav-list-item"><a href="/Windows_Notes/WSL" class="nav-list-link">WSL</a>
-                    <li class="nav-list-item"><a href="/Windows_Notes/WindowsServer" class="nav-list-link">WindowsServer</a>
-                </ul>
-        </ul>
-    </nav>
-    <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
-</div>
-<div class="main" id="top">
-    <div id="main-header" class="main-header">
-        <div class="search" role="search">
-            <div class="search-input-wrap"><input
-                    type="text"
-                    id="search-input"
-                    class="search-input"
-                    tabindex="0"
-                    placeholder="Search Paxton's Notes"
-                    aria-label="Search Paxton's Notes"
-                    autocomplete="off"
-            > <label for="search-input" class="search-label">
-                <svg viewBox="0 0 24 24" class="search-icon">
-                    <use xlink:href="#svg-search"></use>
+        .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(17) > ul.nav-list, .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(17) > ul.nav-list > li.nav-list-item:nth-child(7) > ul.nav-list {
+            display: block;
+        }</style>
+        <script src="/assets/js/vendor/lunr.min.js"></script>
+        <script src="/assets/js/just-the-docs.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Utilities | Paxton’s Notes</title>
+        <meta name="generator" content="Jekyll v4.4.0"/>
+        <meta property="og:title" content="Utilities"/>
+        <meta property="og:locale" content="en_US"/>
+        <meta name="description" content="Coding Notes"/>
+        <meta property="og:description" content="Coding Notes"/>
+        <link rel="canonical" href="http://localhost:4000/MacNotes/Utilities"/>
+        <meta property="og:url" content="http://localhost:4000/MacNotes/Utilities"/>
+        <meta property="og:site_name" content="Paxton’s Notes"/>
+        <meta property="og:type" content="website"/>
+        <meta name="twitter:card" content="summary"/>
+        <meta property="twitter:title" content="Utilities"/>
+        <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","description":"Coding Notes","headline":"Utilities","url":"http://localhost:4000/MacNotes/Utilities"}</script>
+    <body><a class="skip-to-main" href="#main-content">Skip to main content</a>
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+            <symbol id="svg-link" viewBox="0 0 24 24"><title>Link</title>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     class="feather feather-link">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
                 </svg>
-            </label></div>
-            <div id="search-results" class="search-results"></div>
+            </symbol>
+            <symbol id="svg-menu" viewBox="0 0 24 24"><title>Menu</title>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     class="feather feather-menu">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </symbol>
+            <symbol id="svg-arrow-right" viewBox="0 0 24 24"><title>Expand</title>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     class="feather feather-chevron-right">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </symbol>
+            <symbol id="svg-external-link"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title>
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+            </symbol>
+            <symbol id="svg-doc" viewBox="0 0 24 24"><title>Document</title>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     class="feather feather-file">
+                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                    <polyline points="13 2 13 9 20 9"></polyline>
+                </svg>
+            </symbol>
+            <symbol id="svg-search" viewBox="0 0 24 24"><title>Search</title>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     class="feather feather-search">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </symbol>
+            <symbol id="svg-copy" viewBox="0 0 16 16"><title>Copy</title>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                </svg>
+            </symbol>
+            <symbol id="svg-copied" viewBox="0 0 16 16"><title>Copied</title>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+                    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+                </svg>
+            </symbol>
+        </svg>
+        <div class="side-bar">
+            <div class="site-header" role="banner"><a href="/" class="site-title lh-tight"> Paxton's Notes </a>
+                <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+                        <use xlink:href="#svg-menu"></use>
+                    </svg>
+                </button>
+            </div>
+            <nav aria-label="Main" id="site-nav" class="site-nav">
+                <ul class="nav-list">
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in MyPersonalDocsAndStuff category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/index" class="nav-list-link">MyPersonalDocsAndStuff</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/GitHubPages/AppsForWorkflow" class="nav-list-link">AppsForWorkflow</a>
+                            <li class="nav-list-item"><a href="/GitHubPages/CloudServices" class="nav-list-link">CloudServices</a>
+                            <li class="nav-list-item"><a href="/GitHubPages/LetterOfRecommendation" class="nav-list-link">LetterOfRecommendation</a>
+                            <li class="nav-list-item"><a href="/GitHubPages/PastProjects" class="nav-list-link">PastProjects</a>
+                            <li class="nav-list-item"><a href="/GitHubPages/PriorityLearning" class="nav-list-link">PriorityLearning</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in AWS category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/AWS/" class="nav-list-link">AWS</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/AWS/CLI" class="nav-list-link">CLI</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in Build category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/Build/" class="nav-list-link">Build</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/Build/Gradle" class="nav-list-link">Gradle</a>
+                            <li class="nav-list-item"><a href="/Build/Maven" class="nav-list-link">Maven</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in DockerNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/DockerNotes/" class="nav-list-link">DockerNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/DockerNotes/ARM64" class="nav-list-link">ARM64</a>
+                            <li class="nav-list-item"><a href="/DockerNotes/Basics" class="nav-list-link">Basics</a>
+                            <li class="nav-list-item"><a href="/DockerNotes/Dockerfile" class="nav-list-link">Dockerfile</a>
+                            <li class="nav-list-item"><a href="/DockerNotes/Install" class="nav-list-link">Install</a>
+                            <li class="nav-list-item"><a href="/DockerNotes/Quick-TidBits" class="nav-list-link">Quick-TidBits</a>
+                            <li class="nav-list-item"><a href="/DockerNotes/UsefulCommands" class="nav-list-link">UsefulCommands</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in DotNetNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/DotNetNotes/" class="nav-list-link">DotNetNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/DotNetNotes/CLI" class="nav-list-link">CLI</a>
+                            <li class="nav-list-item">
+                                <button class="nav-list-expander btn-reset" aria-label="toggle items in CSharp category" aria-pressed="false">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <use xlink:href="#svg-arrow-right"></use>
+                                    </svg>
+                                </button>
+                                <a href="/DotNetNotes/Csharp" class="nav-list-link">CSharp</a>
+                                <ul class="nav-list">
+                                    <li class="nav-list-item"><a href="/DotNetNotes/CSharp/Email" class="nav-list-link">Email</a>
+                                    <li class="nav-list-item"><a href="/DotNetNotes/CSharp/Threading" class="nav-list-link">Threading</a>
+                                </ul>
+                            <li class="nav-list-item"><a href="/DotNetNotes/Controllers" class="nav-list-link">Controllers</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/Database" class="nav-list-link">Database</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/EntityFramework" class="nav-list-link">EntityFramework</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/Environment" class="nav-list-link">Environment</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/Google" class="nav-list-link">Google</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/HTTP" class="nav-list-link">HTTP</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/HttpRepl" class="nav-list-link">HttpRepl</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/LINQ" class="nav-list-link">LINQ</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/Maui" class="nav-list-link">Maui</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/Microservice" class="nav-list-link">Microservice.md</a>
+                            <li class="nav-list-item"><a href="/DotNetNotes/VisualStudio" class="nav-list-link">VisualStudio</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in Git category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/Git" class="nav-list-link">Git</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item">
+                                <button class="nav-list-expander btn-reset" aria-label="toggle items in GitHub category" aria-pressed="false">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <use xlink:href="#svg-arrow-right"></use>
+                                    </svg>
+                                </button>
+                                <a href="/Git/GitHub" class="nav-list-link">GitHub</a>
+                                <ul class="nav-list">
+                                    <li class="nav-list-item"><a href="/GitHub/GitHubPages" class="nav-list-link">GitHubPages</a>
+                                    <li class="nav-list-item"><a href="/GitHub/Jekyll" class="nav-list-link">Jekyll</a>
+                                    <li class="nav-list-item"><a href="/GitHub/MarkDown" class="nav-list-link">MarkDown</a>
+                                </ul>
+                            <li class="nav-list-item"><a href="/Git/QuickScripts" class="nav-list-link">QuickScripts</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in GoogleNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/GoogleNotes/" class="nav-list-link">GoogleNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/GoogleNotes/APIs" class="nav-list-link">APIs</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/Browser" class="nav-list-link">Browser</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/Cloud" class="nav-list-link">Cloud</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/ComputeEngine" class="nav-list-link">ComputeEngine</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/Deploy" class="nav-list-link">Deploy</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/DevTools" class="nav-list-link">DevTools</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/DialogFlow" class="nav-list-link">DialogFlow</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/Functions" class="nav-list-link">Functions</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/Logging" class="nav-list-link">Logging</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/ServiceAccounts" class="nav-list-link">ServiceAccounts</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/Storage" class="nav-list-link">Storage</a>
+                            <li class="nav-list-item"><a href="/GoogleNotes/VoiceAgent" class="nav-list-link">VoiceAgent</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in GrailsNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/GrailsNotes/" class="nav-list-link">GrailsNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/GrailsNotes/AccessHibernateAndDataStoreAndSession" class="nav-list-link">AccessHibernateAndDataStoreAndSession</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/CLI_Gradlew" class="nav-list-link">CLI_Gradlew</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/CLI_Grailsw" class="nav-list-link">CLI_Grailsw</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/CleverSnippets" class="nav-list-link">CleverSnippets</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/Config" class="nav-list-link">Config</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/Controller" class="nav-list-link">Controller</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/DataServices" class="nav-list-link">DataServices</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/Domain_Stuff" class="nav-list-link">Domain_Stuff</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/Enviroment" class="nav-list-link">Enviroment</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/GORM_WhereQueris" class="nav-list-link">GORM_WhereQueris</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/HQLComplexQueries" class="nav-list-link">HQLComplexQueries</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/HQLQueries" class="nav-list-link">HQLQueries</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/RunningApp" class="nav-list-link">RunningApp</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/Security" class="nav-list-link">Security</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/Services" class="nav-list-link">Services</a>
+                            <li class="nav-list-item"><a href="/GrailsNotes/Testing" class="nav-list-link">Testing</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in GroovyNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/GroovyNotes/" class="nav-list-link">GroovyNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/GroovyNotes/Array-Loop-List-Map" class="nav-list-link">Array-Loop-List-Map</a>
+                            <li class="nav-list-item"><a href="/GroovyNotes/Async_Parallel-Concurrency" class="nav-list-link">Async_Parallel-Concurrency</a>
+                            <li class="nav-list-item"><a href="/GroovyNotes/Clever-Tid-bits" class="nav-list-link">Clever-Tid-bits</a>
+                            <li class="nav-list-item"><a href="/GroovyNotes/DateAndTime" class="nav-list-link">DateAndTime</a>
+                            <li class="nav-list-item"><a href="/GroovyNotes/Enum" class="nav-list-link">Enum</a>
+                            <li class="nav-list-item"><a href="/GroovyNotes/MetaProgramming" class="nav-list-link">MetaProgramming</a>
+                            <li class="nav-list-item"><a href="/GroovyNotes/RegEx" class="nav-list-link">RegEx</a>
+                            <li class="nav-list-item"><a href="/GroovyNotes/String" class="nav-list-link">String</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in HTML&CSS category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/HTML&CSS/" class="nav-list-link">HTML&CSS</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/HTML&CSS/CSS" class="nav-list-link">CSS</a>
+                            <li class="nav-list-item"><a href="/HTML&CSS/HTML" class="nav-list-link">HTML</a>
+                            <li class="nav-list-item"><a href="/HTML&CSS/Images" class="nav-list-link">Images</a>
+                        </ul>
+                    <li class="nav-list-item"><a href="/HTTP" class="nav-list-link">HTTP</a>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in IntelliJNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/IntelliJNotes/" class="nav-list-link">IntelliJNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/IntelliJNotes/CustomVM" class="nav-list-link">CustomVM</a>
+                            <li class="nav-list-item"><a href="/IntelliJNotes/DebuggerConfig" class="nav-list-link">DebuggerConfig</a>
+                            <li class="nav-list-item"><a href="/IntelliJNotes/HTTPExamples" class="nav-list-link">HTTPExamples</a>
+                            <li class="nav-list-item"><a href="/IntelliJNotes/Spaces" class="nav-list-link">Spaces</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in Java category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/JavaNotes/Java" class="nav-list-link">Java</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/JavaNotes/Algorithms" class="nav-list-link">Algorithms</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/Annotations" class="nav-list-link">Annotations</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/CommandLineDiddys" class="nav-list-link">CommandLineDiddys</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/DataBase" class="nav-list-link">DataBase</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/Email" class="nav-list-link">Email</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/File" class="nav-list-link">File</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/GCP" class="nav-list-link">GCP</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/Hibernate" class="nav-list-link">Hibernate</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/LooseNotes" class="nav-list-link">LooseNotes</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/OOP" class="nav-list-link">OOP</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/String" class="nav-list-link">String</a>
+                            <li class="nav-list-item"><a href="/JavaNotes/Threads" class="nav-list-link">Threads</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in JavaScript category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/JavaScript/" class="nav-list-link">JavaScript</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a>
+                            <li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a>
+                            <li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a>
+                            <li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a>
+                            <li class="nav-list-item"><a href="/JavaScript/DateAndTime" class="nav-list-link">DateAndTime</a>
+                            <li class="nav-list-item"><a href="/JavaScript/Document" class="nav-list-link">Document</a>
+                            <li class="nav-list-item"><a href="/JavaScript/Elements" class="nav-list-link">Elements</a>
+                            <li class="nav-list-item"><a href="/JavaScript/Events" class="nav-list-link">Events</a>
+                            <li class="nav-list-item"><a href="/JavaScript/FormStuff" class="nav-list-link">FormStuff</a>
+                            <li class="nav-list-item"><a href="/JavaScript/FunctionObject" class="nav-list-link">FunctionObject</a>
+                            <li class="nav-list-item"><a href="/JavaScript/HTTP" class="nav-list-link">HTTP</a>
+                            <li class="nav-list-item"><a href="/JavaScript/Map" class="nav-list-link">Map</a>
+                            <li class="nav-list-item"><a href="/JavaScript/Modules" class="nav-list-link">Modules</a>
+                            <li class="nav-list-item">
+                                <button class="nav-list-expander btn-reset" aria-label="toggle items in Node category" aria-pressed="false">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <use xlink:href="#svg-arrow-right"></use>
+                                    </svg>
+                                </button>
+                                <a href="/JavaScript/Node/" class="nav-list-link">Node</a>
+                                <ul class="nav-list">
+                                    <li class="nav-list-item"><a href="/JavaScript/Node/QuickScripts" class="nav-list-link">QuickScripts</a>
+                                </ul>
+                            <li class="nav-list-item"><a href="/JavaScript/Number" class="nav-list-link">Number</a>
+                            <li class="nav-list-item"><a href="/JavaScript/Object" class="nav-list-link">Object</a>
+                            <li class="nav-list-item"><a href="/JavaScript/QuerySelector" class="nav-list-link">QuerySelector</a>
+                            <li class="nav-list-item">
+                                <button class="nav-list-expander btn-reset" aria-label="toggle items in ReactNotes category" aria-pressed="false">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <use xlink:href="#svg-arrow-right"></use>
+                                    </svg>
+                                </button>
+                                <a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a>
+                                <ul class="nav-list">
+                                    <li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a>
+                                    <li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a>
+                                    <li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a>
+                                    <li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a>
+                                    <li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a>
+                                    <li class="nav-list-item"><a href="/ReactNotes/Mat-Table" class="nav-list-link">Mat-Table</a>
+                                    <li class="nav-list-item"><a href="/ReactNotes/React-Router" class="nav-list-link">React-Router</a>
+                                    <li class="nav-list-item"><a href="/ReactNotes/ReactHookForm" class="nav-list-link">ReactHookForm</a>
+                                    <li class="nav-list-item"><a href="/ReactNotes/String" class="nav-list-link">String</a>
+                                    <li class="nav-list-item"><a href="/ReactNotes/WebWorker" class="nav-list-link">WebWorker</a>
+                                </ul>
+                            <li class="nav-list-item"><a href="/JavaScript/RegEx" class="nav-list-link">RegEx</a>
+                            <li class="nav-list-item"><a href="/JavaScript/State" class="nav-list-link">State</a>
+                            <li class="nav-list-item">
+                                <button class="nav-list-expander btn-reset" aria-label="toggle items in TypeScript category" aria-pressed="false">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <use xlink:href="#svg-arrow-right"></use>
+                                    </svg>
+                                </button>
+                                <a href="/JavaScript/TypeScript/" class="nav-list-link">TypeScript</a>
+                                <ul class="nav-list">
+                                    <li class="nav-list-item"><a href="/JavaScript/TypeScript/Events" class="nav-list-link">Events</a>
+                                    <li class="nav-list-item"><a href="/JavaScript/TypeScript/QuickScripts" class="nav-list-link">QuickScripts</a>
+                                    <li class="nav-list-item"><a href="/JavaScript/TypeScript/Types" class="nav-list-link">Types</a>
+                                </ul>
+                            <li class="nav-list-item"><a href="/JavaScript/UsefulSnippets" class="nav-list-link">UsefulSnippets</a>
+                            <li class="nav-list-item"><a href="/JavaScript/WebAPI" class="nav-list-link">WebAPI</a>
+                            <li class="nav-list-item"><a href="/JavaScript/Window" class="nav-list-link">Window</a>
+                            <li class="nav-list-item"><a href="/JavaScript/WorkingWithFiles" class="nav-list-link">WorkingWithFiles</a>
+                        </ul>
+                    <li class="nav-list-item"><a href="/Kubernetes" class="nav-list-link">Kubernetes</a>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in Linux category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/Linux/" class="nav-list-link">Linux</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/Linux/ADMIN-ROOT" class="nav-list-link">ADMIN-ROOT</a>
+                            <li class="nav-list-item"><a href="/Linux/Conditionals" class="nav-list-link">Conditionals</a>
+                            <li class="nav-list-item"><a href="/Linux/Email" class="nav-list-link">Email</a>
+                            <li class="nav-list-item"><a href="/Linux/Encoding" class="nav-list-link">Encoding</a>
+                            <li class="nav-list-item"><a href="/Linux/JQ" class="nav-list-link">JQ</a>
+                            <li class="nav-list-item"><a href="/Linux/MySQL" class="nav-list-link">MySQL</a>
+                            <li class="nav-list-item"><a href="/Linux/PGP" class="nav-list-link">PGP</a>
+                            <li class="nav-list-item"><a href="/Linux/QuickScripts" class="nav-list-link">QuickScripts</a>
+                            <li class="nav-list-item"><a href="/Linux/SDKMan" class="nav-list-link">SDKMan</a>
+                            <li class="nav-list-item"><a href="/Linux/Scripting" class="nav-list-link">Scripting</a>
+                            <li class="nav-list-item"><a href="/Linux/VIM_QuickTips" class="nav-list-link">VIM_QuickTips</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in MacNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/MacNotes/" class="nav-list-link">MacNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/MacNotes/AppleScripts" class="nav-list-link">AppleScripts</a>
+                            <li class="nav-list-item"><a href="/MacNotes/HomeBrew" class="nav-list-link">HomeBrew</a>
+                            <li class="nav-list-item"><a href="/MacNotes/JavaOnMac" class="nav-list-link">JavaOnMac</a>
+                            <li class="nav-list-item"><a href="/MacNotes/QuickScripts" class="nav-list-link">QuickScripts</a>
+                            <li class="nav-list-item"><a href="/MacNotes/ShortCuts" class="nav-list-link">ShortCuts</a>
+                            <li class="nav-list-item"><a href="/MacNotes/UsersAndGroups" class="nav-list-link">UsersAndGroups</a>
+                            <li class="nav-list-item"><a href="/MacNotes/Utilities" class="nav-list-link">Utilities</a>
+                            <li class="nav-list-item"><a href="/MacNotes/ZSH" class="nav-list-link">ZSH</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in Micronotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/Micronotes/" class="nav-list-link">Micronotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a>
+                            <li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a>
+                            <li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a>
+                            <li class="nav-list-item"><a href="/Micronotes/DataBaseStuff" class="nav-list-link">DataBaseStuff</a>
+                            <li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a>
+                            <li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a>
+                            <li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a>
+                            <li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a>
+                            <li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a>
+                            <li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a>
+                            <li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a>
+                            <li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a>
+                            <li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a>
+                            <li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a>
+                        </ul>
+                    <li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a>
+                    <li class="nav-list-item"><a href="/RandomNuggetsOfKnowledge" class="nav-list-link">RandomNuggetsOfKnowledge</a>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in SQLNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/SQLNotes/" class="nav-list-link">SQLNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/SQLNotes/Docker" class="nav-list-link">Docker</a>
+                            <li class="nav-list-item"><a href="/SQLNotes/Functions" class="nav-list-link">Functions</a>
+                            <li class="nav-list-item"><a href="/SQLNotes/HQL" class="nav-list-link">HQL</a>
+                            <li class="nav-list-item"><a href="/SQLNotes/Liquibase" class="nav-list-link">Liquibase</a>
+                            <li class="nav-list-item"><a href="/SQLNotes/Queries" class="nav-list-link">Queries</a>
+                            <li class="nav-list-item"><a href="/SQLNotes/SQLCheatSheet" class="nav-list-link">SQLCheatSheet</a>
+                            <li class="nav-list-item"><a href="/SQLNotes/TerminalCommands" class="nav-list-link">Terminal-Commands</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in SpringNotes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/SpringNotes/" class="nav-list-link">SpringNotes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/SpringNotes/Annotations" class="nav-list-link">Annotations</a>
+                            <li class="nav-list-item"><a href="/SpringNotes/Hibernate" class="nav-list-link">Hibernate</a>
+                            <li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a>
+                            <li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a>
+                            <li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a>
+                            <li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a>
+                            <li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a>
+                            <li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a>
+                            <li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a>
+                        </ul>
+                    <li class="nav-list-item"><a href="/SystemDesign&Architecture/" class="nav-list-link">SystemDesign&Architecture</a>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in TestingFrameworks category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/TestingFrameworks/" class="nav-list-link">TestingFrameworks</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a>
+                            <li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a>
+                            <li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a>
+                            <li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in Thymeleaf category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/Thymeleaf/" class="nav-list-link">Thymeleaf</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/Thymeleaf/Fragments" class="nav-list-link">Fragments</a>
+                        </ul>
+                    <li class="nav-list-item">
+                        <button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <use xlink:href="#svg-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <a href="/Windows_Notes/" class="nav-list-link">Windows_Notes</a>
+                        <ul class="nav-list">
+                            <li class="nav-list-item"><a href="/Windows_Notes/CMD" class="nav-list-link">CMD</a>
+                            <li class="nav-list-item"><a href="/Windows_Notes/Environment" class="nav-list-link">Environment</a>
+                            <li class="nav-list-item"><a href="/Windows_Notes/PackageManagers" class="nav-list-link">PackageManagers</a>
+                            <li class="nav-list-item"><a href="/Windows_Notes/Powershell" class="nav-list-link">Powershell</a>
+                            <li class="nav-list-item"><a href="/Windows_Notes/Run" class="nav-list-link">Run</a>
+                            <li class="nav-list-item"><a href="/Windows_Notes/Shortcuts" class="nav-list-link">Shortcuts</a>
+                            <li class="nav-list-item"><a href="/Windows_Notes/Terminal" class="nav-list-link">Terminal</a>
+                            <li class="nav-list-item"><a href="/Windows_Notes/WSL" class="nav-list-link">WSL</a>
+                            <li class="nav-list-item"><a href="/Windows_Notes/WindowsServer" class="nav-list-link">WindowsServer</a>
+                        </ul>
+                </ul>
+            </nav>
+            <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
         </div>
-        <nav aria-label="Auxiliary" class="aux-nav">
-            <ul class="aux-nav-list">
-                <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer"> Template
-                                                                                                                                                                      Repository </a>
-            </ul>
-        </nav>
-    </div>
-    <div class="main-content-wrap">
-        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-            <ol class="breadcrumb-nav-list">
-                <li class="breadcrumb-nav-list-item"><a href="/MacNotes/">MacNotes</a>
-                <li class="breadcrumb-nav-list-item"><span>Utilities</span>
-            </ol>
-        </nav>
-        <div id="main-content" class="main-content">
-            <main><p><br/></p>
-                <details>
-                    <summary class="text-delta"> Table of contents</summary>
-                    <ol id="markdown-toc">
-                        <li><a href="#software-update" id="markdown-toc-software-update">Software Update</a>
-                            <ol>
-                                <li><a href="#how-do-i-apply-all-recommended-updates" id="markdown-toc-how-do-i-apply-all-recommended-updates">How do I apply all recommended
-                                                                                                                                               updates?</a>
-                                <li><a href="#updating-mac-using-the-terminal-app" id="markdown-toc-updating-mac-using-the-terminal-app">Updating Mac using the Terminal app</a>
-                                <li><a href="#install-all-but-make-sure-you-ignore-javaforosx-updates" id="markdown-toc-install-all-but-make-sure-you-ignore-javaforosx-updates">Install
-                                                                                                                                                                                 all
-                                                                                                                                                                                 but
-                                                                                                                                                                                 make
-                                                                                                                                                                                 sure
-                                                                                                                                                                                 you
-                                                                                                                                                                                 ignore
-                                                                                                                                                                                 ‘JavaForOSX’
-                                                                                                                                                                                 updates:</a>
-                                <li><a href="#to-clear-the-list-ignored-updates-enter" id="markdown-toc-to-clear-the-list-ignored-updates-enter">To clear the list, ignored updates,
-                                                                                                                                                 enter:</a>
-                                <li><a href="#updateinstall-os" id="markdown-toc-updateinstall-os">Update/Install OS</a>
+        <div class="main" id="top">
+            <div id="main-header" class="main-header">
+                <div class="search" role="search">
+                    <div class="search-input-wrap"><input type="text"
+                                                          id="search-input"
+                                                          class="search-input"
+                                                          tabindex="0"
+                                                          placeholder="Search Paxton's Notes"
+                                                          aria-label="Search Paxton's Notes"
+                                                          autocomplete="off"> <label for="search-input" class="search-label">
+                        <svg viewBox="0 0 24 24" class="search-icon">
+                            <use xlink:href="#svg-search"></use>
+                        </svg>
+                    </label></div>
+                    <div id="search-results" class="search-results"></div>
+                </div>
+                <nav aria-label="Auxiliary" class="aux-nav">
+                    <ul class="aux-nav-list">
+                        <li class="aux-nav-list-item"><a href="https://github.com/14paxton/14paxton.github.io"
+                                                         class="site-button"
+                                                         target="_blank"
+                                                         rel="noopener noreferrer"> Template Repository </a>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main-content-wrap">
+                <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+                    <ol class="breadcrumb-nav-list">
+                        <li class="breadcrumb-nav-list-item"><a href="/MacNotes/">MacNotes</a>
+                        <li class="breadcrumb-nav-list-item"><span>Utilities</span>
+                    </ol>
+                </nav>
+                <div id="main-content" class="main-content">
+                    <main><p><br/></p>
+                        <details>
+                            <summary class="text-delta"> Table of contents</summary>
+                            <ol id="markdown-toc">
+                                <li><a href="#software-update" id="markdown-toc-software-update">Software Update</a>
                                     <ol>
-                                        <li><a
-                                                href="#this-gives-you-a-list-of-available-releases-you-can-choose-from-once-downloaded-it-will-be-saved-in-your-applications-folder"
-                                                id="markdown-toc-this-gives-you-a-list-of-available-releases-you-can-choose-from-once-downloaded-it-will-be-saved-in-your-applications-folder"
-                                        >This gives you a list of available releases you can choose from. Once downloaded it will be saved in your Applications folder</a>
+                                        <li><a href="#how-do-i-apply-all-recommended-updates"
+                                               id="markdown-toc-how-do-i-apply-all-recommended-updates">How do I apply all recommended updates?</a>
+                                        <li><a href="#updating-mac-using-the-terminal-app"
+                                               id="markdown-toc-updating-mac-using-the-terminal-app">Updating Mac using the Terminal app</a>
+                                        <li><a href="#install-all-but-make-sure-you-ignore-javaforosx-updates"
+                                               id="markdown-toc-install-all-but-make-sure-you-ignore-javaforosx-updates">Install all but make sure you ignore ‘JavaForOSX’ updates:</a>
+                                        <li><a href="#to-clear-the-list-ignored-updates-enter"
+                                               id="markdown-toc-to-clear-the-list-ignored-updates-enter">To clear the list, ignored updates, enter:</a>
+                                        <li><a href="#updateinstall-os" id="markdown-toc-updateinstall-os">Update/Install OS</a>
                                             <ol>
-                                                <li><a href="#munkis-installinstallmacos-utility" id="markdown-toc-munkis-installinstallmacos-utility">Munki’s InstallInstallMacOS
-                                                                                                                                                       utility</a>
-                                            </ol>
-                                        <li><a href="#create-installer" id="markdown-toc-create-installer">create installer</a>
-                                            <ol>
-                                                <li><a href="#run" id="markdown-toc-run">run</a>
+                                                <li>
+                                                    <a href="#this-gives-you-a-list-of-available-releases-you-can-choose-from-once-downloaded-it-will-be-saved-in-your-applications-folder"
+                                                       id="markdown-toc-this-gives-you-a-list-of-available-releases-you-can-choose-from-once-downloaded-it-will-be-saved-in-your-applications-folder">This gives you a list of available releases you can choose from. Once downloaded it will be saved in your Applications folder</a>
+                                                    <ol>
+                                                        <li><a href="#munkis-installinstallmacos-utility"
+                                                               id="markdown-toc-munkis-installinstallmacos-utility">Munki’s InstallInstallMacOS utility</a>
+                                                    </ol>
+                                                <li><a href="#create-installer" id="markdown-toc-create-installer">create installer</a>
+                                                    <ol>
+                                                        <li><a href="#run" id="markdown-toc-run">run</a>
+                                                    </ol>
                                             </ol>
                                     </ol>
+                                <li><a href="#dscl" id="markdown-toc-dscl">dscl</a>
+                                    <ol>
+                                        <li><a href="#unhide-a-user-account" id="markdown-toc-unhide-a-user-account">unhide a user account</a>
+                                    </ol>
+                                <li><a href="#chflags" id="markdown-toc-chflags">chflags</a>
+                                    <ol>
+                                        <li><a href="#hide-home-folder" id="markdown-toc-hide-home-folder">Hide Home folder</a>
+                                    </ol>
+                                <li><a href="#diskutil-" id="markdown-toc-diskutil-">DISKUTIL </a>
+                                    <ol>
+                                        <li><a href="#find-disk" id="markdown-toc-find-disk">find disk</a>
+                                        <li><a href="#unmount" id="markdown-toc-unmount">unmount</a>
+                                        <li><a href="#force-unmount" id="markdown-toc-force-unmount">force unmount</a>
+                                        <li><a href="#format-drivevolume" id="markdown-toc-format-drivevolume">Format drive/Volume</a>
+                                        <li><a href="#diskutil-secureerase" id="markdown-toc-diskutil-secureerase">Diskutil SecureErase</a>
+                                    </ol>
+                                <li><a href="#csrutil" id="markdown-toc-csrutil">csrutil</a>
+                                <li><a href="#pwpolicy" id="markdown-toc-pwpolicy">pwpolicy</a>
+                                    <ol>
+                                        <li><a href="#set-global-policy" id="markdown-toc-set-global-policy">Set Global Policy</a>
+                                    </ol>
+                                <li><a href="#supported-file-systems" id="markdown-toc-supported-file-systems">Supported File Systems</a>
+                                    <ol>
+                                        <li><a href="#apfs" id="markdown-toc-apfs">APFS</a>
+                                        <li><a href="#hfs" id="markdown-toc-hfs">HFS</a>
+                                        <li><a href="#udf" id="markdown-toc-udf">UDF</a>
+                                        <li><a href="#nfs" id="markdown-toc-nfs">NFS</a>
+                                    </ol>
                             </ol>
-                        <li><a href="#dscl" id="markdown-toc-dscl">dscl</a>
-                            <ol>
-                                <li><a href="#unhide-a-user-account" id="markdown-toc-unhide-a-user-account">unhide a user account</a>
-                            </ol>
-                        <li><a href="#chflags" id="markdown-toc-chflags">chflags</a>
-                            <ol>
-                                <li><a href="#hide-home-folder" id="markdown-toc-hide-home-folder">Hide Home folder</a>
-                            </ol>
-                        <li><a href="#diskutil-" id="markdown-toc-diskutil-">DISKUTIL </a>
-                            <ol>
-                                <li><a href="#find-disk" id="markdown-toc-find-disk">find disk</a>
-                                <li><a href="#unmount" id="markdown-toc-unmount">unmount</a>
-                                <li><a href="#force-unmount" id="markdown-toc-force-unmount">force unmount</a>
-                                <li><a href="#format-drivevolume" id="markdown-toc-format-drivevolume">Format drive/Volume</a>
-                                <li><a href="#diskutil-secureerase" id="markdown-toc-diskutil-secureerase">Diskutil SecureErase</a>
-                            </ol>
-                        <li><a href="#csrutil" id="markdown-toc-csrutil">csrutil</a>
-                        <li><a href="#pwpolicy" id="markdown-toc-pwpolicy">pwpolicy</a>
-                            <ol>
-                                <li><a href="#set-global-policy" id="markdown-toc-set-global-policy">Set Global Policy</a>
-                            </ol>
-                        <li><a href="#supported-file-systems" id="markdown-toc-supported-file-systems">Supported File Systems</a>
-                            <ol>
-                                <li><a href="#apfs" id="markdown-toc-apfs">APFS</a>
-                                <li><a href="#hfs" id="markdown-toc-hfs">HFS</a>
-                                <li><a href="#udf" id="markdown-toc-udf">UDF</a>
-                                <li><a href="#nfs" id="markdown-toc-nfs">NFS</a>
-                            </ol>
-                    </ol>
-                </details>
-                <p><br/></p>
-                <hr/>
-                <p><br/></p>
-                <h1 id="software-update"><a href="#software-update" class="anchor-heading" aria-labelledby="software-update">
-                    <svg viewBox="0 0 16 16" aria-hidden="true">
-                        <use xlink:href="#svg-link"></use>
-                    </svg>
-                </a> Software Update
-                </h1>
-                <h2 id="how-do-i-apply-all-recommended-updates"><a
-                        href="#how-do-i-apply-all-recommended-updates"
-                        class="anchor-heading"
-                        aria-labelledby="how-do-i-apply-all-recommended-updates"
-                >
-                    <svg viewBox="0 0 16 16" aria-hidden="true">
-                        <use xlink:href="#svg-link"></use>
-                    </svg>
-                </a> How do I apply all recommended updates?
-                </h2>
-                <blockquote><p>All updates that are recommended for your system:</p></blockquote>
-                <div class="language-shell highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>softwareupdate <span class="nt">-r</span>
+                        </details>
+                        <p><br/></p>
+                        <hr/>
+                        <p><br/></p>
+                        <h1 id="software-update"><a href="#software-update" class="anchor-heading" aria-labelledby="software-update">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> Software Update
+                        </h1>
+                        <h2 id="how-do-i-apply-all-recommended-updates"><a href="#how-do-i-apply-all-recommended-updates"
+                                                                           class="anchor-heading"
+                                                                           aria-labelledby="how-do-i-apply-all-recommended-updates">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> How do I apply all recommended updates?
+                        </h2>
+                        <blockquote><p>All updates that are recommended for your system:</p></blockquote>
+                        <div class="language-shell highlighter-rouge">
+                            <div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>softwareupdate <span class="nt">-r</span>
 </code></pre></div></div><h2 id="updating-mac-using-the-terminal-app"> <a href="#updating-mac-using-the-terminal-app" class="anchor-heading" aria-labelledby="updating-mac-using-the-terminal-app"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Updating Mac using the Terminal app</h2><blockquote><p>To install all updates that are applicable to your system, enter:</p></blockquote><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>softwareupdate <span class="nt">-i</span> <span class="nt">-a</span>
 </code></pre></div></div><h2 id="install-all-but-make-sure-you-ignore-javaforosx-updates"> <a href="#install-all-but-make-sure-you-ignore-javaforosx-updates" class="anchor-heading" aria-labelledby="install-all-but-make-sure-you-ignore-javaforosx-updates"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Install all but make sure you ignore ‘JavaForOSX’ updates:</h2><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>softwareupdate <span class="nt">--ignore</span> JavaForOSX
 </code></pre></div></div><h2 id="to-clear-the-list-ignored-updates-enter"> <a href="#to-clear-the-list-ignored-updates-enter" class="anchor-heading" aria-labelledby="to-clear-the-list-ignored-updates-enter"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> To clear the list, ignored updates, enter:</h2><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>softwareupdate <span class="nt">--reset-ignored</span>
 </code></pre></div></div><h2 id="updateinstall-os"> <a href="#updateinstall-os" class="anchor-heading" aria-labelledby="updateinstall-os"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Update/Install OS</h2><h3 id="this-gives-you-a-list-of-available-releases-you-can-choose-from-once-downloaded-it-will-be-saved-in-your-applications-folder"> <a href="#this-gives-you-a-list-of-available-releases-you-can-choose-from-once-downloaded-it-will-be-saved-in-your-applications-folder" class="anchor-heading" aria-labelledby="this-gives-you-a-list-of-available-releases-you-can-choose-from-once-downloaded-it-will-be-saved-in-your-applications-folder"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> This gives you a list of available releases you can choose from. Once downloaded it will be saved in your Applications folder</h3><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>softwareupdate <span class="nt">--list-full-installers</span><span class="p">;</span><span class="nb">echo</span><span class="p">;</span><span class="nb">echo</span> <span class="s2">"Please enter version number you wish to download:"</span><span class="p">;</span><span class="nb">read</span><span class="p">;</span><span class="si">$(</span><span class="k">if</span> <span class="o">[</span> <span class="nt">-n</span> <span class="s2">"</span><span class="nv">$REPLY</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span><span class="p">;</span> <span class="nb">echo</span> <span class="s2">"softwareupdate --fetch-full-installer --full-installer-version "</span><span class="nv">$REPLY</span><span class="p">;</span> <span class="k">fi</span><span class="si">)</span><span class="p">;</span>
 </code></pre></div></div><h4 id="munkis-installinstallmacos-utility"> <a href="#munkis-installinstallmacos-utility" class="anchor-heading" aria-labelledby="munkis-installinstallmacos-utility"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Munki’s InstallInstallMacOS utility</h4><blockquote><p>Once finished, you’ll find in your ~/macOS-Installer/</p></blockquote><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> ~/macOS-installer <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/macOS-installer <span class="o">&amp;&amp;</span> curl https://raw.githubusercontent.com/munki/macadmin-scripts/main/installinstallmacos.py <span class="o">&gt;</span> installinstallmacos.py <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>python installinstallmacos.py
 </code></pre>
-                </div>
-                </div>
-                <h3 id="create-installer"><a href="#create-installer" class="anchor-heading" aria-labelledby="create-installer">
-                    <svg viewBox="0 0 16 16" aria-hidden="true">
-                        <use xlink:href="#svg-link"></use>
-                    </svg>
-                </a> <a href="https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment">create installer</a></h3>
-                <h4 id="run"><a href="#run" class="anchor-heading" aria-labelledby="run">
-                    <svg viewBox="0 0 16 16" aria-hidden="true">
-                        <use xlink:href="#svg-link"></use>
-                    </svg>
-                </a> run
-                </h4>
-                <p><code class="language-plaintext highlighter-rouge">createinstallmedia</code> command provided by Apple (opens a new window). Note that the command is made for
-                                                                                                USB’s formatted<br/> with the name MyVolume:</p>
-                <div class="language-shell highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> /Applications/Install<span class="se">\ </span>macOS<span class="se">\ </span>Big<span
-                            class="se"
-                    >\ </span>Sur.app/Contents/Resources/createinstallmedia <span class="nt">--volume</span> /Volumes/MyVolume
+                        </div>
+                        </div>
+                        <h3 id="create-installer"><a href="#create-installer" class="anchor-heading" aria-labelledby="create-installer">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> <a href="https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment">create installer</a>
+                        </h3>
+                        <h4 id="run"><a href="#run" class="anchor-heading" aria-labelledby="run">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> run
+                        </h4>
+                        <p>
+                            <code class="language-plaintext highlighter-rouge">createinstallmedia</code> command provided by Apple (opens a new window). Note that the command is made for USB’s formatted<br/> with the name MyVolume:
+                        </p>
+                        <div class="language-shell highlighter-rouge">
+                            <div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> /Applications/Install<span class="se">\ </span>macOS<span class="se">\ </span>Big<span
+                                    class="se">\ </span>Sur.app/Contents/Resources/createinstallmedia <span class="nt">--volume</span> /Volumes/MyVolume
 </code></pre>
-                    </div>
-                </div>
-                <blockquote><p>Note for users on Apple Silicon installing macOS older than Big Sur <br/> If the <code class="language-plaintext highlighter-rouge">createinstallmedia</code>
-                               fails with <code class="language-plaintext highlighter-rouge">zsh: killed </code> or <code class="language-plaintext highlighter-rouge">Killed:
-                                                                                                                                                                       9</code> then
-                               it’s most likely an issue with the<br/> installer’s code signature. <br/> To fix this, you can run the following command:</p></blockquote>
-                <div class="language-shell highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /Applications/Install<span class="se">\ </span>macOS<span class="se">\ </span>Big<span
-                            class="se"
-                    >\ </span>Sur.app/Contents/Resources/
+                            </div>
+                        </div>
+                        <blockquote><p>Note for users on Apple Silicon installing macOS older than Big Sur <br/> If the
+                            <code class="language-plaintext highlighter-rouge">createinstallmedia</code> fails with
+                            <code class="language-plaintext highlighter-rouge">zsh: killed </code> or
+                            <code class="language-plaintext highlighter-rouge">Killed: 9</code> then it’s most likely an issue with the<br/> installer’s code signature.
+                            <br/> To fix this, you can run the following command:</p></blockquote>
+                        <div class="language-shell highlighter-rouge">
+                            <div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /Applications/Install<span class="se">\ </span>macOS<span class="se">\ </span>Big<span
+                                    class="se">\ </span>Sur.app/Contents/Resources/
 codesign <span class="nt">-s</span> - <span class="nt">-f</span> <span class="nt">--deep</span> /Applications/Install<span class="se">\ </span>macOS<span class="se">\ </span>Big<span class="se">\ </span>Sur.app
 </code></pre></div></div><blockquote><p>You will need the command line tools for Xcode installed:</p></blockquote><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xcode-select <span class="nt">--install</span>
 </code></pre></div></div><h1 id="dscl"> <a href="#dscl" class="anchor-heading" aria-labelledby="dscl"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://ss64.com/osx/dscl.html">dscl</a></h1><h2 id="unhide-a-user-account"> <a href="#unhide-a-user-account" class="anchor-heading" aria-labelledby="unhide-a-user-account"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> unhide a user account</h2><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>dscl <span class="nb">.</span> create /Users/hiddenuser IsHidden 0
@@ -755,218 +742,220 @@ codesign <span class="nt">-s</span> - <span class="nt">-f</span> <span class="nt
 </code></pre></div></div><h2 id="force-unmount"> <a href="#force-unmount" class="anchor-heading" aria-labelledby="force-unmount"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> force unmount</h2><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>diskutil unmountDisk /force /dev/disk#
 </code></pre></div></div><h2 id="format-drivevolume"> <a href="#format-drivevolume" class="anchor-heading" aria-labelledby="format-drivevolume"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Format drive/Volume</h2><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>diskutil eraseDisk
 </code></pre>
-                </div>
-                </div>
-                <div class="language-shell highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code>diskutil eraseDisk format name <span class="o">[</span>APM[Format]|MBR[Format]|GPT[Format]]MountPoint|DiskIdentifier|DeviceNode
+                        </div>
+                        </div>
+                        <div class="language-shell highlighter-rouge">
+                            <div class="highlight"><pre class="highlight"><code>diskutil eraseDisk format name <span class="o">[</span>APM[Format]|MBR[Format]|GPT[Format]]MountPoint|DiskIdentifier|DeviceNode
 </code></pre>
-                    </div>
-                </div>
-                <blockquote><p>Completely erase an existing whole disk. <br/> All volumes on this disk will be destroyed. <br/> Ownership of the affected disk is required. <br/>
-                               Format is the specific file system name you want to erase it as (HFS+, etc.). <br/> Name is the (new) volume name (subject to file system naming
-                               restrictions),<br/> or can be specified as <code class="language-plaintext highlighter-rouge">%noformat%</code> to skip initialization (newfs). <br/>
-                               You cannot erase the boot disk.</p></blockquote>
-                <div class="language-shell highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code> diskutil eraseDisk JHFS+ UntitledUFS disk3
+                            </div>
+                        </div>
+                        <blockquote><p>Completely erase an existing whole disk. <br/> All volumes on this disk will be destroyed. <br/> Ownership of the affected disk is required.
+                            <br/> Format is the specific file system name you want to erase it as (HFS+, etc.).
+                            <br/> Name is the (new) volume name (subject to file system naming restrictions),<br/> or can be specified as
+                            <code class="language-plaintext highlighter-rouge">%noformat%</code> to skip initialization (newfs). <br/> You cannot erase the boot disk.</p>
+                        </blockquote>
+                        <div class="language-shell highlighter-rouge">
+                            <div class="highlight"><pre class="highlight"><code> diskutil eraseDisk JHFS+ UntitledUFS disk3
 </code></pre></div></div><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>diskutil eraseDisk JHFS+ CleanDrive /dev/disk1
 </code></pre>
-                </div>
-                </div>
-                <blockquote><p>Formats</p></blockquote>
-                <blockquote>
-                    <blockquote><p><code class="language-plaintext highlighter-rouge">APFS</code>: Allocates disk space within a container (partition) on demand.<br/> When a single
-                                                                                                 APFS container has multiple volumes, the container’s free space is shared and is
-                                                                                                 automatically<br/> allocated<br/> to any of the individual volumes as needed.<br/>
-                                                                                                 If desired, you can specify reserve and quota sizes for each volume.<br/> Each
-                                                                                                 volume uses only part of the overall container, so the available space is the<br/>
-                                                                                                 total size of the container, minus the size of all the volumes in the container.
-                    </p></blockquote>
-                </blockquote>
-                <blockquote>
-                    <blockquote><p><code class="language-plaintext highlighter-rouge">APFS</code>: Uses the APFS format. Choose this option if you don’t need an encrypted or
-                                                                                                 case-sensitive format.</p></blockquote>
-                </blockquote>
-                <blockquote>
-                    <blockquote><p><code class="language-plaintext highlighter-rouge">APFS (Encrypted)</code>: Uses the APFS format and encrypts the volume.</p></blockquote>
-                </blockquote>
-                <blockquote>
-                    <blockquote><p><code class="language-plaintext highlighter-rouge">APFS (Case-sensitive)</code>: Uses the APFS format and is case-sensitive to file and folder
-                                                                                                                  names. For example, folders<br/> named “Homework” and
-                                                                                                                  “HOMEWORK”<br/> are two different folders.</p></blockquote>
-                </blockquote>
-                <blockquote>
-                    <blockquote><p><code class="language-plaintext highlighter-rouge">APFS (Case-sensitive, Encrypted)</code>: Uses the APFS format, is case-sensitive to file and
-                                                                                                                             folder names, and encrypts<br/> the volume.<br/> For
-                                                                                                                             example, folders named “Homework” and “HOMEWORK” are
-                                                                                                                             two<br/> different folders.</p></blockquote>
-                </blockquote>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>File System
-                            <th>Abbreviation
-                        <tbody>
-                        <tr>
-                            <td>Mac OS Extended (Journaled)
-                            <td>JHFS+
-                        <tr>
-                            <td>Mac OS Extended
-                            <td>HFS+
-                        <tr>
-                            <td>MS-DOS fat32
-                            <td>FAT32
-                        <tr>
-                            <td>ExFAT
-                            <td>ExFAT
-                    </table>
-                </div>
-                <h2 id="diskutil-secureerase"><a href="#diskutil-secureerase" class="anchor-heading" aria-labelledby="diskutil-secureerase">
-                    <svg viewBox="0 0 16 16" aria-hidden="true">
-                        <use xlink:href="#svg-link"></use>
-                    </svg>
-                </a> Diskutil SecureErase
-                </h2>
-                <blockquote><p>Now we need to select the level of secure erase we want. There are five levels of secure erasing you can use labeled<br/> from 0-4.</p></blockquote>
-                <blockquote><p><code class="language-plaintext highlighter-rouge">Level 0 </code>just erases the drive by writing the number zero across every sector of the drive.
-                </p></blockquote>
-                <blockquote><p><code class="language-plaintext highlighter-rouge">Level 1</code> does the same but with random data, thus taking longer.</p></blockquote>
-                <blockquote><p><code class="language-plaintext highlighter-rouge">Level 2 </code>erases the drive 7 times with 1’s and 0’s except the last pass where it uses random
-                                                                                                 data.</p></blockquote>
-                <blockquote><p><code class="language-plaintext highlighter-rouge">Level 3</code> is a special algorithm that erases the drives with random data as well as data
-                                                                                                 compiled from a special<br/> collection of 1’s and 0’s.</p></blockquote>
-                <blockquote><p><code class="language-plaintext highlighter-rouge">Level 4</code> is a little different and erases it three times, with random data on the first two
-                                                                                                 passes and one set of<br/> zeroes on the last pass.</p></blockquote>
-                <div class="language-shell highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code>diskutil secureErase 4 /dev/disk2
+                        </div>
+                        </div>
+                        <blockquote><p>Formats</p></blockquote>
+                        <blockquote>
+                            <blockquote><p>
+                                <code class="language-plaintext highlighter-rouge">APFS</code>: Allocates disk space within a container (partition) on demand.<br/> When a single APFS container has multiple volumes, the container’s free space is shared and is automatically<br/> allocated<br/> to any of the individual volumes as needed.<br/> If desired, you can specify reserve and quota sizes for each volume.<br/> Each volume uses only part of the overall container, so the available space is the<br/> total size of the container, minus the size of all the volumes in the container.
+                            </p></blockquote>
+                        </blockquote>
+                        <blockquote>
+                            <blockquote><p>
+                                <code class="language-plaintext highlighter-rouge">APFS</code>: Uses the APFS format. Choose this option if you don’t need an encrypted or case-sensitive format.
+                            </p></blockquote>
+                        </blockquote>
+                        <blockquote>
+                            <blockquote><p><code class="language-plaintext highlighter-rouge">APFS (Encrypted)</code>: Uses the APFS format and encrypts the volume.</p>
+                            </blockquote>
+                        </blockquote>
+                        <blockquote>
+                            <blockquote><p>
+                                <code class="language-plaintext highlighter-rouge">APFS (Case-sensitive)</code>: Uses the APFS format and is case-sensitive to file and folder names. For example, folders<br/> named “Homework” and “HOMEWORK”<br/> are two different folders.
+                            </p></blockquote>
+                        </blockquote>
+                        <blockquote>
+                            <blockquote><p>
+                                <code class="language-plaintext highlighter-rouge">APFS (Case-sensitive, Encrypted)</code>: Uses the APFS format, is case-sensitive to file and folder names, and encrypts<br/> the volume.<br/> For example, folders named “Homework” and “HOMEWORK” are two<br/> different folders.
+                            </p></blockquote>
+                        </blockquote>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>File System
+                                        <th>Abbreviation
+                                <tbody>
+                                    <tr>
+                                        <td>Mac OS Extended (Journaled)
+                                        <td>JHFS+
+                                    <tr>
+                                        <td>Mac OS Extended
+                                        <td>HFS+
+                                    <tr>
+                                        <td>MS-DOS fat32
+                                        <td>FAT32
+                                    <tr>
+                                        <td>ExFAT
+                                        <td>ExFAT
+                            </table>
+                        </div>
+                        <h2 id="diskutil-secureerase"><a href="#diskutil-secureerase" class="anchor-heading" aria-labelledby="diskutil-secureerase">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a> Diskutil SecureErase
+                        </h2>
+                        <blockquote><p>Now we need to select the level of secure erase we want. There are five levels of secure erasing you can use labeled<br/> from 0-4.</p>
+                        </blockquote>
+                        <blockquote><p>
+                            <code class="language-plaintext highlighter-rouge">Level 0 </code>just erases the drive by writing the number zero across every sector of the drive.</p>
+                        </blockquote>
+                        <blockquote><p><code class="language-plaintext highlighter-rouge">Level 1</code> does the same but with random data, thus taking longer.</p></blockquote>
+                        <blockquote><p>
+                            <code class="language-plaintext highlighter-rouge">Level 2 </code>erases the drive 7 times with 1’s and 0’s except the last pass where it uses random data.
+                        </p></blockquote>
+                        <blockquote><p>
+                            <code class="language-plaintext highlighter-rouge">Level 3</code> is a special algorithm that erases the drives with random data as well as data compiled from a special<br/> collection of 1’s and 0’s.
+                        </p></blockquote>
+                        <blockquote><p>
+                            <code class="language-plaintext highlighter-rouge">Level 4</code> is a little different and erases it three times, with random data on the first two passes and one set of<br/> zeroes on the last pass.
+                        </p></blockquote>
+                        <div class="language-shell highlighter-rouge">
+                            <div class="highlight"><pre class="highlight"><code>diskutil secureErase 4 /dev/disk2
 </code></pre></div></div><h1 id="csrutil"> <a href="#csrutil" class="anchor-heading" aria-labelledby="csrutil"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://ss64.com/osx/csrutil.html">csrutil</a></h1><h1 id="pwpolicy"> <a href="#pwpolicy" class="anchor-heading" aria-labelledby="pwpolicy"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a href="https://www.manpagez.com/man/8/pwpolicy/">pwpolicy</a></h1><ul><li><a href="https://www.unix.com/man-page/osx/8/pwpolicy/">alt man page</a><li><a href="https://mosen.github.io/profiledocs/macos/pwpolicy.html#macos-10-10">alt man page - config</a></ul><h2 id="set-global-policy"> <a href="#set-global-policy" class="anchor-heading" aria-labelledby="set-global-policy"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Set Global Policy</h2><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pwpolicy <span class="nt">-setglobalpolicy</span> <span class="nv">minChars</span><span class="o">=</span>0
 </code></pre>
+                        </div>
+                        </div>
+                        <h1 id="supported-file-systems"><a href="#supported-file-systems" class="anchor-heading" aria-labelledby="supported-file-systems">
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <use xlink:href="#svg-link"></use>
+                            </svg>
+                        </a>
+                            <a href="https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemDetails/FileSystemDetails.html#//apple_ref/doc/uid/TP40010672-CH8-SW26">Supported File Systems</a>
+                        </h1>
+                        <ul>
+                            <li>
+                                <blockquote>
+                                    <h2 id="apfs"><a href="#apfs" class="anchor-heading" aria-labelledby="apfs">
+                                        <svg viewBox="0 0 16 16" aria-hidden="true">
+                                            <use xlink:href="#svg-link"></use>
+                                        </svg>
+                                    </a> APFS
+                                    </h2>
+                                    <p>
+                                        <code class="language-plaintext highlighter-rouge">The default file system for Apple platforms in macOS High Sierra and later, iOS 10.3 and later, watchOS 4.0 and later, and tvOS 10.2 and later.</code>
+                                    </p></blockquote>
+                            <li>
+                                <blockquote><p>HFS Plus</p></blockquote>
+                                <ul>
+                                    <li>
+                                        <code class="language-plaintext highlighter-rouge">Mac OS Extended file system. The standard file system for prior versions of macOS, iOS, watchOS, and tvOS.</code>
+                                </ul>
+                            <li>
+                                <blockquote>
+                                    <h2 id="hfs"><a href="#hfs" class="anchor-heading" aria-labelledby="hfs">
+                                        <svg viewBox="0 0 16 16" aria-hidden="true">
+                                            <use xlink:href="#svg-link"></use>
+                                        </svg>
+                                    </a> HFS
+                                    </h2>
+                                    <p>
+                                        <code class="language-plaintext highlighter-rouge">Mac OS Standard file system. The standard file system for older versions of macOS. File systems of this type are treated as read only in macOS 10.6 and later.</code>
+                                    </p></blockquote>
+                            <li>
+                                <blockquote><p>WebDAV</p></blockquote>
+                                <ul>
+                                    <li>
+                                        <code class="language-plaintext highlighter-rouge">Used for directly accessing files on the web. For example, iDisk uses WebDAV for accessing files.</code>
+                                </ul>
+                            <li>
+                                <blockquote>
+                                    <h2 id="udf"><a href="#udf" class="anchor-heading" aria-labelledby="udf">
+                                        <svg viewBox="0 0 16 16" aria-hidden="true">
+                                            <use xlink:href="#svg-link"></use>
+                                        </svg>
+                                    </a> UDF
+                                    </h2>
+                                    <p>
+                                        <code class="language-plaintext highlighter-rouge">Universal Disk Format. The standard file system for all forms of DVD media (video, ROM, RAM and RW) and some writable CD formats.</code>
+                                    </p></blockquote>
+                            <li>
+                                <blockquote><p>FAT</p></blockquote>
+                                <ul>
+                                    <li><code class="language-plaintext highlighter-rouge">The MS-DOS file system, with 16- and 32-bit variants. Fat 12-bit is not supported.</code>
+                                </ul>
+                            <li>
+                                <blockquote><p>ExFAT</p></blockquote>
+                                <ul>
+                                    <li><code class="language-plaintext highlighter-rouge">An interchange format used by digital cameras and other peripherals.</code>
+                                </ul>
+                            <li>
+                                <blockquote><p>SMB/CIFS</p></blockquote>
+                                <ul>
+                                    <li><code class="language-plaintext highlighter-rouge">Used for sharing files with Microsoft Windows SMB file servers and clients.</code>
+                                </ul>
+                            <li>
+                                <blockquote><p>AFP</p></blockquote>
+                                <ul>
+                                    <li><code class="language-plaintext highlighter-rouge">Apple Filing Protocol. The primary network file system for all versions of Mac OS.</code>
+                                </ul>
+                            <li>
+                                <blockquote>
+                                    <h2 id="nfs"><a href="#nfs" class="anchor-heading" aria-labelledby="nfs">
+                                        <svg viewBox="0 0 16 16" aria-hidden="true">
+                                            <use xlink:href="#svg-link"></use>
+                                        </svg>
+                                    </a> NFS
+                                    </h2>
+                                    <p>
+                                        <code class="language-plaintext highlighter-rouge">Network File System. A commonly-used UNIX file sharing standard. macOS supports NFSv2 and NFSv3 over TCP and UDP. macOS 10.7 and later also supports NFSv4 over TCP.</code>
+                                    </p></blockquote>
+                            <li>
+                                <blockquote><p>FTP</p></blockquote>
+                                <ul>
+                                    <li><code class="language-plaintext highlighter-rouge">A file system wrapper for the standard Internet File Transfer Protocol.</code>
+                                </ul>
+                            <li>
+                                <blockquote><p>Xsan</p></blockquote>
+                                <ul>
+                                    <li><code class="language-plaintext highlighter-rouge">Apple’s 64-bit cluster file system used in storage area networks.</code>
+                                </ul>
+                            <li>
+                                <blockquote><p>NTFS</p></blockquote>
+                                <ul>
+                                    <li><code class="language-plaintext highlighter-rouge">A standard file system for computers running the Windows operating system.</code>
+                                </ul>
+                            <li>
+                                <blockquote><p>CDDAFS</p></blockquote>
+                                <ul>
+                                    <li>
+                                        <code class="language-plaintext highlighter-rouge">A file system used to mount audio CDs and present audio tracks on disc to users as AIFF-C encoded files.</code>
+                                </ul>
+                            <li>
+                                <blockquote><p>ISO 9660</p></blockquote>
+                                <ul>
+                                    <li><code class="language-plaintext highlighter-rouge">The file system format used by CD-ROMs.</code>
+                                </ul>
+                        </ul>
+                    </main>
+                    <hr>
+                    <footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"></p>
+                        <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0">
+                            <a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./MacNotes/Utilities.md" id="edit-this-page">Edit this page on GitHub</a></p></div>
+                    </footer>
                 </div>
-                </div>
-                <h1 id="supported-file-systems"><a href="#supported-file-systems" class="anchor-heading" aria-labelledby="supported-file-systems">
-                    <svg viewBox="0 0 16 16" aria-hidden="true">
-                        <use xlink:href="#svg-link"></use>
-                    </svg>
-                </a>
-                    <a href="https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemDetails/FileSystemDetails.html#//apple_ref/doc/uid/TP40010672-CH8-SW26">Supported
-                                                                                                                                                                                                                              File
-                                                                                                                                                                                                                              Systems</a>
-                </h1>
-                <ul>
-                    <li>
-                        <blockquote>
-                            <h2 id="apfs"><a href="#apfs" class="anchor-heading" aria-labelledby="apfs">
-                                <svg viewBox="0 0 16 16" aria-hidden="true">
-                                    <use xlink:href="#svg-link"></use>
-                                </svg>
-                            </a> APFS
-                            </h2>
-                            <p><code class="language-plaintext highlighter-rouge">The default file system for Apple platforms in macOS High Sierra and later, iOS 10.3 and later,
-                                                                                  watchOS 4.0 and later, and tvOS 10.2 and later.</code></p></blockquote>
-                    <li>
-                        <blockquote><p>HFS Plus</p></blockquote>
-                        <ul>
-                            <li><code class="language-plaintext highlighter-rouge">Mac OS Extended file system. The standard file system for prior versions of macOS, iOS, watchOS,
-                                                                                   and tvOS.</code>
-                        </ul>
-                    <li>
-                        <blockquote>
-                            <h2 id="hfs"><a href="#hfs" class="anchor-heading" aria-labelledby="hfs">
-                                <svg viewBox="0 0 16 16" aria-hidden="true">
-                                    <use xlink:href="#svg-link"></use>
-                                </svg>
-                            </a> HFS
-                            </h2>
-                            <p><code class="language-plaintext highlighter-rouge">Mac OS Standard file system. The standard file system for older versions of macOS. File systems of
-                                                                                  this type are treated as read only in macOS 10.6 and later.</code></p></blockquote>
-                    <li>
-                        <blockquote><p>WebDAV</p></blockquote>
-                        <ul>
-                            <li><code class="language-plaintext highlighter-rouge">Used for directly accessing files on the web. For example, iDisk uses WebDAV for accessing
-                                                                                   files.</code>
-                        </ul>
-                    <li>
-                        <blockquote>
-                            <h2 id="udf"><a href="#udf" class="anchor-heading" aria-labelledby="udf">
-                                <svg viewBox="0 0 16 16" aria-hidden="true">
-                                    <use xlink:href="#svg-link"></use>
-                                </svg>
-                            </a> UDF
-                            </h2>
-                            <p><code class="language-plaintext highlighter-rouge">Universal Disk Format. The standard file system for all forms of DVD media (video, ROM, RAM and
-                                                                                  RW) and some writable CD formats.</code></p></blockquote>
-                    <li>
-                        <blockquote><p>FAT</p></blockquote>
-                        <ul>
-                            <li><code class="language-plaintext highlighter-rouge">The MS-DOS file system, with 16- and 32-bit variants. Fat 12-bit is not supported.</code>
-                        </ul>
-                    <li>
-                        <blockquote><p>ExFAT</p></blockquote>
-                        <ul>
-                            <li><code class="language-plaintext highlighter-rouge">An interchange format used by digital cameras and other peripherals.</code>
-                        </ul>
-                    <li>
-                        <blockquote><p>SMB/CIFS</p></blockquote>
-                        <ul>
-                            <li><code class="language-plaintext highlighter-rouge">Used for sharing files with Microsoft Windows SMB file servers and clients.</code>
-                        </ul>
-                    <li>
-                        <blockquote><p>AFP</p></blockquote>
-                        <ul>
-                            <li><code class="language-plaintext highlighter-rouge">Apple Filing Protocol. The primary network file system for all versions of Mac OS.</code>
-                        </ul>
-                    <li>
-                        <blockquote>
-                            <h2 id="nfs"><a href="#nfs" class="anchor-heading" aria-labelledby="nfs">
-                                <svg viewBox="0 0 16 16" aria-hidden="true">
-                                    <use xlink:href="#svg-link"></use>
-                                </svg>
-                            </a> NFS
-                            </h2>
-                            <p><code class="language-plaintext highlighter-rouge">Network File System. A commonly-used UNIX file sharing standard. macOS supports NFSv2 and NFSv3
-                                                                                  over TCP and UDP. macOS 10.7 and later also supports NFSv4 over TCP.</code></p></blockquote>
-                    <li>
-                        <blockquote><p>FTP</p></blockquote>
-                        <ul>
-                            <li><code class="language-plaintext highlighter-rouge">A file system wrapper for the standard Internet File Transfer Protocol.</code>
-                        </ul>
-                    <li>
-                        <blockquote><p>Xsan</p></blockquote>
-                        <ul>
-                            <li><code class="language-plaintext highlighter-rouge">Apple’s 64-bit cluster file system used in storage area networks.</code>
-                        </ul>
-                    <li>
-                        <blockquote><p>NTFS</p></blockquote>
-                        <ul>
-                            <li><code class="language-plaintext highlighter-rouge">A standard file system for computers running the Windows operating system.</code>
-                        </ul>
-                    <li>
-                        <blockquote><p>CDDAFS</p></blockquote>
-                        <ul>
-                            <li><code class="language-plaintext highlighter-rouge">A file system used to mount audio CDs and present audio tracks on disc to users as AIFF-C encoded
-                                                                                   files.</code>
-                        </ul>
-                    <li>
-                        <blockquote><p>ISO 9660</p></blockquote>
-                        <ul>
-                            <li><code class="language-plaintext highlighter-rouge">The file system format used by CD-ROMs.</code>
-                        </ul>
-                </ul>
-            </main>
-            <hr>
-            <footer><p><a href="#top" id="back-to-top">Back to top</a></p>
-                <p class="text-small text-grey-dk-100 mb-0"></p>
-                <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"><a
-                        href="https://github.com/14paxton/14paxton.github.io/edit/develop/./MacNotes/Utilities.md"
-                        id="edit-this-page"
-                >Edit this page on GitHub</a></p></div>
-            </footer>
+            </div>
+            <button id="search-button" class="search-button btn-reset" aria-label="Focus on search">
+                <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+                    <use xlink:href="#svg-search"></use>
+                </svg>
+            </button>
+            <div class="search-overlay"></div>
         </div>
-    </div>
-    <button id="search-button" class="search-button btn-reset" aria-label="Focus on search">
-        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
-            <use xlink:href="#svg-search"></use>
-        </svg>
-    </button>
-    <div class="search-overlay"></div>
-</div>
