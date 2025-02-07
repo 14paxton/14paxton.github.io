@@ -85,12 +85,12 @@ Table of Contents
 - **Challenges**:
     - Needed to access files while the authorization token was still valid, then send them to a JMS queue for email attachment processing.
 
-### [Testing GORM and Hibernate Queries](https://www.paxtonb.com/PersonalGrailsNotes/Testing#mocking-hibernate-used-to-test-methods-using-where-queriers--detached-criteria--criteria-builder)
+### [Testing GORM and Hibernate Queries](https://www.paxtonb.com/GrailsNotes/Testing#mocking-hibernate-used-to-test-methods-using-where-queriers--detached-criteria--criteria-builder)
 
 - **What I did**:
     - Researched Hibernate and GORM documentation and came up with a method to mock Hibernate datastore and PlatformTransactionManager.
 
-### [Configuring a Plugin to Create Multiple Domain Objects](https://www.paxtonb.com/PersonalGrailsNotes/Testing#using-test-data-from-buildtest-plugin)
+### [Configuring a Plugin to Create Multiple Domain Objects](https://www.paxtonb.com/GrailsNotes/Testing#using-test-data-from-buildtest-plugin)
 
 - **What I did**:
     - Configure a plugin to create multiple fully qualified domain objects simultaneously.

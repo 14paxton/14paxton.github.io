@@ -2,8 +2,7 @@
 .DS_Store
 .AppleDouble
 .LSOverride
-.idea
-
+./_site
 # Icon must end with two \r
 Icon
 
