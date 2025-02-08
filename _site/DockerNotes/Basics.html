@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <link href="/assets/css/just-the-docs-default.css" rel="stylesheet">
+  <link href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet" rel="stylesheet">
+  <style id="jtd-nav-activation"> .site-nav > ul.nav-list:first-child > li > a, .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(2)) > a, .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+    background-image: none;
+  }
+
+  .site-nav > ul.nav-list:not(:first-child) a, .site-nav li.external a {
+    background-image: none;
+  }
+
+  .site-nav > ul.nav-list:first-child > li:nth-child(4) > ul > li:nth-child(2) > a {
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .site-nav > ul.nav-list:first-child > li:nth-child(4) > button svg, .site-nav > ul.nav-list:first-child > li:nth-child(4) > ul > li:nth-child(2) > button svg {
+    transform: rotate(-90deg);
+  }
+
+  .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(4) > ul.nav-list, .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(4) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list {
+    display: block;
+  }</style>
+  <script src="/assets/js/vendor/lunr.min.js"></script>
+  <script src="/assets/js/just-the-docs.js"></script>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Basics | Paxton’s Notes</title>
+  <meta content="Jekyll v4.4.0" name="generator"/>
+  <meta content="Basics" property="og:title"/>
+  <meta content="en_US" property="og:locale"/>
+  <meta content="Coding Notes" name="description"/>
+  <meta content="Coding Notes" property="og:description"/>
+  <link href="http://localhost:4000/DockerNotes/Basics" rel="canonical"/>
+  <meta content="http://localhost:4000/DockerNotes/Basics" property="og:url"/>
+  <meta content="Paxton’s Notes" property="og:site_name"/>
+  <meta content="website" property="og:type"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="Basics" property="twitter:title"/>
+  <script type="application/ld+json"> {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "description": "Coding Notes",
+    "headline": "Basics",
+    "url": "http://localhost:4000/DockerNotes/Basics"
+  }
+  </script>
+<body><a class="skip-to-main" href="#main-content">Skip to main content</a>
+<svg class="d-none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="svg-link" viewBox="0 0 24 24"><title>Link</title>
+    <svg class="feather feather-link"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24"><title>Menu</title>
+    <svg class="feather feather-menu"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <line x1="3" x2="21" y1="12" y2="12"></line>
+      <line x1="3" x2="21" y1="6" y2="6"></line>
+      <line x1="3" x2="21" y1="18" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24"><title>Expand</title>
+    <svg class="feather feather-chevron-right"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol class="feather feather-external-link"
+          fill="none"
+          height="24"
+          id="svg-external-link"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"><title id="svg-external-link-title">(external link)</title>
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+    <polyline points="15 3 21 3 21 9"></polyline>
+    <line x1="10" x2="21" y1="14" y2="3"></line>
+  </symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24"><title>Document</title>
+    <svg class="feather feather-file"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+      <polyline points="13 2 13 9 20 9"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-search" viewBox="0 0 24 24"><title>Search</title>
+    <svg class="feather feather-search"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-copy" viewBox="0 0 16 16"><title>Copy</title>
+    <svg class="bi bi-clipboard" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+      <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-copied" viewBox="0 0 16 16"><title>Copied</title>
+    <svg class="bi bi-clipboard-check-fill" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+    </svg>
+  </symbol>
+</svg>
+<div class="side-bar">
+  <div class="site-header" role="banner"><a class="site-title lh-tight" href="/"> Paxton's Notes </a>
+    <button aria-label="Toggle menu" aria-pressed="false" class="site-button btn-reset" id="menu-button">
+      <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+        <use xlink:href="#svg-menu"></use>
+      </svg>
+    </button>
+  </div>
+  <nav aria-label="Main" class="site-nav" id="site-nav">
+    <ul class="nav-list">
+      <li class="nav-list-item">
+        <button aria-label="toggle items in MyPersonalDocsAndStuff category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/index">MyPersonalDocsAndStuff</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/AppsForWorkflow">AppsForWorkflow</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/CloudServices">CloudServices</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/LetterOfRecommendation">LetterOfRecommendation</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PastProjects">PastProjects</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PriorityLearning">PriorityLearning</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in AWS category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/AWS/">AWS</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/AWS/CLI">CLI</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Build category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Build/">Build</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Gradle">Gradle</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Maven">Maven</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in DockerNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/DockerNotes/">DockerNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/ARM64">ARM64</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Basics">Basics</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Dockerfile">Dockerfile</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Install">Install</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Quick-TidBits">Quick-TidBits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/UsefulCommands">UsefulCommands</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in DotNetNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/DotNetNotes/">DotNetNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CLI">CLI</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in CSharp category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/DotNetNotes/Csharp">CSharp</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Email">Email</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Threading">Threading</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Controllers">Controllers</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Database">Database</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/EntityFramework">EntityFramework</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Environment">Environment</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Google">Google</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HTTP">HTTP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HttpRepl">HttpRepl</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/LINQ">LINQ</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Maui">Maui</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Microservice">Microservice.md</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/VisualStudio">VisualStudio</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Git category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Git">Git</a>
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <button aria-label="toggle items in GitHub category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/Git/GitHub">GitHub</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/GitHubPages">GitHubPages</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/Jekyll">Jekyll</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/MarkDown">MarkDown</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Git/QuickScripts">QuickScripts</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GoogleNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GoogleNotes/">GoogleNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/APIs">APIs</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Browser">Browser</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Cloud">Cloud</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ComputeEngine">ComputeEngine</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Deploy">Deploy</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DevTools">DevTools</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DialogFlow">DialogFlow</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Functions">Functions</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Logging">Logging</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ServiceAccounts">ServiceAccounts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Storage">Storage</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/VoiceAgent">VoiceAgent</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GrailsNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GrailsNotes/">GrailsNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/GORM_WhereQueris">GORM_WhereQueris</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLComplexQueries">HQLComplexQueries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLQueries">HQLQueries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/RunningApp">RunningApp</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Security">Security</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Services">Services</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Testing">Testing</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GroovyNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GroovyNotes/">GroovyNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Array-Loop-List-Map">Array-Loop-List-Map</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Async_Parallel-Concurrency">Async_Parallel-Concurrency</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Clever-Tid-bits">Clever-Tid-bits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/DateAndTime">DateAndTime</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Enum">Enum</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/MetaProgramming">MetaProgramming</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/RegEx">RegEx</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/String">String</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in HTML&CSS category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/HTML&CSS/">HTML&CSS</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/CSS">CSS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/HTML">HTML</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/Images">Images</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/HTTP">HTTP</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in IntelliJNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/IntelliJNotes/">IntelliJNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/CustomVM">CustomVM</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/DebuggerConfig">DebuggerConfig</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/HTTPExamples">HTTPExamples</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/Spaces">Spaces</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Java category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/JavaNotes/Java">Java</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Algorithms">Algorithms</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/CommandLineDiddys">CommandLineDiddys</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/DataBase">DataBase</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/File">File</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/GCP">GCP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Hibernate">Hibernate</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/LooseNotes">LooseNotes</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/OOP">OOP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/String">String</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Threads">Threads</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in JavaScript category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/JavaScript/">JavaScript</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Browser">Browser</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CDN">CDN</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CSS">CSS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Clever-Algos">Clever-Algos</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/DateAndTime">DateAndTime</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Document">Document</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Elements">Elements</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Events">Events</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FormStuff">FormStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FunctionObject">FunctionObject</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/HTTP">HTTP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Map">Map</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Modules">Modules</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in Node category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/Node/">Node</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Node/QuickScripts">QuickScripts</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Number">Number</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Object">Object</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/QuerySelector">QuerySelector</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in ReactNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/ReactNotes">ReactNotes</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Clever-Snippets">Clever-Snippets</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Configuring">Configuring</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/HandleEvents">HandleEvents</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/ReactNotes/Hooks">Hooks</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/MUI">MUI</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Mat-Table">Mat-Table</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/React-Router">React-Router</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/ReactHookForm">ReactHookForm</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/String">String</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/WebWorker">WebWorker</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/RegEx">RegEx</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/State">State</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in TypeScript category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/TypeScript/">TypeScript</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Events">Events</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/QuickScripts">QuickScripts</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Types">Types</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/UsefulSnippets">UsefulSnippets</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WebAPI">WebAPI</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Window">Window</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WorkingWithFiles">WorkingWithFiles</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/Kubernetes">Kubernetes</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Linux category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Linux/">Linux</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/ADMIN-ROOT">ADMIN-ROOT</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Conditionals">Conditionals</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Encoding">Encoding</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/JQ">JQ</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/MySQL">MySQL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/PGP">PGP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/QuickScripts">QuickScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/SDKMan">SDKMan</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Scripting">Scripting</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/VIM_QuickTips">VIM_QuickTips</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in MacNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/MacNotes/">MacNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/AppleScripts">AppleScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/HomeBrew">HomeBrew</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/JavaOnMac">JavaOnMac</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/QuickScripts">QuickScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ShortCuts">ShortCuts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/UsersAndGroups">UsersAndGroups</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/Utilities">Utilities</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ZSH">ZSH</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Micronotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Micronotes/">Micronotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/AWS">AWS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Configuration">Configuration</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/DataBaseStuff">DataBaseStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/EnviromentStuff">EnviromentStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/GRAALVM">GRAALVM</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Gradle">Gradle</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Jackson">Jackson</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/MicroStream">MicroStream</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Resources">Resources</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Testing">Testing</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/UsefuleSnippets">UsefuleSnippets</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/cli_gradlew">cli_gradlew</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/Obsidian/Obsidian">Obsidian</a>
+      <li class="nav-list-item"><a class="nav-list-link" href="/RandomNuggetsOfKnowledge">RandomNuggetsOfKnowledge</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in SQLNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/SQLNotes/">SQLNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Docker">Docker</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Functions">Functions</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/HQL">HQL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Liquibase">Liquibase</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Queries">Queries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/SQLCheatSheet">SQLCheatSheet</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/TerminalCommands">Terminal-Commands</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in SpringNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/SpringNotes/">SpringNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Hibernate">Hibernate</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Maven">Maven</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Properties">Properties</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Security">Security</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Serialization">Serialization</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Testing">Testing</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/TidBits">TidBits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Transactions">Transactions</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/SystemDesign&Architecture/">SystemDesign&Architecture</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in TestingFrameworks category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/TestingFrameworks/">TestingFrameworks</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JUnit">JUnit</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JavascriptTesting">Javascript</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Spock">Spock</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Testcontainers">Testcontainers</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Thymeleaf category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Thymeleaf/">Thymeleaf</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Thymeleaf/Fragments">Fragments</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Windows_Notes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Windows_Notes/">Windows_Notes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/CMD">CMD</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Environment">Environment</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/PackageManagers">PackageManagers</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Powershell">Powershell</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Run">Run</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Shortcuts">Shortcuts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Terminal">Terminal</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WSL">WSL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WindowsServer">WindowsServer</a>
+        </ul>
+    </ul>
+  </nav>
+  <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
+</div>
+<div class="main" id="top">
+  <div class="main-header" id="main-header">
+    <div class="search" role="search">
+      <div class="search-input-wrap"><input aria-label="Search Paxton's Notes"
+                                            autocomplete="off"
+                                            class="search-input"
+                                            id="search-input"
+                                            placeholder="Search Paxton's Notes"
+                                            tabindex="0"
+                                            type="text"> <label class="search-label" for="search-input">
+        <svg class="search-icon" viewBox="0 0 24 24">
+          <use xlink:href="#svg-search"></use>
+        </svg>
+      </label></div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+    <nav aria-label="Auxiliary" class="aux-nav">
+      <ul class="aux-nav-list">
+        <li class="aux-nav-list-item"><a class="site-button" href="https://github.com/14paxton/14paxton.github.io" rel="noopener noreferrer" target="_blank"> Template
+                                                                                                                                                              Repository </a>
+      </ul>
+    </nav>
+  </div>
+  <div class="main-content-wrap">
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol class="breadcrumb-nav-list">
+        <li class="breadcrumb-nav-list-item"><a href="/DockerNotes/">DockerNotes</a>
+        <li class="breadcrumb-nav-list-item"><span>Basics</span>
+      </ol>
+    </nav>
+    <div class="main-content" id="main-content">
+      <main><p><br/></p>
+        <details>
+          <summary class="text-delta"> Table of contents</summary>
+          <ol id="markdown-toc">
+            <li><a href="#path-for-ubuntu-for-windows" id="markdown-toc-path-for-ubuntu-for-windows">Path for ubuntu for windows</a>
+            <li><a href="#basic-docker-concepts-and-terms" id="markdown-toc-basic-docker-concepts-and-terms">Basic Docker Concepts and Terms</a>
+              <ol>
+                <li><a href="#docker-image" id="markdown-toc-docker-image"><strong>Docker Image:</strong></a>
+                <li><a href="#docker-container" id="markdown-toc-docker-container"><strong>Docker Container:</strong></a>
+                <li><a href="#docker-hub" id="markdown-toc-docker-hub"><strong>Docker Hub:</strong></a>
+                <li><a href="#dockerfile" id="markdown-toc-dockerfile"><strong>Dockerfile:</strong></a>
+                <li><a href="#docker-compose" id="markdown-toc-docker-compose"><strong>Docker Compose:</strong></a>
+              </ol>
+            <li><a href="#basic-docker-commands" id="markdown-toc-basic-docker-commands">Basic Docker Commands</a>
+              <ol>
+                <li><a href="#version-display-docker-version" id="markdown-toc-version-display-docker-version">version: Display Docker version.</a>
+                <li><a href="#display-system-wide-information" id="markdown-toc-display-system-wide-information">Display system-wide information.</a>
+                <li><a href="#mage-run-a-docker-container-from-an-image" id="markdown-toc-mage-run-a-docker-container-from-an-image">mage: Run a Docker container from an image.</a>
+                <li><a href="#list-running-docker-containers" id="markdown-toc-list-running-docker-containers">List running Docker containers.</a>
+                <li><a href="#list-all-docker-containers" id="markdown-toc-list-all-docker-containers">List all Docker containers.</a>
+                <li><a href="#stop-a-running-container" id="markdown-toc-stop-a-running-container">Stop a running container.</a>
+                <li><a href="#remove-a-docker-container" id="markdown-toc-remove-a-docker-container">Remove a Docker container.</a>
+                <li><a href="#list-docker-images" id="markdown-toc-list-docker-images">List Docker images.</a>
+                <li><a href="#remove-a-docker-image" id="markdown-toc-remove-a-docker-image">Remove a Docker image.</a>
+                <li><a href="#pull-an-image-from-a-docker-registry-docker-hub-by-default" id="markdown-toc-pull-an-image-from-a-docker-registry-docker-hub-by-default">Pull an image
+                                                                                                                                                                       from a Docker
+                                                                                                                                                                       registry
+                                                                                                                                                                       (Docker Hub
+                                                                                                                                                                       by
+                                                                                                                                                                       default).</a>
+                <li><a href="#push-an-image-to-a-docker-registry" id="markdown-toc-push-an-image-to-a-docker-registry">Push an image to a Docker registry.</a>
+                <li><a href="#execute-a-command-in-a-running-container" id="markdown-toc-execute-a-command-in-a-running-container">Execute a command in a running container.</a>
+                <li><a href="#fetch-the-logs-of-a-container" id="markdown-toc-fetch-the-logs-of-a-container">Fetch the logs of a container.</a>
+                <li><a href="#starts-one-or-more-stopped-containers" id="markdown-toc-starts-one-or-more-stopped-containers">Starts one or more stopped containers.</a>
+                <li><a href="#stops-one-or-more-running-containers" id="markdown-toc-stops-one-or-more-running-containers">Stops one or more running containers.</a>
+                <li><a href="#build-an-image-from-a-dockerfile" id="markdown-toc-build-an-image-from-a-dockerfile">Build an image from a Dockerfile.</a>
+                <li><a href="#pull-an-image-or-a-repository-from-a-registry" id="markdown-toc-pull-an-image-or-a-repository-from-a-registry">Pull an image or a repository from a
+                                                                                                                                             registry.</a>
+                <li><a href="#push-an-image-or-a-repository-to-a-registry" id="markdown-toc-push-an-image-or-a-repository-to-a-registry">Push an image or a repository to a
+                                                                                                                                         registry.</a>
+                <li><a href="#exports-a-containers-filesystem-as-a-tar-archive" id="markdown-toc-exports-a-containers-filesystem-as-a-tar-archive">Exports a container’s filesystem
+                                                                                                                                                   as a tar archive.</a>
+                <li><a href="#runs-a-command-in-a-run-time-container" id="markdown-toc-runs-a-command-in-a-run-time-container">Runs a command in a run-time container.</a>
+                <li><a href="#searches-the-docker-hub-for-images" id="markdown-toc-searches-the-docker-hub-for-images">Searches the Docker Hub for images.</a>
+                <li><a href="#attaches-to-a-running-container" id="markdown-toc-attaches-to-a-running-container">Attaches to a running container.</a>
+                <li><a href="#creates-a-new-image-from-a-containers-changes" id="markdown-toc-creates-a-new-image-from-a-containers-changes">Creates a new image from a container’s
+                                                                                                                                             changes.</a>
+              </ol>
+            <li><a href="#intermediate-docker-commands" id="markdown-toc-intermediate-docker-commands">Intermediate Docker Commands</a>
+              <ol>
+                <li><a href="#run-a-docker-container-in-detached-mode" id="markdown-toc-run-a-docker-container-in-detached-mode">Run a Docker container in detached mode.</a>
+                <li><a href="#map-a-port-from-the-host-to-a-container" id="markdown-toc-map-a-port-from-the-host-to-a-container">Map a port from the host to a container.</a>
+                <li><a href="#mount-a-volume-from-the-host-to-a-container" id="markdown-toc-mount-a-volume-from-the-host-to-a-container">Mount a volume from the host to a
+                                                                                                                                         container.</a>
+                <li><a href="#set-environment-variables-in-a-container" id="markdown-toc-set-environment-variables-in-a-container">Set environment variables in a container.</a>
+                <li><a href="#return-low-level-information-on-docker-objects" id="markdown-toc-return-low-level-information-on-docker-objects">Return low-level information on
+                                                                                                                                               Docker objects.</a>
+                <li><a href="#build-a-docker-image-with-a-tag-from-a-dockerfile-in-the-current-directory"
+                       id="markdown-toc-build-a-docker-image-with-a-tag-from-a-dockerfile-in-the-current-directory">Build a Docker image with a tag from a Dockerfile in the current
+                                                                                                                    directory.</a>
+              </ol>
+            <li><a href="#dockerfile-commands" id="markdown-toc-dockerfile-commands">Dockerfile Commands</a>
+              <ol>
+                <li><a href="#from-image" id="markdown-toc-from-image"><code class="language-plaintext highlighter-rouge">FROM image</code></a>
+                <li><a href="#run" id="markdown-toc-run"><code class="language-plaintext highlighter-rouge">RUN</code></a>
+                <li><a href="#cmd" id="markdown-toc-cmd"><code class="language-plaintext highlighter-rouge">CMD</code></a>
+                <li><a href="#env-varvalue" id="markdown-toc-env-varvalue"><code class="language-plaintext highlighter-rouge">ENV VAR=VALUE</code></a>
+                <li><a href="#add-source-destination" id="markdown-toc-add-source-destination"><code class="language-plaintext highlighter-rouge">ADD source destination</code></a>
+                <li><a href="#copy-source-destination" id="markdown-toc-copy-source-destination"><code class="language-plaintext highlighter-rouge">COPY source
+                                                                                                                                                    destination</code></a>
+                <li><a href="#entrypoint" id="markdown-toc-entrypoint"><code class="language-plaintext highlighter-rouge">ENTRYPOINT</code></a>
+                <li><a href="#label" id="markdown-toc-label"><code class="language-plaintext highlighter-rouge">LABEL</code></a>
+                <li><a href="#expose" id="markdown-toc-expose"><code class="language-plaintext highlighter-rouge">EXPOSE</code></a>
+                <li><a href="#entrypoint-1" id="markdown-toc-entrypoint-1"><code class="language-plaintext highlighter-rouge">ENTRYPOINT</code></a>
+                <li><a href="#volume" id="markdown-toc-volume"><code class="language-plaintext highlighter-rouge">VOLUME</code></a>
+                <li><a href="#user" id="markdown-toc-user"><code class="language-plaintext highlighter-rouge">USER</code></a>
+                <li><a href="#workdir" id="markdown-toc-workdir"><code class="language-plaintext highlighter-rouge">WORKDIR</code></a>
+                <li><a href="#arg" id="markdown-toc-arg"><code class="language-plaintext highlighter-rouge">ARG</code></a>
+                <li><a href="#onbuild" id="markdown-toc-onbuild"><code class="language-plaintext highlighter-rouge">ONBUILD</code></a>
+              </ol>
+            <li><a href="#docker-compose-commands" id="markdown-toc-docker-compose-commands">Docker Compose Commands</a>
+              <ol>
+                <li><a href="#create-and-start-containers" id="markdown-toc-create-and-start-containers">Create and start containers.</a>
+                <li><a href="#stop-and-remove-containers-networks-images-and-volumes" id="markdown-toc-stop-and-remove-containers-networks-images-and-volumes">Stop and remove
+                                                                                                                                                               containers, networks,
+                                                                                                                                                               images, and
+                                                                                                                                                               volumes.</a>
+                <li><a href="#build-or-rebuild-services" id="markdown-toc-build-or-rebuild-services">Build or rebuild services.</a>
+                <li><a href="#view-output-from-containers" id="markdown-toc-view-output-from-containers">View output from containers.</a>
+                <li><a href="#restart-services" id="markdown-toc-restart-services">Restart services.</a>
+                <li><a href="#pause-services" id="markdown-toc-pause-services">Pause services.</a>
+                <li><a href="#unpause-services" id="markdown-toc-unpause-services">Unpause services.</a>
+                <li><a href="#start-existing-containers-for-a-service" id="markdown-toc-start-existing-containers-for-a-service">Start existing containers for a service.</a>
+                <li><a href="#stop-running-containers-without-removing-them" id="markdown-toc-stop-running-containers-without-removing-them">Stop running containers without
+                                                                                                                                             removing them.</a>
+                <li><a href="#create-docker-hub-image" id="markdown-toc-create-docker-hub-image">CREATE DOCKER HUB IMAGE</a>
+                  <ol>
+                    <li><a href="#docker-push" id="markdown-toc-docker-push">Docker Push:</a>
+                    <li><a href="#creating-an-image-for-docker-hub" id="markdown-toc-creating-an-image-for-docker-hub">Creating an image for Docker Hub:</a>
+                    <li><a href="#set-up-your-environment" id="markdown-toc-set-up-your-environment">Set up your environment:</a>
+                    <li><a href="#create-the-dockerfile" id="markdown-toc-create-the-dockerfile">Create the Dockerfile:</a>
+                    <li><a href="#build-the-image" id="markdown-toc-build-the-image">Build the image:</a>
+                    <li><a href="#push-the-image-to-docker-hub" id="markdown-toc-push-the-image-to-docker-hub">Push the image to Docker Hub:</a>
+                    <li><a href="#push-the-latest-image-to-docker-hub" id="markdown-toc-push-the-latest-image-to-docker-hub">Push the latest image to Docker Hub:</a>
+                  </ol>
+              </ol>
+            <li><a href="#docker-compose-1" id="markdown-toc-docker-compose-1">Docker Compose</a>
+              <ol>
+                <li><a href="#install" id="markdown-toc-install">INSTALL</a>
+                  <ol>
+                    <li><a href="#download-the-latest-version-of-docker-compose" id="markdown-toc-download-the-latest-version-of-docker-compose">Download the latest version of
+                                                                                                                                                 Docker Compose:</a>
+                    <li><a href="#apply-executable-permissions" id="markdown-toc-apply-executable-permissions">Apply executable permissions:</a>
+                  </ol>
+                <li><a href="#test-docker-compose" id="markdown-toc-test-docker-compose">Test Docker Compose</a>
+              </ol>
+          </ol>
+        </details>
+        <p><br/></p>
+        <hr/>
+        <p><br/></p>
+        <h1 id="path-for-ubuntu-for-windows"><a aria-labelledby="path-for-ubuntu-for-windows" class="anchor-heading" href="#path-for-ubuntu-for-windows">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Path for ubuntu for windows
+        </h1>
+        <div class="language-plaintext highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>C:\\Users\\bpaxton\\AppData\\Local\\Packages\\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\\rootfs
+</code></pre>
+          </div>
+        </div>
+        <h1 id="basic-docker-concepts-and-terms"><a aria-labelledby="basic-docker-concepts-and-terms" class="anchor-heading" href="#basic-docker-concepts-and-terms">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Basic Docker Concepts and Terms
+        </h1>
+        <h2 id="docker-image"><a aria-labelledby="docker-image" class="anchor-heading" href="#docker-image">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <strong>Docker Image:</strong></h2>
+        <blockquote><p>A lightweight, stand-alone, executable package <strong>that</strong> includes everything needed <strong>to</strong> run a piece <strong>of</strong> software.
+        </p></blockquote>
+        <h2 id="docker-container"><a aria-labelledby="docker-container" class="anchor-heading" href="#docker-container">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <strong>Docker Container:</strong></h2>
+        <blockquote><p>A runtime instance of a Docker image.</p></blockquote>
+        <h2 id="docker-hub"><a aria-labelledby="docker-hub" class="anchor-heading" href="#docker-hub">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <strong>Docker Hub:</strong></h2>
+        <blockquote><p>A cloud-based registry service where Docker users <strong>and</strong> partners create, test, store, <strong>and</strong> distribute container images.</p>
+        </blockquote>
+        <h2 id="dockerfile"><a aria-labelledby="dockerfile" class="anchor-heading" href="#dockerfile">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <strong>Dockerfile:</strong></h2>
+        <blockquote><p>A text document that contains all the commands a user could call on the command line <strong>to</strong> assemble an image.</p></blockquote>
+        <h2 id="docker-compose"><a aria-labelledby="docker-compose" class="anchor-heading" href="#docker-compose">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <strong>Docker Compose:</strong></h2>
+        <blockquote><p>A tool <strong>for</strong> defining <strong>and</strong> running multi-container Docker applications.</p></blockquote>
+        <h1 id="basic-docker-commands"><a aria-labelledby="basic-docker-commands" class="anchor-heading" href="#basic-docker-commands">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Basic Docker Commands
+        </h1>
+        <h2 id="version-display-docker-version"><a aria-labelledby="version-display-docker-version" class="anchor-heading" href="#version-display-docker-version">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> version: Display Docker version.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker <span class="nt">--version</span>
+</code></pre>
+          </div>
+        </div>
+        <h2 id="display-system-wide-information"><a aria-labelledby="display-system-wide-information" class="anchor-heading" href="#display-system-wide-information">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Display system-wide information.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker info
+</code></pre>
+          </div>
+        </div>
+        <h2 id="mage-run-a-docker-container-from-an-image"><a aria-labelledby="mage-run-a-docker-container-from-an-image"
+                                                              class="anchor-heading"
+                                                              href="#mage-run-a-docker-container-from-an-image">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> mage: Run a Docker container from an image.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker run
+</code></pre>
+          </div>
+        </div>
+        <h2 id="list-running-docker-containers"><a aria-labelledby="list-running-docker-containers" class="anchor-heading" href="#list-running-docker-containers">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> List running Docker containers.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker ps
+</code></pre>
+          </div>
+        </div>
+        <h2 id="list-all-docker-containers"><a aria-labelledby="list-all-docker-containers" class="anchor-heading" href="#list-all-docker-containers">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> List all Docker containers.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker ps a
+</code></pre>
+          </div>
+        </div>
+        <h2 id="stop-a-running-container"><a aria-labelledby="stop-a-running-container" class="anchor-heading" href="#stop-a-running-container">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Stop a running container.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker stop container_id
+</code></pre>
+          </div>
+        </div>
+        <h2 id="remove-a-docker-container"><a aria-labelledby="remove-a-docker-container" class="anchor-heading" href="#remove-a-docker-container">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Remove a Docker container.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker <span class="nb">rm </span>container_id
+</code></pre>
+          </div>
+        </div>
+        <h2 id="list-docker-images"><a aria-labelledby="list-docker-images" class="anchor-heading" href="#list-docker-images">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> List Docker images.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker images
+</code></pre>
+          </div>
+        </div>
+        <h2 id="remove-a-docker-image"><a aria-labelledby="remove-a-docker-image" class="anchor-heading" href="#remove-a-docker-image">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Remove a Docker image.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker <span class="nb">rm </span>image_id
+</code></pre>
+          </div>
+        </div>
+        <h2 id="pull-an-image-from-a-docker-registry-docker-hub-by-default"><a aria-labelledby="pull-an-image-from-a-docker-registry-docker-hub-by-default"
+                                                                               class="anchor-heading"
+                                                                               href="#pull-an-image-from-a-docker-registry-docker-hub-by-default">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Pull an image from a Docker registry (Docker Hub by default).
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker pull
+</code></pre>
+          </div>
+        </div>
+        <h2 id="push-an-image-to-a-docker-registry"><a aria-labelledby="push-an-image-to-a-docker-registry" class="anchor-heading" href="#push-an-image-to-a-docker-registry">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Push an image to a Docker registry.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker push
+</code></pre>
+          </div>
+        </div>
+        <h2 id="execute-a-command-in-a-running-container"><a aria-labelledby="execute-a-command-in-a-running-container"
+                                                             class="anchor-heading"
+                                                             href="#execute-a-command-in-a-running-container">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Execute a command in a running container.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span>
+</code></pre>
+          </div>
+        </div>
+        <h2 id="fetch-the-logs-of-a-container"><a aria-labelledby="fetch-the-logs-of-a-container" class="anchor-heading" href="#fetch-the-logs-of-a-container">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Fetch the logs of a container.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker logs
+</code></pre>
+          </div>
+        </div>
+        <h2 id="starts-one-or-more-stopped-containers"><a aria-labelledby="starts-one-or-more-stopped-containers"
+                                                          class="anchor-heading"
+                                                          href="#starts-one-or-more-stopped-containers">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Starts one or more stopped containers.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker start
+</code></pre>
+          </div>
+        </div>
+        <h2 id="stops-one-or-more-running-containers"><a aria-labelledby="stops-one-or-more-running-containers" class="anchor-heading" href="#stops-one-or-more-running-containers">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Stops one or more running containers.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker stop
+</code></pre>
+          </div>
+        </div>
+        <h2 id="build-an-image-from-a-dockerfile"><a aria-labelledby="build-an-image-from-a-dockerfile" class="anchor-heading" href="#build-an-image-from-a-dockerfile">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Build an image from a Dockerfile.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker build
+</code></pre>
+          </div>
+        </div>
+        <h2 id="pull-an-image-or-a-repository-from-a-registry"><a aria-labelledby="pull-an-image-or-a-repository-from-a-registry"
+                                                                  class="anchor-heading"
+                                                                  href="#pull-an-image-or-a-repository-from-a-registry">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Pull an image or a repository from a registry.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker pull
+</code></pre>
+          </div>
+        </div>
+        <h2 id="push-an-image-or-a-repository-to-a-registry"><a aria-labelledby="push-an-image-or-a-repository-to-a-registry"
+                                                                class="anchor-heading"
+                                                                href="#push-an-image-or-a-repository-to-a-registry">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Push an image or a repository to a registry.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker push
+</code></pre>
+          </div>
+        </div>
+        <h2 id="exports-a-containers-filesystem-as-a-tar-archive"><a aria-labelledby="exports-a-containers-filesystem-as-a-tar-archive"
+                                                                     class="anchor-heading"
+                                                                     href="#exports-a-containers-filesystem-as-a-tar-archive">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Exports a container’s filesystem as a tar archive.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker <span class="nb">export</span>
+</code></pre>
+          </div>
+        </div>
+        <h2 id="runs-a-command-in-a-run-time-container"><a aria-labelledby="runs-a-command-in-a-run-time-container"
+                                                           class="anchor-heading"
+                                                           href="#runs-a-command-in-a-run-time-container">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Runs a command in a run-time container.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span>
+</code></pre>
+          </div>
+        </div>
+        <h2 id="searches-the-docker-hub-for-images"><a aria-labelledby="searches-the-docker-hub-for-images" class="anchor-heading" href="#searches-the-docker-hub-for-images">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Searches the Docker Hub for images.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker search
+</code></pre>
+          </div>
+        </div>
+        <h2 id="attaches-to-a-running-container"><a aria-labelledby="attaches-to-a-running-container" class="anchor-heading" href="#attaches-to-a-running-container">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Attaches to a running container.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker attach
+</code></pre>
+          </div>
+        </div>
+        <h2 id="creates-a-new-image-from-a-containers-changes"><a aria-labelledby="creates-a-new-image-from-a-containers-changes"
+                                                                  class="anchor-heading"
+                                                                  href="#creates-a-new-image-from-a-containers-changes">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Creates a new image from a container’s changes.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker commit
+</code></pre>
+          </div>
+        </div>
+        <h1 id="intermediate-docker-commands"><a aria-labelledby="intermediate-docker-commands" class="anchor-heading" href="#intermediate-docker-commands">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Intermediate Docker Commands
+        </h1>
+        <h2 id="run-a-docker-container-in-detached-mode"><a aria-labelledby="run-a-docker-container-in-detached-mode"
+                                                            class="anchor-heading"
+                                                            href="#run-a-docker-container-in-detached-mode">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Run a Docker container in detached mode.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-d</span> image:
+</code></pre>
+          </div>
+        </div>
+        <h2 id="map-a-port-from-the-host-to-a-container"><a aria-labelledby="map-a-port-from-the-host-to-a-container"
+                                                            class="anchor-heading"
+                                                            href="#map-a-port-from-the-host-to-a-container">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Map a port from the host to a container.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-p</span> host_port:container_port image
+</code></pre>
+          </div>
+        </div>
+        <h2 id="mount-a-volume-from-the-host-to-a-container"><a aria-labelledby="mount-a-volume-from-the-host-to-a-container"
+                                                                class="anchor-heading"
+                                                                href="#mount-a-volume-from-the-host-to-a-container">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Mount a volume from the host to a container.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-v</span> host_volume:container_volume image
+</code></pre>
+          </div>
+        </div>
+        <h2 id="set-environment-variables-in-a-container"><a aria-labelledby="set-environment-variables-in-a-container"
+                                                             class="anchor-heading"
+                                                             href="#set-environment-variables-in-a-container">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Set environment variables in a container.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code> docker run <span class="nt">-e</span> <span class="nv">VAR</span><span class="o">=</span>VALUE image
+</code></pre>
+          </div>
+        </div>
+        <h2 id="return-low-level-information-on-docker-objects"><a aria-labelledby="return-low-level-information-on-docker-objects"
+                                                                   class="anchor-heading"
+                                                                   href="#return-low-level-information-on-docker-objects">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Return low-level information on Docker objects.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code> docker inspect container_id/image_id
+</code></pre>
+          </div>
+        </div>
+        <h2 id="build-a-docker-image-with-a-tag-from-a-dockerfile-in-the-current-directory"><a aria-labelledby="build-a-docker-image-with-a-tag-from-a-dockerfile-in-the-current-directory"
+                                                                                               class="anchor-heading"
+                                                                                               href="#build-a-docker-image-with-a-tag-from-a-dockerfile-in-the-current-directory">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Build a Docker image with a tag from a Dockerfile in the current directory.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code> docker build <span class="nt">-t</span> tag <span class="nb">.</span>
+</code></pre>
+          </div>
+        </div>
+        <h1 id="dockerfile-commands"><a aria-labelledby="dockerfile-commands" class="anchor-heading" href="#dockerfile-commands">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Dockerfile Commands
+        </h1>
+        <h2 id="from-image"><a aria-labelledby="from-image" class="anchor-heading" href="#from-image">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <code class="language-plaintext highlighter-rouge">FROM image</code></h2>
+        <blockquote><p>Set the base image.</p></blockquote>
+        <h2 id="run"><a aria-labelledby="run" class="anchor-heading" href="#run">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <code class="language-plaintext highlighter-rouge">RUN</code></h2>
+        <blockquote><p>Run a command.</p></blockquote>
+        <h2 id="cmd"><a aria-labelledby="cmd" class="anchor-heading" href="#cmd">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <code class="language-plaintext highlighter-rouge">CMD</code></h2>
+        <blockquote><p>Set a default command that will run when the container starts.</p></blockquote>
+        <h2 id="env-varvalue"><a aria-labelledby="env-varvalue" class="anchor-heading" href="#env-varvalue">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <code class="language-plaintext highlighter-rouge">ENV VAR=VALUE</code></h2>
+        <blockquote><p>Set environment variables.</p></blockquote>
+        <h2 id="add-source-destination"><a aria-labelledby="add-source-destination" class="anchor-heading" href="#add-source-destination">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <code class="language-plaintext highlighter-rouge">ADD source destination</code></h2>
+        <blockquote><p>Copy files from source to the container's filesystem at the destination.</p></blockquote>
+        <h2 id="copy-source-destination"><a aria-labelledby="copy-source-destination" class="anchor-heading" href="#copy-source-destination">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <code class="language-plaintext highlighter-rouge">COPY source destination</code></h2>
+        <blockquote><p>Copy new files or directories from source and add them to the filesystem of the container at the destination.</p></blockquote>
+        <h2 id="entrypoint"><a aria-labelledby="entrypoint" class="anchor-heading" href="#entrypoint">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <code class="language-plaintext highlighter-rouge">ENTRYPOINT</code></h2>
+        <blockquote><p>Allow you to configure a container that will run as an executable.</p></blockquote>
+        <h2 id="label"><a aria-labelledby="label" class="anchor-heading" href="#label">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <code class="language-plaintext highlighter-rouge">LABEL</code></h2>
+        <blockquote><p>Adds metadata to an image.</p></blockquote>
+        <h2 id="expose"><a aria-labelledby="expose" class="anchor-heading" href="#expose">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <code class="language-plaintext highlighter-rouge">EXPOSE</code></h2>
+        <blockquote><p>Informs Docker that the container listens on the specified network ports at runtime.</p></blockquote>
+        <h2 id="entrypoint-1"><a aria-labelledby="entrypoint-1" class="anchor-heading" href="#entrypoint-1">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <code class="language-plaintext highlighter-rouge">ENTRYPOINT</code></h2>
+        <blockquote><p>Allows you to configure a container that will run as an executable.</p></blockquote>
+        <h2 id="volume"><a aria-labelledby="volume" class="anchor-heading" href="#volume">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <code class="language-plaintext highlighter-rouge">VOLUME</code></h2>
+        <blockquote><p>Creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers.</p></blockquote>
+        <h2 id="user"><a aria-labelledby="user" class="anchor-heading" href="#user">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <code class="language-plaintext highlighter-rouge">USER</code></h2>
+        <blockquote><p>Set the username (or UID) and optionally the user group (or GID) to use when running the image and for any RUN, CMD and ENTRYPOINT instructions that<br/>
+                       follow it in the Dockerfile.</p></blockquote>
+        <h2 id="workdir"><a aria-labelledby="workdir" class="anchor-heading" href="#workdir">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <code class="language-plaintext highlighter-rouge">WORKDIR</code></h2>
+        <blockquote><p>Set the working directory for any RUN, CMD, ENTRYPOINT, COPY, and ADD instructions that follow it in the Dockerfile.</p></blockquote>
+        <h2 id="arg"><a aria-labelledby="arg" class="anchor-heading" href="#arg">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <code class="language-plaintext highlighter-rouge">ARG</code></h2>
+        <blockquote><p>Define a variable that users can pass at build-time to the builder with the docker build command.</p></blockquote>
+        <h2 id="onbuild"><a aria-labelledby="onbuild" class="anchor-heading" href="#onbuild">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <code class="language-plaintext highlighter-rouge">ONBUILD</code></h2>
+        <blockquote><p>Adds a trigger instruction when the image is used as the base for another build.</p></blockquote>
+        <h1 id="docker-compose-commands"><a aria-labelledby="docker-compose-commands" class="anchor-heading" href="#docker-compose-commands">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Docker Compose Commands
+        </h1>
+        <h2 id="create-and-start-containers"><a aria-labelledby="create-and-start-containers" class="anchor-heading" href="#create-and-start-containers">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Create and start containers.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker-compose up
+</code></pre>
+          </div>
+        </div>
+        <h2 id="stop-and-remove-containers-networks-images-and-volumes"><a aria-labelledby="stop-and-remove-containers-networks-images-and-volumes"
+                                                                           class="anchor-heading"
+                                                                           href="#stop-and-remove-containers-networks-images-and-volumes">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Stop and remove containers, networks, images, and volumes.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker-compose down
+</code></pre>
+          </div>
+        </div>
+        <h2 id="build-or-rebuild-services"><a aria-labelledby="build-or-rebuild-services" class="anchor-heading" href="#build-or-rebuild-services">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Build or rebuild services.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker-compose build
+</code></pre>
+          </div>
+        </div>
+        <h2 id="view-output-from-containers"><a aria-labelledby="view-output-from-containers" class="anchor-heading" href="#view-output-from-containers">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> View output from containers.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker-compose logs
+</code></pre>
+          </div>
+        </div>
+        <h2 id="restart-services"><a aria-labelledby="restart-services" class="anchor-heading" href="#restart-services">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Restart services.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker-compose restart
+</code></pre>
+          </div>
+        </div>
+        <h2 id="pause-services"><a aria-labelledby="pause-services" class="anchor-heading" href="#pause-services">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Pause services.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker-compose pause
+</code></pre>
+          </div>
+        </div>
+        <h2 id="unpause-services"><a aria-labelledby="unpause-services" class="anchor-heading" href="#unpause-services">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Unpause services.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker-compose unpause
+</code></pre>
+          </div>
+        </div>
+        <h2 id="start-existing-containers-for-a-service"><a aria-labelledby="start-existing-containers-for-a-service"
+                                                            class="anchor-heading"
+                                                            href="#start-existing-containers-for-a-service">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Start existing containers for a service.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker-compose start
+</code></pre>
+          </div>
+        </div>
+        <h2 id="stop-running-containers-without-removing-them"><a aria-labelledby="stop-running-containers-without-removing-them"
+                                                                  class="anchor-heading"
+                                                                  href="#stop-running-containers-without-removing-them">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Stop running containers without removing them.
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker-compose stop
+</code></pre>
+          </div>
+        </div>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker-compose config
+</code></pre>
+          </div>
+        </div>
+        <h2 id="create-docker-hub-image"><a aria-labelledby="create-docker-hub-image" class="anchor-heading" href="#create-docker-hub-image">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> CREATE DOCKER HUB IMAGE
+        </h2>
+        <h3 id="docker-push"><a aria-labelledby="docker-push" class="anchor-heading" href="#docker-push">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Docker Push:
+        </h3>
+        <div class="language-bash highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker image push &lt;USERNAME&gt;&lt;IMAGE_NAME&gt;:&lt;TAG&gt;
+</code></pre>
+          </div>
+        </div>
+        <h3 id="creating-an-image-for-docker-hub"><a aria-labelledby="creating-an-image-for-docker-hub" class="anchor-heading" href="#creating-an-image-for-docker-hub">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Creating an image for Docker Hub:
+        </h3>
+        <div class="language-bash highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker image tag &lt;IMAGE_NAME&gt;:&lt;TAG&gt;
+</code></pre>
+          </div>
+        </div>
+        <h3 id="set-up-your-environment"><a aria-labelledby="set-up-your-environment" class="anchor-heading" href="#set-up-your-environment">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Set up your environment:
+        </h3>
+        <div class="language-bash highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code> <span class="nb">cd </span>docker_images
+
+ <span class="nb">mkdir </span>dockerhub
+
+ <span class="nb">cd </span>dockerhub
+</code></pre>
+          </div>
+        </div>
+        <h3 id="create-the-dockerfile"><a aria-labelledby="create-the-dockerfile" class="anchor-heading" href="#create-the-dockerfile">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Create the Dockerfile:
+        </h3>
+        <div class="language-bash highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>vim Dockerfile
+</code></pre>
+          </div>
+        </div>
+        <blockquote><p>Dockerfile contents:</p></blockquote>
+        <div class="language-dockerfile highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="c"># Create an image for the weather-app using multi-stage build</span>
+
+<span class="k">FROM</span><span class="w"> </span><span class="s">node</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">build</span>
+
+<span class="k">RUN </span><span class="nb">mkdir</span> <span class="nt">-p</span> /var/node/
+
+<span class="k">ADD</span><span class="s"> src/ /var/node/</span>
+
+<span class="k">WORKDIR</span><span class="s"> /var/node</span>
+
+<span class="k">RUN </span>npm <span class="nb">install</span>
+
+<span class="k">FROM</span><span class="s"> node:alpine</span>
+
+<span class="k">ARG</span><span class="s"> VERSION=V1.1</span>
+
+<span class="k">LABEL</span><span class="s"> org.label-schema.version=\$VERSION</span>
+
+<span class="k">ENV</span><span class="s"> NODE_ENV=\"production\"</span>
+
+<span class="k">COPY</span><span class="s"> --from=build /var/node /var/node</span>
+
+<span class="k">WORKDIR</span><span class="s"> /var/node</span>
+
+<span class="k">EXPOSE</span><span class="s"> 3000</span>
+
+<span class="k">ENTRYPOINT</span><span class="s"> \[\"./bin/www\"\]</span>
+
+<span class="c"># Git weather-app code:</span>
+git clone "https://github.com/linuxacademy/content-weather-app.git" src
+
+<span class="c"># Use the Git commit hash as the image tag:</span>
+cd src
+git log -1 --pretty=%H
+cd ../
+</code></pre>
+          </div>
+        </div>
+        <h3 id="build-the-image"><a aria-labelledby="build-the-image" class="anchor-heading" href="#build-the-image">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Build the image:
+        </h3>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker image build <span class="nt">-t</span> &lt;USERNAME&gt;weather-app:&lt;HASH&gt; <span class="nt">--build-arg</span>
+<span class="nv">VERSION</span><span class="o">=</span>1.5 <span class="nb">.</span>
+
+Tag the image before pushing it to Docker Hub:
+
+docker image tag linuxacademy/weather-app:&lt;HASH&gt;
+&lt;USERNAME&gt;weather-app:&lt;HASH&gt;
+</code></pre>
+          </div>
+        </div>
+        <h3 id="push-the-image-to-docker-hub"><a aria-labelledby="push-the-image-to-docker-hub" class="anchor-heading" href="#push-the-image-to-docker-hub">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Push the image to Docker Hub:
+        </h3>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker login
+
+docker images
+docker tag stacksimplify/mynginx_image1:v1 stacksimplify/mynginx_image1:v1-release
+docker push stacksimplify/mynginx_image1:v1-release
+
+<span class="c"># Replace your docker hub account Id</span>
+docker tag &lt;your-docker-hub-id&gt;/mynginx_image1:v1 &lt;your-docker-hub-id&gt;/mynginx_image1:v1-release
+docker push &lt;your-docker-hub-id&gt;/mynginx_image1:v1-release
+</code></pre>
+          </div>
+        </div>
+        <h3 id="push-the-latest-image-to-docker-hub"><a aria-labelledby="push-the-latest-image-to-docker-hub" class="anchor-heading" href="#push-the-latest-image-to-docker-hub">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Push the latest image to Docker Hub:
+        </h3>
+        <div class="language-bash highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker login &lt;USERNAME&gt;
+docker image push &lt;USERNAME&gt;weather-app:latest
+</code></pre>
+          </div>
+        </div>
+        <h1 id="docker-compose-1"><a aria-labelledby="docker-compose-1" class="anchor-heading" href="#docker-compose-1">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Docker Compose
+        </h1>
+        <h2 id="install"><a aria-labelledby="install" class="anchor-heading" href="#install">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> INSTALL
+        </h2>
+        <h3 id="download-the-latest-version-of-docker-compose"><a aria-labelledby="download-the-latest-version-of-docker-compose"
+                                                                  class="anchor-heading"
+                                                                  href="#download-the-latest-version-of-docker-compose">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Download the latest version of Docker Compose:
+        </h3>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>  <span class="nb">sudo </span>curl <span class="nt">-L</span>
+  <span class="se">\"</span>https://github.com/docker/compose/releases/download/1.23.2/docker-compose-<span class="se">\$</span><span class="o">(</span><span class="nb">uname</span> <span
+                class="nt">-s</span><span class="o">)</span>-<span class="se">\$</span><span class="o">(</span><span class="nb">uname</span> <span class="nt">-m</span><span class="o">)</span><span
+                class="se">\"</span> <span class="nt">-o</span> /usr/local/bin/docker-compose
+</code></pre>
+          </div>
+        </div>
+        <h3 id="apply-executable-permissions"><a aria-labelledby="apply-executable-permissions" class="anchor-heading" href="#apply-executable-permissions">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Apply executable permissions:
+        </h3>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="nb">sudo chmod</span> +x /usr/local/bin/docker-compose
+</code></pre>
+          </div>
+        </div>
+        <h2 id="test-docker-compose"><a aria-labelledby="test-docker-compose" class="anchor-heading" href="#test-docker-compose">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Test Docker Compose
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>docker-compose <span class="nt">--version</span>
+</code></pre>
+          </div>
+        </div>
+      </main>
+      <hr>
+      <footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"></p>
+        <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"><a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./DockerNotes/Basics.md"
+                                                                                id="edit-this-page">Edit this page on GitHub</a></p></div>
+      </footer>
+    </div>
+  </div>
+  <button aria-label="Focus on search" class="search-button btn-reset" id="search-button">
+    <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+      <use xlink:href="#svg-search"></use>
+    </svg>
+  </button>
+  <div class="search-overlay"></div>
+</div>

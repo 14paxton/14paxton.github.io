@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <link href="/assets/css/just-the-docs-default.css" rel="stylesheet">
+  <link href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet" rel="stylesheet">
+  <style id="jtd-nav-activation"> .site-nav > ul.nav-list:first-child > li > a, .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(3)) > a, .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+    background-image: none;
+  }
+
+  .site-nav > ul.nav-list:not(:first-child) a, .site-nav li.external a {
+    background-image: none;
+  }
+
+  .site-nav > ul.nav-list:first-child > li:nth-child(16) > ul > li:nth-child(3) > a {
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .site-nav > ul.nav-list:first-child > li:nth-child(16) > button svg, .site-nav > ul.nav-list:first-child > li:nth-child(16) > ul > li:nth-child(3) > button svg {
+    transform: rotate(-90deg);
+  }
+
+  .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(16) > ul.nav-list, .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(16) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list {
+    display: block;
+  }</style>
+  <script src="/assets/js/vendor/lunr.min.js"></script>
+  <script src="/assets/js/just-the-docs.js"></script>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Email | Paxton’s Notes</title>
+  <meta content="Jekyll v4.4.0" name="generator"/>
+  <meta content="Email" property="og:title"/>
+  <meta content="en_US" property="og:locale"/>
+  <meta content="Coding Notes" name="description"/>
+  <meta content="Coding Notes" property="og:description"/>
+  <link href="http://localhost:4000/Linux/Email" rel="canonical"/>
+  <meta content="http://localhost:4000/Linux/Email" property="og:url"/>
+  <meta content="Paxton’s Notes" property="og:site_name"/>
+  <meta content="website" property="og:type"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="Email" property="twitter:title"/>
+  <script type="application/ld+json">
+     {"@context":"https://schema.org","@type":"WebPage","description":"Coding Notes","headline":"Email","url":"http://localhost:4000/Linux/Email"}
+  </script>
+<body><a class="skip-to-main" href="#main-content">Skip to main content</a>
+<svg class="d-none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="svg-link" viewBox="0 0 24 24"><title>Link</title>
+    <svg class="feather feather-link"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24"><title>Menu</title>
+    <svg class="feather feather-menu"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <line x1="3" x2="21" y1="12" y2="12"></line>
+      <line x1="3" x2="21" y1="6" y2="6"></line>
+      <line x1="3" x2="21" y1="18" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24"><title>Expand</title>
+    <svg class="feather feather-chevron-right"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol class="feather feather-external-link"
+          fill="none"
+          height="24"
+          id="svg-external-link"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"><title id="svg-external-link-title">(external link)</title>
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+    <polyline points="15 3 21 3 21 9"></polyline>
+    <line x1="10" x2="21" y1="14" y2="3"></line>
+  </symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24"><title>Document</title>
+    <svg class="feather feather-file"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+      <polyline points="13 2 13 9 20 9"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-search" viewBox="0 0 24 24"><title>Search</title>
+    <svg class="feather feather-search"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-copy" viewBox="0 0 16 16"><title>Copy</title>
+    <svg class="bi bi-clipboard" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+      <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-copied" viewBox="0 0 16 16"><title>Copied</title>
+    <svg class="bi bi-clipboard-check-fill" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+    </svg>
+  </symbol>
+</svg>
+<div class="side-bar">
+  <div class="site-header" role="banner"><a class="site-title lh-tight" href="/"> Paxton's Notes </a>
+    <button aria-label="Toggle menu" aria-pressed="false" class="site-button btn-reset" id="menu-button">
+      <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+        <use xlink:href="#svg-menu"></use>
+      </svg>
+    </button>
+  </div>
+  <nav aria-label="Main" class="site-nav" id="site-nav">
+    <ul class="nav-list">
+      <li class="nav-list-item">
+        <button aria-label="toggle items in MyPersonalDocsAndStuff category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/index">MyPersonalDocsAndStuff</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/AppsForWorkflow">AppsForWorkflow</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/CloudServices">CloudServices</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/LetterOfRecommendation">LetterOfRecommendation</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PastProjects">PastProjects</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PriorityLearning">PriorityLearning</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in AWS category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/AWS/">AWS</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/AWS/CLI">CLI</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Build category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Build/">Build</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Gradle">Gradle</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Maven">Maven</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in DockerNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/DockerNotes/">DockerNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/ARM64">ARM64</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Basics">Basics</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Dockerfile">Dockerfile</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Install">Install</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Quick-TidBits">Quick-TidBits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/UsefulCommands">UsefulCommands</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in DotNetNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/DotNetNotes/">DotNetNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CLI">CLI</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in CSharp category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/DotNetNotes/Csharp">CSharp</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Email">Email</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Threading">Threading</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Controllers">Controllers</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Database">Database</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/EntityFramework">EntityFramework</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Environment">Environment</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Google">Google</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HTTP">HTTP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HttpRepl">HttpRepl</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/LINQ">LINQ</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Maui">Maui</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Microservice">Microservice.md</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/VisualStudio">VisualStudio</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Git category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Git">Git</a>
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <button aria-label="toggle items in GitHub category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/Git/GitHub">GitHub</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/GitHubPages">GitHubPages</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/Jekyll">Jekyll</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/MarkDown">MarkDown</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Git/QuickScripts">QuickScripts</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GoogleNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GoogleNotes/">GoogleNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/APIs">APIs</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Browser">Browser</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Cloud">Cloud</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ComputeEngine">ComputeEngine</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Deploy">Deploy</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DevTools">DevTools</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DialogFlow">DialogFlow</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Functions">Functions</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Logging">Logging</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ServiceAccounts">ServiceAccounts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Storage">Storage</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/VoiceAgent">VoiceAgent</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GrailsNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GrailsNotes/">GrailsNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/GORM_WhereQueris">GORM_WhereQueris</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLComplexQueries">HQLComplexQueries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLQueries">HQLQueries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/RunningApp">RunningApp</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Security">Security</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Services">Services</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Testing">Testing</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GroovyNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GroovyNotes/">GroovyNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Array-Loop-List-Map">Array-Loop-List-Map</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Async_Parallel-Concurrency">Async_Parallel-Concurrency</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Clever-Tid-bits">Clever-Tid-bits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/DateAndTime">DateAndTime</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Enum">Enum</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/MetaProgramming">MetaProgramming</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/RegEx">RegEx</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/String">String</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in HTML&CSS category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/HTML&CSS/">HTML&CSS</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/CSS">CSS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/HTML">HTML</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/Images">Images</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/HTTP">HTTP</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in IntelliJNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/IntelliJNotes/">IntelliJNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/CustomVM">CustomVM</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/DebuggerConfig">DebuggerConfig</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/HTTPExamples">HTTPExamples</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/Spaces">Spaces</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Java category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/JavaNotes/Java">Java</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Algorithms">Algorithms</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/CommandLineDiddys">CommandLineDiddys</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/DataBase">DataBase</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/File">File</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/GCP">GCP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Hibernate">Hibernate</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/LooseNotes">LooseNotes</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/OOP">OOP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/String">String</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Threads">Threads</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in JavaScript category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/JavaScript/">JavaScript</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Browser">Browser</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CDN">CDN</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CSS">CSS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Clever-Algos">Clever-Algos</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/DateAndTime">DateAndTime</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Document">Document</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Elements">Elements</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Events">Events</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FormStuff">FormStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FunctionObject">FunctionObject</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/HTTP">HTTP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Map">Map</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Modules">Modules</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in Node category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/Node/">Node</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Node/QuickScripts">QuickScripts</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Number">Number</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Object">Object</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/QuerySelector">QuerySelector</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in ReactNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/ReactNotes">ReactNotes</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Clever-Snippets">Clever-Snippets</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Configuring">Configuring</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/HandleEvents">HandleEvents</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/ReactNotes/Hooks">Hooks</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/MUI">MUI</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Mat-Table">Mat-Table</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/React-Router">React-Router</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/ReactHookForm">ReactHookForm</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/String">String</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/WebWorker">WebWorker</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/RegEx">RegEx</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/State">State</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in TypeScript category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/TypeScript/">TypeScript</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Events">Events</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/QuickScripts">QuickScripts</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Types">Types</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/UsefulSnippets">UsefulSnippets</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WebAPI">WebAPI</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Window">Window</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WorkingWithFiles">WorkingWithFiles</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/Kubernetes">Kubernetes</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Linux category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Linux/">Linux</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/ADMIN-ROOT">ADMIN-ROOT</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Conditionals">Conditionals</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Encoding">Encoding</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/JQ">JQ</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/MySQL">MySQL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/PGP">PGP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/QuickScripts">QuickScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/SDKMan">SDKMan</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Scripting">Scripting</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/VIM_QuickTips">VIM_QuickTips</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in MacNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/MacNotes/">MacNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/AppleScripts">AppleScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/HomeBrew">HomeBrew</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/JavaOnMac">JavaOnMac</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/QuickScripts">QuickScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ShortCuts">ShortCuts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/UsersAndGroups">UsersAndGroups</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/Utilities">Utilities</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ZSH">ZSH</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Micronotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Micronotes/">Micronotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/AWS">AWS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Configuration">Configuration</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/DataBaseStuff">DataBaseStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/EnviromentStuff">EnviromentStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/GRAALVM">GRAALVM</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Gradle">Gradle</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Jackson">Jackson</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/MicroStream">MicroStream</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Resources">Resources</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Testing">Testing</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/UsefuleSnippets">UsefuleSnippets</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/cli_gradlew">cli_gradlew</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/Obsidian/Obsidian">Obsidian</a>
+      <li class="nav-list-item"><a class="nav-list-link" href="/RandomNuggetsOfKnowledge">RandomNuggetsOfKnowledge</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in SQLNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/SQLNotes/">SQLNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Docker">Docker</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Functions">Functions</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/HQL">HQL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Liquibase">Liquibase</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Queries">Queries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/SQLCheatSheet">SQLCheatSheet</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/TerminalCommands">Terminal-Commands</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in SpringNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/SpringNotes/">SpringNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Hibernate">Hibernate</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Maven">Maven</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Properties">Properties</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Security">Security</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Serialization">Serialization</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Testing">Testing</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/TidBits">TidBits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Transactions">Transactions</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/SystemDesign&Architecture/">SystemDesign&Architecture</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in TestingFrameworks category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/TestingFrameworks/">TestingFrameworks</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JUnit">JUnit</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JavascriptTesting">Javascript</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Spock">Spock</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Testcontainers">Testcontainers</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Thymeleaf category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Thymeleaf/">Thymeleaf</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Thymeleaf/Fragments">Fragments</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Windows_Notes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Windows_Notes/">Windows_Notes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/CMD">CMD</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Environment">Environment</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/PackageManagers">PackageManagers</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Powershell">Powershell</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Run">Run</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Shortcuts">Shortcuts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Terminal">Terminal</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WSL">WSL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WindowsServer">WindowsServer</a>
+        </ul>
+    </ul>
+  </nav>
+  <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
+</div>
+<div class="main" id="top">
+  <div class="main-header" id="main-header">
+    <div class="search" role="search">
+      <div class="search-input-wrap"><input aria-label="Search Paxton's Notes"
+                                            autocomplete="off"
+                                            class="search-input"
+                                            id="search-input"
+                                            placeholder="Search Paxton's Notes"
+                                            tabindex="0"
+                                            type="text"> <label class="search-label" for="search-input">
+        <svg class="search-icon" viewBox="0 0 24 24">
+          <use xlink:href="#svg-search"></use>
+        </svg>
+      </label></div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+    <nav aria-label="Auxiliary" class="aux-nav">
+      <ul class="aux-nav-list">
+        <li class="aux-nav-list-item"><a class="site-button" href="https://github.com/14paxton/14paxton.github.io" rel="noopener noreferrer" target="_blank"> Template
+                                                                                                                                                              Repository </a>
+      </ul>
+    </nav>
+  </div>
+  <div class="main-content-wrap">
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol class="breadcrumb-nav-list">
+        <li class="breadcrumb-nav-list-item"><a href="/Linux/">Linux</a>
+        <li class="breadcrumb-nav-list-item"><span>Email</span>
+      </ol>
+    </nav>
+    <div class="main-content" id="main-content">
+      <main><p><br/></p>
+        <details>
+          <summary class="text-delta"> Table of contents</summary>
+          <ol id="markdown-toc">
+            <li><a href="#setup-a-local-only-smtp-email-server-linux-unix-mac" id="markdown-toc-setup-a-local-only-smtp-email-server-linux-unix-mac">Setup a Local Only SMTP Email
+                                                                                                                                                     Server (Linux, Unix, Mac)</a>
+            <li><a href="#curl" id="markdown-toc-curl">curl</a>
+              <ol>
+                <li><a href="#with-attachment" id="markdown-toc-with-attachment">with attachment</a>
+              </ol>
+            <li><a href="#mailx" id="markdown-toc-mailx">mailx</a>
+              <ol>
+                <li><a href="#install-on-debianubuntu" id="markdown-toc-install-on-debianubuntu">Install on Debian/Ubuntu</a>
+                <li><a href="#install-on-redhatcentos" id="markdown-toc-install-on-redhatcentos">Install on Redhat/Centos</a>
+                <li><a href="#command" id="markdown-toc-command">Command</a>
+              </ol>
+            <li><a href="#mutt" id="markdown-toc-mutt">Mutt</a>
+              <ol>
+                <li><a href="#install-on-debianubuntu-1" id="markdown-toc-install-on-debianubuntu-1">Install on Debian/Ubuntu</a>
+                <li><a href="#install-on-redhatcentos-1" id="markdown-toc-install-on-redhatcentos-1">Install on Redhat/Centos</a>
+                <li><a href="#command-1" id="markdown-toc-command-1">Command</a>
+              </ol>
+            <li><a href="#uuencode-and-mail" id="markdown-toc-uuencode-and-mail">uuencode and mail</a>
+              <ol>
+                <li><a href="#command-2" id="markdown-toc-command-2">Command</a>
+              </ol>
+            <li><a href="#mpack" id="markdown-toc-mpack">Mpack</a>
+              <ol>
+                <li><a href="#install-debianubuntu" id="markdown-toc-install-debianubuntu">Install Debian/Ubuntu</a>
+                <li><a href="#command-3" id="markdown-toc-command-3">Command</a>
+              </ol>
+            <li><a href="#sendemailpl" id="markdown-toc-sendemailpl">Sendemail.pl</a>
+              <ol>
+                <li><a href="#command-4" id="markdown-toc-command-4">Command</a>
+              </ol>
+            <li><a href="#swaks" id="markdown-toc-swaks">Swaks</a>
+              <ol>
+                <li><a href="#install-debianubuntu-1" id="markdown-toc-install-debianubuntu-1">Install Debian/Ubuntu</a>
+                <li><a href="#command-5" id="markdown-toc-command-5">Command</a>
+                <li><a href="#bash-script" id="markdown-toc-bash-script">Bash Script</a>
+              </ol>
+            <li><a href="#telnet" id="markdown-toc-telnet">Telnet</a>
+            <li><a href="#sending-email-with-a-mime-boundary" id="markdown-toc-sending-email-with-a-mime-boundary">Sending Email with a MIME Boundary</a>
+              <ol>
+                <li><a href="#sendmail" id="markdown-toc-sendmail">Sendmail</a>
+              </ol>
+            <li><a href="#netcat" id="markdown-toc-netcat">Netcat</a>
+            <li><a href="#install-debianubuntu-2" id="markdown-toc-install-debianubuntu-2">Install Debian/Ubuntu</a>
+          </ol>
+        </details>
+        <p><br/></p>
+        <hr/>
+        <p><br/></p>
+        <h1 id="setup-a-local-only-smtp-email-server-linux-unix-mac"><a aria-labelledby="setup-a-local-only-smtp-email-server-linux-unix-mac"
+                                                                        class="anchor-heading"
+                                                                        href="#setup-a-local-only-smtp-email-server-linux-unix-mac">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://gist.github.com/raelgc/6031274">Setup a Local Only SMTP Email Server (Linux, Unix, Mac)</a></h1>
+        <h1 id="curl"><a aria-labelledby="curl" class="anchor-heading" href="#curl">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> curl
+        </h1>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>curl <span class="nt">--url</span> <span class="s1">'smtp://smtp.gmail.com:587'</span> <span class="se">\</span>
+     <span class="nt">--ssl-reqd</span> <span class="se">\</span>
+     <span class="nt">--mail-from</span> <span class="s1">'your-email@gmail.com'</span> <span class="se">\</span>
+     <span class="nt">--mail-rcpt</span> <span class="s1">'recipient-email@example.com'</span> <span class="se">\</span>
+     <span class="nt">--upload-file</span> mail.txt <span class="se">\</span>
+     <span class="nt">--user</span> <span class="s1">'your-email@gmail.com:your-email-password'</span> <span class="se">\</span>
+     <span class="nt">--insecure</span> <span class="se">\</span>
+     <span class="nt">--verbose</span>
+</code></pre>
+          </div>
+        </div>
+        <blockquote><p>Detailed Explanation of Options</p></blockquote>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">--url 'smtp://smtp.gmail.com:587':</code>
+            <ul>
+              <li>Specify the SMTP server and port to connect to. Gmail uses smtp.gmail.com on port 587.
+            </ul>
+          <li><code class="language-plaintext highlighter-rouge">--ssl-reqd:</code>
+            <ul>
+              <li>Enforces SSL/TLS encryption.
+            </ul>
+          <li><code class="language-plaintext highlighter-rouge">--mail-from 'your-email@gmail.com':</code>
+            <ul>
+              <li>The sender’s email address.
+            </ul>
+          <li><code class="language-plaintext highlighter-rouge">--mail-rcpt 'recipient-email@example.com':</code>
+            <ul>
+              <li>The recipient’s email address. You can specify multiple recipients by using multiple –mail-rcpt options.
+            </ul>
+          <li><code class="language-plaintext highlighter-rouge">--upload-file mail.txt:</code>
+            <ul>
+              <li>Specify the file that contains the email’s content. This file should include the email headers and body.
+            </ul>
+          <li><code class="language-plaintext highlighter-rouge">--user 'your-email@gmail.com:your-email-password':</code>
+            <ul>
+              <li>The SMTP server authentication details in the format username:password.
+            </ul>
+          <li><code class="language-plaintext highlighter-rouge">--insecure:</code>
+            <ul>
+              <li>Allows connections to SSL sites without certificates. Remove this if you want to enforce certificate validation.
+            </ul>
+          <li><code class="language-plaintext highlighter-rouge">--verbose:</code>
+            <ul>
+              <li>Provides detailed information about the curl operation.
+            </ul>
+        </ul>
+        <h2 id="with-attachment"><a aria-labelledby="with-attachment" class="anchor-heading" href="#with-attachment">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> with attachment
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>curl <span class="nt">--url</span> <span class="s1">'smtp://smtp.gmail.com:587'</span> <span class="se">\</span>
+     <span class="nt">--ssl-reqd</span> <span class="se">\</span>
+     <span class="nt">--mail-from</span> <span class="s1">'your-email@gmail.com'</span> <span class="se">\</span>
+     <span class="nt">--mail-rcpt</span> <span class="s1">'recipient-email@example.com'</span> <span class="se">\</span>
+     <span class="nt">--user</span> <span class="s1">'your-email@gmail.com:your-email-password'</span> <span class="se">\</span>
+     <span class="nt">--upload-file</span> mime-email.txt <span class="se">\</span>
+     <span class="nt">--insecure</span> <span class="se">\</span>
+     <span class="nt">--verbose</span>
+</code></pre>
+          </div>
+        </div>
+        <ul>
+          <li>mem-email.txt
+            <div class="language-text highlighter-rouge">
+              <div class="highlight"><pre class="highlight"><code>  From: your-email@gmail.com
+  To: recipient-email@example.com
+  Subject: Test Email with Attachment
+  MIME-Version: 1.0
+  Content-Type: multipart/mixed; boundary="simple boundary"
+
+  --simple boundary
+  Content-Type: text/plain; charset=us-ascii
+
+  This is the body of the email.
+
+  --simple boundary
+  Content-Type: text/plain; charset=us-ascii
+  Content-Disposition: attachment; filename="attachment.txt"
+
+  This is the content of the attachment.
+
+  --simple boundary--
+</code></pre>
+              </div>
+            </div>
+        </ul>
+        <h1 id="mailx"><a aria-labelledby="mailx" class="anchor-heading" href="#mailx">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> mailx
+        </h1>
+        <h2 id="install-on-debianubuntu"><a aria-labelledby="install-on-debianubuntu" class="anchor-heading" href="#install-on-debianubuntu">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Install on Debian/Ubuntu
+        </h2>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">apt-get install postfix</code>
+        </ul>
+        <p><strong>Alternatively, without the bloat of postfix</strong></p>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">apt-get install heirloom-mailx</code>
+        </ul>
+        <h2 id="install-on-redhatcentos"><a aria-labelledby="install-on-redhatcentos" class="anchor-heading" href="#install-on-redhatcentos">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Install on Redhat/Centos
+        </h2>
+        <p><code class="language-plaintext highlighter-rouge">yum install mailx</code></p>
+        <h2 id="command"><a aria-labelledby="command" class="anchor-heading" href="#command">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Command
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>    <span class="nb">cat </span>mysqldbbackup.sql | mailx backup@email.com
+</code></pre>
+          </div>
+        </div>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>   mailx <span class="nt">-a</span> backup.sql <span class="nt">-a</span> grants.sql backup@email.com
+</code></pre>
+          </div>
+        </div>
+        <blockquote><p>Newer versions of mailx support -a flag for attachments!</p></blockquote>
+        <blockquote><p>Script Example</p></blockquote>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>   <span class="c">#!/bin/bash</span>
+
+   <span class="c"># Email details</span>
+   <span class="nv">TO</span><span class="o">=</span><span class="s2">"recipient@example.com"</span>
+   <span class="nv">SUBJECT</span><span class="o">=</span><span class="s2">"Test Email with Attachment"</span>
+   <span class="nv">FROM</span><span class="o">=</span><span class="s2">"sender@example.com"</span>
+   <span class="nv">BODY</span><span class="o">=</span><span class="s2">"This is the plain text body of the email"</span>
+   <span class="nv">HTML_BODY</span><span class="o">=</span><span class="s2">"&lt;html&gt;&lt;body&gt;&lt;h1&gt;This is the HTML body&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;"</span>
+   <span class="nv">ATTACHMENT</span><span class="o">=</span><span class="s2">"file.txt"</span>
+
+   <span class="c"># Send the email</span>
+   <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$BODY</span><span class="s2">"</span> | mailx <span class="nt">-a</span> <span class="s2">"Content-Type: text/html"</span> <span
+                class="nt">-s</span> <span class="s2">"</span><span class="nv">$SUBJECT</span><span class="s2">"</span> <span class="nt">-a</span> <span class="s2">"From: </span><span
+                class="nv">$FROM</span><span class="s2">"</span> <span class="nv">$TO</span> <span class="nt">-A</span> <span class="nv">$ATTACHMENT</span>
+</code></pre>
+          </div>
+        </div>
+        <h1 id="mutt"><a aria-labelledby="mutt" class="anchor-heading" href="#mutt">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Mutt
+        </h1>
+        <h2 id="install-on-debianubuntu-1"><a aria-labelledby="install-on-debianubuntu-1" class="anchor-heading" href="#install-on-debianubuntu-1">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Install on Debian/Ubuntu
+        </h2>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">apt-get install mutt</code>
+        </ul>
+        <h2 id="install-on-redhatcentos-1"><a aria-labelledby="install-on-redhatcentos-1" class="anchor-heading" href="#install-on-redhatcentos-1">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Install on Redhat/Centos
+        </h2>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">yum install mutt</code>
+        </ul>
+        <h2 id="command-1"><a aria-labelledby="command-1" class="anchor-heading" href="#command-1">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Command
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>    <span class="nb">echo</span> <span class="s2">"This is the message body"</span> | mutt <span class="nt">-a</span> <span
+              class="s2">"/path/to/file.to.attach"</span> <span class="nt">-s</span> <span class="s2">"subject of message"</span> <span class="nt">--</span> recipient@example.com
+
+</code></pre>
+          </div>
+        </div>
+        <h1 id="uuencode-and-mail"><a aria-labelledby="uuencode-and-mail" class="anchor-heading" href="#uuencode-and-mail">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> uuencode and mail
+        </h1>
+        <p>This sends the uuencoded part inline and not as an attachment. Many mail-clients recognize this though and display the uuencoded part as an<br/> attachment. Don’t use
+           uuencode when other alternatives use<br/> MIME.</p>
+        <h2 id="command-2"><a aria-labelledby="command-2" class="anchor-heading" href="#command-2">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Command
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>    <span class="nb">gzip</span> <span class="nt">-c</span> ldiff.sql | uuencode mysqldbbackup.sql.gz  | mail <span
+              class="nt">-s</span> <span class="s2">"Ldiff from openldap"</span> backup@example.com
+
+</code></pre>
+          </div>
+        </div>
+        <h1 id="mpack"><a aria-labelledby="mpack" class="anchor-heading" href="#mpack">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Mpack
+        </h1>
+        <h2 id="install-debianubuntu"><a aria-labelledby="install-debianubuntu" class="anchor-heading" href="#install-debianubuntu">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Install Debian/Ubuntu
+        </h2>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">apt-get install mpack</code>
+        </ul>
+        <h2 id="command-3"><a aria-labelledby="command-3" class="anchor-heading" href="#command-3">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Command
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>    mpack <span class="nt">-s</span> subject /dev/stdin loser@example.com &lt; file
+
+</code></pre>
+          </div>
+        </div>
+        <h1 id="sendemailpl"><a aria-labelledby="sendemailpl" class="anchor-heading" href="#sendemailpl">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Sendemail.pl
+        </h1>
+        <ul>
+          <li>http://caspian.dotconf.net/menu/Software/SendEmail/
+        </ul>
+        <h2 id="command-4"><a aria-labelledby="command-4" class="anchor-heading" href="#command-4">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Command
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>    sendemail <span class="nt">-f</span> mandatory@email.com-t to@some.one <span class="nt">-m</span> <span class="s2">"Here are your files!"</span> <span
+              class="nt">-a</span> file1.jpg file2.zip
+
+</code></pre>
+          </div>
+        </div>
+        <h1 id="swaks"><a aria-labelledby="swaks" class="anchor-heading" href="#swaks">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Swaks
+        </h1>
+        <h2 id="install-debianubuntu-1"><a aria-labelledby="install-debianubuntu-1" class="anchor-heading" href="#install-debianubuntu-1">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Install Debian/Ubuntu
+        </h2>
+        <blockquote><p>Swaks is an smtp of CURL, install it first:</p></blockquote>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>curl http://www.jetmore.org/john/code/swaks/files/swaks-20130209.0/swaks <span class="nt">-o</span> swaks
+</code></pre>
+          </div>
+        </div>
+        <blockquote><p>Set the permissions for the script so you can run it</p></blockquote>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +x swaks
+</code></pre>
+          </div>
+        </div>
+        <blockquote><p>It’s based on perl, so install perl</p></blockquote>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nt">-y</span> <span class="nb">install </span>perl
+</code></pre>
+          </div>
+        </div>
+        <ul>
+          <li>apt-get install swaks
+        </ul>
+        <h2 id="command-5"><a aria-labelledby="command-5" class="anchor-heading" href="#command-5">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Command
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>    swaks <span class="nt">-tls</span> <span class="se">\</span>
+    <span class="nt">--to</span> <span class="k">${</span><span class="nv">MAIL_TO</span><span class="k">}</span> <span class="se">\</span>
+    <span class="nt">--from</span> <span class="k">${</span><span class="nv">MAIL_FROM</span><span class="k">}</span> <span class="se">\</span>
+    <span class="nt">--server</span> <span class="k">${</span><span class="nv">MAIL_SERVER</span><span class="k">}</span> <span class="se">\</span>
+    <span class="nt">--auth</span> LOGIN <span class="se">\</span>
+    <span class="nt">--auth-user</span> <span class="k">${</span><span class="nv">MAIL_USER</span><span class="k">}</span> <span class="se">\</span>
+    <span class="nt">--auth-password</span> <span class="k">${</span><span class="nv">MAIL_PASSWORD</span><span class="k">}</span> <span class="se">\</span>
+    <span class="nt">--header</span> <span class="s2">"Subject: </span><span class="nv">$MAIL_SUBJECT</span><span class="s2">"</span> <span class="se">\</span>
+    <span class="nt">--header</span> <span class="s2">"Content-Type: text/html; charset=UTF-8"</span> <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"</span><span class="nv">$MESSAGE</span><span class="s2">"</span> <span class="se">\</span>
+    <span class="nt">--attach</span> mysqldbbackup.sql
+</code></pre>
+          </div>
+        </div>
+        <h2 id="bash-script"><a aria-labelledby="bash-script" class="anchor-heading" href="#bash-script">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Bash Script
+        </h2>
+        <ul>
+          <li>Uses HTML file
+          <li>Uses an inline Image for an HTML file and attachment
+        </ul>
+        <details>
+          <summary>Bash Script With Attachments</summary>
+          <div class="language-shell highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+swaks <span class="nt">-f</span> sender@gmail.com <span class="nt">--auth</span> <span class="se">\</span>
+  <span class="nt">--server</span> smtp.sendgrid.net:587 <span class="se">\</span>
+  <span class="nt">--au</span> apikey <span class="se">\</span>
+  <span class="nt">--ap</span> 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 <span class="se">\</span>
+  <span class="nt">--to</span> receiver@gmail.com <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s2">"Content-Type: text/html; charset=UTF-8"</span> <span class="se">\</span>
+  <span class="nt">--attach-type</span> text/html <span class="se">\</span>
+  <span class="nt">--attach-body</span> @../EmailTemplate/EmailTemplate.html <span class="se">\</span>
+  <span class="nt">--h-From</span>: <span class="s1">'"bob" &lt;bob@gmail.com&gt;'</span> <span class="se">\</span>
+  <span class="nt">--h-Subject</span>: <span class="s2">"Subject"</span> <span class="se">\</span>
+  <span class="nt">--add-header</span> <span class="s2">"Content-ID: inlineImage.png"</span> <span class="se">\</span>
+  <span class="nt">--attach-name</span> <span class="s2">"inlineImage.png"</span> <span class="se">\</span>
+  <span class="nt">--attach-type</span> image/png <span class="se">\</span>
+  <span class="nt">--attach</span> @../EmailTemplate/inlineImage.png
+</code></pre>
+            </div>
+          </div>
+        </details>
+        <h1 id="telnet"><a aria-labelledby="telnet" class="anchor-heading" href="#telnet">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Telnet
+        </h1>
+        <blockquote><p>First, you need to find out the SMTP server address for the domain. Let’s find out the SMTP server address for gmail.com</p></blockquote>
+        <blockquote><p>Goto MS Dos prompt and type <code class="language-plaintext highlighter-rouge">nslookup</code> command.</p></blockquote>
+        <div class="language-plaintext highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>&gt; set q=mx
+&gt; gmail.com
+
+Non-authoritative answer:
+gmail.com       MX preference = 30, mail exchanger =
+gmail.com       MX preference = 20, mail exchanger = alt2.gmail-smtp-in.l.google.com
+gmail.com       MX preference = 5, mail exchanger = gmail-smtp-in.l.google.com
+gmail.com       MX preference = 10, mail exchanger = alt1.gmail-smtp-in.l.google.com
+gmail.com       MX preference = 40, mail exchanger = alt4.gmail-smtp-in.l.google.com
+</code></pre>
+          </div>
+        </div>
+        <blockquote><p>Now connect to gmail SMTP server with Telnet by typing the following command on the command prompt.</p></blockquote>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>telnet alt3.gmail-smtp-in.l.google.com 25
+</code></pre>
+          </div>
+        </div>
+        <div class="language-plaintext highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>220 mx.google.com ESMTP t15si14936218ibf.58
+helo kathir
+250 mx.google.com at your service
+mail from: &lt;kathirusa@yahoo.com&gt;
+250 2.1.0 OK t15si14936218ibf.58
+rcpt to: &lt;kathircpp@gmail.com&gt;
+250 2.1.5 OK t15si14936218ibf.58
+data
+354  Go ahead t15si14936218ibf.58
+from: kathir
+to: kathir
+subject: hi from kathir
+
+This is for testing
+
+.
+250 2.0.0 OK 1287958967 t15si14936218ibf.58
+</code></pre>
+          </div>
+        </div>
+        <h1 id="sending-email-with-a-mime-boundary"><a aria-labelledby="sending-email-with-a-mime-boundary" class="anchor-heading" href="#sending-email-with-a-mime-boundary">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Sending Email with a MIME Boundary
+        </h1>
+        <blockquote><p>MIME (Multipurpose Internet Mail Extensions) boundaries</p></blockquote>
+        <ul>
+          <li>
+            <blockquote><p><code class="language-plaintext highlighter-rouge">BOUNDARY</code>: This is a unique string that acts as a boundary between different parts of the email
+                                                                                             content.Each section is separated by<br/>
+              <code class="language-plaintext highlighter-rouge">--BOUNDARY</code>,<br/> and<br/> the end of the email is indicated with
+              <code class="language-plaintext highlighter-rouge">--BOUNDARY--</code>.</p></blockquote>
+          <li>
+            <blockquote><p><code class="language-plaintext highlighter-rouge">Multipart/alternative</code>: This allows sending both plain text and
+              <code class="language-plaintext highlighter-rouge">HTML</code> versions of the email so that the email client can choose which one to<br/> display.</p></blockquote>
+          <li>
+            <blockquote><p><code class="language-plaintext highlighter-rouge">Content-Type</code>: This specifies the type of content in each part.
+              <code class="language-plaintext highlighter-rouge">text/plain</code> for plain text and <code class="language-plaintext highlighter-rouge">text/html</code> for <code
+                  class="language-plaintext highlighter-rouge">HTML</code>.</p></blockquote>
+          <li>
+            <blockquote><p><code class="language-plaintext highlighter-rouge">Content-Type</code>: <code class="language-plaintext highlighter-rouge">multipart/mixed</code>: This
+                                                                                                 specifies that the email contains multiple parts (like text and attachments).</p>
+            </blockquote>
+          <li>
+            <blockquote><p><code class="language-plaintext highlighter-rouge">base64</code>: Converts the file into a
+              <code class="language-plaintext highlighter-rouge">base64</code> string for safe transmission via email.</p></blockquote>
+          <li>
+            <blockquote><p><code class="language-plaintext highlighter-rouge">Content-Disposition</code>: attachment: Marks the part of the email as an attachment.</p></blockquote>
+        </ul>
+        <h2 id="sendmail"><a aria-labelledby="sendmail" class="anchor-heading" href="#sendmail">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Sendmail
+        </h2>
+        <details>
+          <summary>Example 1</summary>
+          <div class="language-shell highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="nv">to</span><span class="o">=</span><span class="s2">"any@email.com"</span>
+<span class="nv">from</span><span class="o">=</span><span class="s2">"your@email.com"</span>
+<span class="nv">boundary</span><span class="o">=</span><span class="si">$(</span>uuidgen <span class="nt">-t</span><span class="si">)</span>
+<span class="nv">body_boundary</span><span class="o">=</span><span class="si">$(</span>uuidgen <span class="nt">-t</span><span class="si">)</span>
+<span class="nv">now</span><span class="o">=</span><span class="si">$(</span><span class="nb">date</span> +<span class="s2">"%a, %d %b %Y %T %z"</span><span class="si">)</span>
+
+sendmail <span class="nt">-t</span> <span class="o">&lt;&lt;</span> <span class="no">EOF2</span><span class="sh">
+From: </span><span class="k">${</span><span class="nv">from</span><span class="k">}</span><span class="sh">
+To: </span><span class="k">${</span><span class="nv">to</span><span class="k">}</span><span class="sh">
+Date: </span><span class="k">${</span><span class="nv">now</span><span class="k">}</span><span class="sh">
+Subject: This is a test multipart message
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="</span><span class="k">${</span><span class="nv">boundary</span><span class="k">}</span><span class="sh">"
+
+--</span><span class="k">${</span><span class="nv">boundary</span><span class="k">}</span><span class="sh">
+Content-Type: multipart/alternative; boundary="</span><span class="k">${</span><span class="nv">body_boundary</span><span class="k">}</span><span class="sh">"
+
+--</span><span class="k">${</span><span class="nv">body_boundary</span><span class="k">}</span><span class="sh">
+Content-type: text/plain; charset=ISO-8859-1
+
+This is a text message.     --&gt; Here am going to incorporate text version
+--</span><span class="k">${</span><span class="nv">body_boundary</span><span class="k">}</span><span class="sh">
+Content-type: text/html; charset=utf-8
+Content-Disposition: inline
+
+&lt;!DOCTYPE html&gt;
+&lt;body&gt;
+&lt;pre&gt;
+Hello,
+
+This is a html version.     --&gt; here am going to incorporate html version
+
+Regards...
+&lt;/pre&gt;
+&lt;body&gt;
+--</span><span class="k">${</span><span class="nv">body_boundary</span><span class="k">}</span><span class="sh">--
+--</span><span class="k">${</span><span class="nv">boundary</span><span class="k">}</span><span class="sh">--
+</span><span class="no">EOF2
+
+</span><span class="nv">sc</span><span class="o">=</span><span class="nv">$?</span>
+<span class="nb">echo</span> <span class="s2">"sedmail rc=</span><span class="k">${</span><span class="nv">rc</span><span class="k">}</span><span class="s2">"</span>
+
+</code></pre>
+            </div>
+          </div>
+        </details>
+        <details>
+          <summary>Example With Attachment</summary>
+          <div class="language-shell highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="c"># Define email details</span>
+<span class="nv">TO</span><span class="o">=</span><span class="s2">"recipient@example.com"</span>
+<span class="nv">SUBJECT</span><span class="o">=</span><span class="s2">"Test Email with Attachment"</span>
+<span class="nv">FROM</span><span class="o">=</span><span class="s2">"sender@example.com"</span>
+<span class="nv">ATTACHMENT</span><span class="o">=</span><span class="s2">"file.txt"</span>
+<span class="nv">FILENAME</span><span class="o">=</span><span class="si">$(</span><span class="nb">basename</span> <span class="s2">"</span><span class="nv">$ATTACHMENT</span><span
+                  class="s2">"</span><span class="si">)</span>
+
+<span class="c"># Define the boundary</span>
+<span class="nv">BOUNDARY</span><span class="o">=</span><span class="s2">"ZZ_/afg6432dfgkl.94531q"</span>
+
+<span class="c"># Create the email content</span>
+<span class="o">{</span>
+  <span class="nb">echo</span> <span class="s2">"From: </span><span class="nv">$FROM</span><span class="s2">"</span>
+  <span class="nb">echo</span> <span class="s2">"To: </span><span class="nv">$TO</span><span class="s2">"</span>
+  <span class="nb">echo</span> <span class="s2">"Subject: </span><span class="nv">$SUBJECT</span><span class="s2">"</span>
+  <span class="nb">echo</span> <span class="s2">"MIME-Version: 1.0"</span>
+  <span class="nb">echo</span> <span class="s2">"Content-Type: multipart/mixed; boundary=</span><span class="se">\"</span><span class="nv">$BOUNDARY</span><span class="se">\"</span><span
+                  class="s2">"</span>
+  <span class="nb">echo</span> <span class="s2">""</span>
+
+  <span class="c"># Plain text version of the email</span>
+  <span class="nb">echo</span> <span class="s2">"--</span><span class="nv">$BOUNDARY</span><span class="s2">"</span>
+  <span class="nb">echo</span> <span class="s2">"Content-Type: text/plain; charset=</span><span class="se">\"</span><span class="s2">UTF-8</span><span class="se">\"</span><span
+                  class="s2">"</span>
+  <span class="nb">echo</span> <span class="s2">"Content-Transfer-Encoding: 7bit"</span>
+  <span class="nb">echo</span> <span class="s2">""</span>
+  <span class="nb">echo</span> <span class="s2">"This is the plain text version of the email."</span>
+  <span class="nb">echo</span> <span class="s2">""</span>
+
+  <span class="c"># Attachment part</span>
+  <span class="nb">echo</span> <span class="s2">"--</span><span class="nv">$BOUNDARY</span><span class="s2">"</span>
+  <span class="nb">echo</span> <span class="s2">"Content-Type: application/octet-stream; name=</span><span class="se">\"</span><span class="nv">$FILENAME</span><span class="se">\"</span><span
+                  class="s2">"</span>
+  <span class="nb">echo</span> <span class="s2">"Content-Transfer-Encoding: base64"</span>
+  <span class="nb">echo</span> <span class="s2">"Content-Disposition: attachment; filename=</span><span class="se">\"</span><span class="nv">$FILENAME</span><span class="se">\"</span><span
+                  class="s2">"</span>
+  <span class="nb">echo</span> <span class="s2">""</span>
+  <span class="nb">base64</span> <span class="s2">"</span><span class="nv">$ATTACHMENT</span><span class="s2">"</span>
+  <span class="nb">echo</span> <span class="s2">""</span>
+
+  <span class="c"># End of the multipart message</span>
+  <span class="nb">echo</span> <span class="s2">"--</span><span class="nv">$BOUNDARY</span><span class="s2">--"</span>
+<span class="o">}</span> | sendmail <span class="nt">-t</span>
+</code></pre>
+            </div>
+          </div>
+        </details>
+        <h1 id="netcat"><a aria-labelledby="netcat" class="anchor-heading" href="#netcat">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Netcat
+        </h1>
+        <h1 id="install-debianubuntu-2"><a aria-labelledby="install-debianubuntu-2" class="anchor-heading" href="#install-debianubuntu-2">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Install Debian/Ubuntu
+        </h1>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>    apt-get <span class="nb">install </span>netcat
+</code></pre>
+          </div>
+        </div>
+        <details>
+          <summary> Script for Netcat</summary>
+          <div class="language-shell highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code>
+    <span class="c">#!/bin/sh</span>
+
+    <span class="c"># Default reception</span>
+    <span class="nv">TOEMAIL</span><span class="o">=</span><span class="s2">"myEmail@domain.ltd"</span><span class="p">;</span>
+    <span class="c"># Default Subject</span>
+    <span class="nv">SUBJECT</span><span class="o">=</span><span class="s2">"You got mail - </span><span class="nv">$DATE</span><span class="s2">"</span><span class="p">;</span>
+    <span class="c"># Default Contents</span>
+    <span class="nv">MSGBODY</span><span class="o">=</span><span class="s2">"Hello, this is the default message body"</span><span class="p">;</span>
+    <span class="c"># Default Attachment</span>
+    <span class="c">#ATTACHMENT="/tmp/testoutput"</span>
+    <span class="c"># Default smtp server</span>
+    <span class="nv">mailserver</span><span class="o">=</span><span class="s2">"smtp.server.ltd"</span>
+    <span class="nv">mailserverPort</span><span class="o">=</span><span class="s2">"25"</span>
+
+    showUsage<span class="o">()</span> <span class="o">{</span>
+            <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$0</span><span class="s2"> -a /file/to/attach [-m /message/file] [-M </span><span class="se">\"</span><span
+                class="s2">Message string</span><span class="se">\"</span><span class="s2">] -s </span><span class="se">\"</span><span class="s2">subject</span><span class="se">\"</span><span
+                class="s2"> -r receiver@domain.com"</span>
+            <span class="nb">echo
+            echo</span> <span class="s2">"The attachment (-a) is required, if no attachment is used then rather use sendmail directly."</span>
+    <span class="o">}</span>
+
+    fappend<span class="o">()</span> <span class="o">{</span>
+        <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span><span class="o">&gt;&gt;</span><span class="nv">$1</span><span
+                class="p">;</span>
+    <span class="o">}</span>
+    <span class="nv">DATE</span><span class="o">=</span><span class="sb">`</span><span class="nb">date</span><span class="sb">`</span>
+
+    <span class="c"># # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #</span>
+    <span class="c"># This might need correction to work on more places, this is tested at a ubuntu 13.10 machine.  #</span>
+    <span class="c"># # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #</span>
+    <span class="nv">domain</span><span class="o">=</span><span class="sb">`</span><span class="nb">grep </span>search /etc/resolv.conf | <span class="nb">awk</span> <span class="s1">'{print $2;}'</span><span
+                class="sb">`</span>
+    <span class="nv">computer</span><span class="o">=</span><span class="sb">`</span><span class="nb">hostname</span><span class="sb">`</span>
+    <span class="nv">user</span><span class="o">=</span><span class="sb">`</span><span class="nb">whoami</span><span class="sb">`</span>
+    <span class="nv">FREMAIL</span><span class="o">=</span><span class="s2">"</span><span class="nv">$user</span><span class="s2">@</span><span class="nv">$computer</span><span
+                class="s2">.</span><span class="nv">$domain</span><span class="s2">"</span>
+
+    <span class="k">while </span><span class="nb">getopts</span> <span class="s2">"M:m:a:s:r:"</span> opt<span class="p">;</span> <span class="k">do
+      case</span> <span class="nv">$opt</span> <span class="k">in
+            </span>s<span class="p">)</span>
+              <span class="nv">SUBJECT</span><span class="o">=</span><span class="s2">"</span><span class="nv">$OPTARG</span><span class="s2"> - </span><span class="nv">$DATE</span><span
+                class="s2">"</span>
+              <span class="p">;;</span>
+            r<span class="p">)</span>
+              <span class="nv">TOEMAIL</span><span class="o">=</span><span class="s2">"</span><span class="nv">$OPTARG</span><span class="s2">"</span>
+              <span class="p">;;</span>
+            m<span class="p">)</span>
+              <span class="nv">MSGBODY</span><span class="o">=</span><span class="sb">`</span><span class="nb">cat</span> <span class="nv">$OPTARG</span><span class="sb">`</span>
+              <span class="p">;;</span>
+            M<span class="p">)</span>
+              <span class="nv">MSGBODY</span><span class="o">=</span><span class="s2">"</span><span class="nv">$OPTARG</span><span class="s2">"</span>
+              <span class="p">;;</span>
+            a<span class="p">)</span>
+              <span class="nv">ATTACHMENT</span><span class="o">=</span><span class="s2">"</span><span class="nv">$OPTARG</span><span class="s2">"</span>
+              <span class="p">;;</span>
+            :<span class="p">)</span>
+              showUsage
+              <span class="p">;;</span>
+            <span class="se">\?</span><span class="p">)</span>
+              showUsage
+              <span class="p">;;</span>
+      <span class="k">esac</span>
+    <span class="k">done
+
+    if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$ATTACHMENT</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">""</span> <span
+                class="o">]</span><span class="p">;</span> <span class="k">then
+            </span>showUsage
+            <span class="nb">exit </span>1
+    <span class="k">fi
+
+    </span><span class="nv">MIMETYPE</span><span class="o">=</span><span class="sb">`</span>file <span class="nt">--mime-type</span> <span class="nt">-b</span> <span class="nv">$ATTACHMENT</span><span
+                class="sb">`</span>
+    <span class="nv">TMP</span><span class="o">=</span><span class="s2">"/tmp/tmpmail_"</span><span class="sb">`</span><span class="nb">date</span> +%N<span class="sb">`</span><span
+                class="p">;</span>
+    <span class="nv">BOUNDARY</span><span class="o">=</span><span class="sb">`</span><span class="nb">date</span> +%s|md5sum|awk <span class="s1">'{print $1;}'</span><span class="sb">`</span>
+    <span class="nv">FILENAME</span><span class="o">=</span><span class="sb">`</span><span class="nb">basename</span> <span class="nv">$ATTACHMENT</span><span class="sb">`</span>
+
+    <span class="nv">DATA</span><span class="o">=</span><span class="sb">`</span><span class="nb">cat</span> <span class="nv">$ATTACHMENT</span>|base64<span class="sb">`</span>
+
+    <span class="nb">rm</span> <span class="nv">$TMP</span> 2&gt; /dev/null
+
+    fappend <span class="nv">$TMP</span> <span class="s2">"EHLO </span><span class="nv">$computer</span><span class="s2">.</span><span class="nv">$domain</span><span class="s2">"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"MAIL FROM:&lt;</span><span class="nv">$FREMAIL</span><span class="s2">&gt;"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"RCPT TO:&lt;</span><span class="nv">$TOEMAIL</span><span class="s2">&gt;"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"DATA"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"From: </span><span class="nv">$FREMAIL</span><span class="s2">"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"To: </span><span class="nv">$TOEMAIL</span><span class="s2">"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"Reply-To: </span><span class="nv">$FREMAIL</span><span class="s2">"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"Subject: </span><span class="nv">$SUBJECT</span><span class="s2">"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"Content-Type: multipart/mixed; boundary=</span><span class="se">\"</span><span class="nv">$BOUNDARY</span><span class="se">\"</span><span
+                class="s2">"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">""</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"This is a MIME formatted message.  If you see this text it means that your"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"email software does not support MIME formatted messages."</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">""</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"--</span><span class="nv">$BOUNDARY</span><span class="s2">"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"Content-Type: text/plain; charset=UTF-8; format=flowed"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"Content-Disposition: inline"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">""</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"</span><span class="nv">$MSGBODY</span><span class="s2">"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">""</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">""</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"--</span><span class="nv">$BOUNDARY</span><span class="s2">"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"Content-Type: </span><span class="nv">$MIMETYPE</span><span class="s2">; name=</span><span class="se">\"</span><span
+                class="nv">$FILENAME</span><span class="se">\"</span><span class="s2">"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"Content-Transfer-Encoding: base64"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"Content-Disposition: attachment; filename=</span><span class="se">\"</span><span class="nv">$FILENAME</span><span class="se">\"</span><span
+                class="s2">;"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">""</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"</span><span class="nv">$DATA</span><span class="s2">"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">""</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">""</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"--</span><span class="nv">$BOUNDARY</span><span class="s2">--"</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">""</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"."</span>
+    fappend <span class="nv">$TMP</span> <span class="s2">"quit"</span>
+
+    netcat <span class="nv">$mailserver</span> <span class="nv">$mailserverPort</span> &lt; <span class="nv">$TMP</span> <span class="o">&gt;&gt;</span> <span class="nv">$TMP</span>
+    <span class="nv">rc</span><span class="o">=</span><span class="s2">"</span><span class="nv">$?</span><span class="s2">"</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$rc</span><span class="s2">"</span> <span class="nt">-ne</span> <span class="s2">"0"</span> <span
+                class="o">]</span><span class="p">;</span> <span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"Returncode: </span><span class="nv">$rc</span><span class="s2">"</span>
+        <span class="nb">echo</span> <span class="s2">"Please inspect </span><span class="nv">$TMP</span><span class="s2">"</span>
+    <span class="k">else
+        </span><span class="nb">rm</span> <span class="nv">$TMP</span><span class="p">;</span>
+    <span class="k">fi</span>
+</code></pre>
+            </div>
+          </div>
+        </details>
+      </main>
+      <hr>
+      <footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"></p>
+        <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"><a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./Linux/Email.md"
+                                                                                id="edit-this-page">Edit this page on GitHub</a></p></div>
+      </footer>
+    </div>
+  </div>
+  <button aria-label="Focus on search" class="search-button btn-reset" id="search-button">
+    <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+      <use xlink:href="#svg-search"></use>
+    </svg>
+  </button>
+  <div class="search-overlay"></div>
+</div>

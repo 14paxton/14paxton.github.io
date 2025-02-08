@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <link href="/assets/css/just-the-docs-default.css" rel="stylesheet">
+  <link href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet" rel="stylesheet">
+  <style id="jtd-nav-activation"> .site-nav > ul.nav-list:first-child > li > a, .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(7)) > a, .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+    background-image: none;
+  }
+
+  .site-nav > ul.nav-list:not(:first-child) a, .site-nav li.external a {
+    background-image: none;
+  }
+
+  .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(7) > a {
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg, .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(7) > button svg {
+    transform: rotate(-90deg);
+  }
+
+  .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list, .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(7) > ul.nav-list {
+    display: block;
+  }</style>
+  <script src="/assets/js/vendor/lunr.min.js"></script>
+  <script src="/assets/js/just-the-docs.js"></script>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Google | Paxton’s Notes</title>
+  <meta content="Jekyll v4.4.0" name="generator"/>
+  <meta content="Google" property="og:title"/>
+  <meta content="en_US" property="og:locale"/>
+  <meta content="Coding Notes" name="description"/>
+  <meta content="Coding Notes" property="og:description"/>
+  <link href="http://localhost:4000/DotNetNotes/Google" rel="canonical"/>
+  <meta content="http://localhost:4000/DotNetNotes/Google" property="og:url"/>
+  <meta content="Paxton’s Notes" property="og:site_name"/>
+  <meta content="website" property="og:type"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="Google" property="twitter:title"/>
+  <script type="application/ld+json">
+     {"@context":"https://schema.org","@type":"WebPage","description":"Coding Notes","headline":"Google","url":"http://localhost:4000/DotNetNotes/Google"}
+  </script>
+<body><a class="skip-to-main" href="#main-content">Skip to main content</a>
+<svg class="d-none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="svg-link" viewBox="0 0 24 24"><title>Link</title>
+    <svg class="feather feather-link"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24"><title>Menu</title>
+    <svg class="feather feather-menu"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <line x1="3" x2="21" y1="12" y2="12"></line>
+      <line x1="3" x2="21" y1="6" y2="6"></line>
+      <line x1="3" x2="21" y1="18" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24"><title>Expand</title>
+    <svg class="feather feather-chevron-right"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol class="feather feather-external-link"
+          fill="none"
+          height="24"
+          id="svg-external-link"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"><title id="svg-external-link-title">(external link)</title>
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+    <polyline points="15 3 21 3 21 9"></polyline>
+    <line x1="10" x2="21" y1="14" y2="3"></line>
+  </symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24"><title>Document</title>
+    <svg class="feather feather-file"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+      <polyline points="13 2 13 9 20 9"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-search" viewBox="0 0 24 24"><title>Search</title>
+    <svg class="feather feather-search"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-copy" viewBox="0 0 16 16"><title>Copy</title>
+    <svg class="bi bi-clipboard" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+      <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-copied" viewBox="0 0 16 16"><title>Copied</title>
+    <svg class="bi bi-clipboard-check-fill" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+    </svg>
+  </symbol>
+</svg>
+<div class="side-bar">
+  <div class="site-header" role="banner"><a class="site-title lh-tight" href="/"> Paxton's Notes </a>
+    <button aria-label="Toggle menu" aria-pressed="false" class="site-button btn-reset" id="menu-button">
+      <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+        <use xlink:href="#svg-menu"></use>
+      </svg>
+    </button>
+  </div>
+  <nav aria-label="Main" class="site-nav" id="site-nav">
+    <ul class="nav-list">
+      <li class="nav-list-item">
+        <button aria-label="toggle items in MyPersonalDocsAndStuff category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/index">MyPersonalDocsAndStuff</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/AppsForWorkflow">AppsForWorkflow</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/CloudServices">CloudServices</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/LetterOfRecommendation">LetterOfRecommendation</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PastProjects">PastProjects</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PriorityLearning">PriorityLearning</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in AWS category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/AWS/">AWS</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/AWS/CLI">CLI</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Build category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Build/">Build</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Gradle">Gradle</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Maven">Maven</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in DockerNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/DockerNotes/">DockerNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/ARM64">ARM64</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Basics">Basics</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Dockerfile">Dockerfile</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Install">Install</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Quick-TidBits">Quick-TidBits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/UsefulCommands">UsefulCommands</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in DotNetNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/DotNetNotes/">DotNetNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CLI">CLI</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in CSharp category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/DotNetNotes/Csharp">CSharp</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Email">Email</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Threading">Threading</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Controllers">Controllers</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Database">Database</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/EntityFramework">EntityFramework</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Environment">Environment</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Google">Google</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HTTP">HTTP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HttpRepl">HttpRepl</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/LINQ">LINQ</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Maui">Maui</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Microservice">Microservice.md</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/VisualStudio">VisualStudio</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Git category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Git">Git</a>
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <button aria-label="toggle items in GitHub category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/Git/GitHub">GitHub</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/GitHubPages">GitHubPages</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/Jekyll">Jekyll</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/MarkDown">MarkDown</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Git/QuickScripts">QuickScripts</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GoogleNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GoogleNotes/">GoogleNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/APIs">APIs</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Browser">Browser</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Cloud">Cloud</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ComputeEngine">ComputeEngine</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Deploy">Deploy</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DevTools">DevTools</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DialogFlow">DialogFlow</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Functions">Functions</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Logging">Logging</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ServiceAccounts">ServiceAccounts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Storage">Storage</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/VoiceAgent">VoiceAgent</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GrailsNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GrailsNotes/">GrailsNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/GORM_WhereQueris">GORM_WhereQueris</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLComplexQueries">HQLComplexQueries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLQueries">HQLQueries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/RunningApp">RunningApp</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Security">Security</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Services">Services</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Testing">Testing</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GroovyNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GroovyNotes/">GroovyNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Array-Loop-List-Map">Array-Loop-List-Map</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Async_Parallel-Concurrency">Async_Parallel-Concurrency</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Clever-Tid-bits">Clever-Tid-bits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/DateAndTime">DateAndTime</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Enum">Enum</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/MetaProgramming">MetaProgramming</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/RegEx">RegEx</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/String">String</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in HTML&CSS category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/HTML&CSS/">HTML&CSS</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/CSS">CSS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/HTML">HTML</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/Images">Images</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/HTTP">HTTP</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in IntelliJNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/IntelliJNotes/">IntelliJNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/CustomVM">CustomVM</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/DebuggerConfig">DebuggerConfig</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/HTTPExamples">HTTPExamples</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/Spaces">Spaces</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Java category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/JavaNotes/Java">Java</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Algorithms">Algorithms</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/CommandLineDiddys">CommandLineDiddys</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/DataBase">DataBase</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/File">File</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/GCP">GCP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Hibernate">Hibernate</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/LooseNotes">LooseNotes</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/OOP">OOP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/String">String</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Threads">Threads</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in JavaScript category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/JavaScript/">JavaScript</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Browser">Browser</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CDN">CDN</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CSS">CSS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Clever-Algos">Clever-Algos</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/DateAndTime">DateAndTime</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Document">Document</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Elements">Elements</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Events">Events</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FormStuff">FormStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FunctionObject">FunctionObject</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/HTTP">HTTP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Map">Map</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Modules">Modules</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in Node category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/Node/">Node</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Node/QuickScripts">QuickScripts</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Number">Number</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Object">Object</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/QuerySelector">QuerySelector</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in ReactNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/ReactNotes">ReactNotes</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Clever-Snippets">Clever-Snippets</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Configuring">Configuring</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/HandleEvents">HandleEvents</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/ReactNotes/Hooks">Hooks</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/MUI">MUI</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Mat-Table">Mat-Table</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/React-Router">React-Router</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/ReactHookForm">ReactHookForm</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/String">String</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/WebWorker">WebWorker</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/RegEx">RegEx</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/State">State</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in TypeScript category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/TypeScript/">TypeScript</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Events">Events</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/QuickScripts">QuickScripts</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Types">Types</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/UsefulSnippets">UsefulSnippets</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WebAPI">WebAPI</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Window">Window</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WorkingWithFiles">WorkingWithFiles</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/Kubernetes">Kubernetes</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Linux category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Linux/">Linux</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/ADMIN-ROOT">ADMIN-ROOT</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Conditionals">Conditionals</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Encoding">Encoding</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/JQ">JQ</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/MySQL">MySQL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/PGP">PGP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/QuickScripts">QuickScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/SDKMan">SDKMan</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Scripting">Scripting</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/VIM_QuickTips">VIM_QuickTips</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in MacNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/MacNotes/">MacNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/AppleScripts">AppleScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/HomeBrew">HomeBrew</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/JavaOnMac">JavaOnMac</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/QuickScripts">QuickScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ShortCuts">ShortCuts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/UsersAndGroups">UsersAndGroups</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/Utilities">Utilities</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ZSH">ZSH</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Micronotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Micronotes/">Micronotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/AWS">AWS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Configuration">Configuration</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/DataBaseStuff">DataBaseStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/EnviromentStuff">EnviromentStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/GRAALVM">GRAALVM</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Gradle">Gradle</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Jackson">Jackson</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/MicroStream">MicroStream</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Resources">Resources</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Testing">Testing</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/UsefuleSnippets">UsefuleSnippets</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/cli_gradlew">cli_gradlew</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/Obsidian/Obsidian">Obsidian</a>
+      <li class="nav-list-item"><a class="nav-list-link" href="/RandomNuggetsOfKnowledge">RandomNuggetsOfKnowledge</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in SQLNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/SQLNotes/">SQLNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Docker">Docker</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Functions">Functions</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/HQL">HQL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Liquibase">Liquibase</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Queries">Queries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/SQLCheatSheet">SQLCheatSheet</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/TerminalCommands">Terminal-Commands</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in SpringNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/SpringNotes/">SpringNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Hibernate">Hibernate</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Maven">Maven</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Properties">Properties</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Security">Security</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Serialization">Serialization</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Testing">Testing</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/TidBits">TidBits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Transactions">Transactions</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/SystemDesign&Architecture/">SystemDesign&Architecture</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in TestingFrameworks category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/TestingFrameworks/">TestingFrameworks</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JUnit">JUnit</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JavascriptTesting">Javascript</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Spock">Spock</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Testcontainers">Testcontainers</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Thymeleaf category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Thymeleaf/">Thymeleaf</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Thymeleaf/Fragments">Fragments</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Windows_Notes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Windows_Notes/">Windows_Notes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/CMD">CMD</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Environment">Environment</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/PackageManagers">PackageManagers</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Powershell">Powershell</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Run">Run</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Shortcuts">Shortcuts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Terminal">Terminal</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WSL">WSL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WindowsServer">WindowsServer</a>
+        </ul>
+    </ul>
+  </nav>
+  <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
+</div>
+<div class="main" id="top">
+  <div class="main-header" id="main-header">
+    <div class="search" role="search">
+      <div class="search-input-wrap"><input aria-label="Search Paxton's Notes"
+                                            autocomplete="off"
+                                            class="search-input"
+                                            id="search-input"
+                                            placeholder="Search Paxton's Notes"
+                                            tabindex="0"
+                                            type="text"> <label class="search-label" for="search-input">
+        <svg class="search-icon" viewBox="0 0 24 24">
+          <use xlink:href="#svg-search"></use>
+        </svg>
+      </label></div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+    <nav aria-label="Auxiliary" class="aux-nav">
+      <ul class="aux-nav-list">
+        <li class="aux-nav-list-item"><a class="site-button" href="https://github.com/14paxton/14paxton.github.io" rel="noopener noreferrer" target="_blank"> Template
+                                                                                                                                                              Repository </a>
+      </ul>
+    </nav>
+  </div>
+  <div class="main-content-wrap">
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol class="breadcrumb-nav-list">
+        <li class="breadcrumb-nav-list-item"><a href="/DotNetNotes/">DotNetNotes</a>
+        <li class="breadcrumb-nav-list-item"><span>Google</span>
+      </ol>
+    </nav>
+    <div class="main-content" id="main-content">
+      <main><p><br/></p>
+        <details>
+          <summary class="text-delta"> Table of contents</summary>
+          <ol id="markdown-toc">
+            <li><a href="#client-libraries" id="markdown-toc-client-libraries">Client Libraries</a>
+            <li><a href="#api-explorerv3" id="markdown-toc-api-explorerv3">API ExplorerV3</a>
+              <ol>
+                <li><a href="#net-client-library" id="markdown-toc-net-client-library">.Net client Library</a>
+                <li><a href="#authorizing-example" id="markdown-toc-authorizing-example">Authorizing Example</a>
+                <li><a href="#rest-api-client-library" id="markdown-toc-rest-api-client-library">REST API Client Library</a>
+                  <ol>
+                    <li><a href="#dialogflowcxv3" id="markdown-toc-dialogflowcxv3">DialogFlowCXV3</a>
+                      <ol>
+                        <li><a href="#detect-intent" id="markdown-toc-detect-intent">Detect Intent</a>
+                          <ol>
+                            <li><a href="#using-googleapisdialogflowv3data" id="markdown-toc-using-googleapisdialogflowv3data">using
+                              <code class="language-plaintext highlighter-rouge">Google.Apis.Dialogflow.v3.Data</code></a>
+                            <li><a href="#using-googlecloudgoogleclouddialogflowgoogleclouddialogflowcxv3"
+                                   id="markdown-toc-using-googlecloudgoogleclouddialogflowgoogleclouddialogflowcxv3">using <code class="language-plaintext highlighter-rouge">GoogleCloudGoogle.Cloud.DialogflowGoogle.Cloud.Dialogflow.CxV3</code></a>
+                          </ol>
+                        <li><a href="#detectintentresponse" id="markdown-toc-detectintentresponse">DetectIntentResponse</a>
+                        <li><a href="#webhookrequest" id="markdown-toc-webhookrequest">WebhookRequest</a>
+                          <ol>
+                            <li><a href="#net-core-6" id="markdown-toc-net-core-6">.Net Core 6</a>
+                            <li><a href="#net-framework-48" id="markdown-toc-net-framework-48">.Net Framework 4.8</a>
+                            <li><a href="#json-example" id="markdown-toc-json-example">JSON Example</a>
+                              <ol>
+                                <li><a href="#json-with-types-for-protobuf" id="markdown-toc-json-with-types-for-protobuf">JSON With types for Protobuf</a>
+                              </ol>
+                          </ol>
+                        <li><a href="#webhookresponse" id="markdown-toc-webhookresponse">WebhookResponse</a>
+                          <ol>
+                            <li><a href="#using-googleapisdialogflowv3data-1" id="markdown-toc-using-googleapisdialogflowv3data-1">using
+                              <code class="language-plaintext highlighter-rouge">Google.Apis.Dialogflow.v3.Data</code></a>
+                            <li><a href="#using-googleclouddialogflowcxv3" id="markdown-toc-using-googleclouddialogflowcxv3">using
+                              <code class="language-plaintext highlighter-rouge">Google.Cloud.Dialogflow.Cx.V3</code></a>
+                            <li><a href="#json-example-1" id="markdown-toc-json-example-1">JSON Example</a>
+                          </ol>
+                      </ol>
+                    <li><a href="#logging" id="markdown-toc-logging">Logging</a>
+                      <ol>
+                        <li><a href="#logging-code-examples" id="markdown-toc-logging-code-examples">Logging Code Examples</a>
+                        <li><a href="#writing-logs" id="markdown-toc-writing-logs">Writing Logs</a>
+                        <li><a href="#configuring-longs" id="markdown-toc-configuring-longs">Configuring Longs</a>
+                      </ol>
+                    <li><a href="#googleprotobufwellknowntypes" id="markdown-toc-googleprotobufwellknowntypes">Google.Protobuf.WellKnownTypes</a>
+                      <ol>
+                        <li><a href="#--api-docs" id="markdown-toc---api-docs">- API Docs</a>
+                        <li><a href="#--git-protocol-buffers" id="markdown-toc---git-protocol-buffers">- GIT Protocol Buffers</a>
+                        <li><a href="#--protobuf-reference" id="markdown-toc---protobuf-reference">- Protobuf Reference</a>
+                        <li><a href="#--namespace-googleprotobufwellknowntypes-3158" id="markdown-toc---namespace-googleprotobufwellknowntypes-3158">- Namespace
+                                                                                                                                                     Google.Protobuf.WellKnownTypes
+                                                                                                                                                     (3.15.8)</a>
+                        <li><a href="#parsing-a-variable-into-googles-protobuf-value-object" id="markdown-toc-parsing-a-variable-into-googles-protobuf-value-object">parsing a
+                                                                                                                                                                     variable into
+                                                                                                                                                                     googles
+                                                                                                                                                                     protobuf Value
+                                                                                                                                                                     object</a>
+                        <li><a href="#deserialize-into-object" id="markdown-toc-deserialize-into-object">deserialize into object</a>
+                          <ol>
+                            <li><a href="#jsonformatter" id="markdown-toc-jsonformatter">JsonFormatter</a>
+                            <li><a href="#jsonparser" id="markdown-toc-jsonparser">JsonParser</a>
+                          </ol>
+                      </ol>
+                  </ol>
+              </ol>
+          </ol>
+        </details>
+        <p><br/></p>
+        <hr/>
+        <p><br/></p>
+        <h1 id="client-libraries"><a aria-labelledby="client-libraries" class="anchor-heading" href="#client-libraries">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Client Libraries
+        </h1>
+        <h1 id="api-explorerv3"><a aria-labelledby="api-explorerv3" class="anchor-heading" href="#api-explorerv3">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://developers.google.com/apis-explorer/#p/dialogflow/v3/">API ExplorerV3</a></h1>
+        <h2 id="net-client-library"><a aria-labelledby="net-client-library" class="anchor-heading" href="#net-client-library">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Dialogflow.Cx.V3/latest">.Net client Library</a></h2>
+        <hr/>
+        <h2 id="authorizing-example"><a aria-labelledby="authorizing-example" class="anchor-heading" href="#authorizing-example">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://github.com/14paxton/GCPAuthorization">Authorizing Example</a></h2>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System.Reflection</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Google.Apis.Auth.OAuth2</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Google.Cloud.Dialogflow.Cx.V3</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Google.Cloud.Iam.Credentials.V1</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Grpc.Auth</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Grpc.Core</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Environment</span> <span class="p">=</span> <span class="n">System</span><span class="p">.</span><span class="n">Environment</span><span
+                class="p">;</span>
+
+<span class="kt">string</span> <span class="n">currentDir</span> <span class="p">=</span> <span class="n">Directory</span><span class="p">.</span><span class="nf">GetCurrentDirectory</span><span
+                class="p">();</span>
+<span class="kt">string</span> <span class="n">path</span> <span class="p">=</span> <span class="n">Path</span><span class="p">.</span><span class="nf">Combine</span><span class="p">(</span><span
+                class="k">new</span> <span class="nf">FileInfo</span><span class="p">(</span><span class="n">Assembly</span><span class="p">.</span><span class="nf">GetExecutingAssembly</span><span
+                class="p">().</span><span class="n">Location</span><span class="p">).</span><span class="n">DirectoryName</span><span class="p">,</span> <span class="s">"vcu-chat-bot"</span><span
+                class="p">);</span>
+<span class="c1">// string[] scopes = { "https://www.googleapis.com/auth/dialogflow", "https://www.googleapis.com/auth/cloud-platform" };</span>
+<span class="n">IReadOnlyList</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">scopes</span> <span class="p">=</span> <span
+                class="n">SessionsClient</span><span class="p">.</span><span class="n">DefaultScopes</span><span class="p">;</span>
+<span class="n">FileStream</span> <span class="n">stream</span> <span class="p">=</span> <span class="k">new</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span
+                class="n">FileMode</span><span class="p">.</span><span class="n">Open</span><span class="p">,</span> <span class="n">FileAccess</span><span class="p">.</span><span
+                class="n">Read</span><span class="p">);</span>
+<span class="n">GoogleCredential</span><span class="p">?</span> <span class="n">credentialAccount</span> <span class="p">=</span> <span class="n">GoogleCredential</span><span class="p">.</span><span
+                class="nf">FromFile</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+<span class="n">GoogleCredential</span><span class="p">?</span> <span class="n">credentialAccountFromStreamAsync</span> <span class="p">=</span> <span class="n">GoogleCredential</span><span
+                class="p">.</span><span class="nf">FromStreamAsync</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">CancellationToken</span><span
+                class="p">.</span><span class="n">None</span><span class="p">).</span><span class="n">Result</span><span class="p">;</span>
+
+<span class="c1">//MANUALLY SET ENV VAR</span>
+<span class="n">Environment</span><span class="p">.</span><span class="nf">SetEnvironmentVariable</span><span class="p">(</span><span class="s">"GOOGLE_APPLICATION_CREDENTIALS"</span><span
+                class="p">,</span> <span class="n">path</span><span class="p">);</span>
+
+<span class="c1">//IAMCredentialsClientBuilder</span>
+<span class="c1">//From an ICredential from file</span>
+<span class="n">ICredential</span> <span class="n">credential</span> <span class="p">=</span> <span class="n">GoogleCredential</span><span class="p">.</span><span class="nf">FromFile</span><span
+                class="p">(</span><span class="n">path</span><span class="p">);</span>
+
+<span class="n">IAMCredentialsClientBuilder</span> <span class="n">iamcredintialFromPathBuilder</span> <span class="p">=</span> <span class="k">new</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">CredentialsPath</span> <span class="p">=</span> <span class="n">path</span><span class="p">,</span>
+    <span class="n">Scopes</span> <span class="p">=</span> <span class="n">scopes</span>
+<span class="p">};</span>
+<span class="n">IAMCredentialsClient</span><span class="p">?</span> <span class="n">iamcredintialFromPath</span> <span class="p">=</span> <span class="n">iamcredintialFromPathBuilder</span><span
+                class="p">.</span><span class="nf">Build</span><span class="p">();</span>
+
+<span class="n">IAMCredentialsClientBuilder</span> <span class="n">iamcredintialJsonBuilder</span> <span class="p">=</span> <span class="k">new</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">JsonCredentials</span> <span class="p">=</span> <span class="n">File</span><span class="p">.</span><span class="nf">ReadAllText</span><span class="p">(</span><span
+                class="n">path</span><span class="p">),</span>
+    <span class="n">Scopes</span> <span class="p">=</span> <span class="n">scopes</span>
+<span class="p">};</span>
+<span class="n">IAMCredentialsClient</span> <span class="n">iamcredentialsJson</span> <span class="p">=</span> <span class="n">iamcredintialJsonBuilder</span><span class="p">.</span><span
+                class="nf">BuildAsync</span><span class="p">().</span><span class="n">Result</span><span class="p">;</span>
+
+<span class="n">IAMCredentialsClientBuilder</span> <span class="n">iamcredintialGoogleCredentialsClientBuilder</span> <span class="p">=</span> <span class="k">new</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">GoogleCredential</span> <span class="p">=</span> <span class="n">credentialAccountFromStreamAsync</span><span class="p">,</span>
+    <span class="n">Scopes</span> <span class="p">=</span> <span class="n">scopes</span>
+<span class="p">};</span>
+<span class="n">IAMCredentialsClient</span><span class="p">?</span> <span class="n">iamcredentialGoogleCred</span> <span class="p">=</span> <span class="n">iamcredintialGoogleCredentialsClientBuilder</span><span
+                class="p">.</span><span class="nf">BuildAsync</span><span class="p">().</span><span class="n">Result</span><span class="p">;</span>
+
+<span class="n">SessionsClientBuilder</span><span class="p">?</span> <span class="n">sessionsClientBuilderTokenAccess</span> <span class="p">=</span> <span class="k">new</span><span
+                class="p">()</span>
+<span class="p">{</span>
+    <span class="n">TokenAccessMethod</span> <span class="p">=</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">token</span><span
+                class="p">)</span> <span class="p">=&gt;</span> <span class="n">credential</span><span class="p">.</span><span class="nf">GetAccessTokenForRequestAsync</span><span
+                class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">token</span><span class="p">)</span>
+<span class="p">};</span>
+
+<span class="n">SessionsClient</span> <span class="n">sessionsClientICred</span> <span class="p">=</span> <span class="n">sessionsClientBuilderTokenAccess</span><span class="p">.</span><span
+                class="nf">Build</span><span class="p">();</span>
+
+<span class="c1">// SessionsClient sessionsClient = SessionsClient.CreateAsync().Result;</span>
+
+<span class="c1">// from file stream</span>
+<span class="c1">// GoogleCredential credentialStream;</span>
+<span class="c1">// using (FileStream stream = new(path, FileMode.Open, FileAccess.Read))</span>
+<span class="c1">// {</span>
+<span class="c1">//     credentialStream = GoogleCredential.FromStream(stream)</span>
+<span class="c1">//         .CreateScoped(scopes);</span>
+<span class="c1">// }</span>
+
+<span class="c1">// use default credential</span>
+<span class="n">GoogleCredential</span> <span class="n">credentialDefault</span> <span class="p">=</span> <span class="n">GoogleCredential</span><span class="p">.</span><span class="nf">GetApplicationDefault</span><span
+                class="p">();</span>
+<span class="n">ServiceAccountCredential</span><span class="p">?</span> <span class="n">serviceAccountCredential</span> <span class="p">=</span>
+    <span class="n">credentialDefault</span><span class="p">.</span><span class="n">UnderlyingCredential</span> <span class="k">as</span> <span class="n">ServiceAccountCredential</span><span
+                class="p">;</span>
+<span class="n">SessionsClientBuilder</span> <span class="n">sessionsClientBuilderFromDefault</span> <span class="p">=</span> <span class="k">new</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">ChannelCredentials</span> <span class="p">=</span> <span class="n">serviceAccountCredential</span><span class="p">.</span><span class="nf">ToChannelCredentials</span><span
+                class="p">()</span>
+<span class="p">};</span>
+<span class="n">SessionsClient</span> <span class="n">sessionsClientFromDefault</span> <span class="p">=</span> <span class="n">sessionsClientBuilderFromDefault</span><span class="p">.</span><span
+                class="nf">Build</span><span class="p">();</span>
+
+<span class="c1">//Authenticate to the service by using Service Account from channel</span>
+<span class="n">GoogleCredential</span><span class="p">?</span> <span class="n">credentialFromFile</span> <span class="p">=</span> <span class="n">GoogleCredential</span><span
+                class="p">.</span><span class="nf">FromFile</span><span class="p">(</span><span class="n">path</span><span class="p">).</span><span class="nf">CreateScoped</span><span
+                class="p">(</span><span class="n">SessionsClient</span><span class="p">.</span><span class="n">DefaultScopes</span><span class="p">);</span>
+<span class="n">Channel</span> <span class="n">channel</span> <span class="p">=</span> <span class="k">new</span><span class="p">(</span><span class="n">SessionsClient</span><span
+                class="p">.</span><span class="n">DefaultEndpoint</span><span class="p">,</span> <span class="n">credentialFromFile</span><span class="p">.</span><span class="nf">ToChannelCredentials</span><span
+                class="p">());</span>
+<span class="n">Sessions</span><span class="p">.</span><span class="n">SessionsClient</span> <span class="n">sessionsClientFromChannel</span> <span class="p">=</span> <span class="k">new</span><span
+                class="p">(</span><span class="n">channel</span><span class="p">);</span>
+
+<span class="c1">//USE SESSION BUILDER</span>
+<span class="n">SessionsClientBuilder</span> <span class="n">sessionsClientBuilderFromCred</span> <span class="p">=</span> <span class="k">new</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">GoogleCredential</span> <span class="p">=</span> <span class="n">credentialAccount</span>
+<span class="p">};</span>
+<span class="n">SessionsClient</span> <span class="n">sessionsClientFromCred</span> <span class="p">=</span> <span class="n">sessionsClientBuilderFromCred</span><span class="p">.</span><span
+                class="nf">Build</span><span class="p">();</span>
+
+<span class="c1">// From a path to a JSON file</span>
+<span class="n">SessionsClient</span><span class="p">?</span> <span class="n">sessionsClientFromeJson</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SessionsClientBuilder</span>
+<span class="p">{</span>
+    <span class="n">CredentialsPath</span> <span class="p">=</span> <span class="n">path</span>
+<span class="p">}.</span><span class="nf">Build</span><span class="p">();</span>
+
+<span class="c1">// From JSON you already have as a string</span>
+<span class="kt">string</span> <span class="n">json</span> <span class="p">=</span> <span class="n">File</span><span class="p">.</span><span class="nf">ReadAllText</span><span
+                class="p">(</span><span class="n">path</span><span class="p">);</span>
+<span class="n">SessionsClient</span><span class="p">?</span> <span class="n">sessionsClientFromJsonString</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SessionsClientBuilder</span>
+<span class="p">{</span>
+    <span class="n">JsonCredentials</span> <span class="p">=</span> <span class="n">json</span>
+<span class="p">}.</span><span class="nf">Build</span><span class="p">();</span>
+
+
+<span class="n">DetectIntentRequest</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SessionAsSessionName</span> <span class="p">=</span> <span class="n">SessionName</span><span class="p">.</span><span class="nf">FromProjectLocationAgentSession</span><span
+                class="p">(</span><span class="s">"project"</span><span class="p">,</span> <span class="s">"global"</span><span class="p">,</span>
+        <span class="s">"agent"</span><span class="p">,</span> <span class="s">"1234session"</span><span class="p">),</span>
+    <span class="n">QueryParams</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">QueryParameters</span><span class="p">(),</span>
+    <span class="n">QueryInput</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">QueryInput</span><span class="p">(),</span>
+    <span class="n">OutputAudioConfig</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">OutputAudioConfig</span><span class="p">()</span>
+<span class="p">};</span>
+
+<span class="n">request</span><span class="p">.</span><span class="n">QueryInput</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="k">new</span> <span
+                class="n">TextInput</span>
+<span class="p">{</span>
+    <span class="n">Text</span> <span class="p">=</span> <span class="s">"hello"</span>
+<span class="p">};</span>
+
+<span class="n">request</span><span class="p">.</span><span class="n">QueryInput</span><span class="p">.</span><span class="n">LanguageCode</span> <span class="p">=</span> <span
+                class="s">"en"</span><span class="p">;</span>
+
+<span class="c1">// Make the request</span>
+<span class="n">DetectIntentResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">sessionsClientFromCred</span><span class="p">.</span><span
+                class="nf">DetectIntent</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">response</span><span class="p">);</span>
+</code></pre>
+          </div>
+        </div>
+        <hr/>
+        <h2 id="rest-api-client-library"><a aria-labelledby="rest-api-client-library" class="anchor-heading" href="#rest-api-client-library">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://developers.google.com/api-client-library/dotnet/apis">REST API Client Library</a></h2>
+        <h3 id="dialogflowcxv3"><a aria-labelledby="dialogflowcxv3" class="anchor-heading" href="#dialogflowcxv3">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Dialogflow.Cx.V3/latest">DialogFlowCXV3</a></h3>
+        <h4 id="detect-intent"><a aria-labelledby="detect-intent" class="anchor-heading" href="#detect-intent">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a>
+          <a href="https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Dialogflow.Cx.V3/latest/Google.Cloud.Dialogflow.Cx.V3.SessionsClient#Google_Cloud_Dialogflow_Cx_V3_SessionsClient_DetectIntent_Google_Cloud_Dialogflow_Cx_V3_DetectIntentRequest_Google_Api_Gax_Grpc_CallSettings_">Detect
+                                                                                                                                                                                                                                                                                                   Intent</a>
+        </h4>
+        <h5 id="using-googleapisdialogflowv3data"><a aria-labelledby="using-googleapisdialogflowv3data" class="anchor-heading" href="#using-googleapisdialogflowv3data">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> using <code class="language-plaintext highlighter-rouge">Google.Apis.Dialogflow.v3.Data</code></h5>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>  <span class="n">GoogleCloudDialogflowCxV3EventInput</span> <span class="n">eventInput</span> <span class="p">=</span> <span
+              class="k">new</span> <span class="n">GoogleCloudDialogflowCxV3EventInput</span> <span class="p">{</span> <span class="n">Event__</span> <span class="p">=</span> <span
+              class="n">eventName</span> <span class="p">};</span>
+                <span class="n">GoogleCloudDialogflowCxV3DetectIntentRequest</span> <span class="n">detectIntentRequestBody</span> <span class="p">=</span> <span class="k">new</span> <span
+                class="n">GoogleCloudDialogflowCxV3DetectIntentRequest</span>
+                <span class="p">{</span>
+                    <span class="n">QueryInput</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GoogleCloudDialogflowCxV3QueryInput</span>
+                    <span class="p">{</span>
+                        <span class="n">Event__</span> <span class="p">=</span> <span class="n">eventInput</span><span class="p">,</span>
+                        <span class="n">LanguageCode</span> <span class="p">=</span> <span class="s">"en-US"</span>
+                    <span class="p">},</span>
+                    <span class="n">QueryParams</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">GoogleCloudDialogflowCxV3QueryParameters</span><span
+                class="p">()</span>
+                <span class="p">};</span>
+
+
+                <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span
+                class="n">customParams</span> <span class="p">=</span> <span class="n">visitor</span>
+                                                                 <span class="p">.</span><span class="nf">GetType</span><span class="p">()</span>
+                                                                 <span class="p">.</span><span class="nf">GetProperties</span><span class="p">(</span><span class="n">BindingFlags</span><span
+                class="p">.</span><span class="n">Instance</span> <span class="p">|</span> <span class="n">BindingFlags</span><span class="p">.</span><span class="n">Public</span><span
+                class="p">)</span>
+                                                                 <span class="p">.</span><span class="nf">ToDictionary</span><span class="p">(</span><span class="n">keySelector</span><span
+                class="p">:</span> <span class="n">prop</span> <span class="p">=&gt;</span> <span class="n">prop</span><span class="p">.</span><span class="n">Name</span><span
+                class="p">,</span> <span class="n">elementSelector</span><span class="p">:</span> <span class="n">prop</span> <span class="p">=&gt;</span> <span class="n">prop</span><span
+                class="p">.</span><span class="nf">GetValue</span><span class="p">(</span><span class="n">visitor</span><span class="p">,</span> <span class="n">index</span><span
+                class="p">:</span> <span class="k">null</span><span class="p">));</span>
+
+                <span class="n">customParams</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"session-id"</span><span class="p">,</span> <span
+                class="n">sessionId</span><span class="p">);</span>
+                <span class="n">customParams</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"session-uri"</span><span class="p">,</span> <span
+                class="n">sessionUri</span><span class="p">);</span>
+                <span class="n">detectIntentRequestBody</span><span class="p">.</span><span class="n">QueryParams</span> <span class="p">=</span> <span class="k">new</span> <span
+                class="n">GoogleCloudDialogflowCxV3QueryParameters</span> <span class="p">{</span> <span class="n">Parameters</span> <span class="p">=</span> <span class="n">customParams</span> <span
+                class="p">};</span>
+
+                <span class="n">GoogleCloudDialogflowCxV3DetectIntentResponse</span> <span class="n">detectIntentResponse</span> <span class="p">=</span> <span class="k">new</span> <span
+                class="nf">DialogflowService</span><span class="p">(</span><span class="k">new</span> <span class="n">BaseClientService</span><span class="p">.</span><span class="n">Initializer</span>
+                <span class="p">{</span>
+                    <span class="n">HttpClientInitializer</span> <span class="p">=</span> <span class="n">credential</span><span class="p">,</span>
+                    <span class="n">ApplicationName</span> <span class="p">=</span> <span class="n">projectId</span>
+                <span class="p">}).</span><span class="n">Projects</span>
+                    <span class="p">.</span><span class="n">Locations</span>
+                    <span class="p">.</span><span class="n">Agents</span>
+                    <span class="p">.</span><span class="n">Sessions</span>
+                    <span class="p">.</span><span class="nf">DetectIntent</span><span class="p">(</span><span class="n">detectIntentRequestBody</span><span class="p">,</span> <span
+                class="n">sessionUri</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nf">Execute</span><span class="p">();</span>
+
+</code></pre>
+          </div>
+        </div>
+        <h5 id="using-googlecloudgoogleclouddialogflowgoogleclouddialogflowcxv3"><a aria-labelledby="using-googlecloudgoogleclouddialogflowgoogleclouddialogflowcxv3"
+                                                                                    class="anchor-heading"
+                                                                                    href="#using-googlecloudgoogleclouddialogflowgoogleclouddialogflowcxv3">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> using <code class="language-plaintext highlighter-rouge">GoogleCloudGoogle.Cloud.DialogflowGoogle.Cloud.Dialogflow.CxV3</code></h5>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>          <span class="c1">// Create client</span>
+        <span class="n">SessionsClient</span> <span class="n">sessionsClient</span> <span class="p">=</span> <span class="n">SessionsClient</span><span class="p">.</span><span
+                class="nf">Create</span><span class="p">();</span>
+        <span class="c1">// Initialize request argument(s)</span>
+        <span class="n">DetectIntentRequest</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DetectIntentRequest</span>
+        <span class="p">{</span>
+            <span class="n">SessionAsSessionName</span> <span class="p">=</span> <span class="n">SessionName</span><span class="p">.</span><span class="nf">FromProjectLocationAgentSession</span><span
+                class="p">(</span><span class="s">"[PROJECT]"</span><span class="p">,</span> <span class="s">"[LOCATION]"</span><span class="p">,</span> <span class="s">"[AGENT]"</span><span
+                class="p">,</span> <span class="s">"[SESSION]"</span><span class="p">),</span>
+            <span class="n">QueryParams</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">QueryParameters</span><span class="p">(),</span>
+            <span class="n">QueryInput</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">QueryInput</span><span class="p">(),</span>
+            <span class="n">OutputAudioConfig</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">OutputAudioConfig</span><span class="p">(),</span>
+        <span class="p">};</span>
+        <span class="c1">// Make the request</span>
+        <span class="n">DetectIntentResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">sessionsClient</span><span class="p">.</span><span
+                class="nf">DetectIntent</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+
+        <span class="c1">//or</span>
+        <span class="k">public</span> <span class="k">virtual</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">DetectIntentResponse</span><span class="p">&gt;</span> <span
+                class="nf">DetectIntentAsync</span><span class="p">(</span><span class="n">DetectIntentRequest</span> <span class="n">request</span><span class="p">,</span> <span
+                class="n">CallSettings</span> <span class="n">callSettings</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+</code></pre>
+          </div>
+        </div>
+        <h4 id="detectintentresponse"><a aria-labelledby="detectintentresponse" class="anchor-heading" href="#detectintentresponse">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a>
+          <a href="https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Dialogflow.Cx.V3/latest/Google.Cloud.Dialogflow.Cx.V3.DetectIntentResponse">DetectIntentResponse</a>
+        </h4>
+        <div class="language-json highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"responseId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bda416d2-134c-4bbb-a0a1-37820eb0257e"</span><span class="p">,</span><span
+              class="w">
+  </span><span class="nl">"queryResult"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"languageCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"session-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a57d22-fbe-afb-ee4-69a8f62b3"</span><span class="p">,</span><span
+              class="w">
+      </span><span class="nl">"session-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/vcu-virtual-assistant-bot/locations/global/agents/8ec51540-2933-43d6-aad5-355545059bfe/environments/ec5f3114-e5d6-497f-bf92-53723c698230/sessions/a57d22-fbe-afb-ee4-69a8f62b3"</span><span
+              class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"responseMessages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"When you test me that helps my developers improve my performance."</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"allowPlaybackInterruption"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"currentPage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/vcu-virtual-assistant-bot/locations/global/agents/8ec51540-2933-43d6-aad5-355545059bfe/flows/00000000-0000-0000-0000-000000000000/pages/START_PAGE"</span><span
+              class="p">,</span><span class="w">
+      </span><span class="nl">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Start Page"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"intent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/vcu-virtual-assistant-bot/locations/global/agents/8ec51540-2933-43d6-aad5-355545059bfe/intents/3a13ea29-83bd-4131-9144-2f511b42fcc2"</span><span
+              class="p">,</span><span class="w">
+      </span><span class="nl">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small_talk.user.testing_agent"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"intentDetectionConfidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"diagnosticInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Transition Targets Chain"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"TargetFlow"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7bf60f85-19fe-48bd-ac27-2b5db2cde4de"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"TargetPage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"END_FLOW"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"Session Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a57d22-fbe-afb-ee4-69a8f62b3"</span><span class="p">,</span><span
+              class="w">
+      </span><span class="nl">"Triggered Transition Names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"807b27e2-59da-4a37-8b1c-c7d109cb816f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"807b27e2-59da-4a37-8b1c-c7d109cb816f"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"Execution Sequence"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"Alternative Matched Intents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3a13ea29-83bd-4131-9144-2f511b42fcc2"</span><span class="p">,</span><span
+              class="w">
+          </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NLU"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Score"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"DisplayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small_talk.user.testing_agent"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"match"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"intent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/vcu-virtual-assistant-bot/locations/global/agents/8ec51540-2933-43d6-aad5-355545059bfe/intents/3a13ea29-83bd-4131-9144-2f511b42fcc2"</span><span
+              class="p">,</span><span class="w">
+        </span><span class="nl">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small_talk.user.testing_agent"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"resolvedInput"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"matchType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INTENT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"confidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"responseType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FINAL"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+          </div>
+        </div>
+        <h4 id="webhookrequest"><a aria-labelledby="webhookrequest" class="anchor-heading" href="#webhookrequest">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a>
+          <a href="https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Dialogflow.Cx.V3/latest/Google.Cloud.Dialogflow.Cx.V3.WebhookRequest#Google_Cloud_Dialogflow_Cx_V3_WebhookRequest__ctor">WebhookRequest</a>
+        </h4>
+        <blockquote><p>Get WebhookRequest , From DialogFlowCX request call</p></blockquote>
+        <h5 id="net-core-6"><a aria-labelledby="net-core-6" class="anchor-heading" href="#net-core-6">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> .Net Core 6
+        </h5>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>        <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">HandleAsync</span><span
+              class="p">(</span><span class="n">HttpContext</span> <span class="n">context</span><span class="p">){</span>
+            <span class="n">HttpRequest</span> <span class="n">httpRequest</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">Request</span><span
+                class="p">;</span>
+            <span class="n">HttpResponse</span> <span class="n">httpResponse</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span
+                class="p">;</span>
+
+            <span class="k">using</span> <span class="nn">TextReader</span> <span class="n">reader</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StreamReader</span><span
+                class="p">(</span><span class="n">httpRequest</span><span class="p">.</span><span class="n">Body</span><span class="p">);</span>
+            <span class="kt">string</span> <span class="n">text</span> <span class="p">=</span> <span class="k">await</span> <span class="n">reader</span><span class="p">.</span><span
+                class="nf">ReadToEndAsync</span><span class="p">();</span>
+
+            <span class="n">JsonParser</span><span class="p">.</span><span class="n">Settings</span> <span class="n">parserSettings</span> <span class="p">=</span> <span class="n">JsonParser</span><span
+                class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Default</span><span class="p">.</span><span class="nf">WithIgnoreUnknownFields</span><span
+                class="p">(</span><span class="k">true</span><span class="p">);</span>
+            <span class="n">JsonParser</span>          <span class="n">jParser</span>        <span class="p">=</span> <span class="k">new</span> <span class="p">(</span><span class="n">parserSettings</span><span
+                class="p">);</span>
+            <span class="n">WebhookRequest</span>      <span class="n">webhookRequest</span> <span class="p">=</span> <span class="n">jParser</span><span class="p">.</span><span
+                class="n">Parse</span> <span class="p">&lt;</span><span class="n">WebhookRequest</span><span class="p">&gt;(</span><span class="n">text</span><span class="p">);</span>
+            <span class="n">SessionInfo</span>         <span class="n">sessionInfo</span>    <span class="p">=</span> <span class="n">webhookRequest</span><span class="p">.</span><span
+                class="n">SessionInfo</span><span class="p">;</span>
+            <span class="kt">string</span>              <span class="n">tag</span>            <span class="p">=</span> <span class="n">webhookRequest</span><span class="p">.</span><span
+                class="n">FulfillmentInfo</span><span class="p">.</span><span class="n">Tag</span><span class="p">;</span>
+            <span class="n">sessionInfo</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="nf">TryGetValue</span><span class="p">(</span><span
+                class="n">key</span><span class="p">:</span> <span class="s">"name"</span><span class="p">,</span> <span class="k">value</span><span class="p">:</span> <span class="k">out</span> <span
+                class="kt">var</span> <span class="n">nameParameterValue</span><span class="p">);</span>
+
+            <span class="p">...</span>
+
+            <span class="n">JsonFormatter</span> <span class="n">formatter</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">JsonFormatter</span><span
+                class="p">(</span><span class="k">new</span> <span class="n">JsonFormatter</span><span class="p">.</span><span class="nf">Settings</span><span class="p">(</span><span
+                class="k">true</span><span class="p">));</span>
+
+
+            <span class="n">httpResponse</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="s">"application/json; charset=UTF-8"</span><span
+                class="p">;</span>
+            <span class="n">httpResponse</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="nf">Append</span><span class="p">(</span><span
+                class="n">key</span><span class="p">:</span> <span class="s">"Access-Control-Allow-Methods"</span><span class="p">,</span> <span class="k">value</span><span class="p">:</span> <span
+                class="s">"GET"</span><span class="p">);</span>
+            <span class="n">httpResponse</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="nf">Append</span><span class="p">(</span><span
+                class="n">key</span><span class="p">:</span> <span class="s">"Access-Control-Allow-Headers"</span><span class="p">,</span> <span class="k">value</span><span class="p">:</span> <span
+                class="s">"Content-Type"</span><span class="p">);</span>
+
+            <span class="c1">// await httpResponse.WriteAsync(response.ToString());</span>
+            <span class="k">await</span> <span class="n">httpResponse</span><span class="p">.</span><span class="nf">WriteAsync</span><span class="p">(</span><span class="n">formatter</span><span
+                class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="n">response</span><span class="p">));</span>
+            <span class="k">await</span> <span class="n">httpResponse</span><span class="p">.</span><span class="n">Body</span><span class="p">.</span><span class="nf">FlushAsync</span><span
+                class="p">();</span>
+        <span class="p">}</span>
+</code></pre>
+          </div>
+        </div>
+        <h5 id="net-framework-48"><a aria-labelledby="net-framework-48" class="anchor-heading" href="#net-framework-48">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> .Net Framework 4.8
+        </h5>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>       <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span
+              class="n">IHttpActionResult</span><span class="p">&gt;</span> <span class="nf">Post</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span
+              class="p">)</span>
+            <span class="p">{</span>
+                 <span class="n">HttpRequest</span> <span class="n">httpRequest</span> <span class="p">=</span> <span class="n">HttpContext</span><span class="p">.</span><span
+                class="n">Current</span><span class="p">.</span><span class="n">Request</span><span class="p">;</span>
+                <span class="n">TextReader</span> <span class="n">reader</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StreamReader</span><span class="p">(</span><span
+                class="n">httpRequest</span><span class="p">.</span><span class="n">InputStream</span><span class="p">);</span>
+                <span class="kt">string</span> <span class="n">text</span> <span class="p">=</span> <span class="k">await</span> <span class="n">reader</span><span class="p">.</span><span
+                class="nf">ReadToEndAsync</span><span class="p">();</span>
+
+                <span class="n">_log</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">$"http request body- WebhookRequest : </span><span
+                class="p">{</span><span class="n">text</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+
+                <span class="n">JsonParser</span><span class="p">.</span><span class="n">Settings</span> <span class="n">parserSettings</span> <span class="p">=</span> <span class="n">JsonParser</span><span
+                class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Default</span><span class="p">.</span><span class="nf">WithIgnoreUnknownFields</span><span
+                class="p">(</span><span class="k">true</span><span class="p">);</span>
+                <span class="n">JsonParser</span> <span class="n">jParser</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">JsonParser</span><span class="p">(</span><span
+                class="n">parserSettings</span><span class="p">);</span>
+                <span class="n">WebhookRequest</span> <span class="n">webhookRequest</span> <span class="p">=</span> <span class="n">jParser</span><span class="p">.</span><span
+                class="n">Parse</span><span class="p">&lt;</span><span class="n">WebhookRequest</span><span class="p">&gt;(</span><span class="n">text</span><span class="p">);</span>
+                <span class="n">SessionInfo</span> <span class="n">sessionInfo</span> <span class="p">=</span> <span class="n">webhookRequest</span><span class="p">.</span><span
+                class="n">SessionInfo</span><span class="p">;</span>
+                <span class="kt">string</span> <span class="n">tag</span> <span class="p">=</span> <span class="n">webhookRequest</span><span class="p">.</span><span class="n">FulfillmentInfo</span><span
+                class="p">.</span><span class="n">Tag</span><span class="p">;</span>
+                <span class="n">sessionInfo</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="nf">TryGetValue</span><span class="p">(</span><span
+                class="n">key</span><span class="p">:</span> <span class="s">"name"</span><span class="p">,</span> <span class="k">value</span><span class="p">:</span> <span class="k">out</span> <span
+                class="n">Value</span> <span class="n">nameParameterValue</span><span class="p">);</span>
+
+                <span class="p">...</span>
+
+                <span class="k">return</span> <span class="nf">Json</span><span class="p">(</span><span class="n">JsonConvert</span><span class="p">.</span><span class="nf">DeserializeObject</span><span
+                class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">ToString</span><span class="p">()));</span>
+            <span class="p">}</span>
+</code></pre>
+          </div>
+        </div>
+        <h5 id="json-example"><a aria-labelledby="json-example" class="anchor-heading" href="#json-example">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> JSON Example
+        </h5>
+        <div class="language-json highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"detectIntentResponseId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ffd03c89-b8c3-4d43-99ac-a31f5cc3e761"</span><span class="p">,</span><span
+              class="w">
+  </span><span class="nl">"pageInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"currentPage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/vcu-virtual-assistant-bot/locations/global/agents/8ec51540-2933-43d6-aad5-355545059bfe/flows/00000000-0000-0000-0000-000000000000/pages/START_PAGE"</span><span
+              class="p">,</span><span class="w">
+    </span><span class="nl">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Start Page"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"sessionInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/vcu-virtual-assistant-bot/locations/global/agents/8ec51540-2933-43d6-aad5-355545059bfe/sessions/ffd700-fa3-4dc-d35-231249af3"</span><span
+              class="p">,</span><span class="w">
+    </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rusty"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"fulfillmentInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comm100-customfields"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"triggerEvent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"initiate-bot-event"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"languageCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+          </div>
+        </div>
+        <h6 id="json-with-types-for-protobuf"><a aria-labelledby="json-with-types-for-protobuf" class="anchor-heading" href="#json-with-types-for-protobuf">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> JSON With types for Protobuf
+        </h6>
+        <div class="language-json highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"detectIntentResponseId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e8379fe3-5090-44be-8df4-a064b5ebb3dc"</span><span class="p">,</span><span
+              class="w">
+  </span><span class="nl">"intentInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"lastMatchedIntent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/vcu-virtual-assistant-bot/locations/global/agents/8ec51540-2933-43d6-aad5-355545059bfe/intents/00000000-0000-0000-0000-000000000000"</span><span
+              class="p">,</span><span class="w">
+    </span><span class="nl">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default Welcome Intent"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"confidence"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"pageInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"currentPage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/vcu-virtual-assistant-bot/locations/global/agents/8ec51540-2933-43d6-aad5-355545059bfe/flows/00000000-0000-0000-0000-000000000000/pages/START_PAGE"</span><span
+              class="p">,</span><span class="w">
+    </span><span class="nl">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Start Page"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"sessionInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects/vcu-virtual-assistant-bot/locations/global/agents/8ec51540-2933-43d6-aad5-355545059bfe/sessions/40e94b-779-70d-a9f-3e08ab3fe"</span><span
+              class="p">,</span><span class="w">
+    </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type.googleapis.com/google.protobuf.Struct"</span><span class="p">,</span><span
+              class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type.googleapis.com/google.protobuf.Value"</span><span class="p">,</span><span
+              class="w">
+        </span><span class="nl">"StringValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rusty"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"fulfillmentInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comm100-customfields"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"messages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Greetings! How can I assist?"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"redactedText"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Greetings! How can I assist?"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"responseType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HANDLER_PROMPT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VIRTUAL_AGENT"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"languageCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+          </div>
+        </div>
+        <h4 id="webhookresponse"><a aria-labelledby="webhookresponse" class="anchor-heading" href="#webhookresponse">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Dialogflow.Cx.V3/latest/Google.Cloud.Dialogflow.Cx.V3.WebhookResponse">WebhookResponse</a></h4>
+        <h5 id="using-googleapisdialogflowv3data-1"><a aria-labelledby="using-googleapisdialogflowv3data-1" class="anchor-heading" href="#using-googleapisdialogflowv3data-1">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> using <code class="language-plaintext highlighter-rouge">Google.Apis.Dialogflow.v3.Data</code></h5>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="n">GoogleCloudDialogflowCxV3WebhookResponse</span> <span class="n">response</span> <span class="p">=</span> <span
+              class="k">new</span> <span class="n">GoogleCloudDialogflowCxV3WebhookResponse</span>
+                <span class="p">{</span>
+                    <span class="n">FulfillmentResponse</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse</span>
+                        <span class="p">{</span>
+                            <span class="n">Messages</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span> <span class="p">&lt;</span><span class="n">GoogleCloudDialogflowCxV3ResponseMessage</span><span
+                class="p">&gt;()</span>
+                        <span class="p">},</span>
+                    <span class="n">SessionInfo</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GoogleCloudDialogflowCxV3SessionInfo</span>
+                        <span class="p">{</span>
+                            <span class="n">Parameters</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span> <span class="p">&lt;</span><span
+                class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;()</span>
+                        <span class="p">}</span>
+                <span class="p">};</span>
+</code></pre>
+          </div>
+        </div>
+        <h5 id="using-googleclouddialogflowcxv3"><a aria-labelledby="using-googleclouddialogflowcxv3" class="anchor-heading" href="#using-googleclouddialogflowcxv3">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> using <code class="language-plaintext highlighter-rouge">Google.Cloud.Dialogflow.Cx.V3</code></h5>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="n">WebhookResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="k">new</span> <span
+              class="n">WebhookResponse</span>
+        <span class="p">{</span>
+            <span class="n">FulfillmentResponse</span> <span class="p">=</span> <span class="k">new</span> <span class="n">WebhookResponse</span><span class="p">.</span><span class="n">Types</span><span
+                class="p">.</span><span class="nf">FulfillmentResponse</span><span class="p">()</span>
+        <span class="p">};</span>
+</code></pre>
+          </div>
+        </div>
+        <h5 id="json-example-1"><a aria-labelledby="json-example-1" class="anchor-heading" href="#json-example-1">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> JSON Example
+        </h5>
+        <div class="language-json highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"fulfillmentResponse"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"mergeBehavior"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messages"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"ETag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"pageInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sessionInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"security-code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"69420"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ETag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"targetFlow"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"targetPage"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ETag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+          </div>
+        </div>
+        <hr/>
+        <h3 id="logging"><a aria-labelledby="logging" class="anchor-heading" href="#logging">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://cloud.google.com/logging/docs/reference/libraries">Logging</a></h3>
+        <h4 id="logging-code-examples"><a aria-labelledby="logging-code-examples" class="anchor-heading" href="#logging-code-examples">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://cloud.google.com/logging/docs/samples?hl=en">Logging Code Examples</a></h4>
+        <h4 id="writing-logs"><a aria-labelledby="writing-logs" class="anchor-heading" href="#writing-logs">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://cloud.google.com/functions/docs/monitoring/logging">Writing Logs</a></h4>
+        <h4 id="configuring-longs"><a aria-labelledby="configuring-longs" class="anchor-heading" href="#configuring-longs">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Diagnostics.AspNetCore3/latest#configuration-1">Configuring Longs</a></h4>
+        <hr/>
+        <h3 id="googleprotobufwellknowntypes"><a aria-labelledby="googleprotobufwellknowntypes" class="anchor-heading" href="#googleprotobufwellknowntypes">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://protobuf.dev/reference/protobuf/google.protobuf/#value">Google.Protobuf.WellKnownTypes</a></h3>
+        <h4 id="--api-docs"><a aria-labelledby="--api-docs" class="anchor-heading" href="#--api-docs">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> - <a href="https://protobuf.dev/reference/csharp/api-docs/">API Docs</a></h4>
+        <h4 id="--git-protocol-buffers"><a aria-labelledby="--git-protocol-buffers" class="anchor-heading" href="#--git-protocol-buffers">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> - <a href="https://github.com/protocolbuffers/protobuf/blob/main/README.md">GIT Protocol Buffers</a></h4>
+        <h4 id="--protobuf-reference"><a aria-labelledby="--protobuf-reference" class="anchor-heading" href="#--protobuf-reference">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> - <a href="https://cloud.google.com/dotnet/docs/reference/help/protobuf">Protobuf Reference</a></h4>
+        <h4 id="--namespace-googleprotobufwellknowntypes-3158"><a aria-labelledby="--namespace-googleprotobufwellknowntypes-3158"
+                                                                  class="anchor-heading"
+                                                                  href="#--namespace-googleprotobufwellknowntypes-3158">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> - <a href="https://cloud.google.com/dotnet/docs/reference/Google.Protobuf/latest/Google.Protobuf.WellKnownTypes">Namespace Google.Protobuf.WellKnownTypes (3.15.8)</a>
+        </h4>
+        <h4 id="parsing-a-variable-into-googles-protobuf-value-object"><a aria-labelledby="parsing-a-variable-into-googles-protobuf-value-object"
+                                                                          class="anchor-heading"
+                                                                          href="#parsing-a-variable-into-googles-protobuf-value-object">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> parsing a variable into googles protobuf Value object
+        </h4>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>     <span class="kt">string</span> <span class="n">key</span> <span class="p">=</span> <span class="n">fieldObject</span>
+                       <span class="p">.</span><span class="nf">GetProperty</span><span class="p">(</span><span class="s">"name"</span><span class="p">)</span>
+                       <span class="p">.</span><span class="nf">GetString</span><span class="p">()?.</span><span class="nf">Trim</span><span class="p">().</span><span class="nf">ToLower</span><span
+                class="p">()</span>
+                       <span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="n">oldValue</span><span class="p">:</span> <span class="s">" "</span><span
+                class="p">,</span> <span class="n">newValue</span><span class="p">:</span> <span class="s">"-"</span><span class="p">);</span>
+
+      <span class="n">Value</span>  <span class="k">value</span> <span class="p">=</span> <span class="n">Value</span><span class="p">.</span><span class="nf">ForString</span><span
+                class="p">(</span><span class="n">fieldObject</span><span class="p">.</span><span class="nf">GetProperty</span><span class="p">(</span><span class="s">"value"</span><span
+                class="p">).</span><span class="nf">GetString</span><span class="p">());</span>
+
+     <span class="k">if</span><span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span
+                class="n">key</span><span class="p">))</span> <span class="p">{</span>
+       <span class="n">response</span><span class="p">.</span><span class="n">SessionInfo</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span
+                class="nf">Add</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="n">key</span><span class="p">,</span> <span class="k">value</span><span
+                class="p">:</span> <span class="k">value</span><span class="p">);</span>
+     <span class="p">}</span>
+</code></pre>
+          </div>
+        </div>
+        <h4 id="deserialize-into-object"><a aria-labelledby="deserialize-into-object" class="anchor-heading" href="#deserialize-into-object">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> deserialize into object
+        </h4>
+        <h5 id="jsonformatter"><a aria-labelledby="jsonformatter" class="anchor-heading" href="#jsonformatter">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://cloud.google.com/dotnet/docs/reference/Google.Protobuf/latest/Google.Protobuf.JsonFormatter">JsonFormatter</a></h5>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>         <span class="k">using</span> <span class="nn">Google.Protobuf.JsonFormatter</span><span class="p">;</span>
+
+        <span class="n">JsonFormatter</span> <span class="n">formatter</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">JsonFormatter</span><span class="p">(</span><span
+                class="k">new</span> <span class="n">JsonFormatter</span><span class="p">.</span><span class="nf">Settings</span><span class="p">(</span><span class="k">true</span><span
+                class="p">));</span>
+         <span class="kt">string</span> <span class="n">jsonString</span> <span class="p">=</span> <span class="n">formatter</span><span class="p">.</span><span class="nf">Format</span><span
+                class="p">(</span><span class="n">testMessage</span><span class="p">);</span>
+</code></pre>
+          </div>
+        </div>
+        <h5 id="jsonparser"><a aria-labelledby="jsonparser" class="anchor-heading" href="#jsonparser">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://cloud.google.com/dotnet/docs/reference/Google.Protobuf/latest/Google.Protobuf.JsonParser">JsonParser</a></h5>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">Google.Protobuf.JsonParser</span><span class="p">;</span>
+
+    <span class="n">JsonParser</span><span class="p">.</span><span class="n">Settings</span> <span class="n">parserSettings</span> <span class="p">=</span> <span class="n">JsonParser</span><span
+                class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Default</span><span class="p">.</span><span class="nf">WithIgnoreUnknownFields</span><span
+                class="p">(</span><span class="k">true</span><span class="p">);</span>
+    <span class="n">JsonParser</span> <span class="n">jParser</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">JsonParser</span><span class="p">(</span><span
+                class="n">parserSettings</span><span class="p">);</span>
+    <span class="n">WebhookRequest</span> <span class="n">webhookRequest</span> <span class="p">=</span> <span class="n">jParser</span><span class="p">.</span><span class="n">Parse</span><span
+                class="p">&lt;</span><span class="n">WebhookRequest</span><span class="p">&gt;(</span><span class="n">text</span><span class="p">);</span>
+</code></pre>
+          </div>
+        </div>
+      </main>
+      <hr>
+      <footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"></p>
+        <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"><a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./DotNetNotes/Google.md"
+                                                                                id="edit-this-page">Edit this page on GitHub</a></p></div>
+      </footer>
+    </div>
+  </div>
+  <button aria-label="Focus on search" class="search-button btn-reset" id="search-button">
+    <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+      <use xlink:href="#svg-search"></use>
+    </svg>
+  </button>
+  <div class="search-overlay"></div>
+</div>

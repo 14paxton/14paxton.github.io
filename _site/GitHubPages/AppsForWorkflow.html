@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <link href="/assets/css/just-the-docs-default.css" rel="stylesheet">
+  <link href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet" rel="stylesheet">
+  <style id="jtd-nav-activation"> .site-nav > ul.nav-list:first-child > li > a, .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(1)) > a, .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+    background-image: none;
+  }
+
+  .site-nav > ul.nav-list:not(:first-child) a, .site-nav li.external a {
+    background-image: none;
+  }
+
+  .site-nav > ul.nav-list:first-child > li:nth-child(1) > ul > li:nth-child(1) > a {
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .site-nav > ul.nav-list:first-child > li:nth-child(1) > button svg, .site-nav > ul.nav-list:first-child > li:nth-child(1) > ul > li:nth-child(1) > button svg {
+    transform: rotate(-90deg);
+  }
+
+  .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(1) > ul.nav-list, .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(1) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+    display: block;
+  }</style>
+  <script src="/assets/js/vendor/lunr.min.js"></script>
+  <script src="/assets/js/just-the-docs.js"></script>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>AppsForWorkflow | Paxton’s Notes</title>
+  <meta content="Jekyll v4.4.0" name="generator"/>
+  <meta content="AppsForWorkflow" property="og:title"/>
+  <meta content="en_US" property="og:locale"/>
+  <meta content="Coding Notes" name="description"/>
+  <meta content="Coding Notes" property="og:description"/>
+  <link href="http://localhost:4000/GitHubPages/AppsForWorkflow" rel="canonical"/>
+  <meta content="http://localhost:4000/GitHubPages/AppsForWorkflow" property="og:url"/>
+  <meta content="Paxton’s Notes" property="og:site_name"/>
+  <meta content="website" property="og:type"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="AppsForWorkflow" property="twitter:title"/>
+  <script type="application/ld+json"> {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "description": "Coding Notes",
+    "headline": "AppsForWorkflow",
+    "url": "http://localhost:4000/GitHubPages/AppsForWorkflow"
+  }
+  </script>
+<body><a class="skip-to-main" href="#main-content">Skip to main content</a>
+<svg class="d-none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="svg-link" viewBox="0 0 24 24"><title>Link</title>
+    <svg class="feather feather-link"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24"><title>Menu</title>
+    <svg class="feather feather-menu"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <line x1="3" x2="21" y1="12" y2="12"></line>
+      <line x1="3" x2="21" y1="6" y2="6"></line>
+      <line x1="3" x2="21" y1="18" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24"><title>Expand</title>
+    <svg class="feather feather-chevron-right"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol class="feather feather-external-link"
+          fill="none"
+          height="24"
+          id="svg-external-link"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"><title id="svg-external-link-title">(external link)</title>
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+    <polyline points="15 3 21 3 21 9"></polyline>
+    <line x1="10" x2="21" y1="14" y2="3"></line>
+  </symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24"><title>Document</title>
+    <svg class="feather feather-file"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+      <polyline points="13 2 13 9 20 9"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-search" viewBox="0 0 24 24"><title>Search</title>
+    <svg class="feather feather-search"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-copy" viewBox="0 0 16 16"><title>Copy</title>
+    <svg class="bi bi-clipboard" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+      <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-copied" viewBox="0 0 16 16"><title>Copied</title>
+    <svg class="bi bi-clipboard-check-fill" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+    </svg>
+  </symbol>
+</svg>
+<div class="side-bar">
+  <div class="site-header" role="banner"><a class="site-title lh-tight" href="/"> Paxton's Notes </a>
+    <button aria-label="Toggle menu" aria-pressed="false" class="site-button btn-reset" id="menu-button">
+      <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+        <use xlink:href="#svg-menu"></use>
+      </svg>
+    </button>
+  </div>
+  <nav aria-label="Main" class="site-nav" id="site-nav">
+    <ul class="nav-list">
+      <li class="nav-list-item">
+        <button aria-label="toggle items in MyPersonalDocsAndStuff category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/index">MyPersonalDocsAndStuff</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/AppsForWorkflow">AppsForWorkflow</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/CloudServices">CloudServices</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/LetterOfRecommendation">LetterOfRecommendation</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PastProjects">PastProjects</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PriorityLearning">PriorityLearning</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in AWS category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/AWS/">AWS</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/AWS/CLI">CLI</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Build category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Build/">Build</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Gradle">Gradle</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Maven">Maven</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in DockerNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/DockerNotes/">DockerNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/ARM64">ARM64</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Basics">Basics</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Dockerfile">Dockerfile</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Install">Install</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Quick-TidBits">Quick-TidBits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/UsefulCommands">UsefulCommands</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in DotNetNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/DotNetNotes/">DotNetNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CLI">CLI</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in CSharp category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/DotNetNotes/Csharp">CSharp</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Email">Email</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Threading">Threading</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Controllers">Controllers</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Database">Database</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/EntityFramework">EntityFramework</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Environment">Environment</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Google">Google</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HTTP">HTTP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HttpRepl">HttpRepl</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/LINQ">LINQ</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Maui">Maui</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Microservice">Microservice.md</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/VisualStudio">VisualStudio</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Git category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Git">Git</a>
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <button aria-label="toggle items in GitHub category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/Git/GitHub">GitHub</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/GitHubPages">GitHubPages</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/Jekyll">Jekyll</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/MarkDown">MarkDown</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Git/QuickScripts">QuickScripts</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GoogleNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GoogleNotes/">GoogleNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/APIs">APIs</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Browser">Browser</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Cloud">Cloud</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ComputeEngine">ComputeEngine</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Deploy">Deploy</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DevTools">DevTools</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DialogFlow">DialogFlow</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Functions">Functions</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Logging">Logging</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ServiceAccounts">ServiceAccounts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Storage">Storage</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/VoiceAgent">VoiceAgent</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GrailsNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GrailsNotes/">GrailsNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/GORM_WhereQueris">GORM_WhereQueris</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLComplexQueries">HQLComplexQueries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLQueries">HQLQueries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/RunningApp">RunningApp</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Security">Security</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Services">Services</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Testing">Testing</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GroovyNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GroovyNotes/">GroovyNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Array-Loop-List-Map">Array-Loop-List-Map</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Async_Parallel-Concurrency">Async_Parallel-Concurrency</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Clever-Tid-bits">Clever-Tid-bits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/DateAndTime">DateAndTime</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Enum">Enum</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/MetaProgramming">MetaProgramming</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/RegEx">RegEx</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/String">String</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in HTML&CSS category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/HTML&CSS/">HTML&CSS</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/CSS">CSS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/HTML">HTML</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/Images">Images</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/HTTP">HTTP</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in IntelliJNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/IntelliJNotes/">IntelliJNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/CustomVM">CustomVM</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/DebuggerConfig">DebuggerConfig</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/HTTPExamples">HTTPExamples</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/Spaces">Spaces</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Java category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/JavaNotes/Java">Java</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Algorithms">Algorithms</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/CommandLineDiddys">CommandLineDiddys</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/DataBase">DataBase</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/File">File</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/GCP">GCP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Hibernate">Hibernate</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/LooseNotes">LooseNotes</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/OOP">OOP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/String">String</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Threads">Threads</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in JavaScript category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/JavaScript/">JavaScript</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Browser">Browser</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CDN">CDN</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CSS">CSS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Clever-Algos">Clever-Algos</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/DateAndTime">DateAndTime</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Document">Document</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Elements">Elements</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Events">Events</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FormStuff">FormStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FunctionObject">FunctionObject</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/HTTP">HTTP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Map">Map</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Modules">Modules</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in Node category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/Node/">Node</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Node/QuickScripts">QuickScripts</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Number">Number</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Object">Object</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/QuerySelector">QuerySelector</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in ReactNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/ReactNotes">ReactNotes</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Clever-Snippets">Clever-Snippets</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Configuring">Configuring</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/HandleEvents">HandleEvents</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/ReactNotes/Hooks">Hooks</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/MUI">MUI</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Mat-Table">Mat-Table</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/React-Router">React-Router</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/ReactHookForm">ReactHookForm</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/String">String</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/WebWorker">WebWorker</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/RegEx">RegEx</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/State">State</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in TypeScript category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/TypeScript/">TypeScript</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Events">Events</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/QuickScripts">QuickScripts</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Types">Types</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/UsefulSnippets">UsefulSnippets</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WebAPI">WebAPI</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Window">Window</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WorkingWithFiles">WorkingWithFiles</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/Kubernetes">Kubernetes</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Linux category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Linux/">Linux</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/ADMIN-ROOT">ADMIN-ROOT</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Conditionals">Conditionals</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Encoding">Encoding</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/JQ">JQ</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/MySQL">MySQL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/PGP">PGP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/QuickScripts">QuickScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/SDKMan">SDKMan</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Scripting">Scripting</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/VIM_QuickTips">VIM_QuickTips</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in MacNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/MacNotes/">MacNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/AppleScripts">AppleScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/HomeBrew">HomeBrew</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/JavaOnMac">JavaOnMac</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/QuickScripts">QuickScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ShortCuts">ShortCuts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/UsersAndGroups">UsersAndGroups</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/Utilities">Utilities</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ZSH">ZSH</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Micronotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Micronotes/">Micronotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/AWS">AWS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Configuration">Configuration</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/DataBaseStuff">DataBaseStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/EnviromentStuff">EnviromentStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/GRAALVM">GRAALVM</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Gradle">Gradle</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Jackson">Jackson</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/MicroStream">MicroStream</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Resources">Resources</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Testing">Testing</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/UsefuleSnippets">UsefuleSnippets</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/cli_gradlew">cli_gradlew</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/Obsidian/Obsidian">Obsidian</a>
+      <li class="nav-list-item"><a class="nav-list-link" href="/RandomNuggetsOfKnowledge">RandomNuggetsOfKnowledge</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in SQLNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/SQLNotes/">SQLNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Docker">Docker</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Functions">Functions</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/HQL">HQL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Liquibase">Liquibase</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Queries">Queries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/SQLCheatSheet">SQLCheatSheet</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/TerminalCommands">Terminal-Commands</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in SpringNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/SpringNotes/">SpringNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Hibernate">Hibernate</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Maven">Maven</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Properties">Properties</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Security">Security</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Serialization">Serialization</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Testing">Testing</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/TidBits">TidBits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Transactions">Transactions</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/SystemDesign&Architecture/">SystemDesign&Architecture</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in TestingFrameworks category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/TestingFrameworks/">TestingFrameworks</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JUnit">JUnit</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JavascriptTesting">Javascript</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Spock">Spock</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Testcontainers">Testcontainers</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Thymeleaf category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Thymeleaf/">Thymeleaf</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Thymeleaf/Fragments">Fragments</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Windows_Notes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Windows_Notes/">Windows_Notes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/CMD">CMD</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Environment">Environment</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/PackageManagers">PackageManagers</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Powershell">Powershell</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Run">Run</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Shortcuts">Shortcuts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Terminal">Terminal</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WSL">WSL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WindowsServer">WindowsServer</a>
+        </ul>
+    </ul>
+  </nav>
+  <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
+</div>
+<div class="main" id="top">
+  <div class="main-header" id="main-header">
+    <div class="search" role="search">
+      <div class="search-input-wrap"><input aria-label="Search Paxton's Notes"
+                                            autocomplete="off"
+                                            class="search-input"
+                                            id="search-input"
+                                            placeholder="Search Paxton's Notes"
+                                            tabindex="0"
+                                            type="text"> <label class="search-label" for="search-input">
+        <svg class="search-icon" viewBox="0 0 24 24">
+          <use xlink:href="#svg-search"></use>
+        </svg>
+      </label></div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+    <nav aria-label="Auxiliary" class="aux-nav">
+      <ul class="aux-nav-list">
+        <li class="aux-nav-list-item"><a class="site-button" href="https://github.com/14paxton/14paxton.github.io" rel="noopener noreferrer" target="_blank"> Template
+                                                                                                                                                              Repository </a>
+      </ul>
+    </nav>
+  </div>
+  <div class="main-content-wrap">
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol class="breadcrumb-nav-list">
+        <li class="breadcrumb-nav-list-item"><a href="/index">MyPersonalDocsAndStuff</a>
+        <li class="breadcrumb-nav-list-item"><span>AppsForWorkflow</span>
+      </ol>
+    </nav>
+    <div class="main-content" id="main-content">
+      <main><p><br/></p>
+        <details>
+          <summary class="text-delta"> Table of contents</summary>
+          <ol id="markdown-toc">
+            <li><a href="#github-desktop" id="markdown-toc-github-desktop">GitHub Desktop</a>
+            <li><a href="#github-cli" id="markdown-toc-github-cli">GitHub CLI</a>
+            <li><a href="#gitlab-cli" id="markdown-toc-gitlab-cli">GitLab CLI</a>
+              <ol>
+                <li><a href="#gitlab-cli-docs-" id="markdown-toc-gitlab-cli-docs-">gitlab cli Docs </a>
+              </ol>
+            <li><a href="#1password" id="markdown-toc-1password">1Password</a>
+            <li><a href="#-docker-desktop" id="markdown-toc--docker-desktop"> Docker Desktop</a>
+            <li><a href="#display-link-" id="markdown-toc-display-link-">Display Link </a>
+            <li><a href="#obsidian" id="markdown-toc-obsidian">Obsidian</a>
+              <ol>
+                <li><a href="#plugins" id="markdown-toc-plugins">Plugins</a>
+                  <ol>
+                    <li><a href="#github-publisher" id="markdown-toc-github-publisher">GitHub Publisher</a>
+                    <li><a href="#obsidian-git" id="markdown-toc-obsidian-git">Obsidian Git</a>
+                    <li><a href="#obsidian-toc" id="markdown-toc-obsidian-toc">Obsidian TOC</a>
+                  </ol>
+              </ol>
+            <li><a href="#zeal-documentation-browser" id="markdown-toc-zeal-documentation-browser">Zeal Documentation Browser</a>
+            <li><a href="#for-mac" id="markdown-toc-for-mac">For Mac</a>
+              <ol>
+                <li><a href="#rectangle" id="markdown-toc-rectangle">Rectangle</a>
+                <li><a href="#cheat-sheet" id="markdown-toc-cheat-sheet">Cheat Sheet</a>
+                <li><a href="#mission-control-plus" id="markdown-toc-mission-control-plus">Mission Control Plus</a>
+                <li><a href="#amphetamine" id="markdown-toc-amphetamine">Amphetamine</a>
+                <li><a href="#betterdisplay" id="markdown-toc-betterdisplay">BetterDisplay</a>
+                <li><a href="#monitor-control" id="markdown-toc-monitor-control">Monitor Control</a>
+                <li><a href="#homebrew" id="markdown-toc-homebrew">HomeBrew</a>
+                  <ol>
+                    <li><a href="#install" id="markdown-toc-install">Install</a>
+                  </ol>
+              </ol>
+            <li><a href="#for-windows" id="markdown-toc-for-windows">For Windows</a>
+              <ol>
+                <li><a href="#wsl" id="markdown-toc-wsl">WSL</a>
+                <li><a href="#powertoys" id="markdown-toc-powertoys">Powertoys</a>
+                <li><a href="#ubuntu-subsystem" id="markdown-toc-ubuntu-subsystem">Ubuntu Subsystem</a>
+                  <ol>
+                    <li><a href="#install-1" id="markdown-toc-install-1">Install</a>
+                      <ol>
+                        <li><a href="#powershell" id="markdown-toc-powershell">powershell</a>
+                          <ol>
+                            <li><a href="#download-ubuntu" id="markdown-toc-download-ubuntu">download Ubuntu</a>
+                            <li><a href="#extract-the-file" id="markdown-toc-extract-the-file">extract the file</a>
+                            <li><a href="#set-path" id="markdown-toc-set-path">set path</a>
+                            <li><a href="#install-wsl" id="markdown-toc-install-wsl">install WSL</a>
+                          </ol>
+                      </ol>
+                  </ol>
+              </ol>
+          </ol>
+        </details>
+        <p><br/></p>
+        <hr/>
+        <p><br/></p>
+        <ul>
+          <li>
+            <h1 id="github-desktop"><a aria-labelledby="github-desktop" class="anchor-heading" href="#github-desktop">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://desktop.github.com/">GitHub Desktop</a></h1>
+          <li>
+            <h1 id="github-cli"><a aria-labelledby="github-cli" class="anchor-heading" href="#github-cli">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://github.com/cli/cli#installation">GitHub CLI</a></h1>
+          <li>
+            <h1 id="gitlab-cli"><a aria-labelledby="gitlab-cli" class="anchor-heading" href="#gitlab-cli">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://gitlab.com/gitlab-org/cli">GitLab CLI</a></h1>
+            <ul>
+              <li>
+                <h2 id="gitlab-cli-docs-"><a aria-labelledby="gitlab-cli-docs-" class="anchor-heading" href="#gitlab-cli-docs-">
+                  <svg aria-hidden="true" viewBox="0 0 16 16">
+                    <use xlink:href="#svg-link"></use>
+                  </svg>
+                </a> <a href="https://docs.gitlab.com/ee/integration/glab/">gitlab cli Docs </a></h2>
+            </ul>
+          <li>
+            <h1 id="1password"><a aria-labelledby="1password" class="anchor-heading" href="#1password">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://1password.com/">1Password</a></h1>
+          <li>
+            <h1 id="-docker-desktop"><a aria-labelledby="-docker-desktop" class="anchor-heading" href="#-docker-desktop">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://www.docker.com/products/docker-desktop/"> Docker Desktop</a></h1>
+          <li>
+            <h1 id="display-link-"><a aria-labelledby="display-link-" class="anchor-heading" href="#display-link-">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://www.synaptics.com/products/displaylink-graphics/downloads/macos">Display Link </a></h1>
+            <blockquote><p>Drivers, for DisplayLink HDMI to 4k (using 3rd monitor)</p></blockquote>
+          <li>
+            <h1 id="obsidian"><a aria-labelledby="obsidian" class="anchor-heading" href="#obsidian">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://help.obsidian.md/Home">Obsidian</a></h1>
+            <ul>
+              <li>
+                <h2 id="plugins"><a aria-labelledby="plugins" class="anchor-heading" href="#plugins">
+                  <svg aria-hidden="true" viewBox="0 0 16 16">
+                    <use xlink:href="#svg-link"></use>
+                  </svg>
+                </a> Plugins
+                </h2>
+                <ul>
+                  <li>
+                    <h3 id="github-publisher"><a aria-labelledby="github-publisher" class="anchor-heading" href="#github-publisher">
+                      <svg aria-hidden="true" viewBox="0 0 16 16">
+                        <use xlink:href="#svg-link"></use>
+                      </svg>
+                    </a> <a href="https://obsidian-publisher.netlify.app/plugin/#github-publisher">GitHub Publisher</a></h3>
+                  <li>
+                    <h3 id="obsidian-git"><a aria-labelledby="obsidian-git" class="anchor-heading" href="#obsidian-git">
+                      <svg aria-hidden="true" viewBox="0 0 16 16">
+                        <use xlink:href="#svg-link"></use>
+                      </svg>
+                    </a> <a href="https://publish.obsidian.md/git-doc/Start+here">Obsidian Git</a></h3>
+                  <li>
+                    <h3 id="obsidian-toc"><a aria-labelledby="obsidian-toc" class="anchor-heading" href="#obsidian-toc">
+                      <svg aria-hidden="true" viewBox="0 0 16 16">
+                        <use xlink:href="#svg-link"></use>
+                      </svg>
+                    </a> <a href="https://github.com/hipstersmoothie/obsidian-plugin-toc#obsidian-plugin-toc">Obsidian TOC</a></h3>
+                </ul>
+            </ul>
+          <li>
+            <h1 id="zeal-documentation-browser"><a aria-labelledby="zeal-documentation-browser" class="anchor-heading" href="#zeal-documentation-browser">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://zealdocs.org/download.html#windows">Zeal Documentation Browser</a></h1>
+            <blockquote><p>offline documentation browser</p></blockquote>
+        </ul>
+        <hr/>
+        <hr/>
+        <h1 id="for-mac"><a aria-labelledby="for-mac" class="anchor-heading" href="#for-mac">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> For Mac
+        </h1>
+        <ul>
+          <li>
+            <h2 id="rectangle"><a aria-labelledby="rectangle" class="anchor-heading" href="#rectangle">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://rectangleapp.com/">Rectangle</a></h2>
+          <li>
+            <h2 id="cheat-sheet"><a aria-labelledby="cheat-sheet" class="anchor-heading" href="#cheat-sheet">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://cheatsheet-mac.en.softonic.com/mac">Cheat Sheet</a></h2>
+          <li>
+            <h2 id="mission-control-plus"><a aria-labelledby="mission-control-plus" class="anchor-heading" href="#mission-control-plus">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://www.fadel.io/missioncontrolplus">Mission Control Plus</a></h2>
+          <li>
+            <h2 id="amphetamine"><a aria-labelledby="amphetamine" class="anchor-heading" href="#amphetamine">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://apps.apple.com/us/app/amphetamine/id937984704?mt=12">Amphetamine</a></h2>
+          <li>
+            <h2 id="betterdisplay"><a aria-labelledby="betterdisplay" class="anchor-heading" href="#betterdisplay">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://github.com/waydabber/BetterDisplay#readme">BetterDisplay</a></h2>
+          <li>
+            <h2 id="monitor-control"><a aria-labelledby="monitor-control" class="anchor-heading" href="#monitor-control">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://github.com/MonitorControl/MonitorControl#readme">Monitor Control</a></h2>
+          <li>
+            <h2 id="homebrew"><a aria-labelledby="homebrew" class="anchor-heading" href="#homebrew">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://brew.sh/">HomeBrew</a></h2>
+            <ul>
+              <li>
+                <h3 id="install"><a aria-labelledby="install" class="anchor-heading" href="#install">
+                  <svg aria-hidden="true" viewBox="0 0 16 16">
+                    <use xlink:href="#svg-link"></use>
+                  </svg>
+                </a> Install
+                </h3>
+                <div class="language-shell highlighter-rouge">
+                  <div class="highlight"><pre class="highlight"><code> /bin/bash <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span
+                      class="si">)</span><span class="s2">
+</span></code></pre>
+                  </div>
+                </div>
+            </ul>
+        </ul>
+        <hr/>
+        <hr/>
+        <h1 id="for-windows"><a aria-labelledby="for-windows" class="anchor-heading" href="#for-windows">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> For Windows
+        </h1>
+        <ul>
+          <li>
+            <h2 id="wsl"><a aria-labelledby="wsl" class="anchor-heading" href="#wsl">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://learn.microsoft.com/en-us/windows/wsl/install-on-server">WSL</a></h2>
+          <li>
+            <h2 id="powertoys"><a aria-labelledby="powertoys" class="anchor-heading" href="#powertoys">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://learn.microsoft.com/en-us/windows/powertoys/install">Powertoys</a></h2>
+          <li>
+            <h2 id="ubuntu-subsystem"><a aria-labelledby="ubuntu-subsystem" class="anchor-heading" href="#ubuntu-subsystem">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> <a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions">Ubuntu Subsystem</a></h2>
+            <h3 id="install-1"><a aria-labelledby="install-1" class="anchor-heading" href="#install-1">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> Install
+            </h3>
+            <ul>
+              <li>
+                <h4 id="powershell"><a aria-labelledby="powershell" class="anchor-heading" href="#powershell">
+                  <svg aria-hidden="true" viewBox="0 0 16 16">
+                    <use xlink:href="#svg-link"></use>
+                  </svg>
+                </a> powershell
+                </h4>
+                <ul>
+                  <li>
+                    <h5 id="download-ubuntu"><a aria-labelledby="download-ubuntu" class="anchor-heading" href="#download-ubuntu">
+                      <svg aria-hidden="true" viewBox="0 0 16 16">
+                        <use xlink:href="#svg-link"></use>
+                      </svg>
+                    </a> download Ubuntu
+                    </h5>
+                    <div class="language-powershell highlighter-rouge">
+                      <div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="n">Invoke-WebRequest</span><span class="w"> </span><span class="nt">-Uri</span><span
+                          class="w"> </span><span class="nx">https://aka.ms/wsl-ubuntu-1604</span><span class="w"> </span><span class="nt">-OutFile</span><span class="w"> </span><span
+                          class="nx">Ubuntu.zip</span><span class="w"> </span><span class="nt">-UseBasicParsing</span><span class="w">
+</span></code></pre>
+                      </div>
+                    </div>
+                  <li>
+                    <h5 id="extract-the-file"><a aria-labelledby="extract-the-file" class="anchor-heading" href="#extract-the-file">
+                      <svg aria-hidden="true" viewBox="0 0 16 16">
+                        <use xlink:href="#svg-link"></use>
+                      </svg>
+                    </a> extract the file
+                    </h5>
+                    <div class="language-powershell highlighter-rouge">
+                      <div class="highlight"><pre class="highlight"><code><span class="n">Expand-Archive</span><span class="w"> </span><span class="o">.</span><span class="nx">/Ubuntu.zip</span><span
+                          class="w"> </span><span class="o">.</span><span class="nx">/Ubuntu</span><span class="w">
+</span></code></pre>
+                      </div>
+                    </div>
+                  <li>
+                    <h5 id="set-path"><a aria-labelledby="set-path" class="anchor-heading" href="#set-path">
+                      <svg aria-hidden="true" viewBox="0 0 16 16">
+                        <use xlink:href="#svg-link"></use>
+                      </svg>
+                    </a> set path
+                    </h5>
+                    <div class="language-powershell highlighter-rouge">
+                      <div class="highlight"><pre class="highlight"><code><span class="nv">$userenv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span
+                          class="p">[</span><span class="n">System.Environment</span><span class="p">]::</span><span class="n">GetEnvironmentVariable</span><span class="p">(</span><span
+                          class="s2">"Path"</span><span class="p">,</span><span class="w"> </span><span class="s2">"User"</span><span class="p">)</span><span class="w">
+</span><span class="p">[</span><span class="n">System.Environment</span><span class="p">]::</span><span class="n">SetEnvironmentVariable</span><span class="p">(</span><span class="s2">"PATH"</span><span
+                          class="p">,</span><span class="w"> </span><span class="nv">$userenv</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span
+                          class="err">$</span><span class="p">(</span><span class="n">Get-Location</span><span class="p">)</span><span class="o">.</span><span class="nf">Path</span><span
+                          class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">"\Ubuntu"</span><span class="p">,</span><span class="w"> </span><span
+                          class="s2">"User"</span><span class="p">)</span><span class="w">
+</span></code></pre>
+                      </div>
+                    </div>
+                  <li>
+                    <h5 id="install-wsl"><a aria-labelledby="install-wsl" class="anchor-heading" href="#install-wsl">
+                      <svg aria-hidden="true" viewBox="0 0 16 16">
+                        <use xlink:href="#svg-link"></use>
+                      </svg>
+                    </a> install WSL
+                    </h5>
+                    <div class="language-powershell highlighter-rouge">
+                      <div class="highlight"><pre class="highlight"><code><span class="n">Enable-WindowsOptionalFeature</span><span class="w"> </span><span class="nt">-Online</span><span
+                          class="w"> </span><span class="nt">-FeatureName</span><span class="w"> </span><span class="nx">Microsoft-Windows-Subsystem-Linux</span><span class="w">
+</span></code></pre>
+                      </div>
+                    </div>
+                    <ul>
+                      <li>
+                        <blockquote><p>Now that everything is in place, please restart the server. After the restart, open up <code class="language-plaintext highlighter-rouge">Powershell</code>
+                                       again and run <code class="language-plaintext highlighter-rouge">Ubuntu</code>. You will<br/> be asked to create a new
+                          <code class="language-plaintext highlighter-rouge">UNIX</code> user</p>
+                          <div class="language-powershell highlighter-rouge">
+                            <div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="nx">Ubuntu</span><span
+                                class="w">
+ </span><span class="n">ubuntu1604.exe</span><span class="w">
+</span></code></pre>
+                            </div>
+                          </div>
+                        </blockquote>
+                      <li>
+                        <blockquote><p>Now you can upgrade to the latest version of Ubuntu by this script:</p>
+                          <div class="language-powershell highlighter-rouge">
+                            <div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="nx">apt-get</span><span
+                                class="w"> </span><span class="nx">update</span><span class="w">
+ </span><span class="n">sudo</span><span class="w"> </span><span class="nx">apt-get</span><span class="w"> </span><span class="nx">upgrade</span><span class="w">
+</span></code></pre>
+                            </div>
+                          </div>
+                        </blockquote>
+                    </ul>
+                </ul>
+            </ul>
+        </ul>
+      </main>
+      <hr>
+      <footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"></p>
+        <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"><a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./JobPrep/AppsForWorkflow.md"
+                                                                                id="edit-this-page">Edit this page on GitHub</a></p></div>
+      </footer>
+    </div>
+  </div>
+  <button aria-label="Focus on search" class="search-button btn-reset" id="search-button">
+    <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+      <use xlink:href="#svg-search"></use>
+    </svg>
+  </button>
+  <div class="search-overlay"></div>
+</div>
