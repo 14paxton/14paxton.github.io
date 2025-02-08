@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <link href="/assets/css/just-the-docs-default.css" rel="stylesheet">
+  <link href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet" rel="stylesheet">
+  <style id="jtd-nav-activation"> .site-nav > ul.nav-list:first-child > li > a, .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(2)) > a, .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+    background-image: none;
+  }
+
+  .site-nav > ul.nav-list:not(:first-child) a, .site-nav li.external a {
+    background-image: none;
+  }
+
+  .site-nav > ul.nav-list:first-child > li:nth-child(18) > ul > li:nth-child(2) > a {
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .site-nav > ul.nav-list:first-child > li:nth-child(18) > button svg, .site-nav > ul.nav-list:first-child > li:nth-child(18) > ul > li:nth-child(2) > button svg {
+    transform: rotate(-90deg);
+  }
+
+  .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(18) > ul.nav-list, .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(18) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list {
+    display: block;
+  }</style>
+  <script src="/assets/js/vendor/lunr.min.js"></script>
+  <script src="/assets/js/just-the-docs.js"></script>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Annotations | Paxton’s Notes</title>
+  <meta content="Jekyll v4.4.0" name="generator"/>
+  <meta content="Annotations" property="og:title"/>
+  <meta content="en_US" property="og:locale"/>
+  <meta content="Coding Notes" name="description"/>
+  <meta content="Coding Notes" property="og:description"/>
+  <link href="http://localhost:4000/Micronotes/Annotations" rel="canonical"/>
+  <meta content="http://localhost:4000/Micronotes/Annotations" property="og:url"/>
+  <meta content="Paxton’s Notes" property="og:site_name"/>
+  <meta content="website" property="og:type"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="Annotations" property="twitter:title"/>
+  <script type="application/ld+json"> {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "description": "Coding Notes",
+    "headline": "Annotations",
+    "url": "http://localhost:4000/Micronotes/Annotations"
+  }
+  </script>
+<body><a class="skip-to-main" href="#main-content">Skip to main content</a>
+<svg class="d-none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="svg-link" viewBox="0 0 24 24"><title>Link</title>
+    <svg class="feather feather-link"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24"><title>Menu</title>
+    <svg class="feather feather-menu"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <line x1="3" x2="21" y1="12" y2="12"></line>
+      <line x1="3" x2="21" y1="6" y2="6"></line>
+      <line x1="3" x2="21" y1="18" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24"><title>Expand</title>
+    <svg class="feather feather-chevron-right"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol class="feather feather-external-link"
+          fill="none"
+          height="24"
+          id="svg-external-link"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"><title id="svg-external-link-title">(external link)</title>
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+    <polyline points="15 3 21 3 21 9"></polyline>
+    <line x1="10" x2="21" y1="14" y2="3"></line>
+  </symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24"><title>Document</title>
+    <svg class="feather feather-file"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+      <polyline points="13 2 13 9 20 9"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-search" viewBox="0 0 24 24"><title>Search</title>
+    <svg class="feather feather-search"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-copy" viewBox="0 0 16 16"><title>Copy</title>
+    <svg class="bi bi-clipboard" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+      <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-copied" viewBox="0 0 16 16"><title>Copied</title>
+    <svg class="bi bi-clipboard-check-fill" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+    </svg>
+  </symbol>
+</svg>
+<div class="side-bar">
+  <div class="site-header" role="banner"><a class="site-title lh-tight" href="/"> Paxton's Notes </a>
+    <button aria-label="Toggle menu" aria-pressed="false" class="site-button btn-reset" id="menu-button">
+      <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+        <use xlink:href="#svg-menu"></use>
+      </svg>
+    </button>
+  </div>
+  <nav aria-label="Main" class="site-nav" id="site-nav">
+    <ul class="nav-list">
+      <li class="nav-list-item">
+        <button aria-label="toggle items in MyPersonalDocsAndStuff category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/index">MyPersonalDocsAndStuff</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/AppsForWorkflow">AppsForWorkflow</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/CloudServices">CloudServices</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/LetterOfRecommendation">LetterOfRecommendation</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PastProjects">PastProjects</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PriorityLearning">PriorityLearning</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in AWS category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/AWS/">AWS</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/AWS/CLI">CLI</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Build category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Build/">Build</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Gradle">Gradle</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Maven">Maven</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in DockerNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/DockerNotes/">DockerNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/ARM64">ARM64</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Basics">Basics</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Dockerfile">Dockerfile</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Install">Install</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Quick-TidBits">Quick-TidBits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/UsefulCommands">UsefulCommands</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in DotNetNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/DotNetNotes/">DotNetNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CLI">CLI</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in CSharp category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/DotNetNotes/Csharp">CSharp</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Email">Email</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Threading">Threading</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Controllers">Controllers</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Database">Database</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/EntityFramework">EntityFramework</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Environment">Environment</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Google">Google</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HTTP">HTTP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HttpRepl">HttpRepl</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/LINQ">LINQ</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Maui">Maui</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Microservice">Microservice.md</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/VisualStudio">VisualStudio</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Git category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Git">Git</a>
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <button aria-label="toggle items in GitHub category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/Git/GitHub">GitHub</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/GitHubPages">GitHubPages</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/Jekyll">Jekyll</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/MarkDown">MarkDown</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Git/QuickScripts">QuickScripts</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GoogleNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GoogleNotes/">GoogleNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/APIs">APIs</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Browser">Browser</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Cloud">Cloud</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ComputeEngine">ComputeEngine</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Deploy">Deploy</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DevTools">DevTools</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DialogFlow">DialogFlow</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Functions">Functions</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Logging">Logging</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ServiceAccounts">ServiceAccounts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Storage">Storage</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/VoiceAgent">VoiceAgent</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GrailsNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GrailsNotes/">GrailsNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/GORM_WhereQueris">GORM_WhereQueris</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLComplexQueries">HQLComplexQueries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLQueries">HQLQueries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/RunningApp">RunningApp</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Security">Security</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Services">Services</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Testing">Testing</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GroovyNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GroovyNotes/">GroovyNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Array-Loop-List-Map">Array-Loop-List-Map</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Async_Parallel-Concurrency">Async_Parallel-Concurrency</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Clever-Tid-bits">Clever-Tid-bits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/DateAndTime">DateAndTime</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Enum">Enum</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/MetaProgramming">MetaProgramming</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/RegEx">RegEx</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/String">String</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in HTML&CSS category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/HTML&CSS/">HTML&CSS</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/CSS">CSS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/HTML">HTML</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/Images">Images</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/HTTP">HTTP</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in IntelliJNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/IntelliJNotes/">IntelliJNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/CustomVM">CustomVM</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/DebuggerConfig">DebuggerConfig</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/HTTPExamples">HTTPExamples</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/Spaces">Spaces</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Java category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/JavaNotes/Java">Java</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Algorithms">Algorithms</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/CommandLineDiddys">CommandLineDiddys</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/DataBase">DataBase</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/File">File</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/GCP">GCP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Hibernate">Hibernate</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/LooseNotes">LooseNotes</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/OOP">OOP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/String">String</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Threads">Threads</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in JavaScript category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/JavaScript/">JavaScript</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Browser">Browser</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CDN">CDN</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CSS">CSS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Clever-Algos">Clever-Algos</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/DateAndTime">DateAndTime</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Document">Document</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Elements">Elements</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Events">Events</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FormStuff">FormStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FunctionObject">FunctionObject</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/HTTP">HTTP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Map">Map</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Modules">Modules</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in Node category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/Node/">Node</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Node/QuickScripts">QuickScripts</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Number">Number</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Object">Object</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/QuerySelector">QuerySelector</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in ReactNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/ReactNotes">ReactNotes</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Clever-Snippets">Clever-Snippets</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Configuring">Configuring</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/HandleEvents">HandleEvents</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/ReactNotes/Hooks">Hooks</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/MUI">MUI</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Mat-Table">Mat-Table</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/React-Router">React-Router</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/ReactHookForm">ReactHookForm</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/String">String</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/WebWorker">WebWorker</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/RegEx">RegEx</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/State">State</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in TypeScript category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/TypeScript/">TypeScript</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Events">Events</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/QuickScripts">QuickScripts</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Types">Types</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/UsefulSnippets">UsefulSnippets</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WebAPI">WebAPI</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Window">Window</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WorkingWithFiles">WorkingWithFiles</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/Kubernetes">Kubernetes</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Linux category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Linux/">Linux</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/ADMIN-ROOT">ADMIN-ROOT</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Conditionals">Conditionals</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Encoding">Encoding</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/JQ">JQ</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/MySQL">MySQL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/PGP">PGP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/QuickScripts">QuickScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/SDKMan">SDKMan</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Scripting">Scripting</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/VIM_QuickTips">VIM_QuickTips</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in MacNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/MacNotes/">MacNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/AppleScripts">AppleScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/HomeBrew">HomeBrew</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/JavaOnMac">JavaOnMac</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/QuickScripts">QuickScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ShortCuts">ShortCuts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/UsersAndGroups">UsersAndGroups</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/Utilities">Utilities</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ZSH">ZSH</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Micronotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Micronotes/">Micronotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/AWS">AWS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Configuration">Configuration</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/DataBaseStuff">DataBaseStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/EnviromentStuff">EnviromentStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/GRAALVM">GRAALVM</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Gradle">Gradle</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Jackson">Jackson</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/MicroStream">MicroStream</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Resources">Resources</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Testing">Testing</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/UsefuleSnippets">UsefuleSnippets</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/cli_gradlew">cli_gradlew</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/Obsidian/Obsidian">Obsidian</a>
+      <li class="nav-list-item"><a class="nav-list-link" href="/RandomNuggetsOfKnowledge">RandomNuggetsOfKnowledge</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in SQLNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/SQLNotes/">SQLNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Docker">Docker</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Functions">Functions</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/HQL">HQL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Liquibase">Liquibase</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Queries">Queries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/SQLCheatSheet">SQLCheatSheet</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/TerminalCommands">Terminal-Commands</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in SpringNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/SpringNotes/">SpringNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Hibernate">Hibernate</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Maven">Maven</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Properties">Properties</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Security">Security</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Serialization">Serialization</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Testing">Testing</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/TidBits">TidBits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Transactions">Transactions</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/SystemDesign&Architecture/">SystemDesign&Architecture</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in TestingFrameworks category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/TestingFrameworks/">TestingFrameworks</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JUnit">JUnit</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JavascriptTesting">Javascript</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Spock">Spock</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Testcontainers">Testcontainers</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Thymeleaf category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Thymeleaf/">Thymeleaf</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Thymeleaf/Fragments">Fragments</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Windows_Notes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Windows_Notes/">Windows_Notes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/CMD">CMD</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Environment">Environment</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/PackageManagers">PackageManagers</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Powershell">Powershell</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Run">Run</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Shortcuts">Shortcuts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Terminal">Terminal</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WSL">WSL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WindowsServer">WindowsServer</a>
+        </ul>
+    </ul>
+  </nav>
+  <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
+</div>
+<div class="main" id="top">
+  <div class="main-header" id="main-header">
+    <div class="search" role="search">
+      <div class="search-input-wrap"><input aria-label="Search Paxton's Notes"
+                                            autocomplete="off"
+                                            class="search-input"
+                                            id="search-input"
+                                            placeholder="Search Paxton's Notes"
+                                            tabindex="0"
+                                            type="text"> <label class="search-label" for="search-input">
+        <svg class="search-icon" viewBox="0 0 24 24">
+          <use xlink:href="#svg-search"></use>
+        </svg>
+      </label></div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+    <nav aria-label="Auxiliary" class="aux-nav">
+      <ul class="aux-nav-list">
+        <li class="aux-nav-list-item"><a class="site-button" href="https://github.com/14paxton/14paxton.github.io" rel="noopener noreferrer" target="_blank"> Template
+                                                                                                                                                              Repository </a>
+      </ul>
+    </nav>
+  </div>
+  <div class="main-content-wrap">
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol class="breadcrumb-nav-list">
+        <li class="breadcrumb-nav-list-item"><a href="/Micronotes/">Micronotes</a>
+        <li class="breadcrumb-nav-list-item"><span>Annotations</span>
+      </ol>
+    </nav>
+    <div class="main-content" id="main-content">
+      <main><p><br/></p>
+        <details>
+          <summary class="text-delta"> Table of contents</summary>
+          <ol id="markdown-toc">
+            <li><a href="#quick-snippets" id="markdown-toc-quick-snippets">Quick Snippets</a>
+              <ol>
+                <li><a href="#generate-uuid-identity" id="markdown-toc-generate-uuid-identity">Generate UUID identity</a>
+              </ol>
+            <li><a href="#key-annotations" id="markdown-toc-key-annotations">Key Annotations</a>
+            <li><a href="#core" id="markdown-toc-core">Core</a>
+              <ol>
+                <li><a href="#iomicronautcoreannotation" id="markdown-toc-iomicronautcoreannotation">io.micronaut.core.annotation</a>
+                <li><a href="#data" id="markdown-toc-data">Data</a>
+                <li><a href="#iomicronautdataannotation" id="markdown-toc-iomicronautdataannotation">io.micronaut.data.annotation</a>
+              </ol>
+            <li><a href="#validation" id="markdown-toc-validation">Validation</a>
+              <ol>
+                <li><a href="#javaxvalidationconstraints" id="markdown-toc-javaxvalidationconstraints">javax.validation.constraints</a>
+              </ol>
+            <li><a href="#hibernate" id="markdown-toc-hibernate">Hibernate</a>
+            <li><a href="#lombok" id="markdown-toc-lombok">Lombok</a>
+          </ol>
+        </details>
+        <p><br/></p>
+        <hr/>
+        <p><br/></p>
+        <h1 id="quick-snippets"><a aria-labelledby="quick-snippets" class="anchor-heading" href="#quick-snippets">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Quick Snippets
+        </h1>
+        <h2 id="generate-uuid-identity"><a aria-labelledby="generate-uuid-identity" class="anchor-heading" href="#generate-uuid-identity">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Generate UUID identity
+        </h2>
+        <div class="language-java highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>
+<span class="nd">@Id</span>
+<span class="nd">@Column</span><span class="o">(</span><span class="n">columnDefinition</span> <span class="o">=</span> <span class="s">"BINARY(16)"</span><span class="o">)</span>
+<span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">generator</span> <span class="o">=</span> <span class="s">"system-uuid"</span><span class="o">,</span> <span
+              class="n">strategy</span> <span class="o">=</span> <span class="nc">GenerationType</span><span class="o">.</span><span class="na">IDENTITY</span><span class="o">)</span>
+<span class="nd">@GenericGenerator</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"system-uuid"</span><span class="o">,</span> <span
+              class="n">strategy</span> <span class="o">=</span> <span class="s">"org.hibernate.id.UUIDGenerator"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyObject</span> <span class="o">{</span>
+    <span class="c1">//code</span>
+<span class="o">}</span>
+</code></pre>
+          </div>
+        </div>
+        <h1 id="key-annotations"><a aria-labelledby="key-annotations" class="anchor-heading" href="#key-annotations">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Key Annotations
+        </h1>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+            <tr>
+              <th><strong>Annotation</strong>
+              <th><strong>Definition</strong>
+            <tbody>
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Inject</code>
+              <td>Used for dependency injection to indicate where Micronaut should inject dependencies (like <code class="language-plaintext highlighter-rouge">@Autowired</code> in
+                  Spring).
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Singleton</code>
+              <td>Defines a class as a singleton bean, ensuring only one instance is created and used throughout the application.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Introspected</code>
+              <td>Optimizes a class for reflection by generating metadata at compile time for GraalVM or serialization use.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Controller</code>
+              <td>Marks a class as an HTTP controller, responsible for handling HTTP requests and responses in a REST API.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Get</code>, <code class="language-plaintext highlighter-rouge">@Post</code>,
+                <code class="language-plaintext highlighter-rouge">@Put</code>, <code class="language-plaintext highlighter-rouge">@Delete</code>
+              <td>HTTP method-specific annotations to map requests to specific controller methods for handling HTTP GET, POST, PUT, or DELETE requests.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Client</code>
+              <td>Used to define a declarative HTTP client interface for making HTTP requests to external services or other applications.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Requires</code>
+              <td>Specifies that a bean should only be loaded if certain conditions (e.g., presence of a configuration or environment variable) are met.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@ConfigurationProperties</code>
+              <td>Maps external configuration properties (e.g., from <code class="language-plaintext highlighter-rouge">application.yml</code>) to a POJO.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Value</code>
+              <td>Injects a specific value from the application configuration (e.g., <code class="language-plaintext highlighter-rouge">application.yml</code>) into a field or
+                  method parameter.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Validated</code>
+              <td>Enables method-level validation using JSR-380 Bean Validation API (Hibernate Validator).
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@NotNull</code>, <code class="language-plaintext highlighter-rouge">@Min</code>,
+                <code class="language-plaintext highlighter-rouge">@Max</code>
+              <td>Common validation annotations used in conjunction with <code class="language-plaintext highlighter-rouge">@Validated</code> for validating method parameters and
+                  properties.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@QueryValue</code>
+              <td>Used in a controller to bind query parameters in HTTP requests to method arguments.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@PathVariable</code>
+              <td>Binds URI path variables to method parameters in controllers.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Body</code>
+              <td>Binds the body of an HTTP request to a method argument in a controller, typically used for POST and PUT requests.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Error</code>
+              <td>Handles exceptions globally or locally within a controller, providing custom error responses.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Cacheable</code>
+              <td>Caches the result of a method call to improve performance.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Scheduled</code>
+              <td>Schedules the execution of a method at a fixed rate, useful for periodic tasks like cron jobs.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Filter</code>
+              <td>Defines an HTTP filter to intercept and modify requests and responses for cross-cutting concerns (e.g., logging, authentication).
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Retryable</code>
+              <td>Enables automatic retries for methods that fail due to transient issues (e.g., network errors).
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Secured</code>
+              <td>Applies security rules to restrict access to methods or controllers based on roles or authorities.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Primary</code>
+              <td>Marks a bean as the primary candidate for dependency injection when multiple beans of the same type exist.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@EventListener</code>
+              <td>Listens for specific events and executes the annotated method when the event is published.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Header</code>
+              <td>Allows you to bind HTTP headers in controllers or clients to method arguments.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@CircuitBreaker</code>
+              <td>Applies a circuit breaker pattern to a method to handle failures gracefully by limiting requests and preventing cascading failures.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Factory</code>
+              <td>Defines a factory class for producing custom beans.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Prototype</code>
+              <td>Defines a bean with a prototype scope, creating a new instance each time it is injected.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Configuration</code>
+              <td>Marks a class as a configuration class, allowing it to provide application-specific beans or configurations.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Transactional</code>
+              <td>Defines a method or class as transactional, ensuring that database operations are wrapped in a transaction.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Trace</code>
+              <td>Enables distributed tracing for methods, allowing the application to track request flow across multiple services.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Fallback</code>
+              <td>Defines a fallback method that gets invoked when a <code class="language-plaintext highlighter-rouge">@Retryable</code> or
+                <code class="language-plaintext highlighter-rouge">@CircuitBreaker</code> operation fails.
+            <tr>
+              <td><code class="language-plaintext highlighter-rouge">@Requires(property)</code>
+              <td>Ensures that a bean is only loaded if the specified configuration property is present.
+          </table>
+        </div>
+        <h1 id="core"><a aria-labelledby="core" class="anchor-heading" href="#core">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Core
+        </h1>
+        <h2 id="iomicronautcoreannotation"><a aria-labelledby="iomicronautcoreannotation" class="anchor-heading" href="#iomicronautcoreannotation">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://docs.micronaut.io/latest/api/index.html?io/micronaut/core/annotation/package-summary.html">io.micronaut.core.annotation</a></h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+            <tr>
+              <th>Blocking
+              <th>A marker annotation for methods that are blocking.
+            <tbody>
+            <tr>
+              <td>Creator
+              <td>An annotation applicable to a constructor that provides a hint as to which constructor is the primary constructor.
+            <tr>
+              <td>EntryPoint
+              <td>EntryPoint is a meta-annotation used on other annotations to indicate that the annotated element is an entry point into the framework from the outside.
+            <tr>
+              <td>Experimental
+              <td>Annotates a class or method as being experimental and subject to change or removal.
+            <tr>
+              <td>Generated
+              <td>A marker annotation for methods that are generated though an annotation processor.
+            <tr>
+              <td>Indexed
+              <td>An annotation that can be used on types where there may be many implementations of a particular interface.
+            <tr>
+              <td>Indexes
+              <td>Allows Indexed to be repeatable.
+            <tr>
+              <td>InstantiatedMember
+              <td>An annotation that can be used on another annotation member that returns a class to indicate that the value of the annotation should be populated as an instance
+                  of the specified class.
+            <tr>
+              <td>Internal
+              <td>Annotates a class or method regarded as internal and not for public consumption.
+            <tr>
+              <td>Introspected
+              <td>An annotation that indicates a type should produce a BeanIntrospection at compilation time.
+            <tr>
+              <td>Introspected.IndexedAnnotation
+              <td>Allow pre-computed indexes for property lookups based on an annotation and a member.
+            <tr>
+              <td>NonBlocking
+              <td>A marker annotation for methods that are non-blocking.
+            <tr>
+              <td>NonNull
+              <td>A common annotation to declare that annotated elements cannot be null.
+            <tr>
+              <td>Nullable
+              <td>A common annotation to declare that annotated elements can be null under some circumstance.
+            <tr>
+              <td>Order
+              <td>Annotation for objects that are ordered.
+            <tr>
+              <td>ReflectiveAccess
+              <td>Descriptive annotation that can be used to declare a field, method, constructor and types for reflective access.
+            <tr>
+              <td>TypeHint
+              <td>The type hint annotation is a general annotation that can be used on interfaces to provide additional information about types used at runtime.
+            <tr>
+              <td>UsedByGeneratedCode
+              <td>A marker annotation indicating that a method is used by generated code and should not be modified or removed otherwise a binary compatibility problem will be
+                  introduced.
+          </table>
+        </div>
+        <h2 id="data"><a aria-labelledby="data" class="anchor-heading" href="#data">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://micronaut-projects.github.io/micronaut-data/latest/guide/">Data</a></h2>
+        <h2 id="iomicronautdataannotation"><a aria-labelledby="iomicronautdataannotation" class="anchor-heading" href="#iomicronautdataannotation">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://micronaut-projects.github.io/micronaut-data/1.0.x/api/io/micronaut/data/annotation/package-summary.html">io.micronaut.data.annotation</a></h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+            <tr>
+              <th>Annotation Type
+              <th>Description
+            <tbody>
+            <tr>
+              <td>AutoPopulated
+              <td>Meta annotation to identity annotations that are auto-populated by the Micronaut Data.
+            <tr>
+              <td>DataTransformer
+              <td>Generic version of allowing transformations to be applied when reading or writing data to and from the a database.
+            <tr>
+              <td>DateCreated
+              <td>Can be applied to date type to indicate the property should be populated when it is first inserted.
+            <tr>
+              <td>DateUpdated
+              <td>Can be applied to date type to indicate the property should be populated when it was last updated.
+            <tr>
+              <td>Embeddable
+              <td>Annotation to be used on POJOs that are embeddable in MappedEntity types.
+            <tr>
+              <td>EmbeddedId
+              <td>Annotation that specifies the embedded ID.
+            <tr>
+              <td>GeneratedValue
+              <td>Designates a property as a generated value.
+            <tr>
+              <td>Id
+              <td>Designates a field or method that is annotated with the Id of an entity.
+            <tr>
+              <td>Join
+              <td>A @Join defines how a join for a particular association path should be generated.
+            <tr>
+              <td>MappedEntity
+              <td>Designates a class as being persisted.
+            <tr>
+              <td>MappedProperty
+              <td>Designates a method or field that is mapped as a persistent property.
+            <tr>
+              <td>Query
+              <td>Defines the query string such as SQL, JPA-QL, Cypher etc that should be executed.
+            <tr>
+              <td>QueryHint
+              <td>Provides a query hint to the underlying query implementation.
+            <tr>
+              <td>Relation
+              <td>Annotation used to indicate a field or method is a relation to another type.
+            <tr>
+              <td>Repository
+              <td>Designates a type of a data repository.
+            <tr>
+              <td>RepositoryConfiguration
+              <td>Models compilation time configuration for the repository.
+            <tr>
+              <td>Transient
+              <td>Annotation used to indicate a field or method is transient and not persisted.
+            <tr>
+              <td>TypeDef
+              <td>Type definitions allow associated existing types with a specify DataType.
+            <tr>
+              <td>TypeRole
+              <td>A type role indicates a method element in a repository that plays a role in query execution and should not be factored into query calculation but instead made
+                  available at runtime using the specified role name.
+            <tr>
+              <td>Version
+              <td>Designates a field or method that is used to version an entity.
+            <tr>
+              <td>Where
+              <td>There Where annotation allows augmenting the WHERE statement of generated queries with additional criterion.
+          </table>
+        </div>
+        <div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;"> *** In the case of using JPA only a
+                                                                                                                                                 subset of annotations is supported
+                                                                                                                                                 including the following: ***
+        </div>
+        <ul>
+          <li>
+            <blockquote><p>Basic: <code class="language-plaintext highlighter-rouge">@Table</code>, <code class="language-plaintext highlighter-rouge">@Id </code>
+                           ,<code class="language-plaintext highlighter-rouge">@Version</code>, <code class="language-plaintext highlighter-rouge">@Column</code>,
+              <code class="language-plaintext highlighter-rouge">@Transient</code>, <code class="language-plaintext highlighter-rouge">@Enumerated</code></p></blockquote>
+          <li>
+            <blockquote><p>Embedded definition: <code class="language-plaintext highlighter-rouge">@Embedded</code>
+              <code class="language-plaintext highlighter-rouge">@EmbeddedId</code> <code class="language-plaintext highlighter-rouge">@Embeddable</code></p></blockquote>
+          <li>
+            <blockquote><p>Relationship mapping: <code class="language-plaintext highlighter-rouge">@OneToMany</code>
+              <code class="language-plaintext highlighter-rouge">@OneToOne </code> <code class="language-plaintext highlighter-rouge">@ManyToOne</code>
+              <code class="language-plaintext highlighter-rouge">@ManyToMany</code></p></blockquote>
+          <li>
+            <blockquote><p>Join specification: <code class="language-plaintext highlighter-rouge">@JoinTable</code>
+              <code class="language-plaintext highlighter-rouge">@JoinColumn</code></p></blockquote>
+          <li>
+            <blockquote><p>Type converters: <code class="language-plaintext highlighter-rouge">@Convert</code> <code class="language-plaintext highlighter-rouge">@Converter</code>
+                           and <code class="language-plaintext highlighter-rouge">AttributeConverter Interface</code></p></blockquote>
+        </ul>
+        <h1 id="validation"><a aria-labelledby="validation" class="anchor-heading" href="#validation">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Validation
+        </h1>
+        <h2 id="javaxvalidationconstraints"><a aria-labelledby="javaxvalidationconstraints" class="anchor-heading" href="#javaxvalidationconstraints">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://docs.jboss.org/hibernate/beanvalidation/spec/2.0/api/javax/validation/constraints/package-summary.html">javax.validation.constraints</a></h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+            <tr>
+              <th>Annotation Type
+              <th>Description
+            <tbody>
+            <tr>
+              <td>AssertFalse
+              <td>The annotated element must be false.
+            <tr>
+              <td>AssertFalse.List
+              <td>Defines several AssertFalse annotations on the same element.
+            <tr>
+              <td>AssertTrue
+              <td>The annotated element must be true.
+            <tr>
+              <td>AssertTrue.List
+              <td>Defines several AssertTrue annotations on the same element.
+            <tr>
+              <td>DecimalMax
+              <td>The annotated element must be a number whose value must be lower or equal to the specified maximum.
+            <tr>
+              <td>DecimalMax.List
+              <td>Defines several DecimalMax annotations on the same element.
+            <tr>
+              <td>DecimalMin
+              <td>The annotated element must be a number whose value must be higher or equal to the specified minimum.
+            <tr>
+              <td>DecimalMin.List
+              <td>Defines several DecimalMin annotations on the same element.
+            <tr>
+              <td>Digits
+              <td>The annotated element must be a number within accepted range.
+            <tr>
+              <td>Digits.List
+              <td>Defines several Digits annotations on the same element.
+            <tr>
+              <td>Email
+              <td>The string has to be a well-formed email address.
+            <tr>
+              <td>Email.List
+              <td>Defines several @Email constraints on the same element.
+            <tr>
+              <td>Future
+              <td>The annotated element must be an instant, date or time in the future.
+            <tr>
+              <td>Future.List
+              <td>Defines several Future annotations on the same element.
+            <tr>
+              <td>FutureOrPresent
+              <td>The annotated element must be an instant, date or time in the present or in the future.
+            <tr>
+              <td>FutureOrPresent.List
+              <td>Defines several FutureOrPresent annotations on the same element.
+            <tr>
+              <td>Max
+              <td>The annotated element must be a number whose value must be lower or equal to the specified maximum.
+            <tr>
+              <td>Max.List
+              <td>Defines several Max annotations on the same element.
+            <tr>
+              <td>Min
+              <td>The annotated element must be a number whose value must be higher or equal to the specified minimum.
+            <tr>
+              <td>Min.List
+              <td>Defines several Min annotations on the same element.
+            <tr>
+              <td>Negative
+              <td>The annotated element must be a strictly negative number (i.e.
+            <tr>
+              <td>Negative.List
+              <td>Defines several Negative constraints on the same element.
+            <tr>
+              <td>NegativeOrZero
+              <td>The annotated element must be a negative number or 0.
+            <tr>
+              <td>NegativeOrZero.List
+              <td>Defines several NegativeOrZero constraints on the same element.
+            <tr>
+              <td>NotBlank
+              <td>The annotated element must not be null and must contain at least one non-whitespace character.
+            <tr>
+              <td>NotBlank.List
+              <td>Defines several @NotBlank constraints on the same element.
+            <tr>
+              <td>NotEmpty
+              <td>The annotated element must not be null nor empty.
+            <tr>
+              <td>NotEmpty.List
+              <td>Defines several @NotEmpty constraints on the same element.
+            <tr>
+              <td>NotNull
+              <td>The annotated element must not be null.
+            <tr>
+              <td>NotNull.List
+              <td>Defines several NotNull annotations on the same element.
+            <tr>
+              <td>Null
+              <td>The annotated element must be null.
+            <tr>
+              <td>Null.List
+              <td>Defines several Null annotations on the same element.
+            <tr>
+              <td>Past
+              <td>The annotated element must be an instant, date or time in the past.
+            <tr>
+              <td>Past.List
+              <td>Defines several Past annotations on the same element.
+            <tr>
+              <td>PastOrPresent
+              <td>The annotated element must be an instant, date or time in the past or in the present.
+            <tr>
+              <td>PastOrPresent.List
+              <td>Defines several PastOrPresent annotations on the same element.
+            <tr>
+              <td>Pattern
+              <td>The annotated CharSequence must match the specified regular expression.
+            <tr>
+              <td>Pattern.List
+              <td>Defines several Pattern annotations on the same element.
+            <tr>
+              <td>Positive
+              <td>The annotated element must be a strictly positive number (i.e.
+            <tr>
+              <td>Positive.List
+              <td>Defines several Positive constraints on the same element.
+            <tr>
+              <td>PositiveOrZero
+              <td>The annotated element must be a positive number or 0.
+            <tr>
+              <td>PositiveOrZero.List
+              <td>Defines several PositiveOrZero constraints on the same element.
+            <tr>
+              <td>Size
+              <td>The annotated element size must be between the specified boundaries (included).
+            <tr>
+              <td>Size.List
+              <td>Defines several Size annotations on the same element.
+          </table>
+        </div>
+        <h1 id="hibernate"><a aria-labelledby="hibernate" class="anchor-heading" href="#hibernate">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Hibernate
+        </h1>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+            <tr>
+              <th>Annotation
+              <th>Purpose
+            <tbody>
+            <tr>
+              <td>@Entity
+              <td>Declares an entity class (a class with its own database table an persistent identity)
+            <tr>
+              <td>@MappedSuperclass
+              <td>A superclass that declares common persistent fields of its @Entity subclasses
+            <tr>
+              <td>@Embeddable or @Embedded
+              <td>Declare an embeddable class (a class without its own persistent identity or database table)
+            <tr>
+              <td>@Inheritance
+              <td>Defines how inheritance hierarchies should be mapped to database tables
+            <tr>
+              <td>@Id
+              <td>Specifies that a field of an entity holds the persistent identity of the entity, and maps to the primary key of its table
+            <tr>
+              <td>@IdClass
+              <td>Specifies a class representing the composite primary key of the entity (for entities with multiple @Id fields)
+            <tr>
+              <td>@EmbeddedId
+              <td>Specifies that a field of an entity holds its composite primary key represented as an @Embeddable class
+            <tr>
+              <td>@GeneratedValue
+              <td>Specifies that an identifier is a system-generated surrogate key
+            <tr>
+              <td>@Version
+              <td>Specifies that a field of an entity holds a version number used for optimistic locking
+            <tr>
+              <td>@Enumerated
+              <td>Maps a field holding an enum
+            <tr>
+              <td>@ManyToOne
+              <td>Declares a many-to-one association to a second entity
+            <tr>
+              <td>@OneToOne
+              <td>Declares a one-to-one association to a second entity
+            <tr>
+              <td>@OneToMany
+              <td>Declares a one-to-many association to a second entity
+            <tr>
+              <td>@Table
+              <td>Specifies a mapping to a database table
+            <tr>
+              <td>@SecondaryTable
+              <td>Specifies a mapping to a second database table
+            <tr>
+              <td>@Column
+              <td>Specifies a mapping to a database column
+            <tr>
+              <td>@JoinColumn
+              <td>Specifies a mapping to a database foreign key
+            <tr>
+              <td>@Cache
+              <td>Enables second-level caching for an entity
+            <tr>
+              <td>@Formula
+              <td>Maps field to SQL expression instead of a column
+            <tr>
+              <td>@CreationTimestamp, @UpdateTimestamp
+              <td>Automatically assign a timestamp to a field
+            <tr>
+              <td>@OptimisticLocking
+              <td>Enables optimistic locking for entities with no @Version field
+            <tr>
+              <td>@FilterDef and @Filter
+              <td>Define a Hibernate filter
+            <tr>
+              <td>@FetchProfile
+              <td>Defines a Hibernate fetch profile
+            <tr>
+              <td>@Generated
+              <td>Defines a property generated by the database
+            <tr>
+              <td>@ColumnDefault
+              <td>Specifies a SQL expression used to assign a default value to a column (use in combination with @Generated(INSERT))
+            <tr>
+              <td>@GenericGenerator
+              <td>Selects a custom id generator
+            <tr>
+              <td>@DynamicInsert and @DynamicUpdate
+              <td>Generate SQL dynamically with only needed columns (instead of using static SQL generated at startup)
+            <tr>
+              <td>@Fetch
+              <td>Specifies the fetching mode for an association
+            <tr>
+              <td>@BatchSize
+              <td>Specifies the batch size for batch fetching an association
+            <tr>
+              <td>@Loader
+              <td>Specifies a named query used to fetch an entity by id (for example, when find(type, id) is called) in place of the default SQL generated by Hibernate
+            <tr>
+              <td>@SqlInsert, @SqlUpdate, @SqlDelete
+              <td>Specify custom DML for entity operations
+            <tr>
+              <td>@NaturalId
+              <td>Marks a field or fields as an alternative “natural” identifier (unique key) of the entity
+            <tr>
+              <td>@Nationalized
+              <td>Use nchar, nvarchar, or nclob selectively for one particular column.
+            <tr>
+              <td>@Immutable
+              <td>Specifies that an entity or collection is immutable
+            <tr>
+              <td>@SortNatural or @SortComparator
+              <td>Maps a SortedSet or SortedMap
+            <tr>
+              <td>@Check
+              <td>Declares a SQL check constraint to be added to DDL
+          </table>
+        </div>
+        <h1 id="lombok"><a aria-labelledby="lombok" class="anchor-heading" href="#lombok">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Lombok
+        </h1>
+        <div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;"> Needs to be above micronaut
+                                                                                                                                                 annotations on classpath in gradle
+        </div>
+        <div class="language-gradle highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>  <span class="n">annotationProcessor</span> <span class="s1">'org.projectlombok:lombok:1.18.24'</span>
+</code></pre>
+          </div>
+        </div>
+        <div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;"> For lombok to recognize micronaut
+                                                                                                                                                 annotations and inject into
+                                                                                                                                                 constructor
+        </div>
+        <blockquote><p>create <code class="language-plaintext highlighter-rouge">lombok.config</code> at <code class="language-plaintext highlighter-rouge">root</code>, insert
+                       line:</p></blockquote>
+        <div class="language-plaintext highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>   lombok.copyableannotations += io.micronaut.core.annotation.Nullable
+</code></pre>
+          </div>
+        </div>
+      </main>
+      <hr>
+      <footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"></p>
+        <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"><a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./Micronotes/Annotations.md"
+                                                                                id="edit-this-page">Edit this page on GitHub</a></p></div>
+      </footer>
+    </div>
+  </div>
+  <button aria-label="Focus on search" class="search-button btn-reset" id="search-button">
+    <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+      <use xlink:href="#svg-search"></use>
+    </svg>
+  </button>
+  <div class="search-overlay"></div>
+</div>

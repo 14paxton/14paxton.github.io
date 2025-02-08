@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <link href="/assets/css/just-the-docs-default.css" rel="stylesheet">
+  <link href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet" rel="stylesheet">
+  <style id="jtd-nav-activation"> .site-nav > ul.nav-list:first-child > li > a, .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(1)) > a, .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+    background-image: none;
+  }
+
+  .site-nav > ul.nav-list:not(:first-child) a, .site-nav li.external a {
+    background-image: none;
+  }
+
+  .site-nav > ul.nav-list:first-child > li:nth-child(17) > ul > li:nth-child(1) > a {
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .site-nav > ul.nav-list:first-child > li:nth-child(17) > button svg, .site-nav > ul.nav-list:first-child > li:nth-child(17) > ul > li:nth-child(1) > button svg {
+    transform: rotate(-90deg);
+  }
+
+  .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(17) > ul.nav-list, .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(17) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+    display: block;
+  }</style>
+  <script src="/assets/js/vendor/lunr.min.js"></script>
+  <script src="/assets/js/just-the-docs.js"></script>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>AppleScripts | Paxton’s Notes</title>
+  <meta content="Jekyll v4.4.0" name="generator"/>
+  <meta content="AppleScripts" property="og:title"/>
+  <meta content="en_US" property="og:locale"/>
+  <meta content="Coding Notes" name="description"/>
+  <meta content="Coding Notes" property="og:description"/>
+  <link href="http://localhost:4000/MacNotes/AppleScripts" rel="canonical"/>
+  <meta content="http://localhost:4000/MacNotes/AppleScripts" property="og:url"/>
+  <meta content="Paxton’s Notes" property="og:site_name"/>
+  <meta content="website" property="og:type"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="AppleScripts" property="twitter:title"/>
+  <script type="application/ld+json"> {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "description": "Coding Notes",
+    "headline": "AppleScripts",
+    "url": "http://localhost:4000/MacNotes/AppleScripts"
+  }
+  </script>
+<body><a class="skip-to-main" href="#main-content">Skip to main content</a>
+<svg class="d-none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="svg-link" viewBox="0 0 24 24"><title>Link</title>
+    <svg class="feather feather-link"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24"><title>Menu</title>
+    <svg class="feather feather-menu"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <line x1="3" x2="21" y1="12" y2="12"></line>
+      <line x1="3" x2="21" y1="6" y2="6"></line>
+      <line x1="3" x2="21" y1="18" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24"><title>Expand</title>
+    <svg class="feather feather-chevron-right"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol class="feather feather-external-link"
+          fill="none"
+          height="24"
+          id="svg-external-link"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"><title id="svg-external-link-title">(external link)</title>
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+    <polyline points="15 3 21 3 21 9"></polyline>
+    <line x1="10" x2="21" y1="14" y2="3"></line>
+  </symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24"><title>Document</title>
+    <svg class="feather feather-file"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+      <polyline points="13 2 13 9 20 9"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-search" viewBox="0 0 24 24"><title>Search</title>
+    <svg class="feather feather-search"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-copy" viewBox="0 0 16 16"><title>Copy</title>
+    <svg class="bi bi-clipboard" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+      <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-copied" viewBox="0 0 16 16"><title>Copied</title>
+    <svg class="bi bi-clipboard-check-fill" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+    </svg>
+  </symbol>
+</svg>
+<div class="side-bar">
+  <div class="site-header" role="banner"><a class="site-title lh-tight" href="/"> Paxton's Notes </a>
+    <button aria-label="Toggle menu" aria-pressed="false" class="site-button btn-reset" id="menu-button">
+      <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+        <use xlink:href="#svg-menu"></use>
+      </svg>
+    </button>
+  </div>
+  <nav aria-label="Main" class="site-nav" id="site-nav">
+    <ul class="nav-list">
+      <li class="nav-list-item">
+        <button aria-label="toggle items in MyPersonalDocsAndStuff category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/index">MyPersonalDocsAndStuff</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/AppsForWorkflow">AppsForWorkflow</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/CloudServices">CloudServices</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/LetterOfRecommendation">LetterOfRecommendation</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PastProjects">PastProjects</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PriorityLearning">PriorityLearning</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in AWS category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/AWS/">AWS</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/AWS/CLI">CLI</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Build category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Build/">Build</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Gradle">Gradle</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Maven">Maven</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in DockerNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/DockerNotes/">DockerNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/ARM64">ARM64</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Basics">Basics</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Dockerfile">Dockerfile</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Install">Install</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Quick-TidBits">Quick-TidBits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/UsefulCommands">UsefulCommands</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in DotNetNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/DotNetNotes/">DotNetNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CLI">CLI</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in CSharp category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/DotNetNotes/Csharp">CSharp</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Email">Email</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Threading">Threading</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Controllers">Controllers</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Database">Database</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/EntityFramework">EntityFramework</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Environment">Environment</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Google">Google</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HTTP">HTTP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HttpRepl">HttpRepl</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/LINQ">LINQ</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Maui">Maui</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Microservice">Microservice.md</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/VisualStudio">VisualStudio</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Git category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Git">Git</a>
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <button aria-label="toggle items in GitHub category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/Git/GitHub">GitHub</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/GitHubPages">GitHubPages</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/Jekyll">Jekyll</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/MarkDown">MarkDown</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Git/QuickScripts">QuickScripts</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GoogleNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GoogleNotes/">GoogleNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/APIs">APIs</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Browser">Browser</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Cloud">Cloud</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ComputeEngine">ComputeEngine</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Deploy">Deploy</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DevTools">DevTools</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DialogFlow">DialogFlow</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Functions">Functions</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Logging">Logging</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ServiceAccounts">ServiceAccounts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Storage">Storage</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/VoiceAgent">VoiceAgent</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GrailsNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GrailsNotes/">GrailsNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/GORM_WhereQueris">GORM_WhereQueris</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLComplexQueries">HQLComplexQueries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLQueries">HQLQueries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/RunningApp">RunningApp</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Security">Security</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Services">Services</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Testing">Testing</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GroovyNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GroovyNotes/">GroovyNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Array-Loop-List-Map">Array-Loop-List-Map</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Async_Parallel-Concurrency">Async_Parallel-Concurrency</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Clever-Tid-bits">Clever-Tid-bits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/DateAndTime">DateAndTime</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Enum">Enum</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/MetaProgramming">MetaProgramming</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/RegEx">RegEx</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/String">String</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in HTML&CSS category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/HTML&CSS/">HTML&CSS</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/CSS">CSS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/HTML">HTML</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/Images">Images</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/HTTP">HTTP</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in IntelliJNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/IntelliJNotes/">IntelliJNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/CustomVM">CustomVM</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/DebuggerConfig">DebuggerConfig</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/HTTPExamples">HTTPExamples</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/Spaces">Spaces</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Java category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/JavaNotes/Java">Java</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Algorithms">Algorithms</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/CommandLineDiddys">CommandLineDiddys</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/DataBase">DataBase</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/File">File</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/GCP">GCP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Hibernate">Hibernate</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/LooseNotes">LooseNotes</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/OOP">OOP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/String">String</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Threads">Threads</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in JavaScript category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/JavaScript/">JavaScript</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Browser">Browser</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CDN">CDN</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CSS">CSS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Clever-Algos">Clever-Algos</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/DateAndTime">DateAndTime</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Document">Document</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Elements">Elements</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Events">Events</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FormStuff">FormStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FunctionObject">FunctionObject</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/HTTP">HTTP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Map">Map</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Modules">Modules</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in Node category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/Node/">Node</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Node/QuickScripts">QuickScripts</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Number">Number</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Object">Object</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/QuerySelector">QuerySelector</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in ReactNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/ReactNotes">ReactNotes</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Clever-Snippets">Clever-Snippets</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Configuring">Configuring</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/HandleEvents">HandleEvents</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/ReactNotes/Hooks">Hooks</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/MUI">MUI</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Mat-Table">Mat-Table</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/React-Router">React-Router</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/ReactHookForm">ReactHookForm</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/String">String</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/WebWorker">WebWorker</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/RegEx">RegEx</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/State">State</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in TypeScript category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/TypeScript/">TypeScript</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Events">Events</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/QuickScripts">QuickScripts</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Types">Types</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/UsefulSnippets">UsefulSnippets</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WebAPI">WebAPI</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Window">Window</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WorkingWithFiles">WorkingWithFiles</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/Kubernetes">Kubernetes</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Linux category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Linux/">Linux</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/ADMIN-ROOT">ADMIN-ROOT</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Conditionals">Conditionals</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Encoding">Encoding</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/JQ">JQ</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/MySQL">MySQL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/PGP">PGP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/QuickScripts">QuickScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/SDKMan">SDKMan</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Scripting">Scripting</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/VIM_QuickTips">VIM_QuickTips</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in MacNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/MacNotes/">MacNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/AppleScripts">AppleScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/HomeBrew">HomeBrew</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/JavaOnMac">JavaOnMac</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/QuickScripts">QuickScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ShortCuts">ShortCuts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/UsersAndGroups">UsersAndGroups</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/Utilities">Utilities</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ZSH">ZSH</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Micronotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Micronotes/">Micronotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/AWS">AWS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Configuration">Configuration</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/DataBaseStuff">DataBaseStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/EnviromentStuff">EnviromentStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/GRAALVM">GRAALVM</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Gradle">Gradle</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Jackson">Jackson</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/MicroStream">MicroStream</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Resources">Resources</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Testing">Testing</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/UsefuleSnippets">UsefuleSnippets</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/cli_gradlew">cli_gradlew</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/Obsidian/Obsidian">Obsidian</a>
+      <li class="nav-list-item"><a class="nav-list-link" href="/RandomNuggetsOfKnowledge">RandomNuggetsOfKnowledge</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in SQLNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/SQLNotes/">SQLNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Docker">Docker</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Functions">Functions</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/HQL">HQL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Liquibase">Liquibase</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Queries">Queries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/SQLCheatSheet">SQLCheatSheet</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/TerminalCommands">Terminal-Commands</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in SpringNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/SpringNotes/">SpringNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Hibernate">Hibernate</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Maven">Maven</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Properties">Properties</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Security">Security</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Serialization">Serialization</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Testing">Testing</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/TidBits">TidBits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Transactions">Transactions</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/SystemDesign&Architecture/">SystemDesign&Architecture</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in TestingFrameworks category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/TestingFrameworks/">TestingFrameworks</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JUnit">JUnit</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JavascriptTesting">Javascript</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Spock">Spock</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Testcontainers">Testcontainers</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Thymeleaf category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Thymeleaf/">Thymeleaf</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Thymeleaf/Fragments">Fragments</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Windows_Notes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Windows_Notes/">Windows_Notes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/CMD">CMD</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Environment">Environment</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/PackageManagers">PackageManagers</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Powershell">Powershell</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Run">Run</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Shortcuts">Shortcuts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Terminal">Terminal</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WSL">WSL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WindowsServer">WindowsServer</a>
+        </ul>
+    </ul>
+  </nav>
+  <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
+</div>
+<div class="main" id="top">
+  <div class="main-header" id="main-header">
+    <div class="search" role="search">
+      <div class="search-input-wrap"><input aria-label="Search Paxton's Notes"
+                                            autocomplete="off"
+                                            class="search-input"
+                                            id="search-input"
+                                            placeholder="Search Paxton's Notes"
+                                            tabindex="0"
+                                            type="text"> <label class="search-label" for="search-input">
+        <svg class="search-icon" viewBox="0 0 24 24">
+          <use xlink:href="#svg-search"></use>
+        </svg>
+      </label></div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+    <nav aria-label="Auxiliary" class="aux-nav">
+      <ul class="aux-nav-list">
+        <li class="aux-nav-list-item"><a class="site-button" href="https://github.com/14paxton/14paxton.github.io" rel="noopener noreferrer" target="_blank"> Template
+                                                                                                                                                              Repository </a>
+      </ul>
+    </nav>
+  </div>
+  <div class="main-content-wrap">
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol class="breadcrumb-nav-list">
+        <li class="breadcrumb-nav-list-item"><a href="/MacNotes/">MacNotes</a>
+        <li class="breadcrumb-nav-list-item"><span>AppleScripts</span>
+      </ol>
+    </nav>
+    <div class="main-content" id="main-content">
+      <main><p><br/></p>
+        <details>
+          <summary class="text-delta"> Table of contents</summary>
+          <ol id="markdown-toc">
+            <li><a href="#quickscripts" id="markdown-toc-quickscripts">QuickScripts</a>
+              <ol>
+                <li><a href="#hold-key-for-2-seconds" id="markdown-toc-hold-key-for-2-seconds">Hold Key for 2 Seconds</a>
+                <li><a href="#move-mouse" id="markdown-toc-move-mouse">Move Mouse</a>
+                <li><a href="#using-key-codes-and-normal-applescripting-to-select-the-music-library-and-then-put-focus-on-the-search-field"
+                       id="markdown-toc-using-key-codes-and-normal-applescripting-to-select-the-music-library-and-then-put-focus-on-the-search-field">using key codes and “normal”
+                                                                                                                                                      AppleScripting to select the
+                                                                                                                                                      Music library and then put
+                                                                                                                                                      focus on the Search field:</a>
+                  <ol>
+                    <li><a href="#a-similar-version-that-searches-using-a-string-in-the-clipboard"
+                           id="markdown-toc-a-similar-version-that-searches-using-a-string-in-the-clipboard">A similar version that searches using a string in the clipboard:</a>
+                  </ol>
+                <li><a href="#select-all-tracks-in-the-selected-playlist-and-make-a-new-untitled-playlist-from-them"
+                       id="markdown-toc-select-all-tracks-in-the-selected-playlist-and-make-a-new-untitled-playlist-from-them">Select all tracks in the selected playlist and make a
+                                                                                                                               new “untitled” playlist from them:</a>
+                <li><a href="#select-all-tracks-of-front-playlist---command-a" id="markdown-toc-select-all-tracks-of-front-playlist---command-a">select all tracks of front playlist
+                                                                                                                                                 - Command-A</a>
+                <li><a href="#toggle-browse-mode---command-b" id="markdown-toc-toggle-browse-mode---command-b">toggle browse mode - Command-B</a>
+                <li><a href="#copy-selection-or-whatever---command-c" id="markdown-toc-copy-selection-or-whatever---command-c">copy selection (or whatever) - Command-C</a>
+                <li><a href="#toggle-right-sidebar---shift-command-g" id="markdown-toc-toggle-right-sidebar---shift-command-g">toggle Right Sidebar - Shift-Command-G</a>
+                <li><a href="#get-info-for-selected-tracks---command-i" id="markdown-toc-get-info-for-selected-tracks---command-i">Get Info for selected track(s) - Command-I</a>
+                <li><a href="#open-view-options-window---command-j" id="markdown-toc-open-view-options-window---command-j">open View options window - Command-J</a>
+                <li><a href="#select-current-track---command-l" id="markdown-toc-select-current-track---command-l">select current track - Command-L</a>
+                <li><a href="#show-file-of-selected---shift-command-r" id="markdown-toc-show-file-of-selected---shift-command-r">Show File of selected - Shift-Command-R</a>
+                <li><a href="#toggle-zoom-of-main-browser---control-command-z" id="markdown-toc-toggle-zoom-of-main-browser---control-command-z">toggle Zoom of Main Browser -
+                                                                                                                                                 Control-Command-Z</a>
+                <li><a href="#close-a-window-with-cancel---escape-key" id="markdown-toc-close-a-window-with-cancel---escape-key">Close a window with “Cancel” - Escape key</a>
+                <li><a href="#delete-the-selected-playlist-from-your-source-list-without-confirming-that-you-want-to-delete-it---command-delete"
+                       id="markdown-toc-delete-the-selected-playlist-from-your-source-list-without-confirming-that-you-want-to-delete-it---command-delete">Delete the selected
+                                                                                                                                                           playlist from your Source
+                                                                                                                                                           list without confirming
+                                                                                                                                                           that you want to delete
+                                                                                                                                                           it - Command-Delete</a>
+                  <ol>
+                    <li><a href="#delete-the-selected-playlist-and-all-the-songs-it-contains-from-your-library"
+                           id="markdown-toc-delete-the-selected-playlist-and-all-the-songs-it-contains-from-your-library">Delete the selected playlist and all the songs it contains
+                                                                                                                          from your library</a>
+                    <li><a href="#delete-the-selected-song-from-your-library-and-all-playlists" id="markdown-toc-delete-the-selected-song-from-your-library-and-all-playlists">Delete
+                                                                                                                                                                               the
+                                                                                                                                                                               selected
+                                                                                                                                                                               song
+                                                                                                                                                                               from
+                                                                                                                                                                               your
+                                                                                                                                                                               library
+                                                                                                                                                                               and
+                                                                                                                                                                               all
+                                                                                                                                                                               playlists</a>
+                    <li><a href="#option-delete" id="markdown-toc-option-delete">Option-Delete</a>
+                    <li><a href="#select-the-search-field---command-option-f" id="markdown-toc-select-the-search-field---command-option-f">Select the search field -
+                                                                                                                                           Command-Option-F</a>
+                  </ol>
+                <li><a href="#playlist-and-folder" id="markdown-toc-playlist-and-folder">playlist and folder</a>
+                  <ol>
+                    <li><a href="#new-playlist---command-n" id="markdown-toc-new-playlist---command-n">new playlist - Command-N</a>
+                    <li><a href="#new-playlist-from-selection---command-shift-n" id="markdown-toc-new-playlist-from-selection---command-shift-n">new playlist from selection -
+                                                                                                                                                 Command-Shift-N</a>
+                    <li><a href="#new-smart-playlist---command-option-n" id="markdown-toc-new-smart-playlist---command-option-n">new Smart Playlist - Command-Option-N</a>
+                    <li><a href="#new-playlist-folder---command-option-shift-n" id="markdown-toc-new-playlist-folder---command-option-shift-n">new Playlist Folder -
+                                                                                                                                               Command-Option-Shift-N</a>
+                  </ol>
+                <li><a href="#toggle-showhide-main-browser-window---command-1" id="markdown-toc-toggle-showhide-main-browser-window---command-1">toggle Show/Hide Main Browser
+                                                                                                                                                 window - Command-1</a>
+                <li><a href="#toggle-showhide-equalizer-window---command-2" id="markdown-toc-toggle-showhide-equalizer-window---command-2">toggle Show/Hide Equalizer window -
+                                                                                                                                           Command-2</a>
+              </ol>
+            <li><a href="#system-events-key-code-and-keystroke" id="markdown-toc-system-events-key-code-and-keystroke">System Events, Key Code and Keystroke</a>
+              <ol>
+                <li><a href="#setting-up-system-preferences" id="markdown-toc-setting-up-system-preferences">Setting Up System Preferences</a>
+                <li><a href="#applescript-implementation" id="markdown-toc-applescript-implementation">AppleScript Implementation</a>
+                  <ol>
+                    <li>
+                      <a href="#you-can-include-multiple-helper-keys-by-setting-the-using-parameter-to-a-list-the-following-scripts-each-open-the-itunes-store-in-the-itunes-browser-command-shift-h-first-with-a-keystroke-command-and-then-with-the-key-code-command-note-the-list-stuff-in--brackets-following-using"
+                         id="markdown-toc-you-can-include-multiple-helper-keys-by-setting-the-using-parameter-to-a-list-the-following-scripts-each-open-the-itunes-store-in-the-itunes-browser-command-shift-h-first-with-a-keystroke-command-and-then-with-the-key-code-command-note-the-list-stuff-in--brackets-following-using">You
+                                                                                                                                                                                                                                                                                                                                   can
+                                                                                                                                                                                                                                                                                                                                   include
+                                                                                                                                                                                                                                                                                                                                   multiple
+                                                                                                                                                                                                                                                                                                                                   helper
+                                                                                                                                                                                                                                                                                                                                   keys
+                                                                                                                                                                                                                                                                                                                                   by
+                                                                                                                                                                                                                                                                                                                                   setting
+                                                                                                                                                                                                                                                                                                                                   the
+                                                                                                                                                                                                                                                                                                                                   using
+                                                                                                                                                                                                                                                                                                                                   parameter
+                                                                                                                                                                                                                                                                                                                                   to
+                                                                                                                                                                                                                                                                                                                                   a
+                                                                                                                                                                                                                                                                                                                                   list.
+                                                                                                                                                                                                                                                                                                                                   The
+                                                                                                                                                                                                                                                                                                                                   following
+                                                                                                                                                                                                                                                                                                                                   scripts
+                                                                                                                                                                                                                                                                                                                                   each
+                                                                                                                                                                                                                                                                                                                                   open
+                                                                                                                                                                                                                                                                                                                                   the
+                                                                                                                                                                                                                                                                                                                                   iTunes
+                                                                                                                                                                                                                                                                                                                                   Store
+                                                                                                                                                                                                                                                                                                                                   in
+                                                                                                                                                                                                                                                                                                                                   the
+                                                                                                                                                                                                                                                                                                                                   iTunes
+                                                                                                                                                                                                                                                                                                                                   browser
+                                                                                                                                                                                                                                                                                                                                   (Command-Shift-H),
+                                                                                                                                                                                                                                                                                                                                   first
+                                                                                                                                                                                                                                                                                                                                   with
+                                                                                                                                                                                                                                                                                                                                   a
+                                                                                                                                                                                                                                                                                                                                   keystroke
+                                                                                                                                                                                                                                                                                                                                   command
+                                                                                                                                                                                                                                                                                                                                   and
+                                                                                                                                                                                                                                                                                                                                   then
+                                                                                                                                                                                                                                                                                                                                   with
+                                                                                                                                                                                                                                                                                                                                   the
+                                                                                                                                                                                                                                                                                                                                   key
+                                                                                                                                                                                                                                                                                                                                   code
+                                                                                                                                                                                                                                                                                                                                   command.
+                                                                                                                                                                                                                                                                                                                                   Note
+                                                                                                                                                                                                                                                                                                                                   the
+                                                                                                                                                                                                                                                                                                                                   list
+                                                                                                                                                                                                                                                                                                                                   (stuff
+                                                                                                                                                                                                                                                                                                                                   in
+                                                                                                                                                                                                                                                                                                                                   {}
+                                                                                                                                                                                                                                                                                                                                   brackets)
+                                                                                                                                                                                                                                                                                                                                   following
+                                                                                                                                                                                                                                                                                                                                   using:</a>
+                  </ol>
+              </ol>
+            <li><a href="#keycodes" id="markdown-toc-keycodes">KeyCodes</a>
+              <ol>
+                <li><a href="#how-to-get-key-codes" id="markdown-toc-how-to-get-key-codes">How to Get Key Codes</a>
+                <li><a href="#sendkeys" id="markdown-toc-sendkeys">SendKeys</a>
+                <li><a href="#move-mouse-with-key-codes" id="markdown-toc-move-mouse-with-key-codes">Move Mouse With Key Codes</a>
+              </ol>
+            <li><a href="#references" id="markdown-toc-references">References</a>
+              <ol>
+                <li><a href="#complete-list-of-keycodes" id="markdown-toc-complete-list-of-keycodes">Complete List Of KeyCodes</a>
+                <li><a href="#mouse-movement-codes" id="markdown-toc-mouse-movement-codes">Mouse Movement Codes</a>
+              </ol>
+          </ol>
+        </details>
+        <p><br/></p>
+        <hr/>
+        <p><br/></p>
+        <h1 id="quickscripts"><a aria-labelledby="quickscripts" class="anchor-heading" href="#quickscripts">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> QuickScripts
+        </h1>
+        <h2 id="hold-key-for-2-seconds"><a aria-labelledby="hold-key-for-2-seconds" class="anchor-heading" href="#hold-key-for-2-seconds">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Hold Key for 2 Seconds
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>repeat 100 <span class="nb">times
+    </span>tell application <span class="s2">"System Events"</span>
+        key down <span class="o">{</span><span class="nb">command</span><span class="o">}</span>
+        key down <span class="s2">"w"</span>
+        delay <span class="o">(</span>random number from 0.5 to 3<span class="o">)</span>
+        key up <span class="s2">"w"</span>
+
+        key down <span class="s2">"s"</span>
+        delay <span class="o">(</span>random number from 3 to 4<span class="o">)</span>
+        key up <span class="s2">"s"</span>
+        key up <span class="o">{</span><span class="nb">command</span><span class="o">}</span>
+    end tell
+end repeat
+</code></pre>
+          </div>
+        </div>
+        <h2 id="move-mouse"><a aria-labelledby="move-mouse" class="anchor-heading" href="#move-mouse">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Move Mouse
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="o">(</span><span class="k">*</span>tell application <span class="s2">"System Events"</span>
+	key code 83
+	delay 1
+	key code 88
+	delay 1
+	key up 88
+end tell<span class="k">*</span><span class="o">)</span>
+</code></pre>
+          </div>
+        </div>
+        <h2 id="using-key-codes-and-normal-applescripting-to-select-the-music-library-and-then-put-focus-on-the-search-field">
+          <a aria-labelledby="using-key-codes-and-normal-applescripting-to-select-the-music-library-and-then-put-focus-on-the-search-field"
+             class="anchor-heading"
+             href="#using-key-codes-and-normal-applescripting-to-select-the-music-library-and-then-put-focus-on-the-search-field">
+            <svg aria-hidden="true" viewBox="0 0 16 16">
+              <use xlink:href="#svg-link"></use>
+            </svg>
+          </a> using key codes and “normal” AppleScripting to select the Music library and then put focus on the Search field:
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"iTunes"</span>
+activate
+<span class="nt">--</span> <span class="k">select </span>the Music library
+reveal <span class="o">(</span>some playlist whose special kind is Music<span class="o">)</span>
+end tell
+tell application <span class="s2">"System Events"</span>
+<span class="nt">--</span> bring focus to Search box - Command-Option-F
+key code 3 using <span class="o">{</span><span class="nb">command </span>down, option down<span class="o">}</span>
+end tell
+
+</code></pre>
+          </div>
+        </div>
+        <h3 id="a-similar-version-that-searches-using-a-string-in-the-clipboard"><a aria-labelledby="a-similar-version-that-searches-using-a-string-in-the-clipboard"
+                                                                                    class="anchor-heading"
+                                                                                    href="#a-similar-version-that-searches-using-a-string-in-the-clipboard">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> A similar version that searches using a string in the clipboard:
+        </h3>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"iTunes"</span>
+activate
+reveal <span class="o">(</span>some playlist whose special kind is Music<span class="o">)</span>
+end tell
+tell application <span class="s2">"System Events"</span>
+<span class="nt">--</span> bring focus to Search box - Command-Option-F
+key code 3 using <span class="o">{</span><span class="nb">command </span>down, option down<span class="o">}</span>
+<span class="nt">--</span> <span class="nb">paste </span>the clipboard - Command-V
+key code 9 using <span class="nb">command </span>down
+end tell
+
+
+</code></pre>
+          </div>
+        </div>
+        <h2 id="select-all-tracks-in-the-selected-playlist-and-make-a-new-untitled-playlist-from-them">
+          <a aria-labelledby="select-all-tracks-in-the-selected-playlist-and-make-a-new-untitled-playlist-from-them"
+             class="anchor-heading"
+             href="#select-all-tracks-in-the-selected-playlist-and-make-a-new-untitled-playlist-from-them">
+            <svg aria-hidden="true" viewBox="0 0 16 16">
+              <use xlink:href="#svg-link"></use>
+            </svg>
+          </a> Select all tracks in the selected playlist and make a new “untitled” playlist from them:
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"iTunes"</span>
+activate
+end tell
+tell application <span class="s2">"System Events"</span>
+<span class="nt">--</span> <span class="k">select </span>all tracks - Command-A
+key code 0 using <span class="nb">command </span>down
+<span class="nt">--new</span> playlist from selection- Command-Shift-N
+key code 45 using <span class="o">{</span><span class="nb">command </span>down, <span class="nb">shift </span>down<span class="o">}</span>
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h2 id="select-all-tracks-of-front-playlist---command-a"><a aria-labelledby="select-all-tracks-of-front-playlist---command-a"
+                                                                    class="anchor-heading"
+                                                                    href="#select-all-tracks-of-front-playlist---command-a">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> select all tracks of front playlist - Command-A
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 0 using <span class="nb">command </span>down
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h2 id="toggle-browse-mode---command-b"><a aria-labelledby="toggle-browse-mode---command-b" class="anchor-heading" href="#toggle-browse-mode---command-b">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> toggle browse mode - Command-B
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 11 using <span class="nb">command </span>down
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h2 id="copy-selection-or-whatever---command-c"><a aria-labelledby="copy-selection-or-whatever---command-c"
+                                                           class="anchor-heading"
+                                                           href="#copy-selection-or-whatever---command-c">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> copy selection (or whatever) - Command-C
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 8 using <span class="nb">command </span>down
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h2 id="toggle-right-sidebar---shift-command-g"><a aria-labelledby="toggle-right-sidebar---shift-command-g"
+                                                           class="anchor-heading"
+                                                           href="#toggle-right-sidebar---shift-command-g">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> toggle Right Sidebar - Shift-Command-G
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 5 using <span class="o">{</span><span class="nb">command </span>down, <span class="nb">shift </span>down<span class="o">}</span>
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h2 id="get-info-for-selected-tracks---command-i"><a aria-labelledby="get-info-for-selected-tracks---command-i"
+                                                             class="anchor-heading"
+                                                             href="#get-info-for-selected-tracks---command-i">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Get Info for selected track(s) - Command-I
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 34 using <span class="nb">command </span>down
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h2 id="open-view-options-window---command-j"><a aria-labelledby="open-view-options-window---command-j" class="anchor-heading" href="#open-view-options-window---command-j">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> open View options window - Command-J
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 38 using <span class="nb">command </span>down
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h2 id="select-current-track---command-l"><a aria-labelledby="select-current-track---command-l" class="anchor-heading" href="#select-current-track---command-l">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> select current track - Command-L
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 37 using <span class="nb">command </span>down
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h2 id="show-file-of-selected---shift-command-r"><a aria-labelledby="show-file-of-selected---shift-command-r"
+                                                            class="anchor-heading"
+                                                            href="#show-file-of-selected---shift-command-r">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Show File of selected - Shift-Command-R
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 15 using <span class="o">{</span><span class="nb">command </span>down, <span class="nb">shift </span>down<span class="o">}</span>
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h2 id="toggle-zoom-of-main-browser---control-command-z"><a aria-labelledby="toggle-zoom-of-main-browser---control-command-z"
+                                                                    class="anchor-heading"
+                                                                    href="#toggle-zoom-of-main-browser---control-command-z">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> toggle Zoom of Main Browser - Control-Command-Z
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 6 using <span class="o">{</span><span class="nb">command </span>down, control down<span class="o">}</span>
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h2 id="close-a-window-with-cancel---escape-key"><a aria-labelledby="close-a-window-with-cancel---escape-key"
+                                                            class="anchor-heading"
+                                                            href="#close-a-window-with-cancel---escape-key">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Close a window with “Cancel” - Escape key
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 53
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h2 id="delete-the-selected-playlist-from-your-source-list-without-confirming-that-you-want-to-delete-it---command-delete">
+          <a aria-labelledby="delete-the-selected-playlist-from-your-source-list-without-confirming-that-you-want-to-delete-it---command-delete"
+             class="anchor-heading"
+             href="#delete-the-selected-playlist-from-your-source-list-without-confirming-that-you-want-to-delete-it---command-delete">
+            <svg aria-hidden="true" viewBox="0 0 16 16">
+              <use xlink:href="#svg-link"></use>
+            </svg>
+          </a> Delete the selected playlist from your Source list without confirming that you want to delete it - Command-Delete
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 51 using <span class="nb">command </span>down
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h3 id="delete-the-selected-playlist-and-all-the-songs-it-contains-from-your-library">
+          <a aria-labelledby="delete-the-selected-playlist-and-all-the-songs-it-contains-from-your-library"
+             class="anchor-heading"
+             href="#delete-the-selected-playlist-and-all-the-songs-it-contains-from-your-library">
+            <svg aria-hidden="true" viewBox="0 0 16 16">
+              <use xlink:href="#svg-link"></use>
+            </svg>
+          </a> Delete the selected playlist and all the songs it contains from your library
+        </h3>
+        <blockquote><p>OR</p></blockquote>
+        <h3 id="delete-the-selected-song-from-your-library-and-all-playlists"><a aria-labelledby="delete-the-selected-song-from-your-library-and-all-playlists"
+                                                                                 class="anchor-heading"
+                                                                                 href="#delete-the-selected-song-from-your-library-and-all-playlists">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Delete the selected song from your library and all playlists
+        </h3>
+        <h3 id="option-delete"><a aria-labelledby="option-delete" class="anchor-heading" href="#option-delete">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Option-Delete
+        </h3>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 51 using option down
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h3 id="select-the-search-field---command-option-f"><a aria-labelledby="select-the-search-field---command-option-f"
+                                                               class="anchor-heading"
+                                                               href="#select-the-search-field---command-option-f">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Select the search field - Command-Option-F
+        </h3>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 3 using <span class="o">{</span><span class="nb">command </span>down, option down<span class="o">}</span>
+<span class="nt">--</span> and optionally, <span class="nb">paste </span>the clipboard - Command-V
+
+	<span class="nt">--</span> key code 9 using <span class="nb">command </span>down
+
+end tell
+
+</code></pre>
+          </div>
+        </div>
+        <h2 id="playlist-and-folder"><a aria-labelledby="playlist-and-folder" class="anchor-heading" href="#playlist-and-folder">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> playlist and folder
+        </h2>
+        <h3 id="new-playlist---command-n"><a aria-labelledby="new-playlist---command-n" class="anchor-heading" href="#new-playlist---command-n">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> new playlist - Command-N
+        </h3>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 45 using <span class="o">{</span><span class="nb">command </span>down, <span class="nb">shift </span>down<span class="o">}</span>
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h3 id="new-playlist-from-selection---command-shift-n"><a aria-labelledby="new-playlist-from-selection---command-shift-n"
+                                                                  class="anchor-heading"
+                                                                  href="#new-playlist-from-selection---command-shift-n">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> new playlist from selection - Command-Shift-N
+        </h3>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 45 using <span class="o">{</span><span class="nb">command </span>down, <span class="nb">shift </span>down<span class="o">}</span>
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h3 id="new-smart-playlist---command-option-n"><a aria-labelledby="new-smart-playlist---command-option-n"
+                                                          class="anchor-heading"
+                                                          href="#new-smart-playlist---command-option-n">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> new Smart Playlist - Command-Option-N
+        </h3>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 45 using <span class="o">{</span><span class="nb">command </span>down, option down<span class="o">}</span>
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h3 id="new-playlist-folder---command-option-shift-n"><a aria-labelledby="new-playlist-folder---command-option-shift-n"
+                                                                 class="anchor-heading"
+                                                                 href="#new-playlist-folder---command-option-shift-n">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> new Playlist Folder - Command-Option-Shift-N
+        </h3>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 45 using <span class="o">{</span><span class="nb">command </span>down, option down, <span class="nb">shift </span>down<span class="o">}</span>
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h2 id="toggle-showhide-main-browser-window---command-1"><a aria-labelledby="toggle-showhide-main-browser-window---command-1"
+                                                                    class="anchor-heading"
+                                                                    href="#toggle-showhide-main-browser-window---command-1">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> toggle Show/Hide Main Browser window - Command-1
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 18 using <span class="nb">command </span>down
+end tell
+</code></pre>
+          </div>
+        </div>
+        <h2 id="toggle-showhide-equalizer-window---command-2"><a aria-labelledby="toggle-showhide-equalizer-window---command-2"
+                                                                 class="anchor-heading"
+                                                                 href="#toggle-showhide-equalizer-window---command-2">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> toggle Show/Hide Equalizer window - Command-2
+        </h2>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 19 using <span class="nb">command </span>down
+end tell
+</code></pre>
+          </div>
+        </div>
+        <hr/>
+        <h1 id="system-events-key-code-and-keystroke"><a aria-labelledby="system-events-key-code-and-keystroke" class="anchor-heading" href="#system-events-key-code-and-keystroke">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> System Events, Key Code and Keystroke
+        </h1>
+        <h2 id="setting-up-system-preferences"><a aria-labelledby="setting-up-system-preferences" class="anchor-heading" href="#setting-up-system-preferences">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Setting Up System Preferences
+        </h2>
+        <p>In order for the “System Events” application to use the key code or keystroke commands, you have to enable the macOS accessibility frameworks in<br/> System Preferences.
+        </p><p>Mavericks and later. Access must now be set on a per-app basis. See this Apple support document for details.</p><p>Pre-OS X 10.9/Mavericks operating systems: Click
+                                                                                                                                  on the “Accessibility” pane (formerly “Universal
+                                                                                                                                  Access”) in “System Preferences”. At the bottom
+                                                                                                                                  left<br/> of the pane is a checkbox setting called
+                                                                                                                                  “Enable access for assistive devices”. Click on
+                                                                                                                                  the checkbox so the setting is enabled. Close out
+                                                                                                                                  of System<br/> Preferences.</p>
+        <h2 id="applescript-implementation"><a aria-labelledby="applescript-implementation" class="anchor-heading" href="#applescript-implementation">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> AppleScript Implementation
+        </h2>
+        <p>“System Events” will send a key code or a keystroke to the frontmost application. So, you have to make sure that iTunes is frontmost—activate it, in<br/> AppleScript
+           parlance. Here’s an example script that should be self-explanatory. It will select the currently playing iTunes track using the keystroke<br/> command:</p>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"iTunes"</span>
+activate
+<span class="k">if </span>player state is not stopped <span class="k">then
+</span>tell application <span class="s2">"System Events"</span> to keystroke <span class="s2">"l"</span> using <span class="nb">command </span>down
+end <span class="k">if
+</span>end tell
+
+</code></pre>
+          </div>
+        </div>
+        <blockquote><p>I have emulated a key press for “Command-L” (the script makes sure iTunes is not stopped first) by providing the lowercase “l”, the key you would<br/> press
+                       for the actual menu command. The using parameter tells the keystroke command to include a key press of the Command key. Here’s the same action<br/> using the
+                       key code command:</p></blockquote>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"iTunes"</span>
+activate
+<span class="k">if </span>player state is not stopped <span class="k">then
+</span>tell application <span class="s2">"System Events"</span> to key code 37 using <span class="nb">command </span>down
+end <span class="k">if
+</span>end tell
+
+</code></pre>
+          </div>
+        </div>
+        <blockquote><p>In the example above the number 37 refers to the key “l”—lowercase. As with the keystroke command, the using parameter tells the key code command to<br/>
+                       include a key press of the Command key.</p></blockquote>
+        <h3 id="you-can-include-multiple-helper-keys-by-setting-the-using-parameter-to-a-list-the-following-scripts-each-open-the-itunes-store-in-the-itunes-browser-command-shift-h-first-with-a-keystroke-command-and-then-with-the-key-code-command-note-the-list-stuff-in--brackets-following-using">
+          <a aria-labelledby="you-can-include-multiple-helper-keys-by-setting-the-using-parameter-to-a-list-the-following-scripts-each-open-the-itunes-store-in-the-itunes-browser-command-shift-h-first-with-a-keystroke-command-and-then-with-the-key-code-command-note-the-list-stuff-in--brackets-following-using"
+             class="anchor-heading"
+             href="#you-can-include-multiple-helper-keys-by-setting-the-using-parameter-to-a-list-the-following-scripts-each-open-the-itunes-store-in-the-itunes-browser-command-shift-h-first-with-a-keystroke-command-and-then-with-the-key-code-command-note-the-list-stuff-in--brackets-following-using">
+            <svg aria-hidden="true" viewBox="0 0 16 16">
+              <use xlink:href="#svg-link"></use>
+            </svg>
+          </a> You can include multiple helper keys by setting the using parameter to a list. The following scripts each open the iTunes Store in the iTunes browser
+               (Command-Shift-H), first with a keystroke command and then with the key code command. Note the list (stuff in {} brackets) following using:
+        </h3>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+keystroke <span class="s2">"h"</span> using <span class="o">{</span><span class="nb">command </span>down, <span class="nb">shift </span>down<span class="o">}</span>
+end tell
+
+</code></pre>
+          </div>
+        </div>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>tell application <span class="s2">"System Events"</span>
+tell application <span class="s2">"iTunes"</span> to activate
+key code 4 using <span class="o">{</span><span class="nb">command </span>down, <span class="nb">shift </span>down<span class="o">}</span>
+end tell
+
+</code></pre>
+          </div>
+        </div>
+        <blockquote><p>The number 4 refers to the key “h”. (For more info on how to construct a keystroke or key code command, check out the “System Events” sdef via<br/>
+                       AppleScript Editor’s Window &gt; Library.)</p></blockquote>
+        <hr/>
+        <h1 id="keycodes"><a aria-labelledby="keycodes" class="anchor-heading" href="#keycodes">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> KeyCodes
+        </h1>
+        <h2 id="how-to-get-key-codes"><a aria-labelledby="how-to-get-key-codes" class="anchor-heading" href="#how-to-get-key-codes">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> How to Get Key Codes
+        </h2>
+        <p>Using the keystroke command is fairly straight forward: just use the key’s character as a string. To get the key code number for a key<br/> press,
+          <a href="https://manytricks.com/keycodes/">Get KeyCodes Util </a></p>
+        <h2 id="sendkeys"><a aria-labelledby="sendkeys" class="anchor-heading" href="#sendkeys">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> SendKeys
+        </h2>
+        <blockquote><p>From the AppleScript System Events dictionary:</p></blockquote>
+        <p><code class="language-plaintext highlighter-rouge">key code integer or list of integer : The key code(s) to be sent. May be a list.</code></p><p>
+          <code class="language-plaintext highlighter-rouge">[using command down/‌control down/‌option down/‌shift down or list of command down/‌control down/‌option down/‌shift
+                                                             down] : modifiers with which the key codes are to be entered</code></p><p>
+          <code class="language-plaintext highlighter-rouge">keystroke text : The keystrokes to be sent.</code></p><p><code class="language-plaintext highlighter-rouge">[using as
+                                                                                                                                                                         above]</code>
+        </p>
+        <ul>
+          <li>Some examples illustrating their use:
+        </ul>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>
+tell application <span class="s2">"System Events"</span>
+key code 124 using <span class="o">{</span><span class="nb">shift </span>down, <span class="nb">command </span>down<span class="o">}</span> <span class="nt">--</span><span class="o">&gt;</span> Right arrow
+key code 8 using <span class="nb">command </span>down <span class="nt">--</span><span class="o">&gt;</span> ⌘-C
+key code <span class="o">{</span>4, 14, 37, 37, 31, 47<span class="o">}</span> <span class="nt">--</span><span class="o">&gt;</span> H, e, l, l, o, <span class="nb">.</span>
+
+    keystroke <span class="s2">"v"</span> using <span class="nb">command </span>down <span class="nt">--</span><span class="o">&gt;</span> ⌘-V
+    keystroke <span class="s2">"Hello."</span> <span class="nt">--</span><span class="o">&gt;</span> H, e, l, l, o, <span class="nb">.</span>
+end tell
+
+</code></pre>
+          </div>
+        </div>
+        <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #8a6d3b;; background-color: #fcf8e3; border-color: #faebcc;">
+          (Note: I stylised ⌘-C and ⌘-V with their uppercase representations, but these indicate Cmd+C or V, respectively, without use of the Shift key.)
+        </div>
+        <p><code class="language-plaintext highlighter-rouge">keystroke can also accept the AppleScript constants tab, space return, and quote.</code></p><p>
+          <code class="language-plaintext highlighter-rouge">The target is always the application window that has focus, so it’s important to set the focus to the desired
+                                                             application before issuing these commands (e.g. tell application "Finder" to activate).</code></p>
+        <h2 id="move-mouse-with-key-codes"><a aria-labelledby="move-mouse-with-key-codes" class="anchor-heading" href="#move-mouse-with-key-codes">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Move Mouse With Key Codes
+        </h2>
+        <p>Now, there is not a direct command in applescript to control the mouse but there is a way to emulate keystrokes.</p><p>Universal Access allows you to use the number pad
+                                                                                                                                  in place of a mouse</p><p>By enabling universal
+                                                                                                                                                            accessibility we can use
+                                                                                                                                                            key strokes to move the
+                                                                                                                                                            mouse.</p><p>To enable
+                                                                                                                                                                         universal
+                                                                                                                                                                         accessibility:</p>
+        <ol>
+          <li>open up your system preferences, and go to “Universal Access.”
+          <li>go to “Mouse &amp; Trackpad.”
+          <li>turn on Mouse Keys.
+        </ol>
+        <p>Mouse keys allow you to use the number pad of the keyboard in place of a mouse.<br/> Numpad 5 is click, and the surrounding numbers correspond to direction (2 down, 6
+           right, 3 down-right, and so on)</p><p>Once Mouse Keys are enabled, in applescript we can say<br/> <code class="language-plaintext highlighter-rouge">tell application
+                                                                                                                                                                "System Events" to
+                                                                                                                                                                key code
+                                                                                                                                                                ##</code><br/> with
+          <code class="language-plaintext highlighter-rouge">##</code> being replaced with the corresponding integer value of the key code and it will move the cursor roughly 1
+                                                 pixel in that direction.</p>
+        <h1 id="references"><a aria-labelledby="references" class="anchor-heading" href="#references">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> References
+        </h1>
+        <h2 id="complete-list-of-keycodes"><a aria-labelledby="complete-list-of-keycodes" class="anchor-heading" href="#complete-list-of-keycodes">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://eastmanreference.com/complete-list-of-applescript-key-codes">Complete List Of KeyCodes</a></h2>
+        <h2 id="mouse-movement-codes"><a aria-labelledby="mouse-movement-codes" class="anchor-heading" href="#mouse-movement-codes">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://support.apple.com/guide/mac-help/control-the-pointer-using-mouse-keys-mh27469/mac">Mouse Movement Codes</a></h2>
+      </main>
+      <hr>
+      <footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"></p>
+        <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"><a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./MacNotes/AppleScripts.md"
+                                                                                id="edit-this-page">Edit this page on GitHub</a></p></div>
+      </footer>
+    </div>
+  </div>
+  <button aria-label="Focus on search" class="search-button btn-reset" id="search-button">
+    <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+      <use xlink:href="#svg-search"></use>
+    </svg>
+  </button>
+  <div class="search-overlay"></div>
+</div>

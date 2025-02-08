@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <link href="/assets/css/just-the-docs-default.css" rel="stylesheet">
+  <link href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet" rel="stylesheet">
+  <style id="jtd-nav-activation"> .site-nav > ul.nav-list:first-child > li > a, .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(3)) > a, .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+    background-image: none;
+  }
+
+  .site-nav > ul.nav-list:not(:first-child) a, .site-nav li.external a {
+    background-image: none;
+  }
+
+  .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > a {
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg, .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > button svg {
+    transform: rotate(-90deg);
+  }
+
+  .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list, .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list {
+    display: block;
+  }</style>
+  <script src="/assets/js/vendor/lunr.min.js"></script>
+  <script src="/assets/js/just-the-docs.js"></script>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Controllers | Paxton’s Notes</title>
+  <meta content="Jekyll v4.4.0" name="generator"/>
+  <meta content="Controllers" property="og:title"/>
+  <meta content="en_US" property="og:locale"/>
+  <meta content="Coding Notes" name="description"/>
+  <meta content="Coding Notes" property="og:description"/>
+  <link href="http://localhost:4000/DotNetNotes/Controllers" rel="canonical"/>
+  <meta content="http://localhost:4000/DotNetNotes/Controllers" property="og:url"/>
+  <meta content="Paxton’s Notes" property="og:site_name"/>
+  <meta content="website" property="og:type"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="Controllers" property="twitter:title"/>
+  <script type="application/ld+json"> {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "description": "Coding Notes",
+    "headline": "Controllers",
+    "url": "http://localhost:4000/DotNetNotes/Controllers"
+  }
+  </script>
+<body><a class="skip-to-main" href="#main-content">Skip to main content</a>
+<svg class="d-none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="svg-link" viewBox="0 0 24 24"><title>Link</title>
+    <svg class="feather feather-link"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24"><title>Menu</title>
+    <svg class="feather feather-menu"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <line x1="3" x2="21" y1="12" y2="12"></line>
+      <line x1="3" x2="21" y1="6" y2="6"></line>
+      <line x1="3" x2="21" y1="18" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24"><title>Expand</title>
+    <svg class="feather feather-chevron-right"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol class="feather feather-external-link"
+          fill="none"
+          height="24"
+          id="svg-external-link"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"><title id="svg-external-link-title">(external link)</title>
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+    <polyline points="15 3 21 3 21 9"></polyline>
+    <line x1="10" x2="21" y1="14" y2="3"></line>
+  </symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24"><title>Document</title>
+    <svg class="feather feather-file"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+      <polyline points="13 2 13 9 20 9"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-search" viewBox="0 0 24 24"><title>Search</title>
+    <svg class="feather feather-search"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-copy" viewBox="0 0 16 16"><title>Copy</title>
+    <svg class="bi bi-clipboard" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+      <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-copied" viewBox="0 0 16 16"><title>Copied</title>
+    <svg class="bi bi-clipboard-check-fill" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+    </svg>
+  </symbol>
+</svg>
+<div class="side-bar">
+  <div class="site-header" role="banner"><a class="site-title lh-tight" href="/"> Paxton's Notes </a>
+    <button aria-label="Toggle menu" aria-pressed="false" class="site-button btn-reset" id="menu-button">
+      <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+        <use xlink:href="#svg-menu"></use>
+      </svg>
+    </button>
+  </div>
+  <nav aria-label="Main" class="site-nav" id="site-nav">
+    <ul class="nav-list">
+      <li class="nav-list-item">
+        <button aria-label="toggle items in MyPersonalDocsAndStuff category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/index">MyPersonalDocsAndStuff</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/AppsForWorkflow">AppsForWorkflow</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/CloudServices">CloudServices</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/LetterOfRecommendation">LetterOfRecommendation</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PastProjects">PastProjects</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PriorityLearning">PriorityLearning</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in AWS category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/AWS/">AWS</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/AWS/CLI">CLI</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Build category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Build/">Build</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Gradle">Gradle</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Maven">Maven</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in DockerNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/DockerNotes/">DockerNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/ARM64">ARM64</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Basics">Basics</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Dockerfile">Dockerfile</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Install">Install</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Quick-TidBits">Quick-TidBits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/UsefulCommands">UsefulCommands</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in DotNetNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/DotNetNotes/">DotNetNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CLI">CLI</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in CSharp category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/DotNetNotes/Csharp">CSharp</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Email">Email</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Threading">Threading</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Controllers">Controllers</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Database">Database</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/EntityFramework">EntityFramework</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Environment">Environment</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Google">Google</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HTTP">HTTP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HttpRepl">HttpRepl</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/LINQ">LINQ</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Maui">Maui</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Microservice">Microservice.md</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/VisualStudio">VisualStudio</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Git category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Git">Git</a>
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <button aria-label="toggle items in GitHub category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/Git/GitHub">GitHub</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/GitHubPages">GitHubPages</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/Jekyll">Jekyll</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/MarkDown">MarkDown</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Git/QuickScripts">QuickScripts</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GoogleNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GoogleNotes/">GoogleNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/APIs">APIs</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Browser">Browser</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Cloud">Cloud</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ComputeEngine">ComputeEngine</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Deploy">Deploy</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DevTools">DevTools</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DialogFlow">DialogFlow</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Functions">Functions</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Logging">Logging</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ServiceAccounts">ServiceAccounts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Storage">Storage</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/VoiceAgent">VoiceAgent</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GrailsNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GrailsNotes/">GrailsNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/GORM_WhereQueris">GORM_WhereQueris</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLComplexQueries">HQLComplexQueries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLQueries">HQLQueries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/RunningApp">RunningApp</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Security">Security</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Services">Services</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Testing">Testing</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GroovyNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GroovyNotes/">GroovyNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Array-Loop-List-Map">Array-Loop-List-Map</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Async_Parallel-Concurrency">Async_Parallel-Concurrency</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Clever-Tid-bits">Clever-Tid-bits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/DateAndTime">DateAndTime</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Enum">Enum</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/MetaProgramming">MetaProgramming</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/RegEx">RegEx</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/String">String</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in HTML&CSS category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/HTML&CSS/">HTML&CSS</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/CSS">CSS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/HTML">HTML</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/Images">Images</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/HTTP">HTTP</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in IntelliJNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/IntelliJNotes/">IntelliJNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/CustomVM">CustomVM</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/DebuggerConfig">DebuggerConfig</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/HTTPExamples">HTTPExamples</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/Spaces">Spaces</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Java category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/JavaNotes/Java">Java</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Algorithms">Algorithms</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/CommandLineDiddys">CommandLineDiddys</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/DataBase">DataBase</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/File">File</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/GCP">GCP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Hibernate">Hibernate</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/LooseNotes">LooseNotes</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/OOP">OOP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/String">String</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Threads">Threads</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in JavaScript category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/JavaScript/">JavaScript</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Browser">Browser</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CDN">CDN</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CSS">CSS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Clever-Algos">Clever-Algos</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/DateAndTime">DateAndTime</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Document">Document</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Elements">Elements</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Events">Events</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FormStuff">FormStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FunctionObject">FunctionObject</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/HTTP">HTTP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Map">Map</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Modules">Modules</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in Node category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/Node/">Node</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Node/QuickScripts">QuickScripts</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Number">Number</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Object">Object</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/QuerySelector">QuerySelector</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in ReactNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/ReactNotes">ReactNotes</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Clever-Snippets">Clever-Snippets</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Configuring">Configuring</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/HandleEvents">HandleEvents</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/ReactNotes/Hooks">Hooks</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/MUI">MUI</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Mat-Table">Mat-Table</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/React-Router">React-Router</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/ReactHookForm">ReactHookForm</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/String">String</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/WebWorker">WebWorker</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/RegEx">RegEx</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/State">State</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in TypeScript category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/TypeScript/">TypeScript</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Events">Events</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/QuickScripts">QuickScripts</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Types">Types</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/UsefulSnippets">UsefulSnippets</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WebAPI">WebAPI</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Window">Window</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WorkingWithFiles">WorkingWithFiles</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/Kubernetes">Kubernetes</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Linux category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Linux/">Linux</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/ADMIN-ROOT">ADMIN-ROOT</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Conditionals">Conditionals</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Encoding">Encoding</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/JQ">JQ</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/MySQL">MySQL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/PGP">PGP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/QuickScripts">QuickScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/SDKMan">SDKMan</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Scripting">Scripting</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/VIM_QuickTips">VIM_QuickTips</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in MacNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/MacNotes/">MacNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/AppleScripts">AppleScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/HomeBrew">HomeBrew</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/JavaOnMac">JavaOnMac</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/QuickScripts">QuickScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ShortCuts">ShortCuts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/UsersAndGroups">UsersAndGroups</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/Utilities">Utilities</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ZSH">ZSH</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Micronotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Micronotes/">Micronotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/AWS">AWS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Configuration">Configuration</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/DataBaseStuff">DataBaseStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/EnviromentStuff">EnviromentStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/GRAALVM">GRAALVM</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Gradle">Gradle</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Jackson">Jackson</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/MicroStream">MicroStream</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Resources">Resources</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Testing">Testing</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/UsefuleSnippets">UsefuleSnippets</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/cli_gradlew">cli_gradlew</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/Obsidian/Obsidian">Obsidian</a>
+      <li class="nav-list-item"><a class="nav-list-link" href="/RandomNuggetsOfKnowledge">RandomNuggetsOfKnowledge</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in SQLNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/SQLNotes/">SQLNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Docker">Docker</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Functions">Functions</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/HQL">HQL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Liquibase">Liquibase</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Queries">Queries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/SQLCheatSheet">SQLCheatSheet</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/TerminalCommands">Terminal-Commands</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in SpringNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/SpringNotes/">SpringNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Hibernate">Hibernate</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Maven">Maven</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Properties">Properties</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Security">Security</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Serialization">Serialization</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Testing">Testing</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/TidBits">TidBits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Transactions">Transactions</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/SystemDesign&Architecture/">SystemDesign&Architecture</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in TestingFrameworks category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/TestingFrameworks/">TestingFrameworks</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JUnit">JUnit</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JavascriptTesting">Javascript</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Spock">Spock</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Testcontainers">Testcontainers</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Thymeleaf category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Thymeleaf/">Thymeleaf</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Thymeleaf/Fragments">Fragments</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Windows_Notes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Windows_Notes/">Windows_Notes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/CMD">CMD</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Environment">Environment</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/PackageManagers">PackageManagers</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Powershell">Powershell</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Run">Run</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Shortcuts">Shortcuts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Terminal">Terminal</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WSL">WSL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WindowsServer">WindowsServer</a>
+        </ul>
+    </ul>
+  </nav>
+  <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
+</div>
+<div class="main" id="top">
+  <div class="main-header" id="main-header">
+    <div class="search" role="search">
+      <div class="search-input-wrap"><input aria-label="Search Paxton's Notes"
+                                            autocomplete="off"
+                                            class="search-input"
+                                            id="search-input"
+                                            placeholder="Search Paxton's Notes"
+                                            tabindex="0"
+                                            type="text"> <label class="search-label" for="search-input">
+        <svg class="search-icon" viewBox="0 0 24 24">
+          <use xlink:href="#svg-search"></use>
+        </svg>
+      </label></div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+    <nav aria-label="Auxiliary" class="aux-nav">
+      <ul class="aux-nav-list">
+        <li class="aux-nav-list-item"><a class="site-button" href="https://github.com/14paxton/14paxton.github.io" rel="noopener noreferrer" target="_blank"> Template
+                                                                                                                                                              Repository </a>
+      </ul>
+    </nav>
+  </div>
+  <div class="main-content-wrap">
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol class="breadcrumb-nav-list">
+        <li class="breadcrumb-nav-list-item"><a href="/DotNetNotes/">DotNetNotes</a>
+        <li class="breadcrumb-nav-list-item"><span>Controllers</span>
+      </ol>
+    </nav>
+    <div class="main-content" id="main-content">
+      <main><p><br/></p>
+        <details>
+          <summary class="text-delta"> Table of contents</summary>
+          <ol id="markdown-toc">
+            <li><a href="#core" id="markdown-toc-core">Core</a>
+              <ol>
+                <li><a href="#create-controllers" id="markdown-toc-create-controllers">create controllers</a>
+                  <ol>
+                    <li><a href="#controller-return-actions" id="markdown-toc-controller-return-actions">controller return actions</a>
+                  </ol>
+              </ol>
+            <li><a href="#asp" id="markdown-toc-asp">ASP</a>
+              <ol>
+                <li><a href="#samples" id="markdown-toc-samples">Samples</a>
+                <li><a href="#webapi" id="markdown-toc-webapi">WebAPI</a>
+                  <ol>
+                    <li><a href="#context" id="markdown-toc-context">Context</a>
+                      <ol>
+                        <li><a href="#net-core" id="markdown-toc-net-core">.Net Core</a>
+                          <ol>
+                            <li><a href="#http-context-accessor" id="markdown-toc-http-context-accessor">HTTP context accessor</a>
+                          </ol>
+                        <li><a href="#net-framework-4" id="markdown-toc-net-framework-4">.Net Framework 4+</a>
+                          <ol>
+                            <li><a href="#request" id="markdown-toc-request">Request</a>
+                              <ol>
+                                <li><a href="#use-query-string" id="markdown-toc-use-query-string">use query string</a>
+                                <li><a href="#is-authenticated" id="markdown-toc-is-authenticated">is authenticated</a>
+                                <li><a href="#form" id="markdown-toc-form">form</a>
+                                <li><a href="#cookies" id="markdown-toc-cookies">cookies</a>
+                                <li><a href="#server-variables" id="markdown-toc-server-variables">server variables</a>
+                              </ol>
+                          </ol>
+                        <li><a href="#response" id="markdown-toc-response">Response</a>
+                      </ol>
+                  </ol>
+              </ol>
+            <li><a href="#serializedeserialize" id="markdown-toc-serializedeserialize">Serialize/Deserialize</a>
+          </ol>
+        </details>
+        <p><br/></p>
+        <hr/>
+        <p><br/></p>
+        <h1 id="core"><a aria-labelledby="core" class="anchor-heading" href="#core">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Core
+        </h1>
+        <h2 id="create-controllers"><a aria-labelledby="create-controllers" class="anchor-heading" href="#create-controllers">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://learn.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-7.0">create controllers</a></h2>
+        <h3 id="controller-return-actions"><a aria-labelledby="controller-return-actions" class="anchor-heading" href="#controller-return-actions">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://learn.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-7.0">controller return actions</a></h3>
+        <h1 id="asp"><a aria-labelledby="asp" class="anchor-heading" href="#asp">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> ASP
+        </h1>
+        <h2 id="samples"><a aria-labelledby="samples" class="anchor-heading" href="#samples">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://github.com/aspnet/samples/tree/main/samples/aspnet/WebApi">Samples</a></h2>
+        <h2 id="webapi"><a aria-labelledby="webapi" class="anchor-heading" href="#webapi">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://learn.microsoft.com/en-us/aspnet/web-api/">WebAPI</a></h2>
+        <hr/>
+        <h3 id="context"><a aria-labelledby="context" class="anchor-heading" href="#context">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Context
+        </h3>
+        <blockquote><p>HttpContext exists on both the .NET Framework and .NET Core (both of which implement .NET Standard, by the way), but being specific to the Web, it<br/> does
+                       not exist on .NET Standard.</p></blockquote>
+        <blockquote><p>So, you have three options:</p></blockquote>
+        <ol>
+          <li>Target the .NET Framework and use System.Web.HttpContext
+          <li>Target .NET Core and use Microsoft.AspNetCore.Http.HttpContext
+          <li>Move the logic that uses HttpContext away from the .NET Standard project <br/> Do notice, though, that those classes vary greatly.<br/> The .NET Core version was
+              created for ASP.NET Core which is vastly different to ASP.NET 4.5 and olders.
+        </ol>
+        <h4 id="net-core"><a aria-labelledby="net-core" class="anchor-heading" href="#net-core">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> .Net Core
+        </h4>
+        <ul>
+          <li>GCP serverless function example
+        </ul>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Function</span> <span class="p">:</span> <span
+              class="n">IHttpFunction</span> <span class="p">{</span>
+     <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">HandleAsync</span><span class="p">(</span><span class="n">HttpContext</span> <span
+                class="n">context</span><span class="p">){</span>
+        <span class="n">HttpRequest</span> <span class="n">httpRequest</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">Request</span><span
+                class="p">;</span>
+        <span class="n">HttpResponse</span> <span class="n">httpResponse</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">Response</span><span
+                class="p">;</span>
+        <span class="n">WebhookResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="k">new</span> <span class="n">WebhookResponse</span>
+        <span class="p">{</span>
+            <span class="n">FulfillmentResponse</span> <span class="p">=</span> <span class="k">new</span> <span class="n">WebhookResponse</span><span class="p">.</span><span class="n">Types</span><span
+                class="p">.</span><span class="nf">FulfillmentResponse</span><span class="p">()</span>
+        <span class="p">};</span>
+        <span class="k">using</span> <span class="nn">TextReader</span> <span class="n">reader</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StreamReader</span><span
+                class="p">(</span><span class="n">httpRequest</span><span class="p">.</span><span class="n">Body</span><span class="p">);</span>
+        <span class="kt">string</span> <span class="n">text</span> <span class="p">=</span> <span class="k">await</span> <span class="n">reader</span><span class="p">.</span><span
+                class="nf">ReadToEndAsync</span><span class="p">();</span>
+        <span class="n">WebhookRequest</span> <span class="n">webhookRequest</span> <span class="p">=</span> <span class="n">JsonParser</span><span class="p">.</span><span class="n">Default</span><span
+                class="p">.</span><span class="n">Parse</span><span class="p">&lt;</span><span class="n">WebhookRequest</span><span class="p">&gt;(</span><span class="n">text</span><span
+                class="p">);</span>
+        <span class="n">SessionInfo</span> <span class="n">sessionInfo</span> <span class="p">=</span> <span class="n">webhookRequest</span><span class="p">.</span><span class="n">SessionInfo</span><span
+                class="p">;</span>
+        <span class="kt">string</span> <span class="n">tag</span> <span class="p">=</span> <span class="n">webhookRequest</span><span class="p">.</span><span class="n">FulfillmentInfo</span><span
+                class="p">.</span><span class="n">Tag</span><span class="p">;</span>
+        <span class="n">sessionInfo</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="nf">TryGetValue</span><span class="p">(</span><span
+                class="n">key</span><span class="p">:</span> <span class="s">"name"</span><span class="p">,</span> <span class="k">value</span><span class="p">:</span> <span class="k">out</span> <span
+                class="kt">var</span> <span class="n">nameParameterValue</span><span class="p">);</span>
+
+        <span class="cm">/*
+
+        MY CODE
+
+        */</span>
+
+        <span class="kt">var</span> <span class="n">formatter</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">JsonFormatter</span><span class="p">(</span><span
+                class="k">new</span> <span class="n">JsonFormatter</span><span class="p">.</span><span class="nf">Settings</span><span class="p">(</span><span class="k">true</span><span
+                class="p">));</span>
+        <span class="n">httpResponse</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="s">"application/json; charset=UTF-8"</span><span
+                class="p">;</span>
+        <span class="n">httpResponse</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="nf">Append</span><span class="p">(</span><span
+                class="n">key</span><span class="p">:</span> <span class="s">"Access-Control-Allow-Methods"</span><span class="p">,</span> <span class="k">value</span><span class="p">:</span> <span
+                class="s">"GET"</span><span class="p">);</span>
+        <span class="n">httpResponse</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="nf">Append</span><span class="p">(</span><span
+                class="n">key</span><span class="p">:</span> <span class="s">"Access-Control-Allow-Headers"</span><span class="p">,</span> <span class="k">value</span><span class="p">:</span> <span
+                class="s">"Content-Type"</span><span class="p">);</span>
+        <span class="c1">// await httpResponse.WriteAsync(response.ToString());</span>
+        <span class="k">await</span> <span class="n">httpResponse</span><span class="p">.</span><span class="nf">WriteAsync</span><span class="p">(</span><span class="n">formatter</span><span
+                class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="n">response</span><span class="p">));</span>
+        <span class="k">await</span> <span class="n">httpResponse</span><span class="p">.</span><span class="n">Body</span><span class="p">.</span><span class="nf">FlushAsync</span><span
+                class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+          </div>
+        </div>
+        <h5 id="http-context-accessor"><a aria-labelledby="http-context-accessor" class="anchor-heading" href="#http-context-accessor">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> HTTP context accessor
+        </h5>
+        <blockquote><p>you can use the IHttpContextAccessor helper service to get the HTTP context in any class that is managed by the ASP.NET Core dependency injection<br/>
+                       system.<br/> This is useful when you have a common<br/> service that is used by your controllers.</p></blockquote>
+        <ul>
+          <li><p>Request this interface in your constructor:</p>
+            <div class="language-csharp highlighter-rouge">
+              <div class="highlight"><pre class="highlight"><code>    <span class="k">public</span> <span class="nf">MyMiddleware</span><span class="p">(</span><span class="n">IHttpContextAccessor</span> <span
+                  class="n">httpContextAccessor</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_httpContextAccessor</span> <span class="p">=</span> <span class="n">httpContextAccessor</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre>
+              </div>
+            </div>
+          <li><p>You can then access the current HTTP context in a safe way:</p>
+            <pre><code class="language-charp">    var context = _httpContextAccessor.HttpContext;
+    // Do something with the current HTTP context...
+</code></pre>
+          <li><p>IHttpContextAccessor isn’t always added to the service container by default, so register it in ConfigureServices just to be safe:</p>
+            <div class="language-csharp highlighter-rouge">
+              <div class="highlight"><pre class="highlight"><code>    <span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span
+                  class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">services</span><span class="p">.</span><span class="nf">AddHttpContextAccessor</span><span class="p">();</span>
+        <span class="c1">// if &lt; .NET Core 2.2 use this</span>
+        <span class="c1">//services.TryAddSingleton&lt;IHttpContextAccessor, HttpContextAccessor&gt;();</span>
+        <span class="c1">// Other code...</span>
+    <span class="p">}</span>
+</code></pre>
+              </div>
+            </div>
+        </ul>
+        <h4 id="net-framework-4"><a aria-labelledby="net-framework-4" class="anchor-heading" href="#net-framework-4">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://learn.microsoft.com/en-us/dotnet/api/system.web.httpcontext?view=netframework-4.8.1">.Net Framework 4+</a></h4>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="nf">GetRequestBody</span><span
+              class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">bodyStream</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StreamReader</span><span class="p">(</span><span
+                class="n">HttpContext</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span
+                class="n">InputStream</span><span class="p">);</span>
+    <span class="n">bodyStream</span><span class="p">.</span><span class="n">BaseStream</span><span class="p">.</span><span class="nf">Seek</span><span class="p">(</span><span
+                class="m">0</span><span class="p">,</span> <span class="n">SeekOrigin</span><span class="p">.</span><span class="n">Begin</span><span class="p">);</span>
+    <span class="kt">var</span> <span class="n">bodyText</span> <span class="p">=</span> <span class="n">bodyStream</span><span class="p">.</span><span class="nf">ReadToEnd</span><span
+                class="p">();</span>
+    <span class="k">return</span> <span class="n">bodyText</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span
+              class="n">IHttpActionResult</span><span class="p">&gt;</span> <span class="nf">GetSomething</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">rawMessage</span> <span class="p">=</span> <span class="k">await</span> <span class="n">Request</span><span class="p">.</span><span
+                class="n">Content</span><span class="p">.</span><span class="nf">ReadAsStringAsync</span><span class="p">();</span>
+    <span class="c1">// ...</span>
+    <span class="k">return</span> <span class="nf">Ok</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+          </div>
+        </div>
+        <ul>
+          <li>using extention method
+        </ul>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System.IO</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">System.Web.Http</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">ApiControllerExtensions</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="nf">GetRequestBody</span><span class="p">(</span><span class="k">this</span> <span
+                class="n">ApiController</span> <span class="n">controller</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">stream</span> <span class="p">=</span> <span class="k">new</span> <span
+                class="nf">MemoryStream</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">context</span> <span class="p">=</span> <span class="p">(</span><span class="n">HttpContextBase</span><span class="p">)</span><span
+                class="n">controller</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="n">Properties</span><span class="p">[</span><span
+                class="s">"MS_HttpContext"</span><span class="p">];</span>
+                <span class="n">context</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="n">InputStream</span><span class="p">.</span><span
+                class="nf">Seek</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">SeekOrigin</span><span class="p">.</span><span class="n">Begin</span><span
+                class="p">);</span>
+                <span class="n">context</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="n">InputStream</span><span class="p">.</span><span
+                class="nf">CopyTo</span><span class="p">(</span><span class="n">stream</span><span class="p">);</span>
+                <span class="kt">var</span> <span class="n">requestBody</span> <span class="p">=</span> <span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span
+                class="p">.</span><span class="nf">GetString</span><span class="p">(</span><span class="n">stream</span><span class="p">.</span><span class="nf">ToArray</span><span
+                class="p">());</span>
+                <span class="k">return</span> <span class="n">requestBody</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>      <span class="k">public</span> <span class="k">static</span> <span class="k">async</span> <span class="n">Task</span><span
+              class="p">&lt;</span><span class="n">HttpResponseMessage</span><span class="p">&gt;</span> <span class="nf">Run</span><span class="p">([</span><span class="nf">HttpTrigger</span><span
+              class="p">(</span><span class="n">AuthorizationLevel</span><span class="p">.</span><span class="n">Function</span><span class="p">,</span> <span class="s">"get"</span><span
+              class="p">,</span> <span class="s">"post"</span><span class="p">,</span> <span class="n">Route</span> <span class="p">=</span> <span class="s">"HttpTriggerCSharp/name/{name}"</span><span
+              class="p">)]</span><span class="n">HttpRequestMessage</span> <span class="n">req</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span
+              class="p">,</span> <span class="n">TraceWriter</span> <span class="n">log</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">log</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">"C# HTTP trigger function processed a request."</span><span
+                class="p">);</span>
+
+        <span class="kt">dynamic</span> <span class="n">dataArray</span> <span class="p">=</span> <span class="k">await</span> <span class="n">req</span><span class="p">.</span><span
+                class="n">Content</span><span class="p">.</span><span class="n">ReadAsAsync</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;();</span>
+
+        <span class="kt">string</span> <span class="n">output</span> <span class="p">=</span> <span class="n">dataArray</span><span class="p">.</span><span class="nf">ToString</span><span
+                class="p">();</span>
+
+        <span class="kt">var</span> <span class="n">data</span> <span class="p">=</span> <span class="n">Newtonsoft</span><span class="p">.</span><span class="n">Json</span><span
+                class="p">.</span><span class="n">JsonConvert</span><span class="p">.</span><span class="n">DeserializeObject</span><span class="p">&lt;</span><span class="n">Benutzer</span><span
+                class="p">&gt;(</span><span class="n">output</span><span class="p">);</span>
+
+        <span class="c1">// Fetching the name from the path parameter in the request URL</span>
+        <span class="k">return</span> <span class="n">req</span><span class="p">.</span><span class="nf">CreateResponse</span><span class="p">(</span><span class="n">HttpStatusCode</span><span
+                class="p">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+
+    <span class="p">}</span>
+</code></pre>
+          </div>
+        </div>
+        <hr/>
+        <p><strong>NOTE</strong></p>
+        <blockquote><p>if you’re receiving an empty string from this method, it means something else has already read it.<br/> When it does that, it leaves the pointer at the
+                       end.<br/> An alternative method of doing this is as<br/> follows:</p></blockquote>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="n">IHttpActionResult</span> <span class="nf">GetSomething</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">reader</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StreamReader</span><span class="p">(</span><span
+                class="n">Request</span><span class="p">.</span><span class="n">Body</span><span class="p">);</span>
+    <span class="n">reader</span><span class="p">.</span><span class="n">BaseStream</span><span class="p">.</span><span class="nf">Seek</span><span class="p">(</span><span class="m">0</span><span
+                class="p">,</span> <span class="n">SeekOrigin</span><span class="p">.</span><span class="n">Begin</span><span class="p">);</span>
+    <span class="kt">var</span> <span class="n">rawMessage</span> <span class="p">=</span> <span class="n">reader</span><span class="p">.</span><span class="nf">ReadToEnd</span><span
+                class="p">();</span>
+
+    <span class="k">return</span> <span class="nf">Ok</span><span class="p">();</span>
+
+<span class="p">}</span>
+</code></pre>
+          </div>
+        </div>
+        <blockquote><p>In this case, your endpoint doesn’t need to be async (unless you have other async-methods)</p></blockquote>
+        <hr/>
+        <blockquote>
+          <ul>
+            <li>For other future users who do not want to make their controllers asynchronous, or cannot access the HttpContext, or are using dotnet core (this<br/> answer is the
+                first I found on Google trying to do
+          </ul>
+        </blockquote>
+        <div class="language-plaintext highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>this), the following worked for me:
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>     <span class="p">[</span><span class="nf">HttpPut</span><span class="p">(</span><span class="s">"{pathId}/{subPathId}"</span><span
+              class="p">),</span>
+     <span class="k">public</span> <span class="n">IActionResult</span> <span class="nf">Put</span><span class="p">(</span><span class="kt">int</span> <span class="n">pathId</span><span
+                class="p">,</span> <span class="kt">int</span> <span class="n">subPathId</span><span class="p">,</span> <span class="p">[</span><span class="n">FromBody</span><span
+                class="p">]</span> <span class="n">myViewModel</span> <span class="n">viewModel</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="kt">var</span> <span class="n">body</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StreamReader</span><span class="p">(</span><span
+                class="n">Request</span><span class="p">.</span><span class="n">Body</span><span class="p">);</span>
+         <span class="c1">//The modelbinder has already read the stream and need to reset the stream index</span>
+         <span class="n">body</span><span class="p">.</span><span class="n">BaseStream</span><span class="p">.</span><span class="nf">Seek</span><span class="p">(</span><span class="m">0</span><span
+                class="p">,</span> <span class="n">SeekOrigin</span><span class="p">.</span><span class="n">Begin</span><span class="p">);</span>
+         <span class="kt">var</span> <span class="n">requestBody</span> <span class="p">=</span> <span class="n">body</span><span class="p">.</span><span class="nf">ReadToEnd</span><span
+                class="p">();</span>
+         <span class="c1">//etc, we use this for an audit trail</span>
+     <span class="p">}</span>
+</code></pre>
+          </div>
+        </div>
+        <hr/>
+        <h5 id="request"><a aria-labelledby="request" class="anchor-heading" href="#request">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://learn.microsoft.com/en-us/dotnet/api/system.web.httprequestbase?view=netframework-4.8.1">Request</a></h5>
+        <h6 id="use-query-string"><a aria-labelledby="use-query-string" class="anchor-heading" href="#use-query-string">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> use query string
+        </h6>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">AddToCart</span> <span
+              class="p">:</span> <span class="n">Page</span>
+    <span class="p">{</span>
+        <span class="k">protected</span> <span class="k">void</span> <span class="nf">Page_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span
+                class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">string</span> <span class="n">rawId</span> <span class="p">=</span> <span class="n">Request</span><span class="p">[</span><span class="s">"ProductID"</span><span
+                class="p">];</span>
+            <span class="kt">int</span> <span class="n">productId</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(!</span><span class="n">String</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span
+                class="n">rawId</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="kt">int</span><span class="p">.</span><span class="nf">TryParse</span><span
+                class="p">(</span><span class="n">rawId</span><span class="p">,</span> <span class="k">out</span> <span class="n">productId</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="k">using</span> <span class="p">(</span><span class="n">ShoppingCartActions</span> <span class="n">usersShoppingCart</span> <span class="p">=</span> <span
+                class="k">new</span> <span class="nf">ShoppingCartActions</span><span class="p">())</span>
+                <span class="p">{</span>
+                    <span class="n">usersShoppingCart</span><span class="p">.</span><span class="nf">AddToCart</span><span class="p">(</span><span class="n">productId</span><span
+                class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="nf">Exception</span><span class="p">(</span><span class="s">"Tried to call AddToCart.aspx without setting a ProductId."</span><span
+                class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">Response</span><span class="p">.</span><span class="nf">Redirect</span><span class="p">(</span><span class="s">"ShoppingCart.aspx"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre>
+          </div>
+        </div>
+        <ul>
+          <li><p>also</p>
+            <div class="language-csharp highlighter-rouge">
+              <div class="highlight"><pre class="highlight"><code>       <span class="kt">string</span> <span class="n">fullname1</span> <span class="p">=</span> <span class="n">Request</span><span
+                  class="p">.</span><span class="n">QueryString</span><span class="p">[</span><span class="s">"fullname"</span><span class="p">];</span>
+</code></pre>
+              </div>
+            </div>
+        </ul>
+        <h6 id="is-authenticated"><a aria-labelledby="is-authenticated" class="anchor-heading" href="#is-authenticated">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> is authenticated
+        </h6>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>        <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">RestrictedPage</span> <span
+              class="p">:</span> <span class="n">Page</span>
+
+    <span class="p">{</span>
+        <span class="k">protected</span> <span class="k">void</span> <span class="nf">Page_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span
+                class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(!</span><span class="n">Request</span><span class="p">.</span><span class="n">IsAuthenticated</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">rawUrl</span> <span class="p">=</span> <span class="n">Request</span><span class="p">.</span><span class="n">RawUrl</span><span
+                class="p">;</span>
+                <span class="n">Response</span><span class="p">.</span><span class="nf">Redirect</span><span class="p">(</span><span class="s">"/Account/Login?ru="</span> <span
+                class="p">+</span> <span class="n">Server</span><span class="p">.</span><span class="nf">HtmlEncode</span><span class="p">(</span><span class="n">rawUrl</span><span
+                class="p">));</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre>
+          </div>
+        </div>
+        <h6 id="form"><a aria-labelledby="form" class="anchor-heading" href="#form">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> form
+        </h6>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>        <span class="kt">int</span> <span class="n">loop1</span><span class="p">;</span>
+        <span class="n">NameValueCollection</span> <span class="n">coll</span><span class="p">;</span>
+
+        <span class="c1">//Load Form variables into NameValueCollection variable.</span>
+        <span class="n">coll</span><span class="p">=</span><span class="n">Request</span><span class="p">.</span><span class="n">Form</span><span class="p">;</span>
+        <span class="c1">// Get names of all forms into a string array.</span>
+        <span class="n">String</span><span class="p">[]</span> <span class="n">arr1</span> <span class="p">=</span> <span class="n">coll</span><span class="p">.</span><span class="n">AllKeys</span><span
+                class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">loop1</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">loop1</span> <span
+                class="p">&lt;</span> <span class="n">arr1</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">loop1</span><span
+                class="p">++)</span>
+        <span class="p">{</span>
+           <span class="n">Response</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"Form: "</span> <span class="p">+</span> <span
+                class="n">arr1</span><span class="p">[</span><span class="n">loop1</span><span class="p">]</span> <span class="p">+</span> <span class="s">"&lt;br&gt;"</span><span
+                class="p">);</span>
+        <span class="p">}</span>
+</code></pre>
+          </div>
+        </div>
+        <h6 id="cookies"><a aria-labelledby="cookies" class="anchor-heading" href="#cookies">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> cookies
+        </h6>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">loop1</span><span class="p">,</span> <span class="n">loop2</span><span
+              class="p">;</span>
+<span class="n">HttpCookieCollection</span> <span class="n">MyCookieColl</span><span class="p">;</span>
+<span class="n">HttpCookie</span> <span class="n">MyCookie</span><span class="p">;</span>
+
+<span class="n">MyCookieColl</span> <span class="p">=</span> <span class="n">Request</span><span class="p">.</span><span class="n">Cookies</span><span class="p">;</span>
+
+<span class="c1">// Capture all cookie names into a string array.</span>
+<span class="n">String</span><span class="p">[]</span> <span class="n">arr1</span> <span class="p">=</span> <span class="n">MyCookieColl</span><span class="p">.</span><span class="n">AllKeys</span><span
+                class="p">;</span>
+
+<span class="c1">// Grab individual cookie objects by cookie name.</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">loop1</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">loop1</span> <span
+                class="p">&lt;</span> <span class="n">arr1</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">loop1</span><span
+                class="p">++)</span>
+<span class="p">{</span>
+   <span class="n">MyCookie</span> <span class="p">=</span> <span class="n">MyCookieColl</span><span class="p">[</span><span class="n">arr1</span><span class="p">[</span><span
+                class="n">loop1</span><span class="p">]];</span>
+   <span class="n">Response</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"Cookie: "</span> <span class="p">+</span> <span
+                class="n">MyCookie</span><span class="p">.</span><span class="n">Name</span> <span class="p">+</span> <span class="s">"&lt;br&gt;"</span><span class="p">);</span>
+   <span class="n">Response</span><span class="p">.</span><span class="nf">Write</span> <span class="p">(</span><span class="s">"Secure:"</span> <span class="p">+</span> <span
+                class="n">MyCookie</span><span class="p">.</span><span class="n">Secure</span> <span class="p">+</span> <span class="s">"&lt;br&gt;"</span><span class="p">);</span>
+
+   <span class="c1">//Grab all values for single cookie into an object array.</span>
+   <span class="n">String</span><span class="p">[]</span> <span class="n">arr2</span> <span class="p">=</span> <span class="n">MyCookie</span><span class="p">.</span><span class="n">Values</span><span
+                class="p">.</span><span class="n">AllKeys</span><span class="p">;</span>
+
+   <span class="c1">//Loop through cookie Value collection and print all values.</span>
+   <span class="k">for</span> <span class="p">(</span><span class="n">loop2</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">loop2</span> <span
+                class="p">&lt;</span> <span class="n">arr2</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">loop2</span><span
+                class="p">++)</span>
+   <span class="p">{</span>
+      <span class="n">Response</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"Value"</span> <span class="p">+</span> <span
+                class="n">loop2</span> <span class="p">+</span> <span class="s">": "</span> <span class="p">+</span> <span class="n">Server</span><span class="p">.</span><span
+                class="nf">HtmlEncode</span><span class="p">(</span><span class="n">arr2</span><span class="p">[</span><span class="n">loop2</span><span class="p">])</span> <span
+                class="p">+</span> <span class="s">"&lt;br&gt;"</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+          </div>
+        </div>
+        <h6 id="server-variables"><a aria-labelledby="server-variables" class="anchor-heading" href="#server-variables">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> server variables
+        </h6>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">loop1</span><span class="p">,</span> <span class="n">loop2</span><span
+              class="p">;</span>
+<span class="n">NameValueCollection</span> <span class="n">coll</span><span class="p">;</span>
+
+<span class="c1">// Load ServerVariable collection into NameValueCollection object.</span>
+<span class="n">coll</span><span class="p">=</span><span class="n">Request</span><span class="p">.</span><span class="n">ServerVariables</span><span class="p">;</span>
+<span class="c1">// Get names of all keys into a string array.</span>
+<span class="n">String</span><span class="p">[]</span> <span class="n">arr1</span> <span class="p">=</span> <span class="n">coll</span><span class="p">.</span><span class="n">AllKeys</span><span
+                class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">loop1</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">loop1</span> <span
+                class="p">&lt;</span> <span class="n">arr1</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">loop1</span><span
+                class="p">++)</span>
+<span class="p">{</span>
+   <span class="n">Response</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"Key: "</span> <span class="p">+</span> <span class="n">arr1</span><span
+                class="p">[</span><span class="n">loop1</span><span class="p">]</span> <span class="p">+</span> <span class="s">"&lt;br&gt;"</span><span class="p">);</span>
+   <span class="n">String</span><span class="p">[]</span> <span class="n">arr2</span><span class="p">=</span><span class="n">coll</span><span class="p">.</span><span class="nf">GetValues</span><span
+                class="p">(</span><span class="n">arr1</span><span class="p">[</span><span class="n">loop1</span><span class="p">]);</span>
+   <span class="k">for</span> <span class="p">(</span><span class="n">loop2</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">loop2</span> <span
+                class="p">&lt;</span> <span class="n">arr2</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">loop2</span><span
+                class="p">++)</span> <span class="p">{</span>
+      <span class="n">Response</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"Value "</span> <span class="p">+</span> <span
+                class="n">loop2</span> <span class="p">+</span> <span class="s">": "</span> <span class="p">+</span> <span class="n">Server</span><span class="p">.</span><span
+                class="nf">HtmlEncode</span><span class="p">(</span><span class="n">arr2</span><span class="p">[</span><span class="n">loop2</span><span class="p">])</span> <span
+                class="p">+</span> <span class="s">"&lt;br&gt;"</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+          </div>
+        </div>
+        <h4 id="response"><a aria-labelledby="response" class="anchor-heading" href="#response">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://learn.microsoft.com/en-us/dotnet/api/system.web.httpresponsebase?view=netframework-4.8.1">Response</a></h4>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="n">HttpResponseMessage</span> <span class="n">fullResponse</span> <span class="p">=</span> <span class="n">Request</span><span
+              class="p">.</span><span class="nf">CreateResponse</span><span class="p">(</span><span class="n">HttpStatusCode</span><span class="p">.</span><span class="n">OK</span><span
+              class="p">);</span>
+                <span class="n">fullResponse</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StreamContent</span><span
+                class="p">(</span><span class="n">memStream</span><span class="p">);</span>
+                <span class="n">fullResponse</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span
+                class="n">ContentType</span> <span class="p">=</span> <span class="n">_mediaType</span><span class="p">;</span>
+                <span class="k">return</span> <span class="n">fullResponse</span><span class="p">;</span>
+</code></pre>
+          </div>
+        </div>
+        <hr/>
+        <h1 id="serializedeserialize"><a aria-labelledby="serializedeserialize" class="anchor-heading" href="#serializedeserialize">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Serialize/Deserialize
+        </h1>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="n">ValueTask</span><span class="p">&lt;</span><span class="n">WebhookRequest</span><span class="p">&gt;</span> <span
+              class="n">t</span>  <span class="p">=</span> <span class="n">JsonSerializer</span><span class="p">.</span><span class="n">DeserializeAsync</span><span class="p">&lt;</span><span
+              class="n">WebhookRequest</span><span class="p">&gt;(</span><span class="n">httpRequest</span><span class="p">.</span><span class="n">Body</span><span class="p">);</span>
+<span class="n">WebhookRequest</span> <span class="n">uu</span> <span class="p">=</span> <span class="n">t</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code> <span class="n">TextReader</span>      <span class="n">reader</span>   <span class="p">=</span> <span class="k">new</span> <span
+              class="nf">StreamReader</span><span class="p">(</span><span class="n">httpRequest</span><span class="p">.</span><span class="n">Body</span><span class="p">);</span>
+ <span class="kt">string</span>          <span class="n">text</span>     <span class="p">=</span> <span class="k">await</span> <span class="n">reader</span><span class="p">.</span><span
+                class="nf">ReadToEndAsync</span><span class="p">();</span>
+<span class="n">JsonElement</span>     <span class="n">json</span>     <span class="p">=</span> <span class="n">JsonSerializer</span><span class="p">.</span><span class="n">Deserialize</span> <span
+                class="p">&lt;</span><span class="n">JsonElement</span><span class="p">&gt;(</span><span class="n">text</span><span class="p">);</span>
+<span class="n">JsonElement</span> <span class="n">json2</span> <span class="p">=</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="n">DeserializeObject</span><span
+                class="p">&lt;</span><span class="n">JsonElement</span><span class="p">&gt;(</span><span class="n">text</span><span class="p">,</span> <span class="k">new</span> <span
+                class="nf">JsonSerializerSettings</span><span class="p">());</span>
+<span class="kt">string</span> <span class="n">json3</span> <span class="p">=</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="nf">SerializeObject</span><span
+                class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">String</span><span class="p">),</span> <span
+                class="k">new</span> <span class="nf">JsonSerializerSettings</span><span class="p">());</span>
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="n">WebhookRequest</span> <span class="n">webhookRequest</span> <span class="p">=</span> <span class="k">new</span> <span
+              class="nf">WebhookRequest</span><span class="p">(</span><span class="n">json</span><span class="p">.</span><span class="n">Deserialize</span> <span class="p">&lt;</span><span
+              class="n">WebhookRequest</span><span class="p">&gt;());</span>
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="n">webhookRequest</span> <span class="p">=</span> <span class="p">(</span><span class="n">WebhookRequest</span><span
+              class="p">)</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="n">DeserializeObject</span> <span class="p">&lt;</span><span class="kt">object</span><span
+              class="p">&gt;(</span><span class="n">JsonConvert</span><span class="p">.</span><span class="nf">DeserializeObject</span><span class="p">(</span><span class="n">text</span><span
+              class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="kt">object</span><span class="p">)).</span><span class="nf">ToString</span><span
+              class="p">(),</span> <span class="k">new</span> <span class="nf">JsonSerializerSettings</span><span class="p">());</span>
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="n">WebhookRequest</span> <span class="n">webhookRequest1</span> <span class="p">=</span> <span class="n">JsonConvert</span><span
+              class="p">.</span><span class="n">DeserializeObject</span> <span class="p">&lt;</span><span class="n">WebhookRequest</span><span class="p">&gt;(</span><span class="n">text</span><span
+              class="p">);</span>
+<span class="n">JsonConvert</span><span class="p">.</span><span class="nf">PopulateObject</span><span class="p">(</span> <span class="n">JsonConvert</span><span class="p">.</span><span
+                class="nf">ToString</span><span class="p">(</span><span class="n">json</span><span class="p">),</span>  <span class="n">webhookRequest</span><span class="p">);</span>
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="kt">string</span>         <span class="n">h</span>   <span class="p">=</span>  <span class="n">JsonConvert</span><span
+              class="p">.</span><span class="nf">ToString</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="n">WebhookRequest</span> <span class="n">pp</span>  <span class="p">=</span> <span class="n">JsonSerializer</span><span
+              class="p">.</span><span class="n">Deserialize</span> <span class="p">&lt;</span><span class="n">WebhookRequest</span><span class="p">&gt;(</span><span class="n">text</span><span
+              class="p">);</span>
+
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="n">WebhookRequest</span>   <span class="n">pp2</span> <span class="p">=</span> <span class="n">json</span><span
+              class="p">.</span><span class="n">Deserialize</span> <span class="p">&lt;</span><span class="n">WebhookRequest</span><span class="p">&gt;();</span>
+
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code> <span class="kt">object</span> <span class="n">pp3</span> <span class="p">=</span> <span class="n">JsonSerializer</span><span
+              class="p">.</span><span class="nf">Deserialize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="k">typeof</span><span
+              class="p">(</span><span class="n">WebhookRequest</span><span class="p">));</span>
+
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>  <span class="kt">object</span>   <span class="n">pp4</span> <span class="p">=</span> <span class="n">json</span><span
+              class="p">.</span><span class="nf">Deserialize</span><span class="p">(</span> <span class="k">typeof</span><span class="p">(</span><span class="n">WebhookRequest</span><span
+              class="p">));</span>
+
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code> <span class="kt">object</span>   <span class="n">w</span>   <span class="p">=</span> <span class="n">JsonConvert</span><span
+              class="p">.</span><span class="nf">DeserializeObject</span><span class="p">(</span><span class="k">value</span><span class="p">:</span> <span class="n">text</span><span
+              class="p">,</span> <span class="n">type</span><span class="p">:</span> <span class="k">typeof</span><span class="p">(</span><span class="n">WebhookRequest</span><span
+              class="p">));</span>
+
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code> <span class="kt">object</span> <span class="n">i</span>   <span class="p">=</span> <span class="n">json</span><span
+              class="p">.</span><span class="nf">Deserialize</span><span class="p">(</span> <span class="k">typeof</span><span class="p">(</span><span class="n">WebhookRequest</span><span
+              class="p">));</span>
+
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="kt">object</span>  <span class="n">kk</span>  <span class="p">=</span> <span class="n">json</span><span
+              class="p">.</span><span class="nf">Deserialize</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">WebhookRequest</span><span
+              class="p">));</span>
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="n">WebhookRequest</span> <span class="n">webhookRequest</span> <span class="p">=</span> <span class="k">new</span> <span
+              class="n">WebhookRequest</span>
+<span class="n">JsonConvert</span><span class="p">.</span><span class="nf">PopulateObject</span><span class="p">(</span><span class="k">value</span><span class="p">:</span> <span
+                class="n">text</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="n">webhookRequest</span><span class="p">);</span>
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code> <span class="n">JObject</span><span class="p">.</span><span class="nf">Parse</span><span class="p">(</span><span
+              class="n">request</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="nf">ReadAsStringAsync</span><span class="p">().</span><span
+              class="n">Result</span><span class="p">);</span>
+</code></pre>
+          </div>
+        </div>
+        <div class="language-csharp highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">content</span> <span class="p">=</span> <span class="n">response</span><span
+              class="p">.</span><span class="n">Content</span><span class="p">;</span>
+  <span class="kt">var</span> <span class="n">jsonResult</span> <span class="p">=</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="nf">DeserializeObject</span><span
+                class="p">(</span><span class="n">content</span><span class="p">).</span><span class="nf">ToString</span><span class="p">();</span>
+  <span class="kt">var</span> <span class="n">result</span><span class="p">=</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="n">DeserializeObject</span><span
+                class="p">&lt;</span><span class="n">Model</span><span class="p">&gt;(</span><span class="n">jsonResult</span><span class="p">);</span>
+</code></pre>
+          </div>
+        </div>
+      </main>
+      <hr>
+      <footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"></p>
+        <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"><a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./DotNetNotes/Controllers.md"
+                                                                                id="edit-this-page">Edit this page on GitHub</a></p></div>
+      </footer>
+    </div>
+  </div>
+  <button aria-label="Focus on search" class="search-button btn-reset" id="search-button">
+    <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+      <use xlink:href="#svg-search"></use>
+    </svg>
+  </button>
+  <div class="search-overlay"></div>
+</div>

@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <link href="/assets/css/just-the-docs-default.css" rel="stylesheet">
+  <link href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet" rel="stylesheet">
+  <style id="jtd-nav-activation"> .site-nav > ul.nav-list:first-child > li > a, .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(6)) > a, .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+    background-image: none;
+  }
+
+  .site-nav > ul.nav-list:not(:first-child) a, .site-nav li.external a {
+    background-image: none;
+  }
+
+  .site-nav > ul.nav-list:first-child > li:nth-child(7) > ul > li:nth-child(6) > a {
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .site-nav > ul.nav-list:first-child > li:nth-child(7) > button svg, .site-nav > ul.nav-list:first-child > li:nth-child(7) > ul > li:nth-child(6) > button svg {
+    transform: rotate(-90deg);
+  }
+
+  .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(7) > ul.nav-list, .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(7) > ul.nav-list > li.nav-list-item:nth-child(6) > ul.nav-list {
+    display: block;
+  }</style>
+  <script src="/assets/js/vendor/lunr.min.js"></script>
+  <script src="/assets/js/just-the-docs.js"></script>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>DevTools | Paxton’s Notes</title>
+  <meta content="Jekyll v4.4.0" name="generator"/>
+  <meta content="DevTools" property="og:title"/>
+  <meta content="en_US" property="og:locale"/>
+  <meta content="Coding Notes" name="description"/>
+  <meta content="Coding Notes" property="og:description"/>
+  <link href="http://localhost:4000/GoogleNotes/DevTools" rel="canonical"/>
+  <meta content="http://localhost:4000/GoogleNotes/DevTools" property="og:url"/>
+  <meta content="Paxton’s Notes" property="og:site_name"/>
+  <meta content="website" property="og:type"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="DevTools" property="twitter:title"/>
+  <script type="application/ld+json"> {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "description": "Coding Notes",
+    "headline": "DevTools",
+    "url": "http://localhost:4000/GoogleNotes/DevTools"
+  }
+  </script>
+<body><a class="skip-to-main" href="#main-content">Skip to main content</a>
+<svg class="d-none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="svg-link" viewBox="0 0 24 24"><title>Link</title>
+    <svg class="feather feather-link"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24"><title>Menu</title>
+    <svg class="feather feather-menu"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <line x1="3" x2="21" y1="12" y2="12"></line>
+      <line x1="3" x2="21" y1="6" y2="6"></line>
+      <line x1="3" x2="21" y1="18" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24"><title>Expand</title>
+    <svg class="feather feather-chevron-right"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol class="feather feather-external-link"
+          fill="none"
+          height="24"
+          id="svg-external-link"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"><title id="svg-external-link-title">(external link)</title>
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+    <polyline points="15 3 21 3 21 9"></polyline>
+    <line x1="10" x2="21" y1="14" y2="3"></line>
+  </symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24"><title>Document</title>
+    <svg class="feather feather-file"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+      <polyline points="13 2 13 9 20 9"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-search" viewBox="0 0 24 24"><title>Search</title>
+    <svg class="feather feather-search"
+         fill="none"
+         height="24"
+         stroke="currentColor"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="2"
+         viewBox="0 0 24 24"
+         width="24"
+         xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-copy" viewBox="0 0 16 16"><title>Copy</title>
+    <svg class="bi bi-clipboard" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+      <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-copied" viewBox="0 0 16 16"><title>Copied</title>
+    <svg class="bi bi-clipboard-check-fill" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+    </svg>
+  </symbol>
+</svg>
+<div class="side-bar">
+  <div class="site-header" role="banner"><a class="site-title lh-tight" href="/"> Paxton's Notes </a>
+    <button aria-label="Toggle menu" aria-pressed="false" class="site-button btn-reset" id="menu-button">
+      <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+        <use xlink:href="#svg-menu"></use>
+      </svg>
+    </button>
+  </div>
+  <nav aria-label="Main" class="site-nav" id="site-nav">
+    <ul class="nav-list">
+      <li class="nav-list-item">
+        <button aria-label="toggle items in MyPersonalDocsAndStuff category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/index">MyPersonalDocsAndStuff</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/AppsForWorkflow">AppsForWorkflow</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/CloudServices">CloudServices</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/LetterOfRecommendation">LetterOfRecommendation</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PastProjects">PastProjects</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PriorityLearning">PriorityLearning</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in AWS category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/AWS/">AWS</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/AWS/CLI">CLI</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Build category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Build/">Build</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Gradle">Gradle</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Maven">Maven</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in DockerNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/DockerNotes/">DockerNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/ARM64">ARM64</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Basics">Basics</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Dockerfile">Dockerfile</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Install">Install</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Quick-TidBits">Quick-TidBits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/UsefulCommands">UsefulCommands</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in DotNetNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/DotNetNotes/">DotNetNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CLI">CLI</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in CSharp category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/DotNetNotes/Csharp">CSharp</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Email">Email</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Threading">Threading</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Controllers">Controllers</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Database">Database</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/EntityFramework">EntityFramework</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Environment">Environment</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Google">Google</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HTTP">HTTP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HttpRepl">HttpRepl</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/LINQ">LINQ</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Maui">Maui</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Microservice">Microservice.md</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/VisualStudio">VisualStudio</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Git category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Git">Git</a>
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <button aria-label="toggle items in GitHub category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/Git/GitHub">GitHub</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/GitHubPages">GitHubPages</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/Jekyll">Jekyll</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/MarkDown">MarkDown</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Git/QuickScripts">QuickScripts</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GoogleNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GoogleNotes/">GoogleNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/APIs">APIs</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Browser">Browser</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Cloud">Cloud</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ComputeEngine">ComputeEngine</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Deploy">Deploy</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DevTools">DevTools</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DialogFlow">DialogFlow</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Functions">Functions</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Logging">Logging</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ServiceAccounts">ServiceAccounts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Storage">Storage</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/VoiceAgent">VoiceAgent</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GrailsNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GrailsNotes/">GrailsNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/GORM_WhereQueris">GORM_WhereQueris</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLComplexQueries">HQLComplexQueries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLQueries">HQLQueries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/RunningApp">RunningApp</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Security">Security</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Services">Services</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Testing">Testing</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in GroovyNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/GroovyNotes/">GroovyNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Array-Loop-List-Map">Array-Loop-List-Map</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Async_Parallel-Concurrency">Async_Parallel-Concurrency</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Clever-Tid-bits">Clever-Tid-bits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/DateAndTime">DateAndTime</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Enum">Enum</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/MetaProgramming">MetaProgramming</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/RegEx">RegEx</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/String">String</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in HTML&CSS category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/HTML&CSS/">HTML&CSS</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/CSS">CSS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/HTML">HTML</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/Images">Images</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/HTTP">HTTP</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in IntelliJNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/IntelliJNotes/">IntelliJNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/CustomVM">CustomVM</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/DebuggerConfig">DebuggerConfig</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/HTTPExamples">HTTPExamples</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/Spaces">Spaces</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Java category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/JavaNotes/Java">Java</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Algorithms">Algorithms</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/CommandLineDiddys">CommandLineDiddys</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/DataBase">DataBase</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/File">File</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/GCP">GCP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Hibernate">Hibernate</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/LooseNotes">LooseNotes</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/OOP">OOP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/String">String</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Threads">Threads</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in JavaScript category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/JavaScript/">JavaScript</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Browser">Browser</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CDN">CDN</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CSS">CSS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Clever-Algos">Clever-Algos</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/DateAndTime">DateAndTime</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Document">Document</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Elements">Elements</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Events">Events</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FormStuff">FormStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FunctionObject">FunctionObject</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/HTTP">HTTP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Map">Map</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Modules">Modules</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in Node category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/Node/">Node</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Node/QuickScripts">QuickScripts</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Number">Number</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Object">Object</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/QuerySelector">QuerySelector</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in ReactNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/ReactNotes">ReactNotes</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Clever-Snippets">Clever-Snippets</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Configuring">Configuring</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/HandleEvents">HandleEvents</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/ReactNotes/Hooks">Hooks</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/MUI">MUI</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Mat-Table">Mat-Table</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/React-Router">React-Router</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/ReactHookForm">ReactHookForm</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/String">String</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/WebWorker">WebWorker</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/RegEx">RegEx</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/State">State</a>
+          <li class="nav-list-item">
+            <button aria-label="toggle items in TypeScript category" aria-pressed="false" class="nav-list-expander btn-reset">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <use xlink:href="#svg-arrow-right"></use>
+              </svg>
+            </button>
+            <a class="nav-list-link" href="/JavaScript/TypeScript/">TypeScript</a>
+            <ul class="nav-list">
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Events">Events</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/QuickScripts">QuickScripts</a>
+              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Types">Types</a>
+            </ul>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/UsefulSnippets">UsefulSnippets</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WebAPI">WebAPI</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Window">Window</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WorkingWithFiles">WorkingWithFiles</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/Kubernetes">Kubernetes</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Linux category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Linux/">Linux</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/ADMIN-ROOT">ADMIN-ROOT</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Conditionals">Conditionals</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Encoding">Encoding</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/JQ">JQ</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/MySQL">MySQL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/PGP">PGP</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/QuickScripts">QuickScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/SDKMan">SDKMan</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Scripting">Scripting</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/VIM_QuickTips">VIM_QuickTips</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in MacNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/MacNotes/">MacNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/AppleScripts">AppleScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/HomeBrew">HomeBrew</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/JavaOnMac">JavaOnMac</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/QuickScripts">QuickScripts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ShortCuts">ShortCuts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/UsersAndGroups">UsersAndGroups</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/Utilities">Utilities</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ZSH">ZSH</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Micronotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Micronotes/">Micronotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/AWS">AWS</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Configuration">Configuration</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/DataBaseStuff">DataBaseStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Email">Email</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/EnviromentStuff">EnviromentStuff</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/GRAALVM">GRAALVM</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Gradle">Gradle</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Jackson">Jackson</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/MicroStream">MicroStream</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Resources">Resources</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Testing">Testing</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/UsefuleSnippets">UsefuleSnippets</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/cli_gradlew">cli_gradlew</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/Obsidian/Obsidian">Obsidian</a>
+      <li class="nav-list-item"><a class="nav-list-link" href="/RandomNuggetsOfKnowledge">RandomNuggetsOfKnowledge</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in SQLNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/SQLNotes/">SQLNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Docker">Docker</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Functions">Functions</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/HQL">HQL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Liquibase">Liquibase</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Queries">Queries</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/SQLCheatSheet">SQLCheatSheet</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/TerminalCommands">Terminal-Commands</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in SpringNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/SpringNotes/">SpringNotes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Annotations">Annotations</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Hibernate">Hibernate</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Maven">Maven</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Properties">Properties</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Security">Security</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Serialization">Serialization</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Testing">Testing</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/TidBits">TidBits</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Transactions">Transactions</a>
+        </ul>
+      <li class="nav-list-item"><a class="nav-list-link" href="/SystemDesign&Architecture/">SystemDesign&Architecture</a>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in TestingFrameworks category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/TestingFrameworks/">TestingFrameworks</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JUnit">JUnit</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JavascriptTesting">Javascript</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Spock">Spock</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Testcontainers">Testcontainers</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Thymeleaf category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Thymeleaf/">Thymeleaf</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Thymeleaf/Fragments">Fragments</a>
+        </ul>
+      <li class="nav-list-item">
+        <button aria-label="toggle items in Windows_Notes category" aria-pressed="false" class="nav-list-expander btn-reset">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <use xlink:href="#svg-arrow-right"></use>
+          </svg>
+        </button>
+        <a class="nav-list-link" href="/Windows_Notes/">Windows_Notes</a>
+        <ul class="nav-list">
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/CMD">CMD</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Environment">Environment</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/PackageManagers">PackageManagers</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Powershell">Powershell</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Run">Run</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Shortcuts">Shortcuts</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Terminal">Terminal</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WSL">WSL</a>
+          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WindowsServer">WindowsServer</a>
+        </ul>
+    </ul>
+  </nav>
+  <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
+</div>
+<div class="main" id="top">
+  <div class="main-header" id="main-header">
+    <div class="search" role="search">
+      <div class="search-input-wrap"><input aria-label="Search Paxton's Notes"
+                                            autocomplete="off"
+                                            class="search-input"
+                                            id="search-input"
+                                            placeholder="Search Paxton's Notes"
+                                            tabindex="0"
+                                            type="text"> <label class="search-label" for="search-input">
+        <svg class="search-icon" viewBox="0 0 24 24">
+          <use xlink:href="#svg-search"></use>
+        </svg>
+      </label></div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+    <nav aria-label="Auxiliary" class="aux-nav">
+      <ul class="aux-nav-list">
+        <li class="aux-nav-list-item"><a class="site-button" href="https://github.com/14paxton/14paxton.github.io" rel="noopener noreferrer" target="_blank"> Template
+                                                                                                                                                              Repository </a>
+      </ul>
+    </nav>
+  </div>
+  <div class="main-content-wrap">
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol class="breadcrumb-nav-list">
+        <li class="breadcrumb-nav-list-item"><a href="/GoogleNotes/">GoogleNotes</a>
+        <li class="breadcrumb-nav-list-item"><span>DevTools</span>
+      </ol>
+    </nav>
+    <div class="main-content" id="main-content">
+      <main><p><br/></p>
+        <details>
+          <summary class="text-delta"> Table of contents</summary>
+          <ol id="markdown-toc">
+            <li><a href="#console" id="markdown-toc-console">Console</a>
+              <ol>
+                <li><a href="#logging-messages" id="markdown-toc-logging-messages">Logging Messages</a>
+                  <ol>
+                    <li><a href="#grouping-the-logs-in-the-console" id="markdown-toc-grouping-the-logs-in-the-console">Grouping the logs (in the console)</a>
+                  </ol>
+                <li><a href="#using-consoledir" id="markdown-toc-using-consoledir">Using console.dir()</a>
+                <li><a href="#using-console-table-to-output-in-the-form-of-table-" id="markdown-toc-using-console-table-to-output-in-the-form-of-table-">Using console table() to
+                                                                                                                                                         output in the form of table
+                                                                                                                                                         */</a>
+                <li><a href="#examining-the-time-taken-for-a-block-of-code-to-execute-" id="markdown-toc-examining-the-time-taken-for-a-block-of-code-to-execute-">Examining the
+                                                                                                                                                                   time taken for a
+                                                                                                                                                                   block of code to
+                                                                                                                                                                   execute */</a>
+                <li><a href="#clear-the-console" id="markdown-toc-clear-the-console">Clear the console</a>
+                <li><a href="#start-a-collapsed-group" id="markdown-toc-start-a-collapsed-group">Start a collapsed group</a>
+                <li><a href="#monitor-events" id="markdown-toc-monitor-events">Monitor Events</a>
+                <li><a href="#get-all-events-with-window" id="markdown-toc-get-all-events-with-window">Get All Events with window</a>
+              </ol>
+            <li><a href="#re-enable-right-click" id="markdown-toc-re-enable-right-click">Re-Enable Right click</a>
+          </ol>
+        </details>
+        <p><br/></p>
+        <hr/>
+        <p><br/></p>
+        <h1 id="console"><a aria-labelledby="console" class="anchor-heading" href="#console">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Console
+        </h1>
+        <ul>
+          <li>
+            <h2 id="logging-messages"><a aria-labelledby="logging-messages" class="anchor-heading" href="#logging-messages">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> Logging Messages
+            </h2>
+            <div class="language-javascript highlighter-rouge">
+              <div class="highlight"><pre class="highlight"><code>  <span class="nx">console</span><span class="p">.</span><span class="nf">log </span><span class="p">(</span> <span
+                  class="dl">'</span><span class="s1">Printing on the console</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">error </span><span class="p">(</span><span class="dl">'</span><span class="s1">Error: Something went wrong</span><span
+                    class="dl">'</span> <span class="p">);</span>
+  <span class="nf">consolewarn</span><span class="p">(</span> <span class="dl">'</span><span class="s1">No Internet: try again later</span><span class="dl">'</span><span class="p">);</span>
+</code></pre>
+              </div>
+            </div>
+          <li>
+            <h3 id="grouping-the-logs-in-the-console"><a aria-labelledby="grouping-the-logs-in-the-console" class="anchor-heading" href="#grouping-the-logs-in-the-console">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> Grouping the logs (in the console)
+            </h3>
+            <div class="language-javascript highlighter-rouge">
+              <div class="highlight"><pre class="highlight"><code>  <span class="nx">console</span><span class="o">-</span><span class="nf">group</span><span class="p">();</span>
+  <span class="nx">console</span><span class="p">.</span> <span class="nf">log</span><span class="p">(</span> <span class="dl">'</span><span class="s1">logging user status</span><span
+                    class="dl">'</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span> <span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">user logged into the website</span><span
+                    class="dl">'</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span> <span class="nf">log </span><span class="p">(</span><span class="dl">'</span><span class="s1">user has visited profile page</span><span
+                    class="dl">'</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span> <span class="nx">log</span><span class="o">/</span><span class="dl">'</span><span class="s1">user has just liked a post from
+  ... certain page</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">groupEnd</span><span class="p">();</span>
+</code></pre>
+              </div>
+            </div>
+          <li>
+            <h2 id="using-consoledir"><a aria-labelledby="using-consoledir" class="anchor-heading" href="#using-consoledir">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> Using console.dir()
+            </h2>
+            <div class="language-javascript highlighter-rouge">
+              <div class="highlight"><pre class="highlight"><code>  <span class="nx">console</span><span class="p">.</span><span class="nf">dir</span><span class="p">(</span><span
+                  class="nb">Object</span><span class="p">)</span> <span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">dir</span><span class="p">(</span><span class="nb">Array</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">dir</span><span class="p">(</span><span class="nb">Function</span><span class="p">);</span>
+</code></pre>
+              </div>
+            </div>
+          <li>
+            <h2 id="using-console-table-to-output-in-the-form-of-table-"><a aria-labelledby="using-console-table-to-output-in-the-form-of-table-"
+                                                                            class="anchor-heading"
+                                                                            href="#using-console-table-to-output-in-the-form-of-table-">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> Using console table() to output in the form of table */
+            </h2>
+            <div class="language-javascript highlighter-rouge">
+              <div class="highlight"><pre class="highlight"><code>  <span class="nx">console</span><span class="p">.</span><span class="nf">table</span><span class="p">({</span> <span
+                  class="na">firstName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">First</span><span class="dl">'</span><span class="p">,</span> <span
+                  class="na">lastName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Last</span><span class="dl">'</span> <span class="p">})</span> <span
+                  class="p">;</span>
+</code></pre>
+              </div>
+            </div>
+          <li>
+            <h2 id="examining-the-time-taken-for-a-block-of-code-to-execute-"><a aria-labelledby="examining-the-time-taken-for-a-block-of-code-to-execute-"
+                                                                                 class="anchor-heading"
+                                                                                 href="#examining-the-time-taken-for-a-block-of-code-to-execute-">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> Examining the time taken for a block of code to execute */
+            </h2>
+            <div class="language-javascript highlighter-rouge">
+              <div class="highlight"><pre class="highlight"><code>  <span class="nx">console</span><span class="p">.</span><span class="nf">time</span><span class="p">(</span> <span
+                  class="dl">'</span><span class="s1">loopExaminer</span><span class="dl">'</span><span class="p">);</span>
+  <span class="k">for </span><span class="p">(</span> <span class="nx">leti</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span
+                    class="o">&lt;=</span> <span class="mi">9999999</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">)</span> <span
+                    class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">timeEnd</span><span class="p">(</span><span class="dl">'</span><span class="s1">loopExaminer</span><span
+                    class="dl">'</span><span class="p">);</span>
+</code></pre>
+              </div>
+            </div>
+          <li>
+            <h2 id="clear-the-console"><a aria-labelledby="clear-the-console" class="anchor-heading" href="#clear-the-console">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> Clear the console
+            </h2>
+            <div class="language-javascript highlighter-rouge">
+              <div class="highlight"><pre class="highlight"><code>  <span class="nx">console</span><span class="p">.</span><span class="nf">clear</span><span class="p">();</span>
+</code></pre>
+              </div>
+            </div>
+          <li>
+            <h2 id="start-a-collapsed-group"><a aria-labelledby="start-a-collapsed-group" class="anchor-heading" href="#start-a-collapsed-group">
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <use xlink:href="#svg-link"></use>
+              </svg>
+            </a> Start a collapsed group
+            </h2>
+            <div class="language-javascript highlighter-rouge">
+              <div class="highlight"><pre class="highlight"><code>  <span class="nx">console</span><span class="p">.</span><span class="nf">groupCollapsed</span><span class="p">(</span> <span
+                  class="dl">"</span><span class="s2">Website Performance stats</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span> <span class="dl">'</span><span class="s1">Animation started</span><span
+                    class="dl">'</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span> <span class="dl">'</span><span class="s1">Animation running smoothly since 9:00 AM</span><span
+                    class="dl">'</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">groupEnd </span><span class="p">();</span>
+</code></pre>
+              </div>
+            </div>
+        </ul>
+        <h2 id="monitor-events"><a aria-labelledby="monitor-events" class="anchor-heading" href="#monitor-events">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://stackoverflow.com/questions/10213703/how-do-i-view-events-fired-on-an-element-in-chrome-devtools">Monitor Events</a></h2>
+        <ol>
+          <li>
+            <blockquote><p>Inspect your element (right mouse click → Inspect on a visible element or go to Elements tab in Chrome Developer Tools and select wanted element)<br/>
+                           then go to Console tab and write:</p>
+              <div class="language-shell highlighter-rouge">
+                <div class="highlight"><pre class="highlight"><code>    monitorEvents<span class="o">(</span><span class="nv">$0</span><span class="o">)</span>
+</code></pre>
+                </div>
+              </div>
+            </blockquote>
+          <li>
+            <blockquote><p>Now when you move mouse over this element, focus or click it, the name of the fired event will be displayed with its data.<br/> To stop getting this
+                           data, just write this to console:</p></blockquote>
+        </ol>
+        <div class="language-shell highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code>   unmonitorEvents<span class="o">(</span><span class="nv">$0</span><span class="o">)</span>
+</code></pre>
+          </div>
+        </div>
+        <p><code class="language-plaintext highlighter-rouge">$0</code> is just the last DOM element selected by Chrome Developer Tools.</p>
+        <ul>
+          <li>
+            <blockquote><p>monitor all events</p>
+              <div class="language-shell highlighter-rouge">
+                <div class="highlight"><pre class="highlight"><code>  monitorEvents<span class="o">(</span>document.body, <span class="s1">'mouse'</span><span class="o">)</span>
+</code></pre>
+                </div>
+              </div>
+            </blockquote>
+        </ul>
+        <h2 id="get-all-events-with-window"><a aria-labelledby="get-all-events-with-window" class="anchor-heading" href="#get-all-events-with-window">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> Get All Events with window
+        </h2>
+        <div class="language-javascript highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nf">getEventListeners</span><span class="p">(</span><span
+              class="nb">window</span><span class="p">);</span>
+<span class="c1">// or for a specific element</span>
+<span class="nb">window</span><span class="p">.</span><span class="nf">getEventListeners</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span
+                class="nx">body</span><span class="p">);</span>
+</code></pre>
+          </div>
+        </div>
+        <h1 id="re-enable-right-click"><a aria-labelledby="re-enable-right-click" class="anchor-heading" href="#re-enable-right-click">
+          <svg aria-hidden="true" viewBox="0 0 16 16">
+            <use xlink:href="#svg-link"></use>
+          </svg>
+        </a> <a href="https://stackoverflow.com/questions/21335136/how-to-re-enable-right-click-so-that-i-can-inspect-html-elements-in-chrome">Re-Enable Right click</a></h1>
+        <div class="language-javascript highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">enableContextMenu</span><span class="p">(</span><span class="nx">aggressive</span> <span
+              class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">void </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">ondragstart</span> <span class="o">=</span> <span
+                class="kc">null</span><span class="p">);</span>
+    <span class="k">void </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">onselectstart</span> <span class="o">=</span> <span
+                class="kc">null</span><span class="p">);</span>
+    <span class="k">void </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kc">null</span><span
+                class="p">);</span>
+    <span class="k">void </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">onmousedown</span> <span class="o">=</span> <span
+                class="kc">null</span><span class="p">);</span>
+    <span class="k">void </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">onmouseup</span> <span class="o">=</span> <span
+                class="kc">null</span><span class="p">);</span>
+    <span class="k">void </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">oncontextmenu</span> <span
+                class="o">=</span> <span class="kc">null</span><span class="p">);</span>
+    <span class="nf">enableRightClickLight</span><span class="p">(</span><span class="nb">document</span><span class="p">);</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">aggressive</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">enableRightClick</span><span class="p">(</span><span class="nb">document</span><span class="p">);</span>
+        <span class="nf">removeContextMenuOnAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">body</span><span class="dl">"</span><span class="p">);</span>
+        <span class="nf">removeContextMenuOnAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">img</span><span class="dl">"</span><span class="p">);</span>
+        <span class="nf">removeContextMenuOnAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">td</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">removeContextMenuOnAll</span><span class="p">(</span><span class="nx">tagName</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">elements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementsByTagName</span><span
+                class="p">(</span><span class="nx">tagName</span><span class="p">);</span>
+    <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span
+                class="nx">i</span> <span class="o">&lt;</span> <span class="nx">elements</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span
+                class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">enableRightClick</span><span class="p">(</span><span class="nx">elements</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">enableRightClickLight</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">el</span> <span class="o">||</span> <span class="p">(</span><span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">contextmenu</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">enableRightClick</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">el</span> <span class="o">||</span> <span class="p">(</span><span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">contextmenu</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">dragstart</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">selectstart</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">mousedown</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">mouseup</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">restoreRightClick</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">el</span> <span class="o">||</span> <span class="p">(</span><span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">removeEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">contextmenu</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">removeEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">dragstart</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">removeEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">selectstart</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">removeEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">removeEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">mousedown</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">removeEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">mouseup</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">bringBackDefault</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">returnValue</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="k">typeof</span> <span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span> <span class="o">===</span> <span class="dl">"</span><span
+                class="s2">function</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">event</span><span class="p">.</span><span class="nf">stopPropagation</span><span
+                class="p">();</span>
+    <span class="k">typeof</span> <span class="nx">event</span><span class="p">.</span><span class="nx">cancelBubble</span> <span class="o">===</span> <span class="dl">"</span><span
+                class="s2">function</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">event</span><span class="p">.</span><span class="nf">cancelBubble</span><span
+                class="p">();</span>
+<span class="p">}</span>
+
+<span class="nf">enableContextMenu</span><span class="p">();</span>
+</code></pre>
+          </div>
+        </div>
+        <div class="language-javascript highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="nf">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nf">unbind</span><span
+              class="p">();</span>
+</code></pre>
+          </div>
+        </div>
+        <div class="language-javascript highlighter-rouge">
+          <div class="highlight"><pre class="highlight"><code><span class="nx">javascript</span><span class="p">:</span> <span class="kd">function</span> <span class="nf">enableContextMenu</span><span
+              class="p">(</span><span class="nx">aggressive</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">void </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">ondragstart</span> <span class="o">=</span> <span
+                class="kc">null</span><span class="p">);</span>
+    <span class="k">void </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">onselectstart</span> <span class="o">=</span> <span
+                class="kc">null</span><span class="p">);</span>
+    <span class="k">void </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kc">null</span><span
+                class="p">);</span>
+    <span class="k">void </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">onmousedown</span> <span class="o">=</span> <span
+                class="kc">null</span><span class="p">);</span>
+    <span class="k">void </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">onmouseup</span> <span class="o">=</span> <span
+                class="kc">null</span><span class="p">);</span>
+    <span class="k">void </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">oncontextmenu</span> <span
+                class="o">=</span> <span class="kc">null</span><span class="p">);</span>
+    <span class="nf">enableRightClickLight</span><span class="p">(</span><span class="nb">document</span><span class="p">);</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">aggressive</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">enableRightClick</span><span class="p">(</span><span class="nb">document</span><span class="p">);</span>
+        <span class="nf">removeContextMenuOnAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">body</span><span class="dl">"</span><span class="p">);</span>
+        <span class="nf">removeContextMenuOnAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">img</span><span class="dl">"</span><span class="p">);</span>
+        <span class="nf">removeContextMenuOnAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">td</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">removeContextMenuOnAll</span><span class="p">(</span><span class="nx">tagName</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">elements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementsByTagName</span><span
+                class="p">(</span><span class="nx">tagName</span><span class="p">);</span>
+    <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span
+                class="nx">i</span> <span class="o">&lt;</span> <span class="nx">elements</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span
+                class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">enableRightClick</span><span class="p">(</span><span class="nx">elements</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+        <span class="nf">enablePointerEvents</span><span class="p">(</span><span class="nx">elements</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">enableRightClickLight</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">el</span> <span class="o">||</span> <span class="p">(</span><span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">contextmenu</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">enableRightClick</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">el</span> <span class="o">||</span> <span class="p">(</span><span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">contextmenu</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">dragstart</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">selectstart</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">mousedown</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">mouseup</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">restoreRightClick</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">el</span> <span class="o">||</span> <span class="p">(</span><span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">removeEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">contextmenu</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">removeEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">dragstart</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">removeEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">selectstart</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">removeEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">removeEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">mousedown</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nf">removeEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">mouseup</span><span
+                class="dl">"</span><span class="p">,</span> <span class="nx">bringBackDefault</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">bringBackDefault</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">returnValue</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="k">typeof</span> <span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span> <span class="o">===</span> <span class="dl">"</span><span
+                class="s2">function</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">event</span><span class="p">.</span><span class="nf">stopPropagation</span><span
+                class="p">();</span>
+    <span class="k">typeof</span> <span class="nx">event</span><span class="p">.</span><span class="nx">cancelBubble</span> <span class="o">===</span> <span class="dl">"</span><span
+                class="s2">function</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">event</span><span class="p">.</span><span class="nf">cancelBubble</span><span
+                class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nf">enablePointerEvents</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">el</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">pointerEvents</span> <span class="o">=</span> <span
+                class="dl">"</span><span class="s2">auto</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">webkitTouchCallout</span> <span class="o">=</span> <span
+                class="dl">"</span><span class="s2">default</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">webkitUserSelect</span> <span class="o">=</span> <span
+                class="dl">"</span><span class="s2">auto</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">MozUserSelect</span> <span class="o">=</span> <span
+                class="dl">"</span><span class="s2">auto</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">msUserSelect</span> <span class="o">=</span> <span class="dl">"</span><span
+                class="s2">auto</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">userSelect</span> <span class="o">=</span> <span class="dl">"</span><span
+                class="s2">auto</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nf">enablePointerEvents</span><span class="p">(</span><span class="nx">el</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">enableContextMenu</span><span class="p">();</span>
+</code></pre>
+          </div>
+        </div>
+      </main>
+      <hr>
+      <footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"></p>
+        <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"><a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./GoogleNotes/DevTools.md"
+                                                                                id="edit-this-page">Edit this page on GitHub</a></p></div>
+      </footer>
+    </div>
+  </div>
+  <button aria-label="Focus on search" class="search-button btn-reset" id="search-button">
+    <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+      <use xlink:href="#svg-search"></use>
+    </svg>
+  </button>
+  <div class="search-overlay"></div>
+</div>
