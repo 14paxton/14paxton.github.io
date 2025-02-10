@@ -119,10 +119,28 @@ Table of contents
 ```java
 @ActiveProfiles("test")
 
+//Loads the full application context for end-to-end testing.
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = Application.class)
-
+// Loads only the controller layer and mocks out other components like services.
 @WebMvcTest(controllers = MyController.class)
+// Loads only the JPA components (like repositories) and configures an in-memory database.
+@DataJpaTest
+// Used for testing REST clients configured with RestTemplate or WebClient.
+@RestClientTest
+
+//similar to @DataJpaTest but is for pure JDBC-related tests
+@JdbcTest
+
+//To test that object JSON serialization and deserialization is working as expected
+@JsonTest
+
+//Provides an instance of MockMvc when testing controllers in @SpringBootTest.
 @AutoConfigureMockMvc
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringRunner.class)
+@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(SpringExtension.class)
 
 @WebAppConfiguration
 @ContextConfiguration(
@@ -133,12 +151,6 @@ Table of contents
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 
 @AutoConfigureMockMvc
-@DataJpaTest
-
-@RunWith(SpringJUnit4ClassRunner.class)
-@RunWith(SpringRunner.class)
-@RunWith(MockitoJUnitRunner.class)
-@ExtendWith(SpringExtension.class)
 
 @TestPropertySource("classpath:/persistence-personnel.properties")
 
