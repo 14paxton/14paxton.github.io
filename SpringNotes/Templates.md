@@ -32,8 +32,6 @@ Table of contents
 # Controller MVC
 
 ```java
-package mil.usmc.mls2.tcpt.modules.ui.adapters.web.template.controller;
-
 import mil.usmc.mls2.tcpt.common.http.HtmxConstants;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,14 +52,14 @@ public class FragmentController {
 
     @GetMapping(path = "/inject/{fileName}/{fragmentId}")
     public FragmentsRendering injectRenderFragment(@PathVariable String fileName, @PathVariable String fragmentId) {
-        return FragmentsRendering.with("realTimeAlertNotification")
-                                 .fragment("rtaFragment")
+        return FragmentsRendering.with("htmlFile")
+                                 .fragment("fragmentId")
                                  .build();
     }
 
     @GetMapping(path = "/inject/{fileName}/{fragmentId}")
     public ModelAndView injectModelView(@PathVariable String fileName, @PathVariable String fragmentId) {
-        return new ModelAndView("fragments/realTimeAlertNotification");
+        return new ModelAndView("fragments/htmlFile");
     }
 }
 ```
