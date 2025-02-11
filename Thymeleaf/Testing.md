@@ -71,6 +71,7 @@ class FragmentControllerTest {
     @Autowired
     private TemplateEngine templateEngine;
 
+    //FOR CONTROLLER RETURNING STRING
     @Test
     @WithMockUser(roles = "ADMIN")
     void testControllerIsReturningThePassedFileAndFragment() throws Exception {
@@ -83,6 +84,19 @@ class FragmentControllerTest {
                                            .getContentAsString());
     }
 
+    //FOR CONTROLLER RETURNING FragmentsRendering
+    @Test
+    void testInjectRenderFragment() throws Exception {
+        String fileName = "exampleFile";
+        String fragmentId = "exampleFragment";
+
+        mockMvc.perform(get("/inject/{fileName}/{fragmentId}", fileName, fragmentId))
+               .andExpect(status().isOk())
+               .andExpect(jsonPath("$.htmlFile", is("htmlFile")))
+               .andExpect(jsonPath("$.fragmentId", is("fragmentId")));
+    }
+
+    // FOR ONLY TESTING TEMPLATE //
     @Test
     public void testRealTimeAlertNotificationThymeleafTemplate() {
         Context context = new Context();
