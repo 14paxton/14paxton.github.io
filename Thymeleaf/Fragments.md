@@ -1,11 +1,11 @@
 ---
-title: Fragments
-permalink: Thymeleaf/Fragments
-category: Thymeleaf
-parent: Thymeleaf
-layout: default
+title:        Fragments
+permalink:    Thymeleaf/Fragments
+category:     Thymeleaf
+parent:       Thymeleaf
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
   - thymeleaf
   - default          
@@ -31,8 +31,33 @@ Table of contents
 
 # Add HTML Fragments
 
+> engine should be looking in `resources/templates/`
+
+- ```html
+   <div id="rta-container" th:replace="fragments/realTimeAlertNotification :: rtaFragment"></div>
+  ```
+
+-  ```html
+    <div th:if="${disableAlertButton}" th:insert="~{/fragments/notificationModal :: notificationModal}"></div>
+   ```
+
+## Use HTMX
+
+```html
+
+<div id="id"
+     hx-get="/context/controller/action/"
+     hx-target="this"
+     hx-trigger="load"
+     hx-swap="innerHTML"
+     hx-on--after-request="htmx.process(this)"
+>
+```
+
+## Conditionally
+
 > without using a custom dialect, is to use arguments on the fragment I use as my layout template which I call 'main-layout'. This example allows you to leave out elements you
-> don't need to override but any you provide will be added to whatever is in the 'main-layout' fragment.
+> don't need to override, but any you provide will be added to whatever is in the 'main-layout' fragment.
 
 - `main-view.html`
 
@@ -62,25 +87,25 @@ Table of contents
 
     - > use case
 
-      ```html
-             <!DOCTYPE HTML>
-        <html th:replace="main-view.html :: main-layout (head=~{:: head}, contentHeader=~{:: header}, content=~{:: main}, footer=~{:: footer})">
-            <head th:remove="tag">
-                <title>Greeting Head</title>
-            </head>
-            <body>
-                <header th:remove="tag">
-                    Greeting Content Header
-                </header>
-                <main th:remove="tag">
-                    Greeting Content
-                </main>
-            </body>
-            <footer th:remove="tag">
-                Greeting Footer
-            </footer>
-        </html>
-      ```
+        ```html
+          <!DOCTYPE HTML>
+          <html th:replace="main-view.html :: main-layout (head=~{:: head}, contentHeader=~{:: header}, content=~{:: main}, footer=~{:: footer})">
+              <head th:remove="tag">
+                  <title>Greeting Head</title>
+              </head>
+              <body>
+                  <header th:remove="tag">
+                      Greeting Content Header
+                  </header>
+                  <main th:remove="tag">
+                      Greeting Content
+                  </main>
+              </body>
+              <footer th:remove="tag">
+                  Greeting Footer
+              </footer>
+          </html>
+        ```
 
 # Adding js Script
 
