@@ -132,6 +132,7 @@ class ControllerTest {
 ```
 
     {%endraw%}
+</details>
 
 <details markdown="block"> 
   <summary>
