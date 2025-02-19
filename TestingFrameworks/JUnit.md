@@ -82,7 +82,56 @@ mvn '-Dsurefire.rerunFailingTestsCount=2' -Dtest=ModuleTwoTests test
 
 # Spring
 
-## Test Controller MockMvc
+## Test Controller
+
+<details markdown="block"> 
+  <summary>
+  Calling Controller and Action Directly
+  </summary>
+
+    {%raw%}
+
+```java
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.web.AnnotationConfigWebContextLoader;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+
+
+@Slf4j
+@ActiveProfiles("test")
+@WebMvcTest(controllers = FragmentController.class)
+@ComponentScan(basePackageClasses = {FragmentController.class})
+@ContextConfiguration(classes = {DefaultTestConfig.class}, loader = AnnotationConfigWebContextLoader.class)
+class ControllerTest {
+
+  @Test
+  public void test_returns_map_with_subscription_type_ids() {
+    NotificationController controller = new NotificationController();
+
+    Map result = controller.fetchAllNotifications();
+
+    List<Integer> expectedIds = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+    assertNotNull(result);
+    assertTrue(result.containsKey("emailNotifications"));
+    assertEquals(expectedIds, result.get("emailNotifications"));
+  }
+
+}
+```
+
+    {%endraw%}
 
 <details markdown="block"> 
   <summary>
