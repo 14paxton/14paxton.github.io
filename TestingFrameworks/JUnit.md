@@ -80,6 +80,76 @@ mvn '-Dsurefire.rerunFailingTestsCount=2' -Dtest=ModuleTwoTests test
 </plugin>    
 ```
 
+## Mock
+
+- ### Mock Static Method
+   ```java
+        import org.junit.Test;
+        
+        public class TestSomething {
+            @Test
+            public void testDoIndex() throws Exception {
+                MockedStatic<QueryUtils> queryUtilsMockedStatic = mockStatic(QueryUtils.class);
+                queryUtilsMockedStatic.when(() -> QueryUtils.createQuery(entityManager))
+                                      .thenReturn(new BlazeJPAQuery<>(entityManager, criteriaBuilderFactory));
+            }
+        }
+   ```
+
+  - #### use value passed to mocked method in action
+    ```java
+        when(method.execute(Mockito.any(FindDayRangeAvailabilityForPersonnel.class))).thenAnswer(invocation -> {
+        FindDayRangeAvailabilityForPersonnel input = invocation.getArgument(0);
+        return buildResponse(2, input);
+      });
+    ```
+
+- ### Mock Service Method
+  ```java
+   import org.junit.Test;
+        
+        public class TestSomething {
+  
+            @MockitoBean
+             MyService myService;
+  
+            @Test
+            public void testDoIndex() throws Exception {
+                when(myService.findUnitUuid(mockLong)).thenReturn(Optional.of(id));
+            }
+        }
+   ```
+
+- ### Mock Session
+  ```java
+    MockHttpSession mockSession = new MockHttpSession();
+  ```
+
+# Metadata
+
+> get test info
+
+```java
+
+@Test
+public void testDoFetchTableData(TestInfo testInfo) throws Exception {
+  String status = "Active";
+  String lastName = "Gold";
+  String firstName = "Felix";
+  String startDay = "2025-01-01";
+
+  var request = createRequest(status, lastName, firstName, startDay);
+
+  logJsonContent(request, " JSON Request : {}", testInfo);
+
+  mockMvc.perform(post("/uri")
+                          .contentType(MediaType.APPLICATION_JSON)
+                          .header("Jq-Request", "true")
+                          .content(request))
+         .andExpect(status().isOk());
+}
+```
+
 # Spring
 
 ## Controller
