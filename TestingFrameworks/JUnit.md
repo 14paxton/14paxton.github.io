@@ -1,11 +1,11 @@
 ---
-title:     JUnit
-permalink: TestingFrameworks/JUnit
-category:  TestingFrameworks
-parent:    TestingFrameworks
-layout:    default
+title:        JUnit
+permalink:    TestingFrameworks/JUnit
+category:     TestingFrameworks
+parent:       TestingFrameworks
+layout:       default
 has_children: false
-share:     true
+share:        true
 shortRepo:
 
   - testingframeworks
@@ -82,7 +82,7 @@ mvn '-Dsurefire.rerunFailingTestsCount=2' -Dtest=ModuleTwoTests test
 
 # Spring
 
-## Test Controller
+## Controller
 
 <details markdown="block"> 
   <summary>
@@ -116,22 +116,23 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ContextConfiguration(classes = {DefaultTestConfig.class}, loader = AnnotationConfigWebContextLoader.class)
 class ControllerTest {
 
-  @Test
-  public void test_returns_map_with_subscription_type_ids() {
-    NotificationController controller = new NotificationController();
+    @Test
+    public void test_returns_map_with_subscription_type_ids() {
+        NotificationController controller = new NotificationController();
 
-    Map result = controller.fetchAllNotifications();
+        Map result = controller.fetchAllNotifications();
 
-    List<Integer> expectedIds = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
-    assertNotNull(result);
-    assertTrue(result.containsKey("emailNotifications"));
-    assertEquals(expectedIds, result.get("emailNotifications"));
-  }
+        List<Integer> expectedIds = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+        assertNotNull(result);
+        assertTrue(result.containsKey("emailNotifications"));
+        assertEquals(expectedIds, result.get("emailNotifications"));
+    }
 
 }
 ```
 
     {%endraw%}
+
 </details>
 
 <details markdown="block"> 
@@ -282,6 +283,34 @@ public class ControllerTest {
 {%endraw%}
 
 </details>
+
+### Alternate Ways To Instantiate Controller
+
+```java
+
+@Autowired
+private Controller controller;
+```
+
+```java
+
+@Autowired
+public ControllerTest(ApplicationContext applicationContext) {
+    ContextUtil.init(applicationContext);
+    mockMvc = MockMvcBuilders.standaloneSetup(new Controller())
+                             .build();
+}
+```
+
+```java
+
+@BeforeEach
+public void setUp() throws JsonProcessingException, RBACSecurityException {
+    controller = new Controller();
+    mockMvc    = MockMvcBuilders.standaloneSetup(controller)
+                                .build();
+}
+```
 
 ## Test ApplicationContext SpringBootTest
 
