@@ -414,58 +414,42 @@ public class OracleDatabaseContainerTest {
     - ### Test
 
         ```java
-            import javax.sql.DataSource;
-            import java.sql.Connection;
-            import java.sql.SQLException;
-            import java.sql.Statement;
-            import java.time.Duration;
-          
-            import org.junit.jupiter.api.Test;
-            import org.springframework.beans.factory.annotation.Autowired;
-            import org.springframework.boot.test.context.SpringBootTest;
-            import org.springframework.test.context.DynamicPropertyRegistry;
-            import org.springframework.test.context.DynamicPropertySource;
-            import org.testcontainers.junit.jupiter.Container;
-            import org.testcontainers.junit.jupiter.Testcontainers;
-            import org.testcontainers.oracle.OracleContainer;
-          
-            @SpringBootTest
-            @Testcontainers
-            public class OracleDatabaseTest {
-              static String image = "gvenzl/oracle-free:23.5-slim-faststart";
-          
-          @Container
-          static OracleContainer oracleContainer = new OracleContainer(DockerImageName.parse("gvenzl/oracle-free:23.5-slim-faststart"))
-              .withDatabaseName("DataBase")
-              .withInitScript("sql/init.sql")
-              .withUsername("testuser")
-              .withPassword(("testpwd"))
-              .withExposedPorts(1521)
-              .withStartupTimeout(Duration.ofMinutes(3));
-      
-      
-          @DynamicPropertySource
-          static void properties(DynamicPropertyRegistry registry) {
-            registry.add("JDBC_URL", oracleContainer::getJdbcUrl);
-            registry.add("USERNAME", oracleContainer::getUsername);
-            registry.add("PASSWORD", oracleContainer::getPassword);
-          }
-      
-          @BeforeAll
-          public static void setUp() throws Exception {
-            oracleContainer.start();
-          }
-      
-          @AfterAll
-          public static void tearDown() {
-            if (oracleContainer != null) {
-              oracleContainer.stop();
-            }
-          }
-          
+          import java.sql.Connection;
+          import java.sql.SQLException;
+          import java.sql.Statement;
+          import java.time.Duration;
+        
+          import org.junit.jupiter.api.Test;
+          import org.springframework.beans.factory.annotation.Autowired;
+          import org.springframework.boot.test.context.SpringBootTest;
+          import org.springframework.test.context.DynamicPropertyRegistry;
+          import org.springframework.test.context.DynamicPropertySource;
+          import org.testcontainers.junit.jupiter.Container;
+          import org.testcontainers.junit.jupiter.Testcontainers;
+          import org.testcontainers.oracle.OracleContainer;
+        
+          @SpringBootTest
+          @Testcontainers
+          public class OracleDatabaseTest {
+          static String image = "gvenzl/oracle-free:23.5-slim-faststart";
+        
+              @Container
+              static OracleContainer oracleContainer = new OracleContainer(image)
+                      .withStartupTimeout(Duration.ofMinutes(2))
+                      .withUsername("testuser")
+                      .withPassword(("testpwd"));
+            
+            
+              @DynamicPropertySource
+              static void properties(DynamicPropertyRegistry registry) {
+                registry.add("JDBC_URL", oracleContainer::getJdbcUrl);
+                registry.add("USERNAME", oracleContainer::getUsername);
+                registry.add("PASSWORD", oracleContainer::getPassword);
+              }
+            
               @Autowired
               DataSource dataSource;
-          
+            
               @Test
               void getConnection() throws SQLException {
                 try (
@@ -475,43 +459,6 @@ public class OracleDatabaseContainerTest {
                   stmt.executeQuery("select * from v$version");
                 }
               }
-            }
-        
-            @Test
-          void getConnection() throws SQLException {
-            try (Connection connection = DriverManager.getConnection(
-                oracleContainer.getJdbcUrl(),
-                oracleContainer.getUsername(),
-                oracleContainer.getPassword())) {
-      
-              ResultSet resultSet = connection.createStatement()
-                  .executeQuery("SELECT table_name FROM user_tables where table_name like '%PRODUCTS%'");
-              var tableExists = resultSet.next();
-              assertTrue(tableExists, "Table PERSONNEL should exist in the database");
-            }
-          }
-      
-          @Test
-          void testThatDataIsInTable() throws SQLException {
-            try (Connection connection = DriverManager.getConnection(oracleContainer.getJdbcUrl(), oracleContainer.getUsername(), oracleContainer.getPassword())) {
-              List<Long> expectedIds = Arrays.asList(1L, 2L, 3L);
-              List<String> expectedNames = Arrays.asList("Product A", "Product B", "Product C");
-              HashMap<Long, String> productMap = new HashMap<>();
-      
-              ResultSet resultSet = connection.createStatement()
-                  .executeQuery("SELECT * FROM PRODUCTS");
-      
-              while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                String name = resultSet.getString("name");
-      
-                productMap.put(Long.valueOf(id), name);
-              }
-      
-              assertTrue(productMap.size() > 0, "No products were found in the database");
-              assertThat(productMap.keySet()).containsAll(expectedIds);
-              assertThat(productMap.values()).containsAll(expectedNames);
-            }
           }
         ```
 

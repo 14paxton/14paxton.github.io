@@ -31,43 +31,6 @@ Table of contents
 
 # JUnit
 
-## Mock
-
-- ### Mock Static Method
-   ```java
-        import org.junit.Test;
-        
-        public class TestSomething {
-            @Test
-            public void testDoIndex() throws Exception {
-                MockedStatic<QueryUtils> queryUtilsMockedStatic = mockStatic(QueryUtils.class);
-                queryUtilsMockedStatic.when(() -> QueryUtils.createQuery(entityManager))
-                                      .thenReturn(new BlazeJPAQuery<>(entityManager, criteriaBuilderFactory));
-            }
-        }
-   ```
-
-- ### Mock Service Method
-  ```java
-   import org.junit.Test;
-        
-        public class TestSomething {
-  
-            @MockitoBean
-             MyService myService;
-  
-            @Test
-            public void testDoIndex() throws Exception {
-                when(myService.findUnitUuid(mockLong)).thenReturn(Optional.of(id));
-            }
-        }
-   ```
-
-- ### Mock Session
-  ```java
-    MockHttpSession mockSession = new MockHttpSession();
-  ```
-
 ## Context
 
 - ### ApplicationContext
