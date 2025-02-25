@@ -232,8 +232,34 @@ public class Location implements Serializable {
 
   ```java
   String hql = "select new Map(p.id as id, p.firstName as firstName)FROM Entity p";
-  var q =  entityManager.createQuery(hql, Map.class).getResultList()
+  var q =  entityManager.createQuery(hql, Map.class).getResultList();
   ```
+
+### CriteriaBuilder
+
+```java
+
+@Service
+public class Service {
+
+  @PersistenceContext
+  private EntityManager entityManager;
+
+  public List<Entity> findActiveSubscriptions() {
+    CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+    CriteriaQuery<Entity> criteriaQuery = criteriaBuilder.createQuery(Entity.class);
+    Root<Entity> root = criteriaQuery.from(Entity.class);
+
+    // WHERE active = true
+    Predicate isActive = criteriaBuilder.equal(root.get("active"), true);
+    criteriaQuery.select(root)
+                 .where(isActive);
+
+    return entityManager.createQuery(criteriaQuery)
+                        .getResultList();
+  }
+}
+```
 
 > ### Using BlazeJPAQuery
 
