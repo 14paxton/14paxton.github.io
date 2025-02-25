@@ -101,6 +101,100 @@ Table of contents
             }
           ```
 
+  - ### Reusable Config File to create TestContainer
+
+     ```java
+      package app.com.config;
+  
+      import com.blazebit.persistence.Criteria;
+      import com.blazebit.persistence.CriteriaBuilderFactory;
+      import jakarta.persistence.EntityManagerFactory;
+      import lombok.extern.slf4j.Slf4j;
+      import org.springframework.context.annotation.Bean;
+      import org.springframework.context.annotation.Configuration;
+      import org.springframework.jdbc.datasource.DriverManagerDataSource;
+      import org.springframework.orm.jpa.JpaTransactionManager;
+      import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+      import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+      import org.springframework.test.context.ActiveProfiles;
+      import org.springframework.test.context.DynamicPropertyRegistry;
+      import org.springframework.test.context.DynamicPropertySource;
+      import org.springframework.transaction.PlatformTransactionManager;
+      import org.springframework.transaction.annotation.EnableTransactionManagement;
+      import org.testcontainers.oracle.OracleContainer;
+      import org.testcontainers.utility.DockerImageName;
+  
+      import javax.sql.DataSource;
+      import java.time.Duration;
+      import java.util.Properties;
+  
+      @Slf4j
+      @ActiveProfiles("test")
+      @Configuration
+      @EnableTransactionManagement
+      public class TestContainerEntityManagerConfig {
+  
+        private static final OracleContainer oracleContainer = new OracleContainer(
+            DockerImageName.parse("gvenzl/oracle-free:23.5-slim-faststart"))
+            .withDatabaseName("TCPTDBA")
+            .withUsername("testuser")
+            .withPassword("testpwd")
+            .withExposedPorts(1521)
+            .withStartupTimeout(Duration.ofMinutes(3));
+  
+        static {
+          oracleContainer.start();
+        }
+  
+        @DynamicPropertySource
+        static void properties(DynamicPropertyRegistry registry) {
+          registry.add("JDBC_URL", oracleContainer::getJdbcUrl);
+          registry.add("USERNAME", oracleContainer::getUsername);
+          registry.add("PASSWORD", oracleContainer::getPassword);
+        }
+  
+        @Bean
+        public CriteriaBuilderFactory criteriaBuilderFactory(EntityManagerFactory entityManagerFactory) {
+          return Criteria.getDefault().createCriteriaBuilderFactory(entityManagerFactory);
+        }
+  
+        @Bean
+        public DataSource dataSource() {
+          log.info("Creating DataSource for Oracle container at URL: {}", oracleContainer.getJdbcUrl());
+          DriverManagerDataSource dataSource = new DriverManagerDataSource();
+          dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
+          dataSource.setUrl(oracleContainer.getJdbcUrl());
+          dataSource.setUsername(oracleContainer.getUsername());
+          dataSource.setPassword(oracleContainer.getPassword());
+          return dataSource;
+        }
+  
+        @Bean(name = "entityManagerFactory")
+        public LocalContainerEntityManagerFactoryBean entityManager() {
+          LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+          em.setDataSource(dataSource());
+          em.setPackagesToScan("mil.usmc.mls2.tcpt");
+          em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+          em.setJpaProperties(additionalProperties());
+          return em;
+        }
+  
+        @Bean
+        public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
+          return new JpaTransactionManager(entityManagerFactory);
+        }
+  
+        private Properties additionalProperties() {
+          Properties properties = new Properties();
+          properties.setProperty("hibernate.hbm2ddl.auto", "update");
+          properties.setProperty("hibernate.dialect", "org.hibernate.dialect.OracleDialect");
+          properties.setProperty("hibernate.show-sql", "true");
+          // properties.setProperty("spring.jpa.defer-datasource-initialization", "true");
+          return properties;
+        }
+      }
+     ```
+
 ## Test Container Build
 
 ```java
