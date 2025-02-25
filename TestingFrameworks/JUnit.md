@@ -133,26 +133,63 @@ mvn '-Dsurefire.rerunFailingTestsCount=2' -Dtest=ModuleTwoTests test
 
 @Test
 public void testDoFetchTableData(TestInfo testInfo) throws Exception {
-  String status = "Active";
-  String lastName = "Gold";
-  String firstName = "Felix";
-  String startDay = "2025-01-01";
+    String status = "Active";
+    String lastName = "Gold";
+    String firstName = "Felix";
+    String startDay = "2025-01-01";
 
-  var request = createRequest(status, lastName, firstName, startDay);
+    var request = createRequest(status, lastName, firstName, startDay);
 
-  logJsonContent(request, " JSON Request : {}", testInfo);
+    logJsonContent(request, " JSON Request : {}", testInfo);
 
-  mockMvc.perform(post("/uri")
-                          .contentType(MediaType.APPLICATION_JSON)
-                          .header("Jq-Request", "true")
-                          .content(request))
-         .andExpect(status().isOk());
+    mockMvc.perform(post("/uri")
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .header("Jq-Request", "true")
+                            .content(request))
+           .andExpect(status().isOk());
 }
 ```
 
 # Spring
 
 ## Controller
+
+```java
+
+@Test
+public void getAllEmployeesAPI() throws Exception {
+    mvc.perform(MockMvcRequestBuilders
+                        .get("/employees")
+                        .accept(MediaType.APPLICATION_JSON))
+       .andDo(print())
+       .andExpect(status().isOk())
+       .andExpect(MockMvcResultMatchers.jsonPath("$.employees")
+                                       .exists())
+       .andExpect(MockMvcResultMatchers.jsonPath("$.employees[*].employeeId")
+                                       .isNotEmpty());
+}
+
+@Test
+public void createEmployeeAPI() throws Exception {
+    mvc.perform(MockMvcRequestBuilders
+                        .post("/employees")
+                        .content(asJsonString(new EmployeeVO(null, "firstName", "lastName", "admin@mail.com")))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+       .andExpect(status().isCreated())
+       .andExpect(MockMvcResultMatchers.jsonPath("$.employeeId")
+                                       .exists());
+}
+
+public static String asJsonString(final Object obj) {
+    try {
+        return new ObjectMapper().writeValueAsString(obj);
+    }
+    catch (Exception e) {
+        throw new RuntimeException(e);
+    }
+}
+```
 
 <details markdown="block"> 
   <summary>
@@ -346,6 +383,88 @@ public class ControllerTest {
         List<HashMap> otherIdList = (List<HashMap>) responseMap.get("data");
 
         var record = otherIdList.getFirst();
+    }
+}
+```
+
+{%endraw%}
+
+</details>
+
+<details markdown="block"> 
+  <summary>
+   With Mockito
+  </summary>
+
+{%raw%}
+
+```java
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+
+import com.howtodoinjava.rest.controller.EmployeeController;
+import com.howtodoinjava.rest.dao.EmployeeRepository;
+import com.howtodoinjava.rest.model.Employee;
+import com.howtodoinjava.rest.model.Employees;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.ResponseEntity;
+import org.springframework.mock.web.MockHttpServletRequest;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+@ExtendWith(MockitoExtension.class)
+public class EmployeeControllerTest {
+    @InjectMocks
+    EmployeeController employeeController;
+
+    @Mock
+    EmployeeDAO employeeDAO;
+
+    @Test
+    public void testAddEmployee() {
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        RequestContextHolder.setRequestAttributes(new ServletRequestAttributes(request));
+
+        when(employeeDAO.addEmployee(any(Employee.class))).thenReturn(true);
+
+        Employee employee = new Employee(1, "Lokesh", "Gupta", "howtodoinjava@gmail.com");
+        ResponseEntity<Object> responseEntity = employeeController.addEmployee(employeeToAdd);
+
+        assertThat(responseEntity.getStatusCodeValue()).isEqualTo(201);
+        assertThat(responseEntity.getHeaders()
+                                 .getLocation()
+                                 .getPath()).isEqualTo("/1");
+    }
+
+    @Test
+    public void testFindAll() {
+        Employee employee1 = new Employee(1, "Lokesh", "Gupta", "howtodoinjava@gmail.com");
+        Employee employee2 = new Employee(2, "Alex", "Gussin", "example@gmail.com");
+        Employees employees = new Employees();
+        employees.setEmployeeList(Arrays.asList(employee1, employee2));
+
+        when(employeeDAO.getAllEmployees()).thenReturn(employees);
+
+        Employees result = employeeController.getEmployees();
+
+        assertThat(result.getEmployeeList()
+                         .size()).isEqualTo(2);
+        assertThat(result.getEmployeeList()
+                         .get(0)
+                         .getFirstName()).isEqualTo(employee1.getFirstName());
+        assertThat(result.getEmployeeList()
+                         .get(1)
+                         .getFirstName()).isEqualTo(employee2.getFirstName());
     }
 }
 ```
