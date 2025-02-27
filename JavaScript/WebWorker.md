@@ -31,7 +31,8 @@ Table of contents
 
 # Webworker
 
-> [React Example](ReactNotes/WebWorker.md)
+> [React Example](https://github.com/14paxton/TableToPowerPoint/blob/main/pptx/util/ppt.worker.js)
+- > [Context usage](https://github.com/14paxton/TableToPowerPoint/blob/main/pptx/TalentGridPPTXContext.js)
 
 ```javascript
 const items = new Array(100).fill(null);
