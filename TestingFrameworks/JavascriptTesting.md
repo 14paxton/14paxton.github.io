@@ -1,15 +1,15 @@
 ---
-title:     Javascript
-permalink: TestingFrameworks/JavascriptTesting
-category:  TestingFrameworks
-parent:    TestingFrameworks
-layout:    default
+title:        Javascript
+permalink:    TestingFrameworks/JavascriptTesting
+category:     TestingFrameworks
+parent:       TestingFrameworks
+layout:       default
 has_children: false
-share:     true
+share:        true
 shortRepo:
 
-- testingframeworks
-- default
+  - testingframeworks
+  - default
 
 ---
 
@@ -199,12 +199,7 @@ import {
 } from "@testing-library/react";
 
 const props = {
-    handleChange:   jest.fn(),
-    onSubmit:       jest.fn(),
-    bio:            "test",
-    gravatar:       "https://i.pravatar.cc/150?img=3",
-    handleBio:      jest.fn(),
-    handleGravatar: jest.fn(),
+    handleChange: jest.fn(), onSubmit: jest.fn(), bio: "test", gravatar: "https://i.pravatar.cc/150?img=3", handleBio: jest.fn(), handleGravatar: jest.fn(),
 };
 describe("<EditProfileForm/>", () => {
     let wrapper;
