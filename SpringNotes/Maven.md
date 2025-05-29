@@ -1,15 +1,15 @@
 ---
-title: Maven
-permalink: SpringNotes/Maven
-category: SpringNotes
-parent: SpringNotes
-layout: default
+title:        Maven
+permalink:    SpringNotes/Maven
+category:     SpringNotes
+parent:       SpringNotes
+layout:       default
 has_children: false
-share: true
+share:        true
 shortRepo:
 
-- springnotes
-- default
+  - springnotes
+  - default
 
 ---
 
@@ -117,3 +117,32 @@ mvn -DskipTests package
 </configuration>
 </plugin>    
 ```
+
+# Update
+
+- Change pom
+    ```xml
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-properties-migrator</artifactId>
+      <version>3.5.0</version> <!-- Required -->
+      <scope>runtime</scope>
+    </dependency>
+  ```
+
+- Update and check dependencies
+     ```shell
+        mvn clean install -U
+        mvn clean verify
+        mvn spring-boot:run
+      
+        mvn dependency:tree -Dincludes=org.springframework.boot
+        # OR ./mvnw dependency:tree | grep spring-boot
+        mvn versions:display-dependency-updates
+        mvn versions:display-plugin-updates
+      
+        #Search for Deprecated/Removed Modules
+        mvn dependency:tree | grep '\[WARNING\]'
+      
+        
+     ```
