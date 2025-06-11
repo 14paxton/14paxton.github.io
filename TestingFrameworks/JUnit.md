@@ -22,8 +22,9 @@ Table of contents
 1. TOC    
 {:toc}    
 </details>    
+
 <br/>    
-***    
+
 <br/>    
 
 # [configure](https://maven.apache.org/surefire/maven-surefire-plugin/examples/junit-platform.html)
