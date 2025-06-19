@@ -40,8 +40,8 @@ public void Reflection() {
   String getterName = "get" + Character.toUpperCase(property.getValue()
                                                             .charAt(0)) + property.getValue()
                                                                                   .substring(1);
-  var getter = before.getClass()
-                     .getMethod(getterName);
+  java.lang.reflect.Method getter = before.getClass()
+                                          .getMethod(getterName);
   Object newValue = getter.invoke(after);
 
 
@@ -53,7 +53,7 @@ public void Reflection() {
   Entity before = new Entity();
   Entity after = new Entity();
 
-  java.lang.reflect.Method fluentStyleGetter = Entity.class.getDeclaredMethod("name");
+  java.lang.reflect.Method fluentStyleGetter = Entity.class.getDeclaredMethod("fieldName");
   Object oldValue = fluentStyleGetter.invoke(before);
   Object newValue = fluentStyleGetter.invoke(after);
 
@@ -63,7 +63,7 @@ public void Reflection() {
   // sets access on private method 
   // ****************************************************************************************
 
-  java.lang.reflect.Method privateMethod = ResourceManagerVmcInfoFormBuilder.class.getDeclaredMethod("configureVmcInfo_edits", ParamType.class);
+  java.lang.reflect.Method privateMethod = ClassToGetMethod.class.getDeclaredMethod("methodToCall", ParamType.class);
   privateMethod.setAccessible(true);
   privateMethod.invoke(builder, formSpy);
 
@@ -76,7 +76,7 @@ public void Reflection() {
 
   Entity entity = new Entity();
   java.lang.reflect.Field field = entity.getClass()
-                                        .getDeclaredField("method");
+                                        .getDeclaredField("fieldName");
   field.setAccessible(true);
 
   var oldValue = field.get(before);
