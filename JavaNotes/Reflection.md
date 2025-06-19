@@ -34,7 +34,7 @@ Table of contents
 ```java
 public void Reflection() {
   // ****************************************************************************************
-  // dynamically call getter
+  // dynamically call getter, with get method
   // ****************************************************************************************
 
   String getterName = "get" + Character.toUpperCase(property.getValue()
@@ -53,7 +53,7 @@ public void Reflection() {
   Entity before = new Entity();
   Entity after = new Entity();
 
-  java.lang.reflect.Method fluentStyleGetter = Entity.class.getDeclaredMethod(property.getValue());
+  java.lang.reflect.Method fluentStyleGetter = Entity.class.getDeclaredMethod("name");
   Object oldValue = fluentStyleGetter.invoke(before);
   Object newValue = fluentStyleGetter.invoke(after);
 
@@ -66,6 +66,21 @@ public void Reflection() {
   java.lang.reflect.Method privateMethod = ResourceManagerVmcInfoFormBuilder.class.getDeclaredMethod("configureVmcInfo_edits", ParamType.class);
   privateMethod.setAccessible(true);
   privateMethod.invoke(builder, formSpy);
+
+
+  // ****************************************************************************************
+  // Getting Field
+  // sets access on private field 
+  // call field getter
+  // ****************************************************************************************
+
+  Entity entity = new Entity();
+  java.lang.reflect.Field field = entity.getClass()
+                                        .getDeclaredField("method");
+  field.setAccessible(true);
+
+  var oldValue = field.get(before);
+  var newValue = field.get(after);
 
 }
 ```
