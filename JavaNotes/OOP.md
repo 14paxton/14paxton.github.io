@@ -1,15 +1,15 @@
 ---
-title:        OOP
-permalink:    JavaNotes/OOP
-category:     JavaNotes
-parent:       Java
-layout:       default
+title: OOP
+permalink: JavaNotes/OOP
+category: JavaNotes
+parent: Java
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
 
-- javanotes
-- default
+  - javanotes
+  - default
 
 ---
 
@@ -38,18 +38,19 @@ ClassA c = ClassA.class.newInstance();
 
 // new instance in class constructor
 
-Constructor<ClassA> d = ClassA.class.getConstructor().newInstance();
+Constructor<ClassA> d = ClassA.class.getConstructor()
+                                    .newInstance();
 ```
 
 ## cloneable
 
 ```java
 public class ClassA implements Cloneable {
-    protected Object clone() throws CloneNotSupportedException {
-    }
+  protected Object clone() throws CloneNotSupportedException {
+  }
 
-    ClassA obj1 = new ClassA();
-    ClassA obj2 = obj1.clone();
+  ClassA obj1 = new ClassA();
+  ClassA obj2 = obj1.clone();
 }
 ```
 
@@ -60,28 +61,26 @@ public class ClassA implements Serializable {
 
 }
 
-// Serialization
-ClassA classA;
-try(
-ObjectOutputStream out = new ObjectOutputStream(
-        new FileOutputStream("classA.obj"))){
-        out.
+public static void serialize(String[] args) {
+  // Serialization
+  ClassA classA;
 
-writeObject(classA);
+  try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("classA.obj"))) {
+    out.writeObject(classA);
+  }
 }
-
-// Deserialization
-ClassA deserialClassA;
-try(
-ObjectInputStream in = new ObjectInputStream(
-        new FileInputStream("classA.obj"))){
-deserialClassA =(ClassA)in.
-
-readObject();
-        }
 
 // deserialClassA Object will be created after deserialization process
 
-```
+public static void deserialize(String[] args) {
+  // Deserialization
+  ClassA deserialClassA;
 
-<div id="imageContainer" data-img-loader="javaOOPImages.js" style="width: auto; height: auto;"></div>
+  try (
+      ObjectInputStream in = new ObjectInputStream(
+          new FileInputStream("classA.obj"))
+  ) {
+    deserialClassA = (ClassA) in.readObject();
+  }
+}
+```
