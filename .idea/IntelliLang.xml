@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LanguageInjectionConfiguration">
+    <injection language="JPAQL" injector-id="java">
+      <display-name>Spring JpaCursorItemReader (org.springframework.batch.item.database)</display-name>
+      <single-file value="true" />
+      <place><![CDATA[psiParameter().ofMethod(0, psiMethod().withName("queryString").withParameters("java.lang.String").definedInClass("org.springframework.batch.item.database.builder.JpaCursorItemReaderBuilder"))]]></place>
+      <place><![CDATA[psiParameter().ofMethod(0, psiMethod().withName("setQueryString").withParameters("java.lang.String").definedInClass("org.springframework.batch.item.database.JpaCursorItemReader"))]]></place>
+    </injection>
+    <injection language="JPAQL" injector-id="java">
+      <display-name>Spring JpaPagingItemReader (org.springframework.batch.item.database)</display-name>
+      <single-file value="true" />
+      <place><![CDATA[psiParameter().ofMethod(0, psiMethod().withName("queryString").withParameters("java.lang.String").definedInClass("org.springframework.batch.item.database.builder.JpaPagingItemReaderBuilder"))]]></place>
+      <place><![CDATA[psiParameter().ofMethod(0, psiMethod().withName("setQueryString").withParameters("java.lang.String").definedInClass("org.springframework.batch.item.database.JpaPagingItemReader"))]]></place>
+    </injection>
+  </component>
+</project>
