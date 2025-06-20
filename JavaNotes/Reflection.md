@@ -68,11 +68,10 @@ public void useMethodHandles() {
     RealForm formSpy = Mockito.spy(realForm);
 
     MethodHandles.Lookup lookup = MethodHandles.privateLookupIn(RealForm.class, MethodHandles.lookup());
-    MethodHandle methodHandleJunit = lookup.findVirtual(
-            RealForm.class,
-            "configureVmcInfo_edits",
-            MethodType.methodType(void.class,
-                                  ResourceManagerVmcInfoForm.class));
+    MethodHandle methodHandleJunit = lookup.findVirtual(RealForm.class,
+                                                        "configureVmcInfo_edits",
+                                                        MethodType.methodType(void.class,
+                                                                              ResourceManagerVmcInfoForm.class));
     methodHandleJunit.invoke(builder, formSpy);
 
 
