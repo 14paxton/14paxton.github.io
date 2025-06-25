@@ -29,6 +29,12 @@ Table of contents
 
 <br/>
 
+# Java
+
+  ```shell
+    java -XshowSettings:properties -version
+  ```
+
 # [JPS](https://docs.oracle.com/en/java/javase/17/docs/specs/man/jps.html)
 
 ## list running java processes
