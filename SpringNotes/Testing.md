@@ -31,6 +31,13 @@ Table of contents
 
 # JUnit
 
+# Reflection
+
+- Setting fields
+  ```java
+      ReflectionTestUtils.setField(properties, "wacManagementAdfConversionEnabled", true);
+  ```
+
 ## Context
 
 - ### ApplicationContext
