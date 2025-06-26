@@ -51,7 +51,9 @@ StringUtils.leftPad(String str, int size);
  StringUtils.rightPad(String str, int size);
 ```
 
-## [Format Codes](https://docs.oracle.com/javase/6/docs/api/java/util/Formatter.html#detail)
+## [Format Codes](https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/Formatter.html#detail)
+- [Old Format Codes](https://docs.oracle.com/javase/6/docs/api/java/util/Formatter.html#detail)
+
 
 > if you want to pad a string to a certain length with spaces, use something like this:
 
