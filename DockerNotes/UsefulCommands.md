@@ -30,25 +30,21 @@ Table of contents
 
 <br/>
 
-# stop all containers:
+# Containers
+
+## stop all containers:
 
 ```bash
 docker kill $(docker ps -q)
 ```
 
-# remove all containers
+## remove all containers
 
 ```bash
 docker rm $(docker ps -a -q)
 ```
 
-# remove all docker images
-
-```bash
-docker rmi $(docker images -q)
-```
-
-# get container ip
+## get container ip
 
 ```shell
 sudo docker container inspect container_name_or_ID
@@ -58,4 +54,24 @@ sudo docker container inspect container_name_or_ID
 
 ```shell
 sudo docker ps
+```
+
+# Images
+
+## remove all docker images
+
+```bash
+docker rmi $(docker images -q)
+```
+
+# Volumes
+
+## copy data from volume to local machine
+
+```shell
+docker run --rm \
+  -v tactical-data-vol:/from \
+  -v ~/docker/volumes/data-tactical:/to \
+  alpine \
+  sh -c "cp -a /from/. /to/"
 ```
