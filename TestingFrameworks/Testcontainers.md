@@ -486,10 +486,11 @@ public class SeedDatabaseContainerTest {
         }
       ```
 
-        - #### SpringBoot Initialize Repository
-            - > using @EnableJpaRepositories(basePackageClasses = {UnitEmailSubscriptionEntity.class}) will enable the repository
-            - > Can use both sql script or entityManager to persist to the db
-              ```java
+ - #### SpringBoot Initialize Repository
+    - > using @EnableJpaRepositories(basePackageClasses = {UnitEmailSubscriptionEntity.class}) will enable the repository
+     - > Can use both sql script or entityManager to persist to the db
+
+```java
                   //** SETUP DATA **//
                   try (Connection connection = dataSource.getConnection(); Statement statement = connection.createStatement()) {
                     log.info("Setting up UNIT_EMAIL_RPT_RCPTS data...");
@@ -503,8 +504,9 @@ public class SeedDatabaseContainerTest {
                   catch (SQLException e) {
                     throw new RuntimeException(e);
                   }
-              ```
-                 ```java
+```
+
+```java
                   var entity1 = UnitEmailSubscriptionEntity.of(UnitEmailSubscriptionEntityId.of(255L,99L,1));
                   var entity2 = UnitEmailSubscriptionEntity.of(UnitEmailSubscriptionEntityId.of(255L,99L,2));
                   var entity3 = UnitEmailSubscriptionEntity.of(UnitEmailSubscriptionEntityId.of(255L,99L,3));
@@ -512,7 +514,7 @@ public class SeedDatabaseContainerTest {
                   entityManager.persist(entity2);
                   entityManager.persist(entity3);
                   entityManager.flush();
-                 ```
+```
 
 ## SpringBoot Test
 
