@@ -130,29 +130,76 @@ sudo dseditgroup -o edit -a john -t user wheel
 ## Create new user
 
 ```shell
-sudo dscl . -create /Users/newuser
-sudo dscl . -create /Users/newuser UserShell /bin/bash
-sudo dscl . -create /Users/newuser RealName "New User"
-sudo dscl . -create /Users/newuser UniqueID "1000"
-sudo dscl . -create /Users/newuser PrimaryGroupID 1000
+#!/bin/zsh
+
+username="$1"
+realname="$2"
+password="$3"
+uid="$4"
+
+if [[ -z "$username" || -z "$realname" || -z "$password" || -z "$uid" ]]; then
+  echo "Usage: $0 <username> <realname> <password> <uid>"
+  exit 1
+fi
+
+echo "➡️ Creating user: $username with UID $uid..."
+
+# Create user record
+sudo dscl . -create /Users/"$username"
+sudo dscl . -create /Users/"$username" UserShell /bin/zsh
+sudo dscl . -create /Users/"$username" RealName "$realname"
+sudo dscl . -create /Users/"$username" UniqueID "$uid"
+sudo dscl . -create /Users/"$username" PrimaryGroupID 20
+sudo dscl . -create /Users/"$username" NFSHomeDirectory "/Users/$username"
+sudo dscl . -create /Users/"$username" AuthenticationAuthority ";ShadowHash;"
+sudo dscl . -passwd /Users/"$username" "$password"
+
+# Create home directory
+sudo mkdir -p /Users/"$username"
+sudo chown "$username":staff /Users/"$username"
+
+echo "✅ User $username created successfully!"
 ```
 
-```shell
-sudo dscl . -create /Users/username NFSHomeDirectory /Local/Users/username
-```
+### Add User To Admin Groups
 
 ```shell
-sudo dscl . -passwd /Users/username password
-```
+#!/bin/zsh
 
-```shell
-sudo dscl . -append /Groups/admin GroupMembership username
+user="r00t"
+groups=(
+  everyone
+  localaccounts
+  _appserverusr
+  admin
+  _appserveradm
+  _lpadmin
+  _appstore
+  _lpoperator
+  _developer
+  staff
+  wheel
+  daemon
+  kmem
+  sys
+  tty
+  operator
+  procview
+  procmod
+)
+
+for group in "${groups[@]}"; do
+  echo "➕ Adding $user to group $group"
+  sudo dseditgroup -o edit -a "$user" -t user "$group"
+done
+
+echo "✅ User $user has been added to all specified groups."
 ```
 
 ### View the new user
 
 ```shell
-dscl . -read /Users/newuser
+dscl . -read /Users/[newUserName]
 ```
 
 > output
