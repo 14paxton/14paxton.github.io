@@ -39,13 +39,26 @@ Table of contents
 - Environments from the `MICRONAUT_ENVIRONMENTS` environment variable
 - Environments specified explicitly through the application context builder
 
+# Getting Variables
+
+```java
+    var env = environment.getActiveNames()
+                         .contains("test");
+    var debug = LOG.isDebugEnabled();
+    var sysEnv =  System.getenv();
+    var cacheEnv = CachedEnvironment.getenv();
+    var debugger = CachedEnvironment.getenv("DEBUGGER_ID");
+```
+
+# Setting Variables
+
 <div style="padding: 15px; margin-bottom: 20px; border-radius: 4px; color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">            
 <a href="https://docs.micronaut.io/latest/api/io/micronaut/context/env/Environment.html">Available Env Fields</a>
 </div>
 
-# Run in Development
+## Run in Development
 
-## replace application
+### replace application
 
 ```java
 public class Application {
@@ -58,7 +71,7 @@ public class Application {
 }
 ```
 
-## add to build.gradle
+### add to build.gradle
 
 ```gradle
 run {
@@ -66,12 +79,12 @@ run {
 }
 ```
 
-## cli
+### cli
 
 ```shell
 ./gradlew -Dmicronaut.environments=dev run
 ```
 
-## ide
+### ide
 
 <img width="1262" alt="image" src="https://user-images.githubusercontent.com/26972590/212477618-198bc498-6520-44d6-8e20-25b7569e735d.png">
