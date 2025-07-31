@@ -11,9 +11,9 @@
                                             “Bash on Ubuntu on Windows”.</p><p>Before installation, you should ensure that the
                                                                                below requirements are satisfied:</p>
 <ul>
-  <li><p>Hyper-V is installed</p></li>
-  <li><p>Virtualization is enabled</p></li>
-  <li><p>Verify your Windows 10 version</p></li>
+    <li><p>Hyper-V is installed</p></li>
+    <li><p>Virtualization is enabled</p></li>
+    <li><p>Verify your Windows 10 version</p></li>
 </ul><p><strong>Hyper-V:</strong></p><p>Docker for Windows requires a Hyper-V as well as the Hyper-V Module for Windows Powershell to be installed and
                                         enabled.
                                         The Docker for Windows installer will
@@ -27,10 +27,11 @@
                                         A reboot is required.
                                         If Hyper-V is installed manually without the reboot, Docker for Windows
                                         will not work correctly.</p><img
-    class="confluence-embedded-image confluence-external-resource image-center"
-    data-image-src="https://altis.com.au/wp-content/uploads/2017/07/blog-pic-1.png"
-    loading="lazy"
-    src="https://altis.com.au/wp-content/uploads/2017/07/blog-pic-1.png"
+        class="confluence-embedded-image confluence-external-resource image-center"
+        data-image-src="https://altis.com.au/wp-content/uploads/2017/07/blog-pic-1.png"
+        loading="lazy"
+        src="https://altis.com.au/wp-content/uploads/2017/07/blog-pic-1.png"
+
 ><p>On some systems, Virtualization needs to be enabled in the BIOS.
     I had some challenges enabling the Virtualization in BIOS as I couldn’t access the BIOS during normal start-up because I had a
     UEFI-based computer.
@@ -42,10 +43,10 @@
                                                                                          help&nbsp;<a href="https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/">here</a>.
 </p><p>Confirm Virtualization is enabled in the Task Manager.</p>
 <img
-    class="confluence-embedded-image confluence-external-resource image-center"
-    data-image-src="https://altis.com.au/wp-content/uploads/2017/07/Blog-pic-2.png"
-    loading="lazy"
-    src="https://altis.com.au/wp-content/uploads/2017/07/Blog-pic-2.png"
+        class="confluence-embedded-image confluence-external-resource image-center"
+        data-image-src="https://altis.com.au/wp-content/uploads/2017/07/Blog-pic-2.png"
+        loading="lazy"
+        src="https://altis.com.au/wp-content/uploads/2017/07/Blog-pic-2.png"
 ><p><strong>Windows 10 Version:</strong></p><p>The current version of Docker for Windows runs on 64bit Windows 10 Pro, Enterprise and Education (1511
                                                November update, Build 10586 or later) editions.
                                                In the future more versions of Windows 10 are expected to come under support.</p><p><strong>Installing
@@ -117,10 +118,10 @@
        To activate it, right-click the Docker icon in your taskbar and
        choose Settings, and tick the box next to<br><code>“Expose daemon on tcp://localhost:2375 without TLS”</code>&nbsp;(make sure you understand
        the risks).</p><p><img
-    class="confluence-embedded-image confluence-external-resource image-center"
-    data-image-src="https://altis.com.au/wp-content/uploads/2017/07/Blog-pic-3.png"
-    loading="lazy"
-    src="https://altis.com.au/wp-content/uploads/2017/07/Blog-pic-3.png"
+        class="confluence-embedded-image confluence-external-resource image-center"
+        data-image-src="https://altis.com.au/wp-content/uploads/2017/07/Blog-pic-3.png"
+        loading="lazy"
+        src="https://altis.com.au/wp-content/uploads/2017/07/Blog-pic-3.png"
 ></p><h3><span style="color: rgb(255,86,48);">When upgrading to WSL2 if you need to keep using sudo to run docker</span></h3><p>-unset DOCKER_HOST</p>
 <p>-And if that works, you can make the fix
    permanent by going back and commenting out the "export DOCKER_HOST=tcp://localhost:2375" in your .bashrc file.

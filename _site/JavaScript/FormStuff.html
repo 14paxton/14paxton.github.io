@@ -1,839 +1,83 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <link href="/assets/css/just-the-docs-default.css" rel="stylesheet">
-  <link href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet" rel="stylesheet">
-  <style id="jtd-nav-activation"> .site-nav > ul.nav-list:first-child > li > a, .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(9)) > a, .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
-    background-image: none;
-  }
-
-  .site-nav > ul.nav-list:not(:first-child) a, .site-nav li.external a {
-    background-image: none;
-  }
-
-  .site-nav > ul.nav-list:first-child > li:nth-child(14) > ul > li:nth-child(9) > a {
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  .site-nav > ul.nav-list:first-child > li:nth-child(14) > button svg, .site-nav > ul.nav-list:first-child > li:nth-child(14) > ul > li:nth-child(9) > button svg {
-    transform: rotate(-90deg);
-  }
-
-  .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(14) > ul.nav-list, .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(14) > ul.nav-list > li.nav-list-item:nth-child(9) > ul.nav-list {
-    display: block;
-  }</style>
-  <script src="/assets/js/vendor/lunr.min.js"></script>
-  <script src="/assets/js/just-the-docs.js"></script>
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <title>FormStuff | Paxton’s Notes</title>
-  <meta content="Jekyll v4.4.0" name="generator"/>
-  <meta content="FormStuff" property="og:title"/>
-  <meta content="en_US" property="og:locale"/>
-  <meta content="Coding Notes" name="description"/>
-  <meta content="Coding Notes" property="og:description"/>
-  <link href="http://localhost:4000/JavaScript/FormStuff" rel="canonical"/>
-  <meta content="http://localhost:4000/JavaScript/FormStuff" property="og:url"/>
-  <meta content="Paxton’s Notes" property="og:site_name"/>
-  <meta content="website" property="og:type"/>
-  <meta content="summary" name="twitter:card"/>
-  <meta content="FormStuff" property="twitter:title"/>
-  <script type="application/ld+json">
-     {"@context":"https://schema.org","@type":"WebPage","description":"Coding Notes","headline":"FormStuff","url":"http://localhost:4000/JavaScript/FormStuff"}
-  </script>
-<body><a class="skip-to-main" href="#main-content">Skip to main content</a>
-<svg class="d-none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="svg-link" viewBox="0 0 24 24"><title>Link</title>
-    <svg class="feather feather-link"
-         fill="none"
-         height="24"
-         stroke="currentColor"
-         stroke-linecap="round"
-         stroke-linejoin="round"
-         stroke-width="2"
-         viewBox="0 0 24 24"
-         width="24"
-         xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-    </svg>
-  </symbol>
-  <symbol id="svg-menu" viewBox="0 0 24 24"><title>Menu</title>
-    <svg class="feather feather-menu"
-         fill="none"
-         height="24"
-         stroke="currentColor"
-         stroke-linecap="round"
-         stroke-linejoin="round"
-         stroke-width="2"
-         viewBox="0 0 24 24"
-         width="24"
-         xmlns="http://www.w3.org/2000/svg">
-      <line x1="3" x2="21" y1="12" y2="12"></line>
-      <line x1="3" x2="21" y1="6" y2="6"></line>
-      <line x1="3" x2="21" y1="18" y2="18"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-arrow-right" viewBox="0 0 24 24"><title>Expand</title>
-    <svg class="feather feather-chevron-right"
-         fill="none"
-         height="24"
-         stroke="currentColor"
-         stroke-linecap="round"
-         stroke-linejoin="round"
-         stroke-width="2"
-         viewBox="0 0 24 24"
-         width="24"
-         xmlns="http://www.w3.org/2000/svg">
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  </symbol>
-  <symbol class="feather feather-external-link"
-          fill="none"
-          height="24"
-          id="svg-external-link"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          width="24"><title id="svg-external-link-title">(external link)</title>
-    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-    <polyline points="15 3 21 3 21 9"></polyline>
-    <line x1="10" x2="21" y1="14" y2="3"></line>
-  </symbol>
-  <symbol id="svg-doc" viewBox="0 0 24 24"><title>Document</title>
-    <svg class="feather feather-file"
-         fill="none"
-         height="24"
-         stroke="currentColor"
-         stroke-linecap="round"
-         stroke-linejoin="round"
-         stroke-width="2"
-         viewBox="0 0 24 24"
-         width="24"
-         xmlns="http://www.w3.org/2000/svg">
-      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-      <polyline points="13 2 13 9 20 9"></polyline>
-    </svg>
-  </symbol>
-  <symbol id="svg-search" viewBox="0 0 24 24"><title>Search</title>
-    <svg class="feather feather-search"
-         fill="none"
-         height="24"
-         stroke="currentColor"
-         stroke-linecap="round"
-         stroke-linejoin="round"
-         stroke-width="2"
-         viewBox="0 0 24 24"
-         width="24"
-         xmlns="http://www.w3.org/2000/svg">
-      <circle cx="11" cy="11" r="8"></circle>
-      <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-copy" viewBox="0 0 16 16"><title>Copy</title>
-    <svg class="bi bi-clipboard" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
-      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
-      <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-copied" viewBox="0 0 16 16"><title>Copied</title>
-    <svg class="bi bi-clipboard-check-fill" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
-      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
-    </svg>
-  </symbol>
-</svg>
-<div class="side-bar">
-  <div class="site-header" role="banner"><a class="site-title lh-tight" href="/"> Paxton's Notes </a>
-    <button aria-label="Toggle menu" aria-pressed="false" class="site-button btn-reset" id="menu-button">
-      <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
-        <use xlink:href="#svg-menu"></use>
-      </svg>
-    </button>
-  </div>
-  <nav aria-label="Main" class="site-nav" id="site-nav">
-    <ul class="nav-list">
-      <li class="nav-list-item">
-        <button aria-label="toggle items in MyPersonalDocsAndStuff category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/index">MyPersonalDocsAndStuff</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/AppsForWorkflow">AppsForWorkflow</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/CloudServices">CloudServices</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/LetterOfRecommendation">LetterOfRecommendation</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PastProjects">PastProjects</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GitHubPages/PriorityLearning">PriorityLearning</a>
-        </ul>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in AWS category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/AWS/">AWS</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/AWS/CLI">CLI</a>
-        </ul>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in Build category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/Build/">Build</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Gradle">Gradle</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Build/Maven">Maven</a>
-        </ul>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in DockerNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/DockerNotes/">DockerNotes</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/ARM64">ARM64</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Basics">Basics</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Dockerfile">Dockerfile</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Install">Install</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/Quick-TidBits">Quick-TidBits</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/DockerNotes/UsefulCommands">UsefulCommands</a>
-        </ul>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in DotNetNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/DotNetNotes/">DotNetNotes</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CLI">CLI</a>
-          <li class="nav-list-item">
-            <button aria-label="toggle items in CSharp category" aria-pressed="false" class="nav-list-expander btn-reset">
-              <svg aria-hidden="true" viewBox="0 0 24 24">
-                <use xlink:href="#svg-arrow-right"></use>
-              </svg>
-            </button>
-            <a class="nav-list-link" href="/DotNetNotes/Csharp">CSharp</a>
-            <ul class="nav-list">
-              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Email">Email</a>
-              <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/CSharp/Threading">Threading</a>
-            </ul>
-          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Controllers">Controllers</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Database">Database</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/EntityFramework">EntityFramework</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Environment">Environment</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Google">Google</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HTTP">HTTP</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/HttpRepl">HttpRepl</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/LINQ">LINQ</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Maui">Maui</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/Microservice">Microservice.md</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/DotNetNotes/VisualStudio">VisualStudio</a>
-        </ul>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in Git category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/Git">Git</a>
-        <ul class="nav-list">
-          <li class="nav-list-item">
-            <button aria-label="toggle items in GitHub category" aria-pressed="false" class="nav-list-expander btn-reset">
-              <svg aria-hidden="true" viewBox="0 0 24 24">
-                <use xlink:href="#svg-arrow-right"></use>
-              </svg>
-            </button>
-            <a class="nav-list-link" href="/Git/GitHub">GitHub</a>
-            <ul class="nav-list">
-              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/GitHubPages">GitHubPages</a>
-              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/Jekyll">Jekyll</a>
-              <li class="nav-list-item"><a class="nav-list-link" href="/GitHub/MarkDown">MarkDown</a>
-            </ul>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Git/QuickScripts">QuickScripts</a>
-        </ul>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in GoogleNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/GoogleNotes/">GoogleNotes</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/APIs">APIs</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Browser">Browser</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Cloud">Cloud</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ComputeEngine">ComputeEngine</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Deploy">Deploy</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DevTools">DevTools</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/DialogFlow">DialogFlow</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Functions">Functions</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Logging">Logging</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/ServiceAccounts">ServiceAccounts</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/Storage">Storage</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GoogleNotes/VoiceAgent">VoiceAgent</a>
-        </ul>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in GrailsNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/GrailsNotes/">GrailsNotes</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/GORM_WhereQueris">GORM_WhereQueris</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLComplexQueries">HQLComplexQueries</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/HQLQueries">HQLQueries</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/RunningApp">RunningApp</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Security">Security</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Services">Services</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GrailsNotes/Testing">Testing</a>
-        </ul>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in GroovyNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/GroovyNotes/">GroovyNotes</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Array-Loop-List-Map">Array-Loop-List-Map</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Async_Parallel-Concurrency">Async_Parallel-Concurrency</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Clever-Tid-bits">Clever-Tid-bits</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/DateAndTime">DateAndTime</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/Enum">Enum</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/MetaProgramming">MetaProgramming</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/RegEx">RegEx</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/GroovyNotes/String">String</a>
-        </ul>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in HTML&CSS category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/HTML&CSS/">HTML&CSS</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/CSS">CSS</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/HTML">HTML</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/HTML&CSS/Images">Images</a>
-        </ul>
-      <li class="nav-list-item"><a class="nav-list-link" href="/HTTP">HTTP</a>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in IntelliJNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/IntelliJNotes/">IntelliJNotes</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/CustomVM">CustomVM</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/DebuggerConfig">DebuggerConfig</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/HTTPExamples">HTTPExamples</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/IntelliJNotes/Spaces">Spaces</a>
-        </ul>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in Java category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/JavaNotes/Java">Java</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Algorithms">Algorithms</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Annotations">Annotations</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/CommandLineDiddys">CommandLineDiddys</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/DataBase">DataBase</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Email">Email</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/File">File</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/GCP">GCP</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Hibernate">Hibernate</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/LooseNotes">LooseNotes</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/OOP">OOP</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/String">String</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaNotes/Threads">Threads</a>
-        </ul>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in JavaScript category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/JavaScript/">JavaScript</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Browser">Browser</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CDN">CDN</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/CSS">CSS</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Clever-Algos">Clever-Algos</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/DateAndTime">DateAndTime</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Document">Document</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Elements">Elements</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Events">Events</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FormStuff">FormStuff</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/FunctionObject">FunctionObject</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/HTTP">HTTP</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Map">Map</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Modules">Modules</a>
-          <li class="nav-list-item">
-            <button aria-label="toggle items in Node category" aria-pressed="false" class="nav-list-expander btn-reset">
-              <svg aria-hidden="true" viewBox="0 0 24 24">
-                <use xlink:href="#svg-arrow-right"></use>
-              </svg>
-            </button>
-            <a class="nav-list-link" href="/JavaScript/Node/">Node</a>
-            <ul class="nav-list">
-              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Node/QuickScripts">QuickScripts</a>
-            </ul>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Number">Number</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Object">Object</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/QuerySelector">QuerySelector</a>
-          <li class="nav-list-item">
-            <button aria-label="toggle items in ReactNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
-              <svg aria-hidden="true" viewBox="0 0 24 24">
-                <use xlink:href="#svg-arrow-right"></use>
-              </svg>
-            </button>
-            <a class="nav-list-link" href="/JavaScript/ReactNotes">ReactNotes</a>
-            <ul class="nav-list">
-              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Clever-Snippets">Clever-Snippets</a>
-              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Configuring">Configuring</a>
-              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/HandleEvents">HandleEvents</a>
-              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/ReactNotes/Hooks">Hooks</a>
-              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/MUI">MUI</a>
-              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/Mat-Table">Mat-Table</a>
-              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/React-Router">React-Router</a>
-              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/ReactHookForm">ReactHookForm</a>
-              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/String">String</a>
-              <li class="nav-list-item"><a class="nav-list-link" href="/ReactNotes/WebWorker">WebWorker</a>
-            </ul>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/RegEx">RegEx</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/State">State</a>
-          <li class="nav-list-item">
-            <button aria-label="toggle items in TypeScript category" aria-pressed="false" class="nav-list-expander btn-reset">
-              <svg aria-hidden="true" viewBox="0 0 24 24">
-                <use xlink:href="#svg-arrow-right"></use>
-              </svg>
-            </button>
-            <a class="nav-list-link" href="/JavaScript/TypeScript/">TypeScript</a>
-            <ul class="nav-list">
-              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Events">Events</a>
-              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/QuickScripts">QuickScripts</a>
-              <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/TypeScript/Types">Types</a>
-            </ul>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/UsefulSnippets">UsefulSnippets</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WebAPI">WebAPI</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/Window">Window</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/JavaScript/WorkingWithFiles">WorkingWithFiles</a>
-        </ul>
-      <li class="nav-list-item"><a class="nav-list-link" href="/Kubernetes">Kubernetes</a>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in Linux category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/Linux/">Linux</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/ADMIN-ROOT">ADMIN-ROOT</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Conditionals">Conditionals</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Email">Email</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Encoding">Encoding</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/JQ">JQ</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/MySQL">MySQL</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/PGP">PGP</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/QuickScripts">QuickScripts</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/SDKMan">SDKMan</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/Scripting">Scripting</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Linux/VIM_QuickTips">VIM_QuickTips</a>
-        </ul>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in MacNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/MacNotes/">MacNotes</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/AppleScripts">AppleScripts</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/HomeBrew">HomeBrew</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/JavaOnMac">JavaOnMac</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/QuickScripts">QuickScripts</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ShortCuts">ShortCuts</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/UsersAndGroups">UsersAndGroups</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/Utilities">Utilities</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/MacNotes/ZSH">ZSH</a>
-        </ul>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in Micronotes category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/Micronotes/">Micronotes</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/AWS">AWS</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Annotations">Annotations</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Configuration">Configuration</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/DataBaseStuff">DataBaseStuff</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Email">Email</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/EnviromentStuff">EnviromentStuff</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/GRAALVM">GRAALVM</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Gradle">Gradle</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Jackson">Jackson</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/MicroStream">MicroStream</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Resources">Resources</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/Testing">Testing</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/UsefuleSnippets">UsefuleSnippets</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Micronotes/cli_gradlew">cli_gradlew</a>
-        </ul>
-      <li class="nav-list-item"><a class="nav-list-link" href="/Obsidian/Obsidian">Obsidian</a>
-      <li class="nav-list-item"><a class="nav-list-link" href="/RandomNuggetsOfKnowledge">RandomNuggetsOfKnowledge</a>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in SQLNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/SQLNotes/">SQLNotes</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Docker">Docker</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Functions">Functions</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/HQL">HQL</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Liquibase">Liquibase</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/Queries">Queries</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/SQLCheatSheet">SQLCheatSheet</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/SQLNotes/TerminalCommands">Terminal-Commands</a>
-        </ul>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in SpringNotes category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/SpringNotes/">SpringNotes</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Annotations">Annotations</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Hibernate">Hibernate</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Maven">Maven</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Properties">Properties</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Security">Security</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Serialization">Serialization</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Testing">Testing</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/TidBits">TidBits</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/SpringNotes/Transactions">Transactions</a>
-        </ul>
-      <li class="nav-list-item"><a class="nav-list-link" href="/SystemDesign&Architecture/">SystemDesign&Architecture</a>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in TestingFrameworks category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/TestingFrameworks/">TestingFrameworks</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JUnit">JUnit</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/JavascriptTesting">Javascript</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Spock">Spock</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/TestingFrameworks/Testcontainers">Testcontainers</a>
-        </ul>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in Thymeleaf category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/Thymeleaf/">Thymeleaf</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/Thymeleaf/Fragments">Fragments</a>
-        </ul>
-      <li class="nav-list-item">
-        <button aria-label="toggle items in Windows_Notes category" aria-pressed="false" class="nav-list-expander btn-reset">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <use xlink:href="#svg-arrow-right"></use>
-          </svg>
-        </button>
-        <a class="nav-list-link" href="/Windows_Notes/">Windows_Notes</a>
-        <ul class="nav-list">
-          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/CMD">CMD</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Environment">Environment</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/PackageManagers">PackageManagers</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Powershell">Powershell</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Run">Run</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Shortcuts">Shortcuts</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/Terminal">Terminal</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WSL">WSL</a>
-          <li class="nav-list-item"><a class="nav-list-link" href="/Windows_Notes/WindowsServer">WindowsServer</a>
-        </ul>
-    </ul>
-  </nav>
-  <footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer>
-</div>
-<div class="main" id="top">
-  <div class="main-header" id="main-header">
-    <div class="search" role="search">
-      <div class="search-input-wrap"><input aria-label="Search Paxton's Notes"
-                                            autocomplete="off"
-                                            class="search-input"
-                                            id="search-input"
-                                            placeholder="Search Paxton's Notes"
-                                            tabindex="0"
-                                            type="text"> <label class="search-label" for="search-input">
-        <svg class="search-icon" viewBox="0 0 24 24">
-          <use xlink:href="#svg-search"></use>
-        </svg>
-      </label></div>
-      <div class="search-results" id="search-results"></div>
-    </div>
-    <nav aria-label="Auxiliary" class="aux-nav">
-      <ul class="aux-nav-list">
-        <li class="aux-nav-list-item"><a class="site-button" href="https://github.com/14paxton/14paxton.github.io" rel="noopener noreferrer" target="_blank"> Template
-                                                                                                                                                              Repository </a>
-      </ul>
-    </nav>
-  </div>
-  <div class="main-content-wrap">
-    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-      <ol class="breadcrumb-nav-list">
-        <li class="breadcrumb-nav-list-item"><a href="/JavaScript/">JavaScript</a>
-        <li class="breadcrumb-nav-list-item"><span>FormStuff</span>
-      </ol>
-    </nav>
-    <div class="main-content" id="main-content">
-      <main><p><br/></p>
-        <details>
-          <summary class="text-delta"> Table of contents</summary>
-          <ol id="markdown-toc">
-            <li><a href="#get-form-data" id="markdown-toc-get-form-data">Get Form Data</a>
-              <ol>
-                <li><a href="#jquery" id="markdown-toc-jquery">JQuery</a>
-              </ol>
-            <li><a href="#get-post-payload" id="markdown-toc-get-post-payload">Get POST payload</a>
-              <ol>
-                <li><a href="#catch-responses-as-well" id="markdown-toc-catch-responses-as-well">Catch responses as well</a>
-                <li><a href="#xmlhttprequest-intercept-post" id="markdown-toc-xmlhttprequest-intercept-post">XMLHTTPRequest Intercept POST</a>
-                <li><a href="#jquery-1" id="markdown-toc-jquery-1">JQuery</a>
-              </ol>
-            <li><a href="#intercept-xhr-requests" id="markdown-toc-intercept-xhr-requests">Intercept XHR Requests</a>
-            <li><a href="#manually-set-validity-on-form-field" id="markdown-toc-manually-set-validity-on-form-field">manually set validity on form field</a>
-              <ol>
-                <li><a href="#with-listener" id="markdown-toc-with-listener">with listener</a>
-                <li><a href="#core-use-case" id="markdown-toc-core-use-case">core use case</a>
-              </ol>
-          </ol>
-        </details>
-        <p><br/></p>
-        <hr/>
-        <p><br/></p>
-        <h1 id="get-form-data"><a aria-labelledby="get-form-data" class="anchor-heading" href="#get-form-data">
-          <svg aria-hidden="true" viewBox="0 0 16 16">
-            <use xlink:href="#svg-link"></use>
-          </svg>
-        </a> Get Form Data
-        </h1>
-        <ul>
-          <li>
-            <div class="language-javascript highlighter-rouge">
-              <div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nb">Object</span><span
-                  class="p">.</span><span class="nf">fromEntries</span><span class="p">(</span><span class="k">new</span> <span class="nc">FormData</span><span class="p">(</span><span
-                  class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">.</span><span class="nx">requestForm</span><span class="p">).</span><span
-                  class="nf">entries</span><span class="p">());</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-</code></pre>
-              </div>
-            </div>
-          <li>
-            <div class="language-javascript highlighter-rouge">
-              <div class="highlight"><pre class="highlight"><code>  <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span
-                  class="dl">'</span><span class="s1">form</span><span class="dl">'</span><span class="p">).</span><span class="nf">addEventListener</span><span class="p">(</span><span
-                  class="dl">'</span><span class="s1">submit</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span
-                  class="o">=&gt;</span> <span class="p">{</span>
-     <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">fromEntries</span><span
-                    class="p">(</span><span class="k">new</span> <span class="nc">FormData</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span
-                    class="nx">target</span><span class="p">).</span><span class="nf">entries</span><span class="p">());</span>
+<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><link rel="stylesheet" href="/assets/css/just-the-docs-default.css"><link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet"><style id="jtd-nav-activation"> .site-nav > ul.nav-list:first-child > li > a, .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(9)) > a, .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a { background-image: none; } .site-nav > ul.nav-list:not(:first-child) a, .site-nav li.external a { background-image: none; } .site-nav > ul.nav-list:first-child > li:nth-child(14) > ul > li:nth-child(9) > a { font-weight: 600; text-decoration: none; }.site-nav > ul.nav-list:first-child > li:nth-child(14) > button svg, .site-nav > ul.nav-list:first-child > li:nth-child(14) > ul > li:nth-child(9) > button svg { transform: rotate(-90deg); }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(14) > ul.nav-list, .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(14) > ul.nav-list > li.nav-list-item:nth-child(9) > ul.nav-list { display: block; }</style><script src="/assets/js/vendor/lunr.min.js"></script> <script src="/assets/js/just-the-docs.js"></script><meta name="viewport" content="width=device-width, initial-scale=1"><title>FormStuff | Paxton’s Notes</title><meta name="generator" content="Jekyll v4.4.1" /><meta property="og:title" content="FormStuff" /><meta property="og:locale" content="en_US" /><meta name="description" content="Coding Notes" /><meta property="og:description" content="Coding Notes" /><link rel="canonical" href="http://localhost:4000/JavaScript/FormStuff" /><meta property="og:url" content="http://localhost:4000/JavaScript/FormStuff" /><meta property="og:site_name" content="Paxton’s Notes" /><meta property="og:type" content="website" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="FormStuff" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebPage","description":"Coding Notes","headline":"FormStuff","url":"http://localhost:4000/JavaScript/FormStuff"}</script><body> <a class="skip-to-main" href="#main-content">Skip to main content</a> <svg xmlns="http://www.w3.org/2000/svg" class="d-none"> <symbol id="svg-link" viewBox="0 0 24 24"><title>Link</title><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path> </svg> </symbol> <symbol id="svg-menu" viewBox="0 0 24 24"><title>Menu</title><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line> </svg> </symbol> <symbol id="svg-arrow-right" viewBox="0 0 24 24"><title>Expand</title><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline> </svg> </symbol> <symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol> <symbol id="svg-doc" viewBox="0 0 24 24"><title>Document</title><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline> </svg> </symbol> <symbol id="svg-search" viewBox="0 0 24 24"><title>Search</title><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"> <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line> </svg> </symbol> <symbol id="svg-copy" viewBox="0 0 16 16"><title>Copy</title><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg> </symbol> <symbol id="svg-copied" viewBox="0 0 16 16"><title>Copied</title><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"><path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg> </symbol> </svg><div class="side-bar"><div class="site-header" role="banner"> <a href="/" class="site-title lh-tight"> Paxton's Notes </a> <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false"> <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg> </button></div><nav aria-label="Main" id="site-nav" class="site-nav"><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in MyPersonalDocsAndStuff category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/index" class="nav-list-link">MyPersonalDocsAndStuff</a><ul class="nav-list"><li class="nav-list-item"><a href="/GitHubPages/AppsForWorkflow" class="nav-list-link">AppsForWorkflow</a><li class="nav-list-item"><a href="/GitHubPages/CloudServices" class="nav-list-link">CloudServices</a><li class="nav-list-item"><a href="/GitHubPages/LetterOfRecommendation" class="nav-list-link">LetterOfRecommendation</a><li class="nav-list-item"><a href="/GitHubPages/PastProjects" class="nav-list-link">PastProjects</a><li class="nav-list-item"><a href="/GitHubPages/PriorityLearning" class="nav-list-link">PriorityLearning</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in AWS category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/AWS/" class="nav-list-link">AWS</a><ul class="nav-list"><li class="nav-list-item"><a href="/AWS/CLI" class="nav-list-link">CLI</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Build category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/Build/" class="nav-list-link">Build</a><ul class="nav-list"><li class="nav-list-item"><a href="/Build/Gradle" class="nav-list-link">Gradle</a><li class="nav-list-item"><a href="/Build/Maven" class="nav-list-link">Maven</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in DockerNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/DockerNotes/" class="nav-list-link">DockerNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/DockerNotes/ARM64" class="nav-list-link">ARM64</a><li class="nav-list-item"><a href="/DockerNotes/Basics" class="nav-list-link">Basics</a><li class="nav-list-item"><a href="/DockerNotes/Dockerfile" class="nav-list-link">Dockerfile</a><li class="nav-list-item"><a href="/DockerNotes/Install" class="nav-list-link">Install</a><li class="nav-list-item"><a href="/DockerNotes/Quick-TidBits" class="nav-list-link">Quick-TidBits</a><li class="nav-list-item"><a href="/DockerNotes/UsefulCommands" class="nav-list-link">UsefulCommands</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in DotNetNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/DotNetNotes/" class="nav-list-link">DotNetNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/DotNetNotes/CLI" class="nav-list-link">CLI</a><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in CSharp category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/DotNetNotes/Csharp" class="nav-list-link">CSharp</a><ul class="nav-list"><li class="nav-list-item"><a href="/DotNetNotes/CSharp/Email" class="nav-list-link">Email</a><li class="nav-list-item"><a href="/DotNetNotes/CSharp/Threading" class="nav-list-link">Threading</a></ul><li class="nav-list-item"><a href="/DotNetNotes/Controllers" class="nav-list-link">Controllers</a><li class="nav-list-item"><a href="/DotNetNotes/Database" class="nav-list-link">Database</a><li class="nav-list-item"><a href="/DotNetNotes/EntityFramework" class="nav-list-link">EntityFramework</a><li class="nav-list-item"><a href="/DotNetNotes/Environment" class="nav-list-link">Environment</a><li class="nav-list-item"><a href="/DotNetNotes/Google" class="nav-list-link">Google</a><li class="nav-list-item"><a href="/DotNetNotes/HTTP" class="nav-list-link">HTTP</a><li class="nav-list-item"><a href="/DotNetNotes/HttpRepl" class="nav-list-link">HttpRepl</a><li class="nav-list-item"><a href="/DotNetNotes/LINQ" class="nav-list-link">LINQ</a><li class="nav-list-item"><a href="/DotNetNotes/Maui" class="nav-list-link">Maui</a><li class="nav-list-item"><a href="/DotNetNotes/Microservice" class="nav-list-link">Microservice.md</a><li class="nav-list-item"><a href="/DotNetNotes/VisualStudio" class="nav-list-link">VisualStudio</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Git category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/Git" class="nav-list-link">Git</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in GitHub category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/Git/GitHub" class="nav-list-link">GitHub</a><ul class="nav-list"><li class="nav-list-item"><a href="/GitHub/GitHubPages" class="nav-list-link">GitHubPages</a><li class="nav-list-item"><a href="/GitHub/Jekyll" class="nav-list-link">Jekyll</a><li class="nav-list-item"><a href="/GitHub/MarkDown" class="nav-list-link">MarkDown</a></ul><li class="nav-list-item"><a href="/Git/QuickScripts" class="nav-list-link">QuickScripts</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in GoogleNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/GoogleNotes/" class="nav-list-link">GoogleNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/GoogleNotes/APIs" class="nav-list-link">APIs</a><li class="nav-list-item"><a href="/GoogleNotes/Browser" class="nav-list-link">Browser</a><li class="nav-list-item"><a href="/GoogleNotes/Cloud" class="nav-list-link">Cloud</a><li class="nav-list-item"><a href="/GoogleNotes/ComputeEngine" class="nav-list-link">ComputeEngine</a><li class="nav-list-item"><a href="/GoogleNotes/Deploy" class="nav-list-link">Deploy</a><li class="nav-list-item"><a href="/GoogleNotes/DevTools" class="nav-list-link">DevTools</a><li class="nav-list-item"><a href="/GoogleNotes/DialogFlow" class="nav-list-link">DialogFlow</a><li class="nav-list-item"><a href="/GoogleNotes/Functions" class="nav-list-link">Functions</a><li class="nav-list-item"><a href="/GoogleNotes/Logging" class="nav-list-link">Logging</a><li class="nav-list-item"><a href="/GoogleNotes/ServiceAccounts" class="nav-list-link">ServiceAccounts</a><li class="nav-list-item"><a href="/GoogleNotes/Storage" class="nav-list-link">Storage</a><li class="nav-list-item"><a href="/GoogleNotes/VoiceAgent" class="nav-list-link">VoiceAgent</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in GrailsNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/GrailsNotes/" class="nav-list-link">GrailsNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/GrailsNotes/GORM_WhereQueris" class="nav-list-link">GORM_WhereQueris</a><li class="nav-list-item"><a href="/GrailsNotes/HQLComplexQueries" class="nav-list-link">HQLComplexQueries</a><li class="nav-list-item"><a href="/GrailsNotes/HQLQueries" class="nav-list-link">HQLQueries</a><li class="nav-list-item"><a href="/GrailsNotes/RunningApp" class="nav-list-link">RunningApp</a><li class="nav-list-item"><a href="/GrailsNotes/Security" class="nav-list-link">Security</a><li class="nav-list-item"><a href="/GrailsNotes/Services" class="nav-list-link">Services</a><li class="nav-list-item"><a href="/GrailsNotes/Testing" class="nav-list-link">Testing</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in GroovyNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/GroovyNotes/" class="nav-list-link">GroovyNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/GroovyNotes/Array-Loop-List-Map" class="nav-list-link">Array-Loop-List-Map</a><li class="nav-list-item"><a href="/GroovyNotes/Async_Parallel-Concurrency" class="nav-list-link">Async_Parallel-Concurrency</a><li class="nav-list-item"><a href="/GroovyNotes/Clever-Tid-bits" class="nav-list-link">Clever-Tid-bits</a><li class="nav-list-item"><a href="/GroovyNotes/DateAndTime" class="nav-list-link">DateAndTime</a><li class="nav-list-item"><a href="/GroovyNotes/Enum" class="nav-list-link">Enum</a><li class="nav-list-item"><a href="/GroovyNotes/MetaProgramming" class="nav-list-link">MetaProgramming</a><li class="nav-list-item"><a href="/GroovyNotes/RegEx" class="nav-list-link">RegEx</a><li class="nav-list-item"><a href="/GroovyNotes/String" class="nav-list-link">String</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in HTML&CSS category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/HTML&CSS/" class="nav-list-link">HTML&CSS</a><ul class="nav-list"><li class="nav-list-item"><a href="/HTML&CSS/CSS" class="nav-list-link">CSS</a><li class="nav-list-item"><a href="/HTML&CSS/HTML" class="nav-list-link">HTML</a><li class="nav-list-item"><a href="/HTML&CSS/HTMX" class="nav-list-link">HTMX</a><li class="nav-list-item"><a href="/HTML&CSS/Images" class="nav-list-link">Images</a></ul><li class="nav-list-item"><a href="/HTTP" class="nav-list-link">HTTP</a><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in IntelliJNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/IntelliJNotes/" class="nav-list-link">IntelliJNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/IntelliJNotes/CustomVM" class="nav-list-link">CustomVM</a><li class="nav-list-item"><a href="/IntelliJNotes/DebuggerConfig" class="nav-list-link">DebuggerConfig</a><li class="nav-list-item"><a href="/IntelliJNotes/HTTPExamples" class="nav-list-link">HTTPExamples</a><li class="nav-list-item"><a href="/IntelliJNotes/Spaces" class="nav-list-link">Spaces</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Java category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/JavaNotes/Java" class="nav-list-link">Java</a><ul class="nav-list"><li class="nav-list-item"><a href="/JavaNotes/Algorithms" class="nav-list-link">Algorithms</a><li class="nav-list-item"><a href="/JavaNotes/Annotations" class="nav-list-link">Annotations</a><li class="nav-list-item"><a href="/JavaNotes/CommandLineDiddys" class="nav-list-link">CommandLineDiddys</a><li class="nav-list-item"><a href="/JavaNotes/DataBase" class="nav-list-link">DataBase</a><li class="nav-list-item"><a href="/JavaNotes/Email" class="nav-list-link">Email</a><li class="nav-list-item"><a href="/JavaNotes/File" class="nav-list-link">File</a><li class="nav-list-item"><a href="/JavaNotes/GCP" class="nav-list-link">GCP</a><li class="nav-list-item"><a href="/JavaNotes/Hibernate" class="nav-list-link">Hibernate</a><li class="nav-list-item"><a href="/JavaNotes/LooseNotes" class="nav-list-link">LooseNotes</a><li class="nav-list-item"><a href="/JavaNotes/OOP" class="nav-list-link">OOP</a><li class="nav-list-item"><a href="/JavaNotes/Reflection" class="nav-list-link">Reflection</a><li class="nav-list-item"><a href="/JavaNotes/String" class="nav-list-link">String</a><li class="nav-list-item"><a href="/JavaNotes/Threads" class="nav-list-link">Threads</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in JavaScript category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/JavaScript/" class="nav-list-link">JavaScript</a><ul class="nav-list"><li class="nav-list-item"><a href="/JavaScript/Browser" class="nav-list-link">Browser</a><li class="nav-list-item"><a href="/JavaScript/CDN" class="nav-list-link">CDN</a><li class="nav-list-item"><a href="/JavaScript/CSS" class="nav-list-link">CSS</a><li class="nav-list-item"><a href="/JavaScript/Clever-Algos" class="nav-list-link">Clever-Algos</a><li class="nav-list-item"><a href="/JavaScript/DateAndTime" class="nav-list-link">DateAndTime</a><li class="nav-list-item"><a href="/JavaScript/Document" class="nav-list-link">Document</a><li class="nav-list-item"><a href="/JavaScript/Elements" class="nav-list-link">Elements</a><li class="nav-list-item"><a href="/JavaScript/Events" class="nav-list-link">Events</a><li class="nav-list-item"><a href="/JavaScript/FormStuff" class="nav-list-link">FormStuff</a><li class="nav-list-item"><a href="/JavaScript/FunctionObject" class="nav-list-link">FunctionObject</a><li class="nav-list-item"><a href="/JavaScript/HTTP" class="nav-list-link">HTTP</a><li class="nav-list-item"><a href="/JavaScript/Map" class="nav-list-link">Map</a><li class="nav-list-item"><a href="/JavaScript/Modules" class="nav-list-link">Modules</a><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Node category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/JavaScript/Node/" class="nav-list-link">Node</a><ul class="nav-list"><li class="nav-list-item"><a href="/JavaScript/Node/QuickScripts" class="nav-list-link">QuickScripts</a></ul><li class="nav-list-item"><a href="/JavaScript/Number" class="nav-list-link">Number</a><li class="nav-list-item"><a href="/JavaScript/Object" class="nav-list-link">Object</a><li class="nav-list-item"><a href="/JavaScript/QuerySelector" class="nav-list-link">QuerySelector</a><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in ReactNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/JavaScript/ReactNotes" class="nav-list-link">ReactNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/ReactNotes/Clever-Snippets" class="nav-list-link">Clever-Snippets</a><li class="nav-list-item"><a href="/ReactNotes/Configuring" class="nav-list-link">Configuring</a><li class="nav-list-item"><a href="/ReactNotes/HandleEvents" class="nav-list-link">HandleEvents</a><li class="nav-list-item"><a href="/JavaScript/ReactNotes/Hooks" class="nav-list-link">Hooks</a><li class="nav-list-item"><a href="/ReactNotes/MUI" class="nav-list-link">MUI</a><li class="nav-list-item"><a href="/ReactNotes/Mat-Table" class="nav-list-link">Mat-Table</a><li class="nav-list-item"><a href="/ReactNotes/React-Router" class="nav-list-link">React-Router</a><li class="nav-list-item"><a href="/ReactNotes/ReactHookForm" class="nav-list-link">ReactHookForm</a><li class="nav-list-item"><a href="/ReactNotes/String" class="nav-list-link">String</a><li class="nav-list-item"><a href="/ReactNotes/WebWorker" class="nav-list-link">WebWorker</a></ul><li class="nav-list-item"><a href="/JavaScript/RegEx" class="nav-list-link">RegEx</a><li class="nav-list-item"><a href="/JavaScript/State" class="nav-list-link">State</a><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in TypeScript category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/JavaScript/TypeScript/" class="nav-list-link">TypeScript</a><ul class="nav-list"><li class="nav-list-item"><a href="/JavaScript/TypeScript/Events" class="nav-list-link">Events</a><li class="nav-list-item"><a href="/JavaScript/TypeScript/QuickScripts" class="nav-list-link">QuickScripts</a><li class="nav-list-item"><a href="/JavaScript/TypeScript/Types" class="nav-list-link">Types</a></ul><li class="nav-list-item"><a href="/JavaScript/UsefulSnippets" class="nav-list-link">UsefulSnippets</a><li class="nav-list-item"><a href="/JavaScript/WebAPI" class="nav-list-link">WebAPI</a><li class="nav-list-item"><a href="/JavaScript/WebWorker" class="nav-list-link">WebWorker</a><li class="nav-list-item"><a href="/JavaScript/Window" class="nav-list-link">Window</a><li class="nav-list-item"><a href="/JavaScript/WorkingWithFiles" class="nav-list-link">WorkingWithFiles</a></ul><li class="nav-list-item"><a href="/Kubernetes" class="nav-list-link">Kubernetes</a><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Linux category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/Linux/" class="nav-list-link">Linux</a><ul class="nav-list"><li class="nav-list-item"><a href="/Linux/ADMIN-ROOT" class="nav-list-link">ADMIN-ROOT</a><li class="nav-list-item"><a href="/Linux/Conditionals" class="nav-list-link">Conditionals</a><li class="nav-list-item"><a href="/Linux/Email" class="nav-list-link">Email</a><li class="nav-list-item"><a href="/Linux/Encoding" class="nav-list-link">Encoding</a><li class="nav-list-item"><a href="/Linux/JQ" class="nav-list-link">JQ</a><li class="nav-list-item"><a href="/Linux/MySQL" class="nav-list-link">MySQL</a><li class="nav-list-item"><a href="/Linux/PGP" class="nav-list-link">PGP</a><li class="nav-list-item"><a href="/Linux/QuickScripts" class="nav-list-link">QuickScripts</a><li class="nav-list-item"><a href="/Linux/SDKMan" class="nav-list-link">SDKMan</a><li class="nav-list-item"><a href="/Linux/Scripting" class="nav-list-link">Scripting</a><li class="nav-list-item"><a href="/Linux/VIM_QuickTips" class="nav-list-link">VIM_QuickTips</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in MacNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/MacNotes/" class="nav-list-link">MacNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/MacNotes/AppleScripts" class="nav-list-link">AppleScripts</a><li class="nav-list-item"><a href="/MacNotes/HomeBrew" class="nav-list-link">HomeBrew</a><li class="nav-list-item"><a href="/MacNotes/JavaOnMac" class="nav-list-link">JavaOnMac</a><li class="nav-list-item"><a href="/MacNotes/QuickScripts" class="nav-list-link">QuickScripts</a><li class="nav-list-item"><a href="/MacNotes/ShortCuts" class="nav-list-link">ShortCuts</a><li class="nav-list-item"><a href="/MacNotes/UsersAndGroups" class="nav-list-link">UsersAndGroups</a><li class="nav-list-item"><a href="/MacNotes/Utilities" class="nav-list-link">Utilities</a><li class="nav-list-item"><a href="/MacNotes/ZSH" class="nav-list-link">ZSH</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Micronotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/Micronotes/" class="nav-list-link">Micronotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/Micronotes/AWS" class="nav-list-link">AWS</a><li class="nav-list-item"><a href="/Micronotes/Annotations" class="nav-list-link">Annotations</a><li class="nav-list-item"><a href="/Micronotes/Configuration" class="nav-list-link">Configuration</a><li class="nav-list-item"><a href="/Micronotes/DataBaseStuff" class="nav-list-link">DataBaseStuff</a><li class="nav-list-item"><a href="/Micronotes/Email" class="nav-list-link">Email</a><li class="nav-list-item"><a href="/Micronotes/EnviromentStuff" class="nav-list-link">EnviromentStuff</a><li class="nav-list-item"><a href="/Micronotes/GRAALVM" class="nav-list-link">GRAALVM</a><li class="nav-list-item"><a href="/Micronotes/Gradle" class="nav-list-link">Gradle</a><li class="nav-list-item"><a href="/Micronotes/Jackson" class="nav-list-link">Jackson</a><li class="nav-list-item"><a href="/Micronotes/MicroStream" class="nav-list-link">MicroStream</a><li class="nav-list-item"><a href="/Micronotes/Resources" class="nav-list-link">Resources</a><li class="nav-list-item"><a href="/Micronotes/Testing" class="nav-list-link">Testing</a><li class="nav-list-item"><a href="/Micronotes/UsefuleSnippets" class="nav-list-link">UsefuleSnippets</a><li class="nav-list-item"><a href="/Micronotes/cli_gradlew" class="nav-list-link">cli_gradlew</a></ul><li class="nav-list-item"><a href="/Obsidian/Obsidian" class="nav-list-link">Obsidian</a><li class="nav-list-item"><a href="/RandomNuggetsOfKnowledge" class="nav-list-link">RandomNuggetsOfKnowledge</a><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in SQLNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/SQLNotes/" class="nav-list-link">SQLNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/SQLNotes/Docker" class="nav-list-link">Docker</a><li class="nav-list-item"><a href="/SQLNotes/Functions" class="nav-list-link">Functions</a><li class="nav-list-item"><a href="/SQLNotes/HQL" class="nav-list-link">HQL</a><li class="nav-list-item"><a href="/SQLNotes/Liquibase" class="nav-list-link">Liquibase</a><li class="nav-list-item"><a href="/SQLNotes/Queries" class="nav-list-link">Queries</a><li class="nav-list-item"><a href="/SQLNotes/SQLCheatSheet" class="nav-list-link">SQLCheatSheet</a><li class="nav-list-item"><a href="/SQLNotes/TerminalCommands" class="nav-list-link">Terminal-Commands</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in SpringNotes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/SpringNotes/" class="nav-list-link">SpringNotes</a><ul class="nav-list"><li class="nav-list-item"><a href="/SpringNotes/Annotations" class="nav-list-link">Annotations</a><li class="nav-list-item"><a href="/SpringNotes/Hibernate" class="nav-list-link">Hibernate</a><li class="nav-list-item"><a href="/SpringNotes/Maven" class="nav-list-link">Maven</a><li class="nav-list-item"><a href="/SpringNotes/Properties" class="nav-list-link">Properties</a><li class="nav-list-item"><a href="/SpringNotes/Security" class="nav-list-link">Security</a><li class="nav-list-item"><a href="/SpringNotes/Serialization" class="nav-list-link">Serialization</a><li class="nav-list-item"><a href="/SpringNotes/Templates" class="nav-list-link">Templates</a><li class="nav-list-item"><a href="/SpringNotes/Testing" class="nav-list-link">Testing</a><li class="nav-list-item"><a href="/SpringNotes/TidBits" class="nav-list-link">TidBits</a><li class="nav-list-item"><a href="/SpringNotes/Transactions" class="nav-list-link">Transactions</a></ul><li class="nav-list-item"><a href="/SystemDesign&Architecture/" class="nav-list-link">SystemDesign&Architecture</a><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in TestingFrameworks category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/TestingFrameworks/" class="nav-list-link">TestingFrameworks</a><ul class="nav-list"><li class="nav-list-item"><a href="/TestingFrameworks/JUnit" class="nav-list-link">JUnit</a><li class="nav-list-item"><a href="/TestingFrameworks/JavascriptTesting" class="nav-list-link">Javascript</a><li class="nav-list-item"><a href="/TestingFrameworks/Spock" class="nav-list-link">Spock</a><li class="nav-list-item"><a href="/TestingFrameworks/Testcontainers" class="nav-list-link">Testcontainers</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Thymeleaf category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/Thymeleaf/" class="nav-list-link">Thymeleaf</a><ul class="nav-list"><li class="nav-list-item"><a href="/Thymeleaf/Fragments" class="nav-list-link">Fragments</a><li class="nav-list-item"><a href="/Thymeleaf/Testing" class="nav-list-link">Testing</a></ul><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Windows_Notes category" aria-pressed="false"> <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg> </button><a href="/Windows_Notes/" class="nav-list-link">Windows_Notes</a><ul class="nav-list"><li class="nav-list-item"><a href="/Windows_Notes/CMD" class="nav-list-link">CMD</a><li class="nav-list-item"><a href="/Windows_Notes/Environment" class="nav-list-link">Environment</a><li class="nav-list-item"><a href="/Windows_Notes/PackageManagers" class="nav-list-link">PackageManagers</a><li class="nav-list-item"><a href="/Windows_Notes/Powershell" class="nav-list-link">Powershell</a><li class="nav-list-item"><a href="/Windows_Notes/Run" class="nav-list-link">Run</a><li class="nav-list-item"><a href="/Windows_Notes/Shortcuts" class="nav-list-link">Shortcuts</a><li class="nav-list-item"><a href="/Windows_Notes/Terminal" class="nav-list-link">Terminal</a><li class="nav-list-item"><a href="/Windows_Notes/WSL" class="nav-list-link">WSL</a><li class="nav-list-item"><a href="/Windows_Notes/WindowsServer" class="nav-list-link">WindowsServer</a></ul></ul></nav><footer class="site-footer"> This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.</footer></div><div class="main" id="top"><div id="main-header" class="main-header"><div class="search" role="search"><div class="search-input-wrap"> <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Paxton's Notes" aria-label="Search Paxton's Notes" autocomplete="off"> <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label></div><div id="search-results" class="search-results"></div></div><nav aria-label="Auxiliary" class="aux-nav"><ul class="aux-nav-list"><li class="aux-nav-list-item"> <a href="https://github.com/14paxton/14paxton.github.io" class="site-button" target="_blank" rel="noopener noreferrer" > Template Repository </a></ul></nav></div><div class="main-content-wrap"><nav aria-label="Breadcrumb" class="breadcrumb-nav"><ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="/JavaScript/">JavaScript</a><li class="breadcrumb-nav-list-item"><span>FormStuff</span></ol></nav><div id="main-content" class="main-content"><main><p><br /></p><details> <summary class="text-delta"> Table of contents </summary><ol id="markdown-toc"><li><a href="#get-form-data" id="markdown-toc-get-form-data">Get Form Data</a><ol><li><a href="#jquery" id="markdown-toc-jquery">JQuery</a></ol><li><a href="#get-post-payload" id="markdown-toc-get-post-payload">Get POST payload</a><ol><li><a href="#catch-responses-as-well" id="markdown-toc-catch-responses-as-well">Catch responses as well</a><li><a href="#xmlhttprequest-intercept-post" id="markdown-toc-xmlhttprequest-intercept-post">XMLHTTPRequest Intercept POST</a><li><a href="#jquery-1" id="markdown-toc-jquery-1">JQuery</a></ol><li><a href="#intercept-xhr-requests" id="markdown-toc-intercept-xhr-requests">Intercept XHR Requests</a><li><a href="#manually-set-validity-on-form-field" id="markdown-toc-manually-set-validity-on-form-field">manually set validity on form field</a><ol><li><a href="#with-listener" id="markdown-toc-with-listener">with listener</a><li><a href="#core-use-case" id="markdown-toc-core-use-case">core use case</a></ol></ol></details><p><br /></p><hr /><p><br /></p><h1 id="get-form-data"> <a href="#get-form-data" class="anchor-heading" aria-labelledby="get-form-data"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Get Form Data</h1><ul><li><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">fromEntries</span><span class="p">(</span><span class="k">new</span> <span class="nc">FormData</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">.</span><span class="nx">requestForm</span><span class="p">).</span><span class="nf">entries</span><span class="p">());</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>      
+</code></pre></div></div><li><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">form</span><span class="dl">'</span><span class="p">).</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">submit</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+     <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">fromEntries</span><span class="p">(</span><span class="k">new</span> <span class="nc">FormData</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">).</span><span class="nf">entries</span><span class="p">());</span>
      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-    <span class="p">});</span>
-</code></pre>
-              </div>
-            </div>
-          <li>
-            <div class="language-javascript highlighter-rouge">
-              <div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">formElem</span> <span class="o">=</span> <span class="nb">document</span><span
-                  class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">requestForm</span><span class="dl">"</span><span
-                  class="p">);</span>
+    <span class="p">});</span>      
+</code></pre></div></div><li><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">formElem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">requestForm</span><span class="dl">"</span><span class="p">);</span>
 
-  <span class="nx">formElem</span><span class="p">.</span><span class="nx">onformdata</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span
-                    class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">formdata fired</span><span
-                    class="dl">'</span><span class="p">);</span>
+  <span class="nx">formElem</span><span class="p">.</span><span class="nx">onformdata</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">formdata fired</span><span class="dl">'</span><span class="p">);</span>
       <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
       <span class="k">return</span> <span class="kc">false</span>
       <span class="c1">// modifies the form data      </span>
   <span class="p">};</span>
-
-  <span class="nx">formElem</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">submit</span><span
-                    class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    
+  <span class="nx">formElem</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">submit</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="c1">// on form submission, prevent default      </span>
       <span class="c1">// e.preventDefault();      </span>
-
+    
       <span class="c1">// construct a FormData object, which fires the formdata event      </span>
-      <span class="kd">const</span> <span class="nx">formData</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span
-                    class="p">(</span><span class="dl">'</span><span class="s1">requestForm</span><span class="dl">'</span><span class="p">)</span>
+      <span class="kd">const</span> <span class="nx">formData</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">requestForm</span><span class="dl">'</span><span class="p">)</span>
       <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">formData</span><span class="p">)</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span
-                    class="p">)</span>
-
+      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">)</span>
+    
       <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">fuck me</span><span class="dl">"</span><span class="p">)</span>
       <span class="c1">// return false      </span>
-  <span class="p">});</span>
-</code></pre>
-              </div>
-            </div>
-          <li>
-            <div class="language-javascript highlighter-rouge">
-              <div class="highlight"><pre class="highlight"><code>      <span class="kd">function</span> <span class="nf">handleSubmit</span><span class="p">(</span><span class="nx">e</span><span
-                  class="p">)</span> <span class="p">{</span>
+  <span class="p">});</span>      
+</code></pre></div></div><li><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="kd">function</span> <span class="nf">handleSubmit</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
           <span class="nx">e</span><span class="p">.</span><span class="nf">preventDefault</span><span class="p">();</span>
-          <span class="kd">const</span> <span class="nx">formData</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FormData</span><span class="p">(</span><span
-                    class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
-          <span class="kd">const</span> <span class="nx">formProps</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">fromEntries</span><span
-                    class="p">(</span><span class="nx">formData</span><span class="p">);</span>
-          <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">submit</span><span
-                    class="dl">"</span><span class="p">,</span> <span class="nx">formProps</span><span class="p">)</span>
-
+          <span class="kd">const</span> <span class="nx">formData</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FormData</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+          <span class="kd">const</span> <span class="nx">formProps</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nf">fromEntries</span><span class="p">(</span><span class="nx">formData</span><span class="p">);</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span><span class="p">,</span> <span class="nx">formProps</span><span class="p">)</span>
+        
       <span class="p">}</span>
-
-      <span class="kd">const</span> <span class="nx">requestForm</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span
-                    class="p">(</span><span class="dl">"</span><span class="s2">requestForm</span><span class="dl">"</span><span class="p">);</span>
-      <span class="nx">requestForm</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">submit</span><span
-                    class="dl">"</span><span class="p">,</span> <span class="nx">handleSubmit</span><span class="p">);</span>
-</code></pre>
-              </div>
-            </div>
-          <li>
-            <div class="language-javascript highlighter-rouge">
-              <div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="nf">myFunction</span><span class="p">()</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">elements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span
-                    class="p">(</span><span class="dl">"</span><span class="s2">myForm</span><span class="dl">"</span><span class="p">).</span><span class="nx">elements</span><span
-                    class="p">;</span>
+        
+      <span class="kd">const</span> <span class="nx">requestForm</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">requestForm</span><span class="dl">"</span><span class="p">);</span>
+      <span class="nx">requestForm</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span><span class="p">,</span> <span class="nx">handleSubmit</span><span class="p">);</span>
+</code></pre></div></div><li><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="nf">myFunction</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">elements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">myForm</span><span class="dl">"</span><span class="p">).</span><span class="nx">elements</span><span class="p">;</span>
       <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
-      <span class="k">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span
-                    class="nx">i</span> <span class="o">&lt;</span> <span class="nx">elements</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span
-                    class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-          <span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">elements</span><span class="p">.</span><span class="nf">item</span><span
-                    class="p">(</span><span class="nx">i</span><span class="p">);</span>
-          <span class="nx">obj</span><span class="p">[</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span
-                    class="nx">item</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+      <span class="k">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">elements</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">elements</span><span class="p">.</span><span class="nf">item</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+          <span class="nx">obj</span><span class="p">[</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="nx">item</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
       <span class="p">}</span>
-
-      <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">demo</span><span
-                    class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span
-                    class="nf">stringify</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
-  <span class="p">}</span>
-</code></pre>
-              </div>
-            </div>
-          <li>
-            <div class="language-javascript highlighter-rouge">
-              <div class="highlight"><pre class="highlight"><code>   <span class="kd">const</span> <span class="nx">formData</span> <span class="o">=</span> <span class="k">new</span> <span
-                  class="nc">FormData</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span
-                  class="dl">'</span><span class="s1">form</span><span class="dl">'</span><span class="p">))</span>
-     <span class="k">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">pair</span> <span class="k">of</span> <span class="nx">formData</span><span
-                    class="p">.</span><span class="nf">entries</span><span class="p">())</span> <span class="p">{</span>
-         <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">pair</span><span class="p">[</span><span class="mi">0</span><span
-                    class="p">]</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">pair</span><span
-                    class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    
+      <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">demo</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+  <span class="p">}</span>      
+</code></pre></div></div><li><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="kd">const</span> <span class="nx">formData</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FormData</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">form</span><span class="dl">'</span><span class="p">))</span>
+     <span class="k">for </span><span class="p">(</span><span class="kd">var</span> <span class="nx">pair</span> <span class="k">of</span> <span class="nx">formData</span><span class="p">.</span><span class="nf">entries</span><span class="p">())</span> <span class="p">{</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
        <span class="p">}</span>
-</code></pre>
-              </div>
-            </div>
-        </ul>
-        <h2 id="jquery"><a aria-labelledby="jquery" class="anchor-heading" href="#jquery">
-          <svg aria-hidden="true" viewBox="0 0 16 16">
-            <use xlink:href="#svg-link"></use>
-          </svg>
-        </a> JQuery
-        </h2>
-        <ul>
-          <li>
-            <div class="language-javascript highlighter-rouge">
-              <div class="highlight"><pre class="highlight"><code>  <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">form</span><span
-                  class="dl">"</span><span class="p">).</span><span class="nf">serializeArray</span><span class="p">()</span>
-</code></pre>
-              </div>
-            </div>
-        </ul>
-        <h1 id="get-post-payload"><a aria-labelledby="get-post-payload" class="anchor-heading" href="#get-post-payload">
-          <svg aria-hidden="true" viewBox="0 0 16 16">
-            <use xlink:href="#svg-link"></use>
-          </svg>
-        </a> Get POST payload
-        </h1>
-        <div class="language-javascript highlighter-rouge">
-          <div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">constantMock</span> <span class="o">=</span> <span class="nb">window</span><span
-              class="p">.</span><span class="nx">fetch</span><span class="p">;</span>
+</code></pre></div></div></ul><h2 id="jquery"> <a href="#jquery" class="anchor-heading" aria-labelledby="jquery"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> JQuery</h2><ul><li><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">form</span><span class="dl">"</span><span class="p">).</span><span class="nf">serializeArray</span><span class="p">()</span>
+</code></pre></div></div></ul><h1 id="get-post-payload"> <a href="#get-post-payload" class="anchor-heading" aria-labelledby="get-post-payload"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Get POST payload</h1><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">constantMock</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">fetch</span><span class="p">;</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">fetch</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if </span><span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">===</span> <span
-                class="dl">'</span><span class="s1">/api/req</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">arguments</span><span class="p">[</span><span
-                class="mi">1</span><span class="p">].</span><span class="nx">method</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">post</span><span
-                class="dl">'</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nf">bodyResults</span><span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span
-                class="nx">body</span><span class="p">)</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">/api/req</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">arguments</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">method</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">bodyResults</span><span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">body</span><span class="p">)</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">constantMock</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="k">this</span><span
-                class="p">,</span> <span class="nx">arguments</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nx">constantMock</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">)</span>
 <span class="p">}</span>
 
 
 <span class="kd">function</span> <span class="nf">bodyResults</span><span class="p">(</span><span class="nx">reqBody</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">reqBody</span><span class="p">)</span>
 <span class="p">}</span>
-</code></pre>
-          </div>
-        </div>
-        <h2 id="catch-responses-as-well"><a aria-labelledby="catch-responses-as-well" class="anchor-heading" href="#catch-responses-as-well">
-          <svg aria-hidden="true" viewBox="0 0 16 16">
-            <use xlink:href="#svg-link"></use>
-          </svg>
-        </a> Catch responses as well
-        </h2>
-        <div class="language-javascript highlighter-rouge">
-          <div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">constMock</span> <span class="o">=</span> <span class="nb">window</span><span
-              class="p">.</span><span class="nx">fetch</span><span class="p">;</span>
+</code></pre></div></div><h2 id="catch-responses-as-well"> <a href="#catch-responses-as-well" class="anchor-heading" aria-labelledby="catch-responses-as-well"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Catch responses as well</h2><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">constMock</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">fetch</span><span class="p">;</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">fetch</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if </span><span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">===</span> <span
-                class="dl">'</span><span class="s1">/api/req</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">arguments</span><span class="p">[</span><span
-                class="mi">1</span><span class="p">].</span><span class="nx">method</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">post</span><span
-                class="dl">'</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nf">bodyResults</span><span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span
-                class="nx">body</span><span class="p">)</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">/api/req</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">arguments</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">method</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">bodyResults</span><span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">body</span><span class="p">)</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span
-                class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">constantMock</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span
-                class="nx">arguments</span><span class="p">)</span>
-                    <span class="p">.</span><span class="nf">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span
-                class="p">{</span>
-                        <span class="k">if </span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span
-                class="nf">indexOf</span><span class="p">(</span><span class="dl">"</span><span class="s2">/me</span><span class="dl">"</span><span class="p">)</span> <span class="o">&gt;</span> <span
-                class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">type</span> <span
-                class="o">!=</span> <span class="dl">"</span><span class="s2">cors</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">constantMock</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nf">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                        <span class="k">if </span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">url</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="dl">"</span><span class="s2">/me</span><span class="dl">"</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">type</span> <span class="o">!=</span> <span class="dl">"</span><span class="s2">cors</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
                             <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
                             <span class="c1">// do something for specificconditions</span>
                         <span class="p">}</span>
                         <span class="nf">resolve</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
                     <span class="p">})</span>
-                    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span
-                class="p">{</span>
+                    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
                         <span class="nf">reject</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
                     <span class="p">})</span>
     <span class="p">});</span>
@@ -842,210 +86,87 @@
 <span class="kd">function</span> <span class="nf">bodyResults</span><span class="p">(</span><span class="nx">reqBody</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">reqBody</span><span class="p">)</span>
 <span class="p">}</span>
-</code></pre>
-          </div>
-        </div>
-        <h2 id="xmlhttprequest-intercept-post"><a aria-labelledby="xmlhttprequest-intercept-post" class="anchor-heading" href="#xmlhttprequest-intercept-post">
-          <svg aria-hidden="true" viewBox="0 0 16 16">
-            <use xlink:href="#svg-link"></use>
-          </svg>
-        </a> XMLHTTPRequest Intercept POST
-        </h2>
-        <div class="language-javascript highlighter-rouge">
-          <div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">origOpen</span> <span class="o">=</span> <span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">prototype</span><span
-                class="p">.</span><span class="nx">send</span><span class="p">;</span>
-    <span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">send</span> <span class="o">=</span> <span
-                class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">request started!</span><span
-                class="dl">'</span><span class="p">);</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span
-                class="mi">0</span><span class="p">]);</span>
-        <span class="k">this</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">load</span><span
-                class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">request completed!</span><span
-                class="dl">'</span><span class="p">);</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span><span
-                class="p">);</span>
+</code></pre></div></div><h2 id="xmlhttprequest-intercept-post"> <a href="#xmlhttprequest-intercept-post" class="anchor-heading" aria-labelledby="xmlhttprequest-intercept-post"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> XMLHTTPRequest Intercept POST</h2><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">origOpen</span> <span class="o">=</span> <span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">send</span><span class="p">;</span>
+    <span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">send</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">request started!</span><span class="dl">'</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">load</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">request completed!</span><span class="dl">'</span><span class="p">);</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
         <span class="p">});</span>
-        <span class="nx">origOpen</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span
-                class="p">);</span>
+        <span class="nx">origOpen</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
     <span class="p">};</span>
 <span class="p">})();</span>
-</code></pre>
-          </div>
-        </div>
-        <h2 id="jquery-1"><a aria-labelledby="jquery-1" class="anchor-heading" href="#jquery-1">
-          <svg aria-hidden="true" viewBox="0 0 16 16">
-            <use xlink:href="#svg-link"></use>
-          </svg>
-        </a> JQuery
-        </h2>
-        <div class="language-javascript highlighter-rouge">
-          <div class="highlight"><pre class="highlight"><code><span class="nf">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nf">on</span><span
-              class="p">(</span><span class="dl">"</span><span class="s2">ajaxSend</span><span class="dl">"</span><span class="p">,</span> <span class="nf">function </span><span
-              class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">before request is sent</span><span
-                class="dl">"</span><span class="p">);</span>
-<span class="p">}).</span><span class="nf">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">ajaxComplete</span><span class="dl">"</span><span class="p">,</span> <span
-                class="nf">function </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">after success or error</span><span
-                class="dl">"</span><span class="p">);</span>
-<span class="p">}).</span><span class="nf">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">ajaxSuccess </span><span class="dl">"</span><span class="p">,</span> <span
-                class="nf">function </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">on success</span><span class="dl">"</span><span
-                class="p">);</span>
-<span class="p">}).</span><span class="nf">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">ajaxError </span><span class="dl">"</span><span class="p">,</span> <span
-                class="nf">function </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">on error</span><span class="dl">"</span><span
-                class="p">);</span>
+</code></pre></div></div><h2 id="jquery-1"> <a href="#jquery-1" class="anchor-heading" aria-labelledby="jquery-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> JQuery</h2><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nf">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">ajaxSend</span><span class="dl">"</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">before request is sent</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}).</span><span class="nf">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">ajaxComplete</span><span class="dl">"</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">after success or error</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}).</span><span class="nf">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">ajaxSuccess </span><span class="dl">"</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">on success</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}).</span><span class="nf">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">ajaxError </span><span class="dl">"</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">on error</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">});</span>
-</code></pre>
-          </div>
-        </div>
-        <h1 id="intercept-xhr-requests"><a aria-labelledby="intercept-xhr-requests" class="anchor-heading" href="#intercept-xhr-requests">
-          <svg aria-hidden="true" viewBox="0 0 16 16">
-            <use xlink:href="#svg-link"></use>
-          </svg>
-        </a> Intercept XHR Requests
-        </h1>
-        <div class="language-javascript highlighter-rouge">
-          <div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">open</span><span
-              class="p">)</span> <span class="p">{</span>
-    <span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">open</span> <span class="o">=</span> <span
-                class="nf">function </span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span
-                class="k">async</span><span class="p">,</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">pass</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div></div><h1 id="intercept-xhr-requests"> <a href="#intercept-xhr-requests" class="anchor-heading" aria-labelledby="intercept-xhr-requests"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Intercept XHR Requests</h1><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">function </span><span class="p">(</span><span class="nx">open</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">open</span> <span class="o">=</span> <span class="nf">function </span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="k">async</span><span class="p">,</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">pass</span><span class="p">)</span> <span class="p">{</span>
         <span class="nf">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Intercept</span><span class="dl">'</span><span class="p">);</span>
-        <span class="nx">open</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">method</span><span
-                class="p">,</span> <span class="nx">url</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">.ua</span><span class="dl">"</span><span class="p">,</span> <span
-                class="k">async</span><span class="p">,</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">pass</span><span class="p">);</span>
+        <span class="nx">open</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">method</span><span class="p">,</span> <span class="nx">url</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">.ua</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span><span class="p">,</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">pass</span><span class="p">);</span>
     <span class="p">};</span>
-<span class="p">})(</span><span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">open</span><span
-                class="p">);</span>
-</code></pre>
-          </div>
-        </div>
-        <h1 id="manually-set-validity-on-form-field"><a aria-labelledby="manually-set-validity-on-form-field" class="anchor-heading" href="#manually-set-validity-on-form-field">
-          <svg aria-hidden="true" viewBox="0 0 16 16">
-            <use xlink:href="#svg-link"></use>
-          </svg>
-        </a> manually set validity on form field
-        </h1>
-        <ul>
-          <li>
-            <blockquote><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/ValidityState">Validity State</a></p></blockquote>
-        </ul>
-        <h2 id="with-listener"><a aria-labelledby="with-listener" class="anchor-heading" href="#with-listener">
-          <svg aria-hidden="true" viewBox="0 0 16 16">
-            <use xlink:href="#svg-link"></use>
-          </svg>
-        </a> with listener
-        </h2>
-        <div class="language-javascript highlighter-rouge">
-          <div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">field</span> <span class="o">=</span> <span class="nb">document</span><span
-              class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">field_robot</span><span class="dl">'</span><span
-              class="p">);</span>
+<span class="p">})(</span><span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">open</span><span class="p">);</span>
+</code></pre></div></div><h1 id="manually-set-validity-on-form-field"> <a href="#manually-set-validity-on-form-field" class="anchor-heading" aria-labelledby="manually-set-validity-on-form-field"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> manually set validity on form field</h1><ul><li><blockquote><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/ValidityState">Validity State</a></p></blockquote></ul><h2 id="with-listener"> <a href="#with-listener" class="anchor-heading" aria-labelledby="with-listener"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> with listener</h2><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">field</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">field_robot</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="nx">field</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">input</span><span
-                class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span
-                class="p">{</span>
-    <span class="nf">fieldValidator</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="p">(</span><span class="nx">field</span><span
-                class="p">.</span><span class="nx">value</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">42</span><span class="dl">'</span><span class="p">));</span>
+<span class="nx">field</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">input</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">fieldValidator</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="p">(</span><span class="nx">field</span><span class="p">.</span><span class="nx">value</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">42</span><span class="dl">'</span><span class="p">));</span>
 <span class="p">});</span>
 
-<span class="kd">function</span> <span class="nf">fieldValidator</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">condition</span><span
-                class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span
-                class="nx">value</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nf">fieldValidator</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
     <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nf">setCustomValidity</span><span class="p">(</span><span
-                class="dl">'</span><span class="s1">invalid</span><span class="dl">'</span><span class="p">);</span>
+        <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nf">setCustomValidity</span><span class="p">(</span><span class="dl">'</span><span class="s1">invalid</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nf">setCustomValidity</span><span class="p">(</span><span
-                class="dl">''</span><span class="p">);</span>
+        <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nf">setCustomValidity</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
     <span class="p">}</span>
 
-<span class="p">}</span>
-</code></pre>
-          </div>
-        </div>
-        <div class="language-html highlighter-rouge">
-          <div class="highlight"><pre class="highlight"><code>
+<span class="p">}</span>    
+</code></pre></div></div><div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"myForm"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"field_robot"</span> <span class="na">name=</span><span
-              class="s">""</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">id=</span><span class="s">"submit"</span> <span class="na">name=</span><span
-              class="s">"submit"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/form&gt;</span>
-</code></pre>
-          </div>
-        </div>
-        <ul>
-          <li>
-            <h2 id="core-use-case"><a aria-labelledby="core-use-case" class="anchor-heading" href="#core-use-case">
-              <svg aria-hidden="true" viewBox="0 0 16 16">
-                <use xlink:href="#svg-link"></use>
-              </svg>
-            </a> core use case
-            </h2>
-            <div class="language-javascript highlighter-rouge">
-              <div class="highlight"><pre class="highlight"><code>      <span class="c1">// ...    </span>
-
-      <span class="kd">var</span> <span class="nx">email</span> <span class="o">=</span> <span class="nx">emailInput</span><span class="p">.</span><span class="nx">value</span><span
-                    class="p">;</span>
-      <span class="nx">emailInput</span><span class="p">.</span><span class="nx">required</span> <span class="o">=</span> <span class="o">!!</span><span class="nx">email</span><span
-                    class="p">.</span><span class="nf">trim</span><span class="p">();</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"field_robot"</span> <span class="na">name=</span><span class="s">""</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">id=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"submit"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>      
+</code></pre></div></div><ul><li><h2 id="core-use-case"> <a href="#core-use-case" class="anchor-heading" aria-labelledby="core-use-case"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> core use case</h2><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c1">// ...    </span>
+        
+      <span class="kd">var</span> <span class="nx">email</span> <span class="o">=</span> <span class="nx">emailInput</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+      <span class="nx">emailInput</span><span class="p">.</span><span class="nx">required</span> <span class="o">=</span> <span class="o">!!</span><span class="nx">email</span><span class="p">.</span><span class="nf">trim</span><span class="p">();</span>
       <span class="kd">var</span> <span class="nx">reqAddRemove</span> <span class="o">=</span> <span class="nx">emailInput</span><span class="p">.</span><span class="nx">required</span>
                          <span class="p">?</span> <span class="dl">'</span><span class="s1">add</span><span class="dl">'</span>
                          <span class="p">:</span> <span class="dl">'</span><span class="s1">remove</span><span class="dl">'</span><span class="p">;</span>
-
+        
       <span class="kd">function</span> <span class="nf">setEmailInputValid</span><span class="p">()</span> <span class="p">{</span>
           <span class="nx">emailInput</span><span class="p">.</span><span class="nf">setCustomValidity</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
-          <span class="nx">errorBlock</span><span class="p">.</span><span class="nf">html</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span
-                    class="nf">removeClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">emailValidationError</span><span class="dl">'</span><span class="p">).</span><span
-                    class="nf">addClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">hidden</span><span class="dl">'</span><span class="p">);</span>
-          <span class="nx">errorIcon</span><span class="p">.</span><span class="nf">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span
-                    class="dl">"</span><span class="p">,</span> <span class="dl">""</span><span class="p">);</span>
-          <span class="nx">errorIcon</span><span class="p">.</span><span class="nf">parent</span><span class="p">().</span><span class="nf">removeClass</span><span class="p">(</span><span
-                    class="dl">"</span><span class="s2">has-error</span><span class="dl">"</span><span class="p">);</span>
+          <span class="nx">errorBlock</span><span class="p">.</span><span class="nf">html</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nf">removeClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">emailValidationError</span><span class="dl">'</span><span class="p">).</span><span class="nf">addClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">hidden</span><span class="dl">'</span><span class="p">);</span>
+          <span class="nx">errorIcon</span><span class="p">.</span><span class="nf">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">""</span><span class="p">);</span>
+          <span class="nx">errorIcon</span><span class="p">.</span><span class="nf">parent</span><span class="p">().</span><span class="nf">removeClass</span><span class="p">(</span><span class="dl">"</span><span class="s2">has-error</span><span class="dl">"</span><span class="p">);</span>
       <span class="p">}</span>
-
-      <span class="nx">emailInput</span><span class="p">.</span><span class="nx">previousElementSibling</span><span class="p">.</span><span class="nx">classList</span><span class="p">[</span><span
-                    class="nx">reqAddRemove</span><span class="p">](</span><span class="dl">'</span><span class="s1">req</span><span class="dl">'</span><span class="p">);</span>
-
-      <span class="k">if </span><span class="p">(</span><span class="nx">emailInput</span><span class="p">.</span><span class="nx">required</span><span class="p">)</span> <span
-                    class="p">{</span>
-          <span class="kd">var</span> <span class="nx">inValidEmail</span> <span class="o">=</span> <span class="o">!</span><span class="nx">AssessmentOrderEmailNotification</span><span
-                    class="p">.</span><span class="nf">validateEmail</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span>
-          <span class="kd">var</span> <span class="nx">inValidDomain</span> <span class="o">=</span> <span class="o">!</span><span class="nx">AssessmentOrderEmailNotification</span><span
-                    class="p">.</span><span class="nf">validateDomain</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span>
-          <span class="kd">var</span> <span class="nx">respondentEmail</span> <span class="o">=</span> <span class="nx">AssessmentOrderEmailNotification</span><span class="p">.</span><span
-                    class="nf">respondentEmailCheck</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span>
-
-          <span class="k">if </span><span class="p">(</span><span class="nx">inValidEmail</span> <span class="o">||</span> <span class="nx">inValidDomain</span> <span class="o">||</span> <span
-                    class="nx">respondentEmail</span><span class="p">)</span> <span class="p">{</span>
-              <span class="nx">emailInput</span><span class="p">.</span><span class="nf">setCustomValidity</span><span class="p">(</span><span class="dl">'</span><span class="s1">invalid</span><span
-                    class="dl">'</span><span class="p">);</span>
+        
+      <span class="nx">emailInput</span><span class="p">.</span><span class="nx">previousElementSibling</span><span class="p">.</span><span class="nx">classList</span><span class="p">[</span><span class="nx">reqAddRemove</span><span class="p">](</span><span class="dl">'</span><span class="s1">req</span><span class="dl">'</span><span class="p">);</span>
+        
+      <span class="k">if </span><span class="p">(</span><span class="nx">emailInput</span><span class="p">.</span><span class="nx">required</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">inValidEmail</span> <span class="o">=</span> <span class="o">!</span><span class="nx">AssessmentOrderEmailNotification</span><span class="p">.</span><span class="nf">validateEmail</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span>
+          <span class="kd">var</span> <span class="nx">inValidDomain</span> <span class="o">=</span> <span class="o">!</span><span class="nx">AssessmentOrderEmailNotification</span><span class="p">.</span><span class="nf">validateDomain</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span>
+          <span class="kd">var</span> <span class="nx">respondentEmail</span> <span class="o">=</span> <span class="nx">AssessmentOrderEmailNotification</span><span class="p">.</span><span class="nf">respondentEmailCheck</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span>
+        
+          <span class="k">if </span><span class="p">(</span><span class="nx">inValidEmail</span> <span class="o">||</span> <span class="nx">inValidDomain</span> <span class="o">||</span> <span class="nx">respondentEmail</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">emailInput</span><span class="p">.</span><span class="nf">setCustomValidity</span><span class="p">(</span><span class="dl">'</span><span class="s1">invalid</span><span class="dl">'</span><span class="p">);</span>
               <span class="kd">var</span> <span class="nx">errorMessage</span> <span class="o">=</span> <span class="nx">inValidEmail</span>
-                                 <span class="p">?</span> <span class="nx">email</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> is not a valid Email</span><span
-                    class="dl">"</span>
+                                 <span class="p">?</span> <span class="nx">email</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> is not a valid Email</span><span class="dl">"</span>
                                  <span class="p">:</span> <span class="p">(</span><span class="nx">inValidDomain</span>
-                                    <span class="p">?</span> <span class="nx">email</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> does not have a valid domain</span><span
-                    class="dl">"</span>
-                                    <span class="p">:</span> <span class="dl">"</span><span class="s2">Error:  Email address cannot be the same as the assessment respondent.</span><span
-                    class="dl">"</span><span class="p">);</span>
-              <span class="nx">errorBlock</span><span class="p">.</span><span class="nf">html</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">).</span><span
-                    class="nf">removeClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">hidden</span><span class="dl">'</span><span class="p">).</span><span
-                    class="nf">addClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">emailValidationError</span><span class="dl">'</span><span class="p">);</span>
-              <span class="nx">errorIcon</span><span class="p">.</span><span class="nf">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span
-                    class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">glyphicon glyphicon-remove form-control-feedback</span><span class="dl">"</span><span
-                    class="p">);</span>
-              <span class="nx">errorIcon</span><span class="p">.</span><span class="nf">parent</span><span class="p">().</span><span class="nf">addClass</span><span class="p">(</span><span
-                    class="dl">"</span><span class="s2">has-error</span><span class="dl">"</span><span class="p">);</span>
-              <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">previousSibling</span><span class="p">.</span><span
-                    class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">multi-input-height</span><span
-                    class="dl">'</span><span class="p">);</span>
+                                    <span class="p">?</span> <span class="nx">email</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> does not have a valid domain</span><span class="dl">"</span>
+                                    <span class="p">:</span> <span class="dl">"</span><span class="s2">Error:  Email address cannot be the same as the assessment respondent.</span><span class="dl">"</span><span class="p">);</span>
+              <span class="nx">errorBlock</span><span class="p">.</span><span class="nf">html</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">).</span><span class="nf">removeClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">hidden</span><span class="dl">'</span><span class="p">).</span><span class="nf">addClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">emailValidationError</span><span class="dl">'</span><span class="p">);</span>
+              <span class="nx">errorIcon</span><span class="p">.</span><span class="nf">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">glyphicon glyphicon-remove form-control-feedback</span><span class="dl">"</span><span class="p">);</span>
+              <span class="nx">errorIcon</span><span class="p">.</span><span class="nf">parent</span><span class="p">().</span><span class="nf">addClass</span><span class="p">(</span><span class="dl">"</span><span class="s2">has-error</span><span class="dl">"</span><span class="p">);</span>
+              <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">previousSibling</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">multi-input-height</span><span class="dl">'</span><span class="p">);</span>
           <span class="p">}</span>
           <span class="k">else</span> <span class="p">{</span>
               <span class="nf">setEmailInputValid</span><span class="p">();</span>
@@ -1053,23 +174,5 @@
       <span class="p">}</span>
       <span class="k">else</span> <span class="p">{</span>
           <span class="nf">setEmailInputValid</span><span class="p">();</span>
-      <span class="p">}</span>
-</code></pre>
-              </div>
-            </div>
-        </ul>
-      </main>
-      <hr>
-      <footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"></p>
-        <div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"><a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./JavaScript/FormStuff.md"
-                                                                                id="edit-this-page">Edit this page on GitHub</a></p></div>
-      </footer>
-    </div>
-  </div>
-  <button aria-label="Focus on search" class="search-button btn-reset" id="search-button">
-    <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
-      <use xlink:href="#svg-search"></use>
-    </svg>
-  </button>
-  <div class="search-overlay"></div>
-</div>
+      <span class="p">}</span>    
+</code></pre></div></div></ul></main><hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-100 mb-0"></p><div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"> <a href="https://github.com/14paxton/14paxton.github.io/edit/develop/./JavaScript/FormStuff.md" id="edit-this-page">Edit this page on GitHub</a></p></div></footer></div></div><button id="search-button" class="search-button btn-reset" aria-label="Focus on search"> <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg> </button><div class="search-overlay"></div></div>
