@@ -640,7 +640,7 @@ public void setupData() {
 
 # Helper Methods
 
-## Initializer
+## TestConfiguration Initializer
 
 ```java
 
