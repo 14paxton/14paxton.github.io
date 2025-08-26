@@ -205,3 +205,33 @@ public void Reflection() {
 
 }
 ```
+
+# Class
+
+## reified generics
+
+```java
+import java.util.Date;
+
+public class Reified {
+  public static <T> T newInstance(T... stub) {
+    Class<T> reifiedType = (Class<T>) stub.getClass()
+                                          .getComponentType();
+    try {
+      return reifiedType.getDeclaredConstructor()
+                        .newInstance();
+    }
+    catch (ReflectiveOperationException exception) {
+      throw new RuntimeException("Oops", exception);
+    }
+  }
+
+  public static void main(String[] args) {
+    // Inferred type:
+    Date date = newInstance();
+    System.out.println(date);
+    // Explicit type:
+    System.out.println(Reified.<Date>newInstance());
+  }
+}
+```
