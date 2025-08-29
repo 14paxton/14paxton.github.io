@@ -42,11 +42,33 @@ Table of contents
       rm -rf *
       mkdir Settings
       touch Settings/.profilesAreInstalled
+      touch /Settings/.cloudConfigProfileInstalled
+      touch /Settings/.cloudConfigRecordNotFound
    ```
-5. Reboot.
-6. Boot the Mac into Recovery Mode (hold down command+R during startup).
-7. Go to the Utilities menu and open Terminal and type: csrutil enable. This will re-enable SIP.
-8. Reboot into the OS.
+   
+   > Next, enter `sudo profiles show -type enrollment` and make sure it doesn’t show (or can’t “determine”) your device MDM status. Congratulations… you’ve won
+
+5. make sure your mac doesn’t try and retrieve its mdm status next time you reboot. To do this, we will block its access from Apple’s domains.
+
+  - First, run ```sudo launchctl disable system/com.apple.ManagedClient.enroll```
+
+  - Next, let’s edit the hosts file: ```vi /etc/hosts```
+
+  - And add the following lines to the file
+
+   ```
+   0.0.0.0 iprofiles.apple.com
+   0.0.0.0 deviceenrollment.apple.com
+   0.0.0.0 mdmenrollment.apple.com
+   0.0.0.0 gdmf.apple.com
+   0.0.0.0 acmdm.apple.com
+   0.0.0.0 albert.apple.com
+   ```
+
+6. Reboot.
+7. Boot the Mac into Recovery Mode (hold down command+R during startup).
+8. Go to the Utilities menu and open Terminal and type: csrutil enable. This will re-enable SIP.
+9. Reboot into the OS.
 
 > The profile will be now removed and you will be able to re-enroll the Mac to your MDM.
 
