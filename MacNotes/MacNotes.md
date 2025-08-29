@@ -50,6 +50,18 @@ Table of contents
 
 > The profile will be now removed and you will be able to re-enroll the Mac to your MDM.
 
+## Using Apple Configurator
+
+1. Open Configurator on the host Mac.
+2. Power on the target Mac and let it fully boot. You can be at the FileVault login screen, MDM lock screen or even have a user logged in.
+3. Connect the host (any port) and target Mac (specific port from Apple’s documentation) with the USB cable.
+   > On the target MacBook press and hold these four keys simultaneously: Left Control + Left Option + Right Shift + Power/TouchID button.
+4. While holding those four keys the screen on the MacBook will go off as the Mac shuts down; do not let go yet.
+5. After the screen goes black continue holding all four keys for an additional three seconds.
+6. After three seconds release the Control, Option and Shift keys but continue holding Power/TouchID.
+7. After several more seconds Configurator on the host Mac should show the DFU icon and you can release the Power/TouchID button.
+8. Now just drag-and-drop the IPSW file you downloaded earlier onto the DFU logo and the Restore process will begin. A few minutes later the target Mac will be securely erased and have a clean install of macOS ready to go.
+
 # System Preferences
 
 ## CLI
