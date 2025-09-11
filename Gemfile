@@ -9,8 +9,8 @@ gem 'jekyll-watch'
 gem 'kramdown'
 gem 'kramdown-parser-gfm'
 gem 'rouge'
-# gem 'coderay', '~> 1.1', '>= 1.1.3'
-# gem 'kramdown-syntax-coderay', '~> 1.0', '>= 1.0.1'
+gem 'coderay', '~> 1.1', '>= 1.1.3'
+gem 'kramdown-syntax-coderay', '~> 1.0', '>= 1.0.1'
 gem 'just-the-docs'
 gem "faraday-retry"
 
