@@ -7,8 +7,8 @@ has_children: true
 share: true
 shortRepo:
 
-- macnotes
-- default
+  - macnotes
+  - default
 
 ---
 
@@ -42,29 +42,25 @@ Table of contents
       rm -rf *
       mkdir Settings
       touch Settings/.profilesAreInstalled
-      touch /Settings/.cloudConfigProfileInstalled
-      touch /Settings/.cloudConfigRecordNotFound
+      touch Settings/.cloudConfigProfileInstalled
+      touch Settings/.cloudConfigRecordNotFound
    ```
-   
+
    > Next, enter `sudo profiles show -type enrollment` and make sure it doesn’t show (or can’t “determine”) your device MDM status. Congratulations… you’ve won
 
-5. make sure your mac doesn’t try and retrieve its mdm status next time you reboot. To do this, we will block its access from Apple’s domains.
-
-  - First, run ```sudo launchctl disable system/com.apple.ManagedClient.enroll```
-
-  - Next, let’s edit the hosts file: ```vi /etc/hosts```
-
-  - And add the following lines to the file
-
-   ```
-   0.0.0.0 iprofiles.apple.com
-   0.0.0.0 deviceenrollment.apple.com
-   0.0.0.0 mdmenrollment.apple.com
-   0.0.0.0 gdmf.apple.com
-   0.0.0.0 acmdm.apple.com
-   0.0.0.0 albert.apple.com
-   ```
-
+5. make sure your mac doesn’t try and retrieve its mdm status the next time you reboot. To do this, we will block its access from Apple’s domains.
+    - First, run ```sudo launchctl disable system/com.apple.ManagedClient.enroll```
+    - Next, let’s edit the hosts file: ```vi /etc/hosts```
+    - And add the following lines to the file
+        ```shell
+        sudo -i
+        echo "0.0.0.0 iprofiles.apple.com" >> /etc/hosts
+        echo "0.0.0.0 mdmenrollment.apple.com" >> /etc/hosts
+        echo "0.0.0.0 deviceenrollment.apple.com" >> /etc/hosts
+        echo "0.0.0.0 gdmf.apple.com" >> /etc/hosts
+        echo "0.0.0.0 acmdm.apple.com" >> /etc/hosts
+        echo "0.0.0.0 albert.apple.com" >> /etc/hosts
+        ```
 6. Reboot.
 7. Boot the Mac into Recovery Mode (hold down command+R during startup).
 8. Go to the Utilities menu and open Terminal and type: csrutil enable. This will re-enable SIP.
@@ -82,7 +78,8 @@ Table of contents
 5. After the screen goes black continue holding all four keys for an additional three seconds.
 6. After three seconds release the Control, Option and Shift keys but continue holding Power/TouchID.
 7. After several more seconds Configurator on the host Mac should show the DFU icon and you can release the Power/TouchID button.
-8. Now just drag-and-drop the IPSW file you downloaded earlier onto the DFU logo and the Restore process will begin. A few minutes later the target Mac will be securely erased and have a clean install of macOS ready to go.
+8. Now just drag-and-drop the IPSW file you downloaded earlier onto the DFU logo and the Restore process will begin. A few minutes later the target Mac will be
+   securely erased and have a clean install of macOS ready to go.
 
 # System Preferences
 
