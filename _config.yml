@@ -7,6 +7,8 @@ url: https://cotdc.com # the base hostname & protocol for your site, e.g., http:
 repository: 14paxton.github.io/14paxton.github.io # for github-metadata
 gist:
   noscript: false
+exclude:
+  - README.md
 
 permalink: pretty
 
