@@ -1,0 +1,11 @@
+
+In my current role as a Senior Software Engineer at Tactical Edge, I have been responsible for developing and maintaining both new and legacy code bases using Java, Spring Boot, and JSP in a high-security environment. I have successfully built and supported a modular multi-build Spring Boot application for the United States Marine Corps, ensuring compliance with stringent government security standards. My proficiency in technologies such as Docker, Oracle DB, and JavaScript has allowed me to enhance functionality and maintain system interoperability effectively.
+
+Previously, at Aviture, I developed a GPS tracking system for the U.S. Air Force, utilizing Java, Typescript, and Kubernetes. This experience honed my skills in agile development and reinforced my ability to collaborate across teams to ensure code quality and application performance. My work on a kiosk application for military personnel check-ins further demonstrates my capability to design and implement user-friendly solutions in complex environments.
+
+In addition to my technical skills, I hold a CompTIA Security+ certification and a Secret Security Clearance, which I believe will be beneficial in maintaining the security and integrity of your systems. My strong analytical and problem-solving skills enable me to manage multiple projects in fast-paced, deadline-driven environments effectively.
+
+Brandon Paxton  
+(623) 237-3585  
+62-tires-tangent@icloud.com  
+[LinkedIn Profile] | [GitHub Profile] | [Portfolio Link]  

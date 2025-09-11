@@ -60,7 +60,7 @@ Table of contents
     document.querySelector("#some.selector").innerHTML = body;
     ```
 
-  - [JS Code Reference](https://www.paxtonb.com/JavaScript/Clever-Algos#load-html-and-css-file-into-html-doc)
+    - [JS Code Reference](https://www.cotdc.com/JavaScript/Clever-Algos#load-html-and-css-file-into-html-doc)
 
   - [Read HTML Doc with script and CSS into HTML page](https://gist.github.com/14paxton/a5a6b17131a2791b757973f866e3eb98)
 

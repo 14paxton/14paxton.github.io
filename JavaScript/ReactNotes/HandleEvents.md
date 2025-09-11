@@ -173,7 +173,7 @@ export default function Modal() {
 
 ### React Hook using Js Function
 
-> [Detect when input box filled by keyboard and when by barcode scanner](https://www.paxtonb.com/JavaScript/Events#barcodescanner-class)
+> [Detect when input box filled by keyboard and when by barcode scanner](https://www.cotdc.com/JavaScript/Events#barcodescanner-class)
 
 ```jsx
 const ScanComponent = (props) => {

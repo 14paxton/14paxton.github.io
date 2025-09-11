@@ -32,7 +32,7 @@ Table of contents
 
 ---
 
-# [API Qick Referencs ](https://www.paxtonb.com/GitHubPages/InterviewQ&A#http_verbs)
+# [API Qick Referencs ](https://www.cotdc.com/GitHubPages/InterviewQ&A#http_verbs)
 
 <div id="imageContainer" data-key-as-header="true" data-zoom-on-hover="true" data-img-loader="httpImages.js" style="width: auto; height: auto;"></div>
 

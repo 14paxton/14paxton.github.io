@@ -1,11 +1,11 @@
 ---
-title:        JUnit
-permalink:    TestingFrameworks/JUnit
-category:     TestingFrameworks
-parent:       TestingFrameworks
-layout:       default
+title: JUnit
+permalink: TestingFrameworks/JUnit
+category: TestingFrameworks
+parent: TestingFrameworks
+layout: default
 has_children: false
-share:        true
+share: true
 shortRepo:
 
   - testingframeworks
@@ -97,13 +97,13 @@ mvn '-Dsurefire.rerunFailingTestsCount=2' -Dtest=ModuleTwoTests test
         }
    ```
 
-  - #### use value passed to mocked method in action
-    ```java
-        when(method.execute(Mockito.any(FindDayRangeAvailabilityForPersonnel.class))).thenAnswer(invocation -> {
-        FindDayRangeAvailabilityForPersonnel input = invocation.getArgument(0);
-        return buildResponse(2, input);
-      });
-    ```
+    - #### use value passed to mocked method in action
+      ```java
+          when(method.execute(Mockito.any(FindDayRangeAvailabilityForPersonnel.class))).thenAnswer(invocation -> {
+          FindDayRangeAvailabilityForPersonnel input = invocation.getArgument(0);
+          return buildResponse(2, input);
+        });
+      ```
 
 - ### Mock Service Method
   ```java
@@ -126,6 +126,74 @@ mvn '-Dsurefire.rerunFailingTestsCount=2' -Dtest=ModuleTwoTests test
     MockHttpSession mockSession = new MockHttpSession();
   ```
 
+# Helper Extensions
+
+```java
+
+@ExtendWith(CriticalCheckCondition.class)
+class DependentGroup {
+  // Will be skipped if criticalTestsPassed is false
+}
+```
+
+## TestWatcher
+
+```java
+import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.api.extension.TestWatcher;
+
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+public class TestFailureTracker implements TestWatcher {
+  private static final Map<String, Boolean> testResults = new ConcurrentHashMap<>();
+
+  @Override
+  public void testSuccessful(ExtensionContext context) {
+    testResults.put(getTestName(context), true);
+  }
+
+  @Override
+  public void testFailed(ExtensionContext context, Throwable cause) {
+    testResults.put(getTestName(context), false);
+  }
+
+  private String getTestName(ExtensionContext context) {
+    return context.getRequiredTestClass().getName() + "#" +
+            context.getRequiredTestMethod().getName();
+  }
+
+  public static boolean hasPreviousTestFailed(String testName) {
+    Boolean result = testResults.get(testName);
+    return Boolean.FALSE.equals(result);
+  }
+
+  public static boolean hasAnyTestFailedInClass(Class<?> testClass) {
+    String className = testClass.getName();
+    return testResults.entrySet().stream()
+                      .anyMatch(e -> e.getKey().startsWith(className + "#") &&
+                              Boolean.FALSE.equals(e.getValue()));
+  }
+}
+```
+
+## ExecutionCondition
+
+```java
+
+public class CriticalCheckCondition implements ExecutionCondition {
+
+  @Override
+  public ConditionEvaluationResult evaluateExecutionCondition(ExtensionContext context) {
+    boolean passed = ParentTest.criticalTestsPassed;
+    return passed ?
+           ConditionEvaluationResult.enabled("Critical tests passed") :
+           ConditionEvaluationResult.disabled("Critical tests failed");
+  }
+}
+
+```
+
 # Metadata
 
 > get test info
@@ -134,20 +202,20 @@ mvn '-Dsurefire.rerunFailingTestsCount=2' -Dtest=ModuleTwoTests test
 
 @Test
 public void testDoFetchTableData(TestInfo testInfo) throws Exception {
-    String status = "Active";
-    String lastName = "Gold";
-    String firstName = "Felix";
-    String startDay = "2025-01-01";
+  String status = "Active";
+  String lastName = "Gold";
+  String firstName = "Felix";
+  String startDay = "2025-01-01";
 
-    var request = createRequest(status, lastName, firstName, startDay);
+  var request = createRequest(status, lastName, firstName, startDay);
 
-    logJsonContent(request, " JSON Request : {}", testInfo);
+  logJsonContent(request, " JSON Request : {}", testInfo);
 
-    mockMvc.perform(post("/uri")
-                            .contentType(MediaType.APPLICATION_JSON)
-                            .header("Jq-Request", "true")
-                            .content(request))
-           .andExpect(status().isOk());
+  mockMvc.perform(post("/uri")
+                 .contentType(MediaType.APPLICATION_JSON)
+                 .header("Jq-Request", "true")
+                 .content(request))
+         .andExpect(status().isOk());
 }
 ```
 
@@ -159,36 +227,36 @@ public void testDoFetchTableData(TestInfo testInfo) throws Exception {
 
 @Test
 public void getAllEmployeesAPI() throws Exception {
-    mvc.perform(MockMvcRequestBuilders
-                        .get("/employees")
-                        .accept(MediaType.APPLICATION_JSON))
-       .andDo(print())
-       .andExpect(status().isOk())
-       .andExpect(MockMvcResultMatchers.jsonPath("$.employees")
-                                       .exists())
-       .andExpect(MockMvcResultMatchers.jsonPath("$.employees[*].employeeId")
-                                       .isNotEmpty());
+  mvc.perform(MockMvcRequestBuilders
+             .get("/employees")
+             .accept(MediaType.APPLICATION_JSON))
+     .andDo(print())
+     .andExpect(status().isOk())
+     .andExpect(MockMvcResultMatchers.jsonPath("$.employees")
+                                     .exists())
+     .andExpect(MockMvcResultMatchers.jsonPath("$.employees[*].employeeId")
+                                     .isNotEmpty());
 }
 
 @Test
 public void createEmployeeAPI() throws Exception {
-    mvc.perform(MockMvcRequestBuilders
-                        .post("/employees")
-                        .content(asJsonString(new EmployeeVO(null, "firstName", "lastName", "admin@mail.com")))
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .accept(MediaType.APPLICATION_JSON))
-       .andExpect(status().isCreated())
-       .andExpect(MockMvcResultMatchers.jsonPath("$.employeeId")
-                                       .exists());
+  mvc.perform(MockMvcRequestBuilders
+             .post("/employees")
+             .content(asJsonString(new EmployeeVO(null, "firstName", "lastName", "admin@mail.com")))
+             .contentType(MediaType.APPLICATION_JSON)
+             .accept(MediaType.APPLICATION_JSON))
+     .andExpect(status().isCreated())
+     .andExpect(MockMvcResultMatchers.jsonPath("$.employeeId")
+                                     .exists());
 }
 
 public static String asJsonString(final Object obj) {
-    try {
-        return new ObjectMapper().writeValueAsString(obj);
-    }
-    catch (Exception e) {
-        throw new RuntimeException(e);
-    }
+  try {
+    return new ObjectMapper().writeValueAsString(obj);
+  }
+  catch (Exception e) {
+    throw new RuntimeException(e);
+  }
 }
 ```
 
@@ -224,17 +292,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ContextConfiguration(classes = {DefaultTestConfig.class}, loader = AnnotationConfigWebContextLoader.class)
 class ControllerTest {
 
-    @Test
-    public void test_returns_map_with_subscription_type_ids() {
-        NotificationController controller = new NotificationController();
+  @Test
+  public void test_returns_map_with_subscription_type_ids() {
+    NotificationController controller = new NotificationController();
 
-        Map result = controller.fetchAllNotifications();
+    Map result = controller.fetchAllNotifications();
 
-        List<Integer> expectedIds = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
-        assertNotNull(result);
-        assertTrue(result.containsKey("emailNotifications"));
-        assertEquals(expectedIds, result.get("emailNotifications"));
-    }
+    List<Integer> expectedIds = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+    assertNotNull(result);
+    assertTrue(result.containsKey("emailNotifications"));
+    assertEquals(expectedIds, result.get("emailNotifications"));
+  }
 
 }
 ```
@@ -274,20 +342,20 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ComponentScan(basePackageClasses = {FragmentController.class})
 @ContextConfiguration(classes = {DefaultTestConfig.class}, loader = AnnotationConfigWebContextLoader.class)
 class FragmentControllerTest {
-    @Autowired
-    private MockMvc mockMvc;
+  @Autowired
+  private MockMvc mockMvc;
 
-    @Test
-    @WithMockUser(roles = "ADMIN")
-    void testLoadGreeting() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(get("/controller/action").header(HtmxConstants.HDR_HX_REQUEST, "true"))
-                                     .andExpect(status().isOk())
-                                     .andExpect(view().name("thymeLeafFile :: fragmentId"))
-                                     .andReturn();
+  @Test
+  @WithMockUser(roles = "ADMIN")
+  void testLoadGreeting() throws Exception {
+    MvcResult mvcResult = mockMvc.perform(get("/controller/action").header(HtmxConstants.HDR_HX_REQUEST, "true"))
+                                 .andExpect(status().isOk())
+                                 .andExpect(view().name("thymeLeafFile :: fragmentId"))
+                                 .andReturn();
 
-        log.debug("Response: {}", mvcResult.getResponse()
-                                           .getContentAsString());
-    }
+    log.debug("Response: {}", mvcResult.getResponse()
+                                       .getContentAsString());
+  }
 }
 ```
 
@@ -316,75 +384,76 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ComponentScan(basePackageClasses = {Controller.class})
 public class ControllerTest {
 
-    private MockedStatic<TemporalUtils> temporalUtilsMockedStatic;
+  private MockedStatic<TemporalUtils> temporalUtilsMockedStatic;
 
-    @Autowired
-    private MockMvc mockMvc;
-    @Autowired
-    private ObjectMapper objectMapper;
+  @Autowired
+  private MockMvc mockMvc;
+  @Autowired
+  private ObjectMapper objectMapper;
 
-    @AfterEach
-    public void afterTest() {
-        temporalUtilsMockedStatic.close();
-    }
+  @AfterEach
+  public void afterTest() {
+    temporalUtilsMockedStatic.close();
+  }
 
-    @BeforeEach
-    public void setUp() throws JsonProcessingException, RBACSecurityException {
-        MockitoAnnotations.openMocks(this);
+  @BeforeEach
+  public void setUp() throws JsonProcessingException, RBACSecurityException {
+    MockitoAnnotations.openMocks(this);
 
-        //** Static Mocks ** //
-        temporalUtilsMockedStatic = mockStatic(TemporalUtils.class, Mockito.withSettings()
-                                                                           .defaultAnswer(Mockito.CALLS_REAL_METHODS));
-        temporalUtilsMockedStatic.when(() -> TemporalUtils.between(Mockito.any(LocalDate.class), Mockito.any(LocalDate.class), Mockito.any(LocalDate.class)))
-                                 .thenReturn(true);
-        temporalUtilsMockedStatic.when(() -> TemporalUtils.between(Mockito.any(Instant.class), Mockito.any(Instant.class), Mockito.any(Instant.class)))
-                                 .thenReturn(true);
+    //** Static Mocks ** //
+    temporalUtilsMockedStatic = mockStatic(TemporalUtils.class, Mockito.withSettings()
+                                                                       .defaultAnswer(Mockito.CALLS_REAL_METHODS));
+    temporalUtilsMockedStatic.when(() -> TemporalUtils.between(Mockito.any(LocalDate.class), Mockito.any(LocalDate.class), Mockito.any(LocalDate.class)))
+                             .thenReturn(true);
+    temporalUtilsMockedStatic.when(() -> TemporalUtils.between(Mockito.any(Instant.class), Mockito.any(Instant.class), Mockito.any(Instant.class)))
+                             .thenReturn(true);
 
-        //** Mock Function  **//
-        when(queryGateway.execute(Mockito.any(FindDayRangeAvailabilityForPerson.class))).thenAnswer(invocation -> {
-            FindDayRangeAvailabilityForPerson input = invocation.getArgument(0);
-            return buildQueryGatewayResponse(2, input);
-        });
+    //** Mock Function  **//
+    when(queryGateway.execute(Mockito.any(FindDayRangeAvailabilityForPerson.class))).thenAnswer(invocation -> {
+      FindDayRangeAvailabilityForPerson input = invocation.getArgument(0);
+      return buildQueryGatewayResponse(2, input);
+    });
 
-    }
+  }
 
-    @Test
-    public void testDoIndex() throws Exception {
-        log.debug("Beginning testDoIndex");
-        mockMvc.perform(get("/rest/person/availability/unit/bulk-manager")
-                                .with(csrf())
-                                .accept(MediaType.TEXT_HTML))
-               .andExpect(status().isOk());
-    }
+  @Test
+  public void testDoIndex() throws Exception {
+    log.debug("Beginning testDoIndex");
+    mockMvc.perform(get("/rest/person/availability/unit/bulk-manager")
+                   .with(csrf())
+                   .accept(MediaType.TEXT_HTML))
+           .andExpect(status().isOk());
+  }
 
-    @Test
-    public void testDoFetchTableDataReturnValues(TestInfo testInfo) throws Exception {
-        String status = "Active";
-        String lastName = "Gold";
-        String firstName = "Felix";
-        String startDay = "2025-01-01";
+  @Test
+  public void testDoFetchTableDataReturnValues(TestInfo testInfo) throws Exception {
+    String status = "Active";
+    String lastName = "Gold";
+    String firstName = "Felix";
+    String startDay = "2025-01-01";
 
-        var request = buildPersonUnitBulkAvailabilityManagerRequest(status, lastName, firstName, startDay);
+    var request = buildPersonUnitBulkAvailabilityManagerRequest(status, lastName, firstName, startDay);
 
-        ResultActions actions = mockMvc.perform(post("/rest/person/availability/unit/bulk-manager/fetch-table-data")
-                                                        .contentType(MediaType.APPLICATION_JSON)
-                                                        .header("Jq-Request", "true")
-                                                        .content(request));
+    ResultActions actions = mockMvc.perform(post("/rest/person/availability/unit/bulk-manager/fetch-table-data")
+            .contentType(MediaType.APPLICATION_JSON)
+            .header("Jq-Request", "true")
+            .content(request));
 
-        String returnContent = actions.andReturn()
-                                      .getResponse()
-                                      .getContentAsString();
+    String returnContent = actions.andReturn()
+                                  .getResponse()
+                                  .getContentAsString();
 
-        logJsonContent(returnContent, " HTTP Response : {}", testInfo);
+    logJsonContent(returnContent, " HTTP Response : {}", testInfo);
 
-        actions.andExpect(status().isOk());
-        actions.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE));
+    actions.andExpect(status().isOk());
+    actions.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE));
 
-        Map<String, Object> responseMap = objectMapper.readValue(returnContent, new TypeReference<>() {});
-        List<HashMap> otherIdList = (List<HashMap>) responseMap.get("data");
+    Map<String, Object> responseMap = objectMapper.readValue(returnContent, new TypeReference<>() {
+    });
+    List<HashMap> otherIdList = (List<HashMap>) responseMap.get("data");
 
-        var record = otherIdList.getFirst();
-    }
+    var record = otherIdList.getFirst();
+  }
 }
 ```
 
@@ -425,48 +494,48 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 @ExtendWith(MockitoExtension.class)
 public class EmployeeControllerTest {
-    @InjectMocks
-    EmployeeController employeeController;
+  @InjectMocks
+  EmployeeController employeeController;
 
-    @Mock
-    EmployeeDAO employeeDAO;
+  @Mock
+  EmployeeDAO employeeDAO;
 
-    @Test
-    public void testAddEmployee() {
-        MockHttpServletRequest request = new MockHttpServletRequest();
-        RequestContextHolder.setRequestAttributes(new ServletRequestAttributes(request));
+  @Test
+  public void testAddEmployee() {
+    MockHttpServletRequest request = new MockHttpServletRequest();
+    RequestContextHolder.setRequestAttributes(new ServletRequestAttributes(request));
 
-        when(employeeDAO.addEmployee(any(Employee.class))).thenReturn(true);
+    when(employeeDAO.addEmployee(any(Employee.class))).thenReturn(true);
 
-        Employee employee = new Employee(1, "Lokesh", "Gupta", "howtodoinjava@gmail.com");
-        ResponseEntity<Object> responseEntity = employeeController.addEmployee(employeeToAdd);
+    Employee employee = new Employee(1, "Lokesh", "Gupta", "howtodoinjava@gmail.com");
+    ResponseEntity<Object> responseEntity = employeeController.addEmployee(employeeToAdd);
 
-        assertThat(responseEntity.getStatusCodeValue()).isEqualTo(201);
-        assertThat(responseEntity.getHeaders()
-                                 .getLocation()
-                                 .getPath()).isEqualTo("/1");
-    }
+    assertThat(responseEntity.getStatusCodeValue()).isEqualTo(201);
+    assertThat(responseEntity.getHeaders()
+                             .getLocation()
+                             .getPath()).isEqualTo("/1");
+  }
 
-    @Test
-    public void testFindAll() {
-        Employee employee1 = new Employee(1, "Lokesh", "Gupta", "howtodoinjava@gmail.com");
-        Employee employee2 = new Employee(2, "Alex", "Gussin", "example@gmail.com");
-        Employees employees = new Employees();
-        employees.setEmployeeList(Arrays.asList(employee1, employee2));
+  @Test
+  public void testFindAll() {
+    Employee employee1 = new Employee(1, "Lokesh", "Gupta", "howtodoinjava@gmail.com");
+    Employee employee2 = new Employee(2, "Alex", "Gussin", "example@gmail.com");
+    Employees employees = new Employees();
+    employees.setEmployeeList(Arrays.asList(employee1, employee2));
 
-        when(employeeDAO.getAllEmployees()).thenReturn(employees);
+    when(employeeDAO.getAllEmployees()).thenReturn(employees);
 
-        Employees result = employeeController.getEmployees();
+    Employees result = employeeController.getEmployees();
 
-        assertThat(result.getEmployeeList()
-                         .size()).isEqualTo(2);
-        assertThat(result.getEmployeeList()
-                         .get(0)
-                         .getFirstName()).isEqualTo(employee1.getFirstName());
-        assertThat(result.getEmployeeList()
-                         .get(1)
-                         .getFirstName()).isEqualTo(employee2.getFirstName());
-    }
+    assertThat(result.getEmployeeList()
+                     .size()).isEqualTo(2);
+    assertThat(result.getEmployeeList()
+                     .get(0)
+                     .getFirstName()).isEqualTo(employee1.getFirstName());
+    assertThat(result.getEmployeeList()
+                     .get(1)
+                     .getFirstName()).isEqualTo(employee2.getFirstName());
+  }
 }
 ```
 
@@ -486,9 +555,9 @@ private Controller controller;
 
 @Autowired
 public ControllerTest(ApplicationContext applicationContext) {
-    ContextUtil.init(applicationContext);
-    mockMvc = MockMvcBuilders.standaloneSetup(new Controller())
-                             .build();
+  ContextUtil.init(applicationContext);
+  mockMvc = MockMvcBuilders.standaloneSetup(new Controller())
+                           .build();
 }
 ```
 
@@ -496,9 +565,9 @@ public ControllerTest(ApplicationContext applicationContext) {
 
 @BeforeEach
 public void setUp() throws JsonProcessingException, RBACSecurityException {
-    controller = new Controller();
-    mockMvc    = MockMvcBuilders.standaloneSetup(controller)
-                                .build();
+  controller = new Controller();
+  mockMvc    = MockMvcBuilders.standaloneSetup(controller)
+                              .build();
 }
 ```
 
@@ -533,14 +602,14 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {InMemoryDBConfig.class, DefaultTestConfig.class}, loader = AnnotationConfigContextLoader.class)
 class DefaultTest {
-    @Autowired
-    ApplicationContext applicationContext;
+  @Autowired
+  ApplicationContext applicationContext;
 
-    @Test
-    void testItWorks() {
-        log.debug("Application Context: {}", applicationContext);
-        assertNotNull(applicationContext, "Application is running");
-    }
+  @Test
+  void testItWorks() {
+    log.debug("Application Context: {}", applicationContext);
+    assertNotNull(applicationContext, "Application is running");
+  }
 }
 
 ```
@@ -587,40 +656,40 @@ import static org.junit.Assert.assertNotNull;
 @Transactional
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class InMemoryDBTest {
-    @Autowired
-    private TestEntityManager testEntityManager;
-    @Autowired
-    ApplicationContext applicationContext;
+  @Autowired
+  private TestEntityManager testEntityManager;
+  @Autowired
+  ApplicationContext applicationContext;
 
-    @MockitoBean
-    SystemInstanceService systemInstanceService;
+  @MockitoBean
+  SystemInstanceService systemInstanceService;
 
-    @BeforeEach
-    public void setUp() throws Exception {
-        ContextUtil.init(applicationContext);
-    }
+  @BeforeEach
+  public void setUp() throws Exception {
+    ContextUtil.init(applicationContext);
+  }
 
-    @Test
-    public void givenANewPersonShouldPersistAsEntity(TestInfo testInfo) throws JsonProcessingException {
-        Long id = 9L;
-        String firsName = "Chester";
-        String lastName = "Gold";
-        String email = "test@test.com";
-        Long otherId = 99L;
+  @Test
+  public void givenANewPersonShouldPersistAsEntity(TestInfo testInfo) throws JsonProcessingException {
+    Long id = 9L;
+    String firsName = "Chester";
+    String lastName = "Gold";
+    String email = "test@test.com";
+    Long otherId = 99L;
 
-        PersonEntity person = TestDataBuilders.buildTestPersonEntity(id, firsName, lastName, email, otherId);
-        log.debug("Person Created: {}", person);
+    PersonEntity person = TestDataBuilders.buildTestPersonEntity(id, firsName, lastName, email, otherId);
+    log.debug("Person Created: {}", person);
 
-        testEntityManager.persist(person);
-        var persistedPerson = testEntityManager.find(PersonEntity.class, 9L);
+    testEntityManager.persist(person);
+    var persistedPerson = testEntityManager.find(PersonEntity.class, 9L);
 
-        assertNotNull(persistedPerson);
-        assertEquals(firsName, persistedPerson.firstName());
-        assertEquals(lastName, persistedPerson.lastName());
-        assertEquals(email, persistedPerson.email());
-        assertEquals(id, persistedPerson.id());
-        assertEquals(otherId, persistedPerson.otherIdId());
-    }
+    assertNotNull(persistedPerson);
+    assertEquals(firsName, persistedPerson.firstName());
+    assertEquals(lastName, persistedPerson.lastName());
+    assertEquals(email, persistedPerson.email());
+    assertEquals(id, persistedPerson.id());
+    assertEquals(otherId, persistedPerson.otherIdId());
+  }
 }
 
 ```
@@ -674,46 +743,46 @@ import static org.mockito.Mockito.mockStatic;
 @ContextConfiguration(classes = {InMemoryDBConfig.class, DefaultTestConfig.class})
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class HandlerTest {
-    private final EntityManager entityManager;
-    private final CriteriaBuilderFactory criteriaBuilderFactory;
-    private MockedStatic<BaseQueryUtils> baseQueryUtilsMockedStatic;
+  private final EntityManager entityManager;
+  private final CriteriaBuilderFactory criteriaBuilderFactory;
+  private MockedStatic<BaseQueryUtils> baseQueryUtilsMockedStatic;
 
-    @Autowired
-    PersonRepository personRepository;
-    @Autowired
-    HandlerService handlerService;
+  @Autowired
+  PersonRepository personRepository;
+  @Autowired
+  HandlerService handlerService;
 
-    @Autowired
-    public HandlerServiceTest(ApplicationContext applicationContext, EntityManager entityManager, CriteriaBuilderFactory criteriaBuilderFactory) {
-        this.entityManager          = entityManager;
-        this.criteriaBuilderFactory = criteriaBuilderFactory;
-    }
+  @Autowired
+  public HandlerServiceTest(ApplicationContext applicationContext, EntityManager entityManager, CriteriaBuilderFactory criteriaBuilderFactory) {
+    this.entityManager          = entityManager;
+    this.criteriaBuilderFactory = criteriaBuilderFactory;
+  }
 
-    @BeforeEach
-    void setUp() {
-        //** BaseQueryUtils **//
-        baseQueryUtilsMockedStatic = mockStatic(BaseQueryUtils.class);
-        baseQueryUtilsMockedStatic.when(() -> BaseQueryUtils.createQuery(entityManager))
-                                  .thenReturn(new BlazeJPAQuery<>(entityManager, criteriaBuilderFactory));
-    }
+  @BeforeEach
+  void setUp() {
+    //** BaseQueryUtils **//
+    baseQueryUtilsMockedStatic = mockStatic(BaseQueryUtils.class);
+    baseQueryUtilsMockedStatic.when(() -> BaseQueryUtils.createQuery(entityManager))
+                              .thenReturn(new BlazeJPAQuery<>(entityManager, criteriaBuilderFactory));
+  }
 
-    @Test
-    public void testFindPersonnelForOwningAndAttachedUnitShouldReturnCreatedPersonnel() {
-        Long id = 9L;
-        String firsName = "zeek";
-        String lastName = "kinkade";
-        String email = "test@test.com";
-        PersonEntity person = buildTestPersonEntity(id, firsName, lastName, email);
+  @Test
+  public void testFindPersonnelForOwningAndAttachedUnitShouldReturnCreatedPersonnel() {
+    Long id = 9L;
+    String firsName = "zeek";
+    String lastName = "kinkade";
+    String email = "test@test.com";
+    PersonEntity person = buildTestPersonEntity(id, firsName, lastName, email);
 
-        //    personRepository.save(person);
-        entityManager.persist(person);
-        log.debug("Person: {}", person);
+    //    personRepository.save(person);
+    entityManager.persist(person);
+    log.debug("Person: {}", person);
 
-        List<?> foundPerson = handlerService.queryPersonnelForOwningAndAttachedUnit("", "", null);
+    List<?> foundPerson = handlerService.queryPersonnelForOwningAndAttachedUnit("", "", null);
 
-        assertNotNull(foundPerson);
-        assertThat(foundPerson).hasSizeGreaterThan(0);
-    }
+    assertNotNull(foundPerson);
+    assertThat(foundPerson).hasSizeGreaterThan(0);
+  }
 
 }
 
