@@ -1,14 +1,14 @@
 ---
-title:     HTTP
-layout:    default
+title: HTTP
+layout: default
 permalink: HTTP
-category:  HTTP
+category: HTTP
 has_children: true
-share:     true
+share: true
 shortRepo:
 
-- http
-- default
+  - http
+  - default
 
 ---
 
@@ -32,13 +32,7 @@ Table of contents
 
 ---
 
-# [API Qick Referencs ](https://www.cotdc.com/GitHubPages/InterviewQ&A#http_verbs)
-
 <div id="imageContainer" data-key-as-header="true" data-zoom-on-hover="true" data-img-loader="httpImages.js" style="width: auto; height: auto;"></div>
-
-# URL Lifecycle
-
-![img.png](../assets/images/HTTPUrlLifeCycle.png)
 
 # Status Codes
 
