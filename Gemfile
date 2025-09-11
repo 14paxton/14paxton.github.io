@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'json'
 gem 'webrick'
 gem 'jekyll'
+gem 'jekyll-remote-theme'
 gem 'jekyll-default-layout'
 gem 'jekyll-github-metadata'
 gem 'jekyll-watch'
@@ -18,3 +19,4 @@ gem "faraday-retry"
 # gem 'wdm', '>= 0.1.1' if Gem.win_platform?
 
 gem "liquid"
+
