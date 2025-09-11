@@ -1,11 +1,11 @@
 ---
-title:        GitHub
-layout:       default
-permalink:    Git/GitHub
-category:     Git/GitHub
-parent:       Git
+title: GitHub
+layout: default
+permalink: Git/GitHub
+category: Git/GitHub
+parent: Git
 has_children: true
-share:        true
+share: true
 ---
 
 # SSH
@@ -19,12 +19,13 @@ share:        true
       ```  
    > Note: If you are using a legacy system that doesn't support the `Ed25519` algorithm, use:
    >> ```ssh-keygen -t rsa -b 4096 -C "your_email@example.com"```
+
 3) At the prompt, type a secure passphrase.
 
-    ```
-      > Enter passphrase (empty for no passphrase): [Type a passphrase]
-      > Enter same passphrase again: [Type passphrase again]
-    ```
+```
+  > Enter passphrase (empty for no passphrase): [Type a passphrase]
+  > Enter same passphrase again: [Type passphrase again]
+```
 
 ## Adding your SSH key to the ssh-agent
 
@@ -112,7 +113,7 @@ jobs:
 
     steps:
       - name: Print
-        run:  env | sort
+        run: env | sort
 ```
 
 # Tricks & Tips

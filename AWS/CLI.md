@@ -1,23 +1,23 @@
 ---
-title:        CLI
-permalink:    AWS/CLI
-category:     AWS
-parent:       AWS
-layout:       default
+title: CLI
+permalink: AWS/CLI
+category: AWS
+parent: AWS
+layout: default
 has_children: false
-share:        true
+share: true
 ---
 
 <br/>          
-
-<
+ 
+<details markdown="block">                
 <summary>                
 Table of contents                
 </summary>                
 {: .text-delta }                
 1. TOC                
-{:toc}                
-</details>                
+{:toc}              
+</details>
 
 <br/>                
 
