@@ -1,6 +1,6 @@
 title: Paxton's Notes
 description: Coding Notes
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
 source: .
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://cotdc.com # the base hostname & protocol for your site, e.g., http://example.com
@@ -39,6 +39,7 @@ kramdown:
   show_warnings: true
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-default-layout
   - jekyll-github-metadata
   - kramdown-parser-gfm
