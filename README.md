@@ -1,4 +1,4 @@
-# [Link for Site: www.paxtonb.com](https://www.paxtonb.com)
+# [Link for Site: www.cotdc.com](https://www.cotdc.com)
 
 # setup
 

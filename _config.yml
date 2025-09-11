@@ -3,7 +3,7 @@ description: Coding Notes
 theme: just-the-docs
 source: .
 baseurl: "" # the subpath of your site, e.g. /blog
-url: https://paxtonb.com # the base hostname & protocol for your site, e.g., http://example.com
+url: https://cotdc.com # the base hostname & protocol for your site, e.g., http://example.com
 repository: 14paxton.github.io/14paxton.github.io # for github-metadata
 gist:
   noscript: false

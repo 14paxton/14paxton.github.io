@@ -32,7 +32,7 @@ Table of contents
 
 # Binding
 
-> [Groovy Examples](https://paxtonb.com/GroovyNotes/MetaProgramming#objects)
+> [Groovy Examples](https://cotdc.com/GroovyNotes/MetaProgramming#objects)
 
 ## BindingResult
 
