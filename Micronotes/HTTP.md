@@ -1,8 +1,8 @@
 ---
 title: HTTP
 permalink: Micronotes/HTTP
-category: HTTP
-parent: HTTP
+category: Micronotes
+parent: Micronotes
 layout: default
 has_children: false          
 ---
