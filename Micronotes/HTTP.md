@@ -1,6 +1,6 @@
 ---
 title: HTTP
-permalink: Micronotes/HTTP.md
+permalink: Micronotes/HTTP
 category: HTTP
 parent: HTTP
 layout: default
