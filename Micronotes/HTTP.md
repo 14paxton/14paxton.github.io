@@ -24,7 +24,7 @@ Table of contents
 
 <br/>
 
-# Calling
+# Http Client
 
 ## Kotlin
 
@@ -89,4 +89,43 @@ class HTTPCaller(private val clientInterface: ClientInterface) {
                 )
   }
 }
+```
+
+# Playwright
+
+```kotlin
+fun getSurveyResults() {
+    Playwright.create()
+      .use { playwright ->
+        val browser = playwright.chromium()
+          .launch(
+            BrowserType.LaunchOptions()
+              .setHeadless(true)
+          )
+        browser.newPage()
+          .use { page ->
+            // landing page
+            page.navigate("https://www.survey.com/page")
+            page.waitForLoadState(LoadState.NETWORKIDLE)
+            page.fill("input[id='spl_q_feedback_jss_access_code_22_digit']", "0731802000109152511006")
+            page.click("#buttonNext")
+            page.waitForLoadState(LoadState.NETWORKIDLE)
+
+            // regular survey page 1
+            page.click("#onf_q_bp_store_ltr_scale_0")
+            page.fill("#spl_q_bp_store_ltr_cmt", "worst experience ever")
+            page.click("#buttonNext")
+            page.waitForLoadState(LoadState.NETWORKIDLE)
+
+            // regular survey page 2
+            page.click("#onf_q_bp_store_associate_driver2_scale_0")
+            page.click("input[name='onf_q_bp_store_contact_method_alt'][value='3']")
+            page.click("#buttonNext")
+            page.waitForLoadState(LoadState.NETWORKIDLE)
+
+            content = page.content()
+            println(page.content())
+          }
+      }
+  }
 ```
