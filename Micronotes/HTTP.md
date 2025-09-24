@@ -129,3 +129,19 @@ fun getSurveyResults() {
       }
   }
 ```
+
+## Screenshot
+
+```kotlin
+  // Wait for the DOM to update (useful for dynamic content)
+  page.waitForLoadState(LoadState.DOMCONTENTLOADED)
+  // or wait for network activity to settle
+  page.waitForLoadState(LoadState.NETWORKIDLE)
+  page.screenshot(
+      Page.ScreenshotOptions()
+          .setPath(Paths.get("page2_changes.png")),
+  )
+  
+  page.click("#buttonNext")
+  page.waitForLoadState(LoadState.NETWORKIDLE)
+```
