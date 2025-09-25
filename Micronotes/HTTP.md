@@ -91,57 +91,126 @@ class HTTPCaller(private val clientInterface: ClientInterface) {
 }
 ```
 
+### Get and Set Cookies
+
+```kotlin
+@Singleton
+class HttpService {
+
+  fun scrapeSurveyInfo(): String {
+    val newHttpClient = HttpClient.create(URL("https://website.com"))
+    val response = newHttpClient.toBlocking()
+                                .exchange(GET<Any>("/takeSome"), String::class.java)
+    
+    val body = response.body() ?: throw IllegalStateException("No response body")
+    val cookies: Set<Cookie> = response.cookies.all
+
+    return searchForReceiptManually(cookies)
+  }
+
+  private fun searchForReceiptManually(cookies: Set<Cookie>): String {
+    val formData = buildReceiptSearchForm(receiptId)
+    val httpRequest = POST("/takeSome", formData)
+
+    httpRequest.cookies(cookies)
+
+    return rawHttpClient.toBlocking().retrieve(httpRequest, String::class.java)
+  }
+}
+```
+
 # Playwright
 
 ```kotlin
 fun getSurveyResults() {
-    Playwright.create()
-      .use { playwright ->
-        val browser = playwright.chromium()
-          .launch(
-            BrowserType.LaunchOptions()
-              .setHeadless(true)
-          )
-        browser.newPage()
-          .use { page ->
-            // landing page
-            page.navigate("https://www.survey.com/page")
-            page.waitForLoadState(LoadState.NETWORKIDLE)
-            page.fill("input[id='spl_q_feedback_jss_access_code_22_digit']", "0731802000109152511006")
-            page.click("#buttonNext")
-            page.waitForLoadState(LoadState.NETWORKIDLE)
+  Playwright.create()
+          .use { playwright ->
+            val browser = playwright.chromium()
+                    .launch(
+                            BrowserType.LaunchOptions()
+                                    .setHeadless(true)
+                           )
+            browser.newPage()
+                    .use { page ->
+                      // landing page
+                      page.navigate("https://www.survey.com/page")
+                      page.waitForLoadState(LoadState.NETWORKIDLE)
+                      page.fill("input[id='spl_q_feedback_jss_access_code_22_digit']", "0731802000109152511006")
+                      page.click("#buttonNext")
+                      page.waitForLoadState(LoadState.NETWORKIDLE)
 
-            // regular survey page 1
-            page.click("#onf_q_bp_store_ltr_scale_0")
-            page.fill("#spl_q_bp_store_ltr_cmt", "worst experience ever")
-            page.click("#buttonNext")
-            page.waitForLoadState(LoadState.NETWORKIDLE)
+                      // regular survey page 1
+                      page.click("#onf_q_bp_store_ltr_scale_0")
+                      page.fill("#spl_q_bp_store_ltr_cmt", "worst experience ever")
+                      page.click("#buttonNext")
+                      page.waitForLoadState(LoadState.NETWORKIDLE)
 
-            // regular survey page 2
-            page.click("#onf_q_bp_store_associate_driver2_scale_0")
-            page.click("input[name='onf_q_bp_store_contact_method_alt'][value='3']")
-            page.click("#buttonNext")
-            page.waitForLoadState(LoadState.NETWORKIDLE)
+                      // regular survey page 2
+                      page.click("#onf_q_bp_store_associate_driver2_scale_0")
+                      page.click("input[name='onf_q_bp_store_contact_method_alt'][value='3']")
+                      page.click("#buttonNext")
+                      page.waitForLoadState(LoadState.NETWORKIDLE)
 
-            content = page.content()
-            println(page.content())
+                      content = page.content()
+                      println(page.content())
+                    }
           }
-      }
-  }
+}
 ```
 
 ## Screenshot
 
 ```kotlin
   // Wait for the DOM to update (useful for dynamic content)
-  page.waitForLoadState(LoadState.DOMCONTENTLOADED)
-  // or wait for network activity to settle
-  page.waitForLoadState(LoadState.NETWORKIDLE)
-  page.screenshot(
-      Page.ScreenshotOptions()
-          .setPath(Paths.get("page2_changes.png")),
-  )
-  
-  page.click("#buttonNext")
-  page.waitForLoadState(LoadState.NETWORKIDLE)
+page.waitForLoadState(LoadState.DOMCONTENTLOADED)
+// or wait for network activity to settle
+page.waitForLoadState(LoadState.NETWORKIDLE)
+page.screenshot(
+        Page.ScreenshotOptions()
+                .setPath(Paths.get("page2_changes.png")),
+               )
+
+page.click("#buttonNext")
+page.waitForLoadState(LoadState.NETWORKIDLE)
+```
+
+## Find Drivers
+
+```java
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Playwright;
+import org.testng.annotations.Test;
+
+import java.io.IOException;
+
+public class DriverPathsOfBrowsers {
+
+    @Test
+    public void firstTest() throws IOException {
+
+        // We can take screenshots in headless mode too.
+        Playwright playwright = Playwright.create();
+        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+        //  This line creates a new page object within the browser instance. The page object represents a single web page that can be navigated, interacted with, and tested.(It's kind of tab but exactly a tab.)
+        Page page = browser.newPage();
+        //  This code instructs the page object to navigate to the specified URL
+        page.navigate("https://the-internet.herokuapp.com/");
+        String driverPathOfChromium = playwright.chromium().executablePath();
+        System.out.println("Driver path of chromium: " + driverPathOfChromium);
+
+        /*
+        Playwright uses its own Firefox build.
+        That build is based on the Firefox Nightly build. That's why you are getting that browser. You won't be able to use the stock browser version.
+        So it will be Nightly Browser
+         */
+        String driverPathOfFirefox = playwright.firefox().executablePath();
+        System.out.println("Driver path of Firefox: " + driverPathOfFirefox);
+        String driverPathOfWebKit= playwright.webkit().executablePath();
+        System.out.println("Driver path of WebKit: " + driverPathOfWebKit);
+
+        playwright.close();
+    }
+}
 ```
