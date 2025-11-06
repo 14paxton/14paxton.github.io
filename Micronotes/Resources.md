@@ -38,7 +38,8 @@ Table of contents
 - `io.micronaut.core.io.ResourceResolver`
 
 ```java
-ClassPathResourceLoader loader = new ResourceResolver().getLoader(ClassPathResourceLoader.class).get();
+ClassPathResourceLoader loader = new ResourceResolver().getLoader(ClassPathResourceLoader.class)
+                                                       .get();
 Optional<URL> resource = loader.getResource("classpath:foo/bar.txt");
 ```
 
@@ -54,6 +55,7 @@ URL resource = classLoader.getResource(path);
 ## Resourceloader
 
 ```java
+
 @Controller("root")
 public class MyController {
 
@@ -66,7 +68,9 @@ public class MyController {
   @Get("/index")
   @Produces(MediaType.TEXT_HTML)
   public String greet() throws IOException {
-    return new String(loader.getResourceAsStream("index.html").get().readAllBytes());
+    return new String(loader.getResourceAsStream("index.html")
+                            .get()
+                            .readAllBytes());
   }
 }
 ```
@@ -136,6 +140,7 @@ public class ImageConfig {
   public void setOtherFiles(List<Readable> otherFiles) {
     this.otherFiles = otherFiles;
   }
+}
 ```
 
 ```java
@@ -166,8 +171,10 @@ public class ImageController {
 
   @Get(uri = "/random", processes = "images/jpg")
   public StreamedFile getRandomImage() {
-    int imageIndex = this.getRandomNumber(imageConfig.getOtherFiles().size());
-    final Readable randomImage = imageConfig.getOtherFiles().get(imageIndex);
+    int imageIndex = this.getRandomNumber(imageConfig.getOtherFiles()
+                                                     .size());
+    final Readable randomImage = imageConfig.getOtherFiles()
+                                            .get(imageIndex);
     try {
       final InputStream is = randomImage.asInputStream();
       return new StreamedFile(is, MediaType.IMAGE_JPEG_TYPE);
