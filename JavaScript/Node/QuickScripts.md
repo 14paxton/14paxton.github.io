@@ -49,11 +49,9 @@ npm install [path-to-your-package]
 > This will have the following equivalent in package.json:
 
 ```json
-...
 "dependencies": {
 "[package]": "file:[relative-path-to-package]",
-...
-},
+}
 ```
 
 # Write to file with JavaScript and Node.js
