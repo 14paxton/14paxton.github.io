@@ -31,6 +31,8 @@ Table of contents
 
 # Java
 
+## CLI
+
   ```shell
     java -XshowSettings:properties -version
   ```
@@ -53,6 +55,25 @@ jps | egrep -v (pgrep idea)
 
 ```bash
 for pid in $(jps | egrep -v $(pgrep webstorm) | egrep -v $(pgrep idea)| egrep -v $(pgrep jps) | cut -d' ' -f1); do kill -9 $pid; done
+```
+
+## In Code
+
+## Run cli commands in java
+
+```java
+String getSessionIdFromBinary() {
+  var process = ProcessBuilder("./GetSessionId").redirectErrorStream(true).start();
+  var output = process.inputStream.bufferedReader().readText().trim();
+  
+  process.waitFor();
+
+  if (process.exitValue() != 0) {
+    throw RuntimeException("GetSessionId failed: $output");
+  }
+
+  return output;
+}
 ```
 
 # JVM
