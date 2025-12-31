@@ -31,137 +31,74 @@ Table of contents
 > Prefer parallel streams only when it can truly improve performance (large data + non-thread blocking
 > code).
 
-# Creation of Streams
-
-`
-list.stream()
-`
-
-`
-list.parallelStream()
-`
-
-`
-Stream.of (1, 2, 3)
-`
-
-`
-Arrays.stream(new int[]{1,2,3})
-`
+# Creation of Streams`
 
 # Operations
 
 - > Select elements matching a
   condition
-
-  `
-  stream filter(x -> x > 5)
-  `
-
+  `  stream filter(x -> x > 5)`
 - > Transform elements
-
-  `
-  stream.map(String::toUpperCase)
-  `
-
+  `  stream.map(String::toUpperCase)`
 - > Flattens nested structures
-
-  `
-  stream. flatMap(list -> list.stream())
-  `
-
+  `  stream. flatMap(list -> list.stream())`
 - > Removes duplicates (based on
   equals())
-
-  `
-  stream.distinct()
-  `
-
+  `  stream.distinct()`
 - > Sorts elements (natural order)
-
-  `
-  stream.sorted()
-  `
-
+  `  stream.sorted()`
 - > Custom sorting
-
-  `
-  stream.sorted(Comparator.reverseOrder())
-  `
-
+  `  stream.sorted(Comparator.reverseOrder())`
 - > Limits stream to n elements
-
-  `
-  stream.limit(s)
-  `
-
+  `  stream.limit(s)`
 - > Skips first n elements
-
-  `
-  stream.skip(3)
-  `
-
+  `  stream.skip(3)`
 - > Perform action without consuming
-
-  `
-  stream.peek(System.out::println)
-  `
+  `  stream.peek(System.out::println)`
 
 # Terminal Operators
 
 - > Collects elements into a
   collection
-
   `stream.collect (Collectors.toList ()`
 
 - > Performs an action for each
   element
-
   `stream.forEach (System.out::println)`
 
 - > Converts stream into array
-
   `stream.toArray ()`
 
 - > Combines elements into a
   single result
-
   `stream.reduce (0, Integer: :sum)`
 
 - > Counts number of elements
-
   `stream.count ()`
 
 - > Smallest element based on
   comparator
-
   `stream.min (Comparator.naturalOrder ())`
 
 - > Largest element based on
   comparator
-
   `stream.max (Comparator.naturalOrder ())`
 
 - > True if any element
   matches
-
   `stream.anyMatch (x -> x > 10)`
 
 - > True if all elements match
-
   `stream.allMatch (x -> x > 0)`
 
 - > True if no element matches
-
   `stream.noneMatch (x -> x < 0)`
 
 - > Returns first element
   (Optional)
-
   `stream.findFirst ()`
 
 - > Returns any element (useful in parallel)
-
   `stream.findAny ()`
 
 # Usage
