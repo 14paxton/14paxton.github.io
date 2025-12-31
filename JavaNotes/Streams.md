@@ -28,78 +28,47 @@ Table of contents
 - Streams are consumed once — you cannot reuse a stream after a terminal operation.
 - Stream operations can be chained.
 
-> Prefer parallel streams only when it can truly improve performance (large data + non-thread blocking
-> code).
+> Prefer parallel streams only when it can truly improve performance (large data + non-thread blocking code).
 
-# Creation of Streams`
+# Creation of Streams
 
 # Operations
 
-- > Select elements matching a
-  condition
-  `  stream filter(x -> x > 5)`
-- > Transform elements
-  `  stream.map(String::toUpperCase)`
-- > Flattens nested structures
-  `  stream. flatMap(list -> list.stream())`
-- > Removes duplicates (based on
-  equals())
-  `  stream.distinct()`
-- > Sorts elements (natural order)
-  `  stream.sorted()`
-- > Custom sorting
-  `  stream.sorted(Comparator.reverseOrder())`
-- > Limits stream to n elements
-  `  stream.limit(s)`
-- > Skips first n elements
-  `  stream.skip(3)`
-- > Perform action without consuming
-  `  stream.peek(System.out::println)`
+- > Select elements matching a condition `stream filter(x -> x > 5)`
+- > Transform elements `stream.map(String::toUpperCase)`
+- > Flattens nested structures `stream. flatMap(list -> list.stream())`
+- > Removes duplicates (based on equals()) `stream.distinct()`
+- > Sorts elements (natural order) `stream.sorted()`
+- > Custom sorting `stream.sorted(Comparator.reverseOrder())`
+- > Limits stream to n elements `stream.limit(s)`
+- > Skips first n elements `stream.skip(3)`
+- > Perform action without consuming `stream.peek(System.out::println)`
 
 # Terminal Operators
 
-- > Collects elements into a
-  collection
-  `stream.collect (Collectors.toList ()`
+- > Collects elements into a collection`stream.collect (Collectors.toList ()`
 
-- > Performs an action for each
-  element
-  `stream.forEach (System.out::println)`
+- > Performs an action for each element`stream.forEach (System.out::println)`
 
-- > Converts stream into array
-  `stream.toArray ()`
+- > Converts stream into array`stream.toArray ()`
 
-- > Combines elements into a
-  single result
-  `stream.reduce (0, Integer: :sum)`
+- > Combines elements into a single result`stream.reduce (0, Integer: :sum)`
 
-- > Counts number of elements
-  `stream.count ()`
+- > Counts number of elements`stream.count ()`
 
-- > Smallest element based on
-  comparator
-  `stream.min (Comparator.naturalOrder ())`
+- > Smallest element based on comparator`stream.min (Comparator.naturalOrder ())`
 
-- > Largest element based on
-  comparator
-  `stream.max (Comparator.naturalOrder ())`
+- > Largest element based on comparator`stream.max (Comparator.naturalOrder ())`
 
-- > True if any element
-  matches
-  `stream.anyMatch (x -> x > 10)`
+- > True if any element matches`stream.anyMatch (x -> x > 10)`
 
-- > True if all elements match
-  `stream.allMatch (x -> x > 0)`
+- > True if all elements match`stream.allMatch (x -> x > 0)`
 
-- > True if no element matches
-  `stream.noneMatch (x -> x < 0)`
+- > True if no element matches`stream.noneMatch (x -> x < 0)`
 
-- > Returns first element
-  (Optional)
-  `stream.findFirst ()`
+- > Returns first element(Optional)`stream.findFirst ()`
 
-- > Returns any element (useful in parallel)
-  `stream.findAny ()`
+- > Returns any element (useful in parallel)`stream.findAny ()`
 
 # Usage
 
