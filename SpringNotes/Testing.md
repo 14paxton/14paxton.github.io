@@ -31,11 +31,35 @@ Table of contents
 
 # JUnit
 
-# Reflection
+## Reflection
+
+### ReflectionTestUtils
+> org.springframework.test.util
 
 - Setting fields
   ```java
       ReflectionTestUtils.setField(properties, "wacManagementAdfConversionEnabled", true);
+  ```
+
+###  AnnotationUtils
+> org.springframework.core.annotation.AnnotationUtils
+
+  ```java
+      public static String getEntityOrTableName(Class<?> clazz) {
+          // First look for @Entity annotation and use its name if present.
+          Entity entityAnnotation = AnnotationUtils.findAnnotation(clazz, Entity.class);
+          if (entityAnnotation != null && !entityAnnotation.name().isEmpty()) {
+              return entityAnnotation.name();
+          }
+  
+          // If no @Entity name is provided, check for @Table
+          Table tableAnnotation = AnnotationUtils.findAnnotation(clazz, Table.class);
+          if (tableAnnotation != null && !tableAnnotation.name().isEmpty()) {
+              return tableAnnotation.name();
+          }
+  
+          // Fallback to the simple class name.
+          return clazz.getSimpleName();
   ```
 
 ## Context
