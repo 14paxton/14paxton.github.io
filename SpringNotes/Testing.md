@@ -36,22 +36,22 @@ Table of contents
 ### ReflectionTestUtils
 > org.springframework.test.util
 
-- Setting fields
+#### - Setting fields
   ```java
     ReflectionTestUtils.setField(properties, "wacManagementAdfConversionEnabled", true);
   ```
 
-- Reading a private field
+#### - Reading a private field
   ```java
     int retryCount = (int) ReflectionTestUtils.getField(holder, "retryCount");
   ```
 
-- Invoking a private method
+#### - Invoking a private method
   ```java
     int sum = ReflectionTestUtils.invokeMethod(calculator, "add", 5, 7);
   ```
 
-- Injecting Mock into private field
+#### - Injecting Mock into private field
   ```java
       @Test
       public void testProcessOrderWithMockClient() {
@@ -68,7 +68,7 @@ Table of contents
     }
   ```
 
-  - Modify static final fields
+#### - Modify static final fields
     ```java
         @Test
         public void testVersionOverride() {
