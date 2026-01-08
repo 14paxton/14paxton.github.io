@@ -36,11 +36,50 @@ Table of contents
 ### ReflectionTestUtils
 > org.springframework.test.util
 
-- Setting fields
+- #### Setting fields
   ```java
-      ReflectionTestUtils.setField(properties, "wacManagementAdfConversionEnabled", true);
+    ReflectionTestUtils.setField(properties, "wacManagementAdfConversionEnabled", true);
   ```
 
+- #### Reading a private field
+  ```java
+    int retryCount = (int) ReflectionTestUtils.getField(holder, "retryCount");
+  ```
+
+- #### Invoking a private method
+  ```java
+    int sum = ReflectionTestUtils.invokeMethod(calculator, "add", 5, 7);
+  ```
+
+- #### Injecting Mock into private field
+  ```java
+      @Test
+      public void testProcessOrderWithMockClient() {
+          OrderProcessor processor = new OrderProcessor();
+          // Create a mock InventoryClient
+          InventoryClient mockClient = Mockito.mock(InventoryClient.class);
+          when(mockClient.isInStock("order123")).thenReturn(true);
+  
+          // Inject the mock into the private field
+          ReflectionTestUtils.setField(processor, "inventoryClient", mockClient);
+  
+          boolean result = processor.processOrder("order123");
+          assertTrue(result);
+    }
+  ```
+
+- #### Modify static final fields
+    ```java
+        @Test
+        public void testVersionOverride() {
+          // Change the static final field VERSION on Constants
+          ReflectionTestUtils.setField(Constants.class, "VERSION", "2.0");
+
+          String version = Constants.getVersion();
+          assertEquals("2.0", version);
+      }
+    ```
+  
 ###  AnnotationUtils
 > org.springframework.core.annotation.AnnotationUtils
 
