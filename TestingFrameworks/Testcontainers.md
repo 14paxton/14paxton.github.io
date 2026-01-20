@@ -26,7 +26,6 @@ Table of contents
 
 <br/>
 
-
 # JUnit
 
 ## Config
@@ -119,7 +118,7 @@ Table of contents
 
 - ### Reusable Config File to create TestContainer
   <details><summary>Config Code</summary>
-      
+
   ```java
                 
         import com.blazebit.persistence.Criteria;
@@ -267,12 +266,10 @@ public class OracleDatabaseContainerTest {
 
 ## Test Seeding Data and Table
 
-<details markdown="block"> 
+<details markdown="block">
 <summary>
 Seeding Example
 </summary>
-
-
 
 ### resources/init.sql
 
@@ -287,15 +284,15 @@ Seeding Example
   );
 
 INSERT ALL
-    INTO products (id, code, name)
-VALUES (1, 'P001', 'Product A')
 INTO products (id, code, name)
-VALUES (2, 'P002', 'Product B')
-INTO products (id, code, name)
+VALUES (1, 'P001', 'Product A') INTO products (id, code, name)
+VALUES (2, 'P002', 'Product B') INTO products (id, code, name)
 VALUES (3, 'P003', 'Product C')
 SELECT 1
 FROM DUAL;
 ```
+
+</details>
 
 ### Test
 
@@ -416,8 +413,6 @@ public static void setUp() throws Exception {
 }
    ```
 
-
-
 </details>
 
 ### Seeding Methods
@@ -449,26 +444,26 @@ public abstract class OracleTestContainer {
 
    ```java
    static Container.ExecResult exeSqlByFile(String resourceFileName) throws IOException, InterruptedException {
-        MountableFile sqlFile = MountableFile.forClasspathResource(resourceFileName);
-        String fileName = String.valueOf(Path.of(resourceFileName)
-                                             .getFileName());
-        
-        ISqlScriptDevDbContainer.localSqlScriptDbContainer.copyFileToContainer(sqlFile, "/tmp/" + fileName);
-    
-        return ISqlScriptDevDbContainer.localSqlScriptDbContainer.execInContainer("sqlplus", "sys / as sysdba", "@/tmp/" + fileName);
-      }
+  MountableFile sqlFile = MountableFile.forClasspathResource(resourceFileName);
+  String fileName = String.valueOf(Path.of(resourceFileName)
+                                       .getFileName());
 
-    static Container.ExecResult exeSqlByString(String sql) throws IOException, InterruptedException {
-        String[] command = {
-                    "bash",
-                    "-c",
-                    "echo \"" + sql + "\" | sqlplus -S ",
-                    ISqlScriptDevDbContainer.localSqlScriptDbContainer.getUsername() + "/" + ISqlScriptDevDbContainer.localSqlScriptDbContainer.getPassword(),
-                    "@//localhost:1521/" + ISqlScriptDevDbContainer.localSqlScriptDbContainer.getDatabaseName()
-                };
-    
-            return ISqlScriptDevDbContainer.localSqlScriptDbContainer.execInContainer(command);
-         }
+  ISqlScriptDevDbContainer.localSqlScriptDbContainer.copyFileToContainer(sqlFile, "/tmp/" + fileName);
+
+  return ISqlScriptDevDbContainer.localSqlScriptDbContainer.execInContainer("sqlplus", "sys / as sysdba", "@/tmp/" + fileName);
+}
+
+static Container.ExecResult exeSqlByString(String sql) throws IOException, InterruptedException {
+  String[] command = {
+          "bash",
+          "-c",
+          "echo \"" + sql + "\" | sqlplus -S ",
+          ISqlScriptDevDbContainer.localSqlScriptDbContainer.getUsername() + "/" + ISqlScriptDevDbContainer.localSqlScriptDbContainer.getPassword(),
+          "@//localhost:1521/" + ISqlScriptDevDbContainer.localSqlScriptDbContainer.getDatabaseName()
+  };
+
+  return ISqlScriptDevDbContainer.localSqlScriptDbContainer.execInContainer(command);
+}
    ```
 
 #### Mount data with .sql
@@ -480,7 +475,7 @@ void assertByMountingFilesInContainer() throws IOException, InterruptedException
   String dataFileName = "currency-dataset.sql";
   oracleContainer.copyFileToContainer(MountableFile.forClasspathResource(dataFileName), "/" + dataFileName);
   String[] command = {"sqlplus", "-s", oracleContainer.getUsername() +
-          "/" + oracleContainer.getPassword() + "@//localhost:1521/" + oracleContainer.getDatabaseName(),
+                                       "/" + oracleContainer.getPassword() + "@//localhost:1521/" + oracleContainer.getDatabaseName(),
                       "@/" + dataFileName
   };
 
@@ -494,11 +489,14 @@ void assertByMountingFilesInContainer() throws IOException, InterruptedException
   currencyList.add(554);
   List<Currency> currencies = currencyRepository.findAllById(currencyList);
   System.out.println("Number of currencies found: " + currencies.size());
-  System.out.println("Fetched currency is : " + currencies.get(0).getCurrency());
+  System.out.println("Fetched currency is : " + currencies.get(0)
+                                                          .getCurrency());
 
   //Thread.sleep(120000);
   assert currencies.size() == 1;
-  Assertions.assertEquals("New Zealand Dollar", currencies.get(0).getCurrency());
+  Assertions.assertEquals("New Zealand Dollar",
+                          currencies.get(0)
+                                    .getCurrency());
 }
   ```
 
@@ -589,10 +587,7 @@ public void setupData() {
     SpringBoot
    </summary>
 
-
-
 - ### application.yml
-
     ```yaml
     # application.yaml
     spring:
@@ -610,57 +605,56 @@ public void setupData() {
           connection-factory-class-name: oracle.jdbc.pool.OracleDataSource
     ```
 
-    - ### Test
+  - ### Test
 
-        ```java
-          import java.sql.Connection;
-          import java.sql.SQLException;
-          import java.sql.Statement;
-          import java.time.Duration;
-        
-          import org.junit.jupiter.api.Test;
-          import org.springframework.beans.factory.annotation.Autowired;
-          import org.springframework.boot.test.context.SpringBootTest;
-          import org.springframework.test.context.DynamicPropertyRegistry;
-          import org.springframework.test.context.DynamicPropertySource;
-          import org.testcontainers.junit.jupiter.Container;
-          import org.testcontainers.junit.jupiter.Testcontainers;
-          import org.testcontainers.oracle.OracleContainer;
-        
-          @SpringBootTest
-          @Testcontainers
-          public class OracleDatabaseTest {
-          static String image = "gvenzl/oracle-free:23.5-slim-faststart";
-        
-              @Container
-              static OracleContainer oracleContainer = new OracleContainer(image)
-                      .withStartupTimeout(Duration.ofMinutes(2))
-                      .withUsername("testuser")
-                      .withPassword(("testpwd"));
-            
-            
-              @DynamicPropertySource
-              static void properties(DynamicPropertyRegistry registry) {
-                registry.add("JDBC_URL", oracleContainer::getJdbcUrl);
-                registry.add("USERNAME", oracleContainer::getUsername);
-                registry.add("PASSWORD", oracleContainer::getPassword);
+      ```java
+        import java.sql.Connection;
+        import java.sql.SQLException;
+        import java.sql.Statement;
+        import java.time.Duration;
+      
+        import org.junit.jupiter.api.Test;
+        import org.springframework.beans.factory.annotation.Autowired;
+        import org.springframework.boot.test.context.SpringBootTest;
+        import org.springframework.test.context.DynamicPropertyRegistry;
+        import org.springframework.test.context.DynamicPropertySource;
+        import org.testcontainers.junit.jupiter.Container;
+        import org.testcontainers.junit.jupiter.Testcontainers;
+        import org.testcontainers.oracle.OracleContainer;
+      
+        @SpringBootTest
+        @Testcontainers
+        public class OracleDatabaseTest {
+        static String image = "gvenzl/oracle-free:23.5-slim-faststart";
+      
+            @Container
+            static OracleContainer oracleContainer = new OracleContainer(image)
+                    .withStartupTimeout(Duration.ofMinutes(2))
+                    .withUsername("testuser")
+                    .withPassword(("testpwd"));
+          
+          
+            @DynamicPropertySource
+            static void properties(DynamicPropertyRegistry registry) {
+              registry.add("JDBC_URL", oracleContainer::getJdbcUrl);
+              registry.add("USERNAME", oracleContainer::getUsername);
+              registry.add("PASSWORD", oracleContainer::getPassword);
+            }
+          
+            @Autowired
+            DataSource dataSource;
+          
+            @Test
+            void getConnection() throws SQLException {
+              try (
+                      Connection conn = dataSource.getConnection();
+                      Statement stmt = conn.createStatement()
+              ) {
+                stmt.executeQuery("select * from v$version");
               }
-            
-              @Autowired
-              DataSource dataSource;
-            
-              @Test
-              void getConnection() throws SQLException {
-                try (
-                        Connection conn = dataSource.getConnection();
-                        Statement stmt = conn.createStatement()
-                ) {
-                  stmt.executeQuery("select * from v$version");
-                }
-              }
-          }
-        ```
-
+            }
+        }
+      ```
 
  </details>
 
@@ -692,8 +686,10 @@ public class TestDemoApplication {
     return dataSourceInitializer;
   }
 
-  public static void main(String[] args) {
-    SpringApplication.from(DemoApplication::main).with(TestDemoApplication.class).run(args);
+  static void main(String[] args) {
+    SpringApplication.from(DemoApplication::main)
+                     .with(TestDemoApplication.class)
+                     .run(args);
   }
 
 }
@@ -703,7 +699,8 @@ public class TestDemoApplication {
 
 ```java
 static {
-  Runtime.getRuntime().addShutdownHook(new Thread(ORACLE_CONTAINER::stop));
+  Runtime.getRuntime()
+         .addShutdownHook(new Thread(ORACLE_CONTAINER::stop));
 
 }
 ```
@@ -733,8 +730,10 @@ public class TestContainerState {
 
   public static void saveState() {
     ContainerState state = new ContainerState();
-    state.setContainerId(TestContainerConfig.getContainer().getContainerId());
-    state.setRunning(TestContainerConfig.getContainer().isRunning());
+    state.setContainerId(TestContainerConfig.getContainer()
+                                            .getContainerId());
+    state.setRunning(TestContainerConfig.getContainer()
+                                        .isRunning());
     state.setLastUsed(LocalDateTime.now());
 
     try (Writer writer = new FileWriter(STATE_FILE)) {
@@ -800,17 +799,20 @@ class TestLifecycleExample {
 public ApplicationListener<ContextClosedEvent> containerCleanupListener() {
   return event -> {
     // Cleanup old containers
-    DockerClient dockerClient = DockerClientFactory.instance().client();
+    DockerClient dockerClient = DockerClientFactory.instance()
+                                                   .client();
     List<Container> containers = dockerClient.listContainersCmd()
                                              .withShowAll(true)
                                              .exec();
 
     containers.stream()
               .filter(c -> c.getNames()[0].startsWith("/test-db-"))
-              .filter(c -> c.getStatus().contains("Exited"))
+              .filter(c -> c.getStatus()
+                            .contains("Exited"))
               .forEach(c -> {
                 try {
-                  dockerClient.removeContainerCmd(c.getId()).exec();
+                  dockerClient.removeContainerCmd(c.getId())
+                              .exec();
                 }
                 catch (Exception e) {
                   log.warn("Could not remove container: {}", c.getId());
@@ -875,29 +877,33 @@ public class TestContainerConfig {
     }
 
     // Add shutdown hook for graceful shutdown
-    Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-      if (container.isRunning()) {
-        log.info("Stopping container without removing...");
-        try {
-          // Stop container without removing
-          DockerClient dockerClient = DockerClientFactory.instance().client();
-          dockerClient.stopContainerCmd(container.getContainerId())
-                      .withTimeout(10) // seconds
-                      .exec();
-        }
-        catch (Exception e) {
-          log.error("Error stopping container: {}", e.getMessage());
-        }
-      }
-    }));
+    Runtime.getRuntime()
+           .addShutdownHook(new Thread(() -> {
+             if (container.isRunning()) {
+               log.info("Stopping container without removing...");
+               try {
+                 // Stop container without removing
+                 DockerClient dockerClient = DockerClientFactory.instance()
+                                                                .client();
+                 dockerClient.stopContainerCmd(container.getContainerId())
+                             .withTimeout(10) // seconds
+                             .exec();
+               }
+               catch (Exception e) {
+                 log.error("Error stopping container: {}", e.getMessage());
+               }
+             }
+           }));
   }
 
   // Helper method to pause container (without destroying)
   public static void pauseContainer() {
     if (container.isRunning()) {
       try {
-        DockerClient dockerClient = DockerClientFactory.instance().client();
-        dockerClient.pauseContainerCmd(container.getContainerId()).exec();
+        DockerClient dockerClient = DockerClientFactory.instance()
+                                                       .client();
+        dockerClient.pauseContainerCmd(container.getContainerId())
+                    .exec();
         log.info("Container paused: {}", container.getContainerId());
       }
       catch (Exception e) {
@@ -909,8 +915,10 @@ public class TestContainerConfig {
   // Helper method to resume container
   public static void resumeContainer() {
     try {
-      DockerClient dockerClient = DockerClientFactory.instance().client();
-      dockerClient.unpauseContainerCmd(container.getContainerId()).exec();
+      DockerClient dockerClient = DockerClientFactory.instance()
+                                                     .client();
+      dockerClient.unpauseContainerCmd(container.getContainerId())
+                  .exec();
       log.info("Container resumed: {}", container.getContainerId());
     }
     catch (Exception e) {
@@ -922,7 +930,8 @@ public class TestContainerConfig {
   public static void stopContainer() {
     if (container.isRunning()) {
       try {
-        DockerClient dockerClient = DockerClientFactory.instance().client();
+        DockerClient dockerClient = DockerClientFactory.instance()
+                                                       .client();
         dockerClient.stopContainerCmd(container.getContainerId())
                     .withTimeout(10) // seconds
                     .exec();
@@ -938,8 +947,10 @@ public class TestContainerConfig {
   public static void startContainer() {
     if (!container.isRunning()) {
       try {
-        DockerClient dockerClient = DockerClientFactory.instance().client();
-        dockerClient.startContainerCmd(container.getContainerId()).exec();
+        DockerClient dockerClient = DockerClientFactory.instance()
+                                                       .client();
+        dockerClient.startContainerCmd(container.getContainerId())
+                    .exec();
         log.info("Container started: {}", container.getContainerId());
       }
       catch (Exception e) {
@@ -965,7 +976,8 @@ import java.util.List;
 public class ImagePreLoader {
 
   public static void preload(String repository, String tag) {
-    DockerClient dockerClient = DockerClientFactory.instance().client();
+    DockerClient dockerClient = DockerClientFactory.instance()
+                                                   .client();
 
     if (!isImagePresent(dockerClient, repository + ":" + tag)) {
       try {
@@ -975,18 +987,22 @@ public class ImagePreLoader {
                     .awaitCompletion();
       }
       catch (InterruptedException e) {
-        Thread.currentThread().interrupt();
+        Thread.currentThread()
+              .interrupt();
         throw new RuntimeException(e);
       }
     }
   }
 
   private static boolean isImagePresent(DockerClient dockerClient, String fullImageName) {
-    List<Image> images = dockerClient.listImagesCmd().exec();
+    List<Image> images = dockerClient.listImagesCmd()
+                                     .exec();
     return images.stream()
                  .flatMap(img -> img.getRepoTags() != null ?
-                                 List.of(img.getRepoTags()).stream() :
-                                 List.<String>of().stream())
+                                 List.of(img.getRepoTags())
+                                     .stream() :
+                                 List.<String>of()
+                                     .stream())
                  .anyMatch(fullImageName::equals);
   }
 }
@@ -997,7 +1013,8 @@ public class ImagePreLoader {
 
 ```java
     public static OracleContainer createOracleContainer() {
-  DockerClient client = DockerClientFactory.instance().client();
+  DockerClient client = DockerClientFactory.instance()
+                                           .client();
   String preferredImage = "gvenzl/oracle-free:23-slim-arm64";
   String fallbackImage = "gvenzl/oracle-free:23-slim";
 
@@ -1052,7 +1069,8 @@ public class DevelopmentDatabaseContainer extends OracleContainer {
   private static DevelopmentDatabaseContainer CONTAINER;
   private static final DockerImageName BASE_IMAGE = DockerImageName.parse("gvenzl/oracle-free");
 
-  private static final boolean existing = DockerClientFactory.instance().client()
+  private static final boolean existing = DockerClientFactory.instance()
+                                                             .client()
                                                              .listContainersCmd()
                                                              .withNameFilter(List.of(LOCAL_CONTAINER_NAME))
                                                              .exec()
@@ -1077,7 +1095,8 @@ public class DevelopmentDatabaseContainer extends OracleContainer {
                                                                                    .withPassword("password")
                                                                                    .withCreateContainerCmdModifier(cmd -> cmd.withName(LOCAL_CONTAINER_NAME))
                                                                                    .withCreateContainerCmdModifier(cmd -> cmd.withName("oracle-test-db"))
-                                                                                   .withReuse(TestcontainersConfiguration.getInstance().environmentSupportsReuse())
+                                                                                   .withReuse(TestcontainersConfiguration.getInstance()
+                                                                                                                         .environmentSupportsReuse())
                                                                                    .waitingFor(Wait.forLogMessage(".*DATABASE IS READY TO USE!.*\\n", 1))
                                                                                    .withStartupTimeout(Duration.ofMinutes(30));
 
@@ -1108,10 +1127,12 @@ public class DevelopmentDatabaseContainer extends OracleContainer {
 
   private void destroyContainer() {
     try {
-      DockerClient dockerClient = DockerClientFactory.instance().client();
+      DockerClient dockerClient = DockerClientFactory.instance()
+                                                     .client();
       Container container = dockerClient.listContainersCmd()
                                         .withNameFilter(List.of(LOCAL_CONTAINER_NAME))
-                                        .exec().getFirst();
+                                        .exec()
+                                        .getFirst();
 
       dockerClient.removeContainerCmd(container.getId())
                   .withForce(true)
@@ -1128,6 +1149,5 @@ public class DevelopmentDatabaseContainer extends OracleContainer {
   }
 }
 ```
+
 </details>
-
-
