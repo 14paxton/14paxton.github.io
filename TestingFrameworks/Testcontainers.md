@@ -87,6 +87,19 @@ Table of contents
         #end::datasource[]
     ```
 
+  - ### Testcontainers Properties
+  >   org.testcontainers.utility.TestcontainersConfiguration
+
+    ```java
+      private static final Properties PROPERTIES = TestcontainersConfiguration.getInstance().getClasspathProperties();
+      private static final String DB_NAME = PROPERTIES.getProperty("local.development.database.name");
+      private static final String USERNAME = PROPERTIES.getProperty("local.development.database.username");
+      private static final String PASSWORD = PROPERTIES.getProperty("local.development.database.password");
+      private static final String BASE_IMAGE = PROPERTIES.getProperty("local.development.database.testcontainer.baseimage");
+      private static final String IMAGE_NAME = PROPERTIES.getProperty("local.development.database.image.name");
+      private static final String IMAGE_TAG = PROPERTIES.getProperty("local.development.database.image.tag");
+      private static final boolean USE_INIT_SCRIPT = Boolean.parseBoolean(PROPERTIES.getProperty("local.development.database.init.script.use", "false"));
+    ```
 - ### Create Instance of Testcontainer
   ```java
     @Testcontainers
