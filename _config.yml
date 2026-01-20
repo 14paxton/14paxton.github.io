@@ -9,6 +9,8 @@ gist:
   noscript: false
 exclude:
   - README.md
+stylesheets:
+  - /assets/css/custom.css
 
 permalink: pretty
 
