@@ -26,6 +26,7 @@ Table of contents
 
 <br/>
 
+
 # JUnit
 
 ## Config
@@ -62,8 +63,8 @@ Table of contents
     </dependencies>
   ```
 
-    - ### application.properties
-      ```properties
+- ### application.properties
+   ```properties
         #tag::datasource[]
         jpa.default.properties.hibernate.hbm2ddl.auto=none
         jpa.default.properties.hibernate.dialect=org.hibernate.dialect.Oracle12cDialect
@@ -85,111 +86,134 @@ Table of contents
         spring.datasource.oracleucp.connection-factory-class-name=oracle.jdbc.pool.OracleDataSource
         spring.jpa.properties.hibernate.default_schema=UserName
         #end::datasource[]
-      ```
+    ```
 
-        - ### Create Instance of Testcontainer
-          ```java
-            @Testcontainers
-            @SpringBootTest
-            class CurrencyExchangeServiceApplicationTests {
-                @Container
-                static OracleContainer oracleContainer = new OracleContainer("gvenzl/oracle-xe:21-slim-faststart");
-          
-            }
-          ```
+- ### Create Instance of Testcontainer
+  ```java
+    @Testcontainers
+    @SpringBootTest
+    class CurrencyExchangeServiceApplicationTests {
+        @Container
+        static OracleContainer oracleContainer = new OracleContainer("gvenzl/oracle-xe:21-slim-faststart");
+  
+    }
+  ```
 
-    - ### Reusable Config File to create TestContainer
-       ```java
-        package app.com.config;
-    
-        import com.blazebit.persistence.Criteria;
-        import com.blazebit.persistence.CriteriaBuilderFactory;
-        import jakarta.persistence.EntityManagerFactory;
-        import lombok.extern.slf4j.Slf4j;
-        import org.springframework.context.annotation.Bean;
-        import org.springframework.context.annotation.Configuration;
-        import org.springframework.jdbc.datasource.DriverManagerDataSource;
-        import org.springframework.orm.jpa.JpaTransactionManager;
-        import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-        import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-        import org.springframework.test.context.ActiveProfiles;
-        import org.springframework.test.context.DynamicPropertyRegistry;
-        import org.springframework.test.context.DynamicPropertySource;
-        import org.springframework.transaction.PlatformTransactionManager;
-        import org.springframework.transaction.annotation.EnableTransactionManagement;
-        import org.testcontainers.oracle.OracleContainer;
-        import org.testcontainers.utility.DockerImageName;
-    
-        import javax.sql.DataSource;
-        import java.time.Duration;
-        import java.util.Properties;
-    
-        @Slf4j
-        @ActiveProfiles("test")
-        @Configuration
-        @EnableTransactionManagement
-        public class TestContainerEntityManagerConfig {
-    
-          private static final OracleContainer oracleContainer = new OracleContainer(
-              DockerImageName.parse("gvenzl/oracle-free:23.5-slim-faststart"))
-              .withDatabaseName("UserName")
-              .withUsername("testuser")
-              .withPassword("testpwd")
-              .withExposedPorts(1521)
-              .withStartupTimeout(Duration.ofMinutes(3));
-    
-          static {
-            oracleContainer.start();
-          }
-    
-          @DynamicPropertySource
-          static void properties(DynamicPropertyRegistry registry) {
-            registry.add("JDBC_URL", oracleContainer::getJdbcUrl);
-            registry.add("USERNAME", oracleContainer::getUsername);
-            registry.add("PASSWORD", oracleContainer::getPassword);
-          }
-    
-          @Bean
-          public CriteriaBuilderFactory criteriaBuilderFactory(EntityManagerFactory entityManagerFactory) {
-            return Criteria.getDefault().createCriteriaBuilderFactory(entityManagerFactory);
-          }
-    
-          @Bean
-          public DataSource dataSource() {
-            log.info("Creating DataSource for Oracle container at URL: {}", oracleContainer.getJdbcUrl());
-            DriverManagerDataSource dataSource = new DriverManagerDataSource();
-            dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
-            dataSource.setUrl(oracleContainer.getJdbcUrl());
-            dataSource.setUsername(oracleContainer.getUsername());
-            dataSource.setPassword(oracleContainer.getPassword());
-            return dataSource;
-          }
-    
-          @Bean(name = "entityManagerFactory")
-          public LocalContainerEntityManagerFactoryBean entityManager() {
-            LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-            em.setDataSource(dataSource());
-            em.setPackagesToScan("com.package");
-            em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-            em.setJpaProperties(additionalProperties());
-            return em;
-          }
-    
-          @Bean
-          public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
-            return new JpaTransactionManager(entityManagerFactory);
-          }
-    
-          private Properties additionalProperties() {
-            Properties properties = new Properties();
-            properties.setProperty("hibernate.hbm2ddl.auto", "update");
-            properties.setProperty("hibernate.dialect", "org.hibernate.dialect.OracleDialect");
-            properties.setProperty("hibernate.show-sql", "true");
-            // properties.setProperty("spring.jpa.defer-datasource-initialization", "true");
-            return properties;
-          }
-        }
-       ```
+  - #### Methods to know
+    ```java
+    new PostgreSQLContainer(DockerImageName.parse("gvenzl/oracle-free:23.5-slim-faststart"))
+            .withNetworkMode("host")
+            .withDatabaseName(DB_NAME)
+            .withUsername(USERNAME)
+            .withPassword(PASSWORD)
+            .withCreateContainerCmdModifier(cmd -> cmd.withPrivileged(true))
+            .withCreateContainerCmdModifier(cmd -> cmd.withName(CONTAINER_NAME))
+            .withStartupTimeout(Duration.ofMinutes(3))
+            .withExposedPorts()
+            .withCreateContainerCmdModifier(
+                    cmd -> {
+                      cmd.withHostConfig(cmd.getHostConfig()
+                                            .withNetworkMode("host"));
+                    });
+    ```
+
+- ### Reusable Config File to create TestContainer
+
+    <details><summary>Config Code</summary>
+
+    ```java
+                package app.com.config;
+            
+                import com.blazebit.persistence.Criteria;
+                import com.blazebit.persistence.CriteriaBuilderFactory;
+                import jakarta.persistence.EntityManagerFactory;
+                import lombok.extern.slf4j.Slf4j;
+                import org.springframework.context.annotation.Bean;
+                import org.springframework.context.annotation.Configuration;
+                import org.springframework.jdbc.datasource.DriverManagerDataSource;
+                import org.springframework.orm.jpa.JpaTransactionManager;
+                import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+                import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+                import org.springframework.test.context.ActiveProfiles;
+                import org.springframework.test.context.DynamicPropertyRegistry;
+                import org.springframework.test.context.DynamicPropertySource;
+                import org.springframework.transaction.PlatformTransactionManager;
+                import org.springframework.transaction.annotation.EnableTransactionManagement;
+                import org.testcontainers.oracle.OracleContainer;
+                import org.testcontainers.utility.DockerImageName;
+            
+                import javax.sql.DataSource;
+                import java.time.Duration;
+                import java.util.Properties;
+            
+                @Slf4j
+                @ActiveProfiles("test")
+                @Configuration
+                @EnableTransactionManagement
+                public class TestContainerEntityManagerConfig {
+            
+                  private static final OracleContainer oracleContainer = new OracleContainer(
+                      DockerImageName.parse("gvenzl/oracle-free:23.5-slim-faststart"))
+                      .withDatabaseName("UserName")
+                      .withUsername("testuser")
+                      .withPassword("testpwd")
+                      .withExposedPorts(1521)
+                      .withStartupTimeout(Duration.ofMinutes(3));
+            
+                  static {
+                    oracleContainer.start();
+                  }
+            
+                  @DynamicPropertySource
+                  static void properties(DynamicPropertyRegistry registry) {
+                    registry.add("JDBC_URL", oracleContainer::getJdbcUrl);
+                    registry.add("USERNAME", oracleContainer::getUsername);
+                    registry.add("PASSWORD", oracleContainer::getPassword);
+                  }
+            
+                  @Bean
+                  public CriteriaBuilderFactory criteriaBuilderFactory(EntityManagerFactory entityManagerFactory) {
+                    return Criteria.getDefault().createCriteriaBuilderFactory(entityManagerFactory);
+                  }
+            
+                  @Bean
+                  public DataSource dataSource() {
+                    log.info("Creating DataSource for Oracle container at URL: {}", oracleContainer.getJdbcUrl());
+                    DriverManagerDataSource dataSource = new DriverManagerDataSource();
+                    dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
+                    dataSource.setUrl(oracleContainer.getJdbcUrl());
+                    dataSource.setUsername(oracleContainer.getUsername());
+                    dataSource.setPassword(oracleContainer.getPassword());
+                    return dataSource;
+                  }
+            
+                  @Bean(name = "entityManagerFactory")
+                  public LocalContainerEntityManagerFactoryBean entityManager() {
+                    LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+                    em.setDataSource(dataSource());
+                    em.setPackagesToScan("com.package");
+                    em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+                    em.setJpaProperties(additionalProperties());
+                    return em;
+                  }
+            
+                  @Bean
+                  public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
+                    return new JpaTransactionManager(entityManagerFactory);
+                  }
+            
+                  private Properties additionalProperties() {
+                    Properties properties = new Properties();
+                    properties.setProperty("hibernate.hbm2ddl.auto", "update");
+                    properties.setProperty("hibernate.dialect", "org.hibernate.dialect.OracleDialect");
+                    properties.setProperty("hibernate.show-sql", "true");
+                    // properties.setProperty("spring.jpa.defer-datasource-initialization", "true");
+                    return properties;
+                  }
+                }
+    ```
+
+    </details>
 
 ## Test Container Build
 
@@ -251,7 +275,7 @@ public class OracleDatabaseContainerTest {
 Seeding Example
 </summary>
 
-{%raw%}
+
 
 ### resources/init.sql
 
@@ -277,6 +301,8 @@ FROM DUAL;
 ```
 
 ### Test
+
+<details><summary>Junit Test</summary>
 
 ```java
     import lombok.extern.slf4j.Slf4j;
@@ -376,6 +402,8 @@ public class SeedDatabaseContainerTest {
 }
 ```
 
+</details>
+
 #### Can Also Seed in BeforeAll Statement
 
    ```java
@@ -391,7 +419,7 @@ public static void setUp() throws Exception {
 }
    ```
 
-{% endraw %}
+
 
 </details>
 
@@ -423,25 +451,27 @@ public abstract class OracleTestContainer {
 #### execInContainer either by file or string
 
    ```java
-        static Container.ExecResult exeSqlByFile(String resourceFileName) throws IOException, InterruptedException {
-  String fileName = String.valueOf(Path.of(resourceFileName).getFileName());
-  MountableFile sqlFile = MountableFile.forClasspathResource(resourceFileName);
-  ISqlScriptDevDbContainer.localSqlScriptDbContainer.copyFileToContainer(sqlFile, "/tmp/" + fileName);
+   static Container.ExecResult exeSqlByFile(String resourceFileName) throws IOException, InterruptedException {
+        MountableFile sqlFile = MountableFile.forClasspathResource(resourceFileName);
+        String fileName = String.valueOf(Path.of(resourceFileName)
+                                             .getFileName());
+        
+        ISqlScriptDevDbContainer.localSqlScriptDbContainer.copyFileToContainer(sqlFile, "/tmp/" + fileName);
+    
+        return ISqlScriptDevDbContainer.localSqlScriptDbContainer.execInContainer("sqlplus", "sys / as sysdba", "@/tmp/" + fileName);
+      }
 
-  return ISqlScriptDevDbContainer.localSqlScriptDbContainer.execInContainer("sqlplus", "sys / as sysdba", "@/tmp/" + fileName);
-}
-
-static Container.ExecResult exeSqlByString(String sql) throws IOException, InterruptedException {
-  String[] command = {
-          "bash",
-          "-c",
-          "echo \"" + sql + "\" | sqlplus -S ",
-          ISqlScriptDevDbContainer.localSqlScriptDbContainer.getUsername() + "/" + ISqlScriptDevDbContainer.localSqlScriptDbContainer.getPassword(),
-          "@//localhost:1521/" + ISqlScriptDevDbContainer.localSqlScriptDbContainer.getDatabaseName()
-  };
-
-  return ISqlScriptDevDbContainer.localSqlScriptDbContainer.execInContainer(command);
-}
+    static Container.ExecResult exeSqlByString(String sql) throws IOException, InterruptedException {
+        String[] command = {
+                    "bash",
+                    "-c",
+                    "echo \"" + sql + "\" | sqlplus -S ",
+                    ISqlScriptDevDbContainer.localSqlScriptDbContainer.getUsername() + "/" + ISqlScriptDevDbContainer.localSqlScriptDbContainer.getPassword(),
+                    "@//localhost:1521/" + ISqlScriptDevDbContainer.localSqlScriptDbContainer.getDatabaseName()
+                };
+    
+            return ISqlScriptDevDbContainer.localSqlScriptDbContainer.execInContainer(command);
+         }
    ```
 
 #### Mount data with .sql
@@ -562,7 +592,7 @@ public void setupData() {
     SpringBoot
    </summary>
 
-{%raw%}
+
 
 - ### application.yml
 
@@ -634,7 +664,6 @@ public void setupData() {
           }
         ```
 
-{%endraw%}
 
  </details>
 
@@ -823,6 +852,8 @@ public static void setUp() {
 
 ## Docker Helper Methods
 
+<details><summary>Helper Methods</summary>
+
 ```java
 
 @Slf4j
@@ -922,6 +953,8 @@ public class TestContainerConfig {
 }
 ```
 
+</details>
+
 ## Image PreLoad
 
 ```java
@@ -997,6 +1030,8 @@ public class ImagePreLoader {
 ```
 
 # Class File
+
+<details><summary>Self Contained Container Class</summary>
 
 ```java
 package com.config.TestContainers;
@@ -1096,4 +1131,6 @@ public class DevelopmentDatabaseContainer extends OracleContainer {
   }
 }
 ```
+</details>
+
 
