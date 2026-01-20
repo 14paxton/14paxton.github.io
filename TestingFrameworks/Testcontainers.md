@@ -119,7 +119,8 @@ Table of contents
     ```
 
 - ### Reusable Config File to create TestContainer
-  <details><summary>Config Code</summary>
+- 
+  <details  markdown="block"><summary>Config Code</summary>
 
   ```java
                 
