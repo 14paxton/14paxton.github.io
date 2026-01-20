@@ -1045,109 +1045,108 @@ public class ImagePreLoader {
 
 # Class File
 
-<details><summary>Self Contained Container Class</summary>
+<details  markdown="block"><summary>Self Contained Container Class</summary>
 
 ```java
-package com.config.TestContainers;
-
-import com.github.dockerjava.api.DockerClient;
-import com.github.dockerjava.api.model.Container;
-import lombok.extern.slf4j.Slf4j;
-import org.testcontainers.DockerClientFactory;
-import org.testcontainers.containers.output.Slf4jLogConsumer;
-import org.testcontainers.containers.wait.strategy.Wait;
-import org.testcontainers.oracle.OracleContainer;
-import org.testcontainers.utility.DockerImageName;
-import org.testcontainers.utility.TestcontainersConfiguration;
-
-import java.time.Duration;
-import java.util.List;
-
-@Slf4j
-public class DevelopmentDatabaseContainer extends OracleContainer {
-  private static final String LOCAL_CONTAINER_NAME = "oracle-test-db-local-sql";
-  private static DevelopmentDatabaseContainer CONTAINER;
-  private static final DockerImageName BASE_IMAGE = DockerImageName.parse("gvenzl/oracle-free");
-
-  private static final boolean existing = DockerClientFactory.instance()
-                                                             .client()
-                                                             .listContainersCmd()
-                                                             .withNameFilter(List.of(LOCAL_CONTAINER_NAME))
-                                                             .exec()
-                                                             .stream()
-                                                             .anyMatch(container -> container.getNames()[0].contains(LOCAL_CONTAINER_NAME));
-
-  // Declare your private image as a compatible substitute for gvenzl/oracle-free
-  private static final DockerImageName TACTICAL_ARM = DockerImageName
-          .parse("private.registry/image")
-          .withTag("tag")
-          .asCompatibleSubstituteFor(BASE_IMAGE);
-
-  private DevelopmentDatabaseContainer() {
-    super(BASE_IMAGE);
-    //    super(TACTICAL_ARM);
-  }
-
-  public static DevelopmentDatabaseContainer getInstance() {
-    if (CONTAINER == null) {
-      CONTAINER = (DevelopmentDatabaseContainer) new DevelopmentDatabaseContainer().withDatabaseName("DBNAME")
-                                                                                   .withUsername("UserName")
-                                                                                   .withPassword("password")
-                                                                                   .withCreateContainerCmdModifier(cmd -> cmd.withName(LOCAL_CONTAINER_NAME))
-                                                                                   .withCreateContainerCmdModifier(cmd -> cmd.withName("oracle-test-db"))
-                                                                                   .withReuse(TestcontainersConfiguration.getInstance()
-                                                                                                                         .environmentSupportsReuse())
-                                                                                   .waitingFor(Wait.forLogMessage(".*DATABASE IS READY TO USE!.*\\n", 1))
-                                                                                   .withStartupTimeout(Duration.ofMinutes(30));
-
-      if (!existing) {
-        CONTAINER.withInitScript("script_in_resource_folder.sql");
+  package com.config.TestContainers;
+  
+  import com.github.dockerjava.api.DockerClient;
+  import com.github.dockerjava.api.model.Container;
+  import lombok.extern.slf4j.Slf4j;
+  import org.testcontainers.DockerClientFactory;
+  import org.testcontainers.containers.output.Slf4jLogConsumer;
+  import org.testcontainers.containers.wait.strategy.Wait;
+  import org.testcontainers.oracle.OracleContainer;
+  import org.testcontainers.utility.DockerImageName;
+  import org.testcontainers.utility.TestcontainersConfiguration;
+  
+  import java.time.Duration;
+  import java.util.List;
+  
+  @Slf4j
+  public class DevelopmentDatabaseContainer extends OracleContainer {
+    private static final String LOCAL_CONTAINER_NAME = "oracle-test-db-local-sql";
+    private static DevelopmentDatabaseContainer CONTAINER;
+    private static final DockerImageName BASE_IMAGE = DockerImageName.parse("gvenzl/oracle-free");
+  
+    private static final boolean existing = DockerClientFactory.instance()
+                                                               .client()
+                                                               .listContainersCmd()
+                                                               .withNameFilter(List.of(LOCAL_CONTAINER_NAME))
+                                                               .exec()
+                                                               .stream()
+                                                               .anyMatch(container -> container.getNames()[0].contains(LOCAL_CONTAINER_NAME));
+  
+    // Declare your private image as a compatible substitute for gvenzl/oracle-free
+    private static final DockerImageName TACTICAL_ARM = DockerImageName
+            .parse("private.registry/image")
+            .withTag("tag")
+            .asCompatibleSubstituteFor(BASE_IMAGE);
+  
+    private DevelopmentDatabaseContainer() {
+      super(BASE_IMAGE);
+      //    super(TACTICAL_ARM);
+    }
+  
+    public static DevelopmentDatabaseContainer getInstance() {
+      if (CONTAINER == null) {
+        CONTAINER = (DevelopmentDatabaseContainer) new DevelopmentDatabaseContainer().withDatabaseName("DBNAME")
+                                                                                     .withUsername("UserName")
+                                                                                     .withPassword("password")
+                                                                                     .withCreateContainerCmdModifier(cmd -> cmd.withName(LOCAL_CONTAINER_NAME))
+                                                                                     .withCreateContainerCmdModifier(cmd -> cmd.withName("oracle-test-db"))
+                                                                                     .withReuse(TestcontainersConfiguration.getInstance()
+                                                                                                                           .environmentSupportsReuse())
+                                                                                     .waitingFor(Wait.forLogMessage(".*DATABASE IS READY TO USE!.*\\n", 1))
+                                                                                     .withStartupTimeout(Duration.ofMinutes(30));
+  
+        if (!existing) {
+          CONTAINER.withInitScript("script_in_resource_folder.sql");
+        }
+  
       }
-
+  
+      CONTAINER.withLogConsumer(new Slf4jLogConsumer(log));
+      return CONTAINER;
     }
-
-    CONTAINER.withLogConsumer(new Slf4jLogConsumer(log));
-    return CONTAINER;
+  
+    @Override
+    public void start() {
+      try {
+        super.start();
+        System.setProperty("DB_URL", CONTAINER.getJdbcUrl());
+        System.setProperty("DB_USERNAME", CONTAINER.getUsername());
+        System.setProperty("DB_PASSWORD", CONTAINER.getPassword());
+      }
+      catch (Throwable e) {
+        log.error("Failed to initialize DevelopmentDatabaseContainer", e);
+        destroyContainer();
+        throw new RuntimeException(e);
+      }
+    }
+  
+    private void destroyContainer() {
+      try {
+        DockerClient dockerClient = DockerClientFactory.instance()
+                                                       .client();
+        Container container = dockerClient.listContainersCmd()
+                                          .withNameFilter(List.of(LOCAL_CONTAINER_NAME))
+                                          .exec()
+                                          .getFirst();
+  
+        dockerClient.removeContainerCmd(container.getId())
+                    .withForce(true)
+                    .exec();
+      }
+      catch (Exception exception) {
+        log.error("Error Removing Testcontainer", exception);
+      }
+    }
+  
+    @Override
+    public void stop() {
+      // do nothing, JVM handles shut down
+    }
   }
-
-  @Override
-  public void start() {
-    try {
-      super.start();
-      System.setProperty("DB_URL", CONTAINER.getJdbcUrl());
-      System.setProperty("DB_USERNAME", CONTAINER.getUsername());
-      System.setProperty("DB_PASSWORD", CONTAINER.getPassword());
-    }
-    catch (Throwable e) {
-      log.error("Failed to initialize DevelopmentDatabaseContainer", e);
-      destroyContainer();
-      throw new RuntimeException(e);
-    }
-  }
-
-  private void destroyContainer() {
-    try {
-      DockerClient dockerClient = DockerClientFactory.instance()
-                                                     .client();
-      Container container = dockerClient.listContainersCmd()
-                                        .withNameFilter(List.of(LOCAL_CONTAINER_NAME))
-                                        .exec()
-                                        .getFirst();
-
-      dockerClient.removeContainerCmd(container.getId())
-                  .withForce(true)
-                  .exec();
-    }
-    catch (Exception exception) {
-      log.error("Error Removing Testcontainer", exception);
-    }
-  }
-
-  @Override
-  public void stop() {
-    // do nothing, JVM handles shut down
-  }
-}
 ```
-
 </details>
