@@ -119,7 +119,8 @@ Table of contents
 
 - ### Reusable Config File to create TestContainer
   <details><summary>Config Code</summary>
-    ```java
+      
+  ```java
                 
         import com.blazebit.persistence.Criteria;
         import com.blazebit.persistence.CriteriaBuilderFactory;
@@ -208,7 +209,7 @@ Table of contents
             return properties;
           }
         }
-    ```
+  ```
   </details>
 
 ## Test Container Build
