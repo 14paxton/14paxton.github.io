@@ -100,20 +100,22 @@ Table of contents
 
   - #### Methods to know
     ```java
-    new PostgreSQLContainer(DockerImageName.parse("gvenzl/oracle-free:23.5-slim-faststart"))
-            .withNetworkMode("host")
-            .withDatabaseName(DB_NAME)
-            .withUsername(USERNAME)
-            .withPassword(PASSWORD)
-            .withCreateContainerCmdModifier(cmd -> cmd.withPrivileged(true))
-            .withCreateContainerCmdModifier(cmd -> cmd.withName(CONTAINER_NAME))
-            .withStartupTimeout(Duration.ofMinutes(3))
-            .withExposedPorts()
-            .withCreateContainerCmdModifier(
-                    cmd -> {
-                      cmd.withHostConfig(cmd.getHostConfig()
-                                            .withNetworkMode("host"));
-                    });
+      testThis(){
+          new PostgreSQLContainer(DockerImageName.parse("gvenzl/oracle-free:23.5-slim-faststart"))
+              .withNetworkMode("host")
+              .withDatabaseName(DB_NAME)
+              .withUsername(USERNAME)
+              .withPassword(PASSWORD)
+              .withCreateContainerCmdModifier(cmd -> cmd.withPrivileged(true))
+              .withCreateContainerCmdModifier(cmd -> cmd.withName(CONTAINER_NAME))
+              .withStartupTimeout(Duration.ofMinutes(3))
+              .withExposedPorts()
+              .withCreateContainerCmdModifier(
+                      cmd -> {
+                        cmd.withHostConfig(cmd.getHostConfig()
+                                              .withNetworkMode("host"));
+                      });
+      }
     ```
 
 - ### Reusable Config File to create TestContainer
@@ -296,7 +298,7 @@ FROM DUAL;
 
 ### Test
 
-<details><summary>Junit Test</summary>
+<details  markdown="block"><summary>Junit Test</summary>
 
 ```java
     import lombok.extern.slf4j.Slf4j;
@@ -396,11 +398,9 @@ public class SeedDatabaseContainerTest {
 }
 ```
 
-</details>
-
 #### Can Also Seed in BeforeAll Statement
 
-   ```java
+```java
 
 @BeforeAll
 public static void setUp() throws Exception {
@@ -411,7 +411,7 @@ public static void setUp() throws Exception {
   // Run the init.sql script as sysdba on the database container.
   oracleContainer.execInContainer("sqlplus", "sys / as sysdba", "@/tmp/init.sql");
 }
-   ```
+```
 
 </details>
 
